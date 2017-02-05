@@ -1,0 +1,35 @@
+﻿
+void main()
+{
+	EnableJumpingOfReturnIcon();
+	
+	OutputLine(NULL, "",
+		   NULL, "", Line_ContinueAfterTyping);
+	ClearMessage();
+	
+	char Chapter[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		Chapter[0] = "Someutsushi";
+		Chapter[1] = "Back";
+	}
+	else
+	{
+		Chapter[0] = "Someutsushi";
+		Chapter[1] = "Back";
+	}
+
+//	InitializeSelectedItem();
+	Select( 2, Chapter );
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallScript( "some_001" );
+	}
+	else
+	{
+		DisableWindow();
+		CallScript( "flow" );
+	}
+	
+}
