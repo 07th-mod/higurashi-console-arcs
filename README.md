@@ -6,7 +6,7 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 
 | Chapter     | PC Port  | Translation | Editing |
 | ----------- | -------- | ----------- | ------- |
-| Someutsushi | 100%     | 36%         | 0%      |
+| Someutsushi | 100%     | 50%         | 0%      |
 
 Someutsushi is playable in Japanese. Other arcs will be ported once Someutsushi is Translated.
 
