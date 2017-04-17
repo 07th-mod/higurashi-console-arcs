@@ -6,9 +6,9 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 
 | Chapter     | PC Port  | Translation | Editing |
 | ----------- | -------- | ----------- | ------- |
-| Someutsushi | 100%     | 71%         | 0%      |
+| Someutsushi | 100%     | 100         | 0%      |
 
-Someutsushi is playable in Japanese. Other arcs will be ported once Someutsushi is Translated.
+Someutsushi is playable in Japanese. Translation is complete, and will be released after editing.  Other arcs will be ported once Someutsushi is released.
 
 ## Requirements
 Requires a copy of Ch 4 Himatsubishi.  The patch converts a Himatsubushi installation into one that can theoretically play all of the console arcs.
