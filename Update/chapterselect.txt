@@ -1,6 +1,17 @@
 ﻿
 void main()
 {
+
+	PlayBGM( 2, "lsys13", 128, 0 );
+
+	DrawSceneWithMask( "black", "2", 0, 0, 500 );
+
+	Wait(500);
+
+	DrawScene("scenario_a", 500);
+
+	DrawSceneWithMask( "scenario_select", "5", 0, 0, 500 );
+
 	EnableJumpingOfReturnIcon();
 	
 	OutputLine(NULL, "",
@@ -16,20 +27,73 @@ void main()
 	}
 	else
 	{
-		Chapter[0] = "Someutsushi";
-		Chapter[1] = "Back";
+		Chapter[0] = "染伝し編";
+		Chapter[1] = "戻る";
 	}
 
 //	InitializeSelectedItem();
 	Select( 2, Chapter );
+	DisableWindow();
 	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
-		CallScript( "some_001" );
+		DrawScene( "scenario_a", 500 );
+		DrawSceneWithMask( "scenario_b", "5", 0, 0, 500 );
+		DrawSceneWithMask( "scenario_c", "5", 0, 0, 500 );
+
+		ShowChapterPreview();
+
+		if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1)
+		{
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+	
+			SetValidityOfSaving( TRUE );
+			CallSection("Someutsushi");
+		}
+		else
+		{
+			StopBGM( 2 );
+			DrawScene("black", 500);
+			CallScript( "flow" );
+		}
 	}
 	else
 	{
+		StopBGM( 2 );
 		DisableWindow();
+		DrawScene("black", 500);
 		CallScript( "flow" );
 	}
 	
+}
+
+void SetDay()
+{
+	int chapter;
+	chapter = LoadValueFromLocalWork( ChapterNumber );
+
+	SetLocalFlag(LHimatsubushiDay, chapter);
+
+	if(GetGlobalFlag(GHimatsubushiDay) < chapter)
+		SetGlobalFlag(GHimatsubushiDay, chapter);
+}
+
+void Someutsushi()
+{
+	CallScript( "some_001" );
+	CallScript( "some_002" );
+	CallScript( "some_003" );
+	CallScript( "some_004" );
+	CallScript( "some_005" );
+	CallScript( "some_006" );
+	CallScript( "some_007" );
+	CallScript( "some_008" );
+	CallScript( "some_009" );
+	CallScript( "some_010" );
+	CallScript( "some_011" );
+	CallScript( "some_012" );
+	CallScript( "some_013" );
+	CallScript( "some_014" );
+	
+	CallScript( "flow" );
 }
