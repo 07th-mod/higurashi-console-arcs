@@ -8,7 +8,9 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 | ----------- | -------- | ----------- | ------- |
 | Someutsushi | 100%     | 100%        | 100%    |
 
-Someutsushi is playable in both English and Japanese. The other arcs will be ported in the future.
+Someutsushi is playable in both English and Japanese.  Currently determining which arc should be translated next.
+
+Vote for which arc should be translated next in [this Poll!](https://strawpoll.com/ee8gge6)
 
 ## Screenshots
 
