@@ -6,11 +6,11 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 
 | Chapter     | PC Port  | Translation | Editing |
 | ----------- | -------- | ----------- | ------- |
-| Someutsushi | 100%     | 100%        | 100%    |
+| Someutsushi | 100%     | 100%        | 28%\*    | 
 
-Someutsushi is playable in both English and Japanese.  Currently determining which arc should be translated next.
+\*Arc is 100% edited, but currently re-editing to fix some of the awkward english.
 
-Vote for which arc should be translated next in [this Poll!](https://strawpoll.com/ee8gge6)
+Someutsushi is playable in both English and Japanese. [Poll](https://strawpoll.com/ee8gge6) results are in, the next arc to be ported is Kageboshi, which will start once re-editing is complete.
 
 ## Screenshots
 
@@ -32,8 +32,3 @@ Installation requires a copy of Ch 4 Himatsubushi, either the Steam version or d
 ## Recruiting
 
 Looking for people interested in helping with the rest of the arcs!  I could use a more experienced translator or two to handle the other arcs, or fix any translation issues in the existing translation (This is the first time I've translated anything, so it's not the best). And it would be great to have an editor or two to fix any spelling/grammar errors.  Any help would be appreciated.
-
-## Known Issues
-
-- The engine can't handle certain Japanese kanji (such as 訊) so they display as a red X.  Not sure if this can be fixed by changing the font or something.  May have to change the Japanese text to write the words out in hiragana or use synonyms.
-
