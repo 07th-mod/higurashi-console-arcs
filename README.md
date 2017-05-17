@@ -6,7 +6,7 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 
 | Chapter     | PC Port  | Translation | Editing |
 | ----------- | -------- | ----------- | ------- |
-| Someutsushi | 100%     | 100%        | 28%\*    | 
+| Someutsushi | 100%     | 100%        | 64%\*    | 
 
 \*Arc is 100% edited, but currently re-editing to fix some of the awkward english.
 
