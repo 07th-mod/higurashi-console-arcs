@@ -6,26 +6,26 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 
 | Chapter     | PC Port  | Translation | Editing |
 | ----------- | -------- | ----------- | ------- |
-| Someutsushi | 100%     | 100%        | 64%\*    | 
+| Someutsushi | 100%     | 100%        | 100%    | 
 
-\*Arc is 100% edited, but currently re-editing to fix some of the awkward english.
+Re-editing of Someutsushi is complete.  It is playable in both English and Japanese.
 
-Someutsushi is playable in both English and Japanese. [Poll](https://strawpoll.com/ee8gge6) results are in, the next arc to be ported is Kageboshi, which will start once re-editing is complete.
+[Poll](https://strawpoll.com/ee8gge6) results are in, the next arc to be ported is Kageboshi.
 
 ## Screenshots
 
 ![](http://i.imgur.com/MsEMBNc.png)
-![](http://i.imgur.com/vo19RQS.png)
+![](http://i.imgur.com/i0WWQ8C.png)
 
 ## Requirements
 Installation requires a copy of Ch 4 Himatsubushi, either the Steam version or directly from Mangagamer's website.  The patch converts a Himatsubushi installation into one that can theoretically play all of the console arcs.
 
 ## Installation Instructions
 1. Install Higurashi Ch.4 Himatsubushi on your computer.  (If you're using the Steam version, I recommend changing the default installation directory to somewhere other than C:\program files. Windows doesn't like when you modify files in program files)
-2. Download the latest release of the Console Arcs Patch [Here.](https://github.com/07th-mod/higurashi-console-arcs/releases)
+2. Download the latest release of the Console Arcs Patch [Here.](https://github.com/07th-mod/higurashi-console-arcs/releases/latest)
 3. Navigate to the directory where Himatsubushi is installed on your computer and drill down to "\Higurashi 04 - Himatsubushi\HigurashiEp04_Data\StreamingAssets"
 4. Delete the existing BGM, CGAlt, SE, and Update folders under the StreamingAssets directory.
-5. Extract the BGM, CGAlt, SE, and Update folders from the higurashi-console-arcs-ver1.0.rar file into the StreamingAssets directory.
+5. Extract the BGM, CGAlt, SE, and Update folders from the higurashi-console-arcs-ver1.1.rar file into the StreamingAssets directory.
 6. Launch the application by using the HigurashiEp04.exe executable in the "\Higurashi 04 - Himatsubushi" directory
 7. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  I won't do this on subsequent launches.
 
