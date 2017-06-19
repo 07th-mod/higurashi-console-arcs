@@ -1,5 +1,13 @@
 void main()
 {
+	int AdvMode;
+	AdvMode = 1;
+	int Line_ModeSpecific;
+	if (AdvMode) {
+		Line_ModeSpecific = Line_Normal;
+	} else {
+		Line_ModeSpecific = Line_WaitForInput;
+	}
 
 //*Someutsushi Day 12
 
@@ -15,11 +23,14 @@ void main()
 
 //夏美rvS04/36/310101002.「…おかーさん？」
 	PlaySE(4, "S04/36/310101002", 256, 64);
+	ClearMessage();
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…おかーさん？」",
 			NULL, "\"...Mom?\"", Line_Normal);
 	ClearMessage();
 
 //r階段を下りて、私は薄暗いままのリビングをのぞき込む。そこにはおかーさんとおとーさんがいて、食い入るようにテレビ画面を凝視していた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "階段を下りて、私は薄暗いままのリビングをのぞき込む。そこにはおかーさんとおとーさんがいて、食い入るようにテレビ画面を凝視していた。",
 			NULL, "I headed down the stairs and into the dimly lit living room. Mom and Dad were there, gazing into the TV screen.", Line_Normal);
 	ClearMessage();
@@ -27,28 +38,38 @@ void main()
 //夏美母＆夏美の父ro75.vS04/00/310600096|S04/00/310700022.「「………」」
 	PlaySE(4, "S04/00/310600096", 256, 64);
 	PlaySE(5, "S04/00/310700022", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美母＆夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's mom and dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「「………」」",
 			NULL, "\"\".........\"\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんはむきかけのりんごを手にしたまま、私に振り向きもしない。おとーさんも私に気づかないのか、それとも無視しているのか、悄然とした表情で画面を見つめていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんはむきかけのりんごを手にしたまま、私に振り向きもしない。おとーさんも私に気づかないのか、それとも無視しているのか、悄然とした表情で画面を見つめていた。",
 			NULL, "Mom was peeling an apple in her hands. And Dad didn't seem to notice me, or maybe he was ignoring me. He was staring at the screen with a dejected look on his face.", Line_Normal);
 	ClearMessage();
 
 //r流れているのは、…夕方のニュース番組。女性リポーターが画面に向かって、背後の田舎道を指し示しながら少し興奮した口調で説明を続けていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "流れているのは、…夕方のニュース番組。女性リポーターが画面に向かって、背後の田舎道を指し示しながら少し興奮した口調で説明を続けていた。",
 			NULL, "The picture flowing in... was the evening news. A female reporter on the screen pointed to the country road behind her while continuing her explanation in a slightly excited tone.", Line_Normal);
 	ClearMessage();
 
 //ＴＶアナrvS04/00/VT1B_Tvann1016.『はい、現場からお伝えします。本日正午過ぎ、岐阜県山中の県道で、女性の遺体が発見されました。年齢は７０歳から９０歳で、身長は１５０ｃｍ前後』
 	PlaySE(4, "S04/00/VT1B_Tvann1016", 256, 64);
-	OutputLine(NULL, "『はい、現場からお伝えします。本日正午過ぎ、岐阜県山中の県道で、女性の遺体が発見されました。年齢は７０歳から９０歳で、身長は１５０ｃｍ前後』",
-			NULL, "\"Yes, a message from the scene. This afternoon, the body of a woman was found on a rural road inside the mountains of Gifu prefecture. Her age is estimated between 70 and 90 years old, her height is approximately 150 cm.\"", Line_Normal);
+	if (AdvMode) {
+		OutputLine("<color=#f5e6d3>ＴＶアナ</color>", NULL, "<color=#f5e6d3>TV Announcer</color>", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "『はい、現場からお伝えします。本日正午過ぎ、岐阜県山中の県道で、女性の遺体が発見されました。年齢は７０歳から９０歳で、身長は１５０ｃｍ前後』",
+				NULL, "<size=-2>\"Yes, a message from the scene. This afternoon, the body of a woman was found on a rural road inside the mountains of Gifu prefecture. Her age is estimated between 70 and 90 years old, her height is approximately 150 cm.\"</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "『はい、現場からお伝えします。本日正午過ぎ、岐阜県山中の県道で、女性の遺体が発見されました。年齢は７０歳から９０歳で、身長は１５０ｃｍ前後』",
+				NULL, "\"Yes, a message from the scene. This afternoon, the body of a woman was found on a rural road inside the mountains of Gifu prefecture. Her age is estimated between 70 and 90 years old, her height is approximately 150 cm.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //ＴＶアナrvS04/00/VT1B_Tvann1017.『警察の発表では殺害された後に遺棄されたとの見解で、被害者の身元を現在確認中……』
 	PlaySE(4, "S04/00/VT1B_Tvann1017", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>ＴＶアナ</color>", NULL, "<color=#f5e6d3>TV Announcer</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『警察の発表では殺害された後に遺棄されたとの見解で、被害者の身元を現在確認中……』",
 			NULL, "\"The police have released a statement suggesting that the body was abandoned after being killed. They are currently confirming the identity of the victim......\"", Line_Normal);
 	ClearMessage();
@@ -56,22 +77,26 @@ void main()
 	PlaySE(3, "se137", 256, 64);
 
 //rそこで、テレビは消される。あとには静寂と、…重い空気がリビングに満ち満ちていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そこで、テレビは消される。あとには静寂と、…重い空気がリビングに満ち満ちていた。",
 			NULL, "Right then, the television shut off. After that, the room fell silent... and filled with a heavy atmosphere.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101003.「…そんな……」
 	PlaySE(4, "S04/36/310101003", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…そんな……」",
 			NULL, "\"...That was......\"", Line_Normal);
 	ClearMessage();
 
 //r呆然と、ニュースの内容を反芻する。…おばーちゃんの遺体が、とうとう見つかってしまったのだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "呆然と、ニュースの内容を反芻する。…おばーちゃんの遺体が、とうとう見つかってしまったのだ。",
 			NULL, "Trying to collect my thoughts on the story from the news, I felt bewildered. ...Grandma's corpse had finally been found.", Line_Normal);
 	ClearMessage();
 
 //rでも、…どうして？　こんなに早く見つかるなんて、思ってもみなかったのに…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "でも、…どうして？　こんなに早く見つかるなんて、思ってもみなかったのに…！",
 			NULL, "But... why? I never thought they would find it so quickly...!", Line_Normal);
 	ClearMessage();
@@ -82,27 +107,32 @@ void main()
 	DrawScene( "kimi_g1", 500 );
 
 //r…もう、それが何日前だったか、…覚えていない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…もう、それが何日前だったか、…覚えていない。",
 			NULL, "...How many days had it been...? I'd already forgotten.", Line_Normal);
 	ClearMessage();
 
 //r昨日のことだったような気もするし、…ずいぶん昔のような錯覚さえ感じる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "昨日のことだったような気もするし、…ずいぶん昔のような錯覚さえ感じる。",
 			NULL, "It felt like it was only yesterday... like an illusion reminding me of the old days.", Line_Normal);
 	ClearMessage();
 
 //rあの日、……学校から帰って玄関のドアを開けるなりむっと漂ってきた、饐えたように生臭い空気。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あの日、……学校から帰って玄関のドアを開けるなりむっと漂ってきた、饐えたように生臭い空気。",
 			NULL, "That day...... as I came home from school and opened the front door, a suspicious odor caught me off guard.", Line_Normal);
 	ClearMessage();
 
 //rそれを吸い込んでしまった私は思わずむせ込んで、顔をしかめながら家の中を見渡した。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それを吸い込んでしまった私は思わずむせ込んで、顔をしかめながら家の中を見渡した。",
 			NULL, "I frowned after unintentionally inhaling it, then began examining the inside of the house.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101004.『っ、…なんだろう、これ…？』
 	PlaySE(4, "S04/36/310101004", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『っ、…なんだろう、これ…？』",
 			NULL, "\"...What is this...?\"", Line_Normal);
 	ClearMessage();
@@ -112,17 +142,20 @@ void main()
 	PlaySE(3, "thisikuki", 256, 64);
 
 //r訝しく思いながらその匂いのする方向に歩いていくと、お風呂場からザシッ、ザシッと氷をかくような音が聞こえてくる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "訝しく思いながらその匂いのする方向に歩いていくと、お風呂場からザシッ、ザシッと氷をかくような音が聞こえてくる。",
 			NULL, "While thinking hard and walking toward the source of the smell, I heard a noise from the bathroom that sounded like shaking ice.", Line_Normal);
 	ClearMessage();
 
 //rそして私は、そこで何をしてるんだろうか、とガラスドアを開け、——中を、覗き込んだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして私は、そこで何をしてるんだろうか、とガラスドアを開け、——中を、覗き込んだ。",
 			NULL, "Then, wondering what was happening in there, I opened the glass door... and took a look inside.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101005.『おかーさん？kvS04/36/310101006.　なにして、kvS04/36/310101007.————ひぃッッ？！』
 	PlaySE(4, "S04/36/310101005", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『おかーさん？",
 			NULL, "\"Mom?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101006", 256, 64);
@@ -137,99 +170,127 @@ void main()
 	DrawScene( "ryuuketu1", 1000 );
 
 //r息を飲んで後じさり、その場に躓いて座り込む。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "息を飲んで後じさり、その場に躓いて座り込む。",
 			NULL, "After a moment of hesitation and catching my breath, I crawled down on the spot and took a seat.", Line_Normal);
 	ClearMessage();
 
 //r…そこではおかーさんが、おばーちゃんの体に馬乗りになって、おばーちゃんの腹部に何度も、何度も包丁を振り上げ、血飛沫を全身に浴びながら突き立てていた…！
-	OutputLine(NULL, "…そこではおかーさんが、おばーちゃんの体に馬乗りになって、おばーちゃんの腹部に何度も、何度も包丁を振り上げ、血飛沫を全身に浴びながら突き立てていた…！",
-			NULL, "...There, I saw Mom straddling over Grandma's body like she was riding a horse, raising a kitchen knife overhead, repeatedly thrusting it into Grandma's stomach. Blood was splattering everywhere, like she was bathing in it...!", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "…そこではおかーさんが、おばーちゃんの体に馬乗りになって、おばーちゃんの腹部に何度も、何度も包丁を振り上げ、血飛沫を全身に浴びながら突き立てていた…！",
+				NULL, "<size=-2>...There, I saw Mom straddling over Grandma's body like she was riding a horse, raising a kitchen knife overhead, repeatedly thrusting it into Grandma's stomach. Blood was splattering everywhere, like she was bathing in it...!</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "…そこではおかーさんが、おばーちゃんの体に馬乗りになって、おばーちゃんの腹部に何度も、何度も包丁を振り上げ、血飛沫を全身に浴びながら突き立てていた…！",
+				NULL, "...There, I saw Mom straddling over Grandma's body like she was riding a horse, raising a kitchen knife overhead, repeatedly thrusting it into Grandma's stomach. Blood was splattering everywhere, like she was bathing in it...!", Line_Normal);
+	}
 	ClearMessage();
 
 //夏美の母rvS04/00/310600097.『……おかえり、夏美…？』
 	PlaySE(4, "S04/00/310600097", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『……おかえり、夏美…？』",
 			NULL, "\"......Welcome home, Natsumi...?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101008.『あ…、ああっ…？！』
 	PlaySE(4, "S04/36/310101008", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『あ…、ああっ…？！』",
 			NULL, "\"Ah... aah...?!\"", Line_Normal);
 	ClearMessage();
 
 //rぎょろり、と。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ぎょろり、と。",
 			NULL, "She was glaring at me.", Line_Normal);
 	ClearMessage();
 
 //rおかーさんは血に塗れた顔を向けて、禍々しい光をまとった目で私を見る。…その目は、もはや正気の色ではなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんは血に塗れた顔を向けて、禍々しい光をまとった目で私を見る。…その目は、もはや正気の色ではなかった。",
 			NULL, "Mom turned her blood-soaked face toward me and stared at me with an ominous light in her eyes.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101009.『…ど、どうし、…てっ…？！』
 	PlaySE(4, "S04/36/310101009", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『…ど、どうし、…てっ…？！』",
 			NULL, "\"...W-wh...y...?!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600098.『————決まってるでしょう…？』
 	PlaySE(4, "S04/00/310600098", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『————決まってるでしょう…？』",
 			NULL, "\"...It's been decided, hasn't it...?\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんは小首を奇妙にかしげながら、私ににたり…、と笑ってみせた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんは小首を奇妙にかしげながら、私ににたり…、と笑ってみせた。",
 			NULL, "Mom eerily scratched her small head, then looked at me... and laughed.", Line_Normal);
 	ClearMessage();
 
 //rなんで殺したのか、…別に、大した理由ではなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なんで殺したのか、…別に、大した理由ではなかった。",
 			NULL, "Why did she kill her...? There was no good reason for this.", Line_Normal);
 	ClearMessage();
 
 //r朝からずっと続いていた、おばーちゃんの念仏じみた呪唱があまりにも煩くて耳障りだったので、
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "朝からずっと続いていた、おばーちゃんの念仏じみた呪唱があまりにも煩くて耳障りだったので、",
 			NULL, "Grandma's ritualistic praying since this morning was getting really annoying.", Line_Normal);
 	ClearMessage();
 
 //rおかーさんがそれを止めろと怒鳴り、おばーちゃんもそれに対して口汚く罵った結果、…勢いあまって、こうなってしまったそうだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんがそれを止めろと怒鳴り、おばーちゃんもそれに対して口汚く罵った結果、…勢いあまって、こうなってしまったそうだ。",
 			NULL, "Mom yelled at her to stop it, but Grandma said some harsh things in her defense... They must have gotten carried away and it came to this.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600099.『…仕方ないでしょう？kvS04/00/310600100.　このままだと、私たち一家が雛見沢の人間だってご近所にも知られてしまうしね…。kvS04/00/310600101.夏美だって、おばーちゃんの奇行のせいでみんなから変な目で見られるのは、…嫌でしょう？』
 	PlaySE(4, "S04/00/310600099", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『…仕方ないでしょう？",
 			NULL, "\"...I suppose it couldn't be helped?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600100", 256, 64);
 	OutputLine(NULL, "　このままだと、私たち一家が雛見沢の人間だってご近所にも知られてしまうしね…。",
-			NULL, " As it is, people in the neighborhood would have found out we are from Hinamizawa...", Line_WaitForInput);
+			NULL, " As it is, people in the neighborhood would have found out we are from Hinamizawa... ", Line_ModeSpecific);
 	PlaySE(4, "S04/00/310600101", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "夏美だって、おばーちゃんの奇行のせいでみんなから変な目で見られるのは、…嫌でしょう？』",
-			NULL, " Natsumi, even you can imagine the strange looks everyone would give us over Grandma's eccentric behavior... don't you agree?\"", Line_Normal);
+			NULL, "Natsumi, even you can imagine the strange looks everyone would give us over Grandma's eccentric behavior... don't you agree?\"", Line_Normal);
 	ClearMessage();
 
 //r…おかーさんのその言い訳は明らかに後付けだと、私は最初から見抜いていた。元々おばーちゃんを疎ましく思う気持ちが高じて、勢いをこれ幸いとばかりに殺意へと変え、凶刃をふるったに違いない。
-	OutputLine(NULL, "…おかーさんのその言い訳は明らかに後付けだと、私は最初から見抜いていた。元々おばーちゃんを疎ましく思う気持ちが高じて、勢いをこれ幸いとばかりに殺意へと変え、凶刃をふるったに違いない。",
-			NULL, "...Mom was clearly concocting an excuse in hindsight, but I was looking at it from the beginning. She was feeling disgusted with Grandma from the start. That unfortunately snowballed into murderous intent, and she must have killed her with that knife.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "…おかーさんのその言い訳は明らかに後付けだと、私は最初から見抜いていた。元々おばーちゃんを疎ましく思う気持ちが高じて、勢いをこれ幸いとばかりに殺意へと変え、凶刃をふるったに違いない。",
+				NULL, "<size=-2>...Mom was clearly concocting an excuse in hindsight, but I was looking at it from the beginning. She was feeling disgusted with Grandma from the start. That unfortunately snowballed into murderous intent, and she must have killed her with that knife.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "…おかーさんのその言い訳は明らかに後付けだと、私は最初から見抜いていた。元々おばーちゃんを疎ましく思う気持ちが高じて、勢いをこれ幸いとばかりに殺意へと変え、凶刃をふるったに違いない。",
+				NULL, "...Mom was clearly concocting an excuse in hindsight, but I was looking at it from the beginning. She was feeling disgusted with Grandma from the start. That unfortunately snowballed into murderous intent, and she must have killed her with that knife.", Line_Normal);
+	}
 	ClearMessage();
 
 	DrawScene( "black", 1000 );
 
 //rそれでも、今までの生活を守るためにはもう、…後戻りなんてできなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それでも、今までの生活を守るためにはもう、…後戻りなんてできなかった。",
 			NULL, "Still, in order to protect the life I've built until now... I couldn't turn my back.", Line_Normal);
 	ClearMessage();
 
 //rもしもこのことが誰かに知られたら、おかーさんまでこの家からいなくなってしまうんだから。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "もしもこのことが誰かに知られたら、おかーさんまでこの家からいなくなってしまうんだから。",
 			NULL, "If someone found out, Mom would be taken away from this house.", Line_Normal);
 	ClearMessage();
 
 //r…だから、私たちはその晩、帰宅したおとーさんを説得して、おばーちゃんの遺体を隠すために山へ捨てに行くことを決心した……。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…だから、私たちはその晩、帰宅したおとーさんを説得して、おばーちゃんの遺体を隠すために山へ捨てに行くことを決心した……。",
 			NULL, "...So, once Dad came home that night, we convinced him to hide Grandma's body in the mountains......", Line_Normal);
 	ClearMessage();
@@ -245,12 +306,14 @@ void main()
 	PlaySE(3, "addse22", 256, 64);
 
 //rおとーさんの運転で暗い山の中にたどりつくと、私たちは人目につかない場所を探し回った…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんの運転で暗い山の中にたどりつくと、私たちは人目につかない場所を探し回った…。",
 			NULL, "Driving through the dark mountains with Dad, we searched for a secluded, unfamiliar place...", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600102.『…おばーちゃんが見つかっちゃったら、もう今までの生活には戻れないのよ。kvS04/00/310600103.…だから、絶対に発見できないところに隠さなきゃ、…ね』
 	PlaySE(4, "S04/00/310600102", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『…おばーちゃんが見つかっちゃったら、もう今までの生活には戻れないのよ。",
 			NULL, "\"...We can't go back to our normal life if Grandma's body is found.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600103", 256, 64);
@@ -261,11 +324,13 @@ void main()
 	DrawScene( "ymo3", 1000 );
 
 //rおかーさんの脅迫に近い言葉を受けた私たちは、どこなら見つからないかを必死に考えながら、懐中電灯を片手に歩いて、歩いて、歩き続けた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんの脅迫に近い言葉を受けた私たちは、どこなら見つからないかを必死に考えながら、懐中電灯を片手に歩いて、歩いて、歩き続けた。",
 			NULL, "After receiving those intimidating instructions from Mom, I continued walking with a flashlight in hand, desperately thinking of a hiding place that would never be found.", Line_Normal);
 	ClearMessage();
 
 //rそして、怖い思いをしながら、…心細い思いをしながら、…罪悪感に突き上げられながら、家族それぞれがおばーちゃんの遺体を土に埋めたんだ……。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、怖い思いをしながら、…心細い思いをしながら、…罪悪感に突き上げられながら、家族それぞれがおばーちゃんの遺体を土に埋めたんだ……。",
 			NULL, "And, while thinking scary thoughts... while feeling uneasy... while being crushed by guilt, my whole family buried Grandma's body in the ground......", Line_Normal);
 	ClearMessage();
@@ -275,17 +340,20 @@ void main()
 	DrawScene( "kimi_o1_03", 1000 );
 
 //rなのに、…それなのに…っ！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なのに、…それなのに…っ！",
 			NULL, "And yet... for all that...!", Line_Normal);
 	ClearMessage();
 
 //rあんなに怖ろしい思いをしながら、泣きながら、隠しに行ったのに、…全部、ムダになってしまったの……？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あんなに怖ろしい思いをしながら、泣きながら、隠しに行ったのに、…全部、ムダになってしまったの……？",
 			NULL, "I tried to hide my tears while those frightening thoughts ran through my head... Was it all in vain......?", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101010.「……そんな…っ！」
 	PlaySE(4, "S04/36/310101010", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……そんな…っ！」",
 			NULL, "\"......No way...!\"", Line_Normal);
 	ClearMessage();
@@ -293,6 +361,7 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //r私は絶望のあまり、へなへなとその場に崩れ落ちる。…おとーさんはうつむいたままで、…おかーさんはリモコンを放ると、ゆっくりとテレビから私に視線を戻した。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私は絶望のあまり、へなへなとその場に崩れ落ちる。…おとーさんはうつむいたままで、…おかーさんはリモコンを放ると、ゆっくりとテレビから私に視線を戻した。",
 			NULL, "Filled with despair, I collapsed on the spot. ...Dad remained unfazed. ...Mom set down the remote control, then slowly turned her eyes away from the TV and back to me.", Line_Normal);
 	ClearMessage();
@@ -301,12 +370,14 @@ void main()
 
 //夏美の母rvS04/00/310600104.「どういうことなのかしらねぇ、…夏美？」
 	PlaySE(4, "S04/00/310600104", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「どういうことなのかしらねぇ、…夏美？」",
 			NULL, "\"Do you know what this means... Natsumi?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101011.「…えっ？kvS04/36/310101012.　わた、私…？」
 	PlaySE(4, "S04/36/310101011", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…えっ？",
 			NULL, "\"...Huh?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101012", 256, 64);
@@ -316,12 +387,14 @@ void main()
 
 //夏美の母rvS04/00/310600105.「なんで見つかったのか、って聞いてるんだけど…？」
 	PlaySE(4, "S04/00/310600105", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なんで見つかったのか、って聞いてるんだけど…？」",
 			NULL, "\"Do you know why it was found...?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101013.「し、知らないッ…！kvS04/36/310101014.　わ、私が知るわけなっ——」
 	PlaySE(4, "S04/36/310101013", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「し、知らないッ…！",
 			NULL, "\"I-I don't know...!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101014", 256, 64);
@@ -334,17 +407,20 @@ void main()
 	PlayBGM( 2, "hm06_25", 128, 0 );
 
 //rバンッ！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "バンッ！",
 			NULL, "Bang!", Line_Normal);
 	ClearMessage();
 
 //rおかーさんがテーブルを勢いよく叩いて、立ち上がる。上に載った灰皿が、激しく跳ね上がって床に落ちた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんがテーブルを勢いよく叩いて、立ち上がる。上に載った灰皿が、激しく跳ね上がって床に落ちた。",
 			NULL, "Mom vigorously slammed the table while rising to her feet. The ashtray resting on the table was launched to the floor.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600106.「知らないはずはないでしょう？！kvS04/00/310600107.　みんなで捨てに行ったじゃない？kvS04/00/310600108.　忘れたとは言わせないわよッ！」
 	PlaySE(4, "S04/00/310600106", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「知らないはずはないでしょう？！",
 			NULL, "\"You don't know? Can that really be possible?!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600107", 256, 64);
@@ -357,12 +433,14 @@ void main()
 
 //夏美rvS04/36/310101015.「お、おかーさん…っ」
 	PlaySE(4, "S04/36/310101015", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お、おかーさん…っ」",
 			NULL, "\"M-Mom...\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600109.「…だけど、家族の中に裏切り者がいた。kvS04/00/310600110.そういうことじゃないの？kvS04/00/310600111.　違うのッ？！」
 	PlaySE(4, "S04/00/310600109", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…だけど、家族の中に裏切り者がいた。",
 			NULL, "\"...There must be a traitor in our family.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600110", 256, 64);
@@ -375,6 +453,7 @@ void main()
 
 //夏美の母rvS04/00/310600112.「わざと道端からでも、わかるように！kvS04/00/310600113.　すぐに見つかるような場所におばーちゃんを置いた人がいた、そういうことでしょッ！！kvS04/00/310600114.　——夏美…っ？」
 	PlaySE(4, "S04/00/310600112", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「わざと道端からでも、わかるように！",
 			NULL, "\"You can clearly see it from the roadside!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600113", 256, 64);
@@ -386,12 +465,14 @@ void main()
 	ClearMessage();
 
 //rはっ、と息を飲んで私は凍りつく。『裏切り者』、…それが、この私を指していることに気づいたからだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "はっ、と息を飲んで私は凍りつく。『裏切り者』、…それが、この私を指していることに気づいたからだ。",
 			NULL, "Haah, after that breath I froze. I realized that she was implicating me as the \"traitor.\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101016.「わ、私じゃない。kvS04/36/310101017.私、本当に知らない！kvS04/36/310101018.　本当に、なんにも知らないっ…！」
 	PlaySE(4, "S04/36/310101016", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「わ、私じゃない。",
 			NULL, "\"I-it's not me.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101017", 256, 64);
@@ -404,6 +485,7 @@ void main()
 
 //夏美の母rvS04/00/310600115.「しらばっくれるなッッ！！」
 	PlaySE(4, "S04/00/310600115", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「しらばっくれるなッッ！！」",
 			NULL, "\"You're still playing dumb?!\"", Line_Normal);
 	ClearMessage();
@@ -414,17 +496,20 @@ void main()
 
 //夏美rvS04/36/310101019.「きゃあっっ？！」
 	PlaySE(4, "S04/36/310101019", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「きゃあっっ？！」",
 			NULL, "\"Kyaaa?!\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんが、落ちた灰皿をつかんで私に叩きつける。頭から灰をかぶせられて、思わずむせて咳き込んだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんが、落ちた灰皿をつかんで私に叩きつける。頭から灰をかぶせられて、思わずむせて咳き込んだ。",
 			NULL, "Mom grabbed the fallen ashtray and smacked me with it. The ashes covered my face, and I suddenly started coughing.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600116.「あんたじゃなければ、一体誰だって言うのよッ？！kvS04/00/310600117.　あんた以外に、誰がやるっていうのッ！kvS04/00/310600118.　答えてみなさい、さあッ！kvS04/00/310600119.　さあァッッ！！」
 	PlaySE(4, "S04/00/310600116", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あんたじゃなければ、一体誰だって言うのよッ？！",
 			NULL, "\"If it's not you, then who the hell are you saying it is?!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600117", 256, 64);
@@ -440,6 +525,7 @@ void main()
 
 //夏美rvS04/36/310101020.「ちっ、ちがっ…！kvS04/36/310101021.　わ、わた、しっ…！」
 	PlaySE(4, "S04/36/310101020", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ちっ、ちがっ…！",
 			NULL, "\"Th-that's wro...!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101021", 256, 64);
@@ -448,34 +534,40 @@ void main()
 	ClearMessage();
 
 //rそんな、そんなッ…私じゃない！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんな、そんなッ…私じゃない！",
 			NULL, "It's, it's... not me!", Line_Normal);
 	ClearMessage();
 
 //r私は何も知らない！　答えられない！　答えようがないッ…！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私は何も知らない！　答えられない！　答えようがないッ…！！",
 			NULL, "I don't know anything! I can't answer! There's no way I can answer...!!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101022.「…お、おとーさん…っ」
 	PlaySE(4, "S04/36/310101022", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…お、おとーさん…っ」",
 			NULL, "\"...D-Dad...\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700023.「………」
 	PlaySE(4, "S04/00/310700023", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //r助けを求めて、おとーさんを見る。…だけどおとーさんは、誰とも視線を合わさないようにじっと、うつむいたままだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "助けを求めて、おとーさんを見る。…だけどおとーさんは、誰とも視線を合わさないようにじっと、うつむいたままだった。",
 			NULL, "Seeking help, I looked to Dad. ...However, Dad remained still, avoiding eye contact with everyone.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101023.「…ね、ねぇおとーさん？kvS04/36/310101024.　私、ちゃんとやったでしょ？kvS04/36/310101025.　そうだよね？kvS04/36/310101026.　ねぇっ？」
 	PlaySE(4, "S04/36/310101023", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…ね、ねぇおとーさん？",
 			NULL, "\"...Hey, heeey, Dad?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101024", 256, 64);
@@ -491,6 +583,7 @@ void main()
 
 //夏美の母rvS04/00/310600120.「止めなさいっ！！kvS04/00/310600121.　また甘えた声でお父さん、お父さんって！kvS04/00/310600122.　人に頼ればいいとでも思ってるの？！kvS04/00/310600123.　いい加減にしなさいッ！kvS04/00/310600124.　お父さんがそんなこと、するはずがないでしょうがッ！！」
 	PlaySE(4, "S04/00/310600120", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「止めなさいっ！！",
 			NULL, "\"Stop it!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600121", 256, 64);
@@ -509,6 +602,7 @@ void main()
 
 //夏美の母rvS04/00/310600125.「家族を窮地に追い込むような、そんな馬鹿なこと、あんた以外に誰がするっていうのよッ？！kvS04/00/310600126.　——ね・え・っ？！」
 	PlaySE(4, "S04/00/310600125", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「家族を窮地に追い込むような、そんな馬鹿なこと、あんた以外に誰がするっていうのよッ？！",
 			NULL, "\"Who else besides you would do such a stupid thing and drive the family into a panic?!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600126", 256, 64);
@@ -518,55 +612,65 @@ void main()
 
 //夏美の父rvS04/00/310700024.「————う…」
 	PlaySE(4, "S04/00/310700024", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————う…」",
 			NULL, "\"...Uuh...\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんがゆっくりとした動作で、おとーさんに微笑みかける。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんがゆっくりとした動作で、おとーさんに微笑みかける。",
 			NULL, "Mom very slowly smiled toward Dad.", Line_Normal);
 	ClearMessage();
 
 //rその笑顔はあまりに冷たく、威圧するような、…脅し、という言葉のよく似合う容貌だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その笑顔はあまりに冷たく、威圧するような、…脅し、という言葉のよく似合う容貌だった。",
 			NULL, "That smile was cold, intimidating... Threatening was the word that best matched its appearance.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600127.「どうなのっ？！」
 	PlaySE(4, "S04/00/310600127", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「どうなのっ？！」",
 			NULL, "\"What do you think?!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700025.「う……、あ、あぁ…」
 	PlaySE(4, "S04/00/310700025", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「う……、あ、あぁ…」",
 			NULL, "\"Uh...... oh, ummm...\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600128.「————！！」
 	PlaySE(4, "S04/00/310600128", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————！！」",
 			NULL, "\"...!!\"", Line_Normal);
 	ClearMessage();
 
 //rおとーさんは力なくうなずく。それを見て、私は見捨てられたような思いで泣きたくなった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんは力なくうなずく。それを見て、私は見捨てられたような思いで泣きたくなった。",
 			NULL, "Dad nodded, powerlessly. When I saw that, I felt abandoned and wanted to cry.", Line_Normal);
 	ClearMessage();
 
 //r…信じられない！　おとーさん、どうしてなの？！　どうして嘘をつくの？！　私は、何もしていない。すぐに見つかるような場所におばーちゃんを置いたのは、私じゃない！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…信じられない！　おとーさん、どうしてなの？！　どうして嘘をつくの？！　私は、何もしていない。すぐに見つかるような場所におばーちゃんを置いたのは、私じゃない！",
 			NULL, "...I can't believe it! Dad, why are you doing this? Why are you lying?! I haven't done anything. It wasn't me who stuck Grandma in a place that was easy to find!", Line_Normal);
 	ClearMessage();
 
 //rあれを置いたのは、…おとーさんじゃないかッ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あれを置いたのは、…おとーさんじゃないかッ？！",
 			NULL, "The one who did that... wasn't it you, Dad?!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101027.「ま、待ってよ、おとーさん？！kvS04/36/310101028.　違うって言ってよ！kvS04/36/310101029.　ねぇ！　ねぇっ！！」
 	PlaySE(4, "S04/36/310101027", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ま、待ってよ、おとーさん？！",
 			NULL, "\"H-hold on, Dad?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101028", 256, 64);
@@ -579,6 +683,7 @@ void main()
 
 //夏美の母rvS04/00/310600129.「夏美…、わかる？kvS04/00/310600130.　思い出して。kvS04/00/310600131.これは全部、あなたが一人でやったことなの。kvS04/00/310600132.おばーちゃんを殺して、山に捨てに行った…」
 	PlaySE(4, "S04/00/310600129", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美…、わかる？",
 			NULL, "\"Natsumi... you understand?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600130", 256, 64);
@@ -594,6 +699,7 @@ void main()
 
 //夏美rvS04/36/310101030.「————ッ？！」
 	PlaySE(4, "S04/36/310101030", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————ッ？！」",
 			NULL, "\"...?!\"", Line_Normal);
 	ClearMessage();
@@ -602,17 +708,20 @@ void main()
 	FadeOutBGM( 2, 200, FALSE  );
 
 //rぎょっ、と私は目を見開く。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ぎょっ、と私は目を見開く。",
 			NULL, "In shock, I opened my eyes.", Line_Normal);
 	ClearMessage();
 
 //rなっ、…何を言ってるの、おかーさんっ？！　突然、何を言い出すのよぉッ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なっ、…何を言ってるの、おかーさんっ？！　突然、何を言い出すのよぉッ？！",
 			NULL, "Wh... what are you talking about, Mom?! All of a sudden, what are you saying?!", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600133.「だから、…夏美。kvS04/00/310600134.あれは全部、夏美が一人でやったことなの。kvS04/00/310600135.…そうよね？kvS04/00/310600136.　そうだったじゃない。kvS04/00/310600137.だから悪いのはあなたひとり、…でしょ…ッ？！」
 	PlaySE(4, "S04/00/310600133", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「だから、…夏美。",
 			NULL, "\"So... Natsumi.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600134", 256, 64);
@@ -634,6 +743,7 @@ void main()
 
 //夏美rvS04/36/310101031.「ど、どうしてッ？！kvS04/36/310101032.　嘘！　嘘だよッ！kvS04/36/310101033.　だって、私が学校から帰ったら、おかーさんがもう、おばーちゃんをッ——」
 	PlaySE(4, "S04/36/310101031", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ど、どうしてッ？！",
 			NULL, "\"W-why are you saying this?!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101032", 256, 64);
@@ -646,6 +756,7 @@ void main()
 
 //夏美の母rvS04/00/310600138.「……違うわ。kvS04/00/310600139.思い出しなさい。kvS04/00/310600140.あなたが、おばあちゃんを殺したのよ」
 	PlaySE(4, "S04/00/310600138", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……違うわ。",
 			NULL, "\"......You're wrong.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600139", 256, 64);
@@ -657,22 +768,26 @@ void main()
 	ClearMessage();
 
 //r…そ、そんな……！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…そ、そんな……！",
 			NULL, "...Th-that's......!", Line_Normal);
 	ClearMessage();
 
 //r私じゃない！　私はそんなこと、やってないっ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私じゃない！　私はそんなこと、やってないっ！！",
 			NULL, "It wasn't me! I didn't do it!", Line_Normal);
 	ClearMessage();
 
 //rやったのは、おかーさんでしょ？…そうでしょ？！　なんで私なのっ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "やったのは、おかーさんでしょ？…そうでしょ？！　なんで私なのっ？！",
 			NULL, "Mom is the one who did it, right? ...Right?! Why is she saying it was me?!", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600141.……家族はお互い、かばいあうもの。kvS04/00/310600142.そうでしょう？kvS04/00/310600143.　…そうよね？kvS04/00/310600144.　それなら、あなたも家族をかばわなくちゃね」
 	PlaySE(4, "S04/00/310600141", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……家族はお互い、かばいあうもの。",
 			NULL, "\"......Families are supposed to protect each other.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600142", 256, 64);
@@ -687,22 +802,26 @@ void main()
 	ClearMessage();
 
 //rおかーさんが冷たい笑みを浮かべながら、私を見る。…それは、さっきおとーさんにしてみせた恫喝と同じ、氷のような微笑だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんが冷たい笑みを浮かべながら、私を見る。…それは、さっきおとーさんにしてみせた恫喝と同じ、氷のような微笑だった。",
 			NULL, "Mom looked at me, wearing a cold smile on her face. ...It was the same ice-cold smile she was making toward Dad earlier.", Line_Normal);
 	ClearMessage();
 
 //rわ、…わからない……！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "わ、…わからない……！",
 			NULL, "I... I don't understand......!", Line_Normal);
 	ClearMessage();
 
 //rおかーさんの言ってること、…おかーさんがどういうつもりなのか、私っ、全然わからないよッッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんの言ってること、…おかーさんがどういうつもりなのか、私っ、全然わからないよッッ！！",
 			NULL, "What is Mom saying...? I don't understand what Mom is trying to do at all!!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101034.「……ま、…待っ…て…！kvS04/36/310101035.　わ、わた…」
 	PlaySE(4, "S04/36/310101034", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……ま、…待っ…て…！",
 			NULL, "\"......H... hold... on...!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101035", 256, 64);
@@ -712,6 +831,7 @@ void main()
 
 //夏美の母rvS04/00/310600145.「もしも家族に累が及ぶようなことになったら…。kvS04/00/310600146.その時は夏美、あなたが家族全員の代表として、警察に出頭するの」
 	PlaySE(4, "S04/00/310600145", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「もしも家族に累が及ぶようなことになったら…。",
 			NULL, "\"If we want to preserve the family's livelihood...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600146", 256, 64);
@@ -721,6 +841,7 @@ void main()
 
 //夏美の母rvS04/00/310600147.「…あなた、一人で。kvS04/00/310600148.……家族を裏切った罰として、家族のために犠牲になってもらうわ」
 	PlaySE(4, "S04/00/310600147", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…あなた、一人で。",
 			NULL, "\"...You, alone.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600148", 256, 64);
@@ -730,22 +851,31 @@ void main()
 
 //夏美rvS04/36/310101036.「どっ、どうしてぇッッ？！」
 	PlaySE(4, "S04/36/310101036", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「どっ、どうしてぇッッ？！」",
 			NULL, "\"W-why are you doing thiiis?!\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんの瞳を見つめ返す。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんの瞳を見つめ返す。",
 			NULL, "I stared straight into Mom's eyes.", Line_Normal);
 	ClearMessage();
 
 //rけど、まるでそこには生気がなく、何の感情もこもっていない。そして私がどれだけ涙を流して、懸命に哀願するように見上げてみても、おかーさんは笑みに似た表情を薄気味悪く浮かべているだけだった。
-	OutputLine(NULL, "けど、まるでそこには生気がなく、何の感情もこもっていない。そして私がどれだけ涙を流して、懸命に哀願するように見上げてみても、おかーさんは笑みに似た表情を薄気味悪く浮かべているだけだった。",
-			NULL, "But I couldn't sense anything, it was as if there was no life inside them. And even as I pleaded to her, looking up with tears running down my eyes, Mom just looked at me with an eerie expression loosely resembling a smile.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "けど、まるでそこには生気がなく、何の感情もこもっていない。そして私がどれだけ涙を流して、懸命に哀願するように見上げてみても、おかーさんは笑みに似た表情を薄気味悪く浮かべているだけだった。",
+				NULL, "<size=-2>But I couldn't sense anything, it was as if there was no life inside them. And even as I pleaded to her, looking up with tears running down my eyes, Mom just looked at me with an eerie expression loosely resembling a smile.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "けど、まるでそこには生気がなく、何の感情もこもっていない。そして私がどれだけ涙を流して、懸命に哀願するように見上げてみても、おかーさんは笑みに似た表情を薄気味悪く浮かべているだけだった。",
+				NULL, "But I couldn't sense anything, it was as if there was no life inside them. And even as I pleaded to her, looking up with tears running down my eyes, Mom just looked at me with an eerie expression loosely resembling a smile.", Line_Normal);
+	}
 	ClearMessage();
 
 //夏美rvS04/36/310101037.「やだ…。kvS04/36/310101038.やだ、おかーさん…。kvS04/36/310101039.ねぇ、何を言っているの？kvS04/36/310101040.　意味がわからないよ。kvS04/36/310101041.ねぇ、おとーさん…？」
 	PlaySE(4, "S04/36/310101037", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「やだ…。",
 			NULL, "\"No...", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101038", 256, 64);
@@ -763,12 +893,14 @@ void main()
 	ClearMessage();
 
 //rすがるようにおかーさんとおとーさんを見る。けれど、おかーさんは先ほどの微笑のままで、おとーさんは相変わらずうつむいたままだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "すがるようにおかーさんとおとーさんを見る。けれど、おかーさんは先ほどの微笑のままで、おとーさんは相変わらずうつむいたままだった。",
 			NULL, "Clinging to that, I looked at Mom and Dad. However, Mom continued smiling like before, and Dad remained silent like usual.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101042.「いっ…ぃやだ、kvS04/36/310101043.…いやだぁあぁぁっっ！！」
 	PlaySE(4, "S04/36/310101042", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いっ…ぃやだ、",
 			NULL, "\"This... can't be.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101043", 256, 64);
@@ -777,51 +909,60 @@ void main()
 	ClearMessage();
 
 //r涙がぼろぼろと零れ落ちてくる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "涙がぼろぼろと零れ落ちてくる。",
 			NULL, "Tears continued flowing down my face.", Line_Normal);
 	ClearMessage();
 
 //rどうして？　どうしてこんなことになったの？　ねぇっ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "どうして？　どうしてこんなことになったの？　ねぇっ？！",
 			NULL, "Why? Why is this happening? Well?!", Line_Normal);
 	ClearMessage();
 
 //r私の、かけがえのない家族だったのに！　優しいおかーさん、温かいおとーさんで、私の大切な人たちが、…どうして、こんなことにっ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私の、かけがえのない家族だったのに！　優しいおかーさん、温かいおとーさんで、私の大切な人たちが、…どうして、こんなことにっ？！",
 			NULL, "This is my irreplaceable family! My gentle Mom, my warm Dad, these precious people... why are they doing this?!", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600149.「………」
 	PlaySE(4, "S04/00/310600149", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101044.「…やだぁ…っく、…ひぃ…っ！」
 	PlaySE(4, "S04/36/310101044", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…やだぁ…っく、…ひぃ…っ！」",
 			NULL, "\"...Nooo... guh... hiii...!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600150.「夏美……？」
 	PlaySE(4, "S04/00/310600150", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美……？」",
 			NULL, "\"Natsumi......?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101045.「————ひっ？！」
 	PlaySE(4, "S04/36/310101045", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————ひっ？！」",
 			NULL, "\"...Hii?!\"", Line_Normal);
 	ClearMessage();
 
 //r突然私の手首を、おかーさんがぐいっと掴みあげる。そして反対の手で、私のあごが砕けるかと思うほど強引に向きを変えさせると、…おかーさんの強く鋭い視線が、私の目をまっすぐに貫いていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "突然私の手首を、おかーさんがぐいっと掴みあげる。そして反対の手で、私のあごが砕けるかと思うほど強引に向きを変えさせると、…おかーさんの強く鋭い視線が、私の目をまっすぐに貫いていた。",
 			NULL, "Mom suddenly grabbed my wrist and held it tight. And with her other hand, she turned me around so violently that I thought my jaw would dislocate.... Then Mom threw a strong, piercing gaze straight into my eyes.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600151.「馬鹿なことをしたのは、あなたなの。kvS04/00/310600152.…せっかく田舎の興宮を出て、念願のマイホームを手に入れて、ここでみんなが楽しく暮らしていたのに！kvS04/00/310600153.　私たちは、幸せに暮らしていたのにっ！！」
 	PlaySE(4, "S04/00/310600151", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「馬鹿なことをしたのは、あなたなの。",
 			NULL, "\"You're the one who did those stupid things.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600152", 256, 64);
@@ -834,6 +975,7 @@ void main()
 
 //夏美の母rvS04/00/310600154.「…おばーちゃんが死んで、あなたも、内心は喜んでいたじゃないの？！kvS04/00/310600155.　私に、感謝したでしょう？！kvS04/00/310600156.　それをどうして、あなたはぶち壊しにするの？！kvS04/00/310600157.　…なんて、なんて馬鹿な親不孝者なのッ！」
 	PlaySE(4, "S04/00/310600154", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…おばーちゃんが死んで、あなたも、内心は喜んでいたじゃないの？！",
 			NULL, "\"...When Grandma died, deep down you were pleased, weren't you?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600155", 256, 64);
@@ -849,6 +991,7 @@ void main()
 
 //夏美rvS04/36/310101046.「きゃぁぁっっ！！」
 	PlaySE(4, "S04/36/310101046", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「きゃぁぁっっ！！」",
 			NULL, "\"Kyaaa!!\"", Line_Normal);
 	ClearMessage();
@@ -858,29 +1001,34 @@ void main()
 	DrawScene( "aka1", 1000 );
 
 //rおかーさんに勢いよく突き飛ばされた私は激しく壁に叩きつけられて、…一瞬、息の止まるような苦痛にうめく。それを酷薄な表情で見下ろしながら、ゆっくりとした足取りで歩み寄ってきた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんに勢いよく突き飛ばされた私は激しく壁に叩きつけられて、…一瞬、息の止まるような苦痛にうめく。それを酷薄な表情で見下ろしながら、ゆっくりとした足取りで歩み寄ってきた。",
 			NULL, "Mom violently tossed me and I hit the wall hard... For a moment, the pain left me unable to breathe. Then she slowly walked toward me, looking down on me with a ferocious expression on her face.", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700026.「…春子、お前——」
 	PlaySE(4, "S04/00/310700026", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…春子、お前——」",
 			NULL, "\"...Haruko, you...\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600158.「あなたは邪魔しないで頂戴ッ！！」
 	PlaySE(4, "S04/00/310600158", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あなたは邪魔しないで頂戴ッ！！」",
 			NULL, "\"Please don't interrupt me !!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700027.「……っ…」
 	PlaySE(4, "S04/00/310700027", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……っ…」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //r鬼のような形相で、おかーさんはおとーさんを睨みつける。おずおずと、おそらく制止しようとしたおとーさんはその気迫に立ちすくんで、…上げた手をまた、引っ込めてしまった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "鬼のような形相で、おかーさんはおとーさんを睨みつける。おずおずと、おそらく制止しようとしたおとーさんはその気迫に立ちすくんで、…上げた手をまた、引っ込めてしまった。",
 			NULL, "Mom glared at Dad, with a look resembling a demon. It seemed like Dad was trying to step in, but he apprehensively lost his spirit after that... and he withdrew his raised hand.", Line_Normal);
 	ClearMessage();
@@ -891,17 +1039,20 @@ void main()
 
 //夏美rvS04/36/310101047.「——ぐぅっ？！」
 	PlaySE(4, "S04/36/310101047", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——ぐぅっ？！」",
 			NULL, "\"...Guh?!\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんが、私のおなかを強く蹴り上げる。腹部に鈍痛が走って、お腹を押さえたまま丸まるしかない。思わず吐き気がこみあげてきたけど、私は懸命にこらえた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんが、私のおなかを強く蹴り上げる。腹部に鈍痛が走って、お腹を押さえたまま丸まるしかない。思わず吐き気がこみあげてきたけど、私は懸命にこらえた。",
 			NULL, "Mom staunchly kicked me in the stomach. A dull pain ran through my abdomen, leaving me no choice but to curl up while holding my stomach. I started to feel nauseous, but I was able to hold it back.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600159.「家族を裏切る悪い子は、もちろん社会から罰せられます…、kvS04/00/310600160.警察から、ね」
 	PlaySE(4, "S04/00/310600159", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「家族を裏切る悪い子は、もちろん社会から罰せられます…、",
 			NULL, "\"A bad child who betrayed her family should, obviously, be punished by society....", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600160", 256, 64);
@@ -915,17 +1066,20 @@ void main()
 
 //夏美rvS04/36/310101048.「うぐっ…？！」
 	PlaySE(4, "S04/36/310101048", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「うぐっ…？！」",
 			NULL, "\"Ugh...?!\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんが私の腹部を、さらに蹴り上げる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんが私の腹部を、さらに蹴り上げる。",
 			NULL, "Mom delivered another kick to my abdomen.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600161.「でも…、社会より先に、家庭が悪い子を罰しなければなりません。kvS04/00/310600162.教育は、学校と社会と家庭の３つの場で行うべきものでしょう？」
 	PlaySE(4, "S04/00/310600161", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「でも…、社会より先に、家庭が悪い子を罰しなければなりません。",
 			NULL, "\"But... before society can do it, the family must punish this bad child.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600162", 256, 64);
@@ -939,6 +1093,7 @@ void main()
 
 //夏美rvS04/36/310101049.「…かはっ？！kvS04/36/310101050.　お、おかーさ、や、やめ…ぎゃぁっ？！」
 	PlaySE(4, "S04/36/310101049", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…かはっ？！",
 			NULL, "\"...Huh?!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101050", 256, 64);
@@ -947,6 +1102,7 @@ void main()
 	ClearMessage();
 
 //rおかーさんが、さらに私の腹部を蹴る。…こんなの異常だ。濡れ衣を着せて、罰と称して！　それを名分に暴行を加えているだけだッ…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんが、さらに私の腹部を蹴る。…こんなの異常だ。濡れ衣を着せて、罰と称して！　それを名分に暴行を加えているだけだッ…！",
 			NULL, "Mom kicked me in the abdomen yet again. ...All of this is so unusual. Forcing me to wear wet clothes, that's a punishment! This is just a justification for assault...!", Line_Normal);
 	ClearMessage();
@@ -956,36 +1112,43 @@ void main()
 	Wait( 500 );
 
 //rおかーさんじゃない…！　これは、おかーさんなんかじゃない…ッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんじゃない…！　これは、おかーさんなんかじゃない…ッ！！",
 			NULL, "This isn't Mom...! This isn't something Mom would do...!!", Line_Normal);
 	ClearMessage();
 
 //r悪夢のような現実に私は吐き気を催し、徐々に意識が遠のきかけて、…もはや、悲鳴すらも小さくなっていく。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "悪夢のような現実に私は吐き気を催し、徐々に意識が遠のきかけて、…もはや、悲鳴すらも小さくなっていく。",
 			NULL, "This reality felt more like a nightmare. I tried to hold in my nausea, my consciousness was gradually fading away... even the screams were getting quieter.", Line_Normal);
 	ClearMessage();
 
 //r助けて…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "助けて…！",
 			NULL, "Help...!", Line_Normal);
 	ClearMessage();
 
 //r誰か、…誰でもいい、私を助けて、助けて…っ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "誰か、…誰でもいい、私を助けて、助けて…っ！！",
 			NULL, "Someone... anyone who can, help me, help...!!", Line_Normal);
 	ClearMessage();
 
 //r私、何もしてない…！　私、何にも悪くない！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私、何もしてない…！　私、何にも悪くない！",
 			NULL, "I haven't done anything...! I haven't done anything wrong!", Line_Normal);
 	ClearMessage();
 
 //rそれなのになんで、…なんで私だけ、こんな目にッ——？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それなのになんで、…なんで私だけ、こんな目にッ——？！",
 			NULL, "Yet why... why is this only happening to me...?!", Line_Normal);
 	ClearMessage();
 
 //r誰か、…誰か、私を助けてよぉぉ…ッッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "誰か、…誰か、私を助けてよぉぉ…ッッ！！",
 			NULL, "Someone... someone please help meee!!", Line_Normal);
 	ClearMessage();
@@ -995,28 +1158,33 @@ void main()
 	PlaySE(3, "a5_13391", 256, 64);
 
 //r……その時。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……その時。",
 			NULL, "......At that time.", Line_Normal);
 	ClearMessage();
 
 //rふいにおかーさんの動きが、…止まった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ふいにおかーさんの動きが、…止まった。",
 			NULL, "Suddenly, Mom... stopped moving.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600163.「————？！」
 	PlaySE(4, "S04/00/310600163", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————？！」",
 			NULL, "\"...?!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700028.「やめなさい、春子…」
 	PlaySE(4, "S04/00/310700028", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「やめなさい、春子…」",
 			NULL, "\"Please stop this, Haruko...\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんの手をつかんで止めていたのは、…おとーさんだった。kそして、
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんの手をつかんで止めていたのは、…おとーさんだった。",
 			NULL, "Grasping Mom's hand and trying to stop her... it was Dad.", Line_WaitForInput);
 	OutputLine(NULL, "そして、",
@@ -1025,6 +1193,7 @@ void main()
 
 //夏美の父rvS04/00/310700029.「……私なんだよ。kvS04/00/310700030.あそこに、あれを置き直したのは…」
 	PlaySE(4, "S04/00/310700029", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……私なんだよ。",
 			NULL, "\"......It's me, you know.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700030", 256, 64);
@@ -1034,6 +1203,7 @@ void main()
 
 //夏美の母rvS04/00/310600164.「なっ————？！」
 	PlaySE(4, "S04/00/310600164", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なっ————？！」",
 			NULL, "\"Wha...?!\"", Line_Normal);
 	ClearMessage();
@@ -1042,12 +1212,14 @@ void main()
 	DrawScene( "kimi_o1_03", 1000 );
 
 //rおとーさんの声に、リビングが静まり返る。おかーさんは身体の向きを変えると、荒い息をつきながら、おとーさんの次の言葉をじっと待った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんの声に、リビングが静まり返る。おかーさんは身体の向きを変えると、荒い息をつきながら、おとーさんの次の言葉をじっと待った。",
 			NULL, "Aside from Dad's voice, the living room fell silent. Mom turned her body and roughly held her breath while waiting for the next words from Dad.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600165.「なん、ですって…？kvS04/00/310600166.　それは、…どういう、こと？！」
 	PlaySE(4, "S04/00/310600165", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なん、ですって…？",
 			NULL, "\"...What was that...?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600166", 256, 64);
@@ -1057,6 +1229,7 @@ void main()
 
 //夏美の父rvS04/00/310700031.「……すまない。kvS04/00/310700032.だけど春子に夏美、…お前たちに辛い思いはさせない。kvS04/00/310700033.…私が、すべて引き受ける」
 	PlaySE(4, "S04/00/310700031", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……すまない。",
 			NULL, "\"......I'm sorry.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700032", 256, 64);
@@ -1069,12 +1242,14 @@ void main()
 
 //夏美の母rvS04/00/310600167.「————？！」
 	PlaySE(4, "S04/00/310600167", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————？！」",
 			NULL, "\"...?!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700034.「今なら、まだ間に合うはずだ。kvS04/00/310700035.…お父さんは、警察に行くよ」
 	PlaySE(4, "S04/00/310700034", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「今なら、まだ間に合うはずだ。",
 			NULL, "\"There should still be time now.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700035", 256, 64);
@@ -1084,6 +1259,7 @@ void main()
 
 //夏美の母rvS04/00/310600168.「なッ…？！kvS04/00/310600169.　けっ、警察ッ？！」
 	PlaySE(4, "S04/00/310600168", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なッ…？！",
 			NULL, "\"Wh...?!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600169", 256, 64);
@@ -1092,12 +1268,14 @@ void main()
 	ClearMessage();
 
 //rおかーさんは差し出された手を乱暴に振り払うと、拳を握り締めて怒りに震える。けど、おとーさんは気丈にもそれに怯むことなく、…吹っ切れたような口調で静かに言葉を継いでいった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんは差し出された手を乱暴に振り払うと、拳を握り締めて怒りに震える。けど、おとーさんは気丈にもそれに怯むことなく、…吹っ切れたような口調で静かに言葉を継いでいった。",
 			NULL, "When Mom shook away the hand that was holding her, she clenched her fist and trembled with anger. However, Dad was not afraid... breaking through the tone, he calmly pushed forward and continued speaking.", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700036.「…怒らないでくれ、大丈夫だよ。kvS04/00/310700037.…私が一人でやったことにすればいいだろ？kvS04/00/310700038.　春子も夏美も、無関係だ。kvS04/00/310700039.お前たちは関係ないんだ。kvS04/00/310700040.…な、それならいいだろう？」
 	PlaySE(4, "S04/00/310700036", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…怒らないでくれ、大丈夫だよ。",
 			NULL, "\"...Don't be angry, everything will be all right.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700037", 256, 64);
@@ -1116,18 +1294,21 @@ void main()
 
 //夏美の母rvS04/00/310600170.「………」
 	PlaySE(4, "S04/00/310600170", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101051.「お、おとー、さんっ…！」
 	PlaySE(4, "S04/36/310101051", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お、おとー、さんっ…！」",
 			NULL, "\"D-Dad...!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700041.「かわいそうに…、こんなひどい目にあわせて…。kvS04/00/310700042.…ごめんな、夏美」
 	PlaySE(4, "S04/00/310700041", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「かわいそうに…、こんなひどい目にあわせて…。",
 			NULL, "\"...Poor thing... You've gone through a lot...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700042", 256, 64);
@@ -1136,12 +1317,14 @@ void main()
 	ClearMessage();
 
 //rおとーさんは、私を元気づけるように両腕をとる。おとーさんに支えられるようにして身を起こしながら、両目からまた涙が零れ落ちてきた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんは、私を元気づけるように両腕をとる。おとーさんに支えられるようにして身を起こしながら、両目からまた涙が零れ落ちてきた。",
 			NULL, "Trying to cheer me up, Dad extended both his arms. He lifted me up to support me, and tears again began to fall from my eyes.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101052.「おとーさん…。kvS04/36/310101053.そんな…。kvS04/36/310101054.私はただ、幸せでいられたら、それで良かっただけなのに…」
 	PlaySE(4, "S04/36/310101052", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おとーさん…。",
 			NULL, "\"Dad...", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101053", 256, 64);
@@ -1153,28 +1336,33 @@ void main()
 	ClearMessage();
 
 //r家族揃って、元気に仲良く幸せに暮らすことが、…こんなにも難しいことだったんだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "家族揃って、元気に仲良く幸せに暮らすことが、…こんなにも難しいことだったんだ。",
 			NULL, "Living happy with all of my family... it was such a difficult thing.", Line_Normal);
 	ClearMessage();
 
 //r私は、特別な何かが欲しかったわけじゃない。ただ、幸せな毎日をずっと続けていたかっただけなのに、…どうして、こんなことにっ…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私は、特別な何かが欲しかったわけじゃない。ただ、幸せな毎日をずっと続けていたかっただけなのに、…どうして、こんなことにっ…！",
 			NULL, "I didn't want anything special. I just wanted to keep enjoying every day... so why was this...?!", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700043.「夏美…。大丈夫だから」
 	PlaySE(4, "S04/00/310700043", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美…。大丈夫だから」",
 			NULL, "\"Natsumi... Everything will be all right.\"", Line_Normal);
 	ClearMessage();
 
 //rおとーさんはひざまずくと、私をぎゅっと抱きしめた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんはひざまずくと、私をぎゅっと抱きしめた。",
 			NULL, "Dad knelt down and hugged me tightly.", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700044.「お父さんも、ずっと考えていたんだよ。kvS04/00/310700045.どうしたらいいか。kvS04/00/310700046.…元通りに家族揃って幸せに暮らすにはどうしたらいいのか…、ずっと考えていたんだ」
 	PlaySE(4, "S04/00/310700044", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お父さんも、ずっと考えていたんだよ。",
 			NULL, "\"Your Dad has been thinking for a long time.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700045", 256, 64);
@@ -1187,12 +1375,14 @@ void main()
 
 //夏美rvS04/36/310101055.「………」
 	PlaySE(4, "S04/36/310101055", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700047.「でもお父さんは、どんどん悪くなる現実を前にしながら、何も行動を起こすことができなかった。kvS04/00/310700048.…勇気がなかったんだ」
 	PlaySE(4, "S04/00/310700047", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「でもお父さんは、どんどん悪くなる現実を前にしながら、何も行動を起こすことができなかった。",
 			NULL, "\"But things have been steadily getting worse, and your Dad has been unable to do anything about it.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700048", 256, 64);
@@ -1202,6 +1392,7 @@ void main()
 
 //夏美の父rvS04/00/310700049.「…おばーちゃんのことは、お父さんの責任でもあるんだよ。kvS04/00/310700050.お父さんがしっかりしていなかったから、あんなことに…」
 	PlaySE(4, "S04/00/310700049", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…おばーちゃんのことは、お父さんの責任でもあるんだよ。",
 			NULL, "\"...What happened to Grandma is also Dad's responsibility.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700050", 256, 64);
@@ -1210,28 +1401,33 @@ void main()
 	ClearMessage();
 
 //rおとーさんはそこで言葉を切ると、申し訳なさそうに目を伏せた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんはそこで言葉を切ると、申し訳なさそうに目を伏せた。",
 			NULL, "Dad cut off speaking there and turned his eyes downward to apologize.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101056.「おとーさんっ…」
 	PlaySE(4, "S04/36/310101056", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おとーさんっ…」",
 			NULL, "\"Dad...\"", Line_Normal);
 	ClearMessage();
 
 //rおとーさんはずっと、罪悪感に苦しんでいたんだ。…誰よりも家族のことを想っていたはずなのに、家族のために何もできなくて。おとーさんは不甲斐ない自分を、ずっと責めていたんだ…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんはずっと、罪悪感に苦しんでいたんだ。…誰よりも家族のことを想っていたはずなのに、家族のために何もできなくて。おとーさんは不甲斐ない自分を、ずっと責めていたんだ…。",
 			NULL, "Dad was suffering from guilt all this time. ...Believing he should care about his family more than anyone, but being unable to do anything for us. Dad always blamed himself for being cowardly...", Line_Normal);
 	ClearMessage();
 
 //rそんなおとーさんの気持ちを知って、少しかわいそうだと思った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんなおとーさんの気持ちを知って、少しかわいそうだと思った。",
 			NULL, "Knowing these feelings about Dad, I think I feel a little sorry for him.", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700051.「おばーちゃんの遺体をわかりやすい場所に置いたのは、…お父さんの独断だ。kvS04/00/310700052.それにお母さんには、ちゃんと今から説明してわかってもらう」
 	PlaySE(4, "S04/00/310700051", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おばーちゃんの遺体をわかりやすい場所に置いたのは、…お父さんの独断だ。",
 			NULL, "\"Putting Grandma's body in an easy to find location... was Dad's decision.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700052", 256, 64);
@@ -1241,6 +1437,7 @@ void main()
 
 //夏美の父rvS04/00/310700053.「今度こそ勇気を出して、お父さんが家族を守る番なんだ。kvS04/00/310700054.…自分の背中を押してもらうために、わざと見つかる場所に置いたんだんだよ」
 	PlaySE(4, "S04/00/310700053", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「今度こそ勇気を出して、お父さんが家族を守る番なんだ。",
 			NULL, "\"It's time to be courageous, Dad is the number one protector of this family.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700054", 256, 64);
@@ -1250,12 +1447,14 @@ void main()
 
 //夏美の母rvS04/00/310600171.「……なっ、あなたっ…？！」
 	PlaySE(4, "S04/00/310600171", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……なっ、あなたっ…？！」",
 			NULL, "\"......Wha, you...?!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700055.「大丈夫だよ、夏美。kvS04/00/310700056.これからはもう、大丈夫。kvS04/00/310700057.お父さんは、…逃げたりしないから」
 	PlaySE(4, "S04/00/310700055", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「大丈夫だよ、夏美。",
 			NULL, "\"It's all right, Natsumi.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700056", 256, 64);
@@ -1268,23 +1467,27 @@ void main()
 
 //夏美rvS04/36/310101057.「…うぅっ、うう…っ！」
 	PlaySE(4, "S04/36/310101057", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…うぅっ、うう…っ！」",
 			NULL, "\"...Uuu, uuu...!\"", Line_Normal);
 	ClearMessage();
 
 //r泣きじゃくって私は、おとーさんの胸に顔を埋める。…やっぱり、おとーさんだ。優しくて強くて、ちゃんと家族のことを心から大切に思ってくれていたんだ…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "泣きじゃくって私は、おとーさんの胸に顔を埋める。…やっぱり、おとーさんだ。優しくて強くて、ちゃんと家族のことを心から大切に思ってくれていたんだ…。",
 			NULL, "While crying, I stuffed my face into Dad's chest. ...This was Dad, after all. Kind and strong, he cared about the family from the bottom of his heart...", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600172.「………」
 	PlaySE(4, "S04/00/310600172", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700058.「春子、わかってくれるよな？kvS04/00/310700059.　…な？　私は自首して、罪を償ってくる。kvS04/00/310700060.もちろん、お前たちは知らぬ存ぜぬで通せばいい。kvS04/00/310700061.そうして私が罪を償って帰ってきたらまた、家族みんなで仲良く幸せに暮らそう…」
 	PlaySE(4, "S04/00/310700058", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「春子、わかってくれるよな？",
 			NULL, "\"Haruko, do you understand?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700059", 256, 64);
@@ -1299,29 +1502,34 @@ void main()
 	ClearMessage();
 
 //rおとーさんが、遥か遠くにある希望を見つめるような優しい眼差しを、おかーさんに向ける。それを見据えて、おかーさんの顔が一瞬フッとほころんだけど、
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんが、遥か遠くにある希望を見つめるような優しい眼差しを、おかーさんに向ける。それを見据えて、おかーさんの顔が一瞬フッとほころんだけど、",
 			NULL, "Dad turned to Mom and offered her a hopeful gaze. Looking at that, Mom's face began to open up for a moment. However,", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600173.「——もう、おしまいね…」
 	PlaySE(4, "S04/00/310600173", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——もう、おしまいね…」",
 			NULL, "\"...It's already done...\"", Line_Normal);
 	ClearMessage();
 
 //rそう、吐き捨てるように言った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう、吐き捨てるように言った。",
 			NULL, "Like that, she spat out those words.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101058.「おかーさん…」
 	PlaySE(4, "S04/36/310101058", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おかーさん…」",
 			NULL, "\"Mom...\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700062.「春子…。kvS04/00/310700063.このままでは絶対に、私たちは幸せになんかなれやしないんだ。kvS04/00/310700064.わかってくれ」
 	PlaySE(4, "S04/00/310700062", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「春子…。",
 			NULL, "\"Haruko...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700063", 256, 64);
@@ -1334,6 +1542,7 @@ void main()
 
 //夏美の父rvS04/00/310700065.「人には言えないような、良心に反するような後ろめたい秘密を隠し持ったままでは、人は絶対に、絶対に、幸福にはなれないんだよ。kvS04/00/310700066.…なぁ、夏美もそう思うだろ？」
 	PlaySE(4, "S04/00/310700065", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「人には言えないような、良心に反するような後ろめたい秘密を隠し持ったままでは、人は絶対に、絶対に、幸福にはなれないんだよ。",
 			NULL, "\"When people carry a secret like this in the back of their conscience they definitely, absolutely cannot be happy.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700066", 256, 64);
@@ -1342,33 +1551,39 @@ void main()
 	ClearMessage();
 
 //r私はじっと、おとーさんを見つめ返す。…でも、私はどう答えていいのか、わからなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私はじっと、おとーさんを見つめ返す。…でも、私はどう答えていいのか、わからなかった。",
 			NULL, "I firmly looked back at Dad. ...But I didn't know how to answer.", Line_Normal);
 	ClearMessage();
 
 //rおとーさんの言ってることが正しいってことは、わかってる。…でも、おとーさん。そんなこと言って、本当に大丈夫なの？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんの言ってることが正しいってことは、わかってる。…でも、おとーさん。そんなこと言って、本当に大丈夫なの？",
 			NULL, "I understood that Dad was speaking the truth. ...But Dad. Is it really ok to say that?", Line_Normal);
 	ClearMessage();
 
 //r今のおかーさんは、…おかしいよ。どう見ても正常じゃない。そう言って説得しても無駄かもしれないし、おとーさんの心のこもった言葉を、本当に理解してくれるんだろうか…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "今のおかーさんは、…おかしいよ。どう見ても正常じゃない。そう言って説得しても無駄かもしれないし、おとーさんの心のこもった言葉を、本当に理解してくれるんだろうか…？",
 			NULL, "Right now, Mom was... acting strange. No matter how you looked at it, it was abnormal. It may be useless to try persuading her, could she really understand Dad's heartfelt words...?", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101059.「……おとーさんッ…」
 	PlaySE(4, "S04/36/310101059", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……おとーさんッ…」",
 			NULL, "\"......Dad...\"", Line_Normal);
 	ClearMessage();
 
 //rおとーさんにそう、伝えたかった。だけどおかーさんがすぐ側にいては、口に出せるはずもない。そんな、私の思いをおとーさんに伝えたくて、私はおとーさんの瞳を見つめ続けると、
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんにそう、伝えたかった。だけどおかーさんがすぐ側にいては、口に出せるはずもない。そんな、私の思いをおとーさんに伝えたくて、私はおとーさんの瞳を見つめ続けると、",
 			NULL, "I wanted to tell Dad as much. However, I couldn't bring myself to say it with Mom standing beside us. I wanted to communicate my feelings to Dad, and as I continued staring into his eyes,", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700067.「夏美、大丈夫。kvS04/00/310700068.後はお父さんに任せなさい」
 	PlaySE(4, "S04/00/310700067", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美、大丈夫。",
 			NULL, "\"Natsumi, it's all right.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700068", 256, 64);
@@ -1377,34 +1592,40 @@ void main()
 	ClearMessage();
 
 //rおとーさんの目が、全てわかったとでも答えるように、おだやかに優しく笑う。それは、勇気を出して自分を頼れという、あたたかで強い意志のあらわれだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんの目が、全てわかったとでも答えるように、おだやかに優しく笑う。それは、勇気を出して自分を頼れという、あたたかで強い意志のあらわれだった。",
 			NULL, "Dad's eyes seemed to convey an answer that he understood everything, then he gently smiled and laughed. I felt the warmth of his strong will and thought that I could rely on his courage.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101060.「……おとーさん」
 	PlaySE(4, "S04/36/310101060", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……おとーさん」",
 			NULL, "\"......Dad.\"", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700069.「…いいんだ、夏美」
 	PlaySE(4, "S04/00/310700069", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…いいんだ、夏美」",
 			NULL, "\"...It's all right, Natsumi.\"", Line_Normal);
 	ClearMessage();
 
 //rそういって、おとーさんはゆっくりと頷いた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そういって、おとーさんはゆっくりと頷いた。",
 			NULL, "After saying that, Dad slowly nodded.", Line_Normal);
 	ClearMessage();
 
 //r…ねぇ、おとーさん。…私、本当に、おとーさんを信じてもいいの？　…本当に、本当に、頼りにしてもいいの？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…ねぇ、おとーさん。…私、本当に、おとーさんを信じてもいいの？　…本当に、本当に、頼りにしてもいいの？",
 			NULL, "...Hey, Dad. ...Can I really believe in you? ...Can I truly, honestly count on you?", Line_Normal);
 	ClearMessage();
 
 //夏美の父rvS04/00/310700070.「大丈夫だよ、夏美。kvS04/00/310700071.あとはお父さんに任せなさい。kvS04/00/310700072.お前と春子は元通り、いつも通りに生活すればそれで、kvS04/00/310700073.————ぐはッ？！」
 	PlaySE(4, "S04/00/310700070", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「大丈夫だよ、夏美。",
 			NULL, "\"It's ok, Natsumi.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310700071", 256, 64);
@@ -1424,6 +1645,7 @@ void main()
 
 //夏美rvS04/36/310101061.「————ッ？！」
 	PlaySE(4, "S04/36/310101061", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————ッ？！」",
 			NULL, "\"...?!\"", Line_Normal);
 	ClearMessage();
@@ -1432,33 +1654,39 @@ void main()
 	FadeFilm( 500, TRUE );
 
 //r…おとーさんの言葉を、最後まで聞く前に。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…おとーさんの言葉を、最後まで聞く前に。",
 			NULL, "...Before I could hear the end of Dad's words.", Line_Normal);
 	ClearMessage();
 
 //r血しぶきが飛んできて、…その跳ねた紅が、私の目に、入った——。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "血しぶきが飛んできて、…その跳ねた紅が、私の目に、入った——。",
 			NULL, "Blood splattered into the air... a splash of red hit my eyes...", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101062.「……あ…！」
 	PlaySE(4, "S04/36/310101062", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……あ…！」",
 			NULL, "\"......Ah...!\"", Line_Normal);
 	ClearMessage();
 
 //r視界に、真っ赤なフィルターがかかる。！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "視界に、真っ赤なフィルターがかかる。！",
 			NULL, "A bright red filter was laid over my field of view!", Line_Normal);
 	ClearMessage();
 
 //rそして、私のすぐ前で目を見開いたおとーさんの口から、どろっとしたものがこぼれ出たとき、…おとーさんの喉から、包丁の切っ先が突き出てくるのが、…見えた…
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、私のすぐ前で目を見開いたおとーさんの口から、どろっとしたものがこぼれ出たとき、…おとーさんの喉から、包丁の切っ先が突き出てくるのが、…見えた…",
 			NULL, "And right in front of me, a glob of liquid was spilling from Dad's mouth... The tip of a knife was sticking out of Dad's throat... I could see it...", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101063.「おっ…おとー、さんっ…？kvS04/36/310101064.　——ッ？！」
 	PlaySE(4, "S04/36/310101063", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おっ…おとー、さんっ…？",
 			NULL, "\"D... Da-d...?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101064", 256, 64);
@@ -1468,6 +1696,7 @@ void main()
 
 //夏美の母rvS04/00/310600174.「——————」
 	PlaySE(4, "S04/00/310600174", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——————」",
 			NULL, "\"...\"", Line_Normal);
 	ClearMessage();
@@ -1477,82 +1706,102 @@ void main()
 	DrawScene( "kimi_o1_03", 500 );
 
 //r異様な気配に、恐る恐る見上げる。…その先にはおかーさんが血のしたたる包丁を手にして、…さっきまで動いて、しゃべって、息をしていたおとーさんを、…傲然と見下ろしていた…。
-	OutputLine(NULL, "異様な気配に、恐る恐る見上げる。…その先にはおかーさんが血のしたたる包丁を手にして、…さっきまで動いて、しゃべって、息をしていたおとーさんを、…傲然と見下ろしていた…。",
-			NULL, "I gawked in horror at this unusual sight. Beyond that, Mom was cleaning the blood off the kitchen knife with her hands... She stood arrogantly, looking down at Dad... who was moving, talking and breathing just a moment ago...", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "異様な気配に、恐る恐る見上げる。…その先にはおかーさんが血のしたたる包丁を手にして、…さっきまで動いて、しゃべって、息をしていたおとーさんを、…傲然と見下ろしていた…。",
+				NULL, "<size=-2>I gawked in horror at this unusual sight. Beyond that, Mom was cleaning the blood off the kitchen knife with her hands... She stood arrogantly, looking down at Dad... who was moving, talking and breathing just a moment ago...</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "異様な気配に、恐る恐る見上げる。…その先にはおかーさんが血のしたたる包丁を手にして、…さっきまで動いて、しゃべって、息をしていたおとーさんを、…傲然と見下ろしていた…。",
+				NULL, "I gawked in horror at this unusual sight. Beyond that, Mom was cleaning the blood off the kitchen knife with her hands... She stood arrogantly, looking down at Dad... who was moving, talking and breathing just a moment ago...", Line_Normal);
+	}
 	ClearMessage();
 
 //夏美rvS04/36/310101065.「あっ…あぁ…」
 	PlaySE(4, "S04/36/310101065", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あっ…あぁ…」",
 			NULL, "\"Aah... Aaah...\"", Line_Normal);
 	ClearMessage();
 
 //r言葉が出なかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "言葉が出なかった。",
 			NULL, "I couldn't get any words out.", Line_Normal);
 	ClearMessage();
 
 //rあまりの出来事に、涙も、声も、息すらも出てこない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あまりの出来事に、涙も、声も、息すらも出てこない。",
 			NULL, "Given the extreme circumstances, my tears, my voice, and even my breath wouldn't come out.", Line_Normal);
 	ClearMessage();
 
 //rおとーさん、…まさか、…死んじゃ、った、の…っ？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさん、…まさか、…死んじゃ、った、の…っ？",
 			NULL, "Dad... No way... Is he dead...?", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101066.「………」
 	PlaySE(4, "S04/36/310101066", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //r呆然と、私の目の前に倒れ伏すおとーさんに目を向ける。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "呆然と、私の目の前に倒れ伏すおとーさんに目を向ける。",
 			NULL, "Suddenly, I looked at Dad as he fell down in front of me.", Line_Normal);
 	ClearMessage();
 
 //r震えが止まらない。逃げなきゃ、ここから立ち去らなきゃと必死に頭の中で叫び続けても、…私の足はまるで自分のものではなくなってしまったように、ピクリとも動かない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "震えが止まらない。逃げなきゃ、ここから立ち去らなきゃと必死に頭の中で叫び続けても、…私の足はまるで自分のものではなくなってしまったように、ピクリとも動かない。",
 			NULL, "I couldn't stop trembling. I had to get away, in my head I was desperately shouting that I had to get out of here... but my legs didn't feel like my own, they could barely move.", Line_Normal);
 	ClearMessage();
 
 //rそれでも、わずかに動く手に力を込めて少しでも動こうとしたとき、…頭上から、鼻をすする音が聞こえて、私は怯えながら顔を、上げた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それでも、わずかに動く手に力を込めて少しでも動こうとしたとき、…頭上から、鼻をすする音が聞こえて、私は怯えながら顔を、上げた。",
 			NULL, "Still, when I tried to move my hands using all my strength... I heard a sniffling sound overhead and fearfully looked up.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600175.「……お父さんが悪いのよ…」
 	PlaySE(4, "S04/00/310600175", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……お父さんが悪いのよ…」",
 			NULL, "\"......Dad was an awful person...\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんの声は、涙に震えていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんの声は、涙に震えていた。",
 			NULL, "Mom's voice trembled with tears.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101067.「お、おかー、さんっ…？」
 	PlaySE(4, "S04/36/310101067", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お、おかー、さんっ…？」",
 			NULL, "\"M-Mom...?\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600176.「お父さんが全て悪いッッ！！」
 	PlaySE(4, "S04/00/310600176", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お父さんが全て悪いッッ！！」",
 			NULL, "\"Dad was an absolutely awful person!!", Line_Normal);
 	ClearMessage();
 
 //rおかーさんは怒りを全て目の前で動かなくなった人に転嫁するように、荒々しい声を立てる。長くてキレイな髪がふわりと揺れて、鬼のような形相が露になった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんは怒りを全て目の前で動かなくなった人に転嫁するように、荒々しい声を立てる。長くてキレイな髪がふわりと揺れて、鬼のような形相が露になった。",
 			NULL, "Mom spoke in a rough voice, seeming to push her anger onto the people in front of her. Her long and beautiful hair swayed and floated in the air. Her demon-like form had revealed itself.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600177.「私は悪くない。kvS04/00/310600178.全部、お父さんのせいなの！kvS04/00/310600179.　せっかくうまくいってたのに！kvS04/00/310600180.　邪魔者は消えて、せっかく全部、元通りになろうとしてたのに！」
 	PlaySE(4, "S04/00/310600177", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「私は悪くない。",
 			NULL, "\"I'm not an awful person.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600178", 256, 64);
@@ -1568,12 +1817,14 @@ void main()
 
 //夏美rvS04/36/310101068.「そ、そんなっ…！」
 	PlaySE(4, "S04/36/310101068", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そ、そんなっ…！」",
 			NULL, "\"Th-that's...!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600181.「みんなが悪いの。kvS04/00/310600182.みんなが協力してくれないから悪いの」
 	PlaySE(4, "S04/00/310600181", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「みんなが悪いの。",
 			NULL, "\"Everyone is awful.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600182", 256, 64);
@@ -1583,6 +1834,7 @@ void main()
 
 //夏美の母rvS04/00/310600183.「オヤシロさまの祟りだと騒いだり、死体をわざわざ見つかるようなところに捨てたりしてkvS04/00/310600184.………みんなが、家族が、私の邪魔をするのッ！kvS04/00/310600185.　みんな、私の家族が悪いのよッ！」
 	PlaySE(4, "S04/00/310600183", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「オヤシロさまの祟りだと騒いだり、死体をわざわざ見つかるようなところに捨てたりして",
 			NULL, "\"Making a racket about Oyashiro-sama's curse, or throwing away corpses in easy to find locations.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600184", 256, 64);
@@ -1595,22 +1847,26 @@ void main()
 
 //夏美rvS04/36/310101069.「きゃぁあぁっっ！！」
 	PlaySE(4, "S04/36/310101069", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「きゃぁあぁっっ！！」",
 			NULL, "\"Kyaaaa!!\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんが私の髪をわしづかみにする。おばーちゃんが以前なら毎日結ってくれていた、私の自慢の髪。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんが私の髪をわしづかみにする。おばーちゃんが以前なら毎日結ってくれていた、私の自慢の髪。",
 			NULL, "Mom grabbed ahold of my hair. The hair that Grandma used to tie every day, my lovely hair.", Line_Normal);
 	ClearMessage();
 
 //rその髪がおかーさんにぐしゃぐしゃに握りつぶされ、まるで引きちぎるように荒々しくかき乱された。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その髪がおかーさんにぐしゃぐしゃに握りつぶされ、まるで引きちぎるように荒々しくかき乱された。",
 			NULL, "That hair was being clamped down by Mom, roughly handled like it was about to be torn out.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101070.「いっ、痛いッ！kvS04/36/310101071.　お、おかーさん、…痛いよッ！！」
 	PlaySE(4, "S04/36/310101070", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いっ、痛いッ！",
 			NULL, "Th-that hurts!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101071", 256, 64);
@@ -1620,6 +1876,7 @@ void main()
 
 //夏美の母rvS04/00/310600186.「どうしてよ？！kvS04/00/310600187.　どうして邪魔するのよッ？！kvS04/00/310600188.　家族なのに…！kvS04/00/310600189.　家族なのにッ！kvS04/00/310600190.　私たちは………家族だったのにッ！」
 	PlaySE(4, "S04/00/310600186", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「どうしてよ？！",
 			NULL, "\"Why?!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600187", 256, 64);
@@ -1643,29 +1900,34 @@ void main()
 	Wait( 200 );
 
 //rそう叫んで、おかーさんは私を突き飛ばす。そのあおりで掴まれていた私の髪が抜け、数本が束になって床に落ちた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう叫んで、おかーさんは私を突き飛ばす。そのあおりで掴まれていた私の髪が抜け、数本が束になって床に落ちた。",
 			NULL, "Mom tossed me away after screaming that. Some of the hair she was clutching tore out, several piece fell to the floor in a bunch.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101072.「…ぐっ、…ッ？！」
 	PlaySE(4, "S04/36/310101072", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…ぐっ、…ッ？！」",
 			NULL, "\"...Guh...?!\"", Line_Normal);
 	ClearMessage();
 
 //r叩きつけられた肩と頭の痛みに顔をしかめながら、私は顔を上げて、…硬直する。目を向けた先ではおかーさんは包丁を手に、…くすくすと笑っていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "叩きつけられた肩と頭の痛みに顔をしかめながら、私は顔を上げて、…硬直する。目を向けた先ではおかーさんは包丁を手に、…くすくすと笑っていた。",
 			NULL, "Enduring a headache and the pain in my shoulder, I raised my head with a frown on my face... and I steadied myself. I turned my eyes toward Mom, holding the kitchen knife... she was laughing maniacally.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101073.「お、おかーさん…？！」
 	PlaySE(4, "S04/36/310101073", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お、おかーさん…？！」",
 			NULL, "\"M-Mom...?!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600191.「人に誉められたの。kvS04/00/310600192.キレイな髪だって。kvS04/00/310600193.肌が白くてうらやましいって」
 	PlaySE(4, "S04/00/310600191", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「人に誉められたの。",
 			NULL, "\"People praised me.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600192", 256, 64);
@@ -1678,6 +1940,7 @@ void main()
 
 //夏美の母rvS04/00/310600194.「…ご近所の人が、私を誉めてくれるの。kvS04/00/310600195.新しいワンピースを着ればキレイな服だと誉めてくれ、髪を切れば似合うねって気づいてくれる」
 	PlaySE(4, "S04/00/310600194", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…ご近所の人が、私を誉めてくれるの。",
 			NULL, "\"...The neighbors praised me.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600195", 256, 64);
@@ -1687,6 +1950,7 @@ void main()
 
 //夏美の母rvS04/00/310600196.「おしゃれの話に花が咲いて、毎日が楽しくて…。kvS04/00/310600197.こんな素敵な場所で、家族そろって仲良く暮らしていけるなんて…夢が叶ったと思った。kvS04/00/310600198.こんな生活、ずっと夢に見ていたのよ…」
 	PlaySE(4, "S04/00/310600196", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おしゃれの話に花が咲いて、毎日が楽しくて…。",
 			NULL, "\"It's a stylish story, flowers are blooming, every day is fun...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600197", 256, 64);
@@ -1698,42 +1962,50 @@ void main()
 	ClearMessage();
 
 //rおかーさんは陶酔したような潤んだ瞳で、うっとりと言う。目の前に、血を流して倒れているおとーさんがいることなど、すっかり忘れてしまっているかのように。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんは陶酔したような潤んだ瞳で、うっとりと言う。目の前に、血を流して倒れているおとーさんがいることなど、すっかり忘れてしまっているかのように。",
 			NULL, "Mom's eyes looked intoxicated while she said that in a trance. As if she had completely forgotten that Dad was lying right in front of her, spewing blood.", Line_Normal);
 	ClearMessage();
 
 //rなにをっ、…なにを言ってるの、この人はッ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なにをっ、…なにを言ってるの、この人はッ？！",
 			NULL, "What... what are you talking about, who is this person?!", Line_Normal);
 	ClearMessage();
 
 //rあれだけ仲が良くて、…普段は素直になれないけど、本当はとっても大好きなんだって、……話してくれたおとーさんをこんな目にあわせてッッ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あれだけ仲が良くて、…普段は素直になれないけど、本当はとっても大好きなんだって、……話してくれたおとーさんをこんな目にあわせてッッ？！",
 			NULL, "They had such a close relationship... Dad was usually meek, but he loved her so much...... Could the person in front of me really be the person Dad told me stories about?!", Line_Normal);
 	ClearMessage();
 
 //rそれに、…それに自分の母親に、あんなひどい仕打ちをしておいてッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それに、…それに自分の母親に、あんなひどい仕打ちをしておいてッ！！",
 			NULL, "Besides... my own mother was capable of something so terrible!!", Line_Normal);
 	ClearMessage();
 
 //rなのに、…『家族』？！　そんなの、誰が信じるのよッッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なのに、…『家族』？！　そんなの、誰が信じるのよッッ！！",
 			NULL, "And yet... <i>family</i>?! Who believes that?!", Line_Normal);
 	ClearMessage();
 
 //r怖い…！　怖い怖い、こわいッッ…！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "怖い…！　怖い怖い、こわいッッ…！！",
 			NULL, "I'm scared...! This is scary, scary, s c a r y...!!", Line_Normal);
 	ClearMessage();
 
 //rこの人は、おかーさんじゃない…！　違う違う、もう、…人ですらないッ…！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "この人は、おかーさんじゃない…！　違う違う、もう、…人ですらないッ…！！",
 			NULL, "This person isn't my Mom...! She's someone different... she isn't even a person...!!", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600199.「前の町では、そんなことはなかったの。kvS04/00/310600200.ここに来て初めて、夢が叶ったの…」
 	PlaySE(4, "S04/00/310600199", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「前の町では、そんなことはなかったの。",
 			NULL, "\"There was nothing like this in our old town.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600200", 256, 64);
@@ -1743,6 +2015,7 @@ void main()
 
 //夏美の母rvS04/00/310600201.「私なんか、いなくても良かった。kvS04/00/310600202.私は、“公由家の人”。kvS04/00/310600203.…それだけ。kvS04/00/310600204.それは、私でも、私じゃなくても、誰でも良かった。kvS04/00/310600205.…だれも私のことなんか、見てくれなかった」
 	PlaySE(4, "S04/00/310600201", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「私なんか、いなくても良かった。",
 			NULL, "\"The life I had there was no good.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600202", 256, 64);
@@ -1761,6 +2034,7 @@ void main()
 
 //夏美の母rvS04/00/310600206.「でも、この街は違う！kvS04/00/310600207.　ここには私の居場所があるの！kvS04/00/310600208.　私はここでずっと幸せに暮らしていたかったの！kvS04/00/310600209.　………それなのに！」
 	PlaySE(4, "S04/00/310600206", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「でも、この街は違う！",
 			NULL, "\"But this town is different!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600207", 256, 64);
@@ -1779,6 +2053,7 @@ void main()
 	Wait( 200 );
 
 //rドンッ！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ドンッ！",
 			NULL, "Bang!", Line_Normal);
 	ClearMessage();
@@ -1788,17 +2063,20 @@ void main()
 
 //夏美rvS04/36/310101074.「——ひっ？！」
 	PlaySE(4, "S04/36/310101074", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——ひっ？！」",
 			NULL, "\"...Hii?!\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんは、憎々しげに足を踏み鳴らす。それに身をすくめて怯えるしか、私にはできなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんは、憎々しげに足を踏み鳴らす。それに身をすくめて怯えるしか、私にはできなかった。",
 			NULL, "Mom stomped her feet in disgust. I squeezed myself in fear, unable to do anything.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600210.「おかあさんが勝手なことをして、私の生活をぶち壊しにしたッ！kvS04/00/310600211.　あの人が、勝手なことをして、私の邪魔をしたッ！」
 	PlaySE(4, "S04/00/310600210", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おかあさんが勝手なことをして、私の生活をぶち壊しにしたッ！",
 			NULL, "\"Mother did something selfish and ruined my life!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600211", 256, 64);
@@ -1808,6 +2086,7 @@ void main()
 
 //夏美の母rvS04/00/310600212.「…警察に自首？kvS04/00/310600213.　あははははッ！kvS04/00/310600214.　笑い話もいい加減にして欲しいわッ。kvS04/00/310600215.　警察に、私の幸せの何がわかるっていうのよ」
 	PlaySE(4, "S04/00/310600212", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…警察に自首？",
 			NULL, "\"...Surrender to the police?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600213", 256, 64);
@@ -1823,6 +2102,7 @@ void main()
 
 //夏美の母rvS04/00/310600216.「みんな敵よッ！kvS04/00/310600217.　敵！　敵！　敵！」
 	PlaySE(4, "S04/00/310600216", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「みんな敵よッ！",
 			NULL, "\"Everyone is my enemy!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600217", 256, 64);
@@ -1831,17 +2111,20 @@ void main()
 	ClearMessage();
 
 //rおかーさんの憎しみに満ちた声が、部屋中にこだました。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんの憎しみに満ちた声が、部屋中にこだました。",
 			NULL, "Mom's hateful voice echoed throughout the room.", Line_Normal);
 	ClearMessage();
 
 //r…てき、てき、てき。…敵。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…てき、てき、てき。…敵。",
 			NULL, "Enemy, enemy, enemy. ...Enemy.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600218.「家族の誰も、幸せになろうなんて努力、しなかった。kvS04/00/310600219.誰も手を汚そうとしないから、私がやってあげたの」
 	PlaySE(4, "S04/00/310600218", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「家族の誰も、幸せになろうなんて努力、しなかった。",
 			NULL, "\"Nobody in my family made any effort to make me happy.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600219", 256, 64);
@@ -1851,6 +2134,7 @@ void main()
 
 //夏美の母rvS04/00/310600220.「…それを何よッ？！kvS04/00/310600221.　感謝の言葉ひとつ口に出来やしない恩知らずばっかり！」
 	PlaySE(4, "S04/00/310600220", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…それを何よッ？！",
 			NULL, "\"...What that?!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600221", 256, 64);
@@ -1860,6 +2144,7 @@ void main()
 
 //夏美の母rvS04/00/310600222.「おばーちゃんが死んで良かったって、思ったでしょう？kvS04/00/310600223.　ホッとしたでしょう？」
 	PlaySE(4, "S04/00/310600222", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おばーちゃんが死んで良かったって、思ったでしょう？",
 			NULL, "\"It was fortunate that Grandma died, wasn't that what you thought?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600223", 256, 64);
@@ -1869,6 +2154,7 @@ void main()
 
 //夏美の母rvS04/00/310600224.「おばーちゃんがおかしなことをやったせいで…、kvS04/00/310600225.気味の悪いおまじないを唱えたり、まじないの儀式をやらかしたりして、…ご近所から変な目で見られて…、kvS04/00/310600226.みんな、いやな思いをしたじゃないの？！」
 	PlaySE(4, "S04/00/310600224", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おばーちゃんがおかしなことをやったせいで…、",
 			NULL, "\"Grandma was doing strange things...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600225", 256, 64);
@@ -1881,12 +2167,14 @@ void main()
 
 //夏美rvS04/36/310101075.「わ…私はッ…」
 	PlaySE(4, "S04/36/310101075", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「わ…私はッ…」",
 			NULL, "\"I... I was...\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600227.「私は何よッ？！kvS04/00/310600228.　どうしてよッ？！kvS04/00/310600229.　それを私が殺してやったんじゃないの。kvS04/00/310600230.なのに、なんでみんな協力しないのよ？！kvS04/00/310600231.　なんで私を、もとの生活に戻らせてくれないのッ？！」
 	PlaySE(4, "S04/00/310600227", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「私は何よッ？！",
 			NULL, "\"You were what?!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600228", 256, 64);
@@ -1904,53 +2192,63 @@ void main()
 	ClearMessage();
 
 //r包丁を手に、怒りと恨みに突き動かされるように喋っているおかーさん。顔は涙でぐしゃぐしゃに濡れていたけれど、怒っているのか哀しいのかは、よくわからなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "包丁を手に、怒りと恨みに突き動かされるように喋っているおかーさん。顔は涙でぐしゃぐしゃに濡れていたけれど、怒っているのか哀しいのかは、よくわからなかった。",
 			NULL, "Mom divulged her anger and resentment with a kitchen knife in hand. My face was wet with tears, but I wasn't sure if I felt angry or sad.", Line_Normal);
 	ClearMessage();
 
 //rおかしい、…おかーさん、おかしいよ！　おかーさんの言う家族って、いったいなんなのッ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかしい、…おかーさん、おかしいよ！　おかーさんの言う家族って、いったいなんなのッ？！",
 			NULL, "Strange... Mom, this is strange! What on earth are you saying about your family?!", Line_Normal);
 	ClearMessage();
 
 //r私のおかーさんは、こんな身勝手な考えを平然と言ってしまえるような人だったのっ？　そんなの、違う！　私のおかーさんじゃないッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私のおかーさんは、こんな身勝手な考えを平然と言ってしまえるような人だったのっ？　そんなの、違う！　私のおかーさんじゃないッ！！",
 			NULL, "Was my Mom the kind of person who could say such selfish things? This isn't right! This isn't my Mom!!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101076.「…うっ、…うううッ！　うぅっ…！！」
 	PlaySE(4, "S04/36/310101076", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…うっ、…うううッ！　うぅっ…！！」",
 			NULL, "\"...Uuu... uuuu! Uuu...!!\"", Line_Normal);
 	ClearMessage();
 
 //r哀しくて…、哀しくて…。涙がこみあげてくる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "哀しくて…、哀しくて…。涙がこみあげてくる。",
 			NULL, "Sad... so sad... Tears began welling up.", Line_Normal);
 	ClearMessage();
 
 //r何が哀しいのか、はっきりとはわからない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "何が哀しいのか、はっきりとはわからない。",
 			NULL, "I wasn't sure what was so sad.", Line_Normal);
 	ClearMessage();
 
 //rだけど、大切にしてたものはもう永遠に失くなってしまったんだと思うたびに、ぼろぼろと両目を伝う涙は止め処もなく流れ落ちて、床にいくつもの染みを作っていった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だけど、大切にしてたものはもう永遠に失くなってしまったんだと思うたびに、ぼろぼろと両目を伝う涙は止め処もなく流れ落ちて、床にいくつもの染みを作っていった。",
 			NULL, "However, every time I thought about the things I cherished being gone forever, tears dribbled down from both my eyes, nonstop, leaving a number of stains on the floor.", Line_Normal);
 	ClearMessage();
 
 //r大切にしていたもの…温かくて、かけがえのない、私の家族。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "大切にしていたもの…温かくて、かけがえのない、私の家族。",
 			NULL, "What I cherish most was... my gentle, irreplaceable family.", Line_Normal);
 	ClearMessage();
 
 //r優しくて…、温かくて…、いつも心を一つにして身を寄せ合っていた家族、…だったはずなのに…ッッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "優しくて…、温かくて…、いつも心を一つにして身を寄せ合っていた家族、…だったはずなのに…ッッ！！",
 			NULL, "So kind... so warm... my family always acted like single unified heart when we were together... that's what it should have been...!!", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600232.「夏美…。kvS04/00/310600233.あんたは…どうなの…？」
 	PlaySE(4, "S04/00/310600232", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美…。",
 			NULL, "\"...Natsumi...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600233", 256, 64);
@@ -1960,39 +2258,46 @@ void main()
 
 //夏美rvS04/36/310101077.「——え…？！」
 	PlaySE(4, "S04/36/310101077", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——え…？！」",
 			NULL, "\"...Huh...?!\"", Line_Normal);
 	ClearMessage();
 
 //rはっ、と我に返って顔を戻すと、おかーさんが真顔で私を見ていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "はっ、と我に返って顔を戻すと、おかーさんが真顔で私を見ていた。",
 			NULL, "After returning her attention to me, Mom looked at me with a serious expression.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600234.「あんたも…敵…？」
 	PlaySE(4, "S04/00/310600234", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あんたも…敵…？」",
 			NULL, "\"Are you also... an enemy...?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101078.「なっ、…なにをっ…？！」
 	PlaySE(4, "S04/36/310101078", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なっ、…なにをっ…？！」",
 			NULL, "\"Wh... what...?!\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさん、何を言ってるの…？　言ってる意味がわかんない！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさん、何を言ってるの…？　言ってる意味がわかんない！",
 			NULL, "Mom, what are you saying...? I don't know what you mean!", Line_Normal);
 	ClearMessage();
 
 //rどうして、私が敵なのっ？！　何もしていない！　私は何もしていないのに、なんでっ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "どうして、私が敵なのっ？！　何もしていない！　私は何もしていないのに、なんでっ？！",
 			NULL, "Why am I your enemy?! I haven't done anything! I haven't done anything, so why?!", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600235.「あんたも…敵よねぇ。kvS04/00/310600236.私の幸せを邪魔する子…！kvS04/00/310600237.　許さない！kvS04/00/310600238.　あんたも敵なんだッ！」
 	PlaySE(4, "S04/00/310600235", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あんたも…敵よねぇ。",
 			NULL, "\"You are... an enemy, aren't you?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600236", 256, 64);
@@ -2008,6 +2313,7 @@ void main()
 
 //夏美rvS04/36/310101079.「いっ、…いやぁあぁッッ！！」
 	PlaySE(4, "S04/36/310101079", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いっ、…いやぁあぁッッ！！」",
 			NULL, "\"N... Noooo!!\"", Line_Normal);
 	ClearMessage();
@@ -2017,6 +2323,7 @@ void main()
 	PlaySE(3, "addse14", 256, 64);
 
 //r自分の悲鳴を合図に、だっと駆け出した。おばーちゃんの部屋へ、咄嗟に逃げ込む。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "自分の悲鳴を合図に、だっと駆け出した。おばーちゃんの部屋へ、咄嗟に逃げ込む。",
 			NULL, "I caught myself screaming and began to run hard. I quickly escaped to Grandma's room.", Line_Normal);
 	ClearMessage();
@@ -2026,6 +2333,7 @@ void main()
 
 //夏美の母rvS04/00/310600239.「…夏美。kvS04/00/310600240.逃げなくていいのよ、夏美ぃ…？」
 	PlaySE(4, "S04/00/310600239", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…夏美。",
 			NULL, "\"...Natsumi.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600240", 256, 64);
@@ -2034,16 +2342,19 @@ void main()
 	ClearMessage();
 
 //rおかーさんは甘く優しい声で私の名前を呼びながら、ゆっくりと包丁を手に歩いてくる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんは甘く優しい声で私の名前を呼びながら、ゆっくりと包丁を手に歩いてくる。",
 			NULL, "Mom called my name in a sweet and gentle voice, slowly walking with the kitchen knife.", Line_Normal);
 	ClearMessage();
 
 //rい、いやだ…。来ないで、おかーさん…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "い、いやだ…。来ないで、おかーさん…。",
 			NULL, "N-no way... Don't come any closer, Mom...", Line_Normal);
 	ClearMessage();
 
 //rおかーさんが、おばーちゃんの部屋の敷居をまたぐ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんが、おばーちゃんの部屋の敷居をまたぐ。",
 			NULL, "Mom crossed the doorway into Grandma's room.", Line_Normal);
 	ClearMessage();
@@ -2051,11 +2362,13 @@ void main()
 	PlayBGM( 1, "denwa2", 128, 0 );
 
 //rジリリーン…ジリリーン…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ジリリーン…ジリリーン…。",
 			NULL, "Rrriiing... rrriiing...", Line_Normal);
 	ClearMessage();
 
 //r遠くのほうから、…耳障りな電話のベルが聞こえてくる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "遠くのほうから、…耳障りな電話のベルが聞こえてくる。",
 			NULL, "From far away... I heard the painful ringing of the telephone.", Line_Normal);
 	ClearMessage();
@@ -2065,6 +2378,7 @@ void main()
 
 //夏美の母rvS04/00/310600241.「夏美は私が嫌いなんだよね？kvS04/00/310600242.　おばーちゃんを殺した私を、憎んでるんだよね？kvS04/00/310600243.　だから、私が幸せになるのが許せない。kvS04/00/310600244.そうでしょう？」
 	PlaySE(4, "S04/00/310600241", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美は私が嫌いなんだよね？",
 			NULL, "\"Natsumi, you hate me, don't you?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600242", 256, 64);
@@ -2080,6 +2394,7 @@ void main()
 
 //夏美の母rvS04/00/310600245.「おかあさん、何でもわかっちゃうんだから。kvS04/00/310600246.くっくっくっ…。kvS04/00/310600247.でもね、夏美。kvS04/00/310600248.おかあさんもね…、kvS04/00/310600249.そんなあんたが…、kvS04/00/310600250.大っ嫌いだったのよ…！」
 	PlaySE(4, "S04/00/310600245", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おかあさん、何でもわかっちゃうんだから。",
 			NULL, "\"Because Mom knows everything.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600246", 256, 64);
@@ -2100,17 +2415,20 @@ void main()
 	ClearMessage();
 
 //r包丁を手にしたおかーさん。…でも、私はその顔を正視することができなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "包丁を手にしたおかーさん。…でも、私はその顔を正視することができなかった。",
 			NULL, "Mom had the kitchen knife in hand. ...But I couldn't look her in the face.", Line_Normal);
 	ClearMessage();
 
 //rジリリーン…ジリリーン…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ジリリーン…ジリリーン…。",
 			NULL, "Rrriiing... rrriiing...", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101080.「助けて…！kvS04/36/310101081.　助けて…誰か、助けて…っ！！」
 	PlaySE(4, "S04/36/310101080", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「助けて…！",
 			NULL, "\"Help...!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101081", 256, 64);
@@ -2119,6 +2437,7 @@ void main()
 	ClearMessage();
 
 //rあふれて止まらない涙を手で押さえる。…その手もとに、木の葉が１枚、落ちてきた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あふれて止まらない涙を手で押さえる。…その手もとに、木の葉が１枚、落ちてきた。",
 			NULL, "My eyes were overflowing with tears, but I tried to hold them in with my hand. ...On my hand, I noticed a single leaf from a tree.", Line_Normal);
 	ClearMessage();
@@ -2127,17 +2446,20 @@ void main()
 	FadeFilm( 500, TRUE );
 
 //r見上げると、神棚に飾ってある榊の葉が、はらはらと散り落ちている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "見上げると、神棚に飾ってある榊の葉が、はらはらと散り落ちている。",
 			NULL, "As I looked up, I noticed that the sakaki trees decorating the shrine were falling apart.", Line_Normal);
 	ClearMessage();
 
 //r…私たち家族を守ってくれと必死に祈っていたおばーちゃんを失ったオヤシロさまが、もはや守らぬとさじを投げているかのように…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…私たち家族を守ってくれと必死に祈っていたおばーちゃんを失ったオヤシロさまが、もはや守らぬとさじを投げているかのように…。",
 			NULL, "...It seemed that without Grandma's constant prayers to Oyashiro-sama, we were no longer being protected...", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600251.「あんたなんか、大っ嫌い…。kvS04/00/310600252.大っ嫌い…」
 	PlaySE(4, "S04/00/310600251", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あんたなんか、大っ嫌い…。",
 			NULL, "\"I despise you...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600252", 256, 64);
@@ -2146,109 +2468,130 @@ void main()
 	ClearMessage();
 
 //rうわ言のようにつぶやくおかーさんを横目に、私は必死で考えていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "うわ言のようにつぶやくおかーさんを横目に、私は必死で考えていた。",
 			NULL, "While Mom murmured horrible things with a grin on her face, I was frantically thinking.", Line_Normal);
 	ClearMessage();
 
 //rジリリーン…ジリリーン…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ジリリーン…ジリリーン…。",
 			NULL, "Rrriiing... rrriiing...", Line_Normal);
 	ClearMessage();
 
 //rジリリーン…ジリリーン…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ジリリーン…ジリリーン…。",
 			NULL, "Rrriiing... rrriiing...", Line_Normal);
 	ClearMessage();
 
 //r鳴り止まぬ電話を見つめながら、私は必死で考える。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "鳴り止まぬ電話を見つめながら、私は必死で考える。",
 			NULL, "I frantically thought to myself while staring at the ringing telephone.", Line_Normal);
 	ClearMessage();
 
 //r…私、何がいけなかったの？　どうしてこんなことになったの？　私が、どんな悪いことをしたっていうのっ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…私、何がいけなかったの？　どうしてこんなことになったの？　私が、どんな悪いことをしたっていうのっ？！",
 			NULL, "...What's wrong with me? How did it come to this? What bad thing did I do?!", Line_Normal);
 	ClearMessage();
 
 //rいつ？　何を？　なんで！　どうしてっ？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "いつ？　何を？　なんで！　どうしてっ？！",
 			NULL, "When? What? Why? How come?!", Line_Normal);
 	ClearMessage();
 
 //rジリリーン…ジリリーン…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ジリリーン…ジリリーン…。",
 			NULL, "Rrriiing... rrriiing...", Line_Normal);
 	ClearMessage();
 
 //r…この街に引っ越してきたから、オヤシロさまが怒ったの？　オヤシロさまへのお祈りを強いるおばーちゃんのこと、イヤだって思ったから、こんなことになっちゃったの？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…この街に引っ越してきたから、オヤシロさまが怒ったの？　オヤシロさまへのお祈りを強いるおばーちゃんのこと、イヤだって思ったから、こんなことになっちゃったの？",
 			NULL, "...When I moved to this town, did that anger Oyashiro-sama? I hated when Grandma forced me to pray to Oyashiro-sama, so could that be why this happened?", Line_Normal);
 	ClearMessage();
 
 //r…それとも、私がオヤシロさまを信じなかったから、こんなことになったの…？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…それとも、私がオヤシロさまを信じなかったから、こんなことになったの…？！",
 			NULL, " ...Or because I didn't believe in Oyashiro-sama, could that be why...?!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101082.「…ごめんなさいッ…」
 	PlaySE(4, "S04/36/310101082", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…ごめんなさいッ…」",
 			NULL, "\"...I'm sorry...\"", Line_Normal);
 	ClearMessage();
 
 //r口をついてでたのは、謝罪の言葉だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "口をついてでたのは、謝罪の言葉だった。",
 			NULL, "I continued to release those words of apology.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101083.「ごめんなさい…ごめんなさい…ごめんなさい…」
 	PlaySE(4, "S04/36/310101083", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ごめんなさい…ごめんなさい…ごめんなさい…」",
 			NULL, "\"I'm sorry... I'm sorry... I'm sorry...\"", Line_Normal);
 	ClearMessage();
 
 //r私が悪いのなら、謝ります。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私が悪いのなら、謝ります。",
 			NULL, "I apologized for being bad.", Line_Normal);
 	ClearMessage();
 
 //r私の何が悪かったのか、私が何をしたのか、私にはわかりません。でも…、謝って全てが済むのなら、私はいくらでも謝ります。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私の何が悪かったのか、私が何をしたのか、私にはわかりません。でも…、謝って全てが済むのなら、私はいくらでも謝ります。",
 			NULL, "Whatever was wrong with me, whatever I did, I didn't know what it was. But... if an apology can end all of this, I'll apologize as many times as I can.", Line_Normal);
 	ClearMessage();
 
 //rおかーさん…、私を許して…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさん…、私を許して…。",
 			NULL, "Mom... Forgive me...", Line_Normal);
 	ClearMessage();
 
 //rだからもうやめて…。おかーさん…。おかーさん！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だからもうやめて…。おかーさん…。おかーさん！",
 			NULL, "So stop this already... Mom... Mom!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101084.「ごめんなさい…ごめんなさい…ごめんなさい…ごめんなさい…ごめんなさい…ごめんなさい…！！」
 	PlaySE(4, "S04/36/310101084", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ごめんなさい…ごめんなさい…ごめんなさい…ごめんなさい…ごめんなさい…ごめんなさい…！！」",
 			NULL, "\"I'm sorry... I'm sorry... I'm sorry... I'm sorry... I'm sorry... I'm sorry...!!\"", Line_Normal);
 	ClearMessage();
 
 //r私はひざまずいて、床に頭をこすりつけた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私はひざまずいて、床に頭をこすりつけた。",
 			NULL, "I knelt down and rubbed my head along the floor.", Line_Normal);
 	ClearMessage();
 
 //rもう許してください。おかーさん。おかーさん。おかーさん…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "もう許してください。おかーさん。おかーさん。おかーさん…。",
 			NULL, "Please forgive me already. Mom. Mom. Mom...", Line_Normal);
 	ClearMessage();
 
 //rジリリーン…ジリリーン…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ジリリーン…ジリリーン…。",
 			NULL, "Rrriiing... rrriiing...", Line_Normal);
 	ClearMessage();
 
 //r電話のベルの音が、私の謝罪の言葉をかき消してしまう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "電話のベルの音が、私の謝罪の言葉をかき消してしまう。",
 			NULL, "The sound of the telephone ringing drowned out my apologies.", Line_Normal);
 	ClearMessage();
@@ -2257,6 +2600,7 @@ void main()
 
 //夏美の母rvS04/00/310600253.「夏美…。kvS04/00/310600254.もういいのよ」
 	PlaySE(4, "S04/00/310600253", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美…。",
 			NULL, "\"Natsumi...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600254", 256, 64);
@@ -2266,17 +2610,20 @@ void main()
 
 //夏美rvS04/36/310101085.「…えっ？！」
 	PlaySE(4, "S04/36/310101085", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…えっ？！」",
 			NULL, "\"...Huh?!\"", Line_Normal);
 	ClearMessage();
 
 //r顔を上げると、おかーさんはいつもの優しい笑顔に戻っていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "顔を上げると、おかーさんはいつもの優しい笑顔に戻っていた。",
 			NULL, "When I raised my head, Mom had returned to her usual gentle smile.", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600255.「一瞬で楽になるから…。kvS04/00/310600256.怖くない…。痛くない…。kvS04/00/310600257.…ほんの一瞬だからッ！」
 	PlaySE(4, "S04/00/310600255", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「一瞬で楽になるから…。",
 			NULL, "\"Things will get easier in a moment...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600256", 256, 64);
@@ -2291,17 +2638,20 @@ void main()
 	DrawScene( "kimi_o1_03", 1000 );
 
 //rおかーさんが包丁を振り上げていた。そしてまっすぐに、私の額へと振り下ろされてゆく。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんが包丁を振り上げていた。そしてまっすぐに、私の額へと振り下ろされてゆく。",
 			NULL, "Mom raised the kitchen knife. Then she began to swing it down toward my head.", Line_Normal);
 	ClearMessage();
 
 //rおとーさんを刺したばかりの、血にまみれ、まだ肉片すらも着いている包丁が、私の血を求めて向かってくる——ッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんを刺したばかりの、血にまみれ、まだ肉片すらも着いている包丁が、私の血を求めて向かってくる——ッ！！",
 			NULL, "The kitchen knife Mom stabbed Dad with earlier was still covered in blood, and even had bits of meat hanging from it. And it was seeking my blood now...!!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101086.「いっ、いやあぁぁぁあぁぁッッ！！」
 	PlaySE(4, "S04/36/310101086", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いっ、いやあぁぁぁあぁぁッッ！！」",
 			NULL, "\"N-noooooooo!!\"", Line_Normal);
 	ClearMessage();
@@ -2309,6 +2659,7 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //r私は必死に、最後の力を振り絞ってそれをかわし、わずかに空いた隙間に身を投げて駆け出す。そして息も整わないまま、玄関口の電話に飛びついた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私は必死に、最後の力を振り絞ってそれをかわし、わずかに空いた隙間に身を投げて駆け出す。そして息も整わないまま、玄関口の電話に飛びついた。",
 			NULL, "In desperation, I used the last of my strength to dodge it, I threw myself into a narrow opening and rushed out. Then, unable to catch my breath, I jumped to the phone by the front door.", Line_Normal);
 	ClearMessage();
@@ -2316,6 +2667,7 @@ void main()
 	DrawScene( "kimi_g1_01", 1000 );
 
 //rジリリーン…ジリリーン…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ジリリーン…ジリリーン…。",
 			NULL, "Rrriiing... rrriiing...", Line_Normal);
 	ClearMessage();
@@ -2324,29 +2676,39 @@ void main()
 	FadeOutBGM( 2, 200, FALSE  );
 
 //r…まだ鳴っている！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…まだ鳴っている！",
 			NULL, "...It was still ringing!", Line_Normal);
 	ClearMessage();
 
 //r私は受話器を取ると、相手の声も聞かずに叫んだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私は受話器を取ると、相手の声も聞かずに叫んだ。",
 			NULL, "When I grabbed the receiver, I cried out without listening for the other person's voice.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101087.「誰か、助けてぇぇッッ！！！」
 	PlaySE(4, "S04/36/310101087", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「誰か、助けてぇぇッッ！！！」",
 			NULL, "\"Somebody, heeeelp!!!\"", Line_Normal);
 	ClearMessage();
 
 //r叩きつけるように受話器を置くと、全速力で廊下を走る。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "叩きつけるように受話器を置くと、全速力で廊下を走る。",
 			NULL, "Then I hung up the receiver and dashed down the hallway at full speed.", Line_Normal);
 	ClearMessage();
 
 //r思わず足がもつれて滑りそうになったけど、転んでいる暇なんてない。よろけながらも走って、角を曲がって、階段を上がるふりをして、そのまま隣の部屋に飛び込んで、鍵をかける。
-	OutputLine(NULL, "思わず足がもつれて滑りそうになったけど、転んでいる暇なんてない。よろけながらも走って、角を曲がって、階段を上がるふりをして、そのまま隣の部屋に飛び込んで、鍵をかける。",
-			NULL, "My feet were surprisingly tired and unstable, but this was no time to fall. With a bit of a stagger, I continued running, turned around the corner, pretended to go up the stairs, then dove into the next room and locked the door behind me.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "思わず足がもつれて滑りそうになったけど、転んでいる暇なんてない。よろけながらも走って、角を曲がって、階段を上がるふりをして、そのまま隣の部屋に飛び込んで、鍵をかける。",
+				NULL, "<size=-2>My feet were surprisingly tired and unstable, but this was no time to fall. With a bit of a stagger, I continued running, turned around the corner, pretended to go up the stairs, then dove into the next room and locked the door behind me.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "思わず足がもつれて滑りそうになったけど、転んでいる暇なんてない。よろけながらも走って、角を曲がって、階段を上がるふりをして、そのまま隣の部屋に飛び込んで、鍵をかける。",
+				NULL, "My feet were surprisingly tired and unstable, but this was no time to fall. With a bit of a stagger, I continued running, turned around the corner, pretended to go up the stairs, then dove into the next room and locked the door behind me.", Line_Normal);
+	}
 	ClearMessage();
 
 	DrawScene( "black", 1000 );
@@ -2354,80 +2716,95 @@ void main()
 	PlaySE(3, "addse14", 256, 64);
 
 //r…おかーさんが、私は二階へ上がってそのままベランダから外へ逃げ出したと思ってくれたらいい。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…おかーさんが、私は二階へ上がってそのままベランダから外へ逃げ出したと思ってくれたらいい。",
 			NULL, "...Mom will think I ran upstairs towards the veranda.", Line_Normal);
 	ClearMessage();
 
 //r鍵のかかった扉のノブを押さえながら、荒い息を必死でおさえる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "鍵のかかった扉のノブを押さえながら、荒い息を必死でおさえる。",
 			NULL, "I desperately held my breath while holding down the locked doorknob.", Line_Normal);
 	ClearMessage();
 
 //rおかーさんに、見つかりませんように！　どうか、お願い…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんに、見つかりませんように！　どうか、お願い…！",
 			NULL, "Don't find me, Mom! Please, somehow...!", Line_Normal);
 	ClearMessage();
 
 //rどくん、どくん、どくん…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "どくん、どくん、どくん…。",
 			NULL, "Thump, thump, thump...", Line_Normal);
 	ClearMessage();
 
 //r心臓の音がびっくりするほど大きく聞こえる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "心臓の音がびっくりするほど大きく聞こえる。",
 			NULL, "I could hear the sound of my heartbeat, surprisingly loud.", Line_Normal);
 	ClearMessage();
 
 //rこんなに大きく鳴っていたら、おかーさんに見つかっちゃうんじゃないかと思うくらいに、大きな音。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "こんなに大きく鳴っていたら、おかーさんに見つかっちゃうんじゃないかと思うくらいに、大きな音。",
 			NULL, "So loud, I begin to wonder if Mom might be able to hear it, it's that loud.", Line_Normal);
 	ClearMessage();
 
 //r助けて、誰か…！　お願い、神様！　誰でもいい！　私を、助けて…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "助けて、誰か…！　お願い、神様！　誰でもいい！　私を、助けて…！",
 			NULL, "Someone, help...! Please, God! Anyone! Help me...!", Line_Normal);
 	ClearMessage();
 
 //暁rvS04/39/310200215.「……公由？」
 	PlaySE(4, "S04/39/310200215", 256, 64);
+	if (AdvMode) { OutputLine("<color=#c8647c>暁</color>", NULL, "<color=#c8647c>Akira</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……公由？」",
 			NULL, "\"......Kimiyoshi?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101088.「えっ————？！」
 	PlaySE(4, "S04/36/310101088", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「えっ————？！」",
 			NULL, "\"Huh...?!\"", Line_Normal);
 	ClearMessage();
 
 //r聞き覚えのある声がした。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "聞き覚えのある声がした。",
 			NULL, "I heard a familiar voice.", Line_Normal);
 	ClearMessage();
 
 //r愛しく懐かしく、優しい声…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "愛しく懐かしく、優しい声…。",
 			NULL, "A loving, gentle voice that brought back memories...", Line_Normal);
 	ClearMessage();
 
 //暁rvS04/39/310200216.「…どうしたんだ、公由ッ？！」
 	PlaySE(4, "S04/39/310200216", 256, 64);
+	if (AdvMode) { OutputLine("<color=#c8647c>暁</color>", NULL, "<color=#c8647c>Akira</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…どうしたんだ、公由ッ？！」",
 			NULL, "\"...What happened, Kimiyoshi?!\"", Line_Normal);
 	ClearMessage();
 
 //r…藤堂くん、どうしてここに？！　どうして藤堂くんの声が聞こえるの？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…藤堂くん、どうしてここに？！　どうして藤堂くんの声が聞こえるの？！",
 			NULL, "...Toudou-kun, why are you here?! Why am I hearing Toudou-kun's voice?!", Line_Normal);
 	ClearMessage();
 
 //rまさか、私の家に藤堂くんが来た…！？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "まさか、私の家に藤堂くんが来た…！？",
 			NULL, "No way, Toudou-kun must have come to my house...!?", Line_Normal);
 	ClearMessage();
 
 //暁rvS04/39/310200217.「公由…？kvS04/39/310200218.　おい、公由…どうした？kvS04/39/310200219.　大丈夫か？！」
 	PlaySE(4, "S04/39/310200217", 256, 64);
+	if (AdvMode) { OutputLine("<color=#c8647c>暁</color>", NULL, "<color=#c8647c>Akira</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「公由…？",
 			NULL, "\"Kimiyoshi...?", Line_WaitForInput);
 	PlaySE(4, "S04/39/310200218", 256, 64);
@@ -2439,22 +2816,26 @@ void main()
 	ClearMessage();
 
 //r恐怖と緊張におののき切迫した声が、私の名前を必死に呼ぶ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "恐怖と緊張におののき切迫した声が、私の名前を必死に呼ぶ。",
 			NULL, "Through the fear and tension, that boisterous voice desperately called out my name.", Line_Normal);
 	ClearMessage();
 
 //r間違いない。どうしてかわからないけど、藤堂くんが、私の家に来たんだ！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "間違いない。どうしてかわからないけど、藤堂くんが、私の家に来たんだ！",
 			NULL, "No doubt about it. I didn't understand why, but Toudou-kun had come to my house!", Line_Normal);
 	ClearMessage();
 
 //r…おとーさんが死んでいて、おかーさんが包丁を持って私を追い回している、この家に！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…おとーさんが死んでいて、おかーさんが包丁を持って私を追い回している、この家に！",
 			NULL, "...Dad was dead, and Mom was chasing me around the house with a kitchen knife!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101089.「——こないで、藤堂くんッ！」
 	PlaySE(4, "S04/36/310101089", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——こないで、藤堂くんッ！」",
 			NULL, "\"...Don't leave, Toudou-kun!\"", Line_Normal);
 	ClearMessage();
@@ -2463,6 +2844,7 @@ void main()
 	DrawScene( "kimi_g1_01", 500 );
 
 //r弾かれたように私が鍵を開けて、扉を開いたのと。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "弾かれたように私が鍵を開けて、扉を開いたのと。",
 			NULL, "I carefully removed the lock and opened the door.", Line_Normal);
 	ClearMessage();
@@ -2472,17 +2854,20 @@ void main()
 	Wait( 200 );
 
 //rゴンッ…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ゴンッ…！",
 			NULL, "Slam...!", Line_Normal);
 	ClearMessage();
 
 //r鈍い音がしたのは、…ほとんど、同時だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "鈍い音がしたのは、…ほとんど、同時だった。",
 			NULL, "I heard a dull sound... at almost that exact same time.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101090.「……あ…ッ？！」
 	PlaySE(4, "S04/36/310101090", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……あ…ッ？！」",
 			NULL, "\"......Ah...?!\"", Line_Normal);
 	ClearMessage();
@@ -2491,23 +2876,27 @@ void main()
 	FadeFilm( 500, TRUE );
 
 //rそこにはおかーさんが、足元に藤堂くんを見下ろしていて。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そこにはおかーさんが、足元に藤堂くんを見下ろしていて。",
 			NULL, "Mom was looking down at Toudou-kun, by her feet.", Line_Normal);
 	ClearMessage();
 
 //rその手に持った壷の底は粉々に割れて、床に倒れた藤堂くんは、頭から血を流していた…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その手に持った壷の底は粉々に割れて、床に倒れた藤堂くんは、頭から血を流していた…。",
 			NULL, "She held the base of a broken urn in her hand, and Toudou-kun was collapsed on the floor with blood dripping down his head...", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101091.「と、藤堂、くんっ…！！」
 	PlaySE(4, "S04/36/310101091", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「と、藤堂、くんっ…！！」",
 			NULL, "\"To-Toudou, kun...!!\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600258.「…あら、夏美…？kvS04/00/310600259.　そこにいたの。kvS04/00/310600260.捜したわよ…？」
 	PlaySE(4, "S04/00/310600258", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…あら、夏美…？",
 			NULL, "\"...Oh, Natsumi...?", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600259", 256, 64);
@@ -2519,31 +2908,37 @@ void main()
 	ClearMessage();
 
 //rおかーさんが薄ら笑いを浮かべながら、私を見据えている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんが薄ら笑いを浮かべながら、私を見据えている。",
 			NULL, "With a smirk, Mom looked at me.", Line_Normal);
 	ClearMessage();
 
 //rそれを見た瞬間、…私の中で何かの枷が外れて、心と頭の中が、急にすう…と静まり返っていった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それを見た瞬間、…私の中で何かの枷が外れて、心と頭の中が、急にすう…と静まり返っていった。",
 			NULL, "The moment I saw it... something inside me came undone, suddenly in my heart and in my mind... it went quiet.", Line_Normal);
 	ClearMessage();
 
 //rこのままだと、…殺されるのは私だけじゃない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "このままだと、…殺されるのは私だけじゃない。",
 			NULL, "With things how they are right now... I'm not the only one who will die here.", Line_Normal);
 	ClearMessage();
 
 //r私と、…藤堂くんまで、殺されてしまう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私と、…藤堂くんまで、殺されてしまう。",
 			NULL, "Toudou-kun... and I will be killed here together.", Line_Normal);
 	ClearMessage();
 
 //r…だめ！　それだけは、絶対に…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…だめ！　それだけは、絶対に…！",
 			NULL, "...No way! That's unacceptable...!", Line_Normal);
 	ClearMessage();
 
 //rなら、…私は……ッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なら、…私は……ッ！！",
 			NULL, "In that case... I......!!", Line_Normal);
 	ClearMessage();
@@ -2554,55 +2949,65 @@ void main()
 
 //夏美rvS04/36/310101092.「………」
 	PlaySE(4, "S04/36/310101092", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //rあれほどに乱れきっていた息が、規則的なものへと変わる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あれほどに乱れきっていた息が、規則的なものへと変わる。",
 			NULL, "My erratic breathing began to stabilize.", Line_Normal);
 	ClearMessage();
 
 //r…もう、おかーさんを見ても、怖くない。私の心にあったのは、それ以上の感情だった…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…もう、おかーさんを見ても、怖くない。私の心にあったのは、それ以上の感情だった…！",
 			NULL, "...Now, when I looked at Mom, I wasn't afraid. My heart was filled with passion...!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101093.「……やめて…」
 	PlaySE(4, "S04/36/310101093", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……やめて…」",
 			NULL, "\"......Stop this...\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600261.「……？」
 	PlaySE(4, "S04/00/310600261", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……？」",
 			NULL, "\"......?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101094.「もう、誰も殺さないで…！」
 	PlaySE(4, "S04/36/310101094", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「もう、誰も殺さないで…！」",
 			NULL, "\"Don't kill anyone else...!\"", Line_Normal);
 	ClearMessage();
 
 //r藤堂くんまでも、こんな目に…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "藤堂くんまでも、こんな目に…。",
 			NULL, "Making Toudou-kun go through all this...", Line_Normal);
 	ClearMessage();
 
 //r許さないッ！　何も知らない、無関係な私の大事な人まで、こんな目に遭わせて…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "許さないッ！　何も知らない、無関係な私の大事な人まで、こんな目に遭わせて…！",
 			NULL, "It's unforgivable! Not knowing anything, making my most precious person go through this, making me see it...!", Line_Normal);
 	ClearMessage();
 
 //r私、おかーさんを、許さないッッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私、おかーさんを、許さないッッ！！",
 			NULL, "I won't forgive you, Mom!!", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600262.「余計なときに、首を突っ込んでくるからよ。kvS04/00/310600263.だから——」
 	PlaySE(4, "S04/00/310600262", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「余計なときに、首を突っ込んでくるからよ。",
 			NULL, "\"I've held my neck out too many times.", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600263", 256, 64);
@@ -2612,11 +3017,13 @@ void main()
 
 //夏美rvS04/36/310101095.「————ッ！！」
 	PlaySE(4, "S04/36/310101095", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————ッ！！」",
 			NULL, "\"...!!\"", Line_Normal);
 	ClearMessage();
 
 //r机の上に置いてあった包丁に、おかーさんが手を伸ばす。それを見て私は、弾かれたようにそれに向けて飛びかかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "机の上に置いてあった包丁に、おかーさんが手を伸ばす。それを見て私は、弾かれたようにそれに向けて飛びかかった。",
 			NULL, "Mom reached for the kitchen knife sitting on the desk. Noticing that, I immediately jumped toward it.", Line_Normal);
 	ClearMessage();
@@ -2624,17 +3031,20 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //rその包丁は、おかーさんには渡さないッ！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その包丁は、おかーさんには渡さないッ！",
 			NULL, "I won't let Mom grab that knife!", Line_Normal);
 	ClearMessage();
 
 //r私も包丁に手を伸ばす。…が一瞬早く、おかーさんが包丁を手にして、振り上げた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私も包丁に手を伸ばす。…が一瞬早く、おかーさんが包丁を手にして、振り上げた。",
 			NULL, "So I reached for the kitchen knife too. ...But in an instant, Mom was able to grab the knife, and she raised it overhead.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101096.「っく…！！」
 	PlaySE(4, "S04/36/310101096", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「っく…！！」",
 			NULL, "\"Ngh...!!\"", Line_Normal);
 	ClearMessage();
@@ -2644,6 +3054,7 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //r私の頬を包丁の切っ先がかすめる。それでも私は、おかーさんの両腕に必死にしがみついて抵抗を続けた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私の頬を包丁の切っ先がかすめる。それでも私は、おかーさんの両腕に必死にしがみついて抵抗を続けた。",
 			NULL, "The tip of the knife grazed my cheek. Still, I continued resisting, desperately clinging to Mom's arms.", Line_Normal);
 	ClearMessage();
@@ -2652,6 +3063,7 @@ void main()
 
 //夏美の母rvS04/00/310600264.「離しなさい、夏美ッ！kvS04/00/310600265.　この、——離せッ！！」
 	PlaySE(4, "S04/00/310600264", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「離しなさい、夏美ッ！",
 			NULL, "\"Let go, Natsumi!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600265", 256, 64);
@@ -2663,6 +3075,7 @@ void main()
 
 //夏美rvS04/36/310101097.「いやだ…。kvS04/36/310101098.もうやめてッ…！kvS04/36/310101099.　もう、やめて…！kvS04/36/310101100.　おかーさんには、もう誰も殺させないッ！」
 	PlaySE(4, "S04/36/310101097", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いやだ…。",
 			NULL, "\"Not a chance...", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101098", 256, 64);
@@ -2679,6 +3092,7 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //r罵声と怒号を受けながらも、私はひるまない。そしておかーさんの手にした包丁の柄に手をかけて、包丁を握り締めたおかーさんの手を、上から強引につかむ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "罵声と怒号を受けながらも、私はひるまない。そしておかーさんの手にした包丁の柄に手をかけて、包丁を握り締めたおかーさんの手を、上から強引につかむ。",
 			NULL, "I remained firm and taunted with an angry roar. Then, I reached out and grabbed the top of Mom's hand gripping the kitchen knife.", Line_Normal);
 	ClearMessage();
@@ -2686,6 +3100,7 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //r手が血で、ぬるっと滑る。構わない。おかーさんの少し骨ばった手を、両手の爪を立ててしっかりとつかみとった…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "手が血で、ぬるっと滑る。構わない。おかーさんの少し骨ばった手を、両手の爪を立ててしっかりとつかみとった…！",
 			NULL, "My hands were bloody and slippery. That didn't matter. I firmly grasped Mom's bony fingers with both of my hands...!", Line_Normal);
 	ClearMessage();
@@ -2694,6 +3109,7 @@ void main()
 
 //夏美の母rvS04/00/310600266.「このぉッ、——夏美ぃぃッッ！！」
 	PlaySE(4, "S04/00/310600266", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「このぉッ、——夏美ぃぃッッ！！」",
 			NULL, "\"What's thiiis... Natsumiii!!\"", Line_Normal);
 	ClearMessage();
@@ -2701,11 +3117,13 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //r…いやだ。何があっても、おかーさんに包丁は渡さない！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…いやだ。何があっても、おかーさんに包丁は渡さない！",
 			NULL, "...No. No matter what happens, I won't let Mom take that knife!", Line_Normal);
 	ClearMessage();
 
 //rもうたくさんだ！　もうここで、終わりにするんだ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "もうたくさんだ！　もうここで、終わりにするんだ！！",
 			NULL, "Enough is enough! Let's end this, right here!!", Line_Normal);
 	ClearMessage();
@@ -2714,12 +3132,14 @@ void main()
 
 //夏美の母rvS04/00/310600267.「このおぉぉおぉおおぉっっ！！！」
 	PlaySE(4, "S04/00/310600267", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「このおぉぉおぉおおぉっっ！！！」",
 			NULL, "\"That's iiiiiiiit!!!\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101101.「ぐぅっ、…ううッッ！！」
 	PlaySE(4, "S04/36/310101101", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ぐぅっ、…ううッッ！！」",
 			NULL, "\"Guh... uuu!!\"", Line_Normal);
 	ClearMessage();
@@ -2727,14 +3147,21 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //r一本の包丁を、懸命に奪い合い、つかみ合う。何度もその刃先がおかーさんのほうにも、私のほうにも、ぐらぐらと不安定に傾いてその凶刃を不気味にぎらり、と閃かせていた。
-	OutputLine(NULL, "一本の包丁を、懸命に奪い合い、つかみ合う。何度もその刃先がおかーさんのほうにも、私のほうにも、ぐらぐらと不安定に傾いてその凶刃を不気味にぎらり、と閃かせていた。",
-			NULL, "Our hands were tied together, scrambling hard to get ahold of the knife. The cutting edge was moving erratically, pointing back and forth between Mom and myself many times. The blade was unstable as it reflected lights back at me.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "一本の包丁を、懸命に奪い合い、つかみ合う。何度もその刃先がおかーさんのほうにも、私のほうにも、ぐらぐらと不安定に傾いてその凶刃を不気味にぎらり、と閃かせていた。",
+				NULL, "<size=-2>Our hands were tied together, scrambling hard to get ahold of the knife. The cutting edge was moving erratically, pointing back and forth between Mom and myself many times. The blade was unstable as it reflected lights back at me.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "一本の包丁を、懸命に奪い合い、つかみ合う。何度もその刃先がおかーさんのほうにも、私のほうにも、ぐらぐらと不安定に傾いてその凶刃を不気味にぎらり、と閃かせていた。",
+				NULL, "Our hands were tied together, scrambling hard to get ahold of the knife. The cutting edge was moving erratically, pointing back and forth between Mom and myself many times. The blade was unstable as it reflected lights back at me.", Line_Normal);
+	}
 	ClearMessage();
 
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //夏美の母rvS04/00/310600268.「夏美ッ！！kvS04/00/310600269.　いい加減にしなさいぃッッ！！」
 	PlaySE(4, "S04/00/310600268", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美ッ！！",
 			NULL, "\"Natsumi!!", Line_WaitForInput);
 	PlaySE(4, "S04/00/310600269", 256, 64);
@@ -2744,6 +3171,7 @@ void main()
 
 //夏美rvS04/36/310101102.「もういや…、いやだ！kvS04/36/310101103.　やめてよ、おかーさんッ！kvS04/36/310101104.　やめて、やめて、やめてぇッ！！」
 	PlaySE(4, "S04/36/310101102", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「もういや…、いやだ！",
 			NULL, "\"I can't bear any more... No more!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310101103", 256, 64);
@@ -2756,6 +3184,7 @@ void main()
 
 //夏美の母rvS04/00/310600270.「————ッッ？！」
 	PlaySE(4, "S04/00/310600270", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————ッッ？！」",
 			NULL, "\"...?!\"", Line_Normal);
 	ClearMessage();
@@ -2763,16 +3192,19 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //r次の瞬間。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "次の瞬間。",
 			NULL, "The next moment.", Line_Normal);
 	ClearMessage();
 
 //r力をこめて、おかーさんの手から一気に包丁を奪い取ろうとする。が、一瞬私は力のバランスを失って手を離してしまい、…その隙に、おかーさんは包丁を振り上げた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "力をこめて、おかーさんの手から一気に包丁を奪い取ろうとする。が、一瞬私は力のバランスを失って手を離してしまい、…その隙に、おかーさんは包丁を振り上げた。",
 			NULL, "All at once, I put all my effort into stealing the kitchen knife from Mom's hand. But, for a moment I lost the balance of power and the knife left my hand... In that gap, Mom began to swing the knife upward.", Line_Normal);
 	ClearMessage();
 
 //r振り払われた私は、バランスを崩して、勢い余って尻もちをつく。そして、包丁を振り上げたおかーさんの腕も勢い余って、…包丁の刃がおかーさんの首筋のすぐ側を鋭く切り裂いて——。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "振り払われた私は、バランスを崩して、勢い余って尻もちをつく。そして、包丁を振り上げたおかーさんの腕も勢い余って、…包丁の刃がおかーさんの首筋のすぐ側を鋭く切り裂いて——。",
 			NULL, "I was shaken off, I lost my balance from all the momentum. And then, Mom's arm raising the kitchen knife started gaining speed... and the blade of the knife immediately cut into Mom's neck...", Line_Normal);
 	ClearMessage();
@@ -2783,17 +3215,20 @@ void main()
 	FadeOutBGM( 2, 200, FALSE  );
 
 //rおかーさんの首から、…噴水のように、鮮血が吹き出した——。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんの首から、…噴水のように、鮮血が吹き出した——。",
 			NULL, "Out of Mom's neck... blood started bursting out like a fountain...", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101105.「……あ…？」
 	PlaySE(4, "S04/36/310101105", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……あ…？」",
 			NULL, "\"......Ah...?\"", Line_Normal);
 	ClearMessage();
 
 //rおかーさんの絶叫が聞こえたような気がしたけれど、…私の耳には届かない。そして、苦しそうに顔をゆがめながら口を大きく開き、何かを叫ぶような顔をしながら、…床にばったりと、…倒れた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんの絶叫が聞こえたような気がしたけれど、…私の耳には届かない。そして、苦しそうに顔をゆがめながら口を大きく開き、何かを叫ぶような顔をしながら、…床にばったりと、…倒れた。",
 			NULL, "I felt like Mom was screaming, but... the sound didn't reach my ears. She distorted her face and opened her mouth painfully wide, like she was shouting something... Then, down to the floor... she collapsed.", Line_Normal);
 	ClearMessage();
@@ -2805,62 +3240,74 @@ void main()
 
 //夏美rvS04/36/310101106.「ごめんなさい…ごめんなさい…ごめんなさい…」
 	PlaySE(4, "S04/36/310101106", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ごめんなさい…ごめんなさい…ごめんなさい…」",
 			NULL, "\"I'm sorry... I'm sorry... I'm sorry...\"", Line_Normal);
 	ClearMessage();
 
 //r何も聞こえないはずなのに、自分の声によく似た誰かの声が聞こえてきた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "何も聞こえないはずなのに、自分の声によく似た誰かの声が聞こえてきた。",
 			NULL, "Even though I shouldn't hear anything, I heard a voice that sounded very similar to my own.", Line_Normal);
 	ClearMessage();
 
 //r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…………。",
 			NULL, "............", Line_Normal);
 	ClearMessage();
 
 //rああ、違う。これ、…私の声だ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ああ、違う。これ、…私の声だ。",
 			NULL, "Aah, that's wrong. This is... my voice.", Line_Normal);
 	ClearMessage();
 
 //rでも、…そんなの、どうでもいい。もう、…どうでもいい……。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "でも、…そんなの、どうでもいい。もう、…どうでもいい……。",
 			NULL, "But... that doesn't matter. It doesn't matter... anymore......", Line_Normal);
 	ClearMessage();
 
 //r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…………。",
 			NULL, "............", Line_Normal);
 	ClearMessage();
 
 //rねぇ、…誰か、教えて。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ねぇ、…誰か、教えて。",
 			NULL, "Hey... Somebody, tell me.", Line_Normal);
 	ClearMessage();
 
 //rいったい、なにがいけなかったの。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "いったい、なにがいけなかったの。",
 			NULL, "What on earth happened?", Line_Normal);
 	ClearMessage();
 
 //r私は、…私たちは、なにを間違えてしまったの…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私は、…私たちは、なにを間違えてしまったの…？",
 			NULL, "Where did I... where did we go wrong...?", Line_Normal);
 	ClearMessage();
 
 //rねぇ、…教えてよ……。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ねぇ、…教えてよ……。",
 			NULL, "Hey... Please tell me......", Line_Normal);
 	ClearMessage();
 
 //r誰か、私に……ねぇ……。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "誰か、私に……ねぇ……。",
 			NULL, "Someone, tell me...... please......", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310101107.「ごめんなさい…ごめんなさい…ごめんなさい…」
 	PlaySE(4, "S04/36/310101107", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ごめんなさい…ごめんなさい…ごめんなさい…」",
 			NULL, "\"I'm sorry... I'm sorry... I'm sorry...\"", Line_Normal);
 	ClearMessage();
@@ -2868,6 +3315,7 @@ void main()
 	DrawScene( "black", 1000 );
 
 //rそこで、…私の意識は、……まるで電源を落とすように途切れて、真っ暗な闇へと包まれていった…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そこで、…私の意識は、……まるで電源を落とすように途切れて、真っ暗な闇へと包まれていった…。",
 			NULL, "Right there... my consciousness...... as if the power had been cut, I became swallowed by darkness...", Line_Normal);
 	ClearMessage();

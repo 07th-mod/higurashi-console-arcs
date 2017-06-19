@@ -1,5 +1,13 @@
 void main()
 {
+	int AdvMode;
+	AdvMode = 1;
+	int Line_ModeSpecific;
+	if (AdvMode) {
+		Line_ModeSpecific = Line_Normal;
+	} else {
+		Line_ModeSpecific = Line_WaitForInput;
+	}
 
 //*Someutsushi Day 3
 
@@ -16,6 +24,8 @@ void main()
 
 //千紗登rvS04/37/310300156.「——ほら、起きて夏美。kvS04/37/310300157.病院に着いたよ」
 	PlaySE(4, "S04/37/310300156", 256, 64);
+	ClearMessage();
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——ほら、起きて夏美。",
 			NULL, "\"...We're here. Wake up, Natsumi.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300157", 256, 64);
@@ -27,6 +37,7 @@ void main()
 
 //夏美rvS04/36/310100159.「ふぁ？　…あっ…」
 	PlaySE(4, "S04/36/310100159", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ふぁ？　…あっ…」",
 			NULL, "\"Fuah? ...Aah...\"", Line_Normal);
 	ClearMessage();
@@ -35,33 +46,39 @@ void main()
 	Wait( 500 );
 
 //r…いつの間にか、眠ってしまっていたらしい。千紗登ちゃんに横からやさしく肩を揺らされて、私は目を覚ました。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…いつの間にか、眠ってしまっていたらしい。千紗登ちゃんに横からやさしく肩を揺らされて、私は目を覚ました。",
 			NULL, "...I must have dozed off along the way. I woke up to Chisato-chan gently shaking my shoulders side to side.", Line_Normal);
 	ClearMessage();
 
 //r寝ぼけ眼をこすりながら窓の外に目を向けると、町並みでもひときわ大きな白い建物が、青空に映えるようにそびえ立っている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "寝ぼけ眼をこすりながら窓の外に目を向けると、町並みでもひときわ大きな白い建物が、青空に映えるようにそびえ立っている。",
 			NULL, "I sleepily looked out the window while rubbing my eyes. A large white building stood out among the cityscape, towering against the blue sky.", Line_Normal);
 	ClearMessage();
 
 //rそれが県下でも有数の総合病院、…そして、千紗登ちゃんのお父さんが院長を勤める佐伯病院だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それが県下でも有数の総合病院、…そして、千紗登ちゃんのお父さんが院長を勤める佐伯病院だった。",
 			NULL, "Saeki Hospital is one of the leading general hospitals in the prefecture... and Chisato-chan's father works there as the director.", Line_Normal);
 	ClearMessage();
 
 //r病院の手前の交差点で信号が赤に変わり、車はゆるやかな動作で停まる。目の前の横断歩道を、まばらに歩行者がいそいそとした足取りで行き交っていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "病院の手前の交差点で信号が赤に変わり、車はゆるやかな動作で停まる。目の前の横断歩道を、まばらに歩行者がいそいそとした足取りで行き交っていた。",
 			NULL, "The light turned red, and the car gently stopped at the intersection before the hospital. The crosswalk in front of us was full of pedestrians walking about.", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300158.「どう、ちょっとは気分良くなった？」
 	PlaySE(4, "S04/37/310300158", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「どう、ちょっとは気分良くなった？」",
 			NULL, "\"Are you feeling a little better?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100160.「うん。kvS04/36/310100161.…あ、ごめんね。kvS04/36/310100162.話の途中で、寝ちゃって」
 	PlaySE(4, "S04/36/310100160", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「うん。",
 			NULL, "\"Yeah.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100161", 256, 64);
@@ -74,6 +91,7 @@ void main()
 
 //千紗登rvS04/37/310300159.「いいっていいって、気にしないの。kvS04/37/310300160.乗った時から夏美、意識がモーロー、って感じだったしね～」
 	PlaySE(4, "S04/37/310300159", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いいっていいって、気にしないの。",
 			NULL, "\"It's fine, it's fine, I don't mind.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300160", 256, 64);
@@ -83,6 +101,7 @@ void main()
 
 //夏美rvS04/36/310100163.「そ、そこまでひどくない、kvS04/36/310100164.…と思うけど」
 	PlaySE(4, "S04/36/310100163", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そ、そこまでひどくない、",
 			NULL, "\"I-I'm not doing so bad.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100164", 256, 64);
@@ -91,17 +110,20 @@ void main()
 	ClearMessage();
 
 //r反論しようにも、あまり自信がなかった。…あやふやな記憶だけど、確か千紗登ちゃんが最近流行りのアーティストについて熱く語っていた、ような気がする。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "反論しようにも、あまり自信がなかった。…あやふやな記憶だけど、確か千紗登ちゃんが最近流行りのアーティストについて熱く語っていた、ような気がする。",
 			NULL, "I tried to object, but I was not very confident. ...My memory was vague, but I felt like Chisato-chan was talking passionately about popular modern artists.", Line_Normal);
 	ClearMessage();
 
 //rといっても、私はあまり音楽系には興味がなかったし、それ以上に眠気が一気に押し寄せてきたせいでそのまま寝入ってしまったみたいだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "といっても、私はあまり音楽系には興味がなかったし、それ以上に眠気が一気に押し寄せてきたせいでそのまま寝入ってしまったみたいだ。",
 			NULL, "But I wasn't very interested in the music system she was talking about, so I quickly grew tired and dozed off.", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300161.「しかしまぁ、私のトークの腕もまだまだだねぇ。kvS04/37/310300162.聞き手の眠気さえも吹き飛ばして耳を傾けさせるくらいでなければ、真の達人とはいえないな。kvS04/37/310300163.う～む…」
 	PlaySE(4, "S04/37/310300161", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「しかしまぁ、私のトークの腕もまだまだだねぇ。",
 			NULL, "\"But, well, I kept talking and talking, huh?", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300162", 256, 64);
@@ -114,12 +136,14 @@ void main()
 
 //夏美rvS04/36/310100165.「…千紗登ちゃん、なにを目指す気なの？」
 	PlaySE(4, "S04/36/310100165", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…千紗登ちゃん、なにを目指す気なの？」",
 			NULL, "\"...Chisato-chan, what are trying to become?\"", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300164.「んー？kvS04/37/310300165.　とりあえず政治家でどう？」
 	PlaySE(4, "S04/37/310300164", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「んー？",
 			NULL, "\"Mmm?", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300165", 256, 64);
@@ -129,17 +153,20 @@ void main()
 
 //夏美rvS04/36/310100166.「ど、どうだって言われても…」
 	PlaySE(4, "S04/36/310100166", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ど、どうだって言われても…」",
 			NULL, "\"W-well if you say so...\"", Line_Normal);
 	ClearMessage();
 
 //r同意を求められても、返答に困る。…反射的に『コメディアン』と言いそうになったのは内緒だけど。いずれにしても、そう簡単になれる職業とはとても思えない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "同意を求められても、返答に困る。…反射的に『コメディアン』と言いそうになったのは内緒だけど。いずれにしても、そう簡単になれる職業とはとても思えない。",
 			NULL, "Even though I asked her opinion, I was concerned with the reply. ...I'll keep it a secret, but I expected her to say \"comedian.\" Either way, I don't think that's a very easy profession.", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300166.「くっくっくっ…。kvS04/37/310300167.にしても夏美、かわいい寝顔だったよ～。kvS04/37/310300168.そんなに寝心地よかったのなら、もう一度学校まで往復する？」
 	PlaySE(4, "S04/37/310300166", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「くっくっくっ…。",
 			NULL, "\"Mwahaha...", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300167", 256, 64);
@@ -152,26 +179,31 @@ void main()
 
 //夏美rvS04/36/310100167.「も、もう…からかわないでよ」
 	PlaySE(4, "S04/36/310100167", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「も、もう…からかわないでよ」",
 			NULL, "\"C-come on... Don't make fun of me.\"", Line_Normal);
 	ClearMessage();
 
 //rにやにやと笑われて、私は赤い顔でぷっと頬を膨らませる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "にやにやと笑われて、私は赤い顔でぷっと頬を膨らませる。",
 			NULL, "Laughing and grinning, my cheeks were swelling and turning red.", Line_Normal);
 	ClearMessage();
 
 //r…だけど、正直言って千紗登ちゃんの自家用車の乗り心地は格別だ。ふかふかの座席に背を預けていると揺れもほとんどなくて、いつもあっという間に眠気に包まれてしまう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…だけど、正直言って千紗登ちゃんの自家用車の乗り心地は格別だ。ふかふかの座席に背を預けていると揺れもほとんどなくて、いつもあっという間に眠気に包まれてしまう。",
 			NULL, "...But honestly, Chisato-chan's private car was exceptionably comfortable. I could hardly feel any bumps on the road, and I was enveloped in drowsiness in the blink of an eye.", Line_Normal);
 	ClearMessage();
 
 //rそれに、運転手の山科さんはさすがプロというか、曲がるときも停まるときも本当に上手だ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それに、運転手の山科さんはさすがプロというか、曲がるときも停まるときも本当に上手だ。",
 			NULL, "Besides, the driver Yamashina-san was quite the professional, he was very good at turning and stopping.", Line_Normal);
 	ClearMessage();
 
 //rおとーさんの運転が下手だとは思わないけど、家族で車に乗ってお出掛けする時とは明らかに感触が違っていたから、熟練した技能の差、ということなんだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おとーさんの運転が下手だとは思わないけど、家族で車に乗ってお出掛けする時とは明らかに感触が違っていたから、熟練した技能の差、ということなんだろう。",
 			NULL, "I don't think that my father's driving is bad, but the feel here is clearly different from the times I've gone out in the family car, so there must be a difference in skill.", Line_Normal);
 	ClearMessage();
@@ -179,12 +211,14 @@ void main()
 	PlaySE(3, "addse23", 256, 64);
 
 //rそうこうするうちに信号が青になり、車は音も静かに発進する。そして少し進んでから病院の正門をくぐり、ロータリーを経て送迎口へと向かった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そうこうするうちに信号が青になり、車は音も静かに発進する。そして少し進んでから病院の正門をくぐり、ロータリーを経て送迎口へと向かった。",
 			NULL, "In the meantime, the traffic light turned blue and the car quietly started up. Shortly thereafter, we passed through the main gate of the hospital and rode through a roundabout towards the passenger loading area.", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300169.「あ、通用口って裏手だっけ。kvS04/37/310300170.そっちに回ったほうがいい？」
 	PlaySE(4, "S04/37/310300169", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、通用口って裏手だっけ。",
 			NULL, "\"Oh, we're passing around the back.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300170", 256, 64);
@@ -194,6 +228,7 @@ void main()
 
 //夏美rvS04/36/310100168.「ううん、いいよ。kvS04/36/310100169.入り口のそばに、業務用のエレベーターがあるから」
 	PlaySE(4, "S04/36/310100168", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ううん、いいよ。",
 			NULL, "\"Nope, this is good.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100169", 256, 64);
@@ -203,18 +238,21 @@ void main()
 
 //千紗登rvS04/37/310300171.「…そだっけ？」
 	PlaySE(4, "S04/37/310300171", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…そだっけ？」",
 			NULL, "\"...Is that so?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100170.「千紗登ちゃん、…お父さんの病院でしょ？」
 	PlaySE(4, "S04/36/310100170", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「千紗登ちゃん、…お父さんの病院でしょ？」",
 			NULL, "\"Chisato-chan... this is your father's hospital, right?\"", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300172.「なっははは～！kvS04/37/310300173.　——あ、山科さん。ここで停めて」
 	PlaySE(4, "S04/37/310300172", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なっははは～！",
 			NULL, "\"Nahahaha~!", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300173", 256, 64);
@@ -224,11 +262,13 @@ void main()
 
 //山科rvS04/00/VT1B_yamash1001.「かしこまりました」
 	PlaySE(4, "S04/00/VT1B_yamash1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山科</color>", NULL, "<color=#f5e6d3>Yamashina</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「かしこまりました」",
 			NULL, "\"Of course.\"", Line_Normal);
 	ClearMessage();
 
 //r山科さんは丁寧な口調で答えると、建物の日陰になった車止めで車を停止させる。私と千紗登ちゃんはお礼を言ってからそれぞれ左右の扉を開けて、外に出た。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "山科さんは丁寧な口調で答えると、建物の日陰になった車止めで車を停止させる。私と千紗登ちゃんはお礼を言ってからそれぞれ左右の扉を開けて、外に出た。",
 			NULL, "Yamashina-san answered with a polite tone, then stopped the car in the shaded awning in front of the building. Chisato-chan and I thanked the driver, then we exited out the left and right doors.", Line_Normal);
 	ClearMessage();
@@ -241,11 +281,13 @@ void main()
 	PlayBGM( 1, "semi", 128, 0 );
 
 //r夏の太陽がまぶしく地上に照りつけ、草木は緑の輝きをまとって精々と息づいている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "夏の太陽がまぶしく地上に照りつけ、草木は緑の輝きをまとって精々と息づいている。",
 			NULL, "The summer sun was shining brightly on the ground, and the plants were alive with a green radiance.", Line_Normal);
 	ClearMessage();
 
 //r辺り一面にはセミの鳴き声がやかましく響き渡り、熱気に包まれた私の肌は、あっという間にじっとりと汗ばんでいった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "辺り一面にはセミの鳴き声がやかましく響き渡り、熱気に包まれた私の肌は、あっという間にじっとりと汗ばんでいった。",
 			NULL, "The cicadas were crying aloud all around us, and the heat enveloped my skin with sweat in the blink of an eye.", Line_Normal);
 	ClearMessage();
@@ -254,6 +296,7 @@ void main()
 
 //千紗登rvS04/37/310300174.「ん～～っ、やっぱ外の空気はいいね～！kvS04/37/310300175.　おぉ、我いとしき地上の世界よ～♪」
 	PlaySE(4, "S04/37/310300174", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ん～～っ、やっぱ外の空気はいいね～！",
 			NULL, "\"Mmm~~, this outside air is so great~!", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300175", 256, 64);
@@ -263,11 +306,13 @@ void main()
 
 //夏美rvS04/36/310100171.「…オーバーだよ、千紗登ちゃん」
 	PlaySE(4, "S04/36/310100171", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…オーバーだよ、千紗登ちゃん」",
 			NULL, "\"...We're out, Chisato-chan.\"", Line_Normal);
 	ClearMessage();
 
 //r腕時計を見ると、学校からここまでに２０分ちょっとの経過。…その間寝ていた私が言うのもなんだけど、そんなに開放感を喜ぶほどではないと思う。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "腕時計を見ると、学校からここまでに２０分ちょっとの経過。…その間寝ていた私が言うのもなんだけど、そんなに開放感を喜ぶほどではないと思う。",
 			NULL, "Looking at my watch, it's been a little over 20 minutes since we left school. ...While I spent most of that asleep, I think getting out gave me a refreshing sense of freedom.", Line_Normal);
 	ClearMessage();
@@ -276,6 +321,7 @@ void main()
 
 //千紗登rvS04/37/310300176.「いやー私ってさぁ、どうも車ってのが性に合わなくって。kvS04/37/310300177.密閉された空間でじっとしているのが苦手なんだよね～」
 	PlaySE(4, "S04/37/310300176", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いやー私ってさぁ、どうも車ってのが性に合わなくって。",
 			NULL, "\"Yeah, somehow the car doesn't suit my nature.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300177", 256, 64);
@@ -285,6 +331,7 @@ void main()
 
 //夏美rvS04/36/310100172.「あははは、そうだね。kvS04/36/310100173.千紗登ちゃんはどちらかっていえば肉体派だもん」
 	PlaySE(4, "S04/36/310100172", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あははは、そうだね。",
 			NULL, "\"Ahahaha, that's right.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100173", 256, 64);
@@ -296,6 +343,7 @@ void main()
 
 //千紗登rvS04/37/310300178.「おいおい、せめて行動派と言ってちょうだいな。k|yvS04/37/310300179.…あ、時間はどう？」
 	PlaySE(4, "S04/37/310300178", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おいおい、せめて行動派と言ってちょうだいな。",
 			NULL, "\"Come on, at least call me an action type.", Line_WaitForInput);
 
@@ -308,6 +356,7 @@ void main()
 
 //夏美rvS04/36/310100174.「うん、まだ余裕たっぷり。kvS04/36/310100175.乗せてくれてありがとね、すごく助かっちゃった」
 	PlaySE(4, "S04/36/310100174", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「うん、まだ余裕たっぷり。",
 			NULL, "\"Yeah, still plenty of time to spare.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100175", 256, 64);
@@ -316,12 +365,14 @@ void main()
 	ClearMessage();
 
 //r始まりの時間まで、まだ３０分近くある。電車でここまで来るといつもギリギリだから、この差は大きかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "始まりの時間まで、まだ３０分近くある。電車でここまで来るといつもギリギリだから、この差は大きかった。",
 			NULL, "I still have nearly 30 minutes before my scheduled start time. I'm always arriving at the last moment when I take the train here, this is a huge difference.", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300180.「できれば毎週、送ってあげられたらいいんだけどね。kvS04/37/310300181.もともとお父さんの車だから、週末は出払ってることが多くてさ～」
 	PlaySE(4, "S04/37/310300180", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「できれば毎週、送ってあげられたらいいんだけどね。",
 			NULL, "\"I'd like to offer this every week if possible.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300181", 256, 64);
@@ -331,6 +382,7 @@ void main()
 
 //夏美rvS04/36/310100176.「ううん、時々でも嬉しいよ。kvS04/36/310100177.私って電車、苦手だから」
 	PlaySE(4, "S04/36/310100176", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ううん、時々でも嬉しいよ。",
 			NULL, "\"No, even if it's only occasionally, I'm still glad.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100177", 256, 64);
@@ -339,6 +391,7 @@ void main()
 	ClearMessage();
 
 //rそう言って、私は肩をすくめながら舌を出す。…というよりも、都会の人ごみが好きじゃなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう言って、私は肩をすくめながら舌を出す。…というよりも、都会の人ごみが好きじゃなかった。",
 			NULL, "After I said that, I shrugged my shoulders and stuck out my tongue. ...More specifically, I didn't like the huge crowds in the city.", Line_Normal);
 	ClearMessage();
@@ -351,31 +404,42 @@ void main()
 	PlayBGM( 1, "mati", 128, 0 );
 
 //r周囲にはお構いなしで、ただ行き先だけに顔を向けてずんずんと足を進めるたくさんの人。そんな大勢であふれかえっている駅のホーム。階段。電車の中。
-	OutputLine(NULL, "周囲にはお構いなしで、ただ行き先だけに顔を向けてずんずんと足を進めるたくさんの人。そんな大勢であふれかえっている駅のホーム。階段。電車の中。",
-			NULL, "There are a lot of people who have no regard for their surroundings, they just point their heads toward their destination and walk forward. My home station is always overflowing with people like that. On the stairs. In the train.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "周囲にはお構いなしで、ただ行き先だけに顔を向けてずんずんと足を進めるたくさんの人。そんな大勢であふれかえっている駅のホーム。階段。電車の中。",
+				NULL, "<size=-2>There are a lot of people who have no regard for their surroundings, they just point their heads toward their destination and walk forward. My home station is always overflowing with people like that. On the stairs. In the train.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "周囲にはお構いなしで、ただ行き先だけに顔を向けてずんずんと足を進めるたくさんの人。そんな大勢であふれかえっている駅のホーム。階段。電車の中。",
+				NULL, "There are a lot of people who have no regard for their surroundings, they just point their heads toward their destination and walk forward. My home station is always overflowing with people like that. On the stairs. In the train.", Line_Normal);
+	}
 	ClearMessage();
 
 //r無機質な自動改札を出て、騒がしい雑音に満ちた駅前。交差点。歓楽街。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "無機質な自動改札を出て、騒がしい雑音に満ちた駅前。交差点。歓楽街。",
 			NULL, "The station is full of tumultuous noise while I exit through the automated ticket gate. And the crossroad. And the entertainment district.", Line_Normal);
 	ClearMessage();
 
 //rそれが当然と過ごしてきた千紗登ちゃんたちには、きっとわからないだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それが当然と過ごしてきた千紗登ちゃんたちには、きっとわからないだろう。",
 			NULL, "Chisato-chan has spent her entire life in this, I'm sure she wouldn't understand.", Line_Normal);
 	ClearMessage();
 
 //rだけど、これが憧れていた都会の姿なんだと目の当たりにして、……私は嬉しさと希望を抱くよりもむしろ、足がすくむような戸惑いを感じていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だけど、これが憧れていた都会の姿なんだと目の当たりにして、……私は嬉しさと希望を抱くよりもむしろ、足がすくむような戸惑いを感じていた。",
 			NULL, "But I was finally seeing the image of the city I had longed for. ......And rather than embracing joy and hope, I froze with confusion.", Line_Normal);
 	ClearMessage();
 
 //r確かに、千紗登ちゃんや珠子ちゃんと一緒に居るときは、とりとめもない話をしながらショッピングしたり、あちこち歩き回ったりできて、楽しい。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "確かに、千紗登ちゃんや珠子ちゃんと一緒に居るときは、とりとめもない話をしながらショッピングしたり、あちこち歩き回ったりできて、楽しい。",
 			NULL, "Of course, when I'm with Chisato-chan and Tamako-chan, we have fun walking around the shops, rambling on and telling stories.", Line_Normal);
 	ClearMessage();
 
 //r……だけど、何かの拍子で独りになった途端、異世界の中に放り出されたような錯覚にとらわれて、急に不安で胸が苦しくなることが時々ある。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……だけど、何かの拍子で独りになった途端、異世界の中に放り出されたような錯覚にとらわれて、急に不安で胸が苦しくなることが時々ある。",
 			NULL, "......Yet, as soon as I'm left alone to deal with the daily routine, I'm trapped by the illusion of being thrown into another world. Sometimes I feel a painful anxiety in my chest.", Line_Normal);
 	ClearMessage();
@@ -384,27 +448,32 @@ void main()
 	FadeFilm( 2, TRUE );
 
 //rまして、一人で街の混雑する中を歩くのは、…かなり、怖い。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "まして、一人で街の混雑する中を歩くのは、…かなり、怖い。",
 			NULL, "And walking around the crowded streets alone... It's pretty scary.", Line_Normal);
 	ClearMessage();
 
 //r誰も自分を見てくれない、話しかけてくれない冷たくて無機質な、都会の空間。まるで自分が言葉の通じない異邦人になったようで、…孤独な場違い感に苛まれるんだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "誰も自分を見てくれない、話しかけてくれない冷たくて無機質な、都会の空間。まるで自分が言葉の通じない異邦人になったようで、…孤独な場違い感に苛まれるんだ。",
 			NULL, "Nobody looks at me, it's a cold, lifeless, urban space that does not speak to me. I feel like I've become a foreigner who doesn't understand the native language... I'm suffering from a lonely out of place feeling.", Line_Normal);
 	ClearMessage();
 
 //rいつになったら、この違和感はなくなるのかな…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "いつになったら、この違和感はなくなるのかな…？",
 			NULL, "I wonder when this feeling of discomfort will go away...", Line_Normal);
 	ClearMessage();
 
 //rというよりも、本当に私は、…都会に馴染めるようになるんだろうか…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "というよりも、本当に私は、…都会に馴染めるようになるんだろうか…？",
 			NULL, "Will I really... be able to get used to the city...?", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300182.「…夏美？」
 	PlaySE(4, "S04/37/310300182", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…夏美？」",
 			NULL, "\"...Natsumi?\"", Line_Normal);
 	ClearMessage();
@@ -413,6 +482,7 @@ void main()
 
 //夏美rvS04/36/310100178.「あ、——ごめん」
 	PlaySE(4, "S04/36/310100178", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、——ごめん」",
 			NULL, "\"Oh, ...sorry.\"", Line_Normal);
 	ClearMessage();
@@ -424,17 +494,20 @@ void main()
 	Wait( 500 );
 
 //r千紗登ちゃんの表情が曇ったことに気づいた私は、慌てて取り繕うように手を振ってごまかす。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "千紗登ちゃんの表情が曇ったことに気づいた私は、慌てて取り繕うように手を振ってごまかす。",
 			NULL, "Chisato-chan noticed that my face was clouded, so I moved my hands to hide it.", Line_Normal);
 	ClearMessage();
 
 //r…だめだな、私。お友達に余計な心配させるなんて、こんなところが都会っ子失格なんだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…だめだな、私。お友達に余計な心配させるなんて、こんなところが都会っ子失格なんだろう。",
 			NULL, "...It's no good. To make my friends unnecessarily worried would be admitting I'm unqualified as a city child.", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300183.「電車に乗ってて何かあったの、夏美？kvS04/37/310300184.　悩みがあるなら相談に乗るけど」
 	PlaySE(4, "S04/37/310300183", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「電車に乗ってて何かあったの、夏美？",
 			NULL, "\"Did something happen to you on the train, Natsumi?", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300184", 256, 64);
@@ -444,6 +517,7 @@ void main()
 
 //夏美rvS04/36/310100179.「ううん、そうじゃなくって。kvS04/36/310100180.…私、自動改札機がまだうまく通り抜けられないから。kvS04/36/310100181.この前も切符を入れたのに途中で止められちゃって、苦手意識があるっていうか…」
 	PlaySE(4, "S04/36/310100179", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ううん、そうじゃなくって。",
 			NULL, "\"No, it's not like that.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100180", 256, 64);
@@ -458,6 +532,7 @@ void main()
 
 //千紗登rvS04/37/310300185.「…あぁ、なーるほど。k|yvS04/37/310300186.あっはっはっはっ！kvS04/37/310300187.　そういやあの時夏美ってば、真っ赤な顔で半べそかいてたもんね～？」
 	PlaySE(4, "S04/37/310300185", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…あぁ、なーるほど。",
 			NULL, "\"...Aah, I understand.", Line_WaitForInput);
 
@@ -473,6 +548,7 @@ void main()
 
 //夏美rvS04/36/310100182.「べ、べそなんてかいてないよ～？」
 	PlaySE(4, "S04/36/310100182", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「べ、べそなんてかいてないよ～？」",
 			NULL, "\"N-no, I wasn't about to cry~.\"", Line_Normal);
 	ClearMessage();
@@ -481,6 +557,7 @@ void main()
 
 //千紗登rvS04/37/310300188.「いーや、少なくとも涙目だった。kvS04/37/310300189.助けてー千紗登ちゃん、珠子ちゃーん、てな感じにね。kvS04/37/310300190.くっくっくっ！」
 	PlaySE(4, "S04/37/310300188", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いーや、少なくとも涙目だった。",
 			NULL, "\"Nope, I'm sure you were a little teary eyed.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300189", 256, 64);
@@ -492,17 +569,20 @@ void main()
 	ClearMessage();
 
 //rさっきまでの怪訝そうな表情を消し去って、千紗登ちゃんは愉快そうに笑ってくれた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "さっきまでの怪訝そうな表情を消し去って、千紗登ちゃんは愉快そうに笑ってくれた。",
 			NULL, "Her uneasy expression from a minute ago had cleared up, and Chisato-chan was laughing pleasantly.", Line_Normal);
 	ClearMessage();
 
 //r…たとえ笑い話でも、話題にあげてもらえるほうがずっといい。そのほうが、仲間の輪に加わっている気がして安心できる…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…たとえ笑い話でも、話題にあげてもらえるほうがずっといい。そのほうが、仲間の輪に加わっている気がして安心できる…。",
 			NULL, "...Even though it's a weird conversation, the way we get there is always good. I'm relieved to have joined this circle of friends.", Line_Normal);
 	ClearMessage();
 
 //千紗登の父rvS04/00/VT1B_saekiF1001.「——千紗登」
 	PlaySE(4, "S04/00/VT1B_saekiF1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>千紗登の父</color>", NULL, "<color=#f5e6d3>Chisato's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——千紗登」",
 			NULL, "\"...Chisato.\"", Line_Normal);
 	ClearMessage();
@@ -511,22 +591,26 @@ void main()
 
 //千紗登rvS04/37/310300191.「ん…？　あっ」
 	PlaySE(4, "S04/37/310300191", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ん…？　あっ」",
 			NULL, "\"Hmm...? Oh.\"", Line_Normal);
 	ClearMessage();
 
 //rふいに、その時。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ふいに、その時。",
 			NULL, "Suddenly, at that moment.", Line_Normal);
 	ClearMessage();
 
 //r高そうなスーツを上品に着こなした初老の男の人が、こちらに向かって歩いてくるのが目に入る。千紗登ちゃんもそれに気づいたのか、ちょい、と小首を傾げながら振り返った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "高そうなスーツを上品に着こなした初老の男の人が、こちらに向かって歩いてくるのが目に入る。千紗登ちゃんもそれに気づいたのか、ちょい、と小首を傾げながら振り返った。",
 			NULL, "I saw an elderly man walking toward us wearing a refined, expensive suit. While tilting my head, I wondered if Chisato-chan also noticed him there.", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300192.「あ、父さん。kvS04/37/310300193.早かったね、今終わったの？」
 	PlaySE(4, "S04/37/310300192", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、父さん。",
 			NULL, "\"Oh, Dad.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300193", 256, 64);
@@ -536,6 +620,7 @@ void main()
 
 //千紗登の父rvS04/00/VT1B_saekiF1002.「『今終わったの』じゃないぞ？kvS04/00/VT1B_saekiF1003.　なんだ、今の男みたいな笑い方は。kvS04/00/VT1B_saekiF1004.もう少し年頃の女の子らしく振舞えんのか」
 	PlaySE(4, "S04/00/VT1B_saekiF1002", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>千紗登の父</color>", NULL, "<color=#f5e6d3>Chisato's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「『今終わったの』じゃないぞ？",
 			NULL, "\"\"Is it over now\" you ask?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_saekiF1003", 256, 64);
@@ -549,6 +634,7 @@ void main()
 	DrawBustshot( 3, "chisa1_Kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //rその人は呆れた顔でこつん、と千紗登ちゃんの頭を軽く叩く。あまり痛くないはずだけど千紗登ちゃんは『あたっ』と大げさにのけぞって、恨みがましい視線で向き直った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その人は呆れた顔でこつん、と千紗登ちゃんの頭を軽く叩く。あまり痛くないはずだけど千紗登ちゃんは『あたっ』と大げさにのけぞって、恨みがましい視線で向き直った。",
 			NULL, "That man with amazing features lightly tapped Chisato-chan on the head. It shouldn't have hurt much, but Chisato-chan reacted to the \"hit\" by exaggeratedly falling.", Line_Normal);
 	ClearMessage();
@@ -557,6 +643,7 @@ void main()
 
 //千紗登rvS04/37/310300194.「むー、なにすんのさー？kvS04/37/310300195.　暴力反対、セクハラ～」
 	PlaySE(4, "S04/37/310300194", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「むー、なにすんのさー？",
 			NULL, "\"Hey, what was that for?", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300195", 256, 64);
@@ -566,6 +653,7 @@ void main()
 
 //千紗登の父rvS04/00/VT1B_saekiF1005.「…都合のいいときだけ女性の権利を振りかざすんじゃない。kvS04/00/VT1B_saekiF1006.権利と義務は表裏一体だと、前から言ってるだろう？」
 	PlaySE(4, "S04/00/VT1B_saekiF1005", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>千紗登の父</color>", NULL, "<color=#f5e6d3>Chisato's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…都合のいいときだけ女性の権利を振りかざすんじゃない。",
 			NULL, "\"...Don't bring up women's rights concerns only when it's convenient for you.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_saekiF1006", 256, 64);
@@ -577,6 +665,7 @@ void main()
 
 //千紗登rvS04/37/310300196.「そりゃ無理だよ。kvS04/37/310300197.だって私、父さんの娘だもん」
 	PlaySE(4, "S04/37/310300196", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そりゃ無理だよ。",
 			NULL, "\"That's completely unreasonable.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300197", 256, 64);
@@ -588,6 +677,7 @@ void main()
 
 //千紗登rvS04/37/310300198.「使えるものは親でも使え！　ってね。kvS04/37/310300199.それに子は親の背中を見て育つ、なんて有難い言葉もあるんだよ～？」
 	PlaySE(4, "S04/37/310300198", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「使えるものは親でも使え！　ってね。",
 			NULL, "\"Parents use whatever they can! Right?", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300199", 256, 64);
@@ -597,6 +687,7 @@ void main()
 
 //千紗登の父rvS04/00/VT1B_saekiF1007.「こら、人聞きの悪いことを。kvS04/00/VT1B_saekiF1008.少なくとも私は、そんな育て方をした覚えはない、kvS04/00/VT1B_saekiF1009.——と思うぞ」
 	PlaySE(4, "S04/00/VT1B_saekiF1007", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>千紗登の父</color>", NULL, "<color=#f5e6d3>Chisato's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「こら、人聞きの悪いことを。",
 			NULL, "\"Come on, how disrespectful.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_saekiF1008", 256, 64);
@@ -611,22 +702,26 @@ void main()
 
 //千紗登rvS04/37/310300200.「…だったらなんで目をそらすマイファーザー」
 	PlaySE(4, "S04/37/310300200", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…だったらなんで目をそらすマイファーザー」",
 			NULL, "\"...Then why do you look away, my father?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100183.「あ、あははは…」
 	PlaySE(4, "S04/36/310100183", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、あははは…」",
 			NULL, "\"Ah, ahahaha...\"", Line_Normal);
 	ClearMessage();
 
 //rそんなやりとりに、私は緊張しながらも思わず、吹き出してしまう。紳士然として良識を語っているけど、千紗登ちゃんとお父さんは雰囲気も言動もそっくりだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんなやりとりに、私は緊張しながらも思わず、吹き出してしまう。紳士然として良識を語っているけど、千紗登ちゃんとお父さんは雰囲気も言動もそっくりだ。",
 			NULL, "The exchange had me feeling nervous, so it just burst out. This gentleman-like good sense, Chisato-chan and her father spoke and behaved so similarly.", Line_Normal);
 	ClearMessage();
 
 //rこの子にしてこの親あり、…逆だっけ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "この子にしてこの親あり、…逆だっけ。",
 			NULL, "This girl and this parent... they're so backwards.", Line_Normal);
 	ClearMessage();
@@ -635,6 +730,7 @@ void main()
 
 //千紗登の父rvS04/00/VT1B_saekiF1010.「——ん？kvS04/00/VT1B_saekiF1011.　君は？」
 	PlaySE(4, "S04/00/VT1B_saekiF1010", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>千紗登の父</color>", NULL, "<color=#f5e6d3>Chisato's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——ん？",
 			NULL, "\"...Hmm?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_saekiF1011", 256, 64);
@@ -644,6 +740,7 @@ void main()
 
 //夏美rvS04/36/310100184.「あ…私、公由夏美です。kvS04/36/310100185.千紗登ちゃんのクラスメイトです」
 	PlaySE(4, "S04/36/310100184", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ…私、公由夏美です。",
 			NULL, "\"Oh... I'm Natsumi Kimiyoshi.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100185", 256, 64);
@@ -653,6 +750,7 @@ void main()
 
 //千紗登の父rvS04/00/VT1B_saekiF1012.「ああ、君が夏美ちゃんか。kvS04/00/VT1B_saekiF1013.娘から聞いているよ。kvS04/00/VT1B_saekiF1014.…初めまして、千紗登の父です。kvS04/00/VT1B_saekiF1015.千紗登がお世話になっています」
 	PlaySE(4, "S04/00/VT1B_saekiF1012", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>千紗登の父</color>", NULL, "<color=#f5e6d3>Chisato's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ああ、君が夏美ちゃんか。",
 			NULL, "\"Aah, then you're Natsumi-chan.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_saekiF1013", 256, 64);
@@ -668,6 +766,7 @@ void main()
 
 //夏美rvS04/36/310100186.「あ、いえ、そんな…」
 	PlaySE(4, "S04/36/310100186", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、いえ、そんな…」",
 			NULL, "\"Oh, no, that's...\"", Line_Normal);
 	ClearMessage();
@@ -676,6 +775,7 @@ void main()
 
 //千紗登rvS04/37/310300201.「違うっての、私がお世話してるの。kvS04/37/310300202.夏美は私の可愛いペットなんだからね～？」
 	PlaySE(4, "S04/37/310300201", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「違うっての、私がお世話してるの。",
 			NULL, "\"That's not it, I'm indebted to you.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300202", 256, 64);
@@ -685,6 +785,7 @@ void main()
 
 //夏美rvS04/36/310100187.「ぺ、ペットってちがっ、kvS04/36/310100188.——ふにっ？！」
 	PlaySE(4, "S04/36/310100187", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ぺ、ペットってちがっ、",
 			NULL, "\"P-pet? No, I'm,", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100188", 256, 64);
@@ -697,12 +798,14 @@ void main()
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //rふいにぎゅうぅ、と抱きすくめられて、思わず顔が真っ赤になる。ち、千紗登ちゃんっ！　普段どおりなのはわかるけど、場所とシチュエーションを考えてよ～？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ふいにぎゅうぅ、と抱きすくめられて、思わず顔が真っ赤になる。ち、千紗登ちゃんっ！　普段どおりなのはわかるけど、場所とシチュエーションを考えてよ～？！",
 			NULL, "She suddenly squeezed me and my face turned red in embarrassment. Ch-Chisato-chan! I know this is normal for you, but can't you take the location and situation into consideration?!", Line_Normal);
 	ClearMessage();
 
 //千紗登の父rvS04/00/VT1B_saekiF1016.「やれやれ、可愛いものを見るとすぐこれだ。kvS04/00/VT1B_saekiF1017.…学校でもそんな感じなのか？」
 	PlaySE(4, "S04/00/VT1B_saekiF1016", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>千紗登の父</color>", NULL, "<color=#f5e6d3>Chisato's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「やれやれ、可愛いものを見るとすぐこれだ。",
 			NULL, "\"Sheesh, is this how you behave when you see cute things?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_saekiF1017", 256, 64);
@@ -714,6 +817,7 @@ void main()
 
 //千紗登rvS04/37/310300203.「まーねー、愛情表現ってやつよ。kvS04/37/310300204.お父さんが欲しがってもあげないからね～、ふふーん？」
 	PlaySE(4, "S04/37/310300203", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「まーねー、愛情表現ってやつよ。",
 			NULL, "\"Of course, it's an expression of my love.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300204", 256, 64);
@@ -727,6 +831,7 @@ void main()
 
 //千紗登の父rvS04/00/VT1B_saekiF1018.「ほぉ～？kvS04/00/VT1B_saekiF1019.　飼っている熱帯魚の世話すら、まともにできなかったお前がなぁ」
 	PlaySE(4, "S04/00/VT1B_saekiF1018", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>千紗登の父</color>", NULL, "<color=#f5e6d3>Chisato's dad</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ほぉ～？",
 			NULL, "\"Hoh~?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_saekiF1019", 256, 64);
@@ -735,11 +840,13 @@ void main()
 	ClearMessage();
 
 //r…あのぉ、私はグッピーか何かとおんなじなんでしょうか？　というか、千紗登ちゃんのお父さんも面白がって見ていないで、助けてくださいっ！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…あのぉ、私はグッピーか何かとおんなじなんでしょうか？　というか、千紗登ちゃんのお父さんも面白がって見ていないで、助けてくださいっ！",
 			NULL, "...Um, are they saying I'm the same as a guppy? Or maybe Chisato's father wants to see it that way. Someone help me!", Line_Normal);
 	ClearMessage();
 
 //rそれから私は、お父さんが腕時計に目を向けるまで十数分、千紗登ちゃんの抱擁の中でじたばたともがき続けていた…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それから私は、お父さんが腕時計に目を向けるまで十数分、千紗登ちゃんの抱擁の中でじたばたともがき続けていた…。",
 			NULL, "Then I looked at Chisato's father's wristwatch and realized I had ten minutes left. Still trapped in Chisato-chan's hug, I continued wriggling like a fish...", Line_Normal);
 	ClearMessage();
@@ -749,33 +856,39 @@ void main()
 
 //千紗登rvS04/37/310300205.「それじゃ夏美、またね～？」
 	PlaySE(4, "S04/37/310300205", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「それじゃ夏美、またね～？」",
 			NULL, "\"All right Natsumi, see you later~!\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100189.「…はぁ、もうっ…！」
 	PlaySE(4, "S04/36/310100189", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…はぁ、もうっ…！」",
 			NULL, "\"...Yeah, later...!\"", Line_Normal);
 	ClearMessage();
 
 //r私は乱れた髪と襟元を整えながら、後部座席の窓を開けてにこやかに手を振る千紗登ちゃんを恨みがましく睨みつける。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私は乱れた髪と襟元を整えながら、後部座席の窓を開けてにこやかに手を振る千紗登ちゃんを恨みがましく睨みつける。",
 			NULL, "I glared at Chisato-chan while fixing my hair and straightening my collar. Then she rolled down the back-seat window to smile and wave at me.", Line_Normal);
 	ClearMessage();
 
 //r…去る人は大いにご満悦で結構なことでしょうが、さっきから背中に突き刺さるたくさんの好奇の視線の中に残される私の苦労も、少しは察してほしいんだけど。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…去る人は大いにご満悦で結構なことでしょうが、さっきから背中に突き刺さるたくさんの好奇の視線の中に残される私の苦労も、少しは察してほしいんだけど。",
 			NULL, "...These people are fun to be around, but I wish they understood how awkward it is for me to have the gazes of curious bystanders sticking in my back.", Line_Normal);
 	ClearMessage();
 
 //rいちゃいちゃと黄色い悲鳴を上げながらふざけあっている私たちを、通院に来た人も看護師さんも、警備員さんでさえ何事か、と覗き込んできたし…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "いちゃいちゃと黄色い悲鳴を上げながらふざけあっている私たちを、通院に来た人も看護師さんも、警備員さんでさえ何事か、と覗き込んできたし…。",
 			NULL, "Hospital visitors, nurses, even security guards could look over and see us shouting and being overly affectionate...", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300206.「あっはっはっはっ！kvS04/37/310300207.　夏美があんまり可愛いから、ちーちゃんついつい暴走しちまったい。kvS04/37/310300208.許してちょんまげ」
 	PlaySE(4, "S04/37/310300206", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あっはっはっはっ！",
 			NULL, "\"Ah ha ha ha!", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300207", 256, 64);
@@ -788,12 +901,14 @@ void main()
 
 //夏美rvS04/36/310100190.「なんか、『可愛い』って言葉をすべての免罪符にされている気がするんだけど…」
 	PlaySE(4, "S04/36/310100190", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なんか、『可愛い』って言葉をすべての免罪符にされている気がするんだけど…」",
 			NULL, "\"Somehow, I felt the word \"cute\" was being used disrespectfully...\"", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300209.「ん？kvS04/37/310300210.　可愛いって言われて嬉しくない？kvS04/37/310300211.　私は結構本気で思ってるんだけどな～」
 	PlaySE(4, "S04/37/310300209", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ん？",
 			NULL, "\"Hmm?", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300210", 256, 64);
@@ -806,6 +921,7 @@ void main()
 
 //夏美rvS04/36/310100191.「し、知らないっ！kvS04/36/310100192.　…ふんっ」
 	PlaySE(4, "S04/36/310100191", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「し、知らないっ！",
 			NULL, "\"I don't know about that!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100192", 256, 64);
@@ -814,11 +930,13 @@ void main()
 	ClearMessage();
 
 //rそっぽを向きながら思わず、深いため息がもれ出る。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そっぽを向きながら思わず、深いため息がもれ出る。",
 			NULL, "I couldn't help but sigh while turning away.", Line_Normal);
 	ClearMessage();
 
 //r千紗登ちゃんが本当に嘘やお世辞を言っているんじゃないとしても、…『可愛い』と言えばどんなbろうぜき.<狼藉>も許されるなら、時代劇の悪代官はあんなに女の人から嫌われたりはしないと思う。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "千紗登ちゃんが本当に嘘やお世辞を言っているんじゃないとしても、…『可愛い』と言えばどんな狼藉(ろうぜき)も許されるなら、時代劇の悪代官はあんなに女の人から嫌われたりはしないと思う。",
 			NULL, "Even if Chisato-chan honestly meant that as a compliment... the word \"cute\" tripped me up. It made me think of those evil characters in historical dramas who were hated by all the other women.", Line_Normal);
 	ClearMessage();
@@ -827,6 +945,7 @@ void main()
 
 //千紗登rvS04/37/310300212.「——あ、そういや夏美、言い忘れてた。kvS04/37/310300213.来週から進路面談だけど、ちゃんと覚えてる？」
 	PlaySE(4, "S04/37/310300212", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——あ、そういや夏美、言い忘れてた。",
 			NULL, "\"...Oh, that's right, Natsumi, I forgot to mention.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300213", 256, 64);
@@ -836,6 +955,7 @@ void main()
 
 //夏美rvS04/36/310100193.「え？kvS04/36/310100194.　うん、覚えてるけど…それが？」
 	PlaySE(4, "S04/36/310100193", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「え？",
 			NULL, "\"Huh?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100194", 256, 64);
@@ -844,12 +964,14 @@ void main()
 	ClearMessage();
 
 //r意味がわからずきょとん、と目を丸くする。それを見て、千紗登ちゃんがやっぱりな、と苦笑交じりに呟いて言った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "意味がわからずきょとん、と目を丸くする。それを見て、千紗登ちゃんがやっぱりな、と苦笑交じりに呟いて言った。",
 			NULL, "I didn't know what she meant by that, so I stared vacantly with my eyes wide open. When she noticed my reaction, Chisato-chan began muttering with a bitter smile.", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300214.「珠子が心配してたからね。kvS04/37/310300215.夏美の前の学校はどうだったのかは知らないけど、うちって結構、この６月が重要な時期なんだよ」
 	PlaySE(4, "S04/37/310300214", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「珠子が心配してたからね。",
 			NULL, "\"Tamako was feeling concerned.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300215", 256, 64);
@@ -859,6 +981,7 @@ void main()
 
 //千紗登rvS04/37/310300216.「来年のクラス分けにも関係してくるし、夏休みの補習もそれで決まったりするからさ。kvS04/37/310300217.…知ってた？」
 	PlaySE(4, "S04/37/310300216", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「来年のクラス分けにも関係してくるし、夏休みの補習もそれで決まったりするからさ。",
 			NULL, "\"Decisions will be made regarding next year's classes, and about supplementary lessons over summer vacation.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300217", 256, 64);
@@ -868,6 +991,7 @@ void main()
 
 //夏美rvS04/36/310100195.「う、ううん。kvS04/36/310100196.…そうなの？」
 	PlaySE(4, "S04/36/310100195", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「う、ううん。",
 			NULL, "\"N-no.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100196", 256, 64);
@@ -876,24 +1000,28 @@ void main()
 	ClearMessage();
 
 //r予想もしていなかったことを聞かされて、私は呆然となった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "予想もしていなかったことを聞かされて、私は呆然となった。",
 			NULL, "I heard something completely unexpected, and it left me dumbfounded.", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300218.「ありゃー、やっぱ珠子の心配してたとおりみたいだね。kvS04/37/310300219.言っとくけど、変な回答すると夏休みの半分は確実に補習になるよ？kvS04/37/310300220.　大学の説明会とかも強制的に参加させられるし、…嫌でしょ、それ」
 	PlaySE(4, "S04/37/310300218", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ありゃー、やっぱ珠子の心配してたとおりみたいだね。",
 			NULL, "\"Aah... Looks like Tamako's concerns were on point.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300219", 256, 64);
 	OutputLine(NULL, "言っとくけど、変な回答すると夏休みの半分は確実に補習になるよ？",
-			NULL, " The thing is, if they don't like the answers you give they'll force you to spend half of your summer vacation in supplementary lessons.", Line_WaitForInput);
+			NULL, " The thing is, if they don't like the answers you give they'll force you to spend half of your summer vacation in supplementary lessons. ", Line_ModeSpecific);
 	PlaySE(4, "S04/37/310300220", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　大学の説明会とかも強制的に参加させられるし、…嫌でしょ、それ」",
-			NULL, " And they might force you to participate in university briefing sessions... Those are pretty terrible.\"", Line_Normal);
+			NULL, "And they might force you to participate in university briefing sessions... Those are pretty terrible.\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100197.「ええっ？！kvS04/36/310100198.　そ、そんなの嫌だよ～！」
 	PlaySE(4, "S04/36/310100197", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ええっ？！",
 			NULL, "\"Huh?!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100198", 256, 64);
@@ -902,39 +1030,56 @@ void main()
 	ClearMessage();
 
 //r前の学校では進路相談というか、私は先生との個人面談を受ける前に転校しちゃったからよくわからないけど、聞いた限りだと将来何になりたいか、程度の質問で終わっていたと思う。
-	OutputLine(NULL, "前の学校では進路相談というか、私は先生との個人面談を受ける前に転校しちゃったからよくわからないけど、聞いた限りだと将来何になりたいか、程度の質問で終わっていたと思う。",
-			NULL, "We called it career counseling at my old school. I transferred here before I had my private meeting with the teacher, so I never learned much about it. I heard that it's a discussion about what you want to be in the future, and it ends with a degree inquiry.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "前の学校では進路相談というか、私は先生との個人面談を受ける前に転校しちゃったからよくわからないけど、聞いた限りだと将来何になりたいか、程度の質問で終わっていたと思う。",
+				NULL, "<size=-2>We called it career counseling at my old school. I transferred here before I had my private meeting with the teacher, so I never learned much about it. I heard that it's a discussion about what you want to be in the future, and it ends with a degree inquiry.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "前の学校では進路相談というか、私は先生との個人面談を受ける前に転校しちゃったからよくわからないけど、聞いた限りだと将来何になりたいか、程度の質問で終わっていたと思う。",
+				NULL, "We called it career counseling at my old school. I transferred here before I had my private meeting with the teacher, so I never learned much about it. I heard that it's a discussion about what you want to be in the future, and it ends with a degree inquiry.", Line_Normal);
+	}
 	ClearMessage();
 
 //rだから、ここでも大したこともないと勝手に思って、聞き流していたんだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だから、ここでも大したこともないと勝手に思って、聞き流していたんだ。",
 			NULL, "So I didn't think it was such a big deal here.", Line_Normal);
 	ClearMessage();
 
 //r…といっても、今の私には志望校どころか、進路だって全然どこがどこで、なにがなにやらの状況だ。準備とか下調べとかも、当たり前だけど全然できていない…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…といっても、今の私には志望校どころか、進路だって全然どこがどこで、なにがなにやらの状況だ。準備とか下調べとかも、当たり前だけど全然できていない…。",
 			NULL, "...However, my future was uncertain. I didn't have any school aspirations, or any idea where my career might go. Students normally go through prep courses and preliminary exams, but I haven't done any of that.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100199.「ど、どうしよう…私…？」
 	PlaySE(4, "S04/36/310100199", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ど、どうしよう…私…？」",
 			NULL, "\"W-what should... I do...?\"", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300221.「……やれやれ」
 	PlaySE(4, "S04/37/310300221", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……やれやれ」",
 			NULL, "\"......Good grief.\"", Line_Normal);
 	ClearMessage();
 
 //r…そんな私の困惑を見て、千紗登ちゃんはふいに真面目な顔に戻ると、手帳を取り出しぱらぱらとめくる。そして隣に座るお父さんに何かを伝えてから、私に顔を戻して言った。
-	OutputLine(NULL, "…そんな私の困惑を見て、千紗登ちゃんはふいに真面目な顔に戻ると、手帳を取り出しぱらぱらとめくる。そして隣に座るお父さんに何かを伝えてから、私に顔を戻して言った。",
-			NULL, "Sensing my bewilderment, Chisato-chan suddenly donned a serious expression, pulled out a notebook, and started to flip through it. She said something to her father sitting beside her then turned back to me and began to speak.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "…そんな私の困惑を見て、千紗登ちゃんはふいに真面目な顔に戻ると、手帳を取り出しぱらぱらとめくる。そして隣に座るお父さんに何かを伝えてから、私に顔を戻して言った。",
+				NULL, "<size=-2>Sensing my bewilderment, Chisato-chan suddenly donned a serious expression, pulled out a notebook, and started to flip through it. She said something to her father sitting beside her then turned back to me and began to speak.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "…そんな私の困惑を見て、千紗登ちゃんはふいに真面目な顔に戻ると、手帳を取り出しぱらぱらとめくる。そして隣に座るお父さんに何かを伝えてから、私に顔を戻して言った。",
+				NULL, "Sensing my bewilderment, Chisato-chan suddenly donned a serious expression, pulled out a notebook, and started to flip through it. She said something to her father sitting beside her then turned back to me and began to speak.", Line_Normal);
+	}
 	ClearMessage();
 
 //千紗登rvS04/37/310300222.「それじゃあさ、夏美。kvS04/37/310300223.明日ちょっと、時間ある？」
 	PlaySE(4, "S04/37/310300222", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「それじゃあさ、夏美。",
 			NULL, "\"All right, Natsumi.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300223", 256, 64);
@@ -944,6 +1089,7 @@ void main()
 
 //夏美rvS04/36/310100200.「…え、明日？kvS04/36/310100201.　たぶん大丈夫だけど、…どうして？」
 	PlaySE(4, "S04/36/310100200", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…え、明日？",
 			NULL, "\"...Huh, tomorrow?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100201", 256, 64);
@@ -953,6 +1099,7 @@ void main()
 
 //千紗登rvS04/37/310300224.「学校のすぐ近くに、図書館あるの知ってるよね？kvS04/37/310300225.　そこで集まって、作戦会議しよう」
 	PlaySE(4, "S04/37/310300224", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「学校のすぐ近くに、図書館あるの知ってるよね？",
 			NULL, "\"You know the library right next to the school, right?", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300225", 256, 64);
@@ -962,6 +1109,7 @@ void main()
 
 //千紗登rvS04/37/310300226.「夏美は出席番号が前のほうだから、たぶん来週頭には回ってくるよ。kvS04/37/310300227.その前に早めに準備ってことで、ね？」
 	PlaySE(4, "S04/37/310300226", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美は出席番号が前のほうだから、たぶん来週頭には回ってくるよ。",
 			NULL, "\"Your attendance number is done the old way, so your career meeting will probably come around next week.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300227", 256, 64);
@@ -971,12 +1119,14 @@ void main()
 
 //夏美rvS04/36/310100202.「い、いいの？」
 	PlaySE(4, "S04/36/310100202", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「い、いいの？」",
 			NULL, "\"O-ok?\"", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300228.「もち！kvS04/37/310300229.　——あ、珠子にも連絡しておくからさ。kvS04/37/310300230.あの子、仮にも委員長だから進学のことにも詳しいし、きっと力になってくれるよ」
 	PlaySE(4, "S04/37/310300228", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「もち！",
 			NULL, "\"Of course!", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300229", 256, 64);
@@ -989,12 +1139,14 @@ void main()
 
 //夏美rvS04/36/310100203.「でも、…せっかくの日曜日なのに、私のせいで…」
 	PlaySE(4, "S04/36/310100203", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「でも、…せっかくの日曜日なのに、私のせいで…」",
 			NULL, "\"But... that's a lot of trouble on a Sunday, and it's all thanks to me...\"", Line_Normal);
 	ClearMessage();
 
 //千紗登rvS04/37/310300231.「あははは、それくらい平気だって。kvS04/37/310300232.その代わり終わった後は、アイスでもおごってもらうからね～？」
 	PlaySE(4, "S04/37/310300231", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あははは、それくらい平気だって。",
 			NULL, "\"Ahahaha, that's not a problem.", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300232", 256, 64);
@@ -1003,22 +1155,26 @@ void main()
 	ClearMessage();
 
 //rそう言って千紗登ちゃんは、いたずらっぽく目配せしながら微笑んでくれた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう言って千紗登ちゃんは、いたずらっぽく目配せしながら微笑んでくれた。",
 			NULL, "Chisato-chan said that with an impish smile.", Line_Normal);
 	ClearMessage();
 
 //r…私の準備不足で迷惑をかけてしまって、すごく後ろめたい気持ちで一杯だ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…私の準備不足で迷惑をかけてしまって、すごく後ろめたい気持ちで一杯だ。",
 			NULL, "...My ignorance was starting to get annoying. I felt so far behind.", Line_Normal);
 	ClearMessage();
 
 //rだけど二人のアドバイスがなければ、きっと何を訊かれても答えに詰まって、先生の心証を悪くするだけだろう。だから私は、そのありがたい提案を受けることにした。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だけど二人のアドバイスがなければ、きっと何を訊かれても答えに詰まって、先生の心証を悪くするだけだろう。だから私は、そのありがたい提案を受けることにした。",
 			NULL, "Without the advice of my friends, I'd struggle to answer their questions, no matter what they asked. That would only make the teacher's impression even worse.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100204.「…ごめんね、千紗登ちゃん。kvS04/36/310100205.珠子ちゃんにも悪いけど、お願いしてもいい？」
 	PlaySE(4, "S04/36/310100204", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…ごめんね、千紗登ちゃん。",
 			NULL, "\"...I'm sorry, Chisato-chan.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100205", 256, 64);
@@ -1028,6 +1184,7 @@ void main()
 
 //千紗登rvS04/37/310300233.「おっけー！kvS04/37/310300234.　また夜に電話するよ。kvS04/37/310300235.それじゃ、バイト頑張ってね～？」
 	PlaySE(4, "S04/37/310300233", 256, 64);
+	if (AdvMode) { OutputLine("<color=#fda762>千紗登</color>", NULL, "<color=#fda762>Chisato</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おっけー！",
 			NULL, "\"Okay!", Line_WaitForInput);
 	PlaySE(4, "S04/37/310300234", 256, 64);
@@ -1039,17 +1196,20 @@ void main()
 	ClearMessage();
 
 //r千紗登ちゃんを乗せた車は、軽いエンジン音とともに発進して病院の門を出て行く。…右折の際に千紗登ちゃんが手を振ってくれたので、私も手を振り返した。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "千紗登ちゃんを乗せた車は、軽いエンジン音とともに発進して病院の門を出て行く。…右折の際に千紗登ちゃんが手を振ってくれたので、私も手を振り返した。",
 			NULL, "The engine in Chisato-chan's car made a light roar before it took off beyond the hospital's gate. ...When the car turned right, Chisato-chan was waving her hand at me, so I turned and waved back.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100206.「………はぁ」
 	PlaySE(4, "S04/36/310100206", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………はぁ」",
 			NULL, "\"......Haah.\"", Line_Normal);
 	ClearMessage();
 
 //r上げた手を曖昧に下ろしながら一人残されて、また、ため息がもれ出る。…さっきの脱力してのものじゃない。もっと重く、…そして、沈んだ気持ちが入り混じっていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "上げた手を曖昧に下ろしながら一人残されて、また、ため息がもれ出る。…さっきの脱力してのものじゃない。もっと重く、…そして、沈んだ気持ちが入り混じっていた。",
 			NULL, "I was left alone lowering my raised hand when a sigh broke out. ...It wasn't just about my moment of weakness earlier. It was heavier... and my sunken feelings were mixed in.", Line_Normal);
 	ClearMessage();
@@ -1059,82 +1219,103 @@ void main()
 	Wait( 500 );
 
 //rこれから先の、進路。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "これから先の、進路。",
 			NULL, "From now on, my path ahead.", Line_Normal);
 	ClearMessage();
 
 //r学年も学年だけに、今までもまったく意識しなかったわけじゃない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "学年も学年だけに、今までもまったく意識しなかったわけじゃない。",
 			NULL, "I wasn't thinking about this particular school year at all.", Line_Normal);
 	ClearMessage();
 
 //r…ただ、この一年ずっと周囲の流れに従うだけで、置き去りにされないようにするのが精一杯だった私にとっては希望する選択肢も、そして選ぶ余裕すらも持つことができなかったんだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…ただ、この一年ずっと周囲の流れに従うだけで、置き去りにされないようにするのが精一杯だった私にとっては希望する選択肢も、そして選ぶ余裕すらも持つことができなかったんだ。",
 			NULL, "...But I had a hard enough time just keeping up with the flow this past year without getting left behind, so I didn't even have an opportunity to consider career options.", Line_Normal);
 	ClearMessage();
 
 //rおかーさんはきっと、進学を勧めるだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかーさんはきっと、進学を勧めるだろう。",
 			NULL, "Mom would most certainly encourage me to pursue higher education.", Line_Normal);
 	ClearMessage();
 
 //rあまり有名でなかった大学の出身のために、おとーさんもおかーさんも職場でずっと苦労をしたことを以前から聞かされてきたから、私にはそれなりの大学に進むことを期待しているんだと思う。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あまり有名でなかった大学の出身のために、おとーさんもおかーさんも職場でずっと苦労をしたことを以前から聞かされてきたから、私にはそれなりの大学に進むことを期待しているんだと思う。",
 			NULL, "Mom and Dad have mentioned in the past that they have encountered difficulties at work thanks to the obscure college they attended, so they would want me to go to a decent college.", Line_Normal);
 	ClearMessage();
 
 //rそしてそれが、二人が一番喜んでくれる最良の選択なんだと、さすがに私でもわかる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そしてそれが、二人が一番喜んでくれる最良の選択なんだと、さすがに私でもわかる。",
 			NULL, "And I realized that was the choice they would be happiest with.", Line_Normal);
 	ClearMessage();
 
 //rだけど、…正直言って私は特にやりたいこともなかったし、学歴を積み重ねたいとも考えていない。それにきっと、能力だって欠けている。…だって、今までそんな『環境』に居なかったんだから。
-	OutputLine(NULL, "だけど、…正直言って私は特にやりたいこともなかったし、学歴を積み重ねたいとも考えていない。それにきっと、能力だって欠けている。…だって、今までそんな『環境』に居なかったんだから。",
-			NULL, "But... honestly, there wasn't anything in particular I wanted to do, and I hadn't even thought about accumulating an educational background. And of course, my capabilities were completely lacking. ...Because I wasn't in the right <i>condition</i> until now.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "だけど、…正直言って私は特にやりたいこともなかったし、学歴を積み重ねたいとも考えていない。それにきっと、能力だって欠けている。…だって、今までそんな『環境』に居なかったんだから。",
+				NULL, "<size=-2>But... honestly, there wasn't anything in particular I wanted to do, and I hadn't even thought about accumulating an educational background. And of course, my capabilities were completely lacking. ...Because I wasn't in the right <i>condition</i> until now.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "だけど、…正直言って私は特にやりたいこともなかったし、学歴を積み重ねたいとも考えていない。それにきっと、能力だって欠けている。…だって、今までそんな『環境』に居なかったんだから。",
+				NULL, "But... honestly, there wasn't anything in particular I wanted to do, and I hadn't even thought about accumulating an educational background. And of course, my capabilities were completely lacking. ...Because I wasn't in the right <i>condition</i> until now.", Line_Normal);
+	}
 	ClearMessage();
 
 //r心を許せる友達と、楽しく遊ぶ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "心を許せる友達と、楽しく遊ぶ。",
 			NULL, "I was playing happily, with my old friends.", Line_Normal);
 	ClearMessage();
 
 //r学校の成績だって、まるでゲームの勝ち負けを競うように気楽で、単純な点取り遊び。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "学校の成績だって、まるでゲームの勝ち負けを競うように気楽で、単純な点取り遊び。",
 			NULL, "Test results were like competing in a game, winning or losing by making simple scoring plays.", Line_Normal);
 	ClearMessage();
 
 //rだからみんなそれぞれに、得意と不得意があって。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だからみんなそれぞれに、得意と不得意があって。",
 			NULL, "Everyone had their own strengths and weaknesses.", Line_Normal);
 	ClearMessage();
 
 //r全てにわたって優秀な人なんて滅多にいないから、優越感も劣等感も抱かない、呑気なものだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "全てにわたって優秀な人なんて滅多にいないから、優越感も劣等感も抱かない、呑気なものだった。",
 			NULL, "Since I was surrounded by people roughly at my level, it was nice not having a sense of superiority or inferiority.", Line_Normal);
 	ClearMessage();
 
 //rそれが、興宮にいた私。そして、興宮にいた私の同年代の子達の姿だ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それが、興宮にいた私。そして、興宮にいた私の同年代の子達の姿だ。",
 			NULL, "That's how it was for me in Okinomiya. Being compared to similar kids around my age.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100207.「………」
 	PlaySE(4, "S04/36/310100207", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //rでも、…この『都会』では、きっとそれは許してもらえないだろう。嫉妬や敵対心とも無縁の世界ではいられなくて、周囲の目を気にするようになる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "でも、…この『都会』では、きっとそれは許してもらえないだろう。嫉妬や敵対心とも無縁の世界ではいられなくて、周囲の目を気にするようになる。",
 			NULL, "But... I'm sure they won't be as forgiving here in the <i>city</i>. I won't stay in a world free from jealousy and hostility, I'll become worried about all the eyes surrounding me.", Line_Normal);
 	ClearMessage();
 
 //rううん、…実際もう、そうなっている。そしてひょっとしたら、千紗登ちゃんや珠子ちゃんを意識する日が来るのかもしれない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ううん、…実際もう、そうなっている。そしてひょっとしたら、千紗登ちゃんや珠子ちゃんを意識する日が来るのかもしれない。",
 			NULL, "No... Actually, that's already happened. Maybe a day will come when I'll worry about Chisato-chan and Tamako-chan too.", Line_Normal);
 	ClearMessage();
 
 //rそうなった時、…私は二人と今のように、仲良く接することができるんだろうか…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そうなった時、…私は二人と今のように、仲良く接することができるんだろうか…？",
 			NULL, "If that happens... could we remain friends like we are now...?", Line_Normal);
 	ClearMessage();
@@ -1144,11 +1325,13 @@ void main()
 
 //夏美rvS04/36/310100208.「————あ」
 	PlaySE(4, "S04/36/310100208", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————あ」",
 			NULL, "\"...Aah.\"", Line_Normal);
 	ClearMessage();
 
 //rふと、病院の屋上のほうから、学校のチャイムのような音が聞こえる。佐伯病院の診察時間が終了したお知らせだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ふと、病院の屋上のほうから、学校のチャイムのような音が聞こえる。佐伯病院の診察時間が終了したお知らせだ。",
 			NULL, "Suddenly, a sound resembling a school chime came from the roof of the hospital. It announced that consultation time at Saeki Hospital had ended.", Line_Normal);
 	ClearMessage();
@@ -1156,17 +1339,20 @@ void main()
 	FadeOutBGM( 0, 200, FALSE  );
 
 //rそしてそれは、私にとっても大事な合図だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そしてそれは、私にとっても大事な合図だった。",
 			NULL, "And that was an important signal for me.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100209.「いけない…遅れちゃう」
 	PlaySE(4, "S04/36/310100209", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いけない…遅れちゃう」",
 			NULL, "\"Oh no... I'll be late.\"", Line_Normal);
 	ClearMessage();
 
 //r私は気を取り直して、病院の中へと入ってゆく。そして入り口のすぐ右横にある職員用のエレベータの前に来て、昇降のボタンを押した。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私は気を取り直して、病院の中へと入ってゆく。そして入り口のすぐ右横にある職員用のエレベータの前に来て、昇降のボタンを押した。",
 			NULL, "I cleared my mind and headed into the hospital. Then I approached the staff elevator right beside the entrance and pushed the elevator button.", Line_Normal);
 	ClearMessage();
@@ -1176,21 +1362,30 @@ void main()
 	Wait( 500 );
 
 //r佐伯病院には隣接して、お年寄り向けの介護福祉センターがある。そこに入所している人たちは家で普通に生活できるよう、最新式の設備の整った環境の中でリハビリや治療を受けていた。
-	OutputLine(NULL, "佐伯病院には隣接して、お年寄り向けの介護福祉センターがある。そこに入所している人たちは家で普通に生活できるよう、最新式の設備の整った環境の中でリハビリや治療を受けていた。",
-			NULL, "There is a care and welfare center for the elderly right next to Saeki Hospital. The people there are undergoing treatment and rehabilitation in a facility with state-of-the-art equipment, so that they will be able to live at home normally.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "佐伯病院には隣接して、お年寄り向けの介護福祉センターがある。そこに入所している人たちは家で普通に生活できるよう、最新式の設備の整った環境の中でリハビリや治療を受けていた。",
+				NULL, "<size=-2>There is a care and welfare center for the elderly right next to Saeki Hospital. The people there are undergoing treatment and rehabilitation in a facility with state-of-the-art equipment, so that they will be able to live at home normally.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "佐伯病院には隣接して、お年寄り向けの介護福祉センターがある。そこに入所している人たちは家で普通に生活できるよう、最新式の設備の整った環境の中でリハビリや治療を受けていた。",
+				NULL, "There is a care and welfare center for the elderly right next to Saeki Hospital. The people there are undergoing treatment and rehabilitation in a facility with state-of-the-art equipment, so that they will be able to live at home normally.", Line_Normal);
+	}
 	ClearMessage();
 
 //rこのセンターでは看護師さんやお医者さんに加えて、補助的な役割として介護を専門にした人たちが働いている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "このセンターでは看護師さんやお医者さんに加えて、補助的な役割として介護を専門にした人たちが働いている。",
 			NULL, "In addition to doctors and nurses, the center has people working in supplementary roles who specialize in nursing care.", Line_Normal);
 	ClearMessage();
 
 //rまだ日本では資格が存在していないために色々な呼び方があるそうなんだけど、私はここの事前の講習で、それらの人を『介護士』さんと教えられた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "まだ日本では資格が存在していないために色々な呼び方があるそうなんだけど、私はここの事前の講習で、それらの人を『介護士』さんと教えられた。",
 			NULL, "Since they are not officially qualified in Japan yet, I've heard various names for them, but my preliminary course here taught to call them \"caregivers.\"", Line_Normal);
 	ClearMessage();
 
 //rそして、私が今年の春休み前から千紗登ちゃんの紹介で続けているアルバイトは、その介護士さんのお手伝いをすることだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、私が今年の春休み前から千紗登ちゃんの紹介で続けているアルバイトは、その介護士さんのお手伝いをすることだった。",
 			NULL, "And before spring break, Chisato-chan was able to get me a part time job here working as a caregiver.", Line_Normal);
 	ClearMessage();
@@ -1201,22 +1396,26 @@ void main()
 
 //夏美rvS04/36/310100210.「——すみません、遅くなりましたっ」
 	PlaySE(4, "S04/36/310100210", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——すみません、遅くなりましたっ」",
 			NULL, "\"...Sorry, I'm late.\"", Line_Normal);
 	ClearMessage();
 
 //r病院の更衣室に駆け込み、急いで着替え終えた私は、少し息を切らせながら介護士さんの控え室へと入る。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "病院の更衣室に駆け込み、急いで着替え終えた私は、少し息を切らせながら介護士さんの控え室へと入る。",
 			NULL, "I rushed into the locker room and changed my clothes in a hurry, then I took a light breath before walking into the caregivers' waiting room.", Line_Normal);
 	ClearMessage();
 
 //rさすがに医療施設の中だから駆けてはこなかったけど、時間ギリギリに着いた緊張で額には汗がにじんでいた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "さすがに医療施設の中だから駆けてはこなかったけど、時間ギリギリに着いた緊張で額には汗がにじんでいた。",
 			NULL, "Of course, this was a proper medical institution, so I couldn't run around, but I was sweating on my forehead from the tension of arriving just barely on time.", Line_Normal);
 	ClearMessage();
 
 //山瀬rvS04/00/VT1B_yamase1001.「あらあら、ご苦労様。kvS04/00/VT1B_yamase1002.全然遅くなんてないわよ？kvS04/00/VT1B_yamase1003.　時間ぴったりだから」
 	PlaySE(4, "S04/00/VT1B_yamase1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山瀬</color>", NULL, "<color=#f5e6d3>Yamase</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あらあら、ご苦労様。",
 			NULL, "\"Oh my, thanks for your effort.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_yamase1002", 256, 64);
@@ -1228,22 +1427,26 @@ void main()
 	ClearMessage();
 
 //r年配の介護士さんがそう言って、壁にかかった時計を指差しながらにっこりと微笑む。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "年配の介護士さんがそう言って、壁にかかった時計を指差しながらにっこりと微笑む。",
 			NULL, "An older caregiver said that while smiling and pointing at the clock on the wall.", Line_Normal);
 	ClearMessage();
 
 //r…確かにその通りなんだけど、本来ならようやく一息つけるみんなのために、アルバイトの私がお茶を沸かすことも、立派な仕事のひとつだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…確かにその通りなんだけど、本来ならようやく一息つけるみんなのために、アルバイトの私がお茶を沸かすことも、立派な仕事のひとつだった。",
 			NULL, "...That was certainly true, I thought while catching my breath, but one of the duties of my part-time job was boiling tea for everyone.", Line_Normal);
 	ClearMessage();
 
 //r別に義務じゃないから、とは言ってくれていたけど、出来ることが限られている私にとっては与えられた仕事を怠っているようで、とても申し訳なかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "別に義務じゃないから、とは言ってくれていたけど、出来ることが限られている私にとっては与えられた仕事を怠っているようで、とても申し訳なかった。",
 			NULL, "I was told that it was a separate obligation, but because of my limited abilities I felt like I was neglecting the work I was given, and that was inexcusable.", Line_Normal);
 	ClearMessage();
 
 //山瀬rvS04/00/VT1B_yamase1004.「夏美ちゃんは学生なんだし、それにここまで遠いんでしょう？kvS04/00/VT1B_yamase1005.　だから、少しくらいは遅れても大丈夫よ」
 	PlaySE(4, "S04/00/VT1B_yamase1004", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山瀬</color>", NULL, "<color=#f5e6d3>Yamase</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「夏美ちゃんは学生なんだし、それにここまで遠いんでしょう？",
 			NULL, "\"Natsumi-chan, you're a student coming from far away, right?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_yamase1005", 256, 64);
@@ -1253,6 +1456,7 @@ void main()
 
 //夏美rvS04/36/310100211.「ありがとうございます、山瀬さん。kvS04/36/310100212.…でも」
 	PlaySE(4, "S04/36/310100211", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ありがとうございます、山瀬さん。",
 			NULL, "\"Thank you so much, Yamase-san.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100212", 256, 64);
@@ -1262,6 +1466,7 @@ void main()
 
 //山瀬rvS04/00/VT1B_yamase1006.「——あ、そうだ。kvS04/00/VT1B_yamase1007.夏美ちゃん？」
 	PlaySE(4, "S04/00/VT1B_yamase1006", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山瀬</color>", NULL, "<color=#f5e6d3>Yamase</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——あ、そうだ。",
 			NULL, "\"...Oh, that's right.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_yamase1007", 256, 64);
@@ -1270,17 +1475,20 @@ void main()
 	ClearMessage();
 
 //rそんな、私の気後れを察してくれたのか、私の指導役の介護士さん——主任の山瀬さんは思い出したようにぽん、と手を叩く。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんな、私の気後れを察してくれたのか、私の指導役の介護士さん——主任の山瀬さんは思い出したようにぽん、と手を叩く。",
 			NULL, "This person who could read my mind, the leader of the caregivers -- the director Yamase-san, recalled something while clapping her hands.", Line_Normal);
 	ClearMessage();
 
 //rそして穏やかな笑みを浮かべたまま、テーブルに置かれたファイルを取り上げると私に向き直って言った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして穏やかな笑みを浮かべたまま、テーブルに置かれたファイルを取り上げると私に向き直って言った。",
 			NULL, "And with a gentle smile, she picked up the file placed on the table then turned toward me.", Line_Normal);
 	ClearMessage();
 
 //山瀬rvS04/00/VT1B_yamase1008.「ごめんなさいね。kvS04/00/VT1B_yamase1009.来て早々で申し訳ないんだけど、もうすぐ３時のおやつの時間だから配膳を手伝ってくれるかしら？kvS04/00/VT1B_yamase1010.　今日は常勤の人が急用でいないから」
 	PlaySE(4, "S04/00/VT1B_yamase1008", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山瀬</color>", NULL, "<color=#f5e6d3>Yamase</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ごめんなさいね。",
 			NULL, "\"I'm sorry.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_yamase1009", 256, 64);
@@ -1293,11 +1501,13 @@ void main()
 
 //夏美rvS04/36/310100213.「あ、…はいっ！」
 	PlaySE(4, "S04/36/310100213", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、…はいっ！」",
 			NULL, "\"Oh... Of course!\"", Line_Normal);
 	ClearMessage();
 
 //r元気よく頷く。おかーさんよりも少し年上だけど、働き始めてからいつもこんなふうに優しく気遣ってくれる山瀬さんが、私は大好きだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "元気よく頷く。おかーさんよりも少し年上だけど、働き始めてからいつもこんなふうに優しく気遣ってくれる山瀬さんが、私は大好きだった。",
 			NULL, "I nodded enthusiastically. This woman was a little older than my Mom. Since I started working here, Yamase-san has always been gentle and caring like this, I loved it.", Line_Normal);
 	ClearMessage();
@@ -1308,6 +1518,7 @@ void main()
 
 //夏美rvS04/36/310100214.「はーい皆さん、おやつの時間ですよ～！kvS04/36/310100215.　リビングに集まって席についてくださーい」
 	PlaySE(4, "S04/36/310100214", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「はーい皆さん、おやつの時間ですよ～！",
 			NULL, "\"Excuse me everyone, it's time for your snack~!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100215", 256, 64);
@@ -1316,22 +1527,26 @@ void main()
 	ClearMessage();
 
 //r配膳を終えた後、私はベッドルームそれぞれの中を覗き込みながら、出来るだけ優しく、明るい声でお年寄りたちに呼びかけて回った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "配膳を終えた後、私はベッドルームそれぞれの中を覗き込みながら、出来るだけ優しく、明るい声でお年寄りたちに呼びかけて回った。",
 			NULL, "After I finished serving, I went to each of the bedrooms and called the elderly people as gently as possible in a bright voice.", Line_Normal);
 	ClearMessage();
 
 //rこのセンターでは、通常３名から４名のお年寄りが男女別に部屋に同居している。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "このセンターでは、通常３名から４名のお年寄りが男女別に部屋に同居している。",
 			NULL, "In this center, there are usually 3 to 4 elderly people sharing a room, split by gender.", Line_Normal);
 	ClearMessage();
 
 //r病院よりも広めの室内では仲良しの人たちが集まってわいわいと談笑したり、持ち込みのテレビを見たり、ベッドに横になったりしていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "病院よりも広めの室内では仲良しの人たちが集まってわいわいと談笑したり、持ち込みのテレビを見たり、ベッドに横になったりしていた。",
 			NULL, "In a spacious room inside the hospital, good friends gathered together to chat, watch TV, and lay in bed.", Line_Normal);
 	ClearMessage();
 
 //老人rvS04/00/VT1B_elderMa1001.「おぉ、今日は夏美ちゃんかぁ。kvS04/00/VT1B_elderMa1002.久しぶりだの～！」
 	PlaySE(4, "S04/00/VT1B_elderMa1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おぉ、今日は夏美ちゃんかぁ。",
 			NULL, "\"Oh, Natsumi-chan is here today.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMa1002", 256, 64);
@@ -1341,22 +1556,26 @@ void main()
 
 //老人rvS04/00/VT1B_elderMb1001.「そういえば、今日は土曜日じゃったなぁ」
 	PlaySE(4, "S04/00/VT1B_elderMb1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そういえば、今日は土曜日じゃったなぁ」",
 			NULL, "\"Come to think of it, today is Saturday.\"", Line_Normal);
 	ClearMessage();
 
 //rお年寄りの人たちは私の顔を見るなり、人懐っこい笑顔を向けてくれる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "お年寄りの人たちは私の顔を見るなり、人懐っこい笑顔を向けてくれる。",
 			NULL, "The elderly people recognized my face and gave me a friendly smile.", Line_Normal);
 	ClearMessage();
 
 //r…初めてのときはちゃんと働けるのか不安だったけど、ちいさい時からおばあちゃんっ子だったこともあって、意外に早く馴染むことができた。今ではみんなとも、すっかり仲良しだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…初めてのときはちゃんと働けるのか不安だったけど、ちいさい時からおばあちゃんっ子だったこともあって、意外に早く馴染むことができた。今ではみんなとも、すっかり仲良しだ。",
 			NULL, "...When I first started, I was wondering if I'd be able to handle the work. But ever since I was young I was always a Grandma's-child, so I was able to adapt surprisingly quickly.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100216.「あははは、こんにちはおじーちゃん、おばーちゃん。kvS04/36/310100217.…あ、ちょっと待ってね」
 	PlaySE(4, "S04/36/310100216", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あははは、こんにちはおじーちゃん、おばーちゃん。",
 			NULL, "\"Ahahaha, good afternoon sir, ma'am.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100217", 256, 64);
@@ -1365,17 +1584,20 @@ void main()
 	ClearMessage();
 
 //r私はベッドから起き上がったばかりの人の側に寄って、立ち上がるなり車椅子に乗るなりの介助をして回る。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私はベッドから起き上がったばかりの人の側に寄って、立ち上がるなり車椅子に乗るなりの介助をして回る。",
 			NULL, "I moved towards the person who just got up from bed and helped them into their wheelchair.", Line_Normal);
 	ClearMessage();
 
 //r結構力も要るし、気も遣う仕事だったけど、ちゃんとできたときに『ありがとう』と言ってもらえるのが嬉しかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "結構力も要るし、気も遣う仕事だったけど、ちゃんとできたときに『ありがとう』と言ってもらえるのが嬉しかった。",
 			NULL, "The work I did required a lot of strength. I was happy to be told \"thank you\" when I did it properly.", Line_Normal);
 	ClearMessage();
 
 //老人rvS04/00/VT1B_elderMb1002.「ほんとに、夏美ちゃんはいい子じゃねぇ。kvS04/00/VT1B_elderMb1003.とっても真面目で、優しくての～」
 	PlaySE(4, "S04/00/VT1B_elderMb1002", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ほんとに、夏美ちゃんはいい子じゃねぇ。",
 			NULL, "\"Natsumi-chan is a really good girl, isn't she?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMb1003", 256, 64);
@@ -1385,6 +1607,7 @@ void main()
 
 //老人rvS04/00/VT1B_elderMa1003.「まったくじゃ。kvS04/00/VT1B_elderMa1004.近頃の子には珍しいぞい」
 	PlaySE(4, "S04/00/VT1B_elderMa1003", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「まったくじゃ。",
 			NULL, "\"Absolutely.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMa1004", 256, 64);
@@ -1394,6 +1617,7 @@ void main()
 
 //夏美rvS04/36/310100218.「そ、そんなことないよ。kvS04/36/310100219.…私、ほんとに不器用だから、足りないことがあったらなんでも言ってね」
 	PlaySE(4, "S04/36/310100218", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そ、そんなことないよ。",
 			NULL, "\"Th-that's not true.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100219", 256, 64);
@@ -1403,6 +1627,7 @@ void main()
 
 //老人rvS04/00/VT1B_elderMc1001.「いやいや！kvS04/00/VT1B_elderMc1002.　大事なのは気持ちがこもっているかどうかじゃよ。kvS04/00/VT1B_elderMc1003.ウチの嫁にも教えてやりたいくらいじゃわい！」
 	PlaySE(4, "S04/00/VT1B_elderMc1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いやいや！",
 			NULL, "\"Nonsense!", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMc1002", 256, 64);
@@ -1414,12 +1639,14 @@ void main()
 	ClearMessage();
 
 //rおじーちゃんたちはそう言いながら、皺だらけの顔をくしゃくしゃにして笑ってくれる。その優しい表情がぽかぽかとあたたかくって、私もつられて頬がゆるむのを感じていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おじーちゃんたちはそう言いながら、皺だらけの顔をくしゃくしゃにして笑ってくれる。その優しい表情がぽかぽかとあたたかくって、私もつられて頬がゆるむのを感じていた。",
 			NULL, "After the old men said that, their wrinkled faces crumpled with laughter. Their gentle expressions felt warm, and I could feel the tension releasing from my face.", Line_Normal);
 	ClearMessage();
 
 //老人rvS04/00/VT1B_elderMd1001.「そうじゃなぁ～！kvS04/00/VT1B_elderMd1002.　なんだったら夏美ちゃん、ウチの息子の嫁に来んかね？kvS04/00/VT1B_elderMd1003.　夏美ちゃんなら大歓迎じゃよぉ？」
 	PlaySE(4, "S04/00/VT1B_elderMd1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そうじゃなぁ～！",
 			NULL, "\"That's right~!", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMd1002", 256, 64);
@@ -1432,12 +1659,14 @@ void main()
 
 //夏美rvS04/36/310100220.「え、ええっっ？！」
 	PlaySE(4, "S04/36/310100220", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「え、ええっっ？！」",
 			NULL, "\"Huuuuh?!\"", Line_Normal);
 	ClearMessage();
 
 //老人rvS04/00/VT1B_elderMb1004.「こらこら、ミツさん！kvS04/00/VT1B_elderMb1005.　抜け駆けはなしじゃと前にワシらで話し合ったじゃろうが？kvS04/00/VT1B_elderMb1006.　それにミツさんとこの息子さん、今年で５０過ぎじゃなかったのか？」
 	PlaySE(4, "S04/00/VT1B_elderMb1004", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「こらこら、ミツさん！",
 			NULL, "\"Come on, Mitsu-san!", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMb1005", 256, 64);
@@ -1450,6 +1679,7 @@ void main()
 
 //老人rvS04/00/VT1B_elderMd1004.「おおぉう、そうじゃった。kvS04/00/VT1B_elderMd1005.忘れてたわ～！」
 	PlaySE(4, "S04/00/VT1B_elderMd1004", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おおぉう、そうじゃった。",
 			NULL, "\"Ohhhhh, that's right.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMd1005", 256, 64);
@@ -1461,17 +1691,20 @@ void main()
 	PlaySE(4, "S04/00/VT1B_elderMa1005", 256, 64);
 	PlaySE(5, "S04/00/VT1B_elderMb1007", 256, 64);
 	PlaySE(6, "S04/00/VT1B_elderMc1004", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人たち</color>", NULL, "<color=#f5e6d3>Old people</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「「がっはっはっはっはっ！！！」」",
 			NULL, "\"\"Gahahahaha!!!\"\"", Line_Normal);
 	ClearMessage();
 
 //r豪快な笑い声。お世辞か、あるいは自惚れかもしれないけど、…こうやって好意的に私のことをほめてくれるだけで、心がいつも励まされる。だから、私はこの仕事を始めて本当に良かったと思っていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "豪快な笑い声。お世辞か、あるいは自惚れかもしれないけど、…こうやって好意的に私のことをほめてくれるだけで、心がいつも励まされる。だから、私はこの仕事を始めて本当に良かったと思っていた。",
 			NULL, "Such amazing laughter. I wasn't sure if his compliments were just flattery... but just being praised in a friendly manner was encouraging. So, for the first time, I thought that I was really good at this job.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100221.「それじゃあ、リビングに集まってね。kvS04/36/310100222.おじーちゃん、車椅子平気？」
 	PlaySE(4, "S04/36/310100221", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「それじゃあ、リビングに集まってね。",
 			NULL, "\"Well then, let's head to the living room.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100222", 256, 64);
@@ -1481,6 +1714,7 @@ void main()
 
 //老人rvS04/00/VT1B_elderMb1008.「おぉぅ！kvS04/00/VT1B_elderMb1009.　もう自分の手足のように自由自在じゃわい。kvS04/00/VT1B_elderMb1010.今度身体を鍛え直して、競技会にでも参加してやろうかの～？」
 	PlaySE(4, "S04/00/VT1B_elderMb1008", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おぉぅ！",
 			NULL, "\"Ohh!", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMb1009", 256, 64);
@@ -1493,6 +1727,7 @@ void main()
 
 //夏美rvS04/36/310100223.「ほんとに？kvS04/36/310100224.　じゃあ私、お弁当作って応援に行くね～。kvS04/36/310100225.あははは！」
 	PlaySE(4, "S04/36/310100223", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ほんとに？",
 			NULL, "\"Oh really?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100224", 256, 64);
@@ -1505,6 +1740,7 @@ void main()
 
 //老人rvS04/00/VT1B_elderMb1011.「がっはっはっはっ！kvS04/00/VT1B_elderMb1012.　楽しみにしておれよ～？」
 	PlaySE(4, "S04/00/VT1B_elderMb1011", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「がっはっはっはっ！",
 			NULL, "\"Gahahaha!", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMb1012", 256, 64);
@@ -1513,22 +1749,26 @@ void main()
 	ClearMessage();
 
 //r細くなった腕で力こぶを作ってみせる、泰三さん。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "細くなった腕で力こぶを作ってみせる、泰三さん。",
 			NULL, "Taizou-san flexed the bicep on his slender arm.", Line_Normal);
 	ClearMessage();
 
 //r…ここに入所したばかりの頃は、足腰が弱くなったことですっかり落ち込んでいて、元気がなかった。それでも、今はすっかり明るくなって、部屋の皆を楽しませる存在になっている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…ここに入所したばかりの頃は、足腰が弱くなったことですっかり落ち込んでいて、元気がなかった。それでも、今はすっかり明るくなって、部屋の皆を楽しませる存在になっている。",
 			NULL, "...I wasn't feeling well when I first got here, I was completely depressed and my legs were weak. But even so, things got brighter while entertaining everyone in the room.", Line_Normal);
 	ClearMessage();
 
 //rこんなふうに、おばーちゃんと同じくらいの人たちが元気を取り戻してくれるのを見ることが出来たときは、心から嬉しくて、…幸せだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "こんなふうに、おばーちゃんと同じくらいの人たちが元気を取り戻してくれるのを見ることが出来たときは、心から嬉しくて、…幸せだった。",
 			NULL, "Seeing people like that old woman regain their energy brought joy to the bottom of my heart... I was delighted.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100226.「それじゃみんな、いつも通り席は名札のあるところに座ってね。kvS04/36/310100227.ちゃんとみんなに同じ分あるから、喧嘩しちゃ駄目だよ？」
 	PlaySE(4, "S04/36/310100226", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「それじゃみんな、いつも通り席は名札のあるところに座ってね。",
 			NULL, "\"All right everyone, sit down in the seat marked with your name tag, like usual.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100227", 256, 64);
@@ -1538,6 +1778,7 @@ void main()
 
 //老人rvS04/00/VT1B_elderMa1006.「ひゃっひゃっひゃっ！kvS04/00/VT1B_elderMa1007.　食い物の恨みは恐ろしいからの～。kvS04/00/VT1B_elderMa1008.気をつけてな、次郎吉さん？」
 	PlaySE(4, "S04/00/VT1B_elderMa1006", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ひゃっひゃっひゃっ！",
 			NULL, "\"Haahaahaa!", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMa1007", 256, 64);
@@ -1550,6 +1791,7 @@ void main()
 
 //老人rvS04/00/VT1B_elderMc1005.「おいおいトメさん、ワシが泰三さんと言い合ったのは、相撲の物言いについてじゃぞ？kvS04/00/VT1B_elderMc1006.　そんなに意地汚いことで喧嘩なんぞしちょらんわい！」
 	PlaySE(4, "S04/00/VT1B_elderMc1005", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おいおいトメさん、ワシが泰三さんと言い合ったのは、相撲の物言いについてじゃぞ？",
 			NULL, "\"Hey Tome-san, last time I exchanged words with Taizou-san, it was more like sumo wrestling, wasn't it?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_elderMc1006", 256, 64);
@@ -1559,17 +1801,20 @@ void main()
 
 //老人rvS04/00/VT1B_elderMc1007.「おぅそういや、もうそろそろ放送が始まる時間じゃなぁ？」
 	PlaySE(4, "S04/00/VT1B_elderMc1007", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おぅそういや、もうそろそろ放送が始まる時間じゃなぁ？」",
 			NULL, "\"Oh no, is it already time for the broadcast to start?\"", Line_Normal);
 	ClearMessage();
 
 //老人rvS04/00/VT1B_elderMd1006.「ワシゃ、ドラマの再放送の方がええんじゃがの～」
 	PlaySE(4, "S04/00/VT1B_elderMd1006", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>老人</color>", NULL, "<color=#f5e6d3>Old guy</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ワシゃ、ドラマの再放送の方がええんじゃがの～」",
 			NULL, "\"It's a rerun of one of my dramas, isn't it~?\"", Line_Normal);
 	ClearMessage();
 
 //rそんなことを口々に言い合いながら、みんなは賑やかに部屋を出て行く。私はそれを見届けてから、簡単にベッド周りを整えて次の部屋へと向かった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんなことを口々に言い合いながら、みんなは賑やかに部屋を出て行く。私はそれを見届けてから、簡単にベッド周りを整えて次の部屋へと向かった。",
 			NULL, "Everyone vibrantly exited the room, arguing about this and that. After seeing them off, I quickly made the bed and headed to the next room.", Line_Normal);
 	ClearMessage();
@@ -1579,6 +1824,7 @@ void main()
 
 //夏美rvS04/36/310100228.「さて、ここで最後っと。kvS04/36/310100229.…あれ？」
 	PlaySE(4, "S04/36/310100228", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「さて、ここで最後っと。",
 			NULL, "\"Well, here's the last one.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100229", 256, 64);
@@ -1587,17 +1833,20 @@ void main()
 	ClearMessage();
 
 //r一通りの部屋を回り終わって、最後に廊下の隅にある部屋を覗き込むと。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "一通りの部屋を回り終わって、最後に廊下の隅にある部屋を覗き込むと。",
 			NULL, "After finishing that room, I turned and looked into the room in the corner of the hallway.", Line_Normal);
 	ClearMessage();
 
 //rそこには一人だけ、ぽつんとベッドに腰掛けてこちらに背を向け、窓の外を見ているおじーちゃんがいた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そこには一人だけ、ぽつんとベッドに腰掛けてこちらに背を向け、窓の外を見ているおじーちゃんがいた。",
 			NULL, "There was just one person sitting on the bed with his back turned to me, an old man looking out the window.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100230.「おじーちゃん？kvS04/36/310100231.　おやつの時間ですよ～」
 	PlaySE(4, "S04/36/310100230", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おじーちゃん？",
 			NULL, "\"Sir?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100231", 256, 64);
@@ -1606,6 +1855,7 @@ void main()
 	ClearMessage();
 
 //r入り口から呼びかけてみるが、…返事がない。聞こえなかったのかな、と思って私は部屋に入る。そして、背後から大声を出してびっくりさせないよう、そばに近寄った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "入り口から呼びかけてみるが、…返事がない。聞こえなかったのかな、と思って私は部屋に入る。そして、背後から大声を出してびっくりさせないよう、そばに近寄った。",
 			NULL, "I tried calling to him from the entrance, but... he didn't respond. I wondered if he couldn't hear, so I entered the room. And I approached from the side, to avoid surprising him from behind.", Line_Normal);
 	ClearMessage();
@@ -1615,17 +1865,20 @@ void main()
 
 //夏美rvS04/36/310100232.「……？」
 	PlaySE(4, "S04/36/310100232", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……？」",
 			NULL, "\"......?\"", Line_Normal);
 	ClearMessage();
 
 //r横からそっと、覗き込む。…見かけない顔だ。そういえばさっき山瀬さんが、数日前に新しい人が入った、って言ってたっけ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "横からそっと、覗き込む。…見かけない顔だ。そういえばさっき山瀬さんが、数日前に新しい人が入った、って言ってたっけ。",
 			NULL, "From the side, I gently peered in. ...I couldn't recognize his face. Come to think of it, Yamase-san said that a new person was admitted a few days ago. ", Line_Normal);
 	ClearMessage();
 
 //山瀬rvS04/00/VT1B_yamase1011.『ちょっとね、…変わったおじいちゃんなのよ。kvS04/00/VT1B_yamase1012.どうも人付き合いが苦手な人みたいで、なかなかみんなと打ち解けてくれなくてね…』
 	PlaySE(4, "S04/00/VT1B_yamase1011", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山瀬</color>", NULL, "<color=#f5e6d3>Yamase</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『ちょっとね、…変わったおじいちゃんなのよ。",
 			NULL, "\"This old man... he's a little strange.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_yamase1012", 256, 64);
@@ -1637,33 +1890,39 @@ void main()
 
 //夏美rvS04/36/310100233.「………」
 	PlaySE(4, "S04/36/310100233", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //rおじーちゃんは私に振り向きもしない。気づいていないはずはないんだけど、…ただじっと、ぼんやりと外を見ていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おじーちゃんは私に振り向きもしない。気づいていないはずはないんだけど、…ただじっと、ぼんやりと外を見ていた。",
 			NULL, "The old man didn't turn toward me. He must not have noticed... He just continued gently looking outside.", Line_Normal);
 	ClearMessage();
 
 //r表情に精気が感じられない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "表情に精気が感じられない。",
 			NULL, "I couldn't sense any vitality in his expression.", Line_Normal);
 	ClearMessage();
 
 //r…もしかしたら具合が、と思って一瞬息を飲んだけど、瞬きをしているのを見て取り、ほっと胸をなでおろす。そしてもう一度、驚かせないよう心がけて優しく、ゆっくりと呼びかけた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…もしかしたら具合が、と思って一瞬息を飲んだけど、瞬きをしているのを見て取り、ほっと胸をなでおろす。そしてもう一度、驚かせないよう心がけて優しく、ゆっくりと呼びかけた。",
 			NULL, "...I began to feel sick, breathing heavily for a moment, but then I noticed him blinking and it made me feel relieved. Once again, trying not to surprise him, I gently called out.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100234.「…おじーちゃん？」
 	PlaySE(4, "S04/36/310100234", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…おじーちゃん？」",
 			NULL, "\"...Sir?\"", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1001.「……、kvS04/00/VT1B_hatakeG1002.……さま…」
 	PlaySE(4, "S04/00/VT1B_hatakeG1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……、",
 			NULL, "\"......", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1002", 256, 64);
@@ -1673,17 +1932,20 @@ void main()
 
 //夏美rvS04/36/310100235.「え…？」
 	PlaySE(4, "S04/36/310100235", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「え…？」",
 			NULL, "\"Huh...?\"", Line_Normal);
 	ClearMessage();
 
 //rよく目を凝らしてみると、…その唇がかすかに動いて、何かを呟いている。ちょっと失礼かなと思ったけど、意を決してほんの少しだけ近づき、耳をそばだてる。すると、
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "よく目を凝らしてみると、…その唇がかすかに動いて、何かを呟いている。ちょっと失礼かなと思ったけど、意を決してほんの少しだけ近づき、耳をそばだてる。すると、",
 			NULL, "Taking a good look... I saw his lips faintly moving, muttering something. I thought it was a little rude, but I moved in a little closer and listened in. Then,", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1003.「……オヤシロさま…、kvS04/00/VT1B_hatakeG1004.…しわけ…せん…」
 	PlaySE(4, "S04/00/VT1B_hatakeG1003", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……オヤシロさま…、",
 			NULL, "\"......Oyashiro-sama...", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1004", 256, 64);
@@ -1693,27 +1955,32 @@ void main()
 
 //夏美rvS04/36/310100236.「…オヤシロ…さま…？」
 	PlaySE(4, "S04/36/310100236", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…オヤシロ…さま…？」",
 			NULL, "\"...Oyashiro...sama...?\"", Line_Normal);
 	ClearMessage();
 
 //rわずかに、…でも、はっきりと聞こえたその単語は、…私の記憶に引っかかるものだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "わずかに、…でも、はっきりと聞こえたその単語は、…私の記憶に引っかかるものだった。",
 			NULL, "It was slight... but the word I heard clearly... was caught in my memory.", Line_Normal);
 	ClearMessage();
 
 //r『オヤシロさま』…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『オヤシロさま』…。",
 			NULL, "\"Oyashiro-sama...\"", Line_Normal);
 	ClearMessage();
 
 //rそれって、…もしかして…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それって、…もしかして…。",
 			NULL, "Then... perhaps...", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100237.「…あの、おじーちゃん、kvS04/36/310100238.…ひょっとして、雛見沢の人？」
 	PlaySE(4, "S04/36/310100237", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…あの、おじーちゃん、",
 			NULL, "\"...Um, Sir?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100238", 256, 64);
@@ -1725,12 +1992,14 @@ void main()
 
 //畠山老rvS04/00/VT1B_hatakeG1005.「————？！」
 	PlaySE(4, "S04/00/VT1B_hatakeG1005", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————？！」",
 			NULL, "\"...?!\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100239.「きゃっ？kvS04/36/310100240.　——痛っ？！」
 	PlaySE(4, "S04/36/310100239", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「きゃっ？",
 			NULL, "\"Kyah?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100240", 256, 64);
@@ -1745,17 +2014,20 @@ void main()
 	Wait( 500 );
 
 //r突然、前触れもなく顔を向けられた私は、驚きのあまり後ろに躓いて、尻餅をついてしまう。そして腰をさすりながら顔を上げると、…そのおじーちゃんは目を丸くした表情で私を見下ろしていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "突然、前触れもなく顔を向けられた私は、驚きのあまり後ろに躓いて、尻餅をついてしまう。そして腰をさすりながら顔を上げると、…そのおじーちゃんは目を丸くした表情で私を見下ろしていた。",
 			NULL, "Suddenly without warning, he turned to face me, I was so surprised I fell on my backside. I looked up while rubbing my back, and... the old man was looking down on me with wide eyes.", Line_Normal);
 	ClearMessage();
 
 //r改めて見ると、ちょっと強面のおじーちゃんだ。…もしかして、詮索しちゃいけないことだったのかな？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "改めて見ると、ちょっと強面のおじーちゃんだ。…もしかして、詮索しちゃいけないことだったのかな？",
 			NULL, "Looking again, this old man was moderately strong. ...Maybe this was a topic I shouldn't investigate?", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100241.「…ご、ごめんなさい！kvS04/36/310100242.　変なこと聞いて、私っ——」
 	PlaySE(4, "S04/36/310100241", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…ご、ごめんなさい！",
 			NULL, "\"...I-I'm sorry!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100242", 256, 64);
@@ -1765,6 +2037,7 @@ void main()
 
 //畠山老rvS04/00/VT1B_hatakeG1006.「お嬢ちゃん、kvS04/00/VT1B_hatakeG1007.…あんた、雛見沢の子かい？」
 	PlaySE(4, "S04/00/VT1B_hatakeG1006", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お嬢ちゃん、",
 			NULL, "\"Little girl.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1007", 256, 64);
@@ -1774,6 +2047,7 @@ void main()
 
 //夏美rvS04/36/310100243.「え？kvS04/36/310100244.　あ、うん…」
 	PlaySE(4, "S04/36/310100243", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「え？",
 			NULL, "\"Huh?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100244", 256, 64);
@@ -1782,18 +2056,21 @@ void main()
 	ClearMessage();
 
 //r戸惑いながらも、こくん、と頷き返す。…正確には隣の興宮だけど、おばーちゃんが雛見沢村の出身だから、嘘は言っていないと思う。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "戸惑いながらも、こくん、と頷き返す。…正確には隣の興宮だけど、おばーちゃんが雛見沢村の出身だから、嘘は言っていないと思う。",
 			NULL, "Feeling confused, I gulped and nodded back to him. ... I was technically from the neighboring town of Okinomiya, but Grandma was from Hinamizawa village so I wasn't stretching the truth too far.", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1008.「…名前は？」
 	PlaySE(4, "S04/00/VT1B_hatakeG1008", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…名前は？」",
 			NULL, "\"...What is your name?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100245.「えっ、と…。kvS04/36/310100246.公由、夏美…」
 	PlaySE(4, "S04/36/310100245", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「えっ、と…。",
 			NULL, "\"Uh...", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100246", 256, 64);
@@ -1803,6 +2080,7 @@ void main()
 
 //畠山老rvS04/00/VT1B_hatakeG1009.「公由？kvS04/00/VT1B_hatakeG1010.　——じゃあ、御三家の？」
 	PlaySE(4, "S04/00/VT1B_hatakeG1009", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「公由？",
 			NULL, "\"Kimiyoshi?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1010", 256, 64);
@@ -1812,6 +2090,7 @@ void main()
 
 //夏美rvS04/36/310100247.「あ、はい。kvS04/36/310100248.そうです」
 	PlaySE(4, "S04/36/310100247", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、はい。",
 			NULL, "\"Oh, yes.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100248", 256, 64);
@@ -1820,17 +2099,20 @@ void main()
 	ClearMessage();
 
 //r私はそれに答えながら、やっぱりと確信する。『公由』と言って『御三家』が出てくるのは、雛見沢出身の人でなければありえないからだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私はそれに答えながら、やっぱりと確信する。『公由』と言って『御三家』が出てくるのは、雛見沢出身の人でなければありえないからだ。",
 			NULL, "After answering that, I was completely convinced. Hearing \"Kimiyoshi\" and responding \"Three Families\", this man must be from Hinamizawa.", Line_Normal);
 	ClearMessage();
 
 //rそして、それはおじーちゃんも同じ気持ちだったのだろう。突然、虚ろで元気がなかった瞳には光が戻り、岩のように頑なだった表情をぱっと破顔させた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、それはおじーちゃんも同じ気持ちだったのだろう。突然、虚ろで元気がなかった瞳には光が戻り、岩のように頑なだった表情をぱっと破顔させた。",
 			NULL, "And it seemed like the old man had the same impression. Suddenly the light returned to his lifeless eyes, and his stubborn-like-a-rock facial expression broke at once.", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1011.「…おぉ、おおぅっ！kvS04/00/VT1B_hatakeG1012.　こんなところで同郷の子に会うとはのぉ！kvS04/00/VT1B_hatakeG1013.　なんという奇遇じゃ～！」
 	PlaySE(4, "S04/00/VT1B_hatakeG1011", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…おぉ、おおぅっ！",
 			NULL, "\"...Oh, Ohh!", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1012", 256, 64);
@@ -1843,6 +2125,7 @@ void main()
 
 //夏美rvS04/36/310100249.「あ、えと、その、k|yvS04/36/310100250.——痛たたぁっっ？！」
 	PlaySE(4, "S04/36/310100249", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、えと、その、",
 			NULL, "\"Oh, umm, that's,", Line_WaitForInput);
 
@@ -1855,17 +2138,20 @@ void main()
 	ClearMessage();
 
 //rいきなり手を取られてびっくりしたが、その見かけによらない（むしろ見かけ通り？）ものすごい力でぎゅぅぅっ、と握られ、さらにびっくりして悲鳴を上げてしまう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "いきなり手を取られてびっくりしたが、その見かけによらない（むしろ見かけ通り？）ものすごい力でぎゅぅぅっ、と握られ、さらにびっくりして悲鳴を上げてしまう。",
 			NULL, "I was surprised when he suddenly picked up my hand. Contrary to his appearance (rather apparently?) he had tremendous power squeezing my hand, and I screamed in shock.", Line_Normal);
 	ClearMessage();
 
 //rさすがに私の反応を見てすぐに手を離してくれたけど、…手のひらが真っ赤だ。くすん。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "さすがに私の反応を見てすぐに手を離してくれたけど、…手のひらが真っ赤だ。くすん。",
 			NULL, "But he noticed my reaction and immediately let go of my hand... My palm was turning bright red. *Sniffle*", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1014.「おぉ、すまんすまん。kvS04/00/VT1B_hatakeG1015.いやいや、あんまりに嬉しくての～。kvS04/00/VT1B_hatakeG1015_1.こんな都会の閉め切られた場所に放り込まれて憂鬱じゃ思っておったが、まさかまさかの喜びじゃわい！kvS04/00/VT1B_hatakeG1015_2.　これもオヤシロさまのお導きかの～？kvS04/00/VT1B_hatakeG1015_3.　わっはっはっはっ！！」
 	PlaySE(4, "S04/00/VT1B_hatakeG1014", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おぉ、すまんすまん。",
 			NULL, "\"Ohh, I am sorry.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1015", 256, 64);
@@ -1876,24 +2162,28 @@ void main()
 			NULL, " I was feeling depressed, being thrown into a closed place like this in a city, but wow, meeting you is a pleasure!", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1015_2", 256, 64);
 	OutputLine(NULL, "　これもオヤシロさまのお導きかの～？",
-			NULL, " This must also be Oyashiro-sama's guidance~.", Line_WaitForInput);
+			NULL, " This must also be Oyashiro-sama's guidance~. ", Line_ModeSpecific);
 	PlaySE(4, "S04/00/VT1B_hatakeG1015_3", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　わっはっはっはっ！！」",
-			NULL, " Wahahaha!!\"", Line_Normal);
+			NULL, "Wahahaha!!\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100251.「あ、あははは…」
 	PlaySE(4, "S04/36/310100251", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、あははは…」",
 			NULL, "\"Ah, ahahaha...\"", Line_Normal);
 	ClearMessage();
 
 //rぎこちなく笑いながら、曖昧に頷く。そこまで喜んでくれて面映かったけど、私はそれ以上に、さっきとはがらりと変わった豪放な雰囲気に戸惑っていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ぎこちなく笑いながら、曖昧に頷く。そこまで喜んでくれて面映かったけど、私はそれ以上に、さっきとはがらりと変わった豪放な雰囲気に戸惑っていた。",
 			NULL, "I gave him a vague nod while smiling awkwardly. I was glad and a little embarrassed, but more than that, I was perplexed by the frank and unusual change of atmosphere.", Line_Normal);
 	ClearMessage();
 
 //rいったい、さっきまでのあの深刻な様相はなんだったんだろう…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "いったい、さっきまでのあの深刻な様相はなんだったんだろう…？",
 			NULL, "That serious turn until a little while ago, what on earth was it...?", Line_Normal);
 	ClearMessage();
@@ -1902,12 +2192,14 @@ void main()
 	DrawScene( "kai_heya1", 1000 );
 
 //r…それからしばらく、私はおじーちゃんが語る雛見沢での思い出話に耳を傾ける。最初はとっつきにくい印象だったけど、口を開けばとてもお話好きな人だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…それからしばらく、私はおじーちゃんが語る雛見沢での思い出話に耳を傾ける。最初はとっつきにくい印象だったけど、口を開けばとてもお話好きな人だった。",
 			NULL, "For a while, I listened to the old man tell me stories about his memories of Hinamizawa. He left a difficult first impression, but once he opened his mouth he was a very talkative person.", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1016.「そういや夏美ちゃん、と言ったかの？kvS04/00/VT1B_hatakeG1017.　あんた、いつこっちに来たんじゃ？」
 	PlaySE(4, "S04/00/VT1B_hatakeG1016", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そういや夏美ちゃん、と言ったかの？",
 			NULL, "\"That's right, Natsumi-chan, did you say?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1017", 256, 64);
@@ -1917,6 +2209,7 @@ void main()
 
 //夏美rvS04/36/310100252.「私？kvS04/36/310100253.　えっと、去年だよ。kvS04/36/310100254.おじーちゃんは？」
 	PlaySE(4, "S04/36/310100252", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「私？",
 			NULL, "\"Me?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100253", 256, 64);
@@ -1929,6 +2222,7 @@ void main()
 
 //畠山老rvS04/00/VT1B_hatakeG1018.「ワシは今年の春なんじゃ。kvS04/00/VT1B_hatakeG1019.息子夫婦が共働きになって、仕方なくここにのぉ」
 	PlaySE(4, "S04/00/VT1B_hatakeG1018", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ワシは今年の春なんじゃ。",
 			NULL, "\"I came in the spring of this year.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1019", 256, 64);
@@ -1938,12 +2232,14 @@ void main()
 
 //夏美rvS04/36/310100255.「…そうなんだ」
 	PlaySE(4, "S04/36/310100255", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…そうなんだ」",
 			NULL, "\"...I see.\"", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1020.「まぁ、都会じゃと何かと物入りで、息子の稼ぎだけでは苦しいからの。kvS04/00/VT1B_hatakeG1021.ワシも最近足腰が弱くなったし、若いモンに面倒をかけるわけにはいかんしなぁ」
 	PlaySE(4, "S04/00/VT1B_hatakeG1020", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「まぁ、都会じゃと何かと物入りで、息子の稼ぎだけでは苦しいからの。",
 			NULL, "\"Well, in this city with all its expenses, it is painful relying on only my son's earnings.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1021", 256, 64);
@@ -1952,12 +2248,14 @@ void main()
 	ClearMessage();
 
 //r苦笑いで肩をすくめながらも、少しだけ寂しそうにため息をつく。…そのパジャマの胸には『畠山』と苗字が書かれてあった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "苦笑いで肩をすくめながらも、少しだけ寂しそうにため息をつく。…そのパジャマの胸には『畠山』と苗字が書かれてあった。",
 			NULL, "While shrugging his shoulders and smiling bitterly, he let out a small sigh. ...I noticed the name \"Hatakeyama\" written on the breast pocket of his pajamas.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100256.「元気出してよ、おじーちゃん。kvS04/36/310100257.頑張って体調戻したら、きっとまた息子さんたちと一緒に暮らせるようになるよ！」
 	PlaySE(4, "S04/36/310100256", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「元気出してよ、おじーちゃん。",
 			NULL, "\"Keep your strength up, sir.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100257", 256, 64);
@@ -1967,24 +2265,28 @@ void main()
 
 //畠山老rvS04/00/VT1B_hatakeG1022.「……そうかのう」
 	PlaySE(4, "S04/00/VT1B_hatakeG1022", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……そうかのう」",
 			NULL, "\"......Is that so?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100258.「そうだよ！kvS04/36/310100259.　最初は寝たきりで元気なかったけど、一生懸命リハビリして歩けるようになって、おうちに帰った人も大勢いるんだから。kvS04/36/310100260.だからおじーちゃんも頑張ろう、ねっ？」
 	PlaySE(4, "S04/36/310100258", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そうだよ！",
 			NULL, "\"That's right!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100259", 256, 64);
 	OutputLine(NULL, "　最初は寝たきりで元気なかったけど、一生懸命リハビリして歩けるようになって、おうちに帰った人も大勢いるんだから。",
-			NULL, " You may be bedridden and lethargic at first, but you can push your rehabilitation and regain your ability to walk. There are a lot of people here who managed to return home.", Line_WaitForInput);
+			NULL, " You may be bedridden and lethargic at first, but you can push your rehabilitation and regain your ability to walk. There are a lot of people here who managed to return home. ", Line_ModeSpecific);
 	PlaySE(4, "S04/36/310100260", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だからおじーちゃんも頑張ろう、ねっ？」",
-			NULL, " So you'll have to do your best, ok?\"", Line_Normal);
+			NULL, "So you'll have to do your best, ok?\"", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1023.「…ありがとうな、夏美ちゃん。kvS04/00/VT1B_hatakeG1024.あんた、いい子じゃの～」
 	PlaySE(4, "S04/00/VT1B_hatakeG1023", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…ありがとうな、夏美ちゃん。",
 			NULL, "\"...Thank you, Natsumi-chan.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1024", 256, 64);
@@ -1993,17 +2295,20 @@ void main()
 	ClearMessage();
 
 //r畠山のおじーちゃんは、そう言って嬉しそうに笑ってくれる。それを見て私も、うんうんと笑って頷いた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "畠山のおじーちゃんは、そう言って嬉しそうに笑ってくれる。それを見て私も、うんうんと笑って頷いた。",
 			NULL, "Hearing Hatakeyama say that caused me to laugh blissfully. I smiled and nodded to him.", Line_Normal);
 	ClearMessage();
 
 //rその時、『夏美ちゃーん』と私を呼ぶ山瀬さんの声が聞こえる。…ということは私たち以外は全員、リビングに集まったということだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その時、『夏美ちゃーん』と私を呼ぶ山瀬さんの声が聞こえる。…ということは私たち以外は全員、リビングに集まったということだろう。",
 			NULL, "Right then, I heard Yamase-san's voice calling \"Natsumi-chan.\" ...Everyone except us was already gathered together in the living room.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100261.「…おじーちゃん？kvS04/36/310100262.　これから３時のおやつだから、一緒に行こう？kvS04/36/310100263.　ね？」
 	PlaySE(4, "S04/36/310100261", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…おじーちゃん？",
 			NULL, "\"...Sir?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100262", 256, 64);
@@ -2016,6 +2321,7 @@ void main()
 
 //畠山老rvS04/00/VT1B_hatakeG1025.「ん？kvS04/00/VT1B_hatakeG1026.　…あ、いやワシはあまり、甘いものが好きじゃないんだが…」
 	PlaySE(4, "S04/00/VT1B_hatakeG1025", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ん？",
 			NULL, "\"Hmm?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_hatakeG1026", 256, 64);
@@ -2025,6 +2331,7 @@ void main()
 
 //夏美rvS04/36/310100264.「だめだよ～！kvS04/36/310100265.　おじーちゃんはここに来てまだ日が浅いんだから、みんなとも仲良くしないと。kvS04/36/310100266.これもリハビリの第一歩だよ、ねっ？」
 	PlaySE(4, "S04/36/310100264", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「だめだよ～！",
 			NULL, "\"That's no good~!", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100265", 256, 64);
@@ -2037,21 +2344,25 @@ void main()
 
 //畠山老rvS04/00/VT1B_hatakeG1027.「……むむぅ…」
 	PlaySE(4, "S04/00/VT1B_hatakeG1027", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……むむぅ…」",
 			NULL, "\"......Humm...\"", Line_Normal);
 	ClearMessage();
 
 //r眉間にしわを寄せた強面はちょっと怖かったけど、…なんとなく同郷の親近感もあって私は、にっこりと親しげに笑いかける。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "眉間にしわを寄せた強面はちょっと怖かったけど、…なんとなく同郷の親近感もあって私は、にっこりと親しげに笑いかける。",
 			NULL, "I was a bit scared of the way he wrinkled his eyebrows, but... I felt a bit of kinship with him, being from the same village, so I smiled and let out a friendly laugh.", Line_Normal);
 	ClearMessage();
 
 //rそれを見ておじーちゃんは、しぶしぶながらもよいしょ、と立ち上がってくれた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それを見ておじーちゃんは、しぶしぶながらもよいしょ、と立ち上がってくれた。",
 			NULL, "I watched the old man as he reluctantly stood up.", Line_Normal);
 	ClearMessage();
 
 //r思ったよりも足取りはしっかりとしていたので、私は軽く手を添えるだけ。それでも、握ってくれる手はあったかく、とても優しい感じがして嬉しかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "思ったよりも足取りはしっかりとしていたので、私は軽く手を添えるだけ。それでも、握ってくれる手はあったかく、とても優しい感じがして嬉しかった。",
 			NULL, "He had a firmer footing than I expected, so I only lightly gave a hand. Still, the hand holding mine was warm and pleasantly gentle.", Line_Normal);
 	ClearMessage();
@@ -2061,50 +2372,59 @@ void main()
 
 //夏美rvS04/36/310100267.「…ところで、おじーちゃん？」
 	PlaySE(4, "S04/36/310100267", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…ところで、おじーちゃん？」",
 			NULL, "\"...By the way, sir.\"", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1028.「なんじゃ？」
 	PlaySE(4, "S04/00/VT1B_hatakeG1028", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なんじゃ？」",
 			NULL, "\"What is it?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100268.「その、さっき——」
 	PlaySE(4, "S04/36/310100268", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「その、さっき——」",
 			NULL, "\"About earlier...\"", Line_Normal);
 	ClearMessage();
 
 //rなんで、『オヤシロさま』って呟いていたの？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なんで、『オヤシロさま』って呟いていたの？",
 			NULL, "Why were you muttering \"Oyashiro-sama\"?", Line_Normal);
 	ClearMessage();
 
 //rそう尋ねようとして、一瞬、おばーちゃんの顔が頭をよぎった私は、…かろうじて口をつぐんだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう尋ねようとして、一瞬、おばーちゃんの顔が頭をよぎった私は、…かろうじて口をつぐんだ。",
 			NULL, "As I was about to ask, Grandma's face crossed my mind for a moment... and I barely caught my mouth.", Line_Normal);
 	ClearMessage();
 
 //r私はオヤシロさまなんて、あまり信じていない。それは興宮の、私の同年代の子たちもみんながそうだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私はオヤシロさまなんて、あまり信じていない。それは興宮の、私の同年代の子たちもみんながそうだ。",
 			NULL, "I don't really believe in Oyashiro-sama. Back in Okinomiya, all of the kids my age were like that.", Line_Normal);
 	ClearMessage();
 
 //rだけど同時に、…村のお年寄りにとっては冗談や軽口、まして存在の否定を口にすることは絶対のタブーだと、これまでの体験から骨身にしみている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だけど同時に、…村のお年寄りにとっては冗談や軽口、まして存在の否定を口にすることは絶対のタブーだと、これまでの体験から骨身にしみている。",
 			NULL, "At the same time... for the elders in the village, that's not a joking matter. In fact, it is an absolute taboo to disbelieve. I have a stain in my flesh and bones because of the experience.", Line_Normal);
 	ClearMessage();
 
 //畠山老rvS04/00/VT1B_hatakeG1029.「…どうしたんだね？」
 	PlaySE(4, "S04/00/VT1B_hatakeG1029", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>畠山老</color>", NULL, "<color=#f5e6d3>Hatakeyama</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…どうしたんだね？」",
 			NULL, "\"...Is something wrong?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100269.「ううん、なんでもないの。kvS04/36/310100270.それじゃ、行こっ」
 	PlaySE(4, "S04/36/310100269", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ううん、なんでもないの。",
 			NULL, "\"No, it's nothing.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100270", 256, 64);
@@ -2113,6 +2433,7 @@ void main()
 	ClearMessage();
 
 //rただ、…小さな不安だけは、ちくりと針で突かれたように、私の胸の中に残っていた…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ただ、…小さな不安だけは、ちくりと針で突かれたように、私の胸の中に残っていた…。",
 			NULL, "But... a slight uneasiness remained in my chest, as if pierced by a needle...", Line_Normal);
 	ClearMessage();
@@ -2129,18 +2450,21 @@ void main()
 	Wait( 500 );
 
 //r介護福祉センターでは、夕食を済ませるとすぐに就寝時間だ。そして全ての部屋を見て回り、リビングの掃除を終えると私のアルバイトは終了だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "介護福祉センターでは、夕食を済ませるとすぐに就寝時間だ。そして全ての部屋を見て回り、リビングの掃除を終えると私のアルバイトは終了だった。",
 			NULL, "The tenants are sent to bed right after dinner at the care and welfare center. I checked on all the rooms, and once I finished cleaning the living room my work for the day was over.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100271.「お疲れ様でしたー」
 	PlaySE(4, "S04/36/310100271", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お疲れ様でしたー」",
 			NULL, "\"Thank you for your hard work.\"", Line_Normal);
 	ClearMessage();
 
 //山瀬rvS04/00/VT1B_yamase1013.「お疲れ様。kvS04/00/VT1B_yamase1014.…夏美ちゃん、今日はありがとうね」
 	PlaySE(4, "S04/00/VT1B_yamase1013", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山瀬</color>", NULL, "<color=#f5e6d3>Yamase</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お疲れ様。",
 			NULL, "\"Thank you.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_yamase1014", 256, 64);
@@ -2149,17 +2473,20 @@ void main()
 	ClearMessage();
 
 //r控え室に戻ると、山瀬さんがやさしく微笑みながら温かいココアを差し出してくれる。それを謝して受け取りながら、『あれ…？』と私は少しだけ、首をかしげた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "控え室に戻ると、山瀬さんがやさしく微笑みながら温かいココアを差し出してくれる。それを謝して受け取りながら、『あれ…？』と私は少しだけ、首をかしげた。",
 			NULL, "When I returned to the waiting room, Yamase-san offered me a warm cocoa while smiling gently. I asked \"What's that...?\" and thanked her while lightly caressing my head.", Line_Normal);
 	ClearMessage();
 
 //rここの給湯室に、ココアなんてあったかな…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ここの給湯室に、ココアなんてあったかな…？",
 			NULL, "Did they have cocoa in the supply room here...?", Line_Normal);
 	ClearMessage();
 
 //山瀬rvS04/00/VT1B_yamase1015.「くすくす、kvS04/00/VT1B_yamase1016.…これは夏美ちゃんへの御褒美よ。kvS04/00/VT1B_yamase1017.畠山さんのお世話をしてくれたことの、ね」
 	PlaySE(4, "S04/00/VT1B_yamase1015", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山瀬</color>", NULL, "<color=#f5e6d3>Yamase</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「くすくす、",
 			NULL, "\"*Giggle*", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_yamase1016", 256, 64);
@@ -2172,6 +2499,7 @@ void main()
 
 //夏美rvS04/36/310100272.「え？kvS04/36/310100273.　いえ、そんな…」
 	PlaySE(4, "S04/36/310100272", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「え？",
 			NULL, "\"Huh?", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100273", 256, 64);
@@ -2180,32 +2508,38 @@ void main()
 	ClearMessage();
 
 //r甘い匂いに頬をゆるませながら、私は面映い思いでカップに口をつける。…甘くて、とってもおいしかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "甘い匂いに頬をゆるませながら、私は面映い思いでカップに口をつける。…甘くて、とってもおいしかった。",
 			NULL, "I relaxed my cheeks while smelling the sweet smell, then I bashfully lifted the cup to my mouth. ...It was sweet, and very tasty.", Line_Normal);
 	ClearMessage();
 
 //r…リビングに畠山のおじーちゃんを連れてきた時は、同室のおじーちゃんたちはもちろん、山瀬さんたち介護士さんまでもがびっくりしていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…リビングに畠山のおじーちゃんを連れてきた時は、同室のおじーちゃんたちはもちろん、山瀬さんたち介護士さんまでもがびっくりしていた。",
 			NULL, "...When I brought the old man Hatakeyama to the living room, not only were the elderly people in the room surprised, but Yamase-san and all the caregivers were surprised too.", Line_Normal);
 	ClearMessage();
 
 //r後で聞いた話だと、これまでにも何人かが声をかけてもまったく相手にしてくれなかったそうだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "後で聞いた話だと、これまでにも何人かが声をかけてもまったく相手にしてくれなかったそうだ。",
 			NULL, "I heard later that several people have tried working with him, but he was always totally opposed.", Line_Normal);
 	ClearMessage();
 
 //r仕方なく食事は部屋に持ち込んでいたけど、…打つ手なしの状況にフロアを移そうか、とまで話が上がっていたらしい。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "仕方なく食事は部屋に持ち込んでいたけど、…打つ手なしの状況にフロアを移そうか、とまで話が上がっていたらしい。",
 			NULL, "Caregivers reluctantly brought his meals to his room... They discussed ways of handling the situation without escalating it.", Line_Normal);
 	ClearMessage();
 
 //rだけど今日は夕食にまで顔を出して、ちゃんと最後まで食べてくれた。…そのことを知って私はいま、ちょっとだけ誇らしい気分だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だけど今日は夕食にまで顔を出して、ちゃんと最後まで食べてくれた。…そのことを知って私はいま、ちょっとだけ誇らしい気分だった。",
 			NULL, "But today, he came to dinner and ate it properly to the end. ...After learning that, I felt a little proud.", Line_Normal);
 	ClearMessage();
 
 //山瀬rvS04/00/VT1B_yamase1018.「それにしても、どんな魔法を使ったの？kvS04/00/VT1B_yamase1019.　あの畠山さんと仲良くなれるなんて」
 	PlaySE(4, "S04/00/VT1B_yamase1018", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山瀬</color>", NULL, "<color=#f5e6d3>Yamase</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「それにしても、どんな魔法を使ったの？",
 			NULL, "\"Anyway, what magic did you use?", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_yamase1019", 256, 64);
@@ -2215,6 +2549,7 @@ void main()
 
 //夏美rvS04/36/310100274.「え、えへへっ。kvS04/36/310100275.…内緒です」
 	PlaySE(4, "S04/36/310100274", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「え、えへへっ。",
 			NULL, "\"Eehehe.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100275", 256, 64);
@@ -2223,11 +2558,13 @@ void main()
 	ClearMessage();
 
 //rなんとなく言葉を濁してしまう。同郷だから。——私はそう言いかけて、その言葉を飲み込んでしまった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なんとなく言葉を濁してしまう。同郷だから。——私はそう言いかけて、その言葉を飲み込んでしまった。",
 			NULL, "I answered somewhat evasively. It's because we're from the same town. ...That's what I started to say, before swallowing my words.", Line_Normal);
 	ClearMessage();
 
 //r照れ臭かったこともある。だけどそれ以上に雛見沢という、きっと山瀬さんたちも聞いたことのない田舎の出身であると口にすることに、…なんとなく、抵抗があったんだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "照れ臭かったこともある。だけどそれ以上に雛見沢という、きっと山瀬さんたちも聞いたことのない田舎の出身であると口にすることに、…なんとなく、抵抗があったんだ。",
 			NULL, "It's embarrassing. But not only that, Hinamizawa is deep in the countryside and I'm sure Yamase-san had never heard of it. ...For some reason, I hesitated.", Line_Normal);
 	ClearMessage();
@@ -2236,12 +2573,14 @@ void main()
 	DrawScene( "sora2", 1000 );
 
 //r着替え終わって外に出ると、太陽はすっかりと沈んで夕焼けが色濃く、わずかに西の空には星のきらめきがあった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "着替え終わって外に出ると、太陽はすっかりと沈んで夕焼けが色濃く、わずかに西の空には星のきらめきがあった。",
 			NULL, "By the time I got dressed and headed outside, the sun had already set and the sky was getting dark. There was a star shimmering faintly in the western sky.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100276.「はぁ。kvS04/36/310100277.…ちょっと、遅くなっちゃったかな」
 	PlaySE(4, "S04/36/310100276", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「はぁ。",
 			NULL, "\"Haa.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100277", 256, 64);
@@ -2250,38 +2589,45 @@ void main()
 	ClearMessage();
 
 //r腕時計を見ながら、かるくため息をつく。…おかーさんにはクラブ活動だといってるけど、またお小言を言われちゃうんだろうか。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "腕時計を見ながら、かるくため息をつく。…おかーさんにはクラブ活動だといってるけど、またお小言を言われちゃうんだろうか。",
 			NULL, "I looked at my wristwatch and lightly sighed. ...I told Mom that I was attending a club activity today, but I wonder if she'll scold me for this.", Line_Normal);
 	ClearMessage();
 
 //r実は、…介護福祉センターのアルバイトのことは、おかーさんたちには内緒だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "実は、…介護福祉センターのアルバイトのことは、おかーさんたちには内緒だった。",
 			NULL, "To tell the truth... Mom doesn't know about my part-time job at the care and welfare center.", Line_Normal);
 	ClearMessage();
 
 //r確かにアルバイトは校則で禁止されているけど、それだけじゃない。おかーさんとおとーさんの結婚祝いをプレゼントして、驚かせてあげたかったからだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "確かにアルバイトは校則で禁止されているけど、それだけじゃない。おかーさんとおとーさんの結婚祝いをプレゼントして、驚かせてあげたかったからだ。",
 			NULL, "Part-time jobs are prohibited by school regulations, of course, but that's not my only reason. I wanted to surprise Mom and Dad with an anniversary gift.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100278.「今年で、２０年目だって言ってたしね…」
 	PlaySE(4, "S04/36/310100278", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「今年で、２０年目だって言ってたしね…」",
 			NULL, "\"I heard this year was their 20th anniversary...\"", Line_Normal);
 	ClearMessage();
 
 //rその日まであと、１ヶ月もない。おとーさんはこういうことに気が利かないから、きっとスルーしちゃっているだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その日まであと、１ヶ月もない。おとーさんはこういうことに気が利かないから、きっとスルーしちゃっているだろう。",
 			NULL, "There is less than a month until the day. Dad doesn't care about that sort of thing, so I'm sure he won't be doing anything special.", Line_Normal);
 	ClearMessage();
 
 //rでも、ああ見えておかーさんは、意外にロマンチストだ。口には出さないけど、なにかの記念を期待しているに決まっている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "でも、ああ見えておかーさんは、意外にロマンチストだ。口には出さないけど、なにかの記念を期待しているに決まっている。",
 			NULL, "But despite appearances, Mom is surprisingly romantic. She doesn't say anything, but I'm sure she's expecting something to commemorate it.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100279.「だから父親のbぼくねんじん.<朴念仁>を、娘がフォローしてあげます…。kvS04/36/310100280.なんちゃって」
 	PlaySE(4, "S04/36/310100279", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だから父親の朴念仁(ぼくねんじん)を、娘がフォローしてあげます…。",
 			NULL, "\"So for the quiet unsociable father, the daughter will follow you...", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100280", 256, 64);
@@ -2290,27 +2636,32 @@ void main()
 	ClearMessage();
 
 //rそう呟きながら、おとーさんの顔を思い浮かべてくすっ、と可笑しくなる。自分の野暮ったさを恥じながら、おとーさんはきっと、私に手を合わせて感謝するだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう呟きながら、おとーさんの顔を思い浮かべてくすっ、と可笑しくなる。自分の野暮ったさを恥じながら、おとーさんはきっと、私に手を合わせて感謝するだろう。",
 			NULL, "While muttering to myself, I thought about Dad's face. It was amusing. Though I'm ashamed of my uncouth father, I'm sure he'll be grateful that I offered a hand.", Line_Normal);
 	ClearMessage();
 
 //rといっても、貸し借りの気持ちなんて無い。どんな流れであっても、家族のみんなが機嫌良く笑顔でいてくれる——私は、それだけでいい。それが、私の幸せだから。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "といっても、貸し借りの気持ちなんて無い。どんな流れであっても、家族のみんなが機嫌良く笑顔でいてくれる——私は、それだけでいい。それが、私の幸せだから。",
 			NULL, "Even so, it doesn't feel like lending and borrowing. Whatever happens, everyone in the family is smiling and in a good mood. That's all I need. Because that makes me happy.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100281.「…それに」
 	PlaySE(4, "S04/36/310100281", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…それに」",
 			NULL, "\"...Besides.\"", Line_Normal);
 	ClearMessage();
 
 //r動機は、それだけじゃない。…もう一つの理由は、アルバイトを経験することで私は、この街にいる『自分』を変えたかったんだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "動機は、それだけじゃない。…もう一つの理由は、アルバイトを経験することで私は、この街にいる『自分』を変えたかったんだ。",
 			NULL, "That wasn't my only motivation. The other reason was that I wanted to change <i>myself</i> in this town by experiencing a part-time job.", Line_Normal);
 	ClearMessage();
 
 //rずっと私は、興宮にいたときから思ってきたことがある。それは、園崎家の本家で暮らしている女の子、魅音ちゃんが働いている姿を見かけたことがきっかけだった…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ずっと私は、興宮にいたときから思ってきたことがある。それは、園崎家の本家で暮らしている女の子、魅音ちゃんが働いている姿を見かけたことがきっかけだった…。",
 			NULL, "I've thought about getting a job since I was in Okinomiya. Ever since I saw that girl from the Sonozaki family, Mion-chan, while she was working.", Line_Normal);
 	ClearMessage();
@@ -2321,26 +2672,31 @@ void main()
 	DrawBustshot( 3, "me2_WaraiA1_2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //rいつも明るくて、てきぱきと要領がよくて、…私よりも年下のはずなのに、どことなく大人びて見えるくらいの、しっかり者の女の子。それが、園崎魅音ちゃんだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "いつも明るくて、てきぱきと要領がよくて、…私よりも年下のはずなのに、どことなく大人びて見えるくらいの、しっかり者の女の子。それが、園崎魅音ちゃんだった。",
 			NULL, "She was always bright, sharp, and composed... Even though she was younger than me, she looked like a mature person of firm character. That was Mion Sonozaki-chan.", Line_Normal);
 	ClearMessage();
 
 //rいつもリーダー格として振舞っていて、きっと魅音ちゃんならどんな逆境も簡単に乗り越えてしまえるんだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "いつもリーダー格として振舞っていて、きっと魅音ちゃんならどんな逆境も簡単に乗り越えてしまえるんだろう。",
 			NULL, "She always acted like a leader. I'm sure Mion would be able to overcome any obstacle.", Line_Normal);
 	ClearMessage();
 
 //rそして、彼女は私たちと違って、いつも大人やお年寄りの人たちとも対等に話をしていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、彼女は私たちと違って、いつも大人やお年寄りの人たちとも対等に話をしていた。",
 			NULL, "And unlike the rest of us, she was always talking with adults and the elders as equals.", Line_Normal);
 	ClearMessage();
 
 //rそれが格好良くもあったし、…正直ほんの少しだけど、ちくり、と対抗意識に似たような感情を抱くことも、確かにあったんだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それが格好良くもあったし、…正直ほんの少しだけど、ちくり、と対抗意識に似たような感情を抱くことも、確かにあったんだ。",
 			NULL, "She was so cool... but honestly, I'm sure I felt something of a rivalry.", Line_Normal);
 	ClearMessage();
 
 //r私だって、いつまでも子供じゃない。成長もしたし、努力もしてきた。だから、何かを任されて、誰かの役に立てることだってできるはず。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私だって、いつまでも子供じゃない。成長もしたし、努力もしてきた。だから、何かを任されて、誰かの役に立てることだってできるはず。",
 			NULL, "I won't be a child forever. I've grown up and I've made an effort. So I should be able to do something to help others.", Line_Normal);
 	ClearMessage();
@@ -2350,48 +2706,57 @@ void main()
 	DrawScene( "sora2", 500 );
 
 //rそれでも、興宮では子供の枠に押し込められたままで、私のそんな主張は許してもらえなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それでも、興宮では子供の枠に押し込められたままで、私のそんな主張は許してもらえなかった。",
 			NULL, "Still, I couldn't forgive the idea that Okinomiya was keeping me locked in the frame of a child.", Line_Normal);
 	ClearMessage();
 
 //rだけどこの街なら、きっと——。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だけどこの街なら、きっと——。",
 			NULL, "But in this town, I'm sure...", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100282.「………」
 	PlaySE(4, "S04/36/310100282", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\".........\"", Line_Normal);
 	ClearMessage();
 
 //rだから、…子供っぽいって笑われるかもしれないけど、『アルバイト』は大人へと近づくための、ひとつのステップの象徴だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だから、…子供っぽいって笑われるかもしれないけど、『アルバイト』は大人へと近づくための、ひとつのステップの象徴だった。",
 			NULL, "So... I guess it's a childish thing, but my <i>part-time job</i> is a symbol of getting one step closer to adulthood.", Line_Normal);
 	ClearMessage();
 
 //rそれは、とても小さくて脆いものかもしれない。それでも今の私にはなんでもいい、『手応え』がほしかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それは、とても小さくて脆いものかもしれない。それでも今の私にはなんでもいい、『手応え』がほしかった。",
 			NULL, "It may be very small and fragile. But still, anything is good for me now, I want a <i>reaction</i>.", Line_Normal);
 	ClearMessage();
 
 //r自分がこの街にいてもいいという『自信』と、はっきりとした私の居場所が——。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "自分がこの街にいてもいいという『自信』と、はっきりとした私の居場所が——。",
 			NULL, "I want <i>confidence</i> that I can stay in this town, and a clear direction...", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100283.「……はぁ」
 	PlaySE(4, "S04/36/310100283", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……はぁ」",
 			NULL, "\"......Haaa.\"", Line_Normal);
 	ClearMessage();
 
 //rとはいえ、それで校則を破ったと知ればおかーさんはやっぱり、怒るかな…。でも、思いつきと勢いで始めたとはいえ、いまさら中途半端に辞めるのも嫌だったし。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "とはいえ、それで校則を破ったと知ればおかーさんはやっぱり、怒るかな…。でも、思いつきと勢いで始めたとはいえ、いまさら中途半端に辞めるのも嫌だったし。",
 			NULL, "Still, Mom would get angry if she knew that I was breaking school rules... However, although I started doubting myself, I wasn't about to quit halfway through.", Line_Normal);
 	ClearMessage();
 
 //rそれに……。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それに……。",
 			NULL, "That would be......", Line_Normal);
 	ClearMessage();
@@ -2401,11 +2766,13 @@ void main()
 
 //夏美rvS04/36/310100284.「？……あれ？」
 	PlaySE(4, "S04/36/310100284", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「？……あれ？」",
 			NULL, "\"? ......What's that?\"", Line_Normal);
 	ClearMessage();
 
 //rその時。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その時。",
 			NULL, "At that moment.", Line_Normal);
 	ClearMessage();
@@ -2414,34 +2781,40 @@ void main()
 
 //暁rvS04/39/310200007.「————公由…？」
 	PlaySE(4, "S04/39/310200007", 256, 64);
+	if (AdvMode) { OutputLine("<color=#c8647c>暁</color>", NULL, "<color=#c8647c>Akira</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————公由…？」",
 			NULL, "\"...Kimiyoshi...?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100285.「……？！」
 	PlaySE(4, "S04/36/310100285", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……？！」",
 			NULL, "\"......?!\"", Line_Normal);
 	ClearMessage();
 
 //r病院の通用門を出たところで、私は通りがかったその男の子の顔を見て、…凍りつく。だって、それは——。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "病院の通用門を出たところで、私は通りがかったその男の子の顔を見て、…凍りつく。だって、それは——。",
 			NULL, "As I stepped through the hospital gate, I looked at the face of a boy in the street, and... I froze. Because, it was...", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100286.「……藤堂、くん…？」
 	PlaySE(4, "S04/36/310100286", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……藤堂、くん…？」",
 			NULL, "\"......Toudou-kun...?\"", Line_Normal);
 	ClearMessage();
 
 //rそう、…うす暗がりでぼんやりとしか見えなかったけど、間違いなくそれは藤堂暁くんだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう、…うす暗がりでぼんやりとしか見えなかったけど、間違いなくそれは藤堂暁くんだった。",
 			NULL, "Yes... It was dark and I couldn't see clearly, but it was definitely Akira Toudou-kun.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100287.「ど、…どうして、ここに？」
 	PlaySE(4, "S04/36/310100287", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ど、…どうして、ここに？」",
 			NULL, "\"Wh... what are you doing here?\"", Line_Normal);
 	ClearMessage();
@@ -2450,12 +2823,14 @@ void main()
 
 //暁rvS04/39/310200008.「あ、いやその、…スケッチの、帰りに」
 	PlaySE(4, "S04/39/310200008", 256, 64);
+	if (AdvMode) { OutputLine("<color=#c8647c>暁</color>", NULL, "<color=#c8647c>Akira</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、いやその、…スケッチの、帰りに」",
 			NULL, "\"Oh, no I was... on the way back from a sketch.\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100288.「…あ、ああ。kvS04/36/310100289.そうなんだ、あ、あはは…」
 	PlaySE(4, "S04/36/310100288", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…あ、ああ。",
 			NULL, "\"...A-aah.", Line_WaitForInput);
 	PlaySE(4, "S04/36/310100289", 256, 64);
@@ -2464,26 +2839,31 @@ void main()
 	ClearMessage();
 
 //rぎこちなく笑いながら、背中には冷や汗が流れ落ちていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ぎこちなく笑いながら、背中には冷や汗が流れ落ちていた。",
 			NULL, "While smiling awkwardly, cold sweat began running down my back.", Line_Normal);
 	ClearMessage();
 
 //r病院の面会時間は、とうに過ぎている。それに加えて、ここは職員専用、とご丁寧に看板がライトアップまでされている通用口だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "病院の面会時間は、とうに過ぎている。それに加えて、ここは職員専用、とご丁寧に看板がライトアップまでされている通用口だった。",
 			NULL, "Hospital visiting hours were already over. Plus, this area was for staff only, and there were light-up signs saying as much.", Line_Normal);
 	ClearMessage();
 
 //rここを出入りする人は病院の関係者か、隣の介護福祉センターの職員だけだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ここを出入りする人は病院の関係者か、隣の介護福祉センターの職員だけだ。",
 			NULL, "Anyone going in and out of the hospital here would have to be staff for the care and welfare center.", Line_Normal);
 	ClearMessage();
 
 //rど、どうしよう…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ど、どうしよう…？",
 			NULL, "Wh-what should I do...?", Line_Normal);
 	ClearMessage();
 
 //rアルバイトしてることが藤堂くんに知られちゃったら、このことが学校にもばれてしまう。ううん、それだけじゃない。校則違反している子だって私のことを、藤堂くんが軽蔑したりしないだろうか…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "アルバイトしてることが藤堂くんに知られちゃったら、このことが学校にもばれてしまう。ううん、それだけじゃない。校則違反している子だって私のことを、藤堂くんが軽蔑したりしないだろうか…？",
 			NULL, "If Toudou-kun learns that I'm working part-time, word will get to the school. No, that's not all. Will Toudou-kun look down on me for violating school rules...?", Line_Normal);
 	ClearMessage();
@@ -2492,22 +2872,26 @@ void main()
 
 //暁rvS04/39/310200009.「……公由？」
 	PlaySE(4, "S04/39/310200009", 256, 64);
+	if (AdvMode) { OutputLine("<color=#c8647c>暁</color>", NULL, "<color=#c8647c>Akira</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……公由？」",
 			NULL, "\"......Kimiyoshi?\"", Line_Normal);
 	ClearMessage();
 
 //夏美rvS04/36/310100290.「あ、その、えっと…」
 	PlaySE(4, "S04/36/310100290", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、その、えっと…」",
 			NULL, "\"Oh, that's, umm...\"", Line_Normal);
 	ClearMessage();
 
 //r仕方ない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "仕方ない。",
 			NULL, "It can't be helped.", Line_Normal);
 	ClearMessage();
 
 //r私はとっさに、『面会時間外だから使わせてもらった』と言い訳を考え、後ろめたい思いだったけど藤堂くんにそう説明しようと口を開きかけた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私はとっさに、『面会時間外だから使わせてもらった』と言い訳を考え、後ろめたい思いだったけど藤堂くんにそう説明しようと口を開きかけた。",
 			NULL, "To my disappointment, I thought of the excuse \"I used it because it's outside of visiting hours.\" I thought it was awkward, but I opened my mouth to explain it to Toudou-kun.", Line_Normal);
 	ClearMessage();
@@ -2516,12 +2900,14 @@ void main()
 
 //夏美rvS04/36/310100291.「——あ…」
 	PlaySE(4, "S04/36/310100291", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——あ…」",
 			NULL, "\"...Um...\"", Line_Normal);
 	ClearMessage();
 
 //介護士rvS04/00/VT1B_kaigoFa1001.「あら、公由さん。kvS04/00/VT1B_kaigoFa1002.今日は畠山さんのお世話、お疲れさま。kvS04/00/VT1B_kaigoFa1003.気をつけて帰ってね？」
 	PlaySE(4, "S04/00/VT1B_kaigoFa1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>介護士</color>", NULL, "<color=#f5e6d3>Nurse</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あら、公由さん。",
 			NULL, "\"Oh, Kimiyoshi-san.", Line_WaitForInput);
 	PlaySE(4, "S04/00/VT1B_kaigoFa1002", 256, 64);
@@ -2534,22 +2920,26 @@ void main()
 
 //夏美rvS04/36/310100292.「……」
 	PlaySE(4, "S04/36/310100292", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //暁rvS04/39/310200010.「……」
 	PlaySE(4, "S04/39/310200010", 256, 64);
+	if (AdvMode) { OutputLine("<color=#c8647c>暁</color>", NULL, "<color=#c8647c>Akira</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //r通用口から出てきた先輩の介護士さんはそう挨拶すると、反対側に向かって去っていった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "通用口から出てきた先輩の介護士さんはそう挨拶すると、反対側に向かって去っていった。",
 			NULL, "A senior caregiver let those words slip out then left through the other side.", Line_Normal);
 	ClearMessage();
 
 //r…なんてタイミングの悪い。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…なんてタイミングの悪い。",
 			NULL, "...What awful timing.", Line_Normal);
 	ClearMessage();
