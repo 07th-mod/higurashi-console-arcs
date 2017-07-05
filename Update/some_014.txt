@@ -269,7 +269,7 @@ void main()
 //暁rvS04/39/310200223.「……俺は、どうすればよかったんだろう…？」
 	PlaySE(4, "S04/39/310200223", 256, 64);
 	OutputLine(NULL, "「……俺は、どうすればよかったんだろう…？」",
-			NULL, "\"......I wonder what I could've done...?\"", Line_Normal);
+			NULL, "\"......I wonder what I should do...?\"", Line_Normal);
 	ClearMessage();
 
 //rふと、今更埒もない問いかけを、…暁は自分自身に投げかける。
@@ -1530,7 +1530,7 @@ void main()
 
 //rそう。——夏美が豹変した瞬間に、暁の心は彼女を見捨てて、…逃げ出していた。
 	OutputLine(NULL, "そう。——夏美が豹変した瞬間に、暁の心は彼女を見捨てて、…逃げ出していた。",
-			NULL, "That was it. ...Akira's heart abandoned Natsumi the moment she suffered a change... He ran away.", Line_Normal);
+			NULL, "That's was it. ...Akira's heart abandoned Natsumi the moment she suffered a change... He ran away.", Line_Normal);
 	ClearMessage();
 
 //r彼が夏美の全てを見たように、夏美もまた、自分の想い人の真実を見てしまったのだ。
@@ -1605,7 +1605,7 @@ void main()
 
 //rこのまま眠ってしまいたい…夏美と二人…夢の中で…。
 	OutputLine(NULL, "このまま眠ってしまいたい…夏美と二人…夢の中で…。",
-			NULL, "He want to fall asleep like this... the two of them together... in a dream...", Line_Normal);
+			NULL, "He wanted to fall asleep like this... the two of them together... in a dream...", Line_Normal);
 	ClearMessage();
 
 //r暁は、…真っ白になった意識の中で、…ただ、それだけを願い続けていた…。
@@ -1861,4 +1861,57 @@ void main()
 	FadeSprite( 5, 500, FALSE );
 	DrawScene( "white", 2000 );
 	SetValidityOfInput( TRUE );
+	
+	DrawScene( "black", 500 );
+	EnableJumpingOfReturnIcon();
+	
+	OutputLine(NULL, "New TIPS available.",
+		   NULL, "New TIPS available.", Line_Normal);
+	ClearMessage();
+
+	char TIPS87[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		TIPS87[0] = "View TIP 87";
+		TIPS87[1] = "Skip";
+	}
+	else
+	{
+		TIPS87[0] = "TIP87を見る";
+		TIPS87[1] = "無視する";
+	}
+
+//	InitializeSelectedItem();
+	Select( 2, TIPS87 );
+	DisableWindow();
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallScript( "tips_087" );
+	}
+
+	OutputLine(NULL, "All-cast review session available.",
+		   NULL, "All-cast review session available.", Line_Normal);
+	ClearMessage();
+
+	char SomeOmake[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		SomeOmake[0] = "View All-cast review session";
+		SomeOmake[1] = "Skip";
+	}
+	else
+	{
+		SomeOmake[0] = "おまけを見る";
+		SomeOmake[1] = "無視する";
+	}
+
+//	InitializeSelectedItem();
+	Select( 2, SomeOmake );
+	DisableWindow();
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallScript( "some_omake" );
+	}
 }
