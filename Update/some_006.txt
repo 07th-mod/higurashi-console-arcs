@@ -1201,7 +1201,7 @@ void main()
 	PlaySE(4, "S04/00/310600043", 256, 64);
 	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いい加減にしてください…」",
-			NULL, "\"Please do not bother me...\"", Line_Normal);
+			NULL, "\"Give it a rest...\"", Line_Normal);
 	ClearMessage();
 
 //夏美の祖母rvS04/00/310800056.「…春子…」
@@ -1276,13 +1276,13 @@ void main()
 	PlaySE(4, "S04/00/310800057", 256, 64);
 	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の祖母</color>", NULL, "<color=#f5e6d3>Natsumi's grandmother</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「だから…、私は反対したんだよ…。",
-			NULL, "\"So... I don't agree...", Line_WaitForInput);
+			NULL, "\"But... I was opposed...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310800058", 256, 64);
 	OutputLine(NULL, "…………雛見沢を離れるのは…、",
-			NULL, " ............with the decision to leave Hinamizawa...", Line_WaitForInput);
+			NULL, " ............to the decision to leave Hinamizawa...", Line_WaitForInput);
 	PlaySE(4, "S04/00/310800059", 256, 64);
 	OutputLine(NULL, "だから私は、イヤだと言ったんだ」",
-			NULL, " I told you I was opposed.\"", Line_Normal);
+			NULL, " I told you I didn't want to.\"", Line_Normal);
 	ClearMessage();
 
 //夏美の母rvS04/00/310600046.「…また、その話ですか。kvS04/00/310600047.そのことは十分に話し合って、お母さんも納得したでしょう？」
@@ -2402,4 +2402,30 @@ void main()
 	DrawScene( "black", 3000 );
 	SetValidityOfInput( TRUE );
 
+	EnableJumpingOfReturnIcon();
+	
+	OutputLine(NULL, "New TIPS available.",
+		   NULL, "New TIPS available.", Line_Normal);
+	ClearMessage();
+
+	char TIPS82[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		TIPS82[0] = "View TIP 82";
+		TIPS82[1] = "Skip";
+	}
+	else
+	{
+		TIPS82[0] = "TIP82を見る";
+		TIPS82[1] = "無視する";
+	}
+
+//	InitializeSelectedItem();
+	Select( 2, TIPS82 );
+	DisableWindow();
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallScript( "tips_082" );
+	}
 }

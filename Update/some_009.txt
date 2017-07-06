@@ -2671,4 +2671,30 @@ void main()
 	DrawScene( "black", 3000 );
 	SetValidityOfInput( TRUE );
 
+	EnableJumpingOfReturnIcon();
+	
+	OutputLine(NULL, "New TIPS available.",
+		   NULL, "New TIPS available.", Line_Normal);
+	ClearMessage();
+
+	char TIPS86[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		TIPS86[0] = "View TIP 86";
+		TIPS86[1] = "Skip";
+	}
+	else
+	{
+		TIPS86[0] = "TIP86を見る";
+		TIPS86[1] = "無視する";
+	}
+
+//	InitializeSelectedItem();
+	Select( 2, TIPS86 );
+	DisableWindow();
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallScript( "tips_086" );
+	}
 }
