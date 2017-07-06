@@ -1,5 +1,13 @@
 void main()
 {
+	int AdvMode;
+	AdvMode = 1;
+	int Line_ModeSpecific;
+	if (AdvMode) {
+		Line_ModeSpecific = Line_Normal;
+	} else {
+		Line_ModeSpecific = Line_WaitForInput;
+	}
 
 //*TIPS 82
 
@@ -15,12 +23,15 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3001.「もしもし替わりました、南井です」
 	PlaySE(4, "S20/28/VTT_tomoe3001", 256, 64);
+	ClearMessage();
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「もしもし替わりました、南井です」",
 			NULL, "\"Hello, Minai speaking.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS20/11/VTT_oishi3001.「んっふっふっふっ！kvS20/11/VTT_oishi3002.　巴ちゃん、その後はいかがですかぁ～？kvS20/11/VTT_oishi3003.　悪い男性に騙されて、身も心もボロボロになったりしていませんかぁ～？」
 	PlaySE(4, "S20/11/VTT_oishi3001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「んっふっふっふっ！",
 			NULL, "\"Nfu fu fu!", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3002", 256, 64);
@@ -33,6 +44,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3002.「…お久しぶりの前に、いきなりそれですか。kvS20/28/VTT_tomoe3003.セクハラで訴えますよ？」
 	PlaySE(4, "S20/28/VTT_tomoe3002", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…お久しぶりの前に、いきなりそれですか。",
 			NULL, "\"...It's been a while since we last spoke, and that's what you have to say?", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3003", 256, 64);
@@ -42,6 +54,7 @@ void main()
 
 //大石rvS20/11/VTT_oishi3004.「んん？　セクハラぁ？kvS20/11/VTT_oishi3005.　なんですかそれは？」
 	PlaySE(4, "S20/11/VTT_oishi3004", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「んん？　セクハラぁ？",
 			NULL, "\"Hmmm? Sexual harassment?", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3005", 256, 64);
@@ -51,18 +64,21 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3004.「セクシャル・ハラスメントの略です。kvS20/28/VTT_tomoe3005.女性に対して性的ないやがらせをしたり、卑猥な言葉をかけたりする迷惑行為を、欧米ではそう言うんですよ、大石さん？kvS20/28/VTT_tomoe3006.…なんでしたら、国内第一号の判例になってみますか？」
 	PlaySE(4, "S20/28/VTT_tomoe3004", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「セクシャル・ハラスメントの略です。",
 			NULL, "\"It's called sexual harassment.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3005", 256, 64);
 	OutputLine(NULL, "女性に対して性的ないやがらせをしたり、卑猥な言葉をかけたりする迷惑行為を、欧米ではそう言うんですよ、大石さん？",
-			NULL, " It's a concept they have in the west. Harassing a woman by doing obscene acts or saying unnecessarily sexual things. Haven't you heard of it, Ooishi-san?", Line_WaitForInput);
+			NULL, " It's a concept they have in the west. Harassing a woman by doing obscene acts or saying unnecessarily sexual things. Haven't you heard of it, Ooishi-san? ", Line_ModeSpecific);
 	PlaySE(4, "S20/28/VTT_tomoe3006", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…なんでしたら、国内第一号の判例になってみますか？」",
-			NULL, " ...Would you like to be the one that sets the precedent for it here in Japan?\"", Line_Normal);
+			NULL, "...Would you like to be the one that sets the precedent for it here in Japan?\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS20/11/VTT_oishi3006.「おやおやぁ？kvS20/11/VTT_oishi3007.　ちょっと会わない間に冷たくなっちゃいましたねぇ？kvS20/11/VTT_oishi3008.　昔は『クラちゃん』と気安く呼んでくれる仲だったのに、なんだかちょっとショックですよぉ～」
 	PlaySE(4, "S20/11/VTT_oishi3006", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おやおやぁ？",
 			NULL, "\"Oh my.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3007", 256, 64);
@@ -75,6 +91,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3007.「それは妹です！kvS20/28/VTT_tomoe3008.　何度も言いますけど、私は『巴』で妹は『まどか』！kvS20/28/VTT_tomoe3009.　あの子に対してみたいな感じで接してこられても、私は嬉しくありません！kvS20/28/VTT_tomoe3010.　むしろ迷惑！kvS20/28/VTT_tomoe3011.　これ以上おちょくるなら、もう切りますよ？！」
 	PlaySE(4, "S20/28/VTT_tomoe3007", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「それは妹です！",
 			NULL, "\"That was my sister!", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3008", 256, 64);
@@ -85,14 +102,16 @@ void main()
 			NULL, " And I'm pretty disappointed with the way you act around her!", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3010", 256, 64);
 	OutputLine(NULL, "　むしろ迷惑！",
-			NULL, " It's rather annoying!", Line_WaitForInput);
+			NULL, " It's rather annoying! ", Line_ModeSpecific);
 	PlaySE(4, "S20/28/VTT_tomoe3011", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　これ以上おちょくるなら、もう切りますよ？！」",
-			NULL, " If you spend any more time teasing me, I'll cut you off right here, ok?!\"", Line_Normal);
+			NULL, "If you spend any more time teasing me, I'll cut you off right here, ok?!\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS20/11/VTT_oishi3009.「なっはっはっはっ！kvS20/11/VTT_oishi3010.　まぁまぁ、そう本気で怒らずに。kvS20/11/VTT_oishi3011.ささくれだった日常を和らげる、ちょっとした癒しのジョークですよぉ」
 	PlaySE(4, "S20/11/VTT_oishi3009", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なっはっはっはっ！",
 			NULL, "\"Na ha ha ha!", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3010", 256, 64);
@@ -105,6 +124,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3012.「…『癒し』じゃなくって、『イヤラシ』だっつの。kvS20/28/VTT_tomoe3013.それはともかく、何か御用ですか？kvS20/28/VTT_tomoe3014.　ほんとに気晴らしにかけてきただけなら、今から興宮に乗り込んで蹴っ飛ばしてあげますけど？」
 	PlaySE(4, "S20/28/VTT_tomoe3012", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…『癒し』じゃなくって、『イヤラシ』だっつの。",
 			NULL, "\"...A <i>comforting</i> joke? More of a <i>disgusting</i> joke.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3013", 256, 64);
@@ -117,6 +137,7 @@ void main()
 
 //大石rvS20/11/VTT_oishi3012.「おぉぉ、怖い怖い。kvS20/11/VTT_oishi3013.カモシカみたいな巴ちゃんの脚で蹴られたりなんかしたら、ちょっとはこのビール腹も引っ込んでくれますかねぇ？kvS20/11/VTT_oishi3014.　んっふっふっふっ！」
 	PlaySE(4, "S20/11/VTT_oishi3012", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おぉぉ、怖い怖い。",
 			NULL, "\"Ohhh, how scary.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3013", 256, 64);
@@ -129,6 +150,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3015.「何言ってるんですか。kvS20/28/VTT_tomoe3016.怖いなんて、ちっとも思ってないくせに。kvS20/28/VTT_tomoe3017.だいたい大石さんは…」
 	PlaySE(4, "S20/28/VTT_tomoe3015", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「何言ってるんですか。",
 			NULL, "\"What are you even saying?", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3016", 256, 64);
@@ -141,6 +163,7 @@ void main()
 
 //大石rvS20/11/VTT_oishi3015.「————実はね、巴ちゃん。kvS20/11/VTT_oishi3016.ちょっとマジに、力貸してもらいたいんですよ」
 	PlaySE(4, "S20/11/VTT_oishi3015", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————実はね、巴ちゃん。",
 			NULL, "\"...Actually, Tomoe-chan.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3016", 256, 64);
@@ -150,11 +173,13 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3018.「え……？！」
 	PlaySE(4, "S20/28/VTT_tomoe3018", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「え……？！」",
 			NULL, "\"Huh...?!\"", Line_Normal);
 	ClearMessage();
 
 //r久しぶりに聞いた、大石さんの真剣な声。…その張り詰めた口調に、私は瞬時にだらけた気分を投げ捨てて、受話器を持ち直した。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "久しぶりに聞いた、大石さんの真剣な声。…その張り詰めた口調に、私は瞬時にだらけた気分を投げ捨てて、受話器を持ち直した。",
 			NULL, "It's been a long time since I've heard Ooishi-san use that serious tone of voice. ...After hearing that tonal shift, I instantly set aside the mood from a moment ago and picked up the receiver.", Line_Normal);
 	ClearMessage();
@@ -164,6 +189,7 @@ void main()
 
 //大石rvS20/11/VTT_oishi3017.「最近そっちの山間で、殺人事件があったそうですね？kvS20/11/VTT_oishi3018.　ほら、ドラム缶に詰められて不審火にこんがり焼かれた、女性のやつ」
 	PlaySE(4, "S20/11/VTT_oishi3017", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「最近そっちの山間で、殺人事件があったそうですね？",
 			NULL, "\"Have you heard that there was a recent murder up in the mountains?", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3018", 256, 64);
@@ -173,6 +199,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3019.「ええ、つい数日前に。kvS20/28/VTT_tomoe3020.でもあの事件、ウチの現場じゃなくてお隣の県警さんの管轄でしたから、現場検証は途中までしかやっていないんですけどね」
 	PlaySE(4, "S20/28/VTT_tomoe3019", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ええ、つい数日前に。",
 			NULL, "\"Yeah, that was just a few days ago.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3020", 256, 64);
@@ -182,6 +209,7 @@ void main()
 
 //大石rvS20/11/VTT_oishi3019.「そこで焼かれたホトケの、鷹野三四ってのは雛見沢の看護師なんですがね。kvS20/11/VTT_oishi3020.…どうやら、おかしなところが出てきているんですよ」
 	PlaySE(4, "S20/11/VTT_oishi3019", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そこで焼かれたホトケの、鷹野三四ってのは雛見沢の看護師なんですがね。",
 			NULL, "\"The victim was a nurse from Hinamizawa, Miyo Takano.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3020", 256, 64);
@@ -191,6 +219,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3021.「おかしな…？kvS20/28/VTT_tomoe3022.　なにか、不審な点でもあったんですか？」
 	PlaySE(4, "S20/28/VTT_tomoe3021", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おかしな…？",
 			NULL, "\"Strange details...?", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3022", 256, 64);
@@ -200,18 +229,21 @@ void main()
 
 //大石rvS20/11/VTT_oishi3021.「いやね、そのお隣さんの鑑識から司法解剖の診断書を回してもらって読んだんですが、kvS20/11/VTT_oishi3022.…どうも修正箇所が多いというか、ちょっと信憑性が低いんですよ。kvS20/11/VTT_oishi3023.おまけに不明な点を質問してみても、全く戻しがナシのつぶてでしてね」
 	PlaySE(4, "S20/11/VTT_oishi3021", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いやね、そのお隣さんの鑑識から司法解剖の診断書を回してもらって読んだんですが、",
 			NULL, "\"No, but I've been reading the autopsy report from our neighbors' investigation,", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3022", 256, 64);
 	OutputLine(NULL, "…どうも修正箇所が多いというか、ちょっと信憑性が低いんですよ。",
-			NULL, " ...and it seems they've made a lot of corrections, so I'm starting to doubt its credibility.", Line_WaitForInput);
+			NULL, " ...and it seems they've made a lot of corrections, so I'm starting to doubt its credibility. ", Line_ModeSpecific);
 	PlaySE(4, "S20/11/VTT_oishi3023", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おまけに不明な点を質問してみても、全く戻しがナシのつぶてでしてね」",
-			NULL, " Also, even when I question them about the unclear points, they tell me nothing in response.\"", Line_Normal);
+			NULL, "Also, even when I question them about the unclear points, they tell me nothing in response.\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3023.「あそこの鑑識課って、腕が悪いくせにやたら閉鎖的な人、多いですしね。kvS20/28/VTT_tomoe3024.まともに相談に乗ってくれそうなのは、若手の松岡くんくらいですよ」
 	PlaySE(4, "S20/28/VTT_tomoe3023", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あそこの鑑識課って、腕が悪いくせにやたら閉鎖的な人、多いですしね。",
 			NULL, "\"There are a lot of people over there who would cross their arms and look away.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3024", 256, 64);
@@ -220,21 +252,25 @@ void main()
 	ClearMessage();
 
 //rその彼も、年功序列には逆らえずにその能力を飼い殺しにされているらしい。診断の内容にも何やかやと口出しされるそうで、やりにくいとこの前の交流会で愚痴をこぼしていたものだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その彼も、年功序列には逆らえずにその能力を飼い殺しにされているらしい。診断の内容にも何やかやと口出しされるそうで、やりにくいとこの前の交流会で愚痴をこぼしていたものだ。",
 			NULL, "That man is not one to ignore his superiors. Given the complaints that came up during our previous meetings, the contents of the autopsy report will need to come out.", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3025.「…にしても今時、海外の法医学研修の経験者が彼一人だけなんて、犯人を捕まえる気がないってことでしょうかね？kvS20/28/VTT_tomoe3026.　ＤＮＡ鑑定も視野に入れた法改正が検討されているご時勢だってのに、まったく…」
 	PlaySE(4, "S20/28/VTT_tomoe3025", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…にしても今時、海外の法医学研修の経験者が彼一人だけなんて、犯人を捕まえる気がないってことでしょうかね？",
-			NULL, "\"...Even now, he's the only one with experience in overseas forensic training. Maybe they're not even interested in catching criminals?", Line_WaitForInput);
+			NULL, "\"...Even now, he's the only one with experience in overseas forensic training. Maybe they're not even interested in catching criminals? ", Line_ModeSpecific);
 	PlaySE(4, "S20/28/VTT_tomoe3026", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　ＤＮＡ鑑定も視野に入れた法改正が検討されているご時勢だってのに、まったく…」",
-			NULL, " It's about time to consider overhauling the legal system, with an understanding of DNA evidence...\"", Line_Normal);
+			NULL, "It's about time to consider overhauling the legal system, with an understanding of DNA evidence...\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS20/11/VTT_oishi3024.「それでですね？kvS20/11/VTT_oishi3025.　ちょっと巴ちゃんの肩書きとコネをうまく使って、その若い彼に本当のところを確かめてもらいたいんですよ。kvS20/11/VTT_oishi3026.特に、…死亡推定時刻のあたりを」
 	PlaySE(4, "S20/11/VTT_oishi3024", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「それでですね？",
 			NULL, "\"Is that so?", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3025", 256, 64);
@@ -247,22 +283,26 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3027.「死亡推定時刻…？」
 	PlaySE(4, "S20/28/VTT_tomoe3027", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「死亡推定時刻…？」",
 			NULL, "\"Time of death...?\"", Line_Normal);
 	ClearMessage();
 
 //r…大石さんの話によると、死亡したと思われる時刻を記載した欄に薄く、別の数字のあとが残っていたらしい。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…大石さんの話によると、死亡したと思われる時刻を記載した欄に薄く、別の数字のあとが残っていたらしい。",
 			NULL, "...According to Ooishi-san, there was thin writing on the column describing the time of death, as though another number was originally written there.", Line_Normal);
 	ClearMessage();
 
 //rはっきりとは見えないので断定はできないが、…それによると、日付が少なくとも１日ずれている可能性があるというのだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "はっきりとは見えないので断定はできないが、…それによると、日付が少なくとも１日ずれている可能性があるというのだ。",
 			NULL, "It's difficult to see, so it's not conclusive, but... he claims there is a possibility that the date is off by at least one day.", Line_Normal);
 	ClearMessage();
 
 //大石rvS20/11/VTT_oishi3027.「…ひょっとしたら、ですが。kvS20/11/VTT_oishi3028.被害者が生前、綿流しに参加していたことを突き止めた隣の県警が、辻褄合わせのために鑑識に言って修正させたんじゃないかな、ってね…？」
 	PlaySE(4, "S20/11/VTT_oishi3027", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…ひょっとしたら、ですが。",
 			NULL, "\"...It seems plausible.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3028", 256, 64);
@@ -272,6 +312,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3028.「えぇっ？kvS20/28/VTT_tomoe3029.　…それって、改ざんしたってことじゃないですか！kvS20/28/VTT_tomoe3030.　事実なら大問題ですよっ？！」
 	PlaySE(4, "S20/28/VTT_tomoe3028", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「えぇっ？",
 			NULL, "\"Huh?", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3029", 256, 64);
@@ -284,14 +325,16 @@ void main()
 
 //大石rvS20/11/VTT_oishi3029.「まぁ、単なる書き間違いで修正しただけかもしれませんが、kvS20/11/VTT_oishi3030.…書き直される数字のほうが正確な時間だったとしたら、結構笑えなくなるんですよ。kvS20/11/VTT_oishi3031.さっきも言ったように被害者の看護師、その前日に村祭りの会場で何人かに目撃されていましてね。kvS20/11/VTT_oishi3032.だから、１日違えば——」
 	PlaySE(4, "S20/11/VTT_oishi3029", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「まぁ、単なる書き間違いで修正しただけかもしれませんが、",
 			NULL, "\"Well, they may have just been fixing a transcription error.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3030", 256, 64);
 	OutputLine(NULL, "…書き直される数字のほうが正確な時間だったとしたら、結構笑えなくなるんですよ。",
-			NULL, " ...If the numbers they wrote over were accurate, they would've been pretty laughable.", Line_WaitForInput);
+			NULL, " ...If the numbers they wrote over were accurate, they would've been pretty laughable. ", Line_ModeSpecific);
 	PlaySE(4, "S20/11/VTT_oishi3031", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "さっきも言ったように被害者の看護師、その前日に村祭りの会場で何人かに目撃されていましてね。",
-			NULL, " As I already mentioned, several people witnessed the victim at the village festival the day before.", Line_WaitForInput);
+			NULL, "As I already mentioned, several people witnessed the victim at the village festival the day before.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3032", 256, 64);
 	OutputLine(NULL, "だから、１日違えば——」",
 			NULL, " So, if the date is off by one...\"", Line_Normal);
@@ -299,6 +342,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3031.「……すでに殺されていた人間が、歩いていた？kvS20/28/VTT_tomoe3032.　あっはっはっはっ！　ありえない～！」
 	PlaySE(4, "S20/28/VTT_tomoe3031", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……すでに殺されていた人間が、歩いていた？",
 			NULL, "\"......A dead woman was walking around?", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3032", 256, 64);
@@ -308,18 +352,21 @@ void main()
 
 //大石rvS20/11/VTT_oishi3033.「………」
 	PlaySE(4, "S20/11/VTT_oishi3033", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3033.「…つまり、そういうことですね」
 	PlaySE(4, "S20/28/VTT_tomoe3033", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…つまり、そういうことですね」",
 			NULL, "\"...So that's it, then.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS20/11/VTT_oishi3034.「察しが良くて助かります。kvS20/11/VTT_oishi3035.ただ、まだあくまで憶測の範囲内ですので、ウラ取っておきたいんですよ。kvS20/11/VTT_oishi3036.連中から真相をシメ上げる前に、信用のできる筋からね」
 	PlaySE(4, "S20/11/VTT_oishi3034", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「察しが良くて助かります。",
 			NULL, "\"It's a specious hypothesis.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3035", 256, 64);
@@ -332,27 +379,32 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3034.「………」
 	PlaySE(4, "S20/28/VTT_tomoe3034", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //r大石さんの懸念を理解して、私は生唾を飲み込む。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "大石さんの懸念を理解して、私は生唾を飲み込む。",
 			NULL, "I swallowed hard, understanding Ooishi's concerns.", Line_Normal);
 	ClearMessage();
 
 //r…雛見沢とあの現場までの距離は、短時間で移動できるものではない。まして深夜ともなれば、なおさらだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…雛見沢とあの現場までの距離は、短時間で移動できるものではない。まして深夜ともなれば、なおさらだ。",
 			NULL, "...Traveling from Hinamizawa to the crime scene would take a long time. Especially in the middle of the night.", Line_Normal);
 	ClearMessage();
 
 //rだとしたら、…この死亡時間のずれの有無で、今後の捜査内容が変わってくる可能性が高いだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だとしたら、…この死亡時間のずれの有無で、今後の捜査内容が変わってくる可能性が高いだろう。",
 			NULL, "In that case... there is a high probability that the findings of further investigations will vary based on this deviation in the time of death.", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3035.「わかりました。kvS20/28/VTT_tomoe3036.とりあえず松岡くんにつないで、確認してみます。kvS20/28/VTT_tomoe3037.…と」
 	PlaySE(4, "S20/28/VTT_tomoe3035", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「わかりました。",
 			NULL, "\"Understood.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3036", 256, 64);
@@ -367,12 +419,14 @@ void main()
 	PlayBGM( 1, "yoru", 128, 0 );
 
 //rそこで私は、壁にかかった時計を見上げる。二つの針は、もうすぐ１０時を差そうとしていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そこで私は、壁にかかった時計を見上げる。二つの針は、もうすぐ１０時を差そうとしていた。",
 			NULL, "I looked up toward the clock on the wall. The two needles were about to point to 10 o'clock.", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3038.「さすがに、もう上がったかもしれませんね…。kvS20/28/VTT_tomoe3039.明日の朝一でも大丈夫ですか？kvS20/28/VTT_tomoe3040.　確認したら、すぐに大石さんにお知らせしますので」
 	PlaySE(4, "S20/28/VTT_tomoe3038", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「さすがに、もう上がったかもしれませんね…。",
 			NULL, "\"Indeed, it may have already happened...", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3039", 256, 64);
@@ -385,6 +439,7 @@ void main()
 
 //大石rvS20/11/VTT_oishi3037.「ええ、それで結構です。助かります。kvS20/11/VTT_oishi3038.…にしても巴ちゃん、あんまり遅くまで残っていないで、そろそろ帰ってはどうですか？kvS20/11/VTT_oishi3039.　夜更かしは美容の大敵ですよぉ～？　んっふっふっふっ！」
 	PlaySE(4, "S20/11/VTT_oishi3037", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ええ、それで結構です。助かります。",
 			NULL, "\"Yeah, that should be fine.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3038", 256, 64);
@@ -397,6 +452,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3041.「…お気遣いは感謝しますが、これでも私は『管理職』なので。kvS20/28/VTT_tomoe3042.片付けなきゃいけない仕事がいっぱいあるんですよ」
 	PlaySE(4, "S20/28/VTT_tomoe3041", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…お気遣いは感謝しますが、これでも私は『管理職』なので。",
 			NULL, "\"I appreciate your concern, but I'm a <i>manager</i> here.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3042", 256, 64);
@@ -406,6 +462,7 @@ void main()
 
 //大石rvS20/11/VTT_oishi3040.「おおっ、そいつは失礼しました。kvS20/11/VTT_oishi3041.そんなお忙しい中、余計な仕事を増やしてしまってすみませんねぇ～」
 	PlaySE(4, "S20/11/VTT_oishi3040", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おおっ、そいつは失礼しました。",
 			NULL, "\"Ohhh, that was rude, please excuse me.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3041", 256, 64);
@@ -415,17 +472,20 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3043.「あ、いえ。そんなことないです」
 	PlaySE(4, "S20/28/VTT_tomoe3043", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、いえ。そんなことないです」",
 			NULL, "\"Oh, no. It's not like that.\"", Line_Normal);
 	ClearMessage();
 
 //rちょっと皮肉が過ぎて偉そうだったかなと反省して、私は真面目に言葉をつないでいった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ちょっと皮肉が過ぎて偉そうだったかなと反省して、私は真面目に言葉をつないでいった。",
 			NULL, "It seemed that my sarcasm went over his head, and he took my words seriously.", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3044.「大石さんには、今までにもお返しなきゃいけない『借り』がたくさんありますからね。kvS20/28/VTT_tomoe3045.これくらいのことはお安い御用ですよ。kvS20/28/VTT_tomoe3046.お金に関することでなければ、いつでも喜んで」
 	PlaySE(4, "S20/28/VTT_tomoe3044", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「大石さんには、今までにもお返しなきゃいけない『借り』がたくさんありますからね。",
 			NULL, "\"Ooishi-san, I've <i>borrowed</i> a lot from you up until now, so it's time I paid you back.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3045", 256, 64);
@@ -438,6 +498,7 @@ void main()
 
 //大石rvS20/11/VTT_oishi3042.「なっはっはっはっ！　そういっていただけると、私も心強い限りですよ。kvS20/11/VTT_oishi3043.持つべきものは物分りのいい上役と、腰の軽い後輩！kvS20/11/VTT_oishi3044.　それに優秀なキャリアがつけば、まさに鬼に金棒ってところですかぁ？」
 	PlaySE(4, "S20/11/VTT_oishi3042", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なっはっはっはっ！　そういっていただけると、私も心強い限りですよ。",
 			NULL, "\"Na ha ha ha! Hearing you say that is encouraging.", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3043", 256, 64);
@@ -450,18 +511,21 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3047.「…なんだか大石さんにそう言われても、からかわれてるようにしか聞こえないんですが。kvS20/28/VTT_tomoe3048.大石さんこそ、もうお歳なんですから無理はしないでくださいよ？kvS20/28/VTT_tomoe3049.　年金をもらう前に逝っちゃったら、大金の払い損なんですから」
 	PlaySE(4, "S20/28/VTT_tomoe3047", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…なんだか大石さんにそう言われても、からかわれてるようにしか聞こえないんですが。",
 			NULL, "\"...Whatever it is you're trying to say, I can only interpret it as more teasing.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3048", 256, 64);
 	OutputLine(NULL, "大石さんこそ、もうお歳なんですから無理はしないでくださいよ？",
-			NULL, " You're getting pretty old, Ooishi-san, so please don't push yourself too hard, ok?", Line_WaitForInput);
+			NULL, " You're getting pretty old, Ooishi-san, so please don't push yourself too hard, ok? ", Line_ModeSpecific);
 	PlaySE(4, "S20/28/VTT_tomoe3049", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　年金をもらう前に逝っちゃったら、大金の払い損なんですから」",
-			NULL, " If you get yourself killed before you earn your pension, you'll miss out on a lot of money.\"", Line_Normal);
+			NULL, "If you get yourself killed before you earn your pension, you'll miss out on a lot of money.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS20/11/VTT_oishi3045.「おおぅ、巴ちゃんも言うようになりましたねぇ！kvS20/11/VTT_oishi3046.　まぁ睡眠ももちろんですが、お風呂もちゃんと入ったほうがいいですよ？kvS20/11/VTT_oishi3047.　今のあなたはきっと、日本で一番匂う女刑事さんですからね～！」
 	PlaySE(4, "S20/11/VTT_oishi3045", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おおぅ、巴ちゃんも言うようになりましたねぇ！",
 			NULL, "\"Ohhh Tomoe-chan, your words cut deep!", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3046", 256, 64);
@@ -474,12 +538,14 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3050.「ちゃんと毎日洗ってキレイにしてますっ！　匂いなんかしませんッッ！！」
 	PlaySE(4, "S20/28/VTT_tomoe3050", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ちゃんと毎日洗ってキレイにしてますっ！　匂いなんかしませんッッ！！」",
 			NULL, "\"Come on, I bathe every day! I don't smell!!\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS20/11/VTT_oishi3048.「なっはっはっはっ！kvS20/11/VTT_oishi3049.　それじゃ、良いお年を！」
 	PlaySE(4, "S20/11/VTT_oishi3048", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なっはっはっはっ！",
 			NULL, "\"Na ha ha ha!", Line_WaitForInput);
 	PlaySE(4, "S20/11/VTT_oishi3049", 256, 64);
@@ -491,6 +557,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3051.「……もぅっ…。kvS20/28/VTT_tomoe3052.………」
 	PlaySE(4, "S20/28/VTT_tomoe3051", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……もぅっ…。",
 			NULL, "\"...Enough of that...", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3052", 256, 64);
@@ -499,12 +566,14 @@ void main()
 	ClearMessage();
 
 //r受話器を置いてから、…私は、袖口を鼻の先に持っていく。そして息を吸い込むなり、思わず顔をしかめた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "受話器を置いてから、…私は、袖口を鼻の先に持っていく。そして息を吸い込むなり、思わず顔をしかめた。",
 			NULL, "After setting down the telephone... I moved the sleeves of my jacket to my nose.", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3053.「……シャワー、浴びてこよ」
 	PlaySE(4, "S20/28/VTT_tomoe3053", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……シャワー、浴びてこよ」",
 			NULL, "\"......I should probably take a shower.\"", Line_Normal);
 	ClearMessage();
@@ -512,21 +581,25 @@ void main()
 	DrawScene( "black", 1000 );
 
 //r………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "………。",
 			NULL, "......", Line_Normal);
 	ClearMessage();
 
 //rそのあと、わずか数十分後に大石さんから再び連絡があったが、…浴室にいた私は、それに出ることができなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そのあと、わずか数十分後に大石さんから再び連絡があったが、…浴室にいた私は、それに出ることができなかった。",
 			NULL, "After that, Ooishi tried to call me again ten minutes later, but... I was in the bathroom, so I couldn't get to it.", Line_Normal);
 	ClearMessage();
 
 //rそして。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして。",
 			NULL, "And then.", Line_Normal);
 	ClearMessage();
 
 //r雛見沢村のガス災害が起こったのは、それから数時間後のことだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "雛見沢村のガス災害が起こったのは、それから数時間後のことだった。",
 			NULL, "The Hinamizawa gas disaster occurred just a few hours later.", Line_Normal);
 	ClearMessage();

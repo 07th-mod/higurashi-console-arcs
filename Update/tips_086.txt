@@ -1,5 +1,13 @@
 void main()
 {
+	int AdvMode;
+	AdvMode = 1;
+	int Line_ModeSpecific;
+	if (AdvMode) {
+		Line_ModeSpecific = Line_Normal;
+	} else {
+		Line_ModeSpecific = Line_WaitForInput;
+	}
 
 //*TIPS 86
 
@@ -14,12 +22,15 @@ void main()
 	PlayBGM( 1, "yoru", 128, 0 );
 
 //r刑事一課のフロアに入り、藤田慎吾は吹き出す汗をぬぐいながら、自分の席に戻った。
+	ClearMessage();
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "刑事一課のフロアに入り、藤田慎吾は吹き出す汗をぬぐいながら、自分の席に戻った。",
 			NULL, "Fujita Shingo wiped the sweat from his brow while entering the floor of the First Investigation Division, then returned to his seat.", Line_Normal);
 	ClearMessage();
 
 //藤田rvS20/31/VTT_fujita3001.「おつかれーっす。ただいま帰りま、kvS20/31/VTT_fujita3002.——うおッ？！」
 	PlaySE(4, "S20/31/VTT_fujita3001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「おつかれーっす。ただいま帰りま、",
 			NULL, "\"Nice to see you. I'm back.", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3002", 256, 64);
@@ -28,23 +39,27 @@ void main()
 	ClearMessage();
 
 //rそして、そのすぐ斜め前の窓際にある南井次長席の机にふと顔を向けて、…文字通り『ぎょっ？』と目を見開く。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、そのすぐ斜め前の窓際にある南井次長席の机にふと顔を向けて、…文字通り『ぎょっ？』と目を見開く。",
 			NULL, "Then, he suddenly turned to face Minai's desk near the window across from his desk... and said \"Huh?\" with his eyes wide open.", Line_Normal);
 	ClearMessage();
 
 //rそこには、赤、青、黄色、と色とりどりの丸い包みが１０、…いや２０、…いやいやそれ以上の数がこんもりと山になって、うず高く積み上げられていたのだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そこには、赤、青、黄色、と色とりどりの丸い包みが１０、…いや２０、…いやいやそれ以上の数がこんもりと山になって、うず高く積み上げられていたのだ。",
 			NULL, "He noticed colorful red, blue, and yellow wrappers piled high on the desk. There were 10... no, 20... no, more than that stacked there.", Line_Normal);
 	ClearMessage();
 
 //藤田rvS20/31/VTT_fujita3003.「な、なに、食ってんですか…？」
 	PlaySE(4, "S20/31/VTT_fujita3003", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「な、なに、食ってんですか…？」",
 			NULL, "\"Wh-what are you eating...?\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3054.「ハンバーガーよ。kvS20/28/VTT_tomoe3055.見てわかんない？」
 	PlaySE(4, "S20/28/VTT_tomoe3054", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ハンバーガーよ。",
 			NULL, "\"It's a hamburger.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3055", 256, 64);
@@ -54,27 +69,32 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3004.「い、いや…、俺が言ってるのは物じゃなくて、量…」
 	PlaySE(4, "S20/31/VTT_fujita3004", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「い、いや…、俺が言ってるのは物じゃなくて、量…」",
 			NULL, "\"N-no... I'm not talking about what it is, I'm concerned by the quantity...\"", Line_Normal);
 	ClearMessage();
 
 //rあまりのハンバーガーの量に食い気よりも吐き気を催して、藤田は視線をそらす。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あまりのハンバーガーの量に食い気よりも吐き気を催して、藤田は視線をそらす。",
 			NULL, "Fujita turned to look away, feeling nauseous just thinking about eating so many hamburgers.", Line_Normal);
 	ClearMessage();
 
 //r…と、その先にあったゴミ箱には、くしゃくしゃに丸められたハンバーガーの包みがあふれんばかりに詰め込まれているのを見て、さらに唖然となった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…と、その先にあったゴミ箱には、くしゃくしゃに丸められたハンバーガーの包みがあふれんばかりに詰め込まれているのを見て、さらに唖然となった。",
 			NULL, "...And, he was even more stunned when he saw the trash can up ahead overflowing with crumpled hamburger wrappers.", Line_Normal);
 	ClearMessage();
 
 //rまさか、…これ全部、次長席に座るこの人がひとりで食べたってことなんだろうか？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "まさか、…これ全部、次長席に座るこの人がひとりで食べたってことなんだろうか？",
 			NULL, "No way... could this person sitting alone have eaten all of these?", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3056.「あぐ、…ふひひゃふん。kvS20/28/VTT_tomoe3057.ひょっひは、ひょんひゃひゃんひ？」
 	PlaySE(4, "S20/28/VTT_tomoe3056", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あぐ、…ふひひゃふん。",
 			NULL, "\"Ah... Fuhiyahun.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3057", 256, 64);
@@ -84,41 +104,48 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3005.「…せめて食ってから言ってください」
 	PlaySE(4, "S20/31/VTT_fujita3005", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…せめて食ってから言ってください」",
 			NULL, "\"...Please finish eating before you speak.\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3058.「むっ…」
 	PlaySE(4, "S20/28/VTT_tomoe3058", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「むっ…」",
 			NULL, "\"Mmm...\"", Line_Normal);
 	ClearMessage();
 
 //r巴はやおら机の上のカップを手に取り、突きさしたストローを咥えてちゅうぅ、と勢いよく吸い込む。…おいおい、飲み物まで甘ったるいシェイクかよ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "巴はやおら机の上のカップを手に取り、突きさしたストローを咥えてちゅうぅ、と勢いよく吸い込む。…おいおい、飲み物まで甘ったるいシェイクかよ。",
 			NULL, "Tomoe grabbed the cup from the top of her desk, held the straw to her mouth and vigorously inhaled. ...Hey, is that drink a milkshake?", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3059.「ふうっ…、一息ついた～」
 	PlaySE(4, "S20/28/VTT_tomoe3059", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ふうっ…、一息ついた～」",
 			NULL, "\"Haah... That was a refreshing breath~.\"", Line_Normal);
 	ClearMessage();
 
 //藤田rvS20/31/VTT_fujita3006.「…『一息』つくまでにいくら食べたんですか、南井さん。kvS20/31/VTT_fujita3007.失礼を重々承知の上で言わせていただきますが、…よく太りませんね？kvS20/31/VTT_fujita3008.　不思議を通り越して、むしろ不気味ですよ」
 	PlaySE(4, "S20/31/VTT_fujita3006", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…『一息』つくまでにいくら食べたんですか、南井さん。",
 			NULL, "\"...How much were you able to eat without <i>breathing,</i> Minai-san?", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3007", 256, 64);
 	OutputLine(NULL, "失礼を重々承知の上で言わせていただきますが、…よく太りませんね？",
-			NULL, " I say this knowing full well how rude it is, but... aren't you worried about getting fat?", Line_WaitForInput);
+			NULL, " I say this knowing full well how rude it is, but... aren't you worried about getting fat? ", Line_ModeSpecific);
 	PlaySE(4, "S20/31/VTT_fujita3008", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　不思議を通り越して、むしろ不気味ですよ」",
-			NULL, " It's amazing that you made it this far, and rather uncanny.\"", Line_Normal);
+			NULL, "It's amazing that you made it this far, and rather uncanny.\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3060.「うっさいわね。kvS20/28/VTT_tomoe3061.肉体労働にはエネルギーが必要なのよ。kvS20/28/VTT_tomoe3062.そして使いすぎた頭脳の回復には、糖分を大量に摂取しないと。kvS20/28/VTT_tomoe3063.…なんか文句あるの？」
 	PlaySE(4, "S20/28/VTT_tomoe3060", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「うっさいわね。",
 			NULL, "\"Give it a rest.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3061", 256, 64);
@@ -134,81 +161,107 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3009.「いや、ないですけどね…」
 	PlaySE(4, "S20/31/VTT_fujita3009", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いや、ないですけどね…」",
 			NULL, "\"No, it's not that, but...\"", Line_Normal);
 	ClearMessage();
 
 //rにしても限度がある、と言いたくなるのを、藤田は辛うじて思いとどまった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "にしても限度がある、と言いたくなるのを、藤田は辛うじて思いとどまった。",
 			NULL, "Fujita barely abstained from saying \"You still have limits.\"", Line_Normal);
 	ClearMessage();
 
 //r…この、とても同い年とは思えないほど童顔の女警部を上司に仰いでから、早や半年が過ぎた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…この、とても同い年とは思えないほど童顔の女警部を上司に仰いでから、早や半年が過ぎた。",
 			NULL, "...Nearly half a year had passed since he started working for this Chief Inspector, and he still found it almost impossible to believe this jovial woman was the same age as him.", Line_Normal);
 	ClearMessage();
 
 //r彼女は、この垣内署の山沖署長が直々に人脈を駆使してまで呼んできた、いわゆる『準キャリア組』のエリートだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "彼女は、この垣内署の山沖署長が直々に人脈を駆使してまで呼んできた、いわゆる『準キャリア組』のエリートだった。",
 			NULL, "She was an elite member of the so-called \"Associate Career Class\" that was personally assembled by Chief Yamaoki, the Kakiuchi Station chief of police.", Line_Normal);
 	ClearMessage();
 
 //藤田r-vS20/31/VTT_fujita3010.（とはいえ最初の頃は、順風満帆とはとても言えなかったよなぁ…）
 	PlaySE(4, "S20/31/VTT_fujita3010", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "（とはいえ最初の頃は、順風満帆とはとても言えなかったよなぁ…）",
 			NULL, "(However, those early days were hardly smooth sailing...)", Line_Normal);
 	ClearMessage();
 
 //rどこの組織にでもある常識に漏れず、この署にも派閥というものが存在する。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "どこの組織にでもある常識に漏れず、この署にも派閥というものが存在する。",
 			NULL, "Words get around in any kind of organization, and this station had already developed its own factions.", Line_Normal);
 	ClearMessage();
 
 //rそのため配属当初、署長派と（勝手に）決め付けられた巴は副署長派のやっかみと妨害を受けて、『次長』という課長よりも上役だが、ラインとしての権限を持たない名誉職にまつりあげられてしまったのだ。
-	OutputLine(NULL, "そのため配属当初、署長派と（勝手に）決め付けられた巴は副署長派のやっかみと妨害を受けて、『次長』という課長よりも上役だが、ラインとしての権限を持たない名誉職にまつりあげられてしまったのだ。",
-			NULL, "For that reason, Tomoe was (arbitrarily) branded as a member of the Chief's faction and had to deal with the deputy chief's ire since her first day in the office. So Tomoe was given the honorary title of \"Assistant Director\" but with no actual authority.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "そのため配属当初、署長派と（勝手に）決め付けられた巴は副署長派のやっかみと妨害を受けて、『次長』という課長よりも上役だが、ラインとしての権限を持たない名誉職にまつりあげられてしまったのだ。",
+				NULL, "<size=-2>For that reason, Tomoe was (arbitrarily) branded as a member of the Chief's faction and had to deal with the deputy chief's ire since her first day in the office. So Tomoe was given the honorary title of \"Assistant Director\" but with no actual authority.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "そのため配属当初、署長派と（勝手に）決め付けられた巴は副署長派のやっかみと妨害を受けて、『次長』という課長よりも上役だが、ラインとしての権限を持たない名誉職にまつりあげられてしまったのだ。",
+				NULL, "For that reason, Tomoe was (arbitrarily) branded as a member of the Chief's faction and had to deal with the deputy chief's ire since her first day in the office. So Tomoe was given the honorary title of \"Assistant Director\" but with no actual authority.", Line_Normal);
+	}
 	ClearMessage();
 
 //r…よって、藤田の本来の上司にあたるのは、実は刑事一課の山村課長であったりする。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…よって、藤田の本来の上司にあたるのは、実は刑事一課の山村課長であったりする。",
 			NULL, "...As a result, Fujita's original boss was actually the section chief of the First Investigation Division, Yamamura.", Line_Normal);
 	ClearMessage();
 
 //rそんな巴のことを最初は彼も、他の刑事たちも気の毒とは思いつつ、彼女がキャリア持ちの若い女性だという先入観から興味本位に『お手並み拝見』と冷ややかに見ていたものだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんな巴のことを最初は彼も、他の刑事たちも気の毒とは思いつつ、彼女がキャリア持ちの若い女性だという先入観から興味本位に『お手並み拝見』と冷ややかに見ていたものだ。",
 			NULL, "Since the beginning, he and the other detectives looked down on Tomoe based on their preconceived prejudice against a woman with a career, and coldly watched her while giving her \"Show me what you've got\" looks.", Line_Normal);
 	ClearMessage();
 
 //藤田r-vS20/31/VTT_fujita3011.（普通なら怒るか、不貞腐れるかだろうな。…でも、彼女は違った）
 	PlaySE(4, "S20/31/VTT_fujita3011", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "（普通なら怒るか、不貞腐れるかだろうな。…でも、彼女は違った）",
 			NULL, "(A normal person would get angry or sullen. ...But, she was different.)", Line_Normal);
 	ClearMessage();
 
 //r着任して早々、巴は男顔負けの血気盛んな行動力と明敏な洞察力を発揮して、迷宮入り直前の難事件を解決してしまった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "着任して早々、巴は男顔負けの血気盛んな行動力と明敏な洞察力を発揮して、迷宮入り直前の難事件を解決してしまった。",
 			NULL, "As soon as she arrived, Tomoe exhibited intelligent insights and a will to take action, and was able to solve a mystery that stumped her predecessor.", Line_Normal);
 	ClearMessage();
 
 //rそして、それに驕ることなく様々な現場に足を運び、昼夜を徹して労を惜しまずに働き続け、事件解決に真っ向から取り組んでいったのだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、それに驕ることなく様々な現場に足を運び、昼夜を徹して労を惜しまずに働き続け、事件解決に真っ向から取り組んでいったのだ。",
 			NULL, "And, she diligently traveled across various crime scenes, toiling tirelessly day and night, working incidents from inception to resolution.", Line_Normal);
 	ClearMessage();
 
 //rそんな、純粋なほどのひたむきさに圧倒され、すっかり感化された山村課長はじめ刑事一課の刑事たちは、いまや彼女のことを名実の『ボス』と認めている。もちろん、藤田もその一人だった。
-	OutputLine(NULL, "そんな、純粋なほどのひたむきさに圧倒され、すっかり感化された山村課長はじめ刑事一課の刑事たちは、いまや彼女のことを名実の『ボス』と認めている。もちろん、藤田もその一人だった。",
-			NULL, "All of the First Investigation Division, including section chief Yamamura, were completely overwhelmed by her dedication, and they came to admit she had earned the title of \"boss.\" Of course, Fujita was one of them.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "そんな、純粋なほどのひたむきさに圧倒され、すっかり感化された山村課長はじめ刑事一課の刑事たちは、いまや彼女のことを名実の『ボス』と認めている。もちろん、藤田もその一人だった。",
+				NULL, "<size=-2>All of the First Investigation Division, including section chief Yamamura, were completely overwhelmed by her dedication, and they came to admit she had earned the title of \"boss.\" Of course, Fujita was one of them.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "そんな、純粋なほどのひたむきさに圧倒され、すっかり感化された山村課長はじめ刑事一課の刑事たちは、いまや彼女のことを名実の『ボス』と認めている。もちろん、藤田もその一人だった。",
+				NULL, "All of the First Investigation Division, including section chief Yamamura, were completely overwhelmed by her dedication, and they came to admit she had earned the title of \"boss.\" Of course, Fujita was one of them.", Line_Normal);
+	}
 	ClearMessage();
 
 //rそれだけに、…結構本気で尊敬しているだけに、kこの大食い癖さえなければ巴は、人前以上の容姿と快活な性格であまたの色男たちをはべらす才媛でいられたであろうことが非常に悔やまれて仕方がなかった…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それだけに、…結構本気で尊敬しているだけに、",
-			NULL, "For that reason... they've grown to respect her.", Line_WaitForInput);
+			NULL, "For that reason... they've grown to respect her. ", Line_ModeSpecific);
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "この大食い癖さえなければ巴は、人前以上の容姿と快活な性格であまたの色男たちをはべらす才媛でいられたであろうことが非常に悔やまれて仕方がなかった…。",
-			NULL, " She never concerned herself with girlish interests like winning handsome men with appearances and a lively personality, and even with her extreme eating habits, she never regretted anything...", Line_Normal);
+			NULL, "She never concerned herself with girlish interests like winning handsome men with appearances and a lively personality, and even with her extreme eating habits, she never regretted anything...", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3064.「そんなことより、そっちの捜査はどう？kvS20/28/VTT_tomoe3065.　畠山一馬の家族の様子は？」
 	PlaySE(4, "S20/28/VTT_tomoe3064", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そんなことより、そっちの捜査はどう？",
 			NULL, "\"About that, how is the investigation going?", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3065", 256, 64);
@@ -218,6 +271,7 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3012.「とりあえず、息子夫婦には早退してもらいまして。kvS20/31/VTT_fujita3013.色々と任意で聞き込みをしましたが、…収穫は、ゼロでした。kvS20/31/VTT_fujita3014.完全に貝でしたよ」
 	PlaySE(4, "S20/31/VTT_fujita3012", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「とりあえず、息子夫婦には早退してもらいまして。",
 			NULL, "\"Unfortunately, the son and his wife asked to leave early.", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3013", 256, 64);
@@ -230,6 +284,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3066.「貝、ねぇ…。kvS20/28/VTT_tomoe3067.前に会ったときは、雛見沢のこととかも結構話してくれたんだけど」
 	PlaySE(4, "S20/28/VTT_tomoe3066", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「貝、ねぇ…。",
 			NULL, "\"Clams, huh...?", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3067", 256, 64);
@@ -239,6 +294,7 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3015.「やはり、祟りを恐れているようでしたね。kvS20/31/VTT_fujita3016.畠山一馬の豹変ぶりが当人たちには、相当なショックだったようです」
 	PlaySE(4, "S20/31/VTT_fujita3015", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「やはり、祟りを恐れているようでしたね。",
 			NULL, "\"Of course, they're afraid of the curse now.", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3016", 256, 64);
@@ -248,6 +304,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3068.「そうよね。kvS20/28/VTT_tomoe3069.…さすがに当事者ともなれば、前のように迷信だって笑えないわよね」
 	PlaySE(4, "S20/28/VTT_tomoe3068", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そうよね。",
 			NULL, "\"Indeed.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3069", 256, 64);
@@ -256,35 +313,42 @@ void main()
 	ClearMessage();
 
 //r巴はそう言って、ポテトをぱくりと口に放り込んだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "巴はそう言って、ポテトをぱくりと口に放り込んだ。",
 			NULL, "After saying that, Tomoe tossed a potato chip into her mouth.", Line_Normal);
 	ClearMessage();
 
 //r…公由　夏美の証言通り、雛見沢の出身者でも『オヤシロさまの祟り』を信奉しているのは老人たちがほとんどで、k中年層から下はほとんど笑い飛ばすか、せいぜい道徳的なうすい敬虔しか持っていなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…公由　夏美の証言通り、雛見沢の出身者でも『オヤシロさまの祟り』を信奉しているのは老人たちがほとんどで、",
-			NULL, "...According to Natsumi Kimiyoshi, it's mostly the elderly people of Hinamizawa who believe in \"Oyashiro-sama's curse.\"", Line_WaitForInput);
+			NULL, "...According to Natsumi Kimiyoshi, it's mostly the elderly people of Hinamizawa who believe in \"Oyashiro-sama's curse.\" ", Line_ModeSpecific);
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "中年層から下はほとんど笑い飛ばすか、せいぜい道徳的なうすい敬虔しか持っていなかった。",
-			NULL, " But the middle-aged and younger members of the population are far less devout, and find the notion laughable.", Line_Normal);
+			NULL, "But the middle-aged and younger members of the population are far less devout, and find the notion laughable.", Line_Normal);
 	ClearMessage();
 
 //r息子夫婦が一馬への捜査協力に同意してくれたのも、おそらく『祟り』に対する畏怖の念が低かったからだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "息子夫婦が一馬への捜査協力に同意してくれたのも、おそらく『祟り』に対する畏怖の念が低かったからだ。",
 			NULL, "Kazuma's son and his wife were probably not afraid of the \"curse,\" which is why they agreed to cooperate with the investigation.", Line_Normal);
 	ClearMessage();
 
 //rそれでも、…以後はそういうわけにはいかないだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それでも、…以後はそういうわけにはいかないだろう。",
 			NULL, "Nevertheless... that probably won't be reliable in the future.", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3070.「ひょっとしたら、その発端が警察にあるんじゃないかって、こちらを恨んでいることだって考えられるでしょうね…」
 	PlaySE(4, "S20/28/VTT_tomoe3070", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ひょっとしたら、その発端が警察にあるんじゃないかって、こちらを恨んでいることだって考えられるでしょうね…」",
 			NULL, "\"It's possible that they've developed a grudge against the police, given that we've been involved with Kazuma since the beginning...\"", Line_Normal);
 	ClearMessage();
 
 //藤田rvS20/31/VTT_fujita3017.「そんな…。kvS20/31/VTT_fujita3018.そんなこと言い出したら、介護福祉センターに入居させたことがそもそもの始まりじゃないですか。kvS20/31/VTT_fujita3019.警察を逆恨みするのは、筋違いだと思いますが？」
 	PlaySE(4, "S20/31/VTT_fujita3017", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そんな…。",
 			NULL, "\"Maybe...", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3018", 256, 64);
@@ -297,6 +361,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3071.「そんなこと、当人たちだってわかっているわよ。…おそらくね。kvS20/28/VTT_tomoe3072.でも、認めたくないのよ。kvS20/28/VTT_tomoe3073.自分たちのせいで、畠山一馬を死に追いやったんじゃないか、…なんてことは」
 	PlaySE(4, "S20/28/VTT_tomoe3071", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そんなこと、当人たちだってわかっているわよ。…おそらくね。",
 			NULL, "\"I understand what happened to him. ...In all likelihood.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3072", 256, 64);
@@ -308,22 +373,26 @@ void main()
 	ClearMessage();
 
 //r一馬の息子である畠山正雄氏は、第一印象からして人の良い熟年男性だった。その妻の芳子氏も世話好きな、近所でも評判の主婦だという。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "一馬の息子である畠山正雄氏は、第一印象からして人の良い熟年男性だった。その妻の芳子氏も世話好きな、近所でも評判の主婦だという。",
 			NULL, "Based on first impressions, Kazuma's son Masao Hatakeyama seemed like a good natured man. And his wife Yoshiko seemed kind, she had a reputation within the neighborhood as a good housewife.", Line_Normal);
 	ClearMessage();
 
 //rそして二人とも、一馬のことを非常に気遣っていたようで、昨年末に長年の連れ添いを失った彼に同居を申し出たのも、息子よりむしろ妻の方だったとのことだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして二人とも、一馬のことを非常に気遣っていたようで、昨年末に長年の連れ添いを失った彼に同居を申し出たのも、息子よりむしろ妻の方だったとのことだ。",
 			NULL, "And both of them seemed to be very concerned about Kazuma. When he lost his wife of many years, his son offered him a place to stay.", Line_Normal);
 	ClearMessage();
 
 //rそれだけに、…人並み以上の優しさを持つ者なら、今回の一件は耐え難い衝撃だったはずだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それだけに、…人並み以上の優しさを持つ者なら、今回の一件は耐え難い衝撃だったはずだ。",
 			NULL, "That's why... this incident was so unbearably shocking for those kindhearted people.", Line_Normal);
 	ClearMessage();
 
 //藤田rvS20/31/VTT_fujita3020.「…それにしても。kvS20/31/VTT_fujita3021.だとしたらどうして、数ヶ月もたたないうちにセンターへ入居させたんでしょう。kvS20/31/VTT_fujita3022.一緒に住んでいて、何か問題でもあったんでしょうか？」
 	PlaySE(4, "S20/31/VTT_fujita3020", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…それにしても。",
 			NULL, "\"...Even so.", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3021", 256, 64);
@@ -336,43 +405,51 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3074.「介護士の話だとね、…奥さんを失ったショックで落ち込んで、自分の殻に閉じこもるようになったそうなの。kvS20/28/VTT_tomoe3075.足が弱くなって、救急車で運ばれたことがあってからは、…余計にね」
 	PlaySE(4, "S20/28/VTT_tomoe3074", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「介護士の話だとね、…奥さんを失ったショックで落ち込んで、自分の殻に閉じこもるようになったそうなの。",
-			NULL, "\"According to the caregivers... he grew depressed from the shock of losing his wife, and he shut himself in.", Line_WaitForInput);
+			NULL, "\"According to the caregivers... he grew depressed from the shock of losing his wife, and he shut himself in. ", Line_ModeSpecific);
 	PlaySE(4, "S20/28/VTT_tomoe3075", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "足が弱くなって、救急車で運ばれたことがあってからは、…余計にね」",
-			NULL, " In that time, his legs grew weak and he became unable to move without support... it became too much to bear.\"", Line_Normal);
+			NULL, "In that time, his legs grew weak and he became unable to move without support... it became too much to bear.\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3076.「息子夫婦や、孫たちが話しかけても黙りこくって、ダメだったみたい。kvS20/28/VTT_tomoe3077.だから、同世代の人たちが集まる環境ならあるいは、と考えたそうよ。kvS20/28/VTT_tomoe3078.それに、奥さんがパート勤めから正社員に昇格したこともあって、やむなくの選択だったらしいわ」
 	PlaySE(4, "S20/28/VTT_tomoe3076", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「息子夫婦や、孫たちが話しかけても黙りこくって、ダメだったみたい。",
 			NULL, "\"He remained silent even when his son, daughter-in-law, and grandchildren tried talking to him, it was useless to try.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3077", 256, 64);
 	OutputLine(NULL, "だから、同世代の人たちが集まる環境ならあるいは、と考えたそうよ。",
-			NULL, " So they heard the center was a place where he could be around other people his own age.", Line_WaitForInput);
+			NULL, " So they heard the center was a place where he could be around other people his own age. ", Line_ModeSpecific);
 	PlaySE(4, "S20/28/VTT_tomoe3078", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それに、奥さんがパート勤めから正社員に昇格したこともあって、やむなくの選択だったらしいわ」",
-			NULL, " Plus, Yoshiko was promoted from her part-time job to a full-time position around that time, so the decision became unavoidable.\"", Line_Normal);
+			NULL, "Plus, Yoshiko was promoted from her part-time job to a full-time position around that time, so the decision became unavoidable.\"", Line_Normal);
 	ClearMessage();
 
 //r正雄氏は元の雛見沢に戻すことも考えたそうだが、…今のままでは可哀想だと、芳子氏が反対したらしい。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "正雄氏は元の雛見沢に戻すことも考えたそうだが、…今のままでは可哀想だと、芳子氏が反対したらしい。",
 			NULL, "Masao considered returning to Hinamizawa, but... Yoshiko thought that would be a poor choice.", Line_Normal);
 	ClearMessage();
 
 //rだから一馬が元気になってから、改めて同居か帰郷かを家族みんなで相談するんだと、巴は近所の親しい主婦から聞かされた……。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だから一馬が元気になってから、改めて同居か帰郷かを家族みんなで相談するんだと、巴は近所の親しい主婦から聞かされた……。",
 			NULL, "Tomoe heard from one of their neighbors that the family considered letting Kazuma live with them again after he became healthy.", Line_Normal);
 	ClearMessage();
 
 //藤田rvS20/31/VTT_fujita3023.「……なんか、やりきれないですね」
 	PlaySE(4, "S20/31/VTT_fujita3023", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……なんか、やりきれないですね」",
 			NULL, "\"...It sounds unbearable.\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3079.「そうね。kvS20/28/VTT_tomoe3080.相手の幸せのためにやってきたことが、逆に不幸にさせてしまったのだとしたら、kvS20/28/VTT_tomoe3081.…優しさって、一体なんなのかしら」
 	PlaySE(4, "S20/28/VTT_tomoe3079", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そうね。",
 			NULL, "\"Right.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3080", 256, 64);
@@ -385,17 +462,25 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3024.「………」
 	PlaySE(4, "S20/31/VTT_fujita3024", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //r藤田はその問いに答えられず、黙って嘆息する。巴もしばらく口をつぐんでいたが、空になったポテトの箱をくしゃっ、と丸めて捨てると、顔を上げて藤田に向き直った。
-	OutputLine(NULL, "藤田はその問いに答えられず、黙って嘆息する。巴もしばらく口をつぐんでいたが、空になったポテトの箱をくしゃっ、と丸めて捨てると、顔を上げて藤田に向き直った。",
-			NULL, "Unable to find an answer, Fujita quietly sighed. Tomoe held her mouth closed for a while, and then turned over the empty bag of potato chips. She crushed it into a ball and tossed it in the trash, then turned to face Fujita.", Line_Normal);
+	if (AdvMode) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "藤田はその問いに答えられず、黙って嘆息する。巴もしばらく口をつぐんでいたが、空になったポテトの箱をくしゃっ、と丸めて捨てると、顔を上げて藤田に向き直った。",
+				NULL, "<size=-2>Unable to find an answer, Fujita quietly sighed. Tomoe held her mouth closed for a while, and then turned over the empty bag of potato chips. She crushed it into a ball and tossed it in the trash, then turned to face Fujita.</size>", Line_Normal);
+	} else {
+		OutputLine(NULL, "藤田はその問いに答えられず、黙って嘆息する。巴もしばらく口をつぐんでいたが、空になったポテトの箱をくしゃっ、と丸めて捨てると、顔を上げて藤田に向き直った。",
+				NULL, "Unable to find an answer, Fujita quietly sighed. Tomoe held her mouth closed for a while, and then turned over the empty bag of potato chips. She crushed it into a ball and tossed it in the trash, then turned to face Fujita.", Line_Normal);
+	}
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3082.「とりあえず、お疲れさま。kvS20/28/VTT_tomoe3083.ごめんね、私のわがままにつき合わせちゃって」
 	PlaySE(4, "S20/28/VTT_tomoe3082", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「とりあえず、お疲れさま。",
 			NULL, "\"Thanks, that's enough for today.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3083", 256, 64);
@@ -405,6 +490,7 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3025.「あ、いえこのくらい。kvS20/31/VTT_fujita3026.…南井さんは、この後どうしますか？kvS20/31/VTT_fujita3027.　雛見沢のことをまだ調べるつもりなら、俺も一緒に付き合いますが」
 	PlaySE(4, "S20/31/VTT_fujita3025", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あ、いえこのくらい。",
 			NULL, "\"Ah, no, it's nothing.", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3026", 256, 64);
@@ -417,17 +503,20 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3084.「そうね……」
 	PlaySE(4, "S20/28/VTT_tomoe3084", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「そうね……」",
 			NULL, "\"Is that so......?\"", Line_Normal);
 	ClearMessage();
 
 //r巴は首をめぐらせて、背後の窓から外の景色に目を向ける。日よけのブラインドで隙間越しにしか見えなかったが、建物の影には夜のネオンがちかちかと色鮮やかに灯っていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "巴は首をめぐらせて、背後の窓から外の景色に目を向ける。日よけのブラインドで隙間越しにしか見えなかったが、建物の影には夜のネオンがちかちかと色鮮やかに灯っていた。",
 			NULL, "Tomoe turned to face the scenery outside the window. Although it was only visible through a small gap in the blinds, the evening lights were shimmering in the shadow of the building.", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3085.「…行方不明になった大石さんの手がかりにでもなれば、と思ったんだけど、どうやらこれ以上の見入りはなさそうね。kvS20/28/VTT_tomoe3086.あの子とも、これで最後にするって約束しちゃったし」
 	PlaySE(4, "S20/28/VTT_tomoe3085", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…行方不明になった大石さんの手がかりにでもなれば、と思ったんだけど、どうやらこれ以上の見入りはなさそうね。",
 			NULL, "\"...I was hoping to get some more clues from Ooishi-san, but there are apparently no other leads.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3086", 256, 64);
@@ -437,6 +526,7 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3028.「あの、南井さん。kvS20/31/VTT_fujita3029.本当に、『オヤシロさまの祟り』を調べることが、…その大石って刑事さんの消息を確かめることになるんですか？kvS20/31/VTT_fujita3030.　なんか、その理屈がわからないっていうか…」
 	PlaySE(4, "S20/31/VTT_fujita3028", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あの、南井さん。",
 			NULL, "\"Uh, Minai-san.", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3029", 256, 64);
@@ -449,12 +539,14 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3087.「………」
 	PlaySE(4, "S20/28/VTT_tomoe3087", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //藤田rvS20/31/VTT_fujita3031.「——すみません。kvS20/31/VTT_fujita3032.難癖をつけるわけじゃないんです、ただ…」
 	PlaySE(4, "S20/31/VTT_fujita3031", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——すみません。",
 			NULL, "\"...I'm sorry.", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3032", 256, 64);
@@ -464,6 +556,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3088.「いいの、藤田くんの言いたいことはわかってるつもりだから。kvS20/28/VTT_tomoe3089.私もね、正直言って半信半疑なの。kvS20/28/VTT_tomoe3090.でも——」
 	PlaySE(4, "S20/28/VTT_tomoe3088", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「いいの、藤田くんの言いたいことはわかってるつもりだから。",
 			NULL, "\"It's fine, Fujita-kun, I understand what you're getting at.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3089", 256, 64);
@@ -475,39 +568,46 @@ void main()
 	ClearMessage();
 
 //r…あの、大石からの電話。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…あの、大石からの電話。",
 			NULL, "...That phone call from Ooishi.", Line_Normal);
 	ClearMessage();
 
 //r『オヤシロさまの祟り』で殺された被害者の遺体について調べてほしいと頼まれた数時間後に、…雛見沢村でガス災害が起こり、そして大石は、……行方不明となった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『オヤシロさまの祟り』で殺された被害者の遺体について調べてほしいと頼まれた数時間後に、…雛見沢村でガス災害が起こり、そして大石は、……行方不明となった。",
 			NULL, "Shortly after they were asked to investigate the body of a victim who was killed by \"Oyashiro-sama's curse\"... the gas disaster occurred in Hinamizawa village. And then...... Ooishi went missing.", Line_Normal);
 	ClearMessage();
 
 //rただの偶然かもしれない。…でも、それにしては話が、あまりにもできすぎていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ただの偶然かもしれない。…でも、それにしては話が、あまりにもできすぎていた。",
 			NULL, "It could just be a coincidence. ...But that was looking increasingly unlikely.", Line_Normal);
 	ClearMessage();
 
 //rだからその真相を探ることで、彼が突き止めようとしたことの一端を知ることができるのでは、と考えたのだけど…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だからその真相を探ることで、彼が突き止めようとしたことの一端を知ることができるのでは、と考えたのだけど…。",
 			NULL, "So she thought that by searching for the truth, she could understand what Ooishi was trying to accomplish...", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3091.「まぁ、…とりあえずこの一件は、まずここで置きましょう。kvS20/28/VTT_tomoe3092.他にも仕事がないわけじゃないし、kvS20/28/VTT_tomoe3093.…これ以上藤田くんを連れ回して奥さんに浮気相手って疑われるのも、いろんな意味で心外だし、ね♪」
 	PlaySE(4, "S20/28/VTT_tomoe3091", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「まぁ、…とりあえずこの一件は、まずここで置きましょう。",
 			NULL, "\"Well... we should probably set this case aside for the time being.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3092", 256, 64);
 	OutputLine(NULL, "他にも仕事がないわけじゃないし、",
-			NULL, " There aren't any other cases needing attention, but...", Line_WaitForInput);
+			NULL, " There aren't any other cases needing attention, but... ", Line_ModeSpecific);
 	PlaySE(4, "S20/28/VTT_tomoe3093", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…これ以上藤田くんを連れ回して奥さんに浮気相手って疑われるのも、いろんな意味で心外だし、ね♪」",
-			NULL, " if I monopolize your time any longer, Fujita-kun, you wife will think you're cheating on her, or that you had a change of heart, won't she?♪\"", Line_Normal);
+			NULL, "if I monopolize your time any longer, Fujita-kun, you wife will think you're cheating on her, or that you had a change of heart, won't she?♪\"", Line_Normal);
 	ClearMessage();
 
 //藤田rvS20/31/VTT_fujita3033.「み、南井さんしつこいですよ！kvS20/31/VTT_fujita3034.　あの件では俺も祐子も、平謝りに謝ったじゃないですか？！」
 	PlaySE(4, "S20/31/VTT_fujita3033", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「み、南井さんしつこいですよ！",
 			NULL, "\"M-Minai-san, don't be nosy!", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3034", 256, 64);
@@ -517,6 +617,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3094.「あっはははは！　いいでしょ、これくらいは。kvS20/28/VTT_tomoe3095.寂しい独り身のちょっとした憂さ晴らしなんだからさ～？kvS20/28/VTT_tomoe3096.　困ったときの伝家の宝刀として、生涯私の家宝としておきます」
 	PlaySE(4, "S20/28/VTT_tomoe3094", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「あっはははは！　いいでしょ、これくらいは。",
 			NULL, "\"Aahahahaha! I guess this is fine then.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3095", 256, 64);
@@ -529,12 +630,14 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3035.「お…鬼や、あんたはっ！」
 	PlaySE(4, "S20/31/VTT_fujita3035", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「お…鬼や、あんたはっ！」",
 			NULL, "\"Y... you're a demon!\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3097.「くっくっくっ…！kvS20/28/VTT_tomoe3098.　それはともかく、どう？　藤田くんも一緒に？kvS20/28/VTT_tomoe3099.　おなか空いてるでしょ」
 	PlaySE(4, "S20/28/VTT_tomoe3097", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「くっくっくっ…！",
 			NULL, "\"Mwahaha...!", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3098", 256, 64);
@@ -547,12 +650,14 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3036.「結構です」
 	PlaySE(4, "S20/31/VTT_fujita3036", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「結構です」",
 			NULL, "\"No thanks.\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3100.「…即答ね。kvS20/28/VTT_tomoe3101.私の勧める食事が食べられないっての？」
 	PlaySE(4, "S20/28/VTT_tomoe3100", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「…即答ね。",
 			NULL, "\"...That was a quick reply.", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3101", 256, 64);
@@ -562,6 +667,7 @@ void main()
 
 //藤田rvS20/31/VTT_fujita3037.「ハンバーガーは好きですけどね。kvS20/31/VTT_fujita3038.…さすがにそれだけの量目の前にして、食指は動きませんっての」
 	PlaySE(4, "S20/31/VTT_fujita3037", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「ハンバーガーは好きですけどね。",
 			NULL, "\"I like hamburgers.", Line_WaitForInput);
 	PlaySE(4, "S20/31/VTT_fujita3038", 256, 64);
@@ -571,6 +677,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3102.「なぁによ～！kvS20/28/VTT_tomoe3103.　人を大食いみたいに——、？！」
 	PlaySE(4, "S20/28/VTT_tomoe3102", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「なぁによ～！",
 			NULL, "\"Whaaat?!", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3103", 256, 64);
@@ -579,11 +686,13 @@ void main()
 	ClearMessage();
 
 //rその時。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その時。",
 			NULL, "And just then.", Line_Normal);
 	ClearMessage();
 
 //rフロア内に大音量の警報が鳴り響いて、緩んでいた場の空気が一瞬にして張り詰める。続いてスピーカーから、雑音混じりにアナウンスの声が聞こえてきた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "フロア内に大音量の警報が鳴り響いて、緩んでいた場の空気が一瞬にして張り詰める。続いてスピーカーから、雑音混じりにアナウンスの声が聞こえてきた。",
 			NULL, "A loud siren echoed across the floor, and the air instantly grew tense. Then the voice of an announcer came in through the speakers, mixed with a lot of background noise.", Line_Normal);
 	ClearMessage();
@@ -593,14 +702,16 @@ void main()
 
 //窓口警官rvS20/00/VTT_cent3001.「県警本部より、垣内署の刑事課へ通達。kvS20/00/VTT_cent3002.くり返す。県警本部より、垣内署の刑事課へ通達。kvS20/00/VTT_cent3003.——殺人事件発生。kvS20/00/VTT_cent3004.容疑者の所在は不明。kvS20/00/VTT_cent3005.事件現場は——」
 	PlaySE(4, "S20/00/VTT_cent3001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>窓口警官</color>", NULL, "<color=#f5e6d3>Attendant Policeman</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「県警本部より、垣内署の刑事課へ通達。",
 			NULL, "\"This is prefectural police headquarters, paging the Kakiuchi Station criminal investigation division.", Line_WaitForInput);
 	PlaySE(4, "S20/00/VTT_cent3002", 256, 64);
 	OutputLine(NULL, "くり返す。県警本部より、垣内署の刑事課へ通達。",
-			NULL, " I repeat. This is prefectural police headquarters, paging the Kakiuchi Station criminal investigation division.", Line_WaitForInput);
+			NULL, " I repeat. This is prefectural police headquarters, paging the Kakiuchi Station criminal investigation division. ", Line_ModeSpecific);
 	PlaySE(4, "S20/00/VTT_cent3003", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>窓口警官</color>", NULL, "<color=#f5e6d3>Attendant Policeman</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "——殺人事件発生。",
-			NULL, " ...A murder has been reported.", Line_WaitForInput);
+			NULL, "...A murder has been reported.", Line_WaitForInput);
 	PlaySE(4, "S20/00/VTT_cent3004", 256, 64);
 	OutputLine(NULL, "容疑者の所在は不明。",
 			NULL, " The suspect's whereabouts are unknown.", Line_WaitForInput);
@@ -610,43 +721,51 @@ void main()
 	ClearMessage();
 
 //r読み上げられた住所名をメモに手早く書きとめてから、巴はすぐ横の壁にある地図ボードに駆け寄る。…が、はたと気づいてその横の山村課長に目を向けた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "読み上げられた住所名をメモに手早く書きとめてから、巴はすぐ横の壁にある地図ボードに駆け寄る。…が、はたと気づいてその横の山村課長に目を向けた。",
 			NULL, "After quickly writing down the name and address from the announcement, Tomoe immediately rushed to the map board on the side wall. ...But, she turned her attention to section chief Yamamura who was beside it.", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3104.「……」
 	PlaySE(4, "S20/28/VTT_tomoe3104", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「……」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //山村rvS20/00/VTT_yamamura3001.「——ん」
 	PlaySE(4, "S20/00/VTT_yamamura3001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山村</color>", NULL, "<color=#f5e6d3>Yamamura</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——ん」",
 			NULL, "\"...Mmm.\"", Line_Normal);
 	ClearMessage();
 
 //r山村は気にするな、と言わんばかりに肩をすくめながら、微笑して頷く。定年を目前にしている好々爺の彼は、最近だとほとんどの職務、そして指令権限を巴に任せていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "山村は気にするな、と言わんばかりに肩をすくめながら、微笑して頷く。定年を目前にしている好々爺の彼は、最近だとほとんどの職務、そして指令権限を巴に任せていた。",
 			NULL, "Yamamura shrugged his shoulders, then smiled and nodded to convey that he had no objections. He was a good-natured man close to retirement age, so recently he had left his duties and command authority to Tomoe.", Line_Normal);
 	ClearMessage();
 
 //r巴はその気遣いに目礼で答えると、出動名簿を流し読みする。そして振り返り、すでに席を立ち上がって指令を待つ刑事たちに向き直って言った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "巴はその気遣いに目礼で答えると、出動名簿を流し読みする。そして振り返り、すでに席を立ち上がって指令を待つ刑事たちに向き直って言った。",
 			NULL, "Tomoe briefly responded to his greeting while sifting through the roster. Then she turned back toward the detectives sitting and waiting for her orders, and spoke.", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3105.「高屋敷さんと花田くん、５号車で出動！　鑑識対応よろしく！kvS20/28/VTT_tomoe3106.山上さんと安藤さんは、交通課と連携して４丁目交差点の交通整理と左折道路の封鎖を！」
 	PlaySE(4, "S20/28/VTT_tomoe3105", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「高屋敷さんと花田くん、５号車で出動！　鑑識対応よろしく！",
-			NULL, "\"Takayashiki-san and Hanada-kun, head out in the #5 car! You're on forensics support!", Line_WaitForInput);
+			NULL, "\"Takayashiki-san and Hanada-kun, head out in the #5 car! You're on forensics support! ", Line_ModeSpecific);
 	PlaySE(4, "S20/28/VTT_tomoe3106", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "山上さんと安藤さんは、交通課と連携して４丁目交差点の交通整理と左折道路の封鎖を！」",
-			NULL, " Yamagami-san and Ando-san, work with the transportation division to direct traffic at the 4th district intersection and block the left turn!\"", Line_Normal);
+			NULL, "Yamagami-san and Ando-san, work with the transportation division to direct traffic at the 4th district intersection and block the left turn!\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3107.「反対側の３丁目交差点には、中山くんと嶋さんで！kvS20/28/VTT_tomoe3108.　それから藤田くんは、私と！　２号車表に回してきてっ！！」
 	PlaySE(4, "S20/28/VTT_tomoe3107", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「反対側の３丁目交差点には、中山くんと嶋さんで！",
 			NULL, "\"Nakayama-kun and Shima-san, handle the 3rd district intersection on the opposite side!", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3108", 256, 64);
@@ -659,12 +778,14 @@ void main()
 	PlaySE(5, "S20/32/VTT_hanada3001", 256, 64);
 	PlaySE(6, "S20/00/VTT_takaya3001", 256, 64);
 	PlaySE(7, "S20/00/VTT_ando3001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>刑事たち</color>", NULL, "<color=#f5e6d3>Detectives</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「「了解ッッ！！」」",
 			NULL, "\"\"Roger!!\"\"", Line_Normal);
 	ClearMessage();
 
 //巴rvS20/28/VTT_tomoe3109.「山村課長！kvS20/28/VTT_tomoe3110.　状況次第では本店とつなぎます、その時はよろしくお願いします！」
 	PlaySE(4, "S20/28/VTT_tomoe3109", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「山村課長！",
 			NULL, "\"Section Chief Yamamura!", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3110", 256, 64);
@@ -674,6 +795,7 @@ void main()
 
 //山村rvS20/00/VTT_yamamura3002.「わかった。kvS20/00/VTT_yamamura3003.頼んだぞ！！」
 	PlaySE(4, "S20/00/VTT_yamamura3002", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>山村</color>", NULL, "<color=#f5e6d3>Yamamura</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「わかった。",
 			NULL, "\"Understood.", Line_WaitForInput);
 	PlaySE(4, "S20/00/VTT_yamamura3003", 256, 64);
@@ -683,6 +805,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3111.「はいっ！！kvS20/28/VTT_tomoe3112.　それじゃみんな、出動ッッ！！！」
 	PlaySE(4, "S20/28/VTT_tomoe3111", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「はいっ！！",
 			NULL, "\"Got it!!", Line_WaitForInput);
 	PlaySE(4, "S20/28/VTT_tomoe3112", 256, 64);
@@ -695,34 +818,40 @@ void main()
 	PlaySE(5, "S20/32/VTT_hanada3002", 256, 64);
 	PlaySE(6, "S20/00/VTT_takaya3002", 256, 64);
 	PlaySE(7, "S20/00/VTT_ando3002", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>刑事たち</color>", NULL, "<color=#f5e6d3>Detectives</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「「おおぉおぉっすッッ！！！」」",
 			NULL, "\"\"Let's gooooooo!!!\"\"", Line_Normal);
 	ClearMessage();
 
 //r巴の号令を受けて、いっせいに刑事たちは我先にとフロアを飛び出してゆく。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "巴の号令を受けて、いっせいに刑事たちは我先にとフロアを飛び出してゆく。",
 			NULL, "Responding to Tomoe's command, all the detectives jumped into motion together.", Line_Normal);
 	ClearMessage();
 
 //r——しかし、続いてスピーカーから流れたアナウンスの内容に巴は廊下で立ち止まり、愕然とした思いで振り返った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "——しかし、続いてスピーカーから流れたアナウンスの内容に巴は廊下で立ち止まり、愕然とした思いで振り返った。",
 			NULL, "...However, Tomoe stopped and turned around in surprise when another announcement came pouring out of the speakers.", Line_Normal);
 	ClearMessage();
 
 //窓口警官rvS20/00/VTT_cent3006.「——県警本部第一機動捜査隊より、連絡あり。kvS20/00/VTT_cent3007.容疑者は捜査員到着後、事件現場の家屋内にて自殺を図った模様。kvS20/00/VTT_cent3008.意識は不明、所轄の刑事は至急救急車両および隊員の進路を確保されたし」
 	PlaySE(4, "S20/00/VTT_cent3006", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>窓口警官</color>", NULL, "<color=#f5e6d3>Attendant Policeman</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「——県警本部第一機動捜査隊より、連絡あり。",
 			NULL, "\"...Prefectural police headquarters has received contact from the first Mobile Investigation Team.", Line_WaitForInput);
 	PlaySE(4, "S20/00/VTT_cent3007", 256, 64);
 	OutputLine(NULL, "容疑者は捜査員到着後、事件現場の家屋内にて自殺を図った模様。",
-			NULL, " After investigators arrived, it seems that the suspect tried to commit suicide at the crime scene.", Line_WaitForInput);
+			NULL, " After investigators arrived, it seems that the suspect tried to commit suicide at the crime scene. ", Line_ModeSpecific);
 	PlaySE(4, "S20/00/VTT_cent3008", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>窓口警官</color>", NULL, "<color=#f5e6d3>Attendant Policeman</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "意識は不明、所轄の刑事は至急救急車両および隊員の進路を確保されたし」",
-			NULL, " The suspect's circumstances are unknown, but the investigators have cleared a path for emergency vehicles and crew.\"", Line_Normal);
+			NULL, "The suspect's circumstances are unknown, but the investigators have cleared a path for emergency vehicles and crew.\"", Line_Normal);
 	ClearMessage();
 
 //窓口警官rvS20/00/VTT_cent3009.「現場は一般家庭住宅。kvS20/00/VTT_cent3010.被害者は容疑者の妻と子供二人で、いずれも死亡を確認。kvS20/00/VTT_cent3011.容疑者の氏名は、——畠山正雄」
 	PlaySE(4, "S20/00/VTT_cent3009", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>窓口警官</color>", NULL, "<color=#f5e6d3>Attendant Policeman</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「現場は一般家庭住宅。",
 			NULL, "\"The scene of the crime is the family's residence.", Line_WaitForInput);
 	PlaySE(4, "S20/00/VTT_cent3010", 256, 64);
@@ -737,6 +866,7 @@ void main()
 
 //巴rvS20/28/VTT_tomoe3113.「————え……、なッッ？！」
 	PlaySE(4, "S20/28/VTT_tomoe3113", 256, 64);
+	if (AdvMode) { OutputLine("<color=#9d7f69>巴</color>", NULL, "<color=#9d7f69>Tomoe</color>", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「————え……、なッッ？！」",
 			NULL, "\"......Huh? ......What?!\"", Line_Normal);
 	ClearMessage();
@@ -744,16 +874,19 @@ void main()
 	PlayBGM( 1, "yoru", 128, 0 );
 
 //r…そう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…そう。",
 			NULL, "...Right.", Line_Normal);
 	ClearMessage();
 
 //rまだ、事件は終わっていない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "まだ、事件は終わっていない。",
 			NULL, "This incident still wasn't over.", Line_Normal);
 	ClearMessage();
 
 //rそれどころか、始まってもいなかったのだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それどころか、始まってもいなかったのだ。",
 			NULL, "On the contrary, it was still only beginning.", Line_Normal);
 	ClearMessage();

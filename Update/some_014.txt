@@ -2157,10 +2157,11 @@ void main()
 	FadeSprite( 5, 500, FALSE );
 	DrawScene( "white", 2000 );
 	SetValidityOfInput( TRUE );
-	
+
 	DrawScene( "black", 500 );
 	EnableJumpingOfReturnIcon();
-	
+
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "New TIPS available.",
 		   NULL, "New TIPS available.", Line_Normal);
 	ClearMessage();
@@ -2186,6 +2187,7 @@ void main()
 		CallScript( "tips_087" );
 	}
 
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "All-cast review session available.",
 		   NULL, "All-cast review session available.", Line_Normal);
 	ClearMessage();
