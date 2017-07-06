@@ -7,10 +7,11 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 | Chapter     | PC Port  | Translation | Editing |
 | ----------- | -------- | ----------- | ------- |
 | Someutsushi | 100%     | 100%        | 100%    | 
+| Kageboushi  |  66%     |   0%        |   0%    | 
 
-Re-editing of Someutsushi is complete.  It is playable in both English and Japanese.
+Someutsushi is complete, including all the TIPS and the omake sequence.  Work on Kageboushi is slowly progressing
 
-[Poll](https://strawpoll.com/ee8gge6) results are in, the next arc to be ported is Kageboshi.
+The old poll results can be found [here](https://strawpoll.com/ee8gge6).
 
 ## Screenshots
 
