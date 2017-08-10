@@ -1,4 +1,4 @@
-
+﻿
 void main()
 {
 
@@ -13,26 +13,28 @@ void main()
 	DrawSceneWithMask( "scenario_select", "5", 0, 0, 500 );
 
 	EnableJumpingOfReturnIcon();
-
+	
 	OutputLine(NULL, "",
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
-
-	char Chapter[2];
+	
+	char Chapter[3];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
 		Chapter[0] = "Someutsushi";
-		Chapter[1] = "Back";
+		Chapter[1] = "Kageboushi";
+		Chapter[2] = "Back";
 	}
 	else
 	{
 		Chapter[0] = "染伝し編";
-		Chapter[1] = "戻る";
+		Chapter[1] = "影紡し編";
+		Chapter[2] = "戻る";
 	}
 
 //	InitializeSelectedItem();
-	Select( 2, Chapter );
+	Select( 3, Chapter );
 	DisableWindow();
 	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
@@ -46,9 +48,32 @@ void main()
 		{
 			StopBGM( 2 );
 			PlaySE( 1, "wa_037", 128, 64 );
-
+	
 			SetValidityOfSaving( TRUE );
 			CallSection("Someutsushi");
+		}
+		else
+		{
+			StopBGM( 2 );
+			DrawScene("black", 500);
+			CallScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 1)
+	{
+		DrawScene( "scenario_a", 500 );
+		DrawSceneWithMask( "scenario_b_kage", "5", 0, 0, 500 );
+		DrawSceneWithMask( "scenario_c_kage", "5", 0, 0, 500 );
+
+		ShowChapterPreview();
+
+		if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1)
+		{
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+	
+			SetValidityOfSaving( TRUE );
+			CallSection("Kageboushi");
 		}
 		else
 		{
@@ -64,7 +89,7 @@ void main()
 		DrawScene("black", 500);
 		CallScript( "flow" );
 	}
-
+	
 }
 
 void SetDay()
@@ -94,6 +119,24 @@ void Someutsushi()
 	CallScript( "some_012" );
 	CallScript( "some_013" );
 	CallScript( "some_014" );
+	
+	CallScript( "flow" );
+}
 
+void Kageboushi()
+{
+	CallScript( "kage_001" );
+	CallScript( "kage_002" );
+	CallScript( "kage_003" );
+	CallScript( "kage_004" );
+	CallScript( "kage_005" );
+	CallScript( "kage_006" );
+	CallScript( "kage_007" );
+	CallScript( "kage_008" );
+	CallScript( "kage_009" );
+	CallScript( "kage_010" );
+	CallScript( "kage_011" );
+	CallScript( "kage_012" );
+	
 	CallScript( "flow" );
 }
