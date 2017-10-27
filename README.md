@@ -1,4 +1,4 @@
-# Higurashi PS3-exclusive Arcs Patch for PC version
+5# Higurashi PS3-exclusive Arcs Patch for PC version
 
 This patch aims to eventually port all the arcs from the PS3 version of Higurashi to Mangagamer's Steam release of Higurashi.  This is a large task and it will take a long time to port them all, so each arc will be rolled out one at a time.
 
@@ -7,7 +7,7 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 | Chapter     | PC Port  | Translation | Editing |
 | ----------- | -------- | ----------- | ------- |
 | Someutsushi | 100%     | 100%        | 100%    | 
-| Kageboushi  | 100%     |  30%        |   0%    | 
+| Kageboushi  | 100%     |  50%        |   0%    | 
 
 Someutsushi is complete, including all the TIPS and the omake sequence.  Kageboushi is fully ported to PC, but only playable in Japanese at the moment.  Beginning translation.
 
