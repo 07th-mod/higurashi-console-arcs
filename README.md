@@ -1,4 +1,4 @@
-5# Higurashi PS3-exclusive Arcs Patch for PC version
+# Higurashi PS3-exclusive Arcs Patch for PC version
 
 This patch aims to eventually port all the arcs from the PS3 version of Higurashi to Mangagamer's Steam release of Higurashi.  This is a large task and it will take a long time to port them all, so each arc will be rolled out one at a time.
 
