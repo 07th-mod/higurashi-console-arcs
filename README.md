@@ -7,7 +7,7 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 | Chapter     | PC Port  | Translation | Editing |
 | ----------- | -------- | ----------- | ------- |
 | Someutsushi | 100%     | 100%        | 100%    | 
-| Kageboushi  | 100%     | 100%        |   0%    | 
+| Kageboushi  | 100%     | 100%        |  20%    | 
 
 Someutsushi is complete, including all the TIPS and the omake sequence.  Kageboushi is fully ported to PC and fully English translated, but you shouldn't read it until it goes through editing.  Also planning to get both arcs working in ADV mode before doing an official release.
 
