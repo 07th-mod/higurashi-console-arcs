@@ -1,0 +1,2451 @@
+void main()
+{
+	int AdvMode;
+	AdvMode = 1;
+	int Line_ModeSpecific;
+	if (AdvMode) {
+		Line_ModeSpecific = Line_Normal;
+	} else {
+		Line_ModeSpecific = Line_WaitForInput;
+	}
+
+//*Kageboushi Day 11
+
+	FadeOutBGM( 0, 1000, FALSE  );
+	FadeOutBGM( 1, 1000, FALSE  );
+	FadeOutBGM( 2, 1000, FALSE  );
+	FadeOutBGM( 3, 1000, TRUE );
+
+//#11 闇からの囁き
+
+	DrawSceneWithMask( "ke_keijika1_02", "v_right", 0, 0, 1000 );
+	PlayBGM( 1, "yoru", 128, 0 );
+
+//r昭和５８年７月１１日（月）垣内署内
+	ClearMessage();
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "昭和５８年７月１１日（月）垣内署内",
+			NULL, "Monday, July 11th, 1983. Inside Kakiuchi Station.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "ke_ky2", 1000 );
+	DrawBustshot( 3, "mado_Def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200317.「…どうぞ、赤坂さん」
+	PlaySE(4, "S08/29/321200317", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…どうぞ、赤坂さん」",
+			NULL, "\"...Here, Akasaka-san.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000944.「あ、…すみません」
+	PlaySE(4, "S08/13/321000944", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、…すみません」",
+			NULL, "\"Ah... Thanks.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "ke5", 1000 );
+
+//rまどかさんから差し出された紙コップのお茶を一口運び、…そして、今日何度目かわからないため息をつく。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まどかさんから差し出された紙コップのお茶を一口運び、…そして、今日何度目かわからないため息をつく。",
+			NULL, "Madoka-san handed me a paper cup full of tea... and I let out a sigh because I couldn't remember how many I had today.", Line_Normal);
+	ClearMessage();
+
+//rそれを見て彼女もさすがに呆れたのか、向かいのソファに、どん、と腰を下ろすと『赤坂さんっ』と強い口調で呼びかけてきた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それを見て彼女もさすがに呆れたのか、向かいのソファに、どん、と腰を下ろすと『赤坂さんっ』と強い口調で呼びかけてきた。",
+			NULL, "She must have noticed my reaction. She sat down on the sofa across from me and said \"Akasaka-san\" in a stern voice.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "ke_ky2", 250 );
+	DrawBustshot( 3, "mado_Shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
+	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	FadeOutBGM( 1, 200, FALSE  );
+	Wait( 500 );
+	PlayBGM( 2, "hm10_54", 128, 0 );
+	Wait( 500 );
+
+//赤坂rvS08/13/321000945.「え…？」
+	PlaySE(4, "S08/13/321000945", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「え…？」",
+			NULL, "\"Huh...?\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Sabi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200318.「辛いお気持ちはわかりますが、考えても仕方のないことは、考えるべきじゃないと思います。kvS08/29/321200319.しっかりしてくださいよ」
+	PlaySE(4, "S08/29/321200318", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「辛いお気持ちはわかりますが、考えても仕方のないことは、考えるべきじゃないと思います。",
+			NULL, "\"I understand you're feeling hurt, but if thinking about it isn't going to do you any good, there's no sense dwelling on it.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200319", 256, 64);
+	OutputLine(NULL, "しっかりしてくださいよ」",
+			NULL, " So, pull yourself together.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000946.「ええ、わかってます。kvS08/13/321000947.…自分でも、わかっているんですけどね」
+	PlaySE(4, "S08/13/321000946", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ええ、わかってます。",
+			NULL, "\"Yeah, I know.", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000947", 256, 64);
+	OutputLine(NULL, "…自分でも、わかっているんですけどね」",
+			NULL, " ...Even I understand that.\"", Line_Normal);
+	ClearMessage();
+
+//r悔やんでも、もはや時間は巻き戻らない。…それを理解してはいるが、どうしても考えずにはいられなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "悔やんでも、もはや時間は巻き戻らない。…それを理解してはいるが、どうしても考えずにはいられなかった。",
+			NULL, "Even if I beat myself up over it, time wouldn't turn backwards. ...I understood that, but I just couldn't help thinking about it.", Line_Normal);
+	ClearMessage();
+
+//rあの日、あの時、あの場所の選択がもし、別のものであったとしたら…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "あの日、あの時、あの場所の選択がもし、別のものであったとしたら…。",
+			NULL, "If circumstances were different at that time, on that day...", Line_Normal);
+	ClearMessage();
+
+//r救うことができた命は、もっとあったのではないだろうか。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "救うことができた命は、もっとあったのではないだろうか。",
+			NULL, "How many more lives could have been saved?", Line_Normal);
+	ClearMessage();
+
+//r守ることができた幸せは、もっと…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "守ることができた幸せは、もっと…。",
+			NULL, "We could have protected their happiness...", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200320.「…助けに入った藤堂暁くんも、軽傷で済みました。kvS08/29/321200321.犯人も自傷行為を起こす前に、確保。kvS08/29/321200322.赤坂さんたちが間に合ったから、２人分の命が助かったんです。kvS08/29/321200323.…それは間違いのない、事実ですよ」
+	PlaySE(4, "S08/29/321200320", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…助けに入った藤堂暁くんも、軽傷で済みました。",
+			NULL, "\"...We were able to help Akira Toudou-kun, who only suffered minor injuries.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200321", 256, 64);
+	OutputLine(NULL, "犯人も自傷行為を起こす前に、確保。",
+			NULL, " And we secured the perpetrator before she could cause serious harm to herself. ", Line_ModeSpecific);
+	PlaySE(4, "S08/29/321200322", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "赤坂さんたちが間に合ったから、２人分の命が助かったんです。",
+			NULL, "Akasaka-san, those two are alive thanks to you and the rest of the team.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200323", 256, 64);
+	OutputLine(NULL, "…それは間違いのない、事実ですよ」",
+			NULL, " ...That's an undeniable fact.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000948.「それでも、あと少し…kvS08/13/321000949.１時間、いや３０分でもいい。kvS08/13/321000950.現場に到着できていたら、彼女の両親は…」
+	PlaySE(4, "S08/13/321000948", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それでも、あと少し…",
+			NULL, "\"Even so, if we had arrived...", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000949", 256, 64);
+	OutputLine(NULL, "１時間、いや３０分でもいい。",
+			NULL, " an hour, no, even 30 minutes earlier.", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000950", 256, 64);
+	OutputLine(NULL, "現場に到着できていたら、彼女の両親は…」",
+			NULL, " If we had made it there, her parents would be...\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200324.「赤坂さん。kvS08/29/321200325.あんまり自惚れたこと言うと、…お姉ちゃんの時みたいに、私怒りますよ？kvS08/29/321200326.　『あんた神様かよ？』ってね」
+	PlaySE(4, "S08/29/321200324", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「赤坂さん。",
+			NULL, "\"Akasaka-san.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200325", 256, 64);
+	OutputLine(NULL, "あんまり自惚れたこと言うと、…お姉ちゃんの時みたいに、私怒りますよ？",
+			NULL, " If you keep saying these conceited things... I'll get angry with you, just like I did with Sis, ok?", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200326", 256, 64);
+	OutputLine(NULL, "　『あんた神様かよ？』ってね」",
+			NULL, " And I'll have to say things like \"You're not a god, you know?\" \"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000951.「まどかさん…」
+	PlaySE(4, "S08/13/321000951", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「まどかさん…」",
+			NULL, "\"Madoka-san...\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "ke5", 1000 );
+
+//rふふっ、と穏やかな笑みを浮かべながら、まどかさんは昔を思い出すように遠い目をして言った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ふふっ、と穏やかな笑みを浮かべながら、まどかさんは昔を思い出すように遠い目をして言った。",
+			NULL, "With a giggle and a gentle smile, Madoka-san had a distant look in her eyes like she was reminiscing about the old days.", Line_Normal);
+	ClearMessage();
+
+//まどかrvS08/29/321200327.「お姉ちゃんも…毎回殺人事件のたびに、そう言っていました。kvS08/29/321200328.もっと早く解決していれば、とかなんだか、色々と」
+	PlaySE(4, "S08/29/321200327", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「お姉ちゃんも…毎回殺人事件のたびに、そう言っていました。",
+			NULL, "\"Sis... I always said that to her after every murder case.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200328", 256, 64);
+	OutputLine(NULL, "もっと早く解決していれば、とかなんだか、色々と」",
+			NULL, " Somehow, she always solved it sooner or later.\"", Line_Normal);
+	ClearMessage();
+
+//まどかrvS08/29/321200329.「全く、そんな簡単にテレビドラマみたく突然謎が閃いたり、容疑者が自供したり、理由もなく善人になって改心するかっての」
+	PlaySE(4, "S08/29/321200329", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「全く、そんな簡単にテレビドラマみたく突然謎が閃いたり、容疑者が自供したり、理由もなく善人になって改心するかっての」",
+			NULL, "\"Really, it's not like those TV dramas where the mystery is solved in a flash and the suspect confesses or vows to become a good person for no good reason.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000952.「……」
+	PlaySE(4, "S08/13/321000952", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+//まどかrvS08/29/321200330.「もっと自己中に、…割り切って考えれば悩みも少なかっただろうし、きっと幸せになっていた可能性、高かったと思います」
+	PlaySE(4, "S08/29/321200330", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「もっと自己中に、…割り切って考えれば悩みも少なかっただろうし、きっと幸せになっていた可能性、高かったと思います」",
+			NULL, "\"It's selfish... to burden yourself so much and to think that the price of happiness is so high.\"", Line_Normal);
+	ClearMessage();
+
+//まどかrvS08/29/321200331.「くそ真面目に生きたって、バカ正直に頑張ったって、もっと世の中にずるく賢く立ち回って、偉くなってる人がいるんだから。kvS08/29/321200332.その分自分が損をするだけじゃないかって…そう、思ってました」
+	PlaySE(4, "S08/29/321200331", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「くそ真面目に生きたって、バカ正直に頑張ったって、もっと世の中にずるく賢く立ち回って、偉くなってる人がいるんだから。",
+			NULL, "\"Living so earnestly, working so hard over a foolish notion of integrity, constantly moving around the world trying to be a great person.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200332", 256, 64);
+	OutputLine(NULL, "その分自分が損をするだけじゃないかって…そう、思ってました」",
+			NULL, " I think in doing so... you lose a part of yourself.\"", Line_Normal);
+	ClearMessage();
+
+//まどかrvS08/29/321200333.「今でも、少しだけそう思います」
+	PlaySE(4, "S08/29/321200333", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「今でも、少しだけそう思います」",
+			NULL, "\"Even now, I think that just a little.\"", Line_Normal);
+	ClearMessage();
+
+//rでも、とまどかさんは顔を上げる。…どこか、晴れやかな表情だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "でも、とまどかさんは顔を上げる。…どこか、晴れやかな表情だった。",
+			NULL, "But, Madoka-san raised her head. ...And she gallantly looked off in the distance.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "ke_ky2", 1000 );
+	DrawBustshot( 3, "mado_Def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200334.「お姉ちゃんが亡くなった時、たくさんの人が泣いてくれました。kvS08/29/321200335.今までお姉ちゃんを馬鹿にしたり、悪口言ってた人も、みんな」
+	PlaySE(4, "S08/29/321200334", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「お姉ちゃんが亡くなった時、たくさんの人が泣いてくれました。",
+			NULL, "\"So many people cried when Sis died.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200335", 256, 64);
+	OutputLine(NULL, "今までお姉ちゃんを馬鹿にしたり、悪口言ってた人も、みんな」",
+			NULL, " Even people who made fun of her or badmouthed her. Everyone.\"", Line_Normal);
+	ClearMessage();
+
+//まどかrvS08/29/321200336.「刑事二課の課長なんて、いつも『女のくせに偉そうにするな』って露骨に嫌ってたのに…」
+	PlaySE(4, "S08/29/321200336", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「刑事二課の課長なんて、いつも『女のくせに偉そうにするな』って露骨に嫌ってたのに…」",
+			NULL, "\"Even the chief of the Second Investigation Division, who always said things like \"You're awfully hoity-toity for a lady\" and was blatantly hostile with her...\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+
+//r…私も、その人物のことは知っている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…私も、その人物のことは知っている。",
+			NULL, "...I knew the Second Division chief, too.", Line_Normal);
+	ClearMessage();
+
+//r一課の山村課長と違ってセクショナリズムの塊のような人で、私たちの活動が現場捜査の邪魔をしていると山沖署長に何度も苦情を申し立てるような、口うるさい人だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "一課の山村課長と違ってセクショナリズムの塊のような人で、私たちの活動が現場捜査の邪魔をしていると山沖署長に何度も苦情を申し立てるような、口うるさい人だった。",
+			NULL, "Unlike Chief Yamamura of the First Division, he was a divisive person who constantly complained to Chief Yamaoki that our activities were disturbing their on-site investigations.", Line_Normal);
+	ClearMessage();
+
+//r当然、それを認めている南井警部に対しても、色々と文句を言っていたのだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "当然、それを認めている南井警部に対しても、色々と文句を言っていたのだろう。",
+			NULL, "Naturally, Chief Inspector Minai must've complained about that all the time.", Line_Normal);
+	ClearMessage();
+
+//rそれでも彼女の死にあたり、ぽつりと漏らした一言が私の胸を打った…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それでも彼女の死にあたり、ぽつりと漏らした一言が私の胸を打った…。",
+			NULL, "Still, when the word leaked out, it stabbed him right in the heart...", Line_Normal);
+	ClearMessage();
+
+//岡部rvS08/00/VT2B_okabe1001.『跳ねッ返り娘が。kvS08/00/VT2B_okabe1002.…私は、これから誰に嫌味を言えばいいのだ？』
+	PlaySE(4, "S08/00/VT2B_okabe1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>岡部</color>", NULL, "<color=#f5e6d3>Okabe</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "『跳ねッ返り娘が。",
+			NULL, "\"That rambunctious girl.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_okabe1002", 256, 64);
+	OutputLine(NULL, "…私は、これから誰に嫌味を言えばいいのだ？』",
+			NULL, " ...Who am I going to trade flippant remarks with now?\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000953.「……」
+	PlaySE(4, "S08/13/321000953", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "ke_ky2", 1000 );
+	DrawBustshot( 3, "mado_Warai_2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200337.「仲の良かった人からも、悪かった人からも、いなくなったことを残念に思ってもらえて。kvS08/29/321200338.…それって、すごいことなんですよね」
+	PlaySE(4, "S08/29/321200337", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「仲の良かった人からも、悪かった人からも、いなくなったことを残念に思ってもらえて。",
+			NULL, "\"Close friends, and even people who didn't get along with her were sad to hear of her passing.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200338", 256, 64);
+	OutputLine(NULL, "…それって、すごいことなんですよね」",
+			NULL, " ...That's pretty amazing, don't you think?\"", Line_Normal);
+	ClearMessage();
+
+//まどかrvS08/29/321200339.「それだけみんなに頼られて、愛されて、…大切な存在だった証なんだから…」
+	PlaySE(4, "S08/29/321200339", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それだけみんなに頼られて、愛されて、…大切な存在だった証なんだから…」",
+			NULL, "\"It's proof that she was important... that everyone relied on her, and loved her...\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000954.「ええ、そうですよ。kvS08/13/321000955.間違いなく…」
+	PlaySE(4, "S08/13/321000954", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ええ、そうですよ。",
+			NULL, "\"Yes, that's true.", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000955", 256, 64);
+	OutputLine(NULL, "間違いなく…」",
+			NULL, " Without a doubt...\"", Line_Normal);
+	ClearMessage();
+
+//r…人は、永遠には生きられない。そして思いや夢を成就して寿命を全うするよりも、志半ばに亡くなる人のほうがはるかに多いだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…人は、永遠には生きられない。そして思いや夢を成就して寿命を全うするよりも、志半ばに亡くなる人のほうがはるかに多いだろう。",
+			NULL, "...People can't live forever. They spend their entire lives trying to fulfill their thoughts and dreams, so it's especially heartbreaking when a person dies before they can achieve those dreams.", Line_Normal);
+	ClearMessage();
+
+//rそれでも、…自分の持ち続けてきた信念がたくさんの人に認められて、自分のやってきた記憶が様々な人に残り続けるのだとしたら、それはきっと、素晴らしいことだと思う。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それでも、…自分の持ち続けてきた信念がたくさんの人に認められて、自分のやってきた記憶が様々な人に残り続けるのだとしたら、それはきっと、素晴らしいことだと思う。",
+			NULL, "Nevertheless... there's something wonderful about knowing how many people can recognize their contributions, and that those memories will live on in so many people.", Line_Normal);
+	ClearMessage();
+
+//r個人としての幸福や財産は、死とともに消滅する。しかし、どれだけ小規模でも社会をより良いものへと変えようとした努力と功績は、それを知る人々によって守られてゆく。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "個人としての幸福や財産は、死とともに消滅する。しかし、どれだけ小規模でも社会をより良いものへと変えようとした努力と功績は、それを知る人々によって守られてゆく。",
+			NULL, "Happiness and individual wealth disappear after death. However, a person's efforts and accomplishments to improve society, even on a small scale, are protected by the people who remember what they accomplished.", Line_Normal);
+	ClearMessage();
+
+//rひょっとしたら、私は大袈裟に考えすぎているのかもしれない。それでも、私は彼女の記憶を忘れない限り、もう二度と警察を辞めようとは考えないと確信していた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ひょっとしたら、私は大袈裟に考えすぎているのかもしれない。それでも、私は彼女の記憶を忘れない限り、もう二度と警察を辞めようとは考えないと確信していた。",
+			NULL, "Maybe I'm exaggerating and overthinking this. But still, as long as I remember her, I'll never even consider leaving the police force.", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200340.「私は、…ご存じの通りダメなやつですから、kvS08/29/321200341.いっぱい回り道したり、足を踏み外したりして、いろんな人に迷惑をかけてきました」
+	PlaySE(4, "S08/29/321200340", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「私は、…ご存じの通りダメなやつですから、",
+			NULL, "\"You know... I was never a respectable person,", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200341", 256, 64);
+	OutputLine(NULL, "いっぱい回り道したり、足を踏み外したりして、いろんな人に迷惑をかけてきました」",
+			NULL, " I made a lot of wrong turns, stepped on a lot of toes, and made trouble for a lot of people.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Sabi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200342.「…でも、こうして少しは元の道に帰って来ることができたのは、お姉ちゃんがいたから。kvS08/29/321200343.そして、そのお姉ちゃんが目標にしていたお父さんがいたからなんだって、そう思えるんです」
+	PlaySE(4, "S08/29/321200342", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…でも、こうして少しは元の道に帰って来ることができたのは、お姉ちゃんがいたから。",
+			NULL, "\"...But thanks to Sis, I was able to get back on the right path.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200343", 256, 64);
+	OutputLine(NULL, "そして、そのお姉ちゃんが目標にしていたお父さんがいたからなんだって、そう思えるんです」",
+			NULL, " And for Sis, I think her goal was always to be more like Dad.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000956.「……」
+	PlaySE(4, "S08/13/321000956", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200344.「だから、…私、これから強くなります。kvS08/29/321200345.たくさんの人が落ち込んだり、挫けそうになった時に、私を見て励みになって、もう一度頑張ろうって思ってもらえるように」
+	PlaySE(4, "S08/29/321200344", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「だから、…私、これから強くなります。",
+			NULL, "\"So... from now on, I'll have to be stronger.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200345", 256, 64);
+	OutputLine(NULL, "たくさんの人が落ち込んだり、挫けそうになった時に、私を見て励みになって、もう一度頑張ろうって思ってもらえるように」",
+			NULL, " When a lot of people are feeling depressed or frustrated, they can look to me for help and I'll encourage them to do their best.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Warai_2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200346.「…そのためには、私も幸せにならなきゃいけませんよね。kvS08/29/321200347.お姉ちゃんが一番、それを望んでいてくれたんだから…っ…」
+	PlaySE(4, "S08/29/321200346", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…そのためには、私も幸せにならなきゃいけませんよね。",
+			NULL, "\"...And in order to do that, I need to be happy, myself.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200347", 256, 64);
+	OutputLine(NULL, "お姉ちゃんが一番、それを望んでいてくれたんだから…っ…」",
+			NULL, " That was the one thing Sis wanted most...\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Sabi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//r零れ落ちた涙をハンカチで拭いながら、まどかさんはそう、決意を語った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "零れ落ちた涙をハンカチで拭いながら、まどかさんはそう、決意を語った。",
+			NULL, "Madoka-san said that with determination as she wiped the tears from her face with a handkerchief.", Line_Normal);
+	ClearMessage();
+
+//赤坂r-vS08/13/321000957.（…そうだ。私も、同じだ…）
+	PlaySE(4, "S08/13/321000957", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（…そうだ。私も、同じだ…）",
+			NULL, "(...Right. It's the same for me too...)", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000958.「…ありがとうございます、まどかさん」
+	PlaySE(4, "S08/13/321000958", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…ありがとうございます、まどかさん」",
+			NULL, "\"...Thank you, Madoka-san.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Odoroki_2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200348.「え？」
+	PlaySE(4, "S08/29/321200348", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「え？」",
+			NULL, "\"Huh?\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000959.「落ち込んでいる場合じゃない。kvS08/13/321000960.できなかった後悔よりも、これからできる努力をすべきなんですよね。kvS08/13/321000961.…私も、誰かのためになれるような人間であれるよう、頑張りますよ」
+	PlaySE(4, "S08/13/321000959", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「落ち込んでいる場合じゃない。",
+			NULL, "\"This is no time to be feeling depressed.", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000960", 256, 64);
+	OutputLine(NULL, "できなかった後悔よりも、これからできる努力をすべきなんですよね。",
+			NULL, " Rather than regret the things I couldn't do, I should make an effort to do all I can from now on.", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000961", 256, 64);
+	OutputLine(NULL, "…私も、誰かのためになれるような人間であれるよう、頑張りますよ」",
+			NULL, " ...I'll do my best too, for everyone else's sake.\"", Line_Normal);
+	ClearMessage();
+
+//rここでいつまでも、後ろを向いていても仕方がない。前を向くしかないのだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ここでいつまでも、後ろを向いていても仕方がない。前を向くしかないのだ。",
+			NULL, "Staying here and looking backwards won't accomplish anything. I only need to look forward.", Line_Normal);
+	ClearMessage();
+
+//r未来は、進む先にしかないのだから…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "未来は、進む先にしかないのだから…。",
+			NULL, "Because the future lies ahead...", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Sabi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200349.「あ、そうそう。kvS08/29/321200350.私、…実はまだ、薫さんにも話してないんですけど、kvS08/29/321200351.できちゃったみたいなんです」
+	PlaySE(4, "S08/29/321200349", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、そうそう。",
+			NULL, "\"Oh, right.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200350", 256, 64);
+	OutputLine(NULL, "私、…実はまだ、薫さんにも話してないんですけど、",
+			NULL, " I... haven't actually told Kaoru-san yet,", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200351", 256, 64);
+	OutputLine(NULL, "できちゃったみたいなんです」",
+			NULL, " but I think it happened.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000962.「できたって、…あ」
+	PlaySE(4, "S08/13/321000962", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「できたって、…あ」",
+			NULL, "\"It happened? ...Oh.\"", Line_Normal);
+	ClearMessage();
+
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	PlaySE(3, "pou", 256, 64);
+
+//rまどかさんが、恥ずかしそうにお腹を撫でる仕草を見て、…私も思わず、笑みがこぼれた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まどかさんが、恥ずかしそうにお腹を撫でる仕草を見て、…私も思わず、笑みがこぼれた。",
+			NULL, "Madoka-san looked embarrassed as she gently stroked her stomach... and when I realized what that indicated, I instantly began to smile.", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000963.「それはおめでとうございます。kvS08/13/321000964.きっと山沖署長も、喜ばれると思いますよ」
+	PlaySE(4, "S08/13/321000963", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それはおめでとうございます。",
+			NULL, "\"Congratulations.", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000964", 256, 64);
+	OutputLine(NULL, "きっと山沖署長も、喜ばれると思いますよ」",
+			NULL, " I'm sure Chief Yamaoki will be delighted.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200352.「あははは、どうかなぁ。kvS08/29/321200353.きっと孫みたいだって、恥ずかしがるんじゃないかなぁ」
+	PlaySE(4, "S08/29/321200352", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あははは、どうかなぁ。",
+			NULL, "\"Ahahaha, I wonder.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200353", 256, 64);
+	OutputLine(NULL, "きっと孫みたいだって、恥ずかしがるんじゃないかなぁ」",
+			NULL, " He'll probably be embarrassed and treat it more like a grandchild.\"", Line_Normal);
+	ClearMessage();
+
+//rそんなことはない、と私は思う。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そんなことはない、と私は思う。",
+			NULL, "I couldn't imagine that.", Line_Normal);
+	ClearMessage();
+
+//rあの心のうちに熱情を秘めるような人が、歳を取ってからの子どもを喜ばないはずがない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "あの心のうちに熱情を秘めるような人が、歳を取ってからの子どもを喜ばないはずがない。",
+			NULL, "A person with passion in their heart won't lose the pleasure of raising children just because they've grown old.", Line_Normal);
+	ClearMessage();
+
+//rまぁ、当分は署内で笑い話のネタになるだろうが…それも、いいだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まぁ、当分は署内で笑い話のネタになるだろうが…それも、いいだろう。",
+			NULL, "Well, for now, it'll be a funny story to pass through the police station... which should be nice, I suppose.", Line_Normal);
+	ClearMessage();
+
+//rどんなことであっても、暗い話題を引きずって俯くよりははるかにいいことなんだろうから…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "どんなことであっても、暗い話題を引きずって俯くよりははるかにいいことなんだろうから…。",
+			NULL, "No matter what, it'll be better than the dark topics currently dragging us down...", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000965.「では、式も間もなくですね。kvS08/13/321000966.それに、名前を考えなきゃ」
+	PlaySE(4, "S08/13/321000965", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「では、式も間もなくですね。",
+			NULL, "\"So, I guess we'll need to have a celebration soon.", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000966", 256, 64);
+	OutputLine(NULL, "それに、名前を考えなきゃ」",
+			NULL, " And you'll have to think about a name, huh?\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Warai_2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200354.「あははは、気が早いですよ」
+	PlaySE(4, "S08/29/321200354", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あははは、気が早いですよ」",
+			NULL, "\"Ahahaha, don't be too hasty.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "mado_Def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//まどかrvS08/29/321200355.「…でも女の子だったら、これしかない、って決めてるのがひとつだけあるんですけどね」
+	PlaySE(4, "S08/29/321200355", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…でも女の子だったら、これしかない、って決めてるのがひとつだけあるんですけどね」",
+			NULL, "\"...But if it's a girl, I've already decided, there's only one name it could be.\"", Line_Normal);
+	ClearMessage();
+
+//r…その名前は、聞くまでもなかった。そして、きっと彼女もそれを喜んでくれるだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…その名前は、聞くまでもなかった。そして、きっと彼女もそれを喜んでくれるだろう。",
+			NULL, "...I didn't even need to ask what the name was. I'm sure she'll be delighted with it.", Line_Normal);
+	ClearMessage();
+
+//rわざと面白くなさそうに振舞いながらも、…頬を赤くして照れを隠す南井警部の顔が浮かんで、思わず私も笑みがこぼれた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "わざと面白くなさそうに振舞いながらも、…頬を赤くして照れを隠す南井警部の顔が浮かんで、思わず私も笑みがこぼれた。",
+			NULL, "Although I tried to stay composed... I imagined Chief Inspector Minai face looking bright red as she tried to hide her embarrassment, and it made me smile for a moment.", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot( 3, FALSE, 0, 0, 0, 0, 200, TRUE );
+	DrawBustshot( 4, "mado_Def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawBustshot( 3, "oisi1_1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100903.「おや赤坂さん、ここにいましたか。kvS08/11/321100904.まどかちゃんも？」
+	PlaySE(4, "S08/11/321100903", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「おや赤坂さん、ここにいましたか。",
+			NULL, "\"Oh, Akasaka-san, you're here too?", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100904", 256, 64);
+	OutputLine(NULL, "まどかちゃんも？」",
+			NULL, " And Madoka-chan as well?\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000967.「あ、大石さん」
+	PlaySE(4, "S08/13/321000967", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、大石さん」",
+			NULL, "\"Oh, Ooishi-san.\"", Line_Normal);
+	ClearMessage();
+
+//rそこへ、煙草を買いに出ていた大石さんが休憩室に入ってくる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そこへ、煙草を買いに出ていた大石さんが休憩室に入ってくる。",
+			NULL, "Ooishi-san came into the break room to buy some cigarettes.", Line_Normal);
+	ClearMessage();
+
+//rまどかさんは彼に笑顔で挨拶を返し、それからこっそり『…みんなには、まだ内緒で』と耳打ちすると、スカートの裾を払って立ち上がった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まどかさんは彼に笑顔で挨拶を返し、それからこっそり『…みんなには、まだ内緒で』と耳打ちすると、スカートの裾を払って立ち上がった。",
+			NULL, "Madoka-san returned his greeting with a smile, then whispered to me \"...It's still a secret to everyone.\" And then, she adjusted the hem of her skirt as she stood up.", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 4, "mado_Warai_2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//まどかrvS08/29/321200356.「それじゃ赤坂さん、またね。kvS08/29/321200357.蔵ちゃんもね♪」
+	PlaySE(4, "S08/29/321200356", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>まどか</color>", NULL, "<color=#f5e6d3>Madoka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それじゃ赤坂さん、またね。",
+			NULL, "\"Alright Akasaka-san, see you later.", Line_WaitForInput);
+	PlaySE(4, "S08/29/321200357", 256, 64);
+	OutputLine(NULL, "蔵ちゃんもね♪」",
+			NULL, " You too, Kura-chan♪.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100905.「ええ、よいお年を」
+	PlaySE(4, "S08/11/321100905", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ええ、よいお年を」",
+			NULL, "\"Yeah, have a good year.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+
+//r軽い香水の匂いを漂わせながら、まどかさんは休憩室を出て行く。彼女の背中を見送ってから、大石さんは胸ポケットから煙草を取り出して火をつけた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "軽い香水の匂いを漂わせながら、まどかさんは休憩室を出て行く。彼女の背中を見送ってから、大石さんは胸ポケットから煙草を取り出して火をつけた。",
+			NULL, "A faint smell of perfume wafted over as Madoka-san left the break room. After watching her leave, Ooishi pulled a cigarette from his breast pocket and lit it.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 2, 200, FALSE  );
+	PlayBGM( 1, "yoru", 128, 0 );
+	DrawScene( "ke_ky2", 1000 );
+	DrawBustshot( 3, "oisi1_1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100906.「なにはともあれ、あの子が元気になってくれてほっとしましたよ」
+	PlaySE(4, "S08/11/321100906", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「なにはともあれ、あの子が元気になってくれてほっとしましたよ」",
+			NULL, "\"Anyway, I'm relieved that she's doing better.\"", Line_Normal);
+	ClearMessage();
+
+//大石rvS08/11/321100907.「あなたも心配でしたが、彼女も酷く憔悴して…。kvS08/11/321100908.本気でお姉さんの後を追うんじゃないかって、気をつけてたくらいでしたからね」
+	PlaySE(4, "S08/11/321100907", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あなたも心配でしたが、彼女も酷く憔悴して…。",
+			NULL, "\"I was worried about you too, but she had it the hardest...", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100908", 256, 64);
+	OutputLine(NULL, "本気でお姉さんの後を追うんじゃないかって、気をつけてたくらいでしたからね」",
+			NULL, " I wanted to be sure she wouldn't follow after her sister.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000968.「まどかさんは、強い女性ですよ。kvS08/13/321000969.南井警部の、妹さんですから」
+	PlaySE(4, "S08/13/321000968", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「まどかさんは、強い女性ですよ。",
+			NULL, "\"Madoka-san is a strong woman.", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000969", 256, 64);
+	OutputLine(NULL, "南井警部の、妹さんですから」",
+			NULL, " She's Chief Inspector Minai's little sister, after all.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100909.「まったくです」
+	PlaySE(4, "S08/11/321100909", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「まったくです」",
+			NULL, "\"Of course.\"", Line_Normal);
+	ClearMessage();
+
+//r大石さんは、強く頷いて肯定する。…そういう彼も、少し吹っ切れたような顔をしていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "大石さんは、強く頷いて肯定する。…そういう彼も、少し吹っ切れたような顔をしていた。",
+			NULL, "Ooishi-san strongly nodded in agreement. ...As he said that, the look in his face indicated that he had something to discuss.", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000970.「…それで大石さん、彼女の具合は？」
+	PlaySE(4, "S08/13/321000970", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…それで大石さん、彼女の具合は？」",
+			NULL, "\"...So Ooishi-san, how is the girl feeling?\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100910.「自傷行為で多少の怪我を負っていますが、捜査に支障はありません。kvS08/11/321100911.もっとも、私が行った時は薬でよく眠っていましたけどね」
+	PlaySE(4, "S08/11/321100910", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「自傷行為で多少の怪我を負っていますが、捜査に支障はありません。",
+			NULL, "\"She has minor self-inflicted injuries, but nothing that would slow down the investigation.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100911", 256, 64);
+	OutputLine(NULL, "もっとも、私が行った時は薬でよく眠っていましたけどね」",
+			NULL, " Though, she was asleep when I visited earlier, thanks to all the medication she's taking.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+
+//rここでいう『彼女』は、公由夏美さんのことだった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ここでいう『彼女』は、公由夏美さんのことだった。",
+			NULL, "The \"girl\" he was talking about was Natsumi Kimiyoshi-san.", Line_Normal);
+	ClearMessage();
+
+//r事件現場となった公由家で身柄を確保した後、彼女は刑事の見張りのもとで警察病院へと収容された。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "事件現場となった公由家で身柄を確保した後、彼女は刑事の見張りのもとで警察病院へと収容された。",
+			NULL, "After securing her from the crime scene at the Kimiyoshi house, she was taken to the police hospital under strict guard.", Line_Normal);
+	ClearMessage();
+
+//r私はあいにく、室長への報告書を至急作成するよう嘉納さんからの指示を受けていたため、夏美さんへの訊き込みは大石さんと藤田刑事にお願いしていた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "私はあいにく、室長への報告書を至急作成するよう嘉納さんからの指示を受けていたため、夏美さんへの訊き込みは大石さんと藤田刑事にお願いしていた。",
+			NULL, "Unfortunately, Kanou-san ordered me to prepare a report for the Director as soon as possible, so I asked Ooishi-san to handle the questioning of Natsumi-san.", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 200, FALSE  );
+	DrawScene( "ke_ky2", 1000 );
+	DrawBustshot( 3, "oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	PlayBGM( 2, "hm05_20", 128, 0 );
+	Wait( 500 );
+
+//赤坂rvS08/13/321000971.「そういえば、例の畠山あおいもその病院に入院しているんですよね？」
+	PlaySE(4, "S08/13/321000971", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そういえば、例の畠山あおいもその病院に入院しているんですよね？」",
+			NULL, "\"Come to think of it, isn't that the same hospital Aoi Hatakeyama was admitted to?\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100912.「ええ、別室ですがね。kvS08/11/321100913.…公由夏美ですが、藤田刑事の話では受け答えもはっきりしていて協力的だとのことです」
+	PlaySE(4, "S08/11/321100912", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ええ、別室ですがね。",
+			NULL, "\"Yes, although she's in a separate room.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100913", 256, 64);
+	OutputLine(NULL, "…公由夏美ですが、藤田刑事の話では受け答えもはっきりしていて協力的だとのことです」",
+			NULL, " ...Anyway, Detective Fujita tells me that Natsumi Kimiyoshi has been clear and cooperative in answering our questions.\"", Line_Normal);
+	ClearMessage();
+
+//大石rvS08/11/321100914.「ただ、…自分のしでかしたことについてはいまひとつ、理解ができていないようなんですよ」
+	PlaySE(4, "S08/11/321100914", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ただ、…自分のしでかしたことについてはいまひとつ、理解ができていないようなんですよ」",
+			NULL, "\"However... it seems that she has no knowledge of what happened.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000972.「え？kvS08/13/321000973.　…殺人のことを、覚えていないのですか？」
+	PlaySE(4, "S08/13/321000972", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「え？",
+			NULL, "\"Huh?", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000973", 256, 64);
+	OutputLine(NULL, "　…殺人のことを、覚えていないのですか？」",
+			NULL, " ...She doesn't remember the murders?\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100915.「まぁ、彼女の言うには、…気がついたらこの病院で、ここ数日間の記憶が断片的になくなっているとのことでして。kvS08/11/321100916.尋問のやり方を何度か変えて試してみても、同じ回答です」
+	PlaySE(4, "S08/11/321100915", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「まぁ、彼女の言うには、…気がついたらこの病院で、ここ数日間の記憶が断片的になくなっているとのことでして。",
+			NULL, "\"Well, according to her... whe she arrived at the hospital, she noticed that her memories of the past few days have been fragmented. ", Line_ModeSpecific);
+	PlaySE(4, "S08/11/321100916", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "尋問のやり方を何度か変えて試してみても、同じ回答です」",
+			NULL, "We've tried several different interrogation approaches, but her answer is always the same.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100917.「しかも話が一貫している。kvS08/11/321100918.…意図して嘘を言っているようには見えないんですよ」
+	PlaySE(4, "S08/11/321100917", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「しかも話が一貫している。",
+			NULL, "\"Not only that, but her story is consistent.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100918", 256, 64);
+	OutputLine(NULL, "…意図して嘘を言っているようには見えないんですよ」",
+			NULL, " ...It doesn't seem like she's intentionally lying about it.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000974.「なんですか、それは…？」
+	PlaySE(4, "S08/13/321000974", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「なんですか、それは…？」",
+			NULL, "\"What does that mean...?\"", Line_Normal);
+	ClearMessage();
+
+//r事実とは明らかに違う供述に、思わず唖然となる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "事実とは明らかに違う供述に、思わず唖然となる。",
+			NULL, "I was completely stunned by how much that information seemed to contradict the facts.", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000975.「犯行現場の状況から考えても、公由夏美が犯人であることは間違いないはずです。kvS08/13/321000976.鑑識もそういう判断でしたよね？kvS08/13/321000977.　凶器には彼女の血まみれの手形が、しっかり残っていたと」
+	PlaySE(4, "S08/13/321000975", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「犯行現場の状況から考えても、公由夏美が犯人であることは間違いないはずです。",
+			NULL, "\"Based on the state of the crime scene, there's no doubt that Natsumi Kimiyoshi is the culprit.", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000976", 256, 64);
+	OutputLine(NULL, "鑑識もそういう判断でしたよね？",
+			NULL, " The forensics team came to the same conclusion, didn't they? ", Line_ModeSpecific);
+	PlaySE(4, "S08/13/321000977", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　凶器には彼女の血まみれの手形が、しっかり残っていたと」",
+			NULL, "Her bloody hands were still firmly grasping the murder weapon.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100919.「それなんですがね、赤坂さん。kvS08/11/321100920.…私たち、ひょっとしたら考え違いをしていたんじゃないかって思うんですよ。kvS08/11/321100921.公由夏美が感情的に、両親や祖母を惨殺したってことをね」
+	PlaySE(4, "S08/11/321100919", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それなんですがね、赤坂さん。",
+			NULL, "\"That's right, Akasaka-san.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100920", 256, 64);
+	OutputLine(NULL, "…私たち、ひょっとしたら考え違いをしていたんじゃないかって思うんですよ。",
+			NULL, " ...We all thought there must be some misunderstanding.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100921", 256, 64);
+	OutputLine(NULL, "公由夏美が感情的に、両親や祖母を惨殺したってことをね」",
+			NULL, " Natsumi Kimiyoshi definitely murdered her parents and her grandmother in an emotional outburst.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000978.「考え違い…？kvS08/13/321000979.　どういうことですか？」
+	PlaySE(4, "S08/13/321000978", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「考え違い…？",
+			NULL, "\"Misunderstanding...?", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000979", 256, 64);
+	OutputLine(NULL, "　どういうことですか？」",
+			NULL, " What do you mean?\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_3_1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100922.「……」
+	PlaySE(4, "S08/11/321100922", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+//rまだ自分でも整理ができていないのか、大石さんは一本目の煙草を灰皿で潰すと二本目に火をつける。そして、目を閉じ言葉を選んでから、私に言った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まだ自分でも整理ができていないのか、大石さんは一本目の煙草を灰皿で潰すと二本目に火をつける。そして、目を閉じ言葉を選んでから、私に言った。",
+			NULL, "Ooishi-san seemed like he still didn't understand, himself. He crushed his cigarette in the ashtray and lit a second one. Then, he closed his eyes and carefully chose his words before speaking to me.", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100923.「いやね、kvS08/11/321100924.…赤坂さんの推理通り、彼女は確かに両親に対して激しい感情を抱き続けていた。kvS08/11/321100925.で、それを抑制していた薬が切れたことで、バーンとやっちゃった」
+	PlaySE(4, "S08/11/321100923", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「いやね、",
+			NULL, "\"No...", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100924", 256, 64);
+	OutputLine(NULL, "…赤坂さんの推理通り、彼女は確かに両親に対して激しい感情を抱き続けていた。",
+			NULL, " it's just as you predicted, Akasaka-san, she certainly held violent intentions toward her parents.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100925", 256, 64);
+	OutputLine(NULL, "で、それを抑制していた薬が切れたことで、バーンとやっちゃった」",
+			NULL, " And her medication was suppressing those emotions, so when it ran out, bang, she blew up.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100926.「それは間違いないと思うんですが、kvS08/11/321100927.…２つに分かれていたのは、感情だけの話じゃなかったんじゃないか、ってね」
+	PlaySE(4, "S08/11/321100926", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それは間違いないと思うんですが、",
+			NULL, "\"Honestly, I think...", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100927", 256, 64);
+	OutputLine(NULL, "…２つに分かれていたのは、感情だけの話じゃなかったんじゃないか、ってね」",
+			NULL, " her emotions weren't the only thing being split off.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000980.「感情以外…って、たとえば？」
+	PlaySE(4, "S08/13/321000980", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「感情以外…って、たとえば？」",
+			NULL, "\"Other than emotions... like what?\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100928.「つまり、記憶…。kvS08/11/321100929.もっといえば、人格ってやつも、２つに分かれていたんじゃないかって」
+	PlaySE(4, "S08/11/321100928", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「つまり、記憶…。",
+			NULL, "\"Specifically, her memories...", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100929", 256, 64);
+	OutputLine(NULL, "もっといえば、人格ってやつも、２つに分かれていたんじゃないかって」",
+			NULL, " You might even go as far as to say that her personality was split in two.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000981.「記憶と、人格が…２つに？！」
+	PlaySE(4, "S08/13/321000981", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「記憶と、人格が…２つに？！」",
+			NULL, "\"Her memories and her personality... were split in two?!\"", Line_Normal);
+	ClearMessage();
+
+//rさすがの私も、大石さんのその見解をまさかと疑う。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "さすがの私も、大石さんのその見解をまさかと疑う。",
+			NULL, "At the same time, I had a hard time accepting Ooishi-san's theory.", Line_Normal);
+	ClearMessage();
+
+//r…当然だろう。彼のいうことが正しければ、公由夏美はひとつの身体に二つの人格を持つ、いわゆる『二重人格者』ということになるからだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…当然だろう。彼のいうことが正しければ、公由夏美はひとつの身体に二つの人格を持つ、いわゆる『二重人格者』ということになるからだ。",
+			NULL, "...It seemed clear enough. If what he said was correct, then Natsumi Kimiyoshi suffered from \"dual personality\" disorder, essentially having two independent personalities coexisting in a single body.", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000982.「そんなバカな…。kvS08/13/321000983.二重人格なんてそれこそ、空想の中の話でしょう？kvS08/13/321000984.　１人の人間の中に、２つの人格が存在するなんて、現実にはそんなこと…」
+	PlaySE(4, "S08/13/321000982", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そんなバカな…。",
+			NULL, "\"That's ridiculous...", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000983", 256, 64);
+	OutputLine(NULL, "二重人格なんてそれこそ、空想の中の話でしょう？",
+			NULL, " Aren't split personalities the sort of thing you read about in stories?", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000984", 256, 64);
+	OutputLine(NULL, "　１人の人間の中に、２つの人格が存在するなんて、現実にはそんなこと…」",
+			NULL, " If there were really two personalities in a single person...\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100930.「いえね、山沖署長の紹介で精神科医に確認してきたんですが、どうやらありえるらしいんですよ」
+	PlaySE(4, "S08/11/321100930", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「いえね、山沖署長の紹介で精神科医に確認してきたんですが、どうやらありえるらしいんですよ」",
+			NULL, "\"Actually, Chief Yamaoki introduced me to a psychiatrist who indicated that it all seemed entirely possible.\"", Line_Normal);
+	ClearMessage();
+
+//大石rvS08/11/321100931.「いわゆる精神疾患の一種ですがね、激しい感情を抱き続ける自分自身を嫌悪するあまり、脳がそれを自分以外の誰かだと判断して、分離しちゃうってワケです。kvS08/11/321100932.実際に事例もあるそうです」
+	PlaySE(4, "S08/11/321100931", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「いわゆる精神疾患の一種ですがね、激しい感情を抱き続ける自分自身を嫌悪するあまり、脳がそれを自分以外の誰かだと判断して、分離しちゃうってワケです。",
+			NULL, "\"It's a type of mental illness, where the person in question has a strong enough sense of self-loathing that their brain can rationalize a part of itself as a separate entity to segregate itself from it. ", Line_ModeSpecific);
+	PlaySE(4, "S08/11/321100932", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "実際に事例もあるそうです」",
+			NULL, "There are actually several reported cases of this.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+
+//rある意味では、『現実逃避』と言ってもいいのかもしれない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ある意味では、『現実逃避』と言ってもいいのかもしれない。",
+			NULL, "In a sense, you could call it a form of \"escapism.\"", Line_Normal);
+	ClearMessage();
+
+//r人間なら誰しも、英雄願望…自分が物語の主人公やヒロインのように、理想的な人物像でありたいと願う気持ちがある。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "人間なら誰しも、英雄願望…自分が物語の主人公やヒロインのように、理想的な人物像でありたいと願う気持ちがある。",
+			NULL, "Every human being has an innate desire to be great... to be the hero or heroine of their own story. They want to see themselves as an ideal individual.", Line_Normal);
+	ClearMessage();
+
+//rとはいえ、たいていの場合は現実とのズレに失望し、妥協して社会的に自制した思考と言動を身につけてゆく。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "とはいえ、たいていの場合は現実とのズレに失望し、妥協して社会的に自制した思考と言動を身につけてゆく。",
+			NULL, "However, people are generally a little disappointed by the gap between reality and their ideals, and that can have a detrimental effect on the way they think and act around other people.", Line_Normal);
+	ClearMessage();
+
+//r…それでも、あまりにもその差が激しい場合、現実を受容することを拒絶し、自らが作り出した理想に埋没して社会との隔絶をはかる。それが、『現実逃避』だ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…それでも、あまりにもその差が激しい場合、現実を受容することを拒絶し、自らが作り出した理想に埋没して社会との隔絶をはかる。それが、『現実逃避』だ。",
+			NULL, "...Still, if that distance becomes too severe, the person can refuse to accept reality, and isolate theirself from society by hiding under their ideals. That's \"escapism.\" ", Line_Normal);
+	ClearMessage();
+
+//rそして、それは最小の社会である、『個人』の中でも起こりえることがあるらしい。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そして、それは最小の社会である、『個人』の中でも起こりえることがあるらしい。",
+			NULL, "And that can create an \"individual\" persona.", Line_Normal);
+	ClearMessage();
+
+//rつまり、…自らを理想的に描こうとするあまり、反面で抱いた黒い感情…嫉妬、憎悪、敵意などは、自分以外の誰かの所有物だと決め付ける。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "つまり、…自らを理想的に描こうとするあまり、反面で抱いた黒い感情…嫉妬、憎悪、敵意などは、自分以外の誰かの所有物だと決め付ける。",
+			NULL, "In other words... in order to live up to their ideals and rid theirself of their jealously, hatred, malice, etc... they can decide that those dark emotions belong to a separate entity.", Line_Normal);
+	ClearMessage();
+
+//rその結果、マイナスの記憶や思考は全て自分が無意識のうちに作り出した『もう一人』に押し付けて、自分はあくまで理想像を保っていると信じ込むのだ…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "その結果、マイナスの記憶や思考は全て自分が無意識のうちに作り出した『もう一人』に押し付けて、自分はあくまで理想像を保っていると信じ込むのだ…。",
+			NULL, "As a result, all those negative thoughts and memories are thrust upon this \"other person\" that they subconsciously constructed, and they can enjoy the satisfaction that what remains meets their ideals...", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "ke_ky2", 1000 );
+	DrawBustshot( 3, "oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100933.「まぁ、それならまだ可愛いモンなんですがね。kvS08/11/321100934.問題は押し付けた『もう一人』にも、ちゃんと自我があるってことです」
+	PlaySE(4, "S08/11/321100933", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「まぁ、それならまだ可愛いモンなんですがね。",
+			NULL, "\"Well, it's a cute story.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100934", 256, 64);
+	OutputLine(NULL, "問題は押し付けた『もう一人』にも、ちゃんと自我があるってことです」",
+			NULL, " The problem is, we need a way to question this \"other person\" properly.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100935.「ですから、黒いほうが逆に白いほうを『偽者』と決め付けたら、マイナス感情を持つことが『理想的』だと考えるようになる」
+	PlaySE(4, "S08/11/321100935", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ですから、黒いほうが逆に白いほうを『偽者』と決め付けたら、マイナス感情を持つことが『理想的』だと考えるようになる」",
+			NULL, "\"If the dark persona decides that the light persona is the \"impostor\", it might even think those dark emotions meet its own set of \"ideals.\"\"", Line_Normal);
+	ClearMessage();
+
+//大石rvS08/11/321100936.「それを繰り返しているうちに、いつしか記憶と人格も全く別物に分離しちゃうんだそうです」
+	PlaySE(4, "S08/11/321100936", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それを繰り返しているうちに、いつしか記憶と人格も全く別物に分離しちゃうんだそうです」",
+			NULL, "\"If that keeps going on long enough, the memories and personalities might become completely separate from one another.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000985.「……」
+	PlaySE(4, "S08/13/321000985", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100937.「で、ここで出てくるのが、例の薬です。kvS08/11/321100938.以前は公由夏美の激しい感情を、その薬で押さえつけているって話でした」
+	PlaySE(4, "S08/11/321100937", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「で、ここで出てくるのが、例の薬です。",
+			NULL, "\"So, it's important to keep that medicine in mind.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100938", 256, 64);
+	OutputLine(NULL, "以前は公由夏美の激しい感情を、その薬で押さえつけているって話でした」",
+			NULL, " The story we've been told is that Natsumi Kimiyoshi has been taking that medicine to suppress her intense emotions.\"", Line_Normal);
+	ClearMessage();
+
+//大石rvS08/11/321100939.「しかし、彼女が記憶と人格を二つ所有していたのだとしたら、問題は変わってくる」
+	PlaySE(4, "S08/11/321100939", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「しかし、彼女が記憶と人格を二つ所有していたのだとしたら、問題は変わってくる」",
+			NULL, "\"However, if she has two completely independent personalities with their own sets of memories, that changes things.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100940.「…元々、欧米では禁止されているほどの強い薬だそうですからね」
+	PlaySE(4, "S08/11/321100940", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…元々、欧米では禁止されているほどの強い薬だそうですからね」",
+			NULL, "\"...This medicine is so strong that it was prohibited in the west.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100941.「で、その薬ってやつが黒いほうの衝動を解消する効能ではなく、むしろ白いほうで溜まりそうになっていた衝動を黒いほうに押しやって……」
+	PlaySE(4, "S08/11/321100941", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「で、その薬ってやつが黒いほうの衝動を解消する効能ではなく、むしろ白いほうで溜まりそうになっていた衝動を黒いほうに押しやって……」",
+			NULL, "\"So, maybe this medicine didn't actually eliminate her dark side, but instead pushed those urges from her light side onto her dark side and allowed them to accumulate...\"", Line_Normal);
+	ClearMessage();
+
+//大石rvS08/11/321100942.「見えないようにふたをする役割を果たしていたのだとしたら、…どうなりますか？」
+	PlaySE(4, "S08/11/321100942", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「見えないようにふたをする役割を果たしていたのだとしたら、…どうなりますか？」",
+			NULL, "\"If more and more of these urges were piled on top of this dark side... what would happen?\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000986.「…黒に溜まった感情は、どんどん増大していきます！kvS08/13/321000987.　そして、何かのきっかけで人格が反転したとき、それらが一気に爆発する…っ！！」
+	PlaySE(4, "S08/13/321000986", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…黒に溜まった感情は、どんどん増大していきます！",
+			NULL, "\"...The dark side would grow, faster and faster!", Line_WaitForInput);
+	PlaySE(4, "S08/13/321000987", 256, 64);
+	OutputLine(NULL, "　そして、何かのきっかけで人格が反転したとき、それらが一気に爆発する…っ！！」",
+			NULL, " And, if some event caused the personalities to switch, it could explode right away...!!\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100943.「大雨の時のダムと同じです。kvS08/11/321100944.ですからそのダムが一度決壊すれば、鉄砲水で全て押し流してしまう」
+	PlaySE(4, "S08/11/321100943", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「大雨の時のダムと同じです。",
+			NULL, "\"Just like a dam bursting under a heavy rain storm.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100944", 256, 64);
+	OutputLine(NULL, "ですからそのダムが一度決壊すれば、鉄砲水で全て押し流してしまう」",
+			NULL, " And once the dam breaks, it'll sweep everything away in a flash flood.\"", Line_Normal);
+	ClearMessage();
+
+//大石rvS08/11/321100945.「しかも、爆発したのは黒いほうですから、白いほうは反転している時のことは全く覚えていない」
+	PlaySE(4, "S08/11/321100945", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「しかも、爆発したのは黒いほうですから、白いほうは反転している時のことは全く覚えていない」",
+			NULL, "\"And not only that, but since the dark side is the one that exploded, the light side doesn't remember anything about what happened when they were switched.\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_3_1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100946.「それどころか自分が殺した相手に対し、殺意を持っていたことも知らないまま。kvS08/11/321100947.…そう考えると、今までの辻褄が合うんですよ」
+	PlaySE(4, "S08/11/321100946", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「それどころか自分が殺した相手に対し、殺意を持っていたことも知らないまま。",
+			NULL, "\"Quite the opposite, they wouldn't even know they had murderous intent within them.", Line_WaitForInput);
+	PlaySE(4, "S08/11/321100947", 256, 64);
+	OutputLine(NULL, "…そう考えると、今までの辻褄が合うんですよ」",
+			NULL, " ...Thinking about that way, everything up until now adds up.\"", Line_Normal);
+	ClearMessage();
+
+//赤坂rvS08/13/321000988.「じゃあ、あの薬は治療薬なんかじゃなく、むしろ…！」
+	PlaySE(4, "S08/13/321000988", 256, 64);
+	if (AdvMode) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「じゃあ、あの薬は治療薬なんかじゃなく、むしろ…！」",
+			NULL, "\"Then, that medicine isn't a cure, but actually...!\"", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 3, "oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//大石rvS08/11/321100948.「人を鬼に変える、…悪魔の薬ですよ」
+	PlaySE(4, "S08/11/321100948", 256, 64);
+	if (AdvMode) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「人を鬼に変える、…悪魔の薬ですよ」",
+			NULL, "\"It makes people transform into demons... it's a diabolical medicine.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+
+//r大石さんのその言葉に、…愕然となって声を失う。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "大石さんのその言葉に、…愕然となって声を失う。",
+			NULL, "After hearing those words from Ooishi-san... I felt completely aghast, and lost my voice.", Line_Normal);
+	ClearMessage();
+
+//rそれでは、…これまでの惨劇には、その正体不明の薬が大きく関与しているということか？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それでは、…これまでの惨劇には、その正体不明の薬が大きく関与しているということか？！",
+			NULL, "Then... could this medicine have a larger role in the tragedies we've seen thus far?!", Line_Normal);
+	ClearMessage();
+
+//rならば、その薬はいったい、誰が？　どこから？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ならば、その薬はいったい、誰が？　どこから？！",
+			NULL, "And, who created this medicine? Where did it come from?!", Line_Normal);
+	ClearMessage();
+
+//rひとつの謎の判明は、さらに新たな謎を、私たちに突きつけて嘲笑うのだった…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ひとつの謎の判明は、さらに新たな謎を、私たちに突きつけて嘲笑うのだった…。",
+			NULL, "Unraveling one mystery only led to another mystery, taunting and laughing at us...", Line_Normal);
+	ClearMessage();
+
+	Wait( 2000 );
+	FadeOutBGM( 2, 200, FALSE  );
+	PlayBGM( 1, "semi", 128, 0 );
+	DrawScene( "white", 1000 );
+	DrawScene( "byo_01", 1000 );
+	Wait( 1000 );
+	DrawScene( "byo_ten", 1000 );
+
+//女性警官rvS08/00/VT2B_PoliFa1009.「…以上です。kvS08/00/VT2B_PoliFa1010.ご協力、ありがとうございました」
+	PlaySE(4, "S08/00/VT2B_PoliFa1009", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>女性警官</color>", NULL, "<color=#f5e6d3>Policewoman</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…以上です。",
+			NULL, "\"...That's all.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_PoliFa1010", 256, 64);
+	OutputLine(NULL, "ご協力、ありがとうございました」",
+			NULL, " Thank you for your cooperation.\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100501.「あ、はい…」
+	PlaySE(4, "S08/36/320100501", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、はい…」",
+			NULL, "\"Ah, of course...\"", Line_Normal);
+	ClearMessage();
+
+//女性警官rvS08/00/VT2B_PoliFa1011.「何か必要なものがありましたら、遠慮なく言ってください。kvS08/00/VT2B_PoliFa1012.食事はあと２時間後に病院食が出ますので」
+	PlaySE(4, "S08/00/VT2B_PoliFa1011", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>女性警官</color>", NULL, "<color=#f5e6d3>Policewoman</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「何か必要なものがありましたら、遠慮なく言ってください。",
+			NULL, "\"If you need anything else, don't hesitate to ask.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_PoliFa1012", 256, 64);
+	OutputLine(NULL, "食事はあと２時間後に病院食が出ますので」",
+			NULL, " Hospital meals will be served two hours from now.\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100502.「あ、あの…」
+	PlaySE(4, "S08/36/320100502", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、あの…」",
+			NULL, "\"Oh, umm...\"", Line_Normal);
+	ClearMessage();
+
+//rおずおずと恥ずかしそうな顔で、夏美は隣に立つ女刑事を見上げる。そして、
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "おずおずと恥ずかしそうな顔で、夏美は隣に立つ女刑事を見上げる。そして、",
+			NULL, "Natsumi looked up at the female detective standing next to her with a shy and embarrassed look on her face. Then,", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100503.「お、お手洗い行っても、…いいですか？」
+	PlaySE(4, "S08/36/320100503", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「お、お手洗い行っても、…いいですか？」",
+			NULL, "\"W-would it be ok... if I went to the bathroom?\"", Line_Normal);
+	ClearMessage();
+
+//女性警官rvS08/00/VT2B_PoliFa1013.「え？kvS08/00/VT2B_PoliFa1014.　ああ、どうぞ。案内するわ」
+	PlaySE(4, "S08/00/VT2B_PoliFa1013", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>女性警官</color>", NULL, "<color=#f5e6d3>Policewoman</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「え？",
+			NULL, "\"Huh?", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_PoliFa1014", 256, 64);
+	OutputLine(NULL, "　ああ、どうぞ。案内するわ」",
+			NULL, " Aah, no problem. I can show you the way.\"", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+
+//rありがとうございます、と言いながら深々と頭を下げると、夏美はベッドから降りてスリッパを履く。そして先導する女性警官の後をついて、たどたどしい足取りで廊下を歩いていった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ありがとうございます、と言いながら深々と頭を下げると、夏美はベッドから降りてスリッパを履く。そして先導する女性警官の後をついて、たどたどしい足取りで廊下を歩いていった。",
+			NULL, "Natsumi deeply bowed her head while saying \"Thank you very much\", then hopped off the bed and put on her slippers.", Line_Normal);
+	ClearMessage();
+
+//r……その様子を見ながら、藤田刑事と花田刑事は違和感を抱かずにはいられなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "……その様子を見ながら、藤田刑事と花田刑事は違和感を抱かずにはいられなかった。",
+			NULL, "...As they watched that, Detective Fujita and Detective Hanada couldn't help but feel uncomfortable.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "byo_01", 1000 );
+
+//藤田rvS08/31/320900115.「なぁ、…花田」
+	PlaySE(4, "S08/31/320900115", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「なぁ、…花田」",
+			NULL, "\"Hey... Hanada.\"", Line_Normal);
+	ClearMessage();
+
+//花田rvS08/32/VT2B_hanada1053.「なんだ？」
+	PlaySE(4, "S08/32/VT2B_hanada1053", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>花田</color>", NULL, "<color=#f5e6d3>Hanada</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「なんだ？」",
+			NULL, "\"What is it?\"", Line_Normal);
+	ClearMessage();
+
+//藤田rvS08/31/320900116.「ホントにあの子が、…両親と祖母を殺したのかな？」
+	PlaySE(4, "S08/31/320900116", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ホントにあの子が、…両親と祖母を殺したのかな？」",
+			NULL, "\"Did this girl... really kill her parents and grandmother?\"", Line_Normal);
+	ClearMessage();
+
+//花田rvS08/32/VT2B_hanada1054.「……」
+	PlaySE(4, "S08/32/VT2B_hanada1054", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>花田</color>", NULL, "<color=#f5e6d3>Hanada</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+//rもちろん、二人ともそれがゆるぎない事実であることを知っている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "もちろん、二人ともそれがゆるぎない事実であることを知っている。",
+			NULL, "Of course, both of them knew it was an undeniable fact.", Line_Normal);
+	ClearMessage();
+
+//r…それでも、大き目の瞳を潤ませる、歳よりも幼く見える可愛い女の子が凶悪犯罪に手を染めたとは、どうしても信じられなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…それでも、大き目の瞳を潤ませる、歳よりも幼く見える可愛い女の子が凶悪犯罪に手を染めたとは、どうしても信じられなかった。",
+			NULL, "...Still, it was hard to believe that a pretty, youthful girl with those big, soft eyes could dirty her hands with murder.", Line_Normal);
+	ClearMessage();
+
+//藤田rvS08/31/320900117.「もっと凶暴な感じとか、血が凍ってるような冷たい印象だったら、こっちも遠慮なくがんがん出ることができるんだけどな。kvS08/31/320900118.…あんな小動物みたいな女の子だと、調子が狂うよ」
+	PlaySE(4, "S08/31/320900117", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「もっと凶暴な感じとか、血が凍ってるような冷たい印象だったら、こっちも遠慮なくがんがん出ることができるんだけどな。",
+			NULL, "\"It's absolutely terrifying. My blood is running cold. I can't wait until I can get away from here.", Line_WaitForInput);
+	PlaySE(4, "S08/31/320900118", 256, 64);
+	OutputLine(NULL, "…あんな小動物みたいな女の子だと、調子が狂うよ」",
+			NULL, " ...Thinking that a girl like a cute little animal might suddenly go crazy.\"", Line_Normal);
+	ClearMessage();
+
+//花田rvS08/32/VT2B_hanada1055.「…人は、見かけによらないってことさ。kvS08/32/VT2B_hanada1056.お前の奥さんでも、本当のところはわからんぞ？」
+	PlaySE(4, "S08/32/VT2B_hanada1055", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>花田</color>", NULL, "<color=#f5e6d3>Hanada</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…人は、見かけによらないってことさ。",
+			NULL, "\"...You can't judge people by their appearance.", Line_WaitForInput);
+	PlaySE(4, "S08/32/VT2B_hanada1056", 256, 64);
+	OutputLine(NULL, "お前の奥さんでも、本当のところはわからんぞ？」",
+			NULL, " Really, just think of your wife?\"", Line_Normal);
+	ClearMessage();
+
+//藤田rvS08/31/320900119.「バカやろ、それはお前もおんなじだろうが」
+	PlaySE(4, "S08/31/320900119", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「バカやろ、それはお前もおんなじだろうが」",
+			NULL, "\"I could say the same about you, jackass.\"", Line_Normal);
+	ClearMessage();
+
+//花田rvS08/32/VT2B_hanada1057.「……。そうだな。kvS08/32/VT2B_hanada1058.人間の正体なんて、本人でもない限りわかるわけねぇか」
+	PlaySE(4, "S08/32/VT2B_hanada1057", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>花田</color>", NULL, "<color=#f5e6d3>Hanada</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……。そうだな。",
+			NULL, "\"...Yeah.", Line_WaitForInput);
+	PlaySE(4, "S08/32/VT2B_hanada1058", 256, 64);
+	OutputLine(NULL, "人間の正体なんて、本人でもない限りわかるわけねぇか」",
+			NULL, " You can't truly understand any human being other than yourself, I suppose.\"", Line_Normal);
+	ClearMessage();
+
+//藤田rvS08/31/VT2B_fujita1001.「おいおい、冗談だっての。kvS08/31/VT2B_fujita1002.……奥さんと喧嘩でもしたのか？」
+	PlaySE(4, "S08/31/VT2B_fujita1001", 256, 64);
+	if (AdvMode) { OutputLine("<color=#54636b>藤田</color>", NULL, "<color=#54636b>Fujita</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「おいおい、冗談だっての。",
+			NULL, "\"Come on, I was joking around.", Line_WaitForInput);
+	PlaySE(4, "S08/31/VT2B_fujita1002", 256, 64);
+	OutputLine(NULL, "……奥さんと喧嘩でもしたのか？」",
+			NULL, " ...Did you just have a fight with your wife, or something?\"", Line_Normal);
+	ClearMessage();
+
+//rそう、悪態をつきながら藤田は腕時計を見て、…大石と赤坂との交替まであと２時間であることを確かめる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そう、悪態をつきながら藤田は腕時計を見て、…大石と赤坂との交替まであと２時間であることを確かめる。",
+			NULL, "Then, Fujita glanced at his wristwatch and cursed to himself... They had another two hours before they could switch with Ooishi and Akasaka.", Line_Normal);
+	ClearMessage();
+
+//rとりあえず二人は時間つぶしに多少の雑談を交えながらも、今後の捜査活動について色々と話し合った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "とりあえず二人は時間つぶしに多少の雑談を交えながらも、今後の捜査活動について色々と話し合った。",
+			NULL, "For now, the two of them had time to kill, so they decided to chat about upcoming investigation activities and various other topics.", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+	FadeOutBGM( 1, 200, FALSE  );
+	Wait( 1000 );
+	PlaySE(3, "addse19", 256, 64);
+
+//r個室に閉じこもり、鍵をかける。…さすがに女性とはいえ、警官も洗面所の中まではついてこなかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "個室に閉じこもり、鍵をかける。…さすがに女性とはいえ、警官も洗面所の中まではついてこなかった。",
+			NULL, "I entered the private room and locked the door behind me. ...Since I came to use the bathroom, none of the police officers followed me inside.", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 2, "hm01_03", 128, 0 );
+	Wait( 500 );
+
+//夏美rvS08/36/320100504.「ふぅ…」
+	PlaySE(4, "S08/36/320100504", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ふぅ…」",
+			NULL, "\"Haah...\"", Line_Normal);
+	ClearMessage();
+
+//r…本当は、特に用なんてない。ただ、一人になりたかっただけだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…本当は、特に用なんてない。ただ、一人になりたかっただけだ。",
+			NULL, "...I didn't have any particular reason for coming here. I just wanted to spend some time alone.", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100505.「……」
+	PlaySE(4, "S08/36/320100505", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+//r頭がぼんやりする。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "頭がぼんやりする。",
+			NULL, "My mind was still foggy.", Line_Normal);
+	ClearMessage();
+
+//rいったい私の身に何が起こったのか、実は全然覚えていない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "いったい私の身に何が起こったのか、実は全然覚えていない。",
+			NULL, "I couldn't really remember what happened to my body at all.", Line_Normal);
+	ClearMessage();
+
+//rそもそも、…なんで私はこんな病院に入れられているんだろう？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そもそも、…なんで私はこんな病院に入れられているんだろう？",
+			NULL, "What am I even doing inside this hospital in the first place?", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100506.「病院、…嫌いなんだけど」
+	PlaySE(4, "S08/36/320100506", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「病院、…嫌いなんだけど」",
+			NULL, "\"I... hate hospitals.\"", Line_Normal);
+	ClearMessage();
+
+//r…思い出す。３年前のことだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…思い出す。３年前のことだ。",
+			NULL, "...I thought back to three years ago.", Line_Normal);
+	ClearMessage();
+
+//rあの時も貧血症ということで入院することになり、…色々な検査を受けて、退院するまで２ヶ月近くもかかった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "あの時も貧血症ということで入院することになり、…色々な検査を受けて、退院するまで２ヶ月近くもかかった。",
+			NULL, "I was hospitalized for anemia back then... and I spent two months there, undergoing all sorts of tests before they let me go.", Line_Normal);
+	ClearMessage();
+
+//rそういえば、どんな検査だったっけ。入院中もどんな風に過ごしていたのか、ほとんど記憶がない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そういえば、どんな検査だったっけ。入院中もどんな風に過ごしていたのか、ほとんど記憶がない。",
+			NULL, "Come to think of it, what kind of testing was it? I can't remember much of anything about my hospitalization.", Line_Normal);
+	ClearMessage();
+
+//r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+//rそれにしても、おかーさんたちはどうして『来てくれない』んだろう？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それにしても、おかーさんたちはどうして『来てくれない』んだろう？",
+			NULL, "At any rate, I wonder why Mom isn't coming?", Line_Normal);
+	ClearMessage();
+
+//rおとーさんは仕事で忙しいから無理だとしても、…おかーさんも、おばーちゃんだって…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "おとーさんは仕事で忙しいから無理だとしても、…おかーさんも、おばーちゃんだって…。",
+			NULL, "Dad probably can't make it because he's busy with work, but... Mom and Grandma should be able to come...", Line_Normal);
+	ClearMessage();
+
+//r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+//r考えていても、仕方がない。それにあんまり長くここにいると、刑事さんたちも心配するだろう。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "考えていても、仕方がない。それにあんまり長くここにいると、刑事さんたちも心配するだろう。",
+			NULL, "There's no use thinking about it. And if I stay in here too long, the detectives will start to worry.", Line_Normal);
+	ClearMessage();
+
+//rそれにしても、…なんで刑事さんが、私の病室に？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それにしても、…なんで刑事さんが、私の病室に？",
+			NULL, "Actually... why are there detectives in my hospital room in the first place?", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100507.「はぁ、…っ？！」
+	PlaySE(4, "S08/36/320100507", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「はぁ、…っ？！」",
+			NULL, "\"Huh...?!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "door", 256, 64);
+	DrawSceneWithMask( "white", "left", 0, 0, 1000 );
+	DrawScene( "kai_ten", 1000 );
+
+//r個室の扉を開けた途端、…目の前に小さな人影が立っているのを見て、驚いた私は思わず身を引いて固まった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "個室の扉を開けた途端、…目の前に小さな人影が立っているのを見て、驚いた私は思わず身を引いて固まった。",
+			NULL, "As soon as I opened the door of the private room... I immediately froze when I discovered a humanoid shadow standing in front of me.", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100508.「…え？」
+	PlaySE(4, "S08/36/320100508", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…え？」",
+			NULL, "\"...Huh?\"", Line_Normal);
+	ClearMessage();
+
+//rよく見ると、可愛いパジャマを着た女の子だった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "よく見ると、可愛いパジャマを着た女の子だった。",
+			NULL, "Looking more closely, it was a girl wearing cute pajamas.", Line_Normal);
+	ClearMessage();
+
+//rあどけない笑顔で小首を傾げながら、私をじっと見上げている。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "あどけない笑顔で小首を傾げながら、私をじっと見上げている。",
+			NULL, "She innocently smiled as she tilted her head and looked up at me.", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100509.「あ、…あなたは？」
+	PlaySE(4, "S08/36/320100509", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、…あなたは？」",
+			NULL, "\"Who... are you?\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 2, 200, FALSE  );
+
+//あおいrvS08/00/VT2B_aoi1010.「——お姉ちゃんが、そうなんだね」
+	PlaySE(4, "S08/00/VT2B_aoi1010", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「——お姉ちゃんが、そうなんだね」",
+			NULL, "\"...You're just like me, you're like a sister.\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100510_1.「私が、…何を？！」
+	PlaySE(4, "S08/36/320100510_1", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「私が、…何を？！」",
+			NULL, "\"I'm... what?!\"", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1011.「そうなんでしょ？kvS08/00/VT2B_aoi1012.　…お姉ちゃん、パパとママを殺したんでしょ？」
+	PlaySE(4, "S08/00/VT2B_aoi1011", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そうなんでしょ？",
+			NULL, "\"Isn't that so?", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1012", 256, 64);
+	OutputLine(NULL, "　…お姉ちゃん、パパとママを殺したんでしょ？」",
+			NULL, " ...Sis, you killed your Mama and Papa, didn't you?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100511.「——えっ？！」
+	PlaySE(4, "S08/36/320100511", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「——えっ？！」",
+			NULL, "\"...Huh?!\"", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 1, "semi_r", 128, 0 );
+	Negative( 2000, TRUE );
+
+//r突然。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "突然。",
+			NULL, "Suddenly.", Line_Normal);
+	ClearMessage();
+
+//r屈託のないあどけない顔の女の子が、…恐ろしいことを口にして、一瞬私は耳を疑った。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "屈託のないあどけない顔の女の子が、…恐ろしいことを口にして、一瞬私は耳を疑った。",
+			NULL, "This innocuous girl was able to say such a terrible thing without a second thought... For a moment, I doubted my ears.", Line_Normal);
+	ClearMessage();
+
+//rなに、…この子っ？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "なに、…この子っ？",
+			NULL, "What... is this girl?", Line_Normal);
+	ClearMessage();
+
+//r殺したって、今…誰を？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "殺したって、今…誰を？！",
+			NULL, "This killing she just mentioned... who?!", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1013.「別に隠さなくてもいいよ。お姉ちゃんって、…『人殺し』、なんだよね？」
+	PlaySE(4, "S08/00/VT2B_aoi1013", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「別に隠さなくてもいいよ。お姉ちゃんって、…『人殺し』、なんだよね？」",
+			NULL, "\"You don't need to hide it. Sis... you're a <i>murderer</i>, right?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100512.「な、なにを言って…っ？」
+	PlaySE(4, "S08/36/320100512", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「な、なにを言って…っ？」",
+			NULL, "\"Wh-what are you saying...?\"", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1014.「私も、お姉ちゃんと同じだよ？kvS08/00/VT2B_aoi1015.　パパとママのこと、…ずっと前から、大ッ嫌い。kvS08/00/VT2B_aoi1016.だっていっつもああしろこうしろって、うるさくて。kvS08/00/VT2B_aoi1017.おじいちゃんが来てからは喧嘩ばっかり」
+	PlaySE(4, "S08/00/VT2B_aoi1014", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「私も、お姉ちゃんと同じだよ？",
+			NULL, "\"You and I are the same, aren't we?", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1015", 256, 64);
+	OutputLine(NULL, "　パパとママのこと、…ずっと前から、大ッ嫌い。",
+			NULL, " Mama and Papa... I've hated them for a long time.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1016", 256, 64);
+	OutputLine(NULL, "だっていっつもああしろこうしろって、うるさくて。",
+			NULL, " They were always so annoying.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1017", 256, 64);
+	OutputLine(NULL, "おじいちゃんが来てからは喧嘩ばっかり」",
+			NULL, " And since Grandpa came home, they've always been fighting.\"", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1018.「そのせいで私、友だちからもいじめられて、お化け屋敷に住んでるお化けだっていわれて。kvS08/00/VT2B_aoi1019.それでも、私が我慢してるのに、健太郎は全然泣きやまないし」
+	PlaySE(4, "S08/00/VT2B_aoi1018", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「そのせいで私、友だちからもいじめられて、お化け屋敷に住んでるお化けだっていわれて。",
+			NULL, "\"Thanks to that, my friends bullied me, they told me my house was haunted by a ghost.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1019", 256, 64);
+	OutputLine(NULL, "それでも、私が我慢してるのに、健太郎は全然泣きやまないし」",
+			NULL, " Even so, I tried to be patient, but Kentarou just wouldn't stop crying.\"", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1020.「…家族って、邪魔だよね。どんなにキライになっても、ずっとそばにい続けるんだもん。kvS08/00/VT2B_aoi1021.それこそ、…殺さない限り、……ねっ？」
+	PlaySE(4, "S08/00/VT2B_aoi1020", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…家族って、邪魔だよね。どんなにキライになっても、ずっとそばにい続けるんだもん。",
+			NULL, "\"...My family was holding me back. No matter how much I hated them, they would be with me for the rest of my life.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1021", 256, 64);
+	OutputLine(NULL, "それこそ、…殺さない限り、……ねっ？」",
+			NULL, " That is... unless someone killed them... Right?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100513.「あ、…ああっ…！！」
+	PlaySE(4, "S08/36/320100513", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あ、…ああっ…！！」",
+			NULL, "\"Ah... aah...!!\"", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1022.「だから殺したんでしょ？kvS08/00/VT2B_aoi1023.　お姉ちゃんが。kvS08/00/VT2B_aoi1024.でなきゃ、ここに入院するわけないもんね」
+	PlaySE(4, "S08/00/VT2B_aoi1022", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「だから殺したんでしょ？",
+			NULL, "\"So you killed them, didn't you?", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1023", 256, 64);
+	OutputLine(NULL, "　お姉ちゃんが。",
+			NULL, " Sis.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1024", 256, 64);
+	OutputLine(NULL, "でなきゃ、ここに入院するわけないもんね」",
+			NULL, " Why else would you be in this hospital?\"", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1025.「たくさんの刑事さんたちに見張られて、kvS08/00/VT2B_aoi1026.…いろいろ調べられたり、検査されたりして。kvS08/00/VT2B_aoi1027.ね、そうなんでしょ？」
+	PlaySE(4, "S08/00/VT2B_aoi1025", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「たくさんの刑事さんたちに見張られて、",
+			NULL, "\"All these detectives watching over you...", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1026", 256, 64);
+	OutputLine(NULL, "…いろいろ調べられたり、検査されたりして。",
+			NULL, " subjecting you to various inspections and exams.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1027", 256, 64);
+	OutputLine(NULL, "ね、そうなんでしょ？」",
+			NULL, " Don't you see?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100514.「ち、ちがっ、わ、私は…っ？！」
+	PlaySE(4, "S08/36/320100514", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ち、ちがっ、わ、私は…っ？！」",
+			NULL, "\"Y-you're wrong, I... I...?!\"", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1028.「あはははは。kvS08/00/VT2B_aoi1029.怖がることなんてないよ。kvS08/00/VT2B_aoi1030.だってお姉ちゃん、何度も頭の中で繰り返してたじゃない？kvS08/00/VT2B_aoi1031.　人を殺す夢、真っ赤な血の中で、楽しそうに笑い転げる夢…」
+	PlaySE(4, "S08/00/VT2B_aoi1028", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「あはははは。",
+			NULL, "\"Ahahahaha.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1029", 256, 64);
+	OutputLine(NULL, "怖がることなんてないよ。",
+			NULL, " There's nothing to be afraid of.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1030", 256, 64);
+	OutputLine(NULL, "だってお姉ちゃん、何度も頭の中で繰り返してたじゃない？",
+			NULL, " Because it's been repeating in your head so many times, hasn't it?", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1031", 256, 64);
+	OutputLine(NULL, "　人を殺す夢、真っ赤な血の中で、楽しそうに笑い転げる夢…」",
+			NULL, " A dream where you kill them, smiling and laughing while covered in bright red blood...\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100515.「——！！」
+	PlaySE(4, "S08/36/320100515", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「——！！」",
+			NULL, "\"...!!\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 200, FALSE  );
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
+	FadeFilm( 1000, TRUE );
+	DrawFilm( 2, 176, 155, 104, 255, 0, 250, TRUE );
+	DrawScene( "kimi_o1", 250 );
+	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	PlayBGM( 2, "hm02_12", 128, 0 );
+	Wait( 1000 );
+
+//夏美の母rvS08/00/320600028.「…先生からさっき、連絡がありました。kvS08/00/320600029.あなた、…私たちに内緒でアルバイトをしていたんだって…？」
+	PlaySE(4, "S08/00/320600028", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…先生からさっき、連絡がありました。",
+			NULL, "\"...I got a message from your teacher earlier.", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600029", 256, 64);
+	OutputLine(NULL, "あなた、…私たちに内緒でアルバイトをしていたんだって…？」",
+			NULL, " You... had a part-time job and you kept it secret from us...?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100516.「……！」
+	PlaySE(4, "S08/36/320100516", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……！」",
+			NULL, "\"...!\"", Line_Normal);
+	ClearMessage();
+
+//rそれを聞いて、…私は凍りつく。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それを聞いて、…私は凍りつく。",
+			NULL, "When I heard that... I froze.", Line_Normal);
+	ClearMessage();
+
+//rやっぱりだ、…やっぱりあの先生、約束を破って…！　『親には連絡しない』って言うから、正直に話してあげたのにッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "やっぱりだ、…やっぱりあの先生、約束を破って…！　『親には連絡しない』って言うから、正直に話してあげたのにッ！！",
+			NULL, "I knew it... that teacher broke her promise after all...! She told me \"I won't tell your parents\", and I believed her!!", Line_Normal);
+	ClearMessage();
+
+//夏美の母rvS08/00/320600030.「…どうなの、夏美？」
+	PlaySE(4, "S08/00/320600030", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…どうなの、夏美？」",
+			NULL, "\"...What do you have to say, Natsumi?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100517.「…っ…」
+	PlaySE(4, "S08/36/320100517", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…っ…」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+//夏美の母rvS08/00/320600031.「黙っていてもわからないでしょ？kvS08/00/320600032.　どういう理由があるのか知らないけど、親に無断でアルバイトなんて、一体何を考えてるの？」
+	PlaySE(4, "S08/00/320600031", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「黙っていてもわからないでしょ？",
+			NULL, "\"You understand that you can't keep this quiet, right?", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600032", 256, 64);
+	OutputLine(NULL, "　どういう理由があるのか知らないけど、親に無断でアルバイトなんて、一体何を考えてるの？」",
+			NULL, " I don't know what your reason is, but why on earth did you think it was a good idea to take on a part-time job without your parents' permission?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100518.「…わ、私、…だって…」
+	PlaySE(4, "S08/36/320100518", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…わ、私、…だって…」",
+			NULL, "\"...I, I was...\"", Line_Normal);
+	ClearMessage();
+
+//夏美の母rvS08/00/320600033.「お小遣いだって、ちゃんとあげてるでしょ？kvS08/00/320600034.　どうしてお金が必要だったのか言えば、お母さんだってちゃんと相談に乗るのに」
+	PlaySE(4, "S08/00/320600033", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「お小遣いだって、ちゃんとあげてるでしょ？",
+			NULL, "\"I give you a proper allowance, don't I?", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600034", 256, 64);
+	OutputLine(NULL, "　どうしてお金が必要だったのか言えば、お母さんだってちゃんと相談に乗るのに」",
+			NULL, " If you told me why you needed the money, I might've been willing to help.\"", Line_Normal);
+	ClearMessage();
+
+//夏美の母rvS08/00/320600035.「隠れてこそこそしてたら、まるで悪いことしてるみたいに見えるじゃない」
+	PlaySE(4, "S08/00/320600035", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「隠れてこそこそしてたら、まるで悪いことしてるみたいに見えるじゃない」",
+			NULL, "\"But when you sneak around and keep secrets, it looks like you're up to no good.\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100519.「……」
+	PlaySE(4, "S08/36/320100519", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+//夏美の母rvS08/00/320600036.「まさかあなた、佐伯さんや牧村さんに影響されて、変なお金の遣い方を覚えたんじゃないでしょうね？」
+	PlaySE(4, "S08/00/320600036", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「まさかあなた、佐伯さんや牧村さんに影響されて、変なお金の遣い方を覚えたんじゃないでしょうね？」",
+			NULL, "\"I bet Saeki-san and Makimura-san were responsible for this. Did they feed you strange ideas about making money?!\"", Line_Normal);
+	ClearMessage();
+
+//夏美の母rvS08/00/320600037.「いけませんよ、無駄遣いは。kvS08/00/320600038.お父さんやお祖母ちゃんは甘いから気にはしないんでしょうけど、お母さんは許しませんからね？」
+	PlaySE(4, "S08/00/320600037", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「いけませんよ、無駄遣いは。",
+			NULL, "\"You can't squander money like this.", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600038", 256, 64);
+	OutputLine(NULL, "お父さんやお祖母ちゃんは甘いから気にはしないんでしょうけど、お母さんは許しませんからね？」",
+			NULL, " Dad and Grandma might be kind enough to look past this, but do you expect me to be so forgiving?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100520.「…ッ…！」
+	PlaySE(4, "S08/36/320100520", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…ッ…！」",
+			NULL, "\"......!\"", Line_Normal);
+	ClearMessage();
+
+//夏美の母rvS08/00/320600039.「ね、夏美。kvS08/00/320600040.お母さんはあなたのことを思って、注意してるんだからね？kvS08/00/320600041.　あなたも、公由の家の娘として、kvS08/00/320600042.——ちょっと、聞いてるの？　夏美？！」
+	PlaySE(4, "S08/00/320600039", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ね、夏美。",
+			NULL, "\"Hey, Natsumi.", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600040", 256, 64);
+	OutputLine(NULL, "お母さんはあなたのことを思って、注意してるんだからね？",
+			NULL, " You understand that I'm thinking of you and looking out for you, right?", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600041", 256, 64);
+	OutputLine(NULL, "　あなたも、公由の家の娘として、",
+			NULL, " You're the daughter of the Kimiyoshi family.", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600042", 256, 64);
+	OutputLine(NULL, "——ちょっと、聞いてるの？　夏美？！」",
+			NULL, " ...Hey, are you even listening? Natsumi?!\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100521.「——っっ！！」
+	PlaySE(4, "S08/36/320100521", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「——っっ！！」",
+			NULL, "\"...!!\"", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 2, 200, FALSE  );
+	DrawScene( "black", 1000 );
+	FadeFilm( 500, TRUE );
+	PlayBGM( 1, "kaze_lp", 128, 0 );
+
+//rその時、すっ…と。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "その時、すっ…と。",
+			NULL, "The very next moment...", Line_Normal);
+	ClearMessage();
+
+//r高ぶっていた気持ちと、萎縮していた心が急に無色透明へと変わって、…頭の中がクリアになる。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "高ぶっていた気持ちと、萎縮していた心が急に無色透明へと変わって、…頭の中がクリアになる。",
+			NULL, "The growing pain in my heart suddenly receded... and my mind cleared up.", Line_Normal);
+	ClearMessage();
+
+//r怒りもない。恐怖もない。悲しみも、苦しみも後ろめたさも感謝も憂鬱もスベテ…。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "怒りもない。恐怖もない。悲しみも、苦しみも後ろめたさも感謝も憂鬱もスベテ…。",
+			NULL, "I wasn't angry. I wasn't afraid. Or sad, pained, ashamed, thankful, depressed, or anything...", Line_Normal);
+	ClearMessage();
+
+//r複雑に入り混じっていた何もかもが霧散して、…心のベクトルが一つへと集約されてゆく。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "複雑に入り混じっていた何もかもが霧散して、…心のベクトルが一つへと集約されてゆく。",
+			NULL, "All of those scattered emotions mixed together... and gathered into a single unit.", Line_Normal);
+	ClearMessage();
+
+//r…誰が。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…誰が。",
+			NULL, "...Who?", Line_Normal);
+	ClearMessage();
+
+//r誰が、この家にいさせてくださいと、頼んだ？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "誰が、この家にいさせてくださいと、頼んだ？",
+			NULL, "Who asked me to stay at this house?", Line_Normal);
+	ClearMessage();
+
+//r『公由』の人間でいさせてくださいと、いつお願いした？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "『公由』の人間でいさせてくださいと、いつお願いした？",
+			NULL, "When did I ever ask to be a member of the \"Kimiyoshi\" family?", Line_Normal);
+	ClearMessage();
+
+//r雛見沢の人間でありたいと、……私が本気で願ったとでも、思っているのか……？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "雛見沢の人間でありたいと、……私が本気で願ったとでも、思っているのか……？！",
+			NULL, "And why would I ever want to be... from Hinamizawa...?!", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 200, FALSE  );
+	DrawScene( "white", 250 );
+	PlaySE(3, "suzu_1", 256, 64);
+	Wait( 250 );
+	DrawFilm( 2, 176, 155, 104, 255, 0, 250, FALSE );
+	DrawScene( "aka1", 1000 );
+	PlayBGM( 2, "hm03_17", 128, 0 );
+	Wait( 500 );
+
+//r——ぺた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "——ぺた。",
+			NULL, "...Pat.", Line_Normal);
+	ClearMessage();
+
+//r田舎町の出身のおかげで、この街に来てから血のにじむような辛苦を味わった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "田舎町の出身のおかげで、この街に来てから血のにじむような辛苦を味わった。",
+			NULL, "My rural upbringing has forced me to endure bloody hardship since I came to this town.", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "suzu_1", 256, 64);
+
+//r——ぺた、ぺた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "——ぺた、ぺた。",
+			NULL, "...Pat, pat.", Line_Normal);
+	ClearMessage();
+
+//rあの大災害のおかげで、自分が『雛見沢』の一人でないことを隠すために、背負わなくてもいい秘密とそのための努力を重ねてきた。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "あの大災害のおかげで、自分が『雛見沢』の一人でないことを隠すために、背負わなくてもいい秘密とそのための努力を重ねてきた。",
+			NULL, "Thanks to that disaster, I've had to make painstaking efforts to conceal the fact that I'm from <i>Hinamizawa</i>.", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "suzu_1", 256, 64);
+
+//r——ぺた、ぺた、ぺた……。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "——ぺた、ぺた、ぺた……。",
+			NULL, "...Pat, pat, pat...", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 500 );
+	FadeFilm( 500, TRUE );
+	PlayBGM( 1, "semi_r", 128, 0 );
+
+//r何のことはない。……私は一生懸命努力してきたのに、すべてをぶち壊しにしてくれたのは『雛見沢』じゃないかっ……！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "何のことはない。……私は一生懸命努力してきたのに、すべてをぶち壊しにしてくれたのは『雛見沢』じゃないかっ……！",
+			NULL, "But that wasn't the problem. ...After all my effort, it was <i>Hinamizawa</i> that destroyed everything, wasn't it...?!", Line_Normal);
+	ClearMessage();
+
+//r何が御三家だ。何がオヤシロさまだ。何が祟りだ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "何が御三家だ。何がオヤシロさまだ。何が祟りだ。",
+			NULL, "What are the Three Families? What is Oyashiro-sama? What is the curse?", Line_Normal);
+	ClearMessage();
+
+//r雛見沢は、私に何も、もたらしてはくれなかった。……与えてきたのは忌むべき災厄、ただそれだけだっ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "雛見沢は、私に何も、もたらしてはくれなかった。……与えてきたのは忌むべき災厄、ただそれだけだっ！！",
+			NULL, "Hinamizawa didn't provide anything for me. ...It gave me that terrible disaster, that's all!!", Line_Normal);
+	ClearMessage();
+
+//rもし、雛見沢の出身じゃなかったら私は！　こんなにも引け目や負い目を持つことなく普通に自然に、誰に対しても振舞えたはずなんだ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "もし、雛見沢の出身じゃなかったら私は！　こんなにも引け目や負い目を持つことなく普通に自然に、誰に対しても振舞えたはずなんだ！！",
+			NULL, "If only I wasn't from Hinamizawa! I wouldn't have felt inferior and insecure! I could have acted normally around everyone!!", Line_Normal);
+	ClearMessage();
+
+//r普通に友達と遊んで！　普通に成績を上げようと努力して！！　そして普通に好きな人ができて、恋をして！！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "普通に友達と遊んで！　普通に成績を上げようと努力して！！　そして普通に好きな人ができて、恋をして！！！",
+			NULL, "Playing with my friends like a normal person! Trying to improve my grades like a normal person!! And falling in love, like a normal person!!!", Line_Normal);
+	ClearMessage();
+
+//rみんなみんな、悪いのは雛見沢だ！！　そしてその水を飲んで生き、空気を吸って暮らしてきた全部が、私の幸せと努力、希望をめちゃめちゃにしていったんだっっ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "みんなみんな、悪いのは雛見沢だ！！　そしてその水を飲んで生き、空気を吸って暮らしてきた全部が、私の幸せと努力、希望をめちゃめちゃにしていったんだっっ！！",
+			NULL, "Everyone, everyone from Hinamizawa is terrible!! All those people drinking that water, breathing that air, living their lives, and ultimately trampling on all my effort to secure my own happiness!!", Line_Normal);
+	ClearMessage();
+
+	DrawFilm( 2, 176, 155, 104, 255, 0, 250, TRUE );
+	DrawScene( "kimi_o1", 500 );
+
+//夏美rvS08/36/320100522.「…………だったら……ッッ！！kvS08/36/320100523.　だったらっ！　もう要らない、こんなものッ！！kvS08/36/320100524.　全て無くなれッ！！　消え去ってしまえぇえぇぇッッ！！」
+	PlaySE(4, "S08/36/320100522", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…………だったら……ッッ！！",
+			NULL, "\"...In that case...!!", Line_WaitForInput);
+	PlaySE(4, "S08/36/320100523", 256, 64);
+	OutputLine(NULL, "　だったらっ！　もう要らない、こんなものッ！！",
+			NULL, " In that case! I don't need that anymore!!", Line_WaitForInput);
+	PlaySE(4, "S08/36/320100524", 256, 64);
+	OutputLine(NULL, "　全て無くなれッ！！　消え去ってしまえぇえぇぇッッ！！」",
+			NULL, " It can all go away!! Disappeeeeear!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "k1-swing", 256, 64);
+	DrawSceneWithMask( "white", "down", 0, 0, 500 );
+	DrawSceneWithMask( "black", "down", 0, 0, 500 );
+	FadeFilm( 500, TRUE );
+
+//夏美の母rvS08/00/320600043.「…夏美？kvS08/00/320600044.　どこ行くの、まだ話は終わって——kvS08/00/320600045.ひっ？！」
+	PlaySE(4, "S08/00/320600043", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…夏美？",
+			NULL, "\"...Natsumi?", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600044", 256, 64);
+	OutputLine(NULL, "　どこ行くの、まだ話は終わって——",
+			NULL, " Where are you going? I haven't finished talking to you...", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600045", 256, 64);
+	OutputLine(NULL, "ひっ？！」",
+			NULL, " Hiii?!\"", Line_Normal);
+	ClearMessage();
+
+//r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+//夏美の母rvS08/00/320600046.「や、やめなさい夏美！kvS08/00/320600047.　あなた、何を考えてるの！！kvS08/00/320600048.　ひゃ、や、やめっ、ギャアァァアァッッ！！」
+	PlaySE(4, "S08/00/320600046", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の母</color>", NULL, "<color=#f5e6d3>Natsumi's mom</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「や、やめなさい夏美！",
+			NULL, "\"S-stop it, Natsumi!", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600047", 256, 64);
+	OutputLine(NULL, "　あなた、何を考えてるの！！",
+			NULL, " What are you thinking?!", Line_WaitForInput);
+	PlaySE(4, "S08/00/320600048", 256, 64);
+	OutputLine(NULL, "　ひゃ、や、やめっ、ギャアァァアァッッ！！」",
+			NULL, " Hiii, s-sto, yaaaaahh!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "thisikuki", 256, 64);
+	DrawSceneWithMask( "ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	DrawScene( "black", 1000 );
+
+//r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "thisikuki", 256, 64);
+	PlaySE(4, "S08/00/320600048_1", 256, 64);
+	Wait( 1000 );
+	PlaySE(3, "thisikuki", 256, 64);
+	PlaySE(4, "S08/00/320600048_2", 256, 64);
+	Wait( 1000 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	PlaySE(4, "S08/00/320600048_3", 256, 64);
+	Wait( 1000 );
+
+//夏美の祖母rvS08/00/320800018.「春子？kvS08/00/320800019.　どうしたんだい？kvS08/00/320800020.　変な叫び声を上げて——kvS08/00/320800021.ひ、ヒィィィッッ？！」
+	PlaySE(4, "S08/00/320800018", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の祖母</color>", NULL, "<color=#f5e6d3>Natsumi's grandmother</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「春子？",
+			NULL, "\"Haruko?", Line_WaitForInput);
+	PlaySE(4, "S08/00/320800019", 256, 64);
+	OutputLine(NULL, "　どうしたんだい？",
+			NULL, " What's going on?", Line_WaitForInput);
+	PlaySE(4, "S08/00/320800020", 256, 64);
+	OutputLine(NULL, "　変な叫び声を上げて——",
+			NULL, " I heard a scream...", Line_WaitForInput);
+	PlaySE(4, "S08/00/320800021", 256, 64);
+	OutputLine(NULL, "ひ、ヒィィィッッ？！」",
+			NULL, " Hi, hiiii?!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "thisikuki", 256, 64);
+	DrawSceneWithMask( "ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	DrawScene( "black", 1000 );
+
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(4, "S08/00/320800021_1", 256, 64);
+	Wait( 2000 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(4, "S08/00/320800021_2", 256, 64);
+	Wait( 6000 );
+
+//r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+//夏美の父rvS08/00/320700033.「ただいまー。kvS08/00/320700034.…ん、何だこの臭い？kvS08/00/320700035.　おーい、はる——」
+	PlaySE(4, "S08/00/320700033", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ただいまー。",
+			NULL, "\"I'm hooome.", Line_WaitForInput);
+	PlaySE(4, "S08/00/320700034", 256, 64);
+	OutputLine(NULL, "…ん、何だこの臭い？",
+			NULL, " ...Hmm? What's that smell?", Line_WaitForInput);
+	PlaySE(4, "S08/00/320700035", 256, 64);
+	OutputLine(NULL, "　おーい、はる——」",
+			NULL, " Heey, Haru...\"", Line_Normal);
+	ClearMessage();
+
+//r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+//夏美の父rvS08/00/320700036.「は、はは、春子ッッ？！kvS08/00/320700037.　い、いったいこれはなッ、kvS08/00/320700038.——ぎゃ、ぎゃぁぁあぁぁッッ！！！」
+	PlaySE(4, "S08/00/320700036", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>夏美の父</color>", NULL, "<color=#f5e6d3>Natsumi's dad</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「は、はは、春子ッッ？！",
+			NULL, "\"Ha-H-H-Haruko?!", Line_WaitForInput);
+	PlaySE(4, "S08/00/320700037", 256, 64);
+	OutputLine(NULL, "　い、いったいこれはなッ、",
+			NULL, " W-what happened here?", Line_WaitForInput);
+	PlaySE(4, "S08/00/320700038", 256, 64);
+	OutputLine(NULL, "——ぎゃ、ぎゃぁぁあぁぁッッ！！！」",
+			NULL, " ...Gya, gyaaaaaa!!!\"", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "thisikuki", 256, 64);
+	DrawSceneWithMask( "ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	DrawScene( "black", 1000 );
+	PlaySE(3, "addse07", 256, 64);
+	DrawSceneWithMask( "ryuuketu2", "c", 0, 0, 500 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	PlaySE(4, "S08/00/320700038_1", 256, 64);
+	Wait( 3000 );
+	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
+	PlaySE(4, "S08/00/320700038", 256, 64);
+	Wait( 3000 );
+	PlaySE(3, "down", 256, 64);
+	DrawScene( "black", 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 1000 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(3, "thisikuki", 256, 64);
+	Wait( 500 );
+	PlaySE(4, "S08/00/320700038_2", 256, 64);
+	Wait( 3000 );
+	PlaySE(3, "addse07", 256, 64);
+	DrawSceneWithMask( "ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 1000 );
+	DrawScene( "black", 500 );
+	Wait( 1000 );
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	Negative( 500, FALSE );
+	DrawScene( "kai_ten", 1000 );
+
+//夏美rvS08/36/320100525.「はぁっ…はぁっ…はぁっ…！！」
+	PlaySE(4, "S08/36/320100525", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「はぁっ…はぁっ…はぁっ…！！」",
+			NULL, "\"Haah... haah... haah...!!\"", Line_Normal);
+	ClearMessage();
+
+//r心臓がつぶれそうなほどの鼓動が、私の胸を激しく叩く。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "心臓がつぶれそうなほどの鼓動が、私の胸を激しく叩く。",
+			NULL, "My heart was beating against the inside of my chest hard enough to shatter it.", Line_Normal);
+	ClearMessage();
+
+//rな、…なんなの今の光景…？！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "な、…なんなの今の光景…？！",
+			NULL, "Wh-what did I see just now...?!", Line_Normal);
+	ClearMessage();
+
+//rこれは私の、夢…？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "これは私の、夢…？",
+			NULL, "Was that a dream...?", Line_Normal);
+	ClearMessage();
+
+//rそれとも、…ずっと思い描いていた願い？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それとも、…ずっと思い描いていた願い？",
+			NULL, "Or... was that the wish I was always hoping for?", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1032.「ね？kvS08/00/VT2B_aoi1033.　逃げるなら、…今だよ？」
+	PlaySE(4, "S08/00/VT2B_aoi1032", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ね？",
+			NULL, "\"So?", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1033", 256, 64);
+	OutputLine(NULL, "　逃げるなら、…今だよ？」",
+			NULL, " Are you going to... run away now?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100526.「に、逃げるって…kvS08/36/320100527.ど、どうして？！」
+	PlaySE(4, "S08/36/320100526", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「に、逃げるって…",
+			NULL, "\"R-run away...", Line_WaitForInput);
+	PlaySE(4, "S08/36/320100527", 256, 64);
+	OutputLine(NULL, "ど、どうして？！」",
+			NULL, " W-why?!\"", Line_Normal);
+	ClearMessage();
+
+//あおいrvS08/00/VT2B_aoi1034.「くすくすくす…。kvS08/00/VT2B_aoi1035.だってお姉ちゃん、まだ殺したりないって顔してるよ？kvS08/00/VT2B_aoi1036.　まだいるんでしょ？kvS08/00/VT2B_aoi1037.　殺したい人…」
+	PlaySE(4, "S08/00/VT2B_aoi1034", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「くすくすくす…。",
+			NULL, "\"Teehehe...", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1035", 256, 64);
+	OutputLine(NULL, "だってお姉ちゃん、まだ殺したりないって顔してるよ？",
+			NULL, " Because, Sis, isn't there someone you haven't killed yet?", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1036", 256, 64);
+	OutputLine(NULL, "　まだいるんでしょ？",
+			NULL, " Still someone,", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1037", 256, 64);
+	OutputLine(NULL, "　殺したい人…」",
+			NULL, " that you want to kill...?\"", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100528.「——」
+	PlaySE(4, "S08/36/320100528", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「——」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+	FadeFilm( 1000, FALSE );
+	DrawScene( "black", 500 );
+	FadeOutBGM( 2, 200, FALSE  );
+
+//r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+//r……あ。そういえば。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "……あ。そういえば。",
+			NULL, "...Oh. Come to think of it.", Line_Normal);
+	ClearMessage();
+
+//r思い出した。うん、…思い出しちゃった。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "思い出した。うん、…思い出しちゃった。",
+			NULL, "I remembered. Yeah... I just remembered.", Line_Normal);
+	ClearMessage();
+
+//rあはははは、なんで忘れてたんだろう。ワタシってバカだなぁ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "あはははは、なんで忘れてたんだろう。ワタシってバカだなぁ。",
+			NULL, "Ahahahaha, how could I forget? I'm such an idiot.", Line_Normal);
+	ClearMessage();
+
+//r途中でどこかのバカ刑事に邪魔されて、せっかくのプランが中断したままじゃない。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "途中でどこかのバカ刑事に邪魔されて、せっかくのプランが中断したままじゃない。",
+			NULL, "That stupid detective interrupted my precious plan before I was finished.", Line_Normal);
+	ClearMessage();
+
+//rじゃあ、…今から殺りに行く？　彼のこと？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "じゃあ、…今から殺りに行く？　彼のこと？",
+			NULL, "Well then... what am I going to do about him? Kill him?", Line_Normal);
+	ClearMessage();
+
+//夏美rvS08/36/320100529.「……」
+	PlaySE(4, "S08/36/320100529", 256, 64);
+	if (AdvMode) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「……」",
+			NULL, "\"......\"", Line_Normal);
+	ClearMessage();
+
+//rいや、…それはだめ。絶対に、だめ。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "いや、…それはだめ。絶対に、だめ。",
+			NULL, "No... that's no good. Absolutely not.", Line_Normal);
+	ClearMessage();
+
+//r藤堂くんは、…殺さない。だって私のこと、これ以上嫌いになってほしくない…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "藤堂くんは、…殺さない。だって私のこと、これ以上嫌いになってほしくない…！",
+			NULL, "I won't kill... Toudou-kun. Because I don't want to give him another reason to hate me...!", Line_Normal);
+	ClearMessage();
+
+//rだとしたら、…誰？　誰をワタシと、一緒に連れて行く？
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "だとしたら、…誰？　誰をワタシと、一緒に連れて行く？",
+			NULL, "In that case... who? Who should I take with me?", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "sinzouappaku", 256, 64);
+	DrawScene( "white", 250 );
+	FadeOutBGM( 1, 200, FALSE  );
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+	PlayBGM( 2, "hm02_11", 128, 0 );
+	Wait( 500 );
+
+//rうふふ、うふふふふ…！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "うふふ、うふふふふ…！",
+			NULL, "Ehehe, ehehehehe...!", Line_Normal);
+	ClearMessage();
+
+//r決まってる…決まってる、あいつだよッッ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "決まってる…決まってる、あいつだよッッ！！",
+			NULL, "I've decided... I've decided who it should be!!", Line_Normal);
+	ClearMessage();
+
+//rまだあいつ、たいした怪我もなく残ってるじゃない！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まだあいつ、たいした怪我もなく残ってるじゃない！",
+			NULL, "Even though you've sustained significant injuries, you're still out there!", Line_Normal);
+	ClearMessage();
+
+//rワタシの幸せ、横取っていくあいつが——！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ワタシの幸せ、横取っていくあいつが——！！",
+			NULL, "You, who worked so hard to take my happiness from me...!!", Line_Normal);
+	ClearMessage();
+
+//rあいつがぁぁ……っっ！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "あいつがぁぁ……っっ！！",
+			NULL, "You...!!", Line_Normal);
+	ClearMessage();
+
+	Negative( 500, TRUE );
+	DrawScene( "kai_ten", 500 );
+
+//rあはははははははははははははははははははははは！！k　そうだそうだ！！k　あいつが残ってた！！k　ぐぎゃごげぎげぎょぐげげげげげげげげげげげげげげげげげッッッ！！！
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "あはははははははははははははははははははははは！！",
+			NULL, "Ahahahahahahahahahahahahahahahahahahahahahaha!!", Line_WaitForInput);
+	OutputLine(NULL, "　そうだそうだ！！",
+			NULL, " That's right!!", Line_WaitForInput);
+	OutputLine(NULL, "　あいつが残ってた！！",
+			NULL, " You're still out there!", Line_WaitForInput);
+	OutputLine(NULL, "　ぐぎゃごげぎげぎょぐげげげげげげげげげげげげげげげげげッッッ！！！",
+			NULL, " Gugyagogegigegyogugegegegegegegegegegegegegegegegege!!!", Line_Normal);
+	ClearMessage();
+
+//女性警官rvS08/00/VT2B_PoliFa1015.「公由さん？kvS08/00/VT2B_PoliFa1016.　どうしました、公由さん？」
+	PlaySE(4, "S08/00/VT2B_PoliFa1015", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>女性警官</color>", NULL, "<color=#f5e6d3>Policewoman</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「公由さん？",
+			NULL, "\"Kimiyoshi-san?", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_PoliFa1016", 256, 64);
+	OutputLine(NULL, "　どうしました、公由さん？」",
+			NULL, " What's going on, Kimiyoshi-san?\"", Line_Normal);
+	ClearMessage();
+
+	FadeFilm( 1000, FALSE );
+	DrawScene( "black", 500 );
+
+//r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+//女性警官rvS08/00/VT2B_PoliFa1017.「ッ？！　し、しまった！！kvS08/00/VT2B_PoliFa1018.　すぐに署に連絡、急げッッ！！」
+	PlaySE(4, "S08/00/VT2B_PoliFa1017", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>女性警官</color>", NULL, "<color=#f5e6d3>Policewoman</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ッ？！　し、しまった！！",
+			NULL, "\"...?! D-damn it!!", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_PoliFa1018", 256, 64);
+	OutputLine(NULL, "　すぐに署に連絡、急げッッ！！」",
+			NULL, " Hurry, contact the station right away!!\"", Line_Normal);
+	ClearMessage();
+
+//r…………。
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…………。",
+			NULL, "......", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "sora_inverse", 1000 );
+
+//あおいrvS08/00/VT2B_aoi1038.「ふふ、うふふふふふふふふふ。kvS08/00/VT2B_aoi1039.…みんな、死んじゃえ。kvS08/00/VT2B_aoi1040.あははははははははははははははははは」
+	PlaySE(4, "S08/00/VT2B_aoi1038", 256, 64);
+	if (AdvMode) { OutputLine("<color=#f5e6d3>あおい</color>", NULL, "<color=#f5e6d3>Aoi</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ふふ、うふふふふふふふふふ。",
+			NULL, "\"Hehe, ehehehehehehehehehe.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1039", 256, 64);
+	OutputLine(NULL, "…みんな、死んじゃえ。",
+			NULL, " ...Everyone must die.", Line_WaitForInput);
+	PlaySE(4, "S08/00/VT2B_aoi1040", 256, 64);
+	OutputLine(NULL, "あははははははははははははははははは」",
+			NULL, " Ahahahahahahahahahahahahahahahahaha.\"", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	Wait( 3000 );
+	DrawBustshotWithFiltering( 6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot( 7, "Title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot( 5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene( "black", 3000 );
+	SetValidityOfInput( TRUE );
+
+	EnableJumpingOfReturnIcon();
+
+	if (AdvMode) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "New TIPS available.",
+		   NULL, "New TIPS available.", Line_Normal);
+	ClearMessage();
+
+	char TIPS134[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		TIPS134[0] = "View TIP 134";
+		TIPS134[1] = "Skip";
+	}
+	else
+	{
+		TIPS134[0] = "TIP134を見る";
+		TIPS134[1] = "無視する";
+	}
+
+//	InitializeSelectedItem();
+	Select( 2, TIPS134 );
+	DisableWindow();
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallScript( "tips_134" );
+	}
+}
