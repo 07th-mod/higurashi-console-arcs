@@ -9,14 +9,15 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 | Someutsushi | 100%     | 100%        | 100%    | 
 | Kageboushi  | 100%     | 100%        | 100%    | 
 
-Someutsushi is complete, including all the TIPS and the omake sequence.  Kageboushi is fully ported to PC and fully English translated.  Doing a final round of testing, and then I'll start packaging everything together in a proper release.
+Someutsushi and Kageboushi are fully ported to PC and English translated, including the tips.  The latest release can be played in both ADV and NVL mode, so play however you like!  I'll spend some time working through issues in this release before beginning work on the next arc.
 
 The old poll results can be found [here](https://strawpoll.com/ee8gge6).
 
 ## Screenshots
 
-![](http://i.imgur.com/MsEMBNc.png)
-![](http://i.imgur.com/i0WWQ8C.png)
+![](https://i.imgur.com/mBxKC8p.png)
+![](https://i.imgur.com/A5Iym0R.png)
+
 
 ## Requirements
 Installation requires a copy of Ch 4 Himatsubushi, either the Steam version or directly from Mangagamer's website.  The patch converts a Himatsubushi installation into one that can play all of the currently released console arcs.
