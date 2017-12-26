@@ -19,16 +19,22 @@ The old poll results can be found [here](https://strawpoll.com/ee8gge6).
 ![](http://i.imgur.com/i0WWQ8C.png)
 
 ## Requirements
-Installation requires a copy of Ch 4 Himatsubushi, either the Steam version or directly from Mangagamer's website.  The patch converts a Himatsubushi installation into one that can theoretically play all of the console arcs.
+Installation requires a copy of Ch 4 Himatsubushi, either the Steam version or directly from Mangagamer's website.  The patch converts a Himatsubushi installation into one that can play all of the currently released console arcs.
 
-## Installation Instructions
-1. Install Higurashi Ch.4 Himatsubushi on your computer.  (If you're using the Steam version, I recommend changing the default installation directory to somewhere other than C:\program files. Windows doesn't like when you modify files in program files)
-2. Download the latest release of the Console Arcs Patch [Here.](https://github.com/07th-mod/higurashi-console-arcs/releases/latest)
-3. Navigate to the directory where Himatsubushi is installed on your computer and drill down to "\Higurashi 04 - Himatsubushi\HigurashiEp04_Data\StreamingAssets"
-4. Delete the existing BGM, CGAlt, SE, and Update folders under the StreamingAssets directory.
-5. Extract the BGM, CGAlt, SE, and Update folders from the higurashi-console-arcs-ver1.1.rar file into the StreamingAssets directory.
-6. Launch the application by using the HigurashiEp04.exe executable in the "\Higurashi 04 - Himatsubushi" directory
-7. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  I won't do this on subsequent launches.
+### Manual Installation Instructions
+
+1. Download all four of the following archives:
+[BGM](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-BGM.zip), [CG](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-CG.zip), [SE](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-SE.zip), [voice](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-voice.zip)
+2. Download the [latest version of the patch](https://github.com/07th-mod/higurashi-console-arcs/releases/latest)
+3. Navigate to the ``Higurashi 04 - Himatsubushi\HigurashiEp04_Data\StreamingAssets`` directory on your local system
+4. Delete the existing BGM, CG, and SE folders
+5. Extract the Voice patch ``voice`` folder **inside** the ``StreamingAssets`` folder.
+6. Extract the graphics patch ``CG`` folder **inside** the ``StreamingAssets`` folder.
+7. Extract the music patch ``BGM`` folder **inside** the ``StreamingAssets`` folder.
+8. Extract the sound effects patch ``SE`` folder **inside** the ``StreamingAssets`` folder.
+9. Navigate back to ``\HigurashiEp04_Data`` and extract the patch ``StreamingAssets`` and ``Managed`` folders inside this folder.
+10. You can play the colsole arcs by runnung ``HigurashiEp04.exe``, which is in the ``Higurashi 04 - Himatsubushi`` directory.
+11. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  I won't do this on subsequent launches.
 
 ## Recruiting
 
