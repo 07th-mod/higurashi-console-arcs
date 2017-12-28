@@ -9,9 +9,7 @@ This patch aims to eventually port all the arcs from the PS3 version of Higurash
 | Someutsushi | 100%     | 100%        | 100%    | 
 | Kageboushi  | 100%     | 100%        | 100%    | 
 
-Someutsushi and Kageboushi are fully ported to PC and English translated, including the tips.  The latest release can be played in both ADV and NVL mode, so play however you like!  I'll spend some time working through issues in this release before beginning work on the next arc.
-
-The old poll results can be found [here](https://strawpoll.com/ee8gge6).
+Someutsushi and Kageboushi are fully ported to PC and English translated, including the tips.  The latest release can be played in both ADV and NVL mode, so play however you like!
 
 ## Screenshots
 
@@ -20,9 +18,22 @@ The old poll results can be found [here](https://strawpoll.com/ee8gge6).
 
 
 ## Requirements
-Installation requires a copy of Ch 4 Himatsubushi, either the Steam version or directly from Mangagamer's website.  The patch converts a Himatsubushi installation into one that can play all of the currently released console arcs.
+Installation requires a copy of Ch 4 Himatsubushi, either the Steam version or the DRM-free version from Mangagamer's website.  The patch converts a Himatsubushi installation into one that can play both of the currently released console arcs.
 
-### Manual Installation Instructions
+## Installation Instructions
+### Automated installer (Windows only)
+
+The automated installer will automatically drop all the necessary files in the appropriate locations.  You just need to download the console arcs installer: [Here](https://github.com/07th-mod/resources/releases/download/installer/Console.Arcs.PS3.Voice.and.Graphics.Installer.exe)
+
+After downloading the console arcs installer, run it and set the installation directory to your Himatsubushi Steam game directory (also works for MangaGamer's DRM free release). If you are unsure **where** the Steam game is located, find it in your Steam library, right-click on it and choose ``Properties``. In the new window that just opened, click on the ``LOCAL FILES`` tab and then on the ``Browse local files...`` button. Now you should be able to see where your game is located in Windows Explorer.
+
+> **Protip**: copy the address bar in Windows Explorer and paste it in the installer!
+
+After properly finding and directing the installation to the game's directory, hit the install button and wait. The first step of the installation should be pretty fast, and a CMD window (Windows command line) should open and do the rest of the installation automatically. When the process is finished, it'll display a message and close the window automatically. The game should be already patched and ready to play.
+
+> **PSA**: as reported, some antivirus softwares might warn you about the installer. This is a false positive, and it happens because the installer runs a batch file (that results in the CMD window opening to download and install the patch). The installer code can be freely accessed in our [Resource](https://github.com/07th-mod/resources) repository and is clean of viruses.
+
+### Manual Installation (Windows, Max, linux)
 
 1. Download all four of the following archives:
 [BGM](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-BGM.zip), [CG](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-CG.zip), [SE](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-SE.zip), [voice](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-voice.zip)
@@ -34,7 +45,7 @@ Installation requires a copy of Ch 4 Himatsubushi, either the Steam version or d
 7. Extract the music patch ``BGM`` folder **inside** the ``StreamingAssets`` folder.
 8. Extract the sound effects patch ``SE`` folder **inside** the ``StreamingAssets`` folder.
 9. Navigate back to ``\HigurashiEp04_Data`` and extract the patch ``StreamingAssets`` and ``Managed`` folders inside this folder.
-10. You can play the colsole arcs by runnung ``HigurashiEp04.exe``, which is in the ``Higurashi 04 - Himatsubushi`` directory.
+10. You can play the console arcs by running ``HigurashiEp04.exe``, which is in the ``Higurashi 04 - Himatsubushi`` directory.
 11. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  I won't do this on subsequent launches.
 
 ## Recruiting
