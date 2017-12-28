@@ -29,11 +29,11 @@ After downloading the console arcs installer, run it and set the installation di
 
 > **Protip**: copy the address bar in Windows Explorer and paste it in the installer!
 
-After properly finding and directing the installation to the game's directory, hit the install button and wait. The first step of the installation should be pretty fast, and a CMD window (Windows command line) should open and do the rest of the installation automatically. When the process is finished, it'll display a message and close the window automatically. The game should be already patched and ready to play.
+After properly finding and directing the installation to the game's directory, hit the install button and wait. The first step of the installation should be pretty fast, and a CMD window (Windows command line) should open and do the rest of the installation automatically. When the process is finished, it'll display a message and close the window automatically. The game should be already patched and ready to play.  You can launch it by running ``HigurashiEp04.exe``, which is in the ``Higurashi 04 - Himatsubushi`` directory.
 
-> **PSA**: as reported, some antivirus softwares might warn you about the installer. This is a false positive, and it happens because the installer runs a batch file (that results in the CMD window opening to download and install the patch). The installer code can be freely accessed in our [Resource](https://github.com/07th-mod/resources) repository and is clean of viruses.
+> **PSA**: as reported, some antivirus software might warn you about the installer. This is a false positive, and it happens because the installer runs a batch file (that results in the CMD window opening to download and install the patch). The installer code can be freely accessed in our [Resource](https://github.com/07th-mod/resources) repository and is clean of viruses.
 
-### Manual Installation (Windows, Max, linux)
+### Manual Installation (Windows, Mac, linux)
 
 1. Download all four of the following archives:
 [BGM](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-BGM.zip), [CG](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-CG.zip), [SE](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-SE.zip), [voice](https://github.com/07th-mod/resources/releases/download/Nipah/ConsoleArcs-voice.zip)
