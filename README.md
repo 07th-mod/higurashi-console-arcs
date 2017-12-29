@@ -2,6 +2,8 @@
 
 This patch aims to eventually port all the arcs from the PS3 version of Higurashi to Mangagamer's Steam release of Higurashi.  This is a large task and it will take a long time to port them all, so each arc will be rolled out one at a time.
 
+Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fit in with the main series and the recommended reading order.
+
 ## Current Status
 
 | Chapter     | PC Port  | Translation | Editing |
