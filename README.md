@@ -10,8 +10,9 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | ----------- | -------- | ----------- | ------- |
 | Someutsushi | 100%     | 100%        | 100%    | 
 | Kageboushi  | 100%     | 100%        | 100%    | 
+| Tsukiotoshi | 100%     |   0%        |   0%    | 
 
-Someutsushi and Kageboushi are fully ported to PC and English translated, including the tips.  The latest release can be played in both ADV and NVL mode, so play however you like!
+Tsukiotoshi has been ported to the PC engine.  Beginning translation now.
 
 ## Screenshots
 
