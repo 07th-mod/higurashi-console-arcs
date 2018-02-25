@@ -10,7 +10,7 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | ----------- | -------- | ----------- | ------- |
 | Someutsushi | 100%     | 100%        | 100%    | 
 | Kageboushi  | 100%     | 100%        | 100%    | 
-| Tsukiotoshi | 100%     |  12%        |   0%    | 
+| Tsukiotoshi | 100%     |  25%        |   0%    | 
 
 Tsukiotoshi has been ported to the PC engine.  Beginning translation now.
 
