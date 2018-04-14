@@ -10,9 +10,9 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | ----------- | -------- | ----------- | ------- |
 | Someutsushi | 100%     | 100%        | 100%    | 
 | Kageboushi  | 100%     | 100%        | 100%    | 
-| Tsukiotoshi | 100%     |  87%        |   0%    | 
+| Tsukiotoshi | 100%     |  99%        |   0%    | 
 
-Tsukiotoshi has been ported to the PC engine.  Beginning translation now.
+Tsukiotoshi has been ported to the PC engine.  Script translation is complete, but a few images still require translation.  Beginning editing now.
 
 ## Screenshots
 
@@ -49,7 +49,7 @@ After properly finding and directing the installation to the game's directory, h
 8. Extract the sound effects patch ``SE`` folder **inside** the ``StreamingAssets`` folder.
 9. Navigate back to ``\HigurashiEp04_Data`` and extract the patch ``StreamingAssets`` and ``Managed`` folders inside this folder.
 10. You can play the console arcs by running ``HigurashiEp04.exe``, which is in the ``Higurashi 04 - Himatsubushi`` directory.
-11. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  I won't do this on subsequent launches.
+11. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  It won't do this on subsequent launches.
 
 ## Recruiting
 
