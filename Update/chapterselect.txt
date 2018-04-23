@@ -1,4 +1,4 @@
-﻿
+
 void main()
 {
 
@@ -13,30 +13,32 @@ void main()
 	DrawSceneWithMask( "scenario_select", "5", 0, 0, 500 );
 
 	EnableJumpingOfReturnIcon();
-	
+
 	OutputLine(NULL, "",
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
-	
-	char Chapter[3];
+
+	char Chapter[4];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
-		Chapter[0] = "Someutsushi";
-		Chapter[1] = "Kageboushi";
-		Chapter[2] = "Back";
+		Chapter[0] = "Tsukiotoshi";
+		Chapter[1] = "Someutsushi";
+		Chapter[2] = "Kageboushi";
+		Chapter[3] = "Back";
 	}
 	else
 	{
-		Chapter[0] = "染伝し編";
-		Chapter[1] = "影紡し編";
-		Chapter[2] = "戻る";
+		Chapter[0] = "憑落し編";
+		Chapter[1] = "染伝し編";
+		Chapter[2] = "影紡し編";
+		Chapter[3] = "戻る";
 	}
 
 //	InitializeSelectedItem();
-	Select( 3, Chapter );
+	Select( 4, Chapter );
 	DisableWindow();
-	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	if(LoadValueFromLocalWork( SelectResult ) == 1)
 	{
 		DrawScene( "scenario_a", 500 );
 		DrawSceneWithMask( "scenario_b", "5", 0, 0, 500 );
@@ -48,7 +50,7 @@ void main()
 		{
 			StopBGM( 2 );
 			PlaySE( 1, "wa_037", 128, 64 );
-	
+
 			SetValidityOfSaving( TRUE );
 			CallSection("Someutsushi");
 		}
@@ -59,7 +61,7 @@ void main()
 			CallScript( "flow" );
 		}
 	}
-	else if(LoadValueFromLocalWork( SelectResult ) == 1)
+	else if(LoadValueFromLocalWork( SelectResult ) == 2)
 	{
 		DrawScene( "scenario_a", 500 );
 		DrawSceneWithMask( "scenario_b_kage", "5", 0, 0, 500 );
@@ -71,9 +73,32 @@ void main()
 		{
 			StopBGM( 2 );
 			PlaySE( 1, "wa_037", 128, 64 );
-	
+
 			SetValidityOfSaving( TRUE );
 			CallSection("Kageboushi");
+		}
+		else
+		{
+			StopBGM( 2 );
+			DrawScene("black", 500);
+			CallScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		DrawScene( "scenario_a", 500 );
+		DrawSceneWithMask( "scenario_b_tsuki", "5", 0, 0, 500 );
+		DrawSceneWithMask( "scenario_c_tsuki", "5", 0, 0, 500 );
+
+		ShowChapterPreview();
+
+		if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1)
+		{
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetValidityOfSaving( TRUE );
+			CallSection("Tsukiotoshi");
 		}
 		else
 		{
@@ -89,7 +114,7 @@ void main()
 		DrawScene("black", 500);
 		CallScript( "flow" );
 	}
-	
+
 }
 
 void SetDay()
@@ -119,7 +144,7 @@ void Someutsushi()
 	CallScript( "some_012" );
 	CallScript( "some_013" );
 	CallScript( "some_014" );
-	
+
 	CallScript( "flow" );
 }
 
@@ -137,6 +162,28 @@ void Kageboushi()
 	CallScript( "kage_010" );
 	CallScript( "kage_011" );
 	CallScript( "kage_012" );
-	
+
+	CallScript( "flow" );
+}
+
+void Tsukiotoshi()
+{
+	CallScript( "tsuk_001" );
+	CallScript( "tsuk_002" );
+	CallScript( "tsuk_003" );
+	CallScript( "tsuk_004" );
+	CallScript( "tsuk_005" );
+	CallScript( "tsuk_006" );
+	CallScript( "tsuk_007" );
+	CallScript( "tsuk_008" );
+	CallScript( "tsuk_009" );
+	CallScript( "tsuk_010" );
+	CallScript( "tsuk_011" );
+	CallScript( "tsuk_012" );
+	CallScript( "tsuk_013" );
+	CallScript( "tsuk_014" );
+	CallScript( "tsuk_015" );
+	CallScript( "tsuk_016" );
+
 	CallScript( "flow" );
 }
