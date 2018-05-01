@@ -10,9 +10,9 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | ----------- | -------- | ----------- | ------- |
 | Someutsushi | 100%     | 100%        | 100%    | 
 | Kageboushi  | 100%     | 100%        | 100%    | 
-| Tsukiotoshi | 100%     | 100%        |  90%    | 
+| Tsukiotoshi | 100%     | 100%        | 100%    | 
 
-Tsukiotoshi has been ported to the PC engine.  Script translation is complete.  Beginning editing now.
+Tsukiotoshi has been fully translated and edited.  A [pre-release version](https://github.com/07th-mod/higurashi-console-arcs/releases/tag/v3.0.0) has been released for anyone feeling adventurous.  Proper release coming soon!
 
 ## Screenshots
 
