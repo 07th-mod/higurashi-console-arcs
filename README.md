@@ -13,13 +13,12 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
 | Taraimawashi |   0%     |   0%        |   0%    | 
 
-Tsukiotoshi has been [released](https://github.com/07th-mod/higurashi-console-arcs/releases/tag/v3.1.0) and is now available in the automated installer, or via manual installation.  Follow the instructions below to get it.
+Tsukiotoshi has been released and is now available in the automated installer, or via manual installation.  Follow the instructions below to get it.
 
 The next arc to be translated is Taraimawashi.  Beginning the porting process now.
 
 ## Screenshots
 
-![](https://i.imgur.com/mBxKC8p.png)
 ![](https://i.imgur.com/A5Iym0R.png)
 
 
