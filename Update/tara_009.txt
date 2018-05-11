@@ -835,6 +835,7 @@ void main()
 	ClearMessage();
 
 	Wait( 1000 );
+	DisableWindow();
 	PlaySE(3, "a6", 256, 64);
 	DrawScene("white", 1000 );
 	Wait( 500 );
@@ -843,6 +844,30 @@ void main()
 	DrawScene("black", 3000 );
 
 	EnableJumpingOfReturnIcon();
+	OutputLine(NULL, "New TIPS available.",
+		   NULL, "New TIPS available.", Line_Normal);
+	ClearMessage();
+
+	char TIPS54[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		TIPS54[0] = "View TIP 54";
+		TIPS54[1] = "Skip";
+	}
+	else
+	{
+		TIPS54[0] = "TIP54を見る";
+		TIPS54[1] = "無視する";
+	}
+
+	Select( 2, TIPS54 );
+	DisableWindow();
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallScript( "tara_tips_054" );
+	}
+
 	OutputLine(NULL, "Taraimawashi has an alternate ending that is intended to be read after completing Tsukiotoshi.",
 		   NULL, "Taraimawashi has an alternate ending that is intended to be read after completing Tsukiotoshi.", Line_Normal);
 	ClearMessage();

@@ -2933,4 +2933,53 @@ void main()
 	DrawScene("black", 3000 );
 	SetValidityOfInput( TRUE );
 
+	EnableJumpingOfReturnIcon();
+	OutputLine(NULL, "New TIPS available.",
+		   NULL, "New TIPS available.", Line_Normal);
+	ClearMessage();
+
+	char TIPS52[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		TIPS52[0] = "View TIP 52";
+		TIPS52[1] = "Skip";
+	}
+	else
+	{
+		TIPS52[0] = "TIP52を見る";
+		TIPS52[1] = "無視する";
+	}
+
+	Select( 2, TIPS52 );
+	DisableWindow();
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallScript( "tara_tips_052" );
+	}
+	
+	OutputLine(NULL, "New TIPS available.",
+		   NULL, "New TIPS available.", Line_Normal);
+	ClearMessage();
+
+	char TIPS53[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		TIPS53[0] = "View TIP 53";
+		TIPS53[1] = "Skip";
+	}
+	else
+	{
+		TIPS53[0] = "TIP53を見る";
+		TIPS53[1] = "無視する";
+	}
+
+	Select( 2, TIPS53 );
+	DisableWindow();
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallScript( "tara_tips_053" );
+	}
+
 }
