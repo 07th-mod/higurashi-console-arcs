@@ -11,11 +11,11 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | Someutsushi  | 100%     | 100%        | 100%    | 
 | Kageboushi   | 100%     | 100%        | 100%    | 
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
-| Taraimawashi | 100%     |  75%        |   0%    | 
+| Taraimawashi | 100%     | 100%        |   0%    | 
 
 Tsukiotoshi has been released and is now available in the automated installer, or via manual installation.  Follow the instructions below to get it.
 
-The next arc will be Taraimawashi.  Porting is complete, and translation is just starting.
+The next arc will be Taraimawashi.  Porting and translation are complete, beginning editing now.
 
 ## Screenshots
 
