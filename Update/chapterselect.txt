@@ -10,37 +10,55 @@ void main()
 
 	DrawSceneWithMask( "scenario_select", "5", 0, 0, 500 );
 
-	EnableJumpingOfReturnIcon();
+	//EnableJumpingOfReturnIcon();
 
 	OutputLine(NULL, "",
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
 
-	char Chapter[4];
+	char Chapter[5];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
-		Chapter[0] = "Tsukiotoshi";
-		Chapter[1] = "Someutsushi";
-		Chapter[2] = "Kageboushi";
-		Chapter[3] = "Back";
+		Chapter[0] = "Taraimawashi";
+		Chapter[1] = "Tsukiotoshi";
+		Chapter[2] = "Someutsushi";
+		Chapter[3] = "Kageboushi";
+		Chapter[4] = "Back";
+		
+		//Chapter[5] = "Yoigoshi";		
+		//Chapter[6] = "Tokihogushi";
+		//Chapter[7] = "Miotsukushi Omote";
+		//Chapter[8] = "Miotsukushi Ura";
+		//Chapter[9] = "Kotohogushi";
+		//Chapter[10] = "Hajisarashi";
+
 	}
 	else
 	{
-		Chapter[0] = "憑落し編";
-		Chapter[1] = "染伝し編";
-		Chapter[2] = "影紡し編";
-		Chapter[3] = "戻る";
+		Chapter[0] = "盥回し編";
+		Chapter[1] = "憑落し編";
+		Chapter[2] = "染伝し編";
+		Chapter[3] = "影紡し編";
+		Chapter[4] = "戻る";
+		
+		//Chapter[5] = "宵越し編";		
+		//Chapter[6] = "解々し編";
+		//Chapter[7] = "澪尽し編 表";
+		//Chapter[8] = "澪尽し編 裏";
+		//Chapter[9] = "言祝し編";
+		//Chapter[10] = "羞晒し編";
+
 	}
 
 //	InitializeSelectedItem();
-	Select( 4, Chapter );
+	Select( 5, Chapter );
 	DisableWindow();
-	if(LoadValueFromLocalWork( SelectResult ) == 1)
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
-		DrawScene( "scenario/someutsushi_a", 500 );
-		DrawSceneWithMask( "scenario/someutsushi_b", "5", 0, 0, 500 );
-		DrawSceneWithMask( "scenario/someutsushi_c", "5", 0, 0, 500 );
+		DrawScene( "scenario/taraimawashi_a", 500 );
+		DrawSceneWithMask( "scenario/taraimawashi_b", "5", 0, 0, 500 );
+		DrawSceneWithMask( "scenario/taraimawashi_c", "5", 0, 0, 500 );
 
 		ShowChapterPreview();
 
@@ -50,39 +68,14 @@ void main()
 			PlaySE( 1, "wa_037", 128, 64 );
 
 			SetValidityOfSaving( TRUE );
-			CallSection("Someutsushi");
+			CallSection("TaraiDay1");
 		}
 		else
 		{
-			StopBGM( 2 );
-			DrawScene("black", 500);
-			CallScript( "flow" );
+			JumpScript( "flow" );
 		}
 	}
-	else if(LoadValueFromLocalWork( SelectResult ) == 2)
-	{
-		DrawScene( "scenario/kageboushi_a", 500 );
-		DrawSceneWithMask( "scenario/kageboushi_b", "5", 0, 0, 500 );
-		DrawSceneWithMask( "scenario/kageboushi_c", "5", 0, 0, 500 );
-
-		ShowChapterPreview();
-
-		if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1)
-		{
-			StopBGM( 2 );
-			PlaySE( 1, "wa_037", 128, 64 );
-
-			SetValidityOfSaving( TRUE );
-			CallSection("Kageboushi");
-		}
-		else
-		{
-			StopBGM( 2 );
-			DrawScene("black", 500);
-			CallScript( "flow" );
-		}
-	}
-	else if(LoadValueFromLocalWork( SelectResult ) == 0)
+	else if(LoadValueFromLocalWork( SelectResult ) == 1)
 	{
 		DrawScene( "scenario/tsukiotoshi_a", 500 );
 		DrawSceneWithMask( "scenario/tsukiotoshi_b", "5", 0, 0, 500 );
@@ -96,13 +89,53 @@ void main()
 			PlaySE( 1, "wa_037", 128, 64 );
 
 			SetValidityOfSaving( TRUE );
-			CallSection("Tsukiotoshi");
+			CallSection("TsukiDay1");
 		}
 		else
 		{
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 2)
+	{
+		DrawScene( "scenario/someutsushi_a", 500 );
+		DrawSceneWithMask( "scenario/someutsushi_b", "5", 0, 0, 500 );
+		DrawSceneWithMask( "scenario/someutsushi_c", "5", 0, 0, 500 );
+
+		ShowChapterPreview();
+
+		if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1)
+		{
 			StopBGM( 2 );
-			DrawScene("black", 500);
-			CallScript( "flow" );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetValidityOfSaving( TRUE );
+			CallSection("SomeDay1");
+		}
+		else
+		{
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 3)
+	{
+		DrawScene( "scenario/kageboushi_a", 500 );
+		DrawSceneWithMask( "scenario/kageboushi_b", "5", 0, 0, 500 );
+		DrawSceneWithMask( "scenario/kageboushi_c", "5", 0, 0, 500 );
+
+		ShowChapterPreview();
+
+		if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1)
+		{
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetValidityOfSaving( TRUE );
+			CallSection("KageDay1");
+		}
+		else
+		{
+			JumpScript( "flow" );
 		}
 	}
 	else
@@ -110,7 +143,7 @@ void main()
 		StopBGM( 2 );
 		DisableWindow();
 		DrawScene("black", 500);
-		CallScript( "flow" );
+		JumpScript( "flow" );
 	}
 
 }
@@ -126,62 +159,442 @@ void SetDay()
 		SetGlobalFlag(GHimatsubushiDay, chapter);
 }
 
-void Someutsushi()
+void ViewTips()
+{
+	StoreValueToLocalWork( TipsMode , 2 );
+
+	CallSection("ViewTipsDisplay");
+}
+
+void ViewTipsDisplay()
+{
+	//uses local flag TipsMode to determine what happens
+	//0 - Leave, 1 - Show Extras Menu, 2 - Show Mid Chapter Screen, 3 - Show New Tips, 4 - Show All Tips (Local), 5 - Show All Tips (Global)
+
+	SetValidityOfSaving( TRUE );
+
+	DisableWindow();
+
+	if(LoadValueFromLocalWork( TipsMode ) < 3)
+		DrawScene("black", 0);
+
+	if(LoadValueFromLocalWork( TipsMode ) == 1)
+		ShowExtras();
+
+	if(LoadValueFromLocalWork( TipsMode ) == 2)
+		ShowChapterScreen();
+
+	if(LoadValueFromLocalWork( TipsMode ) > 2)
+	{
+		ShowTips(LoadValueFromLocalWork( TipsMode ) - 3);
+		CheckTipsAchievements();
+	}
+
+	if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) > 0)
+		CallSection("ViewTipsDisplay");
+}
+
+void SomeDay1()
 {
 	CallScript( "some_001" );
+	JumpSection("SomeDay2");
+}
+
+void SomeDay2()
+{
 	CallScript( "some_002" );
+	JumpSection("SomeDay3");
+}
+
+void SomeDay3()
+{
 	CallScript( "some_003" );
+
+	SetLocalFlag(GArc, 2);
+	StoreValueToLocalWork( ChapterNumber, 3 );
+	SavePoint("Ch.3 終わり", "End of Chapter 3");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("SomeDay4");
+}
+
+void SomeDay4()
+{
 	CallScript( "some_004" );
+	JumpSection("SomeDay5");
+}
+
+void SomeDay5()
+{
 	CallScript( "some_005" );
+	JumpSection("SomeDay6");
+}
+
+void SomeDay6()
+{
 	CallScript( "some_006" );
+
+	SetLocalFlag(GArc, 2);
+	StoreValueToLocalWork( ChapterNumber, 6 );
+	SavePoint("Ch.6 終わり", "End of Chapter 6");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("SomeDay7");
+}
+
+void SomeDay7()
+{
 	CallScript( "some_007" );
+
+	SetLocalFlag(GArc, 2);
+	StoreValueToLocalWork( ChapterNumber, 7 );
+	SavePoint("Ch.7 終わり", "End of Chapter 7");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("SomeDay8");
+}
+
+void SomeDay8()
+{
 	CallScript( "some_008" );
+	JumpSection("SomeDay9");
+}
+
+void SomeDay9()
+{
 	CallScript( "some_009" );
+
+	SetLocalFlag(GArc, 2);
+	StoreValueToLocalWork( ChapterNumber, 9 );
+	SavePoint("Ch.9 終わり", "End of Chapter 9");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("SomeDay10");
+}
+
+void SomeDay10()
+{
 	CallScript( "some_010" );
+	JumpSection("SomeDay11");
+}
+
+void SomeDay11()
+{
 	CallScript( "some_011" );
+	JumpSection("SomeDay12");
+}
+
+void SomeDay12()
+{
 	CallScript( "some_012" );
+	JumpSection("SomeDay13");
+}
+
+void SomeDay13()
+{
 	CallScript( "some_013" );
+	JumpSection("SomeDay14");
+}
+
+void SomeDay14()
+{
 	CallScript( "some_014" );
 
-	CallScript( "flow" );
+	SetLocalFlag(GArc, 2);
+	StoreValueToLocalWork( ChapterNumber, 14 );
+	SavePoint("Ch.14 終わり", "End of Chapter 14");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpScript( "flow" );
 }
 
-void Kageboushi()
+void KageDay1()
 {
 	CallScript( "kage_001" );
-	CallScript( "kage_002" );
-	CallScript( "kage_003" );
-	CallScript( "kage_004" );
-	CallScript( "kage_005" );
-	CallScript( "kage_006" );
-	CallScript( "kage_007" );
-	CallScript( "kage_008" );
-	CallScript( "kage_009" );
-	CallScript( "kage_010" );
-	CallScript( "kage_011" );
-	CallScript( "kage_012" );
 
-	CallScript( "flow" );
+	SetLocalFlag(GArc, 3);
+	StoreValueToLocalWork( ChapterNumber, 1 );
+	SavePoint("Ch.1 終わり", "End of Chapter 1");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KageDay2");
 }
 
-void Tsukiotoshi()
+void KageDay2()
+{
+	CallScript( "kage_002" );
+
+	SetLocalFlag(GArc, 3);
+	StoreValueToLocalWork( ChapterNumber, 2 );
+	SavePoint("Ch.2 終わり", "End of Chapter 2");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KageDay3");
+}
+
+void KageDay3()
+{
+	CallScript( "kage_003" );
+
+	SetLocalFlag(GArc, 3);
+	StoreValueToLocalWork( ChapterNumber, 3 );
+	SavePoint("Ch.3 終わり", "End of Chapter 3");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KageDay4");
+}
+
+void KageDay4()
+{
+	CallScript( "kage_004" );
+
+	SetLocalFlag(GArc, 3);
+	StoreValueToLocalWork( ChapterNumber, 4 );
+	SavePoint("Ch.4 終わり", "End of Chapter 4");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KageDay5");
+}
+
+void KageDay5()
+{
+	CallScript( "kage_005" );
+	JumpSection("KageDay6");
+}
+
+void KageDay6()
+{
+	CallScript( "kage_006" );
+	JumpSection("KageDay7");
+}
+
+void KageDay7()
+{
+	CallScript( "kage_007" );
+
+	SetLocalFlag(GArc, 3);
+	StoreValueToLocalWork( ChapterNumber, 7 );
+	SavePoint("Ch.7 終わり", "End of Chapter 7");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KageDay8");
+}
+
+void KageDay8()
+{
+	CallScript( "kage_008" );
+	JumpSection("KageDay9");
+}
+
+void KageDay9()
+{
+	CallScript( "kage_009" );
+	JumpSection("KageDay10");
+}
+
+void KageDay10()
+{
+	CallScript( "kage_010" );
+	JumpSection("KageDay11");
+}
+
+void KageDay11()
+{
+	CallScript( "kage_011" );
+
+	SetLocalFlag(GArc, 3);
+	StoreValueToLocalWork( ChapterNumber, 11 );
+	SavePoint("Ch.11 終わり", "End of Chapter 11");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KageDay12");
+}
+
+void KageDay12()
+{
+	CallScript( "kage_012" );
+
+	SetLocalFlag(GArc, 3);
+	StoreValueToLocalWork( ChapterNumber, 12 );
+	SavePoint("Ch.12 終わり", "End of Chapter 12");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpScript( "flow" );
+}
+
+void TsukiDay1()
 {
 	CallScript( "tsuk_001" );
-	CallScript( "tsuk_002" );
-	CallScript( "tsuk_003" );
-	CallScript( "tsuk_004" );
-	CallScript( "tsuk_005" );
-	CallScript( "tsuk_006" );
-	CallScript( "tsuk_007" );
-	CallScript( "tsuk_008" );
-	CallScript( "tsuk_009" );
-	CallScript( "tsuk_010" );
-	CallScript( "tsuk_011" );
-	CallScript( "tsuk_012" );
-	CallScript( "tsuk_013" );
-	CallScript( "tsuk_014" );
-	CallScript( "tsuk_015" );
-	CallScript( "tsuk_016" );
+	JumpSection("TsukiDay2");
+}
 
-	CallScript( "flow" );
+void TsukiDay2()
+{
+	CallScript( "tsuk_002" );
+	JumpSection("TsukiDay3");
+}
+
+void TsukiDay3()
+{
+	CallScript( "tsuk_003" );
+	JumpSection("TsukiDay4");
+}
+
+void TsukiDay4()
+{
+	CallScript( "tsuk_004" );
+	JumpSection("TsukiDay5");
+}
+
+void TsukiDay5()
+{
+	CallScript( "tsuk_005" );
+	JumpSection("TsukiDay6");
+}
+
+void TsukiDay6()
+{
+	CallScript( "tsuk_006" );
+	JumpSection("TsukiDay7");
+}
+
+void TsukiDay7()
+{
+	CallScript( "tsuk_007" );
+	JumpSection("TsukiDay8");
+}
+
+void TsukiDay8()
+{
+	CallScript( "tsuk_008" );
+	JumpSection("TsukiDay9");
+}
+
+void TsukiDay9()
+{
+	CallScript( "tsuk_009" );
+	JumpSection("TsukiDay10");
+}
+
+void TsukiDay10()
+{
+	CallScript( "tsuk_010" );
+	JumpSection("TsukiDay11");
+}
+
+void TsukiDay11()
+{
+	CallScript( "tsuk_011" );
+	JumpSection("TsukiDay12");
+}
+
+void TsukiDay12()
+{
+	CallScript( "tsuk_012" );
+	JumpSection("TsukiDay13");
+}
+
+void TsukiDay13()
+{
+	CallScript( "tsuk_013" );
+	JumpSection("TsukiDay14");
+}
+
+void TsukiDay14()
+{
+	CallScript( "tsuk_014" );
+	JumpSection("TsukiDay15");
+}
+
+void TsukiDay15()
+{
+	CallScript( "tsuk_015" );
+	JumpSection("TsukiDay16");
+}
+
+void TsukiDay16()
+{
+	CallScript( "tsuk_016" );
+	JumpScript( "flow" );
+}
+
+
+void TaraiDay1()
+{
+	CallScript( "tara_001" );
+
+	SetLocalFlag(GArc, 0);
+	StoreValueToLocalWork( ChapterNumber, 1 );
+	SavePoint("Ch.1 終わり", "End of Chapter 1");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("TaraiDay2");
+}
+
+void TaraiDay2()
+{
+	CallScript( "tara_002" );
+	JumpSection("TaraiDay3");
+}
+
+void TaraiDay3()
+{
+	CallScript( "tara_003" );
+	JumpSection("TaraiDay4");
+}
+
+void TaraiDay4()
+{
+	CallScript( "tara_004" );
+	JumpSection("TaraiDay5");
+}
+
+void TaraiDay5()
+{
+	CallScript( "tara_005" );
+	JumpSection("TaraiDay6");
+}
+
+void TaraiDay6()
+{
+	CallScript( "tara_006" );
+	JumpSection("TaraiDay7");
+}
+
+void TaraiDay7()
+{
+	CallScript( "tara_007" );
+	JumpSection("TaraiDay8");
+}
+
+void TaraiDay8()
+{
+	CallScript( "tara_008" );
+	JumpSection("TaraiDay9");
+}
+
+void TaraiDay9()
+{
+	CallScript( "tara_009" );
+
+	SetLocalFlag(GArc, 0);
+	StoreValueToLocalWork( ChapterNumber, 9 );
+	SavePoint("Ch.9 終わり", "End of Chapter 9");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpScript( "flow" );
 }

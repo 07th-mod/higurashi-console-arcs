@@ -22,15 +22,15 @@ void main()
 	PlaySE(3, "s00/n/tarai001", 256, 64);
 	Wait( 4500 );
 	PlaySE(3, "s00/n/tarai002", 256, 64);
-	Wait( 4500 );
+	Wait( 5000 );
 	DrawScene("text/monologue_tara2", 1000 );
 	PlaySE(3, "s00/n/tarai003", 256, 64);
 	Wait( 9000 );
 	PlaySE(3, "s00/n/tarai004", 256, 64);
-	Wait( 2500 );
+	Wait( 3000 );
 	DrawScene("text/title_tarai", 1000 );
 	PlaySE(3, "s00/n/tarai006", 256, 64);
-	Wait( 1500 );
+	Wait( 2000 );
 	DrawScene("text/monologue_tara3", 1000 );
 	PlaySE(3, "s00/n/tarai007", 256, 64);
 	Wait( 2500 );
@@ -2952,54 +2952,5 @@ void main()
 	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
 	DrawScene("black", 3000 );
 	SetValidityOfInput( TRUE );
-
-	EnableJumpingOfReturnIcon();
-	OutputLine(NULL, "New TIPS available.",
-		   NULL, "New TIPS available.", Line_Normal);
-	ClearMessage();
-
-	char TIPS52[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		TIPS52[0] = "View TIP 52";
-		TIPS52[1] = "Skip";
-	}
-	else
-	{
-		TIPS52[0] = "TIP52を見る";
-		TIPS52[1] = "無視する";
-	}
-
-	Select( 2, TIPS52 );
-	DisableWindow();
-	if(LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		CallScript( "tara_tips_052" );
-	}
 	
-	OutputLine(NULL, "New TIPS available.",
-		   NULL, "New TIPS available.", Line_Normal);
-	ClearMessage();
-
-	char TIPS53[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		TIPS53[0] = "View TIP 53";
-		TIPS53[1] = "Skip";
-	}
-	else
-	{
-		TIPS53[0] = "TIP53を見る";
-		TIPS53[1] = "無視する";
-	}
-
-	Select( 2, TIPS53 );
-	DisableWindow();
-	if(LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		CallScript( "tara_tips_053" );
-	}
-
 }
