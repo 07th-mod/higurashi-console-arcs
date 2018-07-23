@@ -15,17 +15,20 @@ namespace HigurashiSuiParser
         static HashSet<String> translations = new HashSet<String>();
         static void Main(string[] args)
         {
-            String xmlScriptPath = @"D:\Downloads\07th Modding\sui_output_joined\sui_output_taraomake.xml"; //input
+            String xmlScriptPath = @"D:\Downloads\07th Modding\sui_output_joined\sui_output_tokihogushi.xml"; //input
             String CGfolder = @"D:\Steam\steamapps\common\Higurashi 04 - Himatsubushi\HigurashiEp04_Data\StreamingAssets\CG"; //input
             String spritesDirectory = @"D:\Downloads\07th Modding\Higurashi Files\HigurashiPS3-Sprites\m"; //input
-            String outFilePath = @"D:\Downloads\07th Modding\Higurashi Files\HigurashiPS3-Script\out.taraomake.utf"; //output
+            String outFilePath = @"D:\Downloads\07th Modding\Higurashi Files\HigurashiPS3-Script\toki_"; //output
             String textOnlyFilePath = @"D:\Downloads\07th Modding\Higurashi Files\HigurashiPS3-Script\text.utf"; //output
             String filesUsedFilePath = @"D:\Downloads\07th Modding\Higurashi Files\HigurashiPS3-Script\filesUsed.utf"; //output
+            String arcName = "Tokihogushi";
 
             List<String> cgFilesList = new List<String>();
             List<String> seFilesList = new List<String>();
             List<String> bgmFilesList = new List<String>();
 
+            int outFileNbr = 1;
+            bool beforeFirstChapter = true;
             bool channel4Active = false;
             bool channel7Active = false;
             bool bgmActive = false;
@@ -69,7 +72,9 @@ namespace HigurashiSuiParser
             XmlTextReader reader = new XmlTextReader(xmlScriptPath);
 
             System.IO.StreamWriter outFile =
-                new System.IO.StreamWriter(outFilePath, false, Encoding.UTF8);
+                new System.IO.StreamWriter(GetOutFilePath(outFilePath, outFileNbr), false, Encoding.UTF8);
+
+            OutputFileHeader(outFile, arcName, outFileNbr);
 
             System.IO.StreamWriter textOnlyFile =
                 new System.IO.StreamWriter(textOnlyFilePath, false, Encoding.UTF8);
@@ -97,6 +102,27 @@ namespace HigurashiSuiParser
                 else if (type.Equals("SECTION_START"))
                 {
                     line = reader.GetAttribute("section");
+                    type = reader.GetAttribute("section_type");
+
+                    if (type.Equals("CHAPTER"))
+                    {
+                        if (beforeFirstChapter)
+                        {
+                            //don't bother with rollover on the very first chapter
+                            //this ensures the text before the section is still output and the file numbers start at 1
+                            beforeFirstChapter = false;
+                        }
+                        else
+                        {
+                            //rollover to the next script file and increment the file number
+                            OutputFileFooter(outFile);
+                            outFile.Close();
+                            outFileNbr++;
+                            outFile = new System.IO.StreamWriter(GetOutFilePath(outFilePath, outFileNbr), false, Encoding.UTF8);
+                            OutputFileHeader(outFile, arcName, outFileNbr);
+                        }
+                    }
+
                     processDialogLine(line, outFile, textOnlyFile);
                 }
                 else if (type.Equals("PIC_LOAD"))
@@ -276,6 +302,9 @@ namespace HigurashiSuiParser
                 outFile.Flush();
                 textOnlyFile.Flush();
             }
+
+            OutputFileFooter(outFile);
+            outFile.Flush();
 
             filesUsed.WriteLine("Images needed in CG directory:\r\n");
             cgFilesList.Sort();
@@ -707,5 +736,45 @@ namespace HigurashiSuiParser
                 }
             }
         }
+
+        static void OutputFileHeader(System.IO.StreamWriter outFile, String arcName, int outFileNbr)
+        {
+            outFile.WriteLine("void main()");
+            outFile.WriteLine("{");
+            outFile.WriteLine("");
+            outFile.WriteLine("");
+            outFile.WriteLine("//*"+arcName+" Day "+outFileNbr);
+            outFile.WriteLine("//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞");
+            outFile.WriteLine("//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞");
+            outFile.WriteLine("");
+            outFile.WriteLine("	FadeOutBGM( 0, 1000, FALSE  );");
+            outFile.WriteLine("	FadeOutBGM( 1, 1000, FALSE  );");
+            outFile.WriteLine("	FadeOutBGM( 2, 1000, FALSE  );");
+            outFile.WriteLine("	FadeOutBGM( 3, 1000, TRUE );");
+            outFile.WriteLine("");
+        }
+
+        static void OutputFileFooter(System.IO.StreamWriter outFile)
+        {
+            outFile.WriteLine("	DisableWindow();");
+            outFile.WriteLine("	SetValidityOfInput( FALSE );");
+            outFile.WriteLine("	Wait( 3000 );");
+            outFile.WriteLine("	DrawBustshotWithFiltering(6, \"cinema\", \"x\", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );");
+            outFile.WriteLine("	DrawBustshot(7, \"title02\", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );");
+            outFile.WriteLine("	Wait( 2000 );");
+            outFile.WriteLine("	DrawBustshot(6, \"black\", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );");
+            outFile.WriteLine("	Wait( 1000 );");
+            outFile.WriteLine("	FadeBustshotWithFiltering( 7, \"x\", 1, FALSE, 0, 0, 1000, TRUE );");
+            outFile.WriteLine("	DrawScene( \"black\", 3000 );");
+            outFile.WriteLine("	SetValidityOfInput( TRUE );");
+            outFile.WriteLine("");
+            outFile.WriteLine("}");
+        }
+
+        static String GetOutFilePath(String outFilePath, int outFileNbr)
+        {
+            return outFilePath + outFileNbr.ToString("D3") + ".txt";
+        }
+
     }
 }
