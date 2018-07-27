@@ -40,7 +40,8 @@ If you are unsure **where** the Steam game is located, find it in your Steam lib
 2. Download the [latest version of the patch](https://github.com/07th-mod/higurashi-console-arcs/releases/latest)
 3. Navigate to the ``Higurashi 04 - Himatsubushi\`` directory on your local system
 4. Extract all six archives inside the ``Higurashi 04 - Himatsubushi\`` directory
-5. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  It won't do this on subsequent launches.
+5. You can play the console arcs by running ``HigurashiEp04.exe``, which is in the ``Higurashi 04 - Himatsubushi`` directory. 
+6. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  It won't do this on subsequent launches.
 
 ## Recruiting
 
