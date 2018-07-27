@@ -11,11 +11,10 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | Someutsushi  | 100%     | 100%        | 100%    | 
 | Kageboushi   | 100%     | 100%        | 100%    | 
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
-| Taraimawashi | 100%     | 100%        |  90%    | 
+| Taraimawashi | 100%     | 100%        | 100%    | 
 
-Tsukiotoshi has been released and is now available in the automated installer, or via manual installation.  Follow the instructions below to get it.
+Taraimawashi is complete!  Follow the instructions below to download it.
 
-The next arc will be Taraimawashi.  Porting and translation are complete, beginning editing now.
 
 ## Screenshots
 
@@ -36,18 +35,12 @@ If you are unsure **where** the Steam game is located, find it in your Steam lib
 
 ### Manual Installation (Windows, Mac, linux)
 
-1. Download all four of the following archives:
-[BGM](https://github.com/07th-mod/resources/releases/download/Hanyuu/ConsoleArcs-BGM.7z), [CG](https://github.com/07th-mod/resources/releases/download/Hanyuu/ConsoleArcs-CG.7z), [SE](https://github.com/07th-mod/resources/releases/download/Hanyuu/ConsoleArcs-SE.7z), [voice](https://github.com/07th-mod/resources/releases/download/Hanyuu/ConsoleArcs-Voices.7z)
+1. Download all five of the following archives:
+[BGM](https://07th-mod.com/rikachama/ConsoleArcs-BGM.7z), [CG](https://07th-mod.com/rikachama/ConsoleArcs-CG.7z), [SE](https://07th-mod.com/rikachama/ConsoleArcs-SE.7z), [voice](https://07th-mod.com/rikachama/ConsoleArcs-Voices.7z), [UI](https://07th-mod.com/rikachama/Himatsubushi-UI.7z)
 2. Download the [latest version of the patch](https://github.com/07th-mod/higurashi-console-arcs/releases/latest)
-3. Navigate to the ``Higurashi 04 - Himatsubushi\HigurashiEp04_Data\StreamingAssets`` directory on your local system
-4. Delete the existing BGM, CG, and SE folders
-5. Extract the Voice patch ``voice`` folder **inside** the ``StreamingAssets`` folder.
-6. Extract the graphics patch ``CG`` folder **inside** the ``StreamingAssets`` folder.
-7. Extract the music patch ``BGM`` folder **inside** the ``StreamingAssets`` folder.
-8. Extract the sound effects patch ``SE`` folder **inside** the ``StreamingAssets`` folder.
-9. Navigate back to ``\HigurashiEp04_Data`` and extract the patch ``StreamingAssets`` and ``Managed`` folders inside this folder.
-10. You can play the console arcs by running ``HigurashiEp04.exe``, which is in the ``Higurashi 04 - Himatsubushi`` directory.
-11. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  It won't do this on subsequent launches.
+3. Navigate to the ``Higurashi 04 - Himatsubushi\`` directory on your local system
+4. Extract all six archives inside the ``Higurashi 04 - Himatsubushi\`` directory
+5. The first time you launch the application, it will spend 10-15 seconds processing the new script files before it loads.  It won't do this on subsequent launches.
 
 ## Recruiting
 
