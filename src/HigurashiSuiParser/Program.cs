@@ -131,11 +131,11 @@ namespace HigurashiSuiParser
                     if (file.StartsWith("e/")) //this is a CG image
                     {
                         file = file.Substring(2);
-                        outFile.WriteLine("	DrawScene(\"scene\\" + file + "\", 1000 );\r\n");
+                        outFile.WriteLine("	DrawScene(\"scene/" + file + "\", 1000 );\r\n");
                     }
                     else
                     {
-                        outFile.WriteLine("	DrawScene(\"background\\" + file + "\", 1000 );\r\n");
+                        outFile.WriteLine("	DrawScene(\"background/" + file + "\", 1000 );\r\n");
                     }
 
                     slot5Active = false;
@@ -229,16 +229,16 @@ namespace HigurashiSuiParser
                     file = file.ToLower();
                     spriteMapping.TryGetValue(file, out actualFile);
                     if (activeMode == colorMode.Night)
-                        actualFile = "night\\" + actualFile;
+                        actualFile = "night/" + actualFile;
                     else if (activeMode == colorMode.Sunset)
-                        actualFile = "sunset\\" + actualFile;
+                        actualFile = "sunset/" + actualFile;
                     else
-                        actualFile = "normal\\" + actualFile;
+                        actualFile = "normal/" + actualFile;
 
                     if (isZoomSprite)
-                        actualFile = "portrait\\" + actualFile;
+                        actualFile = "portrait/" + actualFile;
                     else
-                        actualFile = "sprite\\" + actualFile;
+                        actualFile = "sprite/" + actualFile;
 
                     if (slot.Equals("5"))
                     {
