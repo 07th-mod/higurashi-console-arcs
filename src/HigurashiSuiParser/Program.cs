@@ -684,6 +684,8 @@ namespace HigurashiSuiParser
                     String[]vSplit = voiceRegion.Split('|');
                     for (int i=0;i< vSplit.Length;i++)
                     {
+                        vSplit[i] = "ps3/" + vSplit[i];
+                        vSplit[i] = vSplit[i].ToLower();
                         String se = "\tPlaySE(" + (i+4) + ", \"" + vSplit[i] + "\", 256, 64);";
                         outFile.WriteLine(se);
                     }
@@ -703,6 +705,8 @@ namespace HigurashiSuiParser
                 else
                 {
                     //this is a single-voice line
+                    voiceRegion = "ps3/" + voiceRegion;
+                    voiceRegion = voiceRegion.ToLower();
                     String se = "\tPlaySE(4, \"" + voiceRegion + "\", 256, 64);";
                     outFile.WriteLine(se);
                     String output = "\tOutputLine(NULL, \"" + textRegion + "\",\n\t\t\tNULL, \"\", "+ lineStyle+"); ";
