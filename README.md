@@ -36,7 +36,7 @@ If you are unsure **where** the Steam game is located, find it in your Steam lib
 ### Manual Installation (Windows, Mac, linux)
 
 1. Download all five of the following archives:
-[BGM](https://07th-mod.com/rikachama/ConsoleArcs-BGM.7z), [CG](https://07th-mod.com/rikachama/ConsoleArcs-CG.7z), [SE](https://07th-mod.com/rikachama/ConsoleArcs-SE.7z), [voice](https://07th-mod.com/rikachama/ConsoleArcs-Voices.7z), [UI](https://07th-mod.com/rikachama/Himatsubushi-UI.7z)
+[BGM](https://07th-mod.com/rikachama/ConsoleArcs-BGM.7z), [CG](https://07th-mod.com/rikachama/ConsoleArcs-CG.7z), [SE](https://07th-mod.com/rikachama/ConsoleArcs-SE.7z), [voice](https://07th-mod.com/rikachama/ConsoleArcs-Voices.7z), and the appropriate UI mod for your operating system ([Windows UI](https://07th-mod.com/rikachama/Himatsubushi-UI.7z) / [Mac/Linux UI](https://07th-mod.com/rikachama/Himatsubushi-UI_UNIX.7z))
 2. Download the [latest version of the patch](https://github.com/07th-mod/higurashi-console-arcs/releases/latest)
 3. Navigate to the ``Higurashi 04 - Himatsubushi\`` directory on your local system
 4. Extract all six archives inside the ``Higurashi 04 - Himatsubushi\`` directory
