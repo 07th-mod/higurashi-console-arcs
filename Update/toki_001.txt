@@ -15,14 +15,11 @@
 
 //#1 ある日の巴
 
-	DrawScene("background/t/toki_fre", 1000 );
-
+	DrawScene("text/toki_fre", 1000 );
+	Wait( 15000 );
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm01_07", 128, 0);
-
 	DrawScene("background/ke_keijika1_01", 1000 );
-
 	DrawScene("background/ke5", 1000 );
 
 //まどかrvS11/29/420400001.「……あ」
@@ -53,10 +50,8 @@
 	ClearMessage();
 
 	PlaySE(3, "addse16", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ke5", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/ke5", 250 );
 
 //rそれが案の定姉のものとわかって、まどかは『あったりぃ』とばかりに指をぱちんっ、と鳴らした。
 	OutputLine(NULL, "それが案の定姉のものとわかって、まどかは『あったりぃ』とばかりに指をぱちんっ、と鳴らした。",
@@ -82,9 +77,7 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("background/ke2", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/mado_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //まどかrvS11/29/420400004.「お疲れ様でーす。南井じちょ」
@@ -94,12 +87,12 @@
 	ClearMessage();
 
 	DrawBustshot( 4, "sprite/normal/mado_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	PlayBGM(2, "hm01_06", 128, 0);
-
+	Wait( 1000 );
 	PlaySE(3, "dageki", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	DrawBustshot( 4, "sprite/normal/mado_odoroki_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	PlayBGM(2, "hm01_06", 128, 0);
+	Wait( 500 );
 
 //まどかrvS11/29/420400005.「…え、ええぇぇえぇっっ？！」
 	PlaySE(4, "ps3/s11/29/420400005", 256, 64);
@@ -193,6 +186,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	DrawBustshot( 4, "sprite/normal/mado_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //まどかrvS11/29/420400010.「大したことあるわよっ！kvS11/29/420400011.　…あーあ、ジャケットぼろぼろじゃない！kvS11/29/420400012.　腕も足も怪我だらけなんて、跡残ったらどうすんのよ？！」
@@ -259,8 +253,6 @@
 	OutputLine(NULL, "思わず、同じ女性として頭を抱えたくなった。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -330,7 +322,6 @@
 	ClearMessage();
 
 	DrawScene("background/ke2", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/mado_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //まどかrvS11/29/420400017.「まったくもう…！kvS11/29/420400018.　いくら警部さんだからって、女の身で犯人とやりあうなんて無茶というか、自殺行為だよ？」
@@ -361,6 +352,7 @@
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //まどかrvS11/29/420400021.「しょっちゅうだったらたまんないわよ！kvS11/29/420400022.　ここは国連軍指定の紛争地域かっての？！」
 	PlaySE(4, "ps3/s11/29/420400021", 256, 64);
@@ -490,8 +482,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rまどかはぶつぶつとぼやきながら、警察手帳を取り出すと今日の日付と時間、場所とさっきの巴の台詞を書きとめる。
@@ -510,7 +500,6 @@
 	ClearMessage();
 
 	DrawScene("background/ke2", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/mado_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //まどかrvS11/29/420400034.「それにしても…」
@@ -541,16 +530,11 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 500 );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	PlayBGM(2, "hm01_03", 128, 0);
-
 	DrawScene("background/ke_shochou", 1000 );
 
 //r昭和５７年、１０月。
@@ -588,8 +572,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "down", 0, 0, 1000 );
 	DrawScene("background/ke_keijika1", 1000 );
 
 //刑事rvS11/00/VT3B_keijiA2003.「…いくらなんでも、扱いが酷すぎるんじゃないか？kvS11/00/VT3B_keijiA2004.　配属早々、準キャリアのエリートさんを『次長』に就けるなんて」
@@ -903,14 +886,12 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 500 );
+	FadeFilm( 500, TRUE );
+	DrawScene( "black", 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
+	Wait( 1000 );
 	PlayBGM( 1, "yoru", 128, 0 );
-
 	DrawScene("background/ke_s2", 1000 );
 
 //岡部rvS11/00/421100001.「…あの小娘が、またお手柄か。kvS11/00/421100002.まったく腹の立つ話だな、児島くん？」
@@ -1058,9 +1039,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("background/ke_s2", 1000 );
-
 	PlayBGM(2, "hm10_56", 128, 0);
 
 //岡部rvS11/00/421100008.「『姫』、か。kvS11/00/421100009.…ばかばかしいほど御大層な呼び名だな」
@@ -1115,6 +1094,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	DrawScene("background/mati12", 1000 );
 
 //rそれに加えて、昇進試験を毎回トップで合格するほどの能力。語学にも長け、国立大で心理学を専攻してきただけあって、捜査方針などの説明は理路整然として隙がない。
@@ -1163,6 +1143,7 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 500, TRUE );
 
 //岡部r-vS11/00/421100014.（近い将来、あの小娘を上司に仰ぐことになるのか…）
 	PlaySE(4, "ps3/s11/00/421100014", 256, 64);
@@ -1235,6 +1216,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, FALSE );
 	DrawScene("background/ke_shochou", 1000 );
 
 //rこの垣内署では、１年前に中央から異動してきた署長の山沖と、地元叩き上げの秦副署長との仲が明らかに良くない。
@@ -1368,6 +1350,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	FadeFilm( 500, FALSE );
 	DrawScene("background/ke_s2", 1000 );
 
 //岡部r-vS11/00/421100019.（それならばむしろ、二課へ取り込んでおくべきだったな）
@@ -1430,9 +1413,8 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
-
+	Wait( 1000 );
 	PlayBGM( 1, "yoru", 128, 0 );
 
 //巴rvS11/28/420100020.「っくしゅん！」
@@ -1441,7 +1423,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ke2", 1000 );
+	DrawScene("background/ke2", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r着替え終わって廊下を歩きながら、巴は鼻を押さえてくしゃみをする。その途端、さっき出した鼻血の名残か、きな臭い匂いが迫りあがってきて思わず顔をしかめた。
 	OutputLine(NULL, "着替え終わって廊下を歩きながら、巴は鼻を押さえてくしゃみをする。その途端、さっき出した鼻血の名残か、きな臭い匂いが迫りあがってきて思わず顔をしかめた。",
@@ -1460,7 +1443,6 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	DrawScene("background/ke_kyukei1_02", 1000 );
 
 //巴rvS11/28/420100022.「はぁ、ただいま」
@@ -1470,9 +1452,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/mado2_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm10_54", 128, 0);
 
 //まどかrvS11/29/420400036.「あ、お帰りなさーい」
@@ -1619,6 +1599,7 @@
 	ClearMessage();
 
 	DrawBustshot( 4, "sprite/normal/mado2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //まどかrvS11/29/420400046.「よっと。…あ、お金は？」
 	PlaySE(4, "ps3/s11/29/420400046", 256, 64);
@@ -1684,8 +1665,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("background/ke5", 1000 );
 
 //r改めて聞いても、実にあほらしい話だった。
@@ -1709,7 +1688,6 @@
 	ClearMessage();
 
 	DrawScene("background/ke_kyukei1_02", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/mado2_niga_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //まどかrvS11/29/420400053.「藤田さんの奥さんって、ヤキモチ焼きっていうか…すごい人みたいだね。kvS11/29/420400054.なんでまぁ、そんなキッツイ人と一緒になろうって思ったのやら」
@@ -1793,12 +1771,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
-
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	DrawScene("background/jyu1", 1000 );
 
 //rそれでも、…その運任せの賭けに、巴は勝った。
@@ -1821,10 +1796,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	FadeFilm( 500, FALSE );
 	DrawScene("background/ke_kyukei1_02", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/mado2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm01_07", 128, 0);
 
 //まどかrvS11/29/420400059.「…でも、その頃藤田さんは地獄だったんだって？kvS11/29/420400060.　どんな感じだったの？」
@@ -1934,8 +1908,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそう言いながらも、…照れ臭くて口にはしないが、さすが姉だとまどかは思う。
@@ -1954,7 +1926,6 @@
 	ClearMessage();
 
 	DrawScene("background/ke_kyukei1_02", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/mado2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //まどかr-vS11/29/420400068.（だからといって、見習う気にはなれないけどね）
@@ -1999,7 +1970,7 @@
 	ClearMessage();
 
 	DrawBustshot( 4, "sprite/normal/mado2_niga_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM(2, "hm01_06", 128, 0);
 
 //まどかrvS11/29/420400070.「ぎくっ」
@@ -2210,8 +2181,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r頷きながらも、半信半疑どころか猜疑心全開でまどかは巴を見つめる。
@@ -2246,7 +2215,6 @@
 	ClearMessage();
 
 	DrawScene("background/ke_kyukei1_02", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/mado2_sabi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //まどかrvS11/29/420400089.「お姉ちゃん、kvS11/29/420400090.…あの、わかってるよ、ね？kvS11/29/420400091.　今日一緒に行くのって、…薫さんなんだけど」
@@ -2275,8 +2243,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r…どうしよう。何が言葉のトラップなのか、さっぱりわからない。
@@ -2290,7 +2256,6 @@
 	ClearMessage();
 
 	DrawScene("background/ke_kyukei1_02", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/mado2_sabi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS11/28/420100063.「なに深読みしてるのよ。kvS11/28/420100064.…私は普通に、『いってらっしゃい』と言ってるの」
@@ -2353,9 +2318,6 @@
 	ClearMessage();
 
 	PlaySE(3, "se051", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rぱぁっ、と笑顔が満面に弾けて、まどかは思わずこみ上げそうになる目の潤みをなんとかこらえる。
@@ -2389,7 +2351,6 @@
 	ClearMessage();
 
 	DrawScene("background/ke_kyukei1_02", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/mado2_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //まどかrvS11/29/420400096.「じゃあ、行ってくる。kvS11/29/420400097.ありがとうね、お姉ちゃん」
@@ -2441,8 +2402,8 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
+	Wait( 2000 );
 
 //巴rvS11/28/420100074.「…また、聞けなかった」
 	PlaySE(4, "ps3/s11/28/420100074", 256, 64);
@@ -2450,10 +2411,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	PlaySE(3, "down", 256, 64);
-
 	DrawScene("background/ke5", 1000 );
-
+	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM(2, "hm01_03", 128, 0);
 
 //r安物の肘掛け椅子に深く腰かけ、どかっと背中を預けて天井を見上げる。
@@ -2701,12 +2661,10 @@
 
 	FadeOutBGM(2, 200, FALSE);
 
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm05_20", 128, 0);
-
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	DrawScene("background/sora_01", 1000 );
 
 //r今から１１年前の、昭和４６年。
@@ -2725,6 +2683,7 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 500, TRUE );
 
 //巴rvS11/28/420100086.『…………』
 	PlaySE(4, "ps3/s11/28/420100086", 256, 64);
@@ -2774,6 +2733,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, FALSE );
 	DrawScene("background/sora_01", 1000 );
 
 //巴rvS11/28/420100087.『……っ……！！』
@@ -2899,8 +2859,9 @@
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	DrawScene("black", 1000 );
+	FadeFilm( 500, TRUE );
 
 //巴rvS11/28/420100090.『…………え？』
 	PlaySE(4, "ps3/s11/28/420100090", 256, 64);
@@ -2914,11 +2875,8 @@
 	ClearMessage();
 
 	PlaySE(3, "door", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "left", 0, 0, 500 );
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
 	PlaySE(3, "down2", 256, 64);
 
 //rそして引き戸を力任せにこじ開け、置かれてあった工具箱に隠れた奥に、…油紙に包まれた一冊のノートを見つけたのだ……。
@@ -2927,11 +2885,8 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	PlayBGM( 1, "yoru", 128, 0 );
-
 	DrawScene("background/ke_keijika1_02", 1000 );
 
 //巴rvS11/28/420100091.「……」
@@ -3011,18 +2966,6 @@
 	OutputLine(NULL, "いまだ証拠らしきものは何もつかめないまま、ただ無為に時のみが過ぎていた。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

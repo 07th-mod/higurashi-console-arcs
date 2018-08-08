@@ -13,10 +13,9 @@
 
 //#11 運命の歯車
 
-	PlayBGM( 1, "yoru", 128, 0 );
-
 	DrawScene("background/koudou_02", 1000 );
-
+	PlayBGM( 1, "yoru", 128, 0 );
+	Wait( 1000 );
 	DrawScene("background/k_kouen1_02", 1000 );
 
 //r…どれだけ飲んで、どの店を回ってここにたどり着いたのか、覚えていない。
@@ -112,6 +111,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	DrawBustshot( 4, "sprite/normal/nagisa_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //渚rvS11/35/420500280.『…南井さん』
@@ -121,6 +121,7 @@
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+	FadeFilm( 500, TRUE );
 
 //巴rvS11/28/420101342.「…っ……！」
 	PlaySE(4, "ps3/s11/28/420101342", 256, 64);
@@ -292,13 +293,9 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/sora_01", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("background/sora_01", 500 );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //rその時、遠くのほうから奇妙な音がかすかに聞こえてくる。
@@ -312,10 +309,8 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/sora_01", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/sora_01", 500 );
 
 //rいや、…違う。これと似たものをつい最近、感じたことがある。
 	OutputLine(NULL, "いや、…違う。これと似たものをつい最近、感じたことがある。",
@@ -323,10 +318,8 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/sora_01", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/sora_01", 500 );
 
 //rああ、そうだ思い出した。…雛見沢だ。
 	OutputLine(NULL, "ああ、そうだ思い出した。…雛見沢だ。",
@@ -350,10 +343,8 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
 
 //r立ち上がろうとして、…すぐにその場に崩れ落ちる。
 	OutputLine(NULL, "立ち上がろうとして、…すぐにその場に崩れ落ちる。",
@@ -395,10 +386,8 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //rその音は徐々に大きくなって、ぺたぺた、ひたひたと伝わってくる。
 	OutputLine(NULL, "その音は徐々に大きくなって、ぺたぺた、ひたひたと伝わってくる。",
@@ -411,10 +400,8 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //rやがて。
 	OutputLine(NULL, "やがて。",
@@ -442,13 +429,10 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	Negative( 500, FALSE );
 	DrawScene("background/fure2", 1000 );
-
-	DrawScene("background/fure2", 1000 );
-
+	FadeFilm( 500, TRUE );
 	PlayBGM(2, "hm10_55", 128, 0);
 
 //巴rvS11/28/420101356.「……あれ？」
@@ -472,11 +456,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
+	Negative( 500, FALSE );
 	DrawScene("background/kakera", 1000 );
-
-	DrawScene("background/kakera", 1000 );
+	FadeFilm( 500, TRUE );
 
 //巴rvS11/28/420101357.「なに…ここ…」
 	PlaySE(4, "ps3/s11/28/420101357", 256, 64);
@@ -530,7 +513,6 @@
 	ClearMessage();
 
 	DrawScene("background/kakera", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/ha1_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS11/12/421000002.――梨花の運命を切り開く、大切なカケラのひとつ。
@@ -761,6 +743,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r思わずかっと頭に血が上った巴は、反射的につかみかかろうと立ち上がりかけて、…足に力が入らずその場にへなへなと崩れ落ちる。
 	OutputLine(NULL, "思わずかっと頭に血が上った巴は、反射的につかみかかろうと立ち上がりかけて、…足に力が入らずその場にへなへなと崩れ落ちる。",
@@ -815,27 +798,18 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/kakera", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("background/kakera", 500 );
+	Wait( 500 );
 	PlaySE(3, "jikuunosakeme", 256, 64);
-
-	DrawScene("background/kakera", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	Negative( 500, TRUE );
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
+	FadeFilm( 1000, TRUE );
 	FadeOutBGM(2, 200, FALSE);
-
-	PlaySE(3, "down", 256, 64);
-
+	Wait( 1000 );
 	DrawScene("background/k_kouen1_02", 1000 );
-
+	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM( 1, "yoru", 128, 0 );
 
 //巴rvS11/28/420101369.「…あれ？」
@@ -863,6 +837,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	ShakeScreen( 1, 15, 15, 2, 0, );
+
 //r芯から凍えるような寒さを全身に感じて、ぶるっ、と震える。すっかり酔いは覚めていた。
 	OutputLine(NULL, "芯から凍えるような寒さを全身に感じて、ぶるっ、と震える。すっかり酔いは覚めていた。",
 			NULL, "", Line_Normal); 
@@ -879,7 +855,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm05_23", 128, 0);
 
 //巴rvS11/28/420101372.「奇跡、か…」
@@ -908,9 +883,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/m_y4_01", 1000 );
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
+	DrawScene("background/m_y4_01", 500 );
 
 //r思い出した。…あの時だ。
 	OutputLine(NULL, "思い出した。…あの時だ。",
@@ -937,8 +912,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	FadeFilm( 1000, FALSE );
 	DrawScene("background/k_kouen1_02", 1000 );
 
 //巴rvS11/28/420101373.「毒をもって、毒を制す…。kvS11/28/420101374.黒には、黒でぶつかる、か」
@@ -1019,10 +994,8 @@
 	ClearMessage();
 
 	PlaySE(3, "nageru", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/k_kouen1_02", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/k_kouen1_02", 500 );
 
 //rそう呟いて、巴は立ち上がる。そして手に持っていた空き缶を少し離れたゴミ箱に目がけ、スナップを利かせて放り投げた。
 	OutputLine(NULL, "そう呟いて、巴は立ち上がる。そして手に持っていた空き缶を少し離れたゴミ箱に目がけ、スナップを利かせて放り投げた。",
@@ -1035,27 +1008,14 @@
 	ClearMessage();
 
 	PlaySE(3, "vse_can", 256, 64);
-
+	Wait( 500 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rアルミ製の縁に小気味よい音を立てて当たってから、そのまま中へと吸い込まれた。
 	OutputLine(NULL, "アルミ製の縁に小気味よい音を立てて当たってから、そのまま中へと吸い込まれた。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

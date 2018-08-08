@@ -13,20 +13,15 @@
 
 //#6 竜宮礼奈
 
+	DrawScene("white", 1000 );
 	PlayBGM( 1, "mati", 128, 0 );
-
-	DrawScene("black", 1000 );
-
 	DrawScene("background/sora", 1000 );
-
+	Wait( 2000 );
 	DrawScene("background/hi1_01", 1000 );
-
+	Wait( 1000 );
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("background/hi4_02", 1000 );
-
 	PlayBGM(2, "hm01_03", 128, 0);
 
 //巴r-vS11/28/420100618.（ここが、…雛見沢村）
@@ -116,6 +111,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r砂利道でどこかコブにでも乗り上げたのか、がくん、と車体が揺れる。
 	OutputLine(NULL, "砂利道でどこかコブにでも乗り上げたのか、がくん、と車体が揺れる。",
@@ -165,13 +161,10 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	PlayBGM( 1, "suzume_lp", 128, 0 );
-
 	DrawScene("background/mati2_02", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //大石rvS11/11/420300141.「…さて、巴ちゃんはこの後どうします？」
@@ -344,11 +337,8 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	FadeFilm( 500, TRUE );
 	DrawScene("black", 1000 );
 
 //rそして、巴は大石の運転で雛見沢村の各地を見て回っていった。
@@ -377,7 +367,6 @@
 	ClearMessage();
 
 	DrawScene("background/gr2", 1000 );
-
 	PlayBGM(2, "hm01_03", 128, 0);
 
 //巴rvS11/28/420100640.「…ここに、例の竜宮礼奈は通っているのですか？」
@@ -537,7 +526,6 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //大石rvS11/11/420300169.「『オヤシロさま』についての」
@@ -572,13 +560,10 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	PlayBGM( 1, "ame", 128, 0 );
-
+	Negative( 500, FALSE );
 	DrawScene("background/m_y2_04", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/re1a_okoru_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS11/02/420700001.「悟史くんが体験していることは全て、…オヤシロさまの祟りの前触れなの」
@@ -648,13 +633,9 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
+	FadeFilm( 500, FALSE );
 	DrawScene("background/gr2", 1000 );
-
 	PlayBGM(2, "hm03_16", 128, 0);
 
 //巴rvS11/28/420100648.「それが、…『オヤシロさま』だと？」
@@ -769,6 +750,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	DrawScene("background/sora_01", 1000 );
 
 //r巴は自身の過去を思い出す。
@@ -822,6 +804,7 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 500, TRUE );
 
 //巴r-vS11/28/420100653.（その妹さんは、どうなんだろう。私と同じ気持ちなんだろうか…）
 	PlaySE(4, "ps3/s11/28/420100653", 256, 64);
@@ -850,8 +833,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 500 );
 	DrawScene("background/kuruma6", 1000 );
 
 //巴rvS11/28/420100654.「え？　あぁすみません、オヤシロさまの話でしたね。kvS11/28/420100655.それが、竜宮礼奈とどういう関係が？」
@@ -950,7 +932,6 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
 
 //rその後、大石は村の中心を抜けて、山間部へと向かう。
@@ -959,7 +940,6 @@
 	ClearMessage();
 
 	PlaySE(3, "addse28", 256, 64);
-
 	DrawScene("background/mo_r1", 1000 );
 
 //rそして行き着いた先は道にも雑草が生い茂り、人の気配が全く感じられなかった。
@@ -983,11 +963,8 @@
 	ClearMessage();
 
 	PlaySE(3, "addse22", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 500 );
 	DrawScene("background/mo_g1", 1000 );
-
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //r巴と大石は車を降りると、その現場前に立つ。
@@ -1060,8 +1037,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r巴の問い掛けに、大石は『ええ』と頷いてから煙草に火をつける。
@@ -1090,7 +1065,6 @@
 	ClearMessage();
 
 	DrawScene("background/mo_g1", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //大石rvS11/11/420300194.「実際、チクチクと書類を見せろとか、積荷の数を確かめる、とか言って結構なタイムロスを稼いでいましたからね。kvS11/11/420300195.現場監督さんはいつも怒っていたものです」
@@ -1148,9 +1122,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rその時、…巴はふと思い出す。
@@ -1169,9 +1140,7 @@
 	ClearMessage();
 
 	DrawScene("background/mo_g1", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm05_21", 128, 0);
 
 //巴rvS11/28/420100665.「大石さん、まさか…その人って」
@@ -1282,10 +1251,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlaySE(3, "addse05", 256, 64);
 
 //r巴は目を伏せ、唇をかむ。
@@ -1359,9 +1325,7 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("background/mo_g1", 1000 );
-
 	PlayBGM(2, "hm05_23", 128, 0);
 
 //巴rvS11/28/420100670.「…大石さん」
@@ -1399,8 +1363,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r大石は短くなった煙草を足で踏み潰すと、穏やかな顔で巴に向き直る。
@@ -1418,6 +1380,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	DrawScene("background/ku_hattu1", 1000 );
 
 //rそれは、…１０年以上前に出会った警視庁公安の刑事が彼に向かって見せた、刃物のように鋭く力強い眼光。
@@ -1446,6 +1409,7 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 500, TRUE );
 
 //r――強くなったな…。
 	OutputLine(NULL, "——強くなったな…。",
@@ -1483,7 +1447,6 @@
 	ClearMessage();
 
 	DrawScene("background/mo_g1", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //大石rvS11/11/420300220.「ええ、助かります。kvS11/11/420300221.巴ちゃんにそういってもらえると、まだまだ頑張ろうって気になりますよ。kvS11/11/420300222.んっふっふっふっ！」
@@ -1511,7 +1474,6 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawBustshot( 4, "sprite/normal/oisi1_1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //大石rvS11/11/420300223.「？　どうしました？」
@@ -1527,9 +1489,6 @@
 	ClearMessage();
 
 	PlayBGM( 1, "kaze_lp", 128, 0 );
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("background/mo_g2", 1000 );
 
 //r巴の指差した先に、大石も目を向ける。
@@ -1543,7 +1502,6 @@
 	ClearMessage();
 
 	DrawScene("background/mo_g1", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS11/28/420100678.「こんなところで、いったい何をしているんでしょう？」
@@ -1568,8 +1526,6 @@
 	OutputLine(NULL, "「えっ、あれが？」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("background/mo_g2", 1000 );
 
@@ -1629,9 +1585,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm06_25", 128, 0);
 
 //r確かに、変だ。
@@ -1755,7 +1709,6 @@
 	ClearMessage();
 
 	DrawScene("background/mo_g1", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS11/28/420100684.「大石さん。kvS11/28/420100685.確か竜宮礼奈の両親は、離婚しているって話でしたよね」
@@ -1812,8 +1765,6 @@
 	OutputLine(NULL, "少なくとも、それが問題で転校したのだとしたら、簡単に通院をやめることはできないはずです」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1879,7 +1830,6 @@
 	ClearMessage();
 
 	DrawScene("background/mo_g1", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS11/28/420100694.「北条悟史がオヤシロさまの祟り…つまり、今年の殺人事件に関与していた可能性が高いと、先ほど大石さんのお話にもありました」
@@ -2033,7 +1983,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse16", 256, 64);
-
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 //rそういって大石は車のキーをくるくると指先で回しながら、停めてある車の方向に歩いてゆく。巴もその後に続こうとして、…足元の石に躓きちょっとだけ、ふらついた。
@@ -2042,6 +1991,8 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 
 //巴rvS11/28/420100707.「おっと。…え？」
 	PlaySE(4, "ps3/s11/28/420100707", 256, 64);
@@ -2050,17 +2001,11 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "sinzouappaku", 256, 64);
-
+	Negative( 1000, TRUE );
+	Wait( 500 );
+	FadeFilm( 1000, TRUE );
 	DrawScene("black", 1000 );
-
-	DrawScene("background/mo_g1", 1000 );
-
-	DrawScene("background/mo_g1", 1000 );
-
-	DrawScene("black", 1000 );
-
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //rその時。
@@ -2142,11 +2087,8 @@
 	ClearMessage();
 
 	PlaySE(3, "addse23", 256, 64);
-
 	PlayBGM( 1, "mati", 128, 0 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 500 );
 	DrawScene("background/sora", 1000 );
 
 //rゴミ山から来た道を戻り、村の中心部へと入ったあたりで白い建物が見えてくる。
@@ -2173,7 +2115,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "addse28", 256, 64);
 
 //rそして、大石の運転する車が駐車スペースに入って来るのに気付くと、男の方が運転席に駆け寄ってきた。
@@ -2182,9 +2123,7 @@
 	ClearMessage();
 
 	DrawScene("background/sinryou_soto1", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/kuma_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm01_01", 128, 0);
 
 //熊谷rvS11/19/VT3B_kumaga2001.「あぁ大石さん、ちょうどいいところに！kvS11/19/VT3B_kumaga2002.　ナイスタイミングっす」
@@ -2220,8 +2159,9 @@
 	ClearMessage();
 
 	PlaySE(3, "se137", 256, 64);
-
+	Wait( 200 );
 	PlaySE(3, "se137", 256, 64);
+	Wait( 200 );
 
 //rそれを聞いて大石は、ハンドルのすぐ左横にしつらえた無線機をカチカチといじる。
 	OutputLine(NULL, "それを聞いて大石は、ハンドルのすぐ左横にしつらえた無線機をカチカチといじる。",
@@ -2271,8 +2211,11 @@
 	ClearMessage();
 
 	PlaySE(3, "addse16", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	PlaySE(3, "addse16", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 
 //rそういわれて、大石はしばし考えた後『ありゃぁ』と唸って額をぺしぺし、と叩く。
 	OutputLine(NULL, "そういわれて、大石はしばし考えた後『ありゃぁ』と唸って額をぺしぺし、と叩く。",
@@ -2300,9 +2243,7 @@
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/kuma_komaru_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/kuma_komaru_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/tomo1a_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //巴rvS11/28/420100710.「あ、お初にお目にかかります。kvS11/28/420100711.垣内署の警部で、南井と申します」
@@ -2447,10 +2388,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそして大石は警察手帳を一枚破り取ると、手早く地図を書き留めて巴に手渡す。
@@ -2464,7 +2401,6 @@
 	ClearMessage();
 
 	DrawScene("background/sinryou_soto1", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //大石rvS11/11/420300267.「巴ちゃん」
@@ -2546,9 +2482,6 @@
 	ClearMessage();
 
 	PlaySE(3, "addse23", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそう言って巴は、大石からキーを受け取ると車に乗り込み、エンジンを吹かせて発進させる。
@@ -2561,8 +2494,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	Wait( 2000 );
 	PlayBGM( 1, "mati", 128, 0 );
-
 	DrawScene("background/sora7", 1000 );
 
 //r大石に教えられた住所のメモを頼りに、巴は車を走らせて目的の竜宮家へと向かう。
@@ -2582,17 +2515,12 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "addse28", 256, 64);
-
 	DrawScene("black", 1000 );
-
+	Wait( 1000 );
 	PlaySE(3, "addse22", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 500 );
 	DrawScene("background/re_s4_02", 1000 );
-
 	PlayBGM(2, "hm01_07", 128, 0);
 
 //r車を降りてドアを閉め、かすかに周囲を見渡す。…特に人の気配はなかった。
@@ -2606,6 +2534,7 @@
 	ClearMessage();
 
 	PlaySE(3, "a5_07212", 256, 64);
+	Wait( 500 );
 
 //巴rvS11/28/420100730.「…ごめんください。kvS11/28/420100731.竜宮さんはいらっしゃいますか」
 	PlaySE(4, "ps3/s11/28/420100730", 256, 64);
@@ -2656,6 +2585,7 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
+	Wait( 500 );
 
 //巴rvS11/28/420100734.「ブルーマーメイド、か…」
 	PlaySE(4, "ps3/s11/28/420100734", 256, 64);
@@ -2736,12 +2666,9 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //巴rvS11/28/420100738.「っ？！」
 	PlaySE(4, "ps3/s11/28/420100738", 256, 64);
@@ -2760,16 +2687,12 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
+	Wait( 250 );
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //巴rvS11/28/420100739.「な、なに…？　なんなの…っ？！」
 	PlaySE(4, "ps3/s11/28/420100739", 256, 64);
@@ -2811,8 +2734,8 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
-
-	DrawScene("background/re_s4_02", 1000 );
+	DrawScene("background/re_s4_02", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //巴rvS11/28/420100740.「……」
 	PlaySE(4, "ps3/s11/28/420100740", 256, 64);
@@ -2946,13 +2869,9 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //巴rvS11/28/420100743.「…っ！！」
@@ -2969,10 +2888,9 @@
 	ClearMessage();
 
 	PlaySE(3, "addse22", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/kuruma2", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/kuruma2", 500 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rそして、すぐそばに停めてあった大石の車のドアを開けて飛び乗ると、エンジンのキーを回した。
 	OutputLine(NULL, "そして、すぐそばに停めてあった大石の車のドアを開けて飛び乗ると、エンジンのキーを回した。",
@@ -2980,8 +2898,9 @@
 	ClearMessage();
 
 	PlaySE(3, "addse31", 256, 64);
-
+	Wait( 500 );
 	PlaySE(3, "addse31", 256, 64);
+	Wait( 500 );
 
 //巴rvS11/28/420100744.「…………え？」
 	PlaySE(4, "ps3/s11/28/420100744", 256, 64);
@@ -2995,10 +2914,8 @@
 	ClearMessage();
 
 	PlaySE(3, "addse22", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r怪訝に思った巴はドアを開け、…そこで初めて、ガソリンの刺激臭に気がついた。
 	OutputLine(NULL, "怪訝に思った巴はドアを開け、…そこで初めて、ガソリンの刺激臭に気がついた。",
@@ -3006,10 +2923,9 @@
 	ClearMessage();
 
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	Negative( 500, FALSE );
 	DrawScene("background/kuruma3", 1000 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //巴rvS11/28/420100745.「なに、これ…」
 	PlaySE(4, "ps3/s11/28/420100745", 256, 64);
@@ -3080,11 +2996,8 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/kuruma3", 1000 );
-
+	DrawScene("black", 250 );
+	DrawScene("background/kuruma3", 500 );
 	PlayBGM(2, "hm06_30", 128, 0);
 
 //巴rvS11/28/420100748.「……っ！！」
@@ -3134,11 +3047,9 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("black", 500 );
+	FadeFilm( 1000, TRUE );
+	
 //巴rvS11/28/420100749.「……そんなこと、ない…っ！！」
 	PlaySE(4, "ps3/s11/28/420100749", 256, 64);
 	OutputLine(NULL, "「……そんなこと、ない…っ！！」",
@@ -3161,10 +3072,8 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //巴rvS11/28/420100750.「……」
 	PlaySE(4, "ps3/s11/28/420100750", 256, 64);
@@ -3223,11 +3132,10 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
+	Wait( 1000 );
 	PlayBGM( 1, "yoru", 128, 0 );
-
 	DrawScene("background/sora_01", 1000 );
-
+	Wait( 500 );
 	DrawScene("background/m_y4_07", 1000 );
 
 //r電話ボックスのある分岐路にたどり着いたのは、ちょうど辺りが真っ暗になりかけた直後だった。
@@ -3242,8 +3150,8 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
-
-	DrawScene("background/ta_tel_01", 1000 );
+	DrawScene("background/ta_tel_01", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r汗だくになった額を袖で拭いながら、巴は思わず駆け足で電話ボックスに飛び込む。
 	OutputLine(NULL, "汗だくになった額を袖で拭いながら、巴は思わず駆け足で電話ボックスに飛び込む。",
@@ -3293,10 +3201,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	PlayBGM( 1, "dsse05", 128, 0 );
-
 	FadeOutBGM(1, 200, TRUE);
-
+	PlaySE(3, "dsse05", 256, 64);
+	Wait( 2500 );
 	PlaySE(3, "dsse06", 256, 64);
 
 //rほどなく数度のコール音の後、『…もしもし』と年配の男性の声が聞こえた。
@@ -3471,7 +3378,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("scene/314a", 1000 );
+	DrawScene("scene/314a", 1500 );
 
 //巴r-vS11/28/420100764.（飛んで火にいる、夏の虫…）
 	PlaySE(4, "ps3/s11/28/420100764", 256, 64);
@@ -3491,17 +3398,10 @@
 	ClearMessage();
 
 	PlaySE(3, "addse22", 256, 64);
-
-	DrawScene("scene/314b", 1000 );
-
-	DrawScene("black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
-
+	DrawScene("white", 250 );
 	PlaySE(3, "jikuunosakeme", 256, 64);
-
-	DrawScene("scene/314b", 1000 );
-
+	DrawScene("scene/314b", 2000 );
+	FadeOutBGM(2, 200, FALSE);
 	PlayBGM(2, "hm06_27", 128, 0);
 
 //巴rvS11/28/420100766.「――っ？！」
@@ -3511,6 +3411,8 @@
 	ClearMessage();
 
 	PlaySE(3, "down3", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 
 //rその瞬間、…巴は声にすらならない悲鳴を上げて、思わず後ろに跳び退って固まる。
 	OutputLine(NULL, "その瞬間、…巴は声にすらならない悲鳴を上げて、思わず後ろに跳び退って固まる。",
@@ -3594,9 +3496,8 @@
 	ClearMessage();
 
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	DrawScene("scene/314b", 1000 );
-
+	Negative( 500, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //レナrvS11/02/420700025.「ねぇ。kvS11/02/420700026.私に。kvS11/02/420700027.何の。kvS11/02/420700028.用？」
@@ -3615,6 +3516,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //巴rvS11/28/420100770.「あ…っ…！」
 	PlaySE(4, "ps3/s11/28/420100770", 256, 64);
@@ -3637,8 +3539,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	FadeFilm( 1000, FALSE );
+	DrawScene("black", 500 );
 	FadeOutBGM(2, 200, FALSE);
 
 //レナrvS11/02/420700029.「――」
@@ -3653,9 +3555,7 @@
 	ClearMessage();
 
 	DrawScene("background/m_y4_07", 1000 );
-
 	DrawBustshot( 4, "sprite/night/re4_hig_muhyou_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm02_11", 128, 0);
 
 //レナrvS11/02/420700030.「――刑事か」
@@ -3703,6 +3603,7 @@
 	ClearMessage();
 
 	PlaySE(3, "addse05", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //巴rvS11/28/420100774.「ぐッ？！」
 	PlaySE(4, "ps3/s11/28/420100774", 256, 64);
@@ -3720,9 +3621,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/m_y4_07", 1000 );
-
-	DrawBustshot( 4, "sprite/night/re4_hig_okoru_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawFilm( 2, 255, 0, 0, 255, 0, 1000, TRUE );
 
 //巴rvS11/28/420100775.「ぐっ…う…！！」
 	PlaySE(4, "ps3/s11/28/420100775", 256, 64);
@@ -3739,6 +3638,7 @@
 	ClearMessage();
 
 	PlaySE(3, "addse05", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //巴rvS11/28/420100776.「りゅ、りゅうぐう、さっ…！！」
 	PlaySE(4, "ps3/s11/28/420100776", 256, 64);
@@ -3761,6 +3661,7 @@
 	ClearMessage();
 
 	PlaySE(3, "addse05", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //巴rvS11/28/420100777.「がッ…ぎ…ぅ…！！」
 	PlaySE(4, "ps3/s11/28/420100777", 256, 64);
@@ -3768,9 +3669,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "down", 0, 0, 2000 );
+	FadeFilm( 500, TRUE );
 
 //r目の前が、徐々に暗くなっていく。
 	OutputLine(NULL, "目の前が、徐々に暗くなっていく。",
@@ -3824,10 +3724,8 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r…………。
 	OutputLine(NULL, "…………。",
@@ -3840,10 +3738,8 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //rそして、巴はそのまま。
 	OutputLine(NULL, "そして、巴はそのまま。",
@@ -3855,17 +3751,12 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/m_y4_07", 1000 );
-
-	DrawBustshot( 4, "sprite/night/re4_hig_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawScene("background/m_y4_07", 250 );
+	DrawBustshot( 4, "sprite/night/re4_hig_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down3", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/m_y4_07", 1000 );
-
-	DrawBustshot( 4, "sprite/night/re4_hig_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	Negative( 500, TRUE );
 
 //レナrvS11/02/420700037.「あははははははは、あはははははははははははっっ！！！」
 	PlaySE(4, "ps3/s11/02/420700037", 256, 64);
@@ -3873,19 +3764,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
+	FadeFilm( 1500, FALSE );
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

@@ -14,17 +14,13 @@
 //#7 夏美との再会
 
 	PlayBGM( 1, "yoru", 128, 0 );
-
 	DrawScene("background/moon", 1000 );
-
+	Wait( 1000 );
 	DrawScene("background/sinryou_soto1_01", 1000 );
-
+	Wait( 500 );
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/kai_ten", 1000 );
-
+	DrawSceneWithMask( "background/kai_ten", "up", 0, 0, 2500 );
 	PlayBGM(2, "hm01_07", 128, 0);
 
 //巴rvS11/28/420100779.「……。kvS11/28/420100780.あれ？」
@@ -180,8 +176,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r入江と名乗った医師はそう言うと、カーテンを戻して部屋を出て行った。
@@ -206,7 +200,7 @@
 	ClearMessage();
 
 	PlaySE(3, "addse14", 256, 64);
-
+	Wait( 2000 );
 	PlaySE(3, "door", 256, 64);
 
 //r…やがて、どたどたとあわただしい足音が近づいてきて、少々乱暴にドアが開かれる。そしてカーテンの向こうから、大石の姿が現れた。
@@ -215,7 +209,6 @@
 	ClearMessage();
 
 	DrawScene("background/sinryou_sinsatu3", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_3_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //大石rvS11/11/420300282.「…気がつきましたか、巴ちゃん！」
@@ -302,9 +295,7 @@
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/oisi1_4_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/oisi1_4_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/iri2_def1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //入江rvS11/10/420900010.「睡眠不足ですね。kvS11/10/420900011.それと過労も溜まっているようです。kvS11/10/420900012.ここしばらく、あまり十分に寝ておられないんじゃないですか？」
@@ -410,11 +401,6 @@
 	ClearMessage();
 
 	PlaySE(3, "door", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r入江医師はそう言って、部屋を出て行く。
@@ -430,11 +416,8 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("background/sinryou_sinsatu3", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm05_21", 128, 0);
 
 //大石rvS11/11/420300294.「…昨日は、すみませんでした」
@@ -514,19 +497,13 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "jikuunosakeme", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 500 );
+	Negative( 500, FALSE );
 	DrawScene("scene/314b", 1000 );
-
+	Wait( 1000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	FadeFilm( 1000, TRUE );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //r――その瞬間。
@@ -540,6 +517,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rひりひりとした、まるで肌が焼けるような痛みと熱さ。
 	OutputLine(NULL, "ひりひりとした、まるで肌が焼けるような痛みと熱さ。",
@@ -577,11 +555,11 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	Negative( 500, FALSE );
 	DrawScene("background/m_y4_07", 1000 );
-
 	DrawBustshot( 4, "sprite/night/re4_hig_muhyou_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlaySE(3, "addse05", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //レナrvS11/02/420700038.『あはははははははは。kvS11/02/420700039.…死ね、おばかさん。kvS11/02/420700040.あははははははは、あはははははははははははっっ！！！』
 	PlaySE(4, "ps3/s11/02/420700038", 256, 64);
@@ -595,11 +573,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
+	FadeFilm( 1000, TRUE );
 
 //巴rvS11/28/420100800.「……っ？！」
 	PlaySE(4, "ps3/s11/28/420100800", 256, 64);
@@ -608,6 +583,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r凍りつくような怖気に、全身がぶるっと震える。
 	OutputLine(NULL, "凍りつくような怖気に、全身がぶるっと震える。",
@@ -674,9 +650,7 @@
 	ClearMessage();
 
 	PlayBGM( 1, "suzume_lp", 128, 0 );
-
 	DrawScene("background/sinryou_sinsatu3", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS11/28/420100802.「あ、いえ。kvS11/28/420100803.…真っ暗の中にいきなりで、相手の顔を見る暇もありませんでした」
@@ -809,9 +783,8 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "tataku", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM(2, "hm01_06", 128, 0);
 
 //巴rvS11/28/420100810.「私が気にするんですっっ！！」
@@ -830,8 +803,6 @@
 	OutputLine(NULL, "　こいつぁ失礼しましたー」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -875,9 +846,7 @@
 	ClearMessage();
 
 	DrawScene("background/sinryou_sinsatu3", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/oisi1_5_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm06_28", 128, 0);
 
 //r最後に残ったジャケットに袖を通しかけて、巴はカーテン越しに映る大石の姿に振り向く。
@@ -958,13 +927,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
 
 //巴rvS11/28/420100815.「さて、…ここか」
 	PlaySE(4, "ps3/s11/28/420100815", 256, 64);
@@ -1000,7 +964,6 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	PlayBGM( 1, "dsse03", 128, 0 );
 
 //巴rvS11/28/420100816.「商売繁盛、ね。kvS11/28/420100817.…いい話じゃないけど」
@@ -1039,9 +1002,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("background/byo_machi", 1000 );
-
 	PlayBGM(2, "hm01_04", 128, 0);
 
 //夏美rvS11/36/420600033.「…あの、よろしくお願いします」
@@ -1051,13 +1012,13 @@
 	ClearMessage();
 
 //病院受付rvS11/00/VT3B_Huke2001.「はい、わかりました。kvS11/00/VT3B_Huke2002.こちらが呼出し番号になります。kvS11/00/VT3B_Huke2003.できましたらお呼びしますので、しばらく待合室でお待ちください」
-	PlaySE(4, "ps3/s11/00/vt3b_khuke2001", 256, 64);
+	PlaySE(4, "ps3/s11/00/vt3b_huke2001", 256, 64);
 	OutputLine(NULL, "「はい、わかりました。",
 			NULL, "", Line_WaitForInput); 
-	PlaySE(4, "ps3/s11/00/vt3b_khuke2002", 256, 64);
+	PlaySE(4, "ps3/s11/00/vt3b_huke2002", 256, 64);
 	OutputLine(NULL, "こちらが呼出し番号になります。",
 			NULL, "", Line_WaitForInput); 
-	PlaySE(4, "ps3/s11/00/vt3b_khuke2003", 256, 64);
+	PlaySE(4, "ps3/s11/00/vt3b_huke2003", 256, 64);
 	OutputLine(NULL, "できましたらお呼びしますので、しばらく待合室でお待ちください」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
@@ -1169,8 +1130,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rすると、
@@ -1191,7 +1150,6 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600040.「こ、この前はありがとうございました。kvS11/36/420600041.助けてもらったのに、ちゃんとお礼が言えてなくて…」
@@ -1651,8 +1609,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r下の名前で呼ばれたことで、その女の子…夏美は顔の緊張が解けて、穏やかな笑みになった。
@@ -1672,9 +1628,7 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS11/28/420100864.「どうしたの、夏美さん？」
@@ -1752,7 +1706,6 @@
 	ClearMessage();
 
 	PlayBGM(2, "hm10_54", 128, 0);
-
 	DrawBustshot( 4, "sprite/normal/na3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600078.「垣内って買い物もすごく便利だし、人もいっぱいで賑やかですよね。kvS11/36/420600079.…でもなんだか、スピード感が違うっていうか、時々目が回りそうになっちゃいます」
@@ -1813,8 +1766,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("background/jyu1", 1000 );
 
 //r引っ越して環境が変わった時、その違いに戸惑うのは当然のことだ。生活の様式や方言などに違和感を抱き、ちょっとした感覚のズレが当の本人にとっては衝撃であったりもする。
@@ -1849,7 +1800,6 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_kanashii_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600084.「……。kvS11/36/420600085.それに…」
@@ -1860,8 +1810,6 @@
 	OutputLine(NULL, "それに…」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("background/ng1", 1000 );
 
@@ -1881,7 +1829,6 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_kanashii_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600086.「おかーさんが、勧めてくれたんです。kvS11/36/420600087.いい大学に合格するためには、ちょっと無理をしてもいい高校に入っておいたほうがいいって」
@@ -1909,8 +1856,6 @@
 	OutputLine(NULL, "足が折れるか心臓が破裂するっての」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1940,9 +1885,7 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_kanashii_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600089.「…すみません、巴さん。kvS11/36/420600090.変なこと話しちゃって、私…」
@@ -2065,8 +2008,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rまして、両親を失い、妹は家出して行方不明…。
@@ -2085,7 +2026,6 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_kanashii_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS11/28/420100890.「……。kvS11/28/420100891.だけど、ね」
@@ -2254,8 +2194,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rはっ、と夏美は息を飲んで、目を見開く。
@@ -2299,7 +2237,6 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_kanashii_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600103.「…あ、あのっ」
@@ -2390,8 +2327,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("background/neki1", 1000 );
 
 //r…楽しくないわけがない。
@@ -2405,7 +2340,6 @@
 	ClearMessage();
 
 	DrawScene("background/ng_kyo", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/chisa1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //r大袈裟なほど騒いで、ムードを盛り上げてくれる三つ編みの少女。
@@ -2419,9 +2353,7 @@
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/chisa1_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/chisa1_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/tama1_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //rその横で突っ込みを入れてくる、世話好きのお姉さんのようなおかっぱの少女。
@@ -2434,18 +2366,14 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, FALSE);
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/tou1a_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //rそして、寡黙だけど優しい、素敵な絵を描く憧れの少年…。
 	OutputLine(NULL, "そして、寡黙だけど優しい、素敵な絵を描く憧れの少年…。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -2475,7 +2403,6 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600109.「楽しい…です。kvS11/36/420600110.引っ越してきたばかりの私に初日から話しかけてくれたり、色々気を遣ってくれたりして」
@@ -2695,8 +2622,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r巴の言葉に、…夏美ははっ、と息を飲む。
@@ -2725,7 +2650,6 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600121.「……。kvS11/36/420600122.でも」
@@ -2799,8 +2723,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r夏美は、二人と出会った時のことを思い出す。
@@ -2834,7 +2756,6 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_kanashii_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600128.「……」
@@ -2877,8 +2798,6 @@
 	OutputLine(NULL, "「巴さん…」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -2928,7 +2847,6 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS11/36/420600130.「…ありがとうございます、巴さん」
@@ -2977,8 +2895,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r夏美はそういって、少し何かが吹っ切れたような晴れやかな笑顔を浮かべる。
@@ -2999,9 +2915,7 @@
 	ClearMessage();
 
 	DrawScene("background/byo_machi", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/na3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm01_05", 128, 0);
 
 //夏美rvS11/36/420600135.「あ、取りに行かなきゃ」
@@ -3133,25 +3047,6 @@
 
 //rそんな彼女を微笑ましく見送ってから、巴は踵を返して事務室へと向かった。
 	OutputLine(NULL, "そんな彼女を微笑ましく見送ってから、巴は踵を返して事務室へと向かった。",
-			NULL, "", Line_Normal); 
-	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
-
-//rs255.デバッグ用選択肢r上記!T!I!P!Sを持っていたら、「!T!I!P!S!1!8!0! 申請却下」を取得、無ければスルー。e
-	OutputLine(NULL, "s255.デバッグ用選択肢r上記!T!I!P!Sを持っていたら、「!T!I!P!S!1!8!0! 申請却下」を取得、無ければスルー。e",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
