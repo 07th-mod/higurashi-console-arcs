@@ -1,0 +1,121 @@
+
+void main()
+{
+	CallScript( "yoig_005b" );
+
+	if (GetGlobalFlag(GHimatsubushiDay) == 0) 
+	{
+		JumpSection("YoiDay5bChoice1");
+	}
+	else 
+	{
+		JumpSection("YoiDay5bChoice2");
+	}
+
+}
+
+void SetDay()
+{
+	int chapter;
+	chapter = LoadValueFromLocalWork( ChapterNumber );
+
+	SetLocalFlag(LHimatsubushiDay, chapter);
+
+	if(GetGlobalFlag(GHimatsubushiDay) < chapter)
+		SetGlobalFlag(GHimatsubushiDay, chapter);
+}
+
+void ViewTips()
+{
+	StoreValueToLocalWork( TipsMode , 2 );
+
+	CallSection("ViewTipsDisplay");
+}
+
+void ViewTipsDisplay()
+{
+	//uses local flag TipsMode to determine what happens
+	//0 - Leave, 1 - Show Extras Menu, 2 - Show Mid Chapter Screen, 3 - Show New Tips, 4 - Show All Tips (Local), 5 - Show All Tips (Global)
+
+	SetValidityOfSaving( TRUE );
+
+	DisableWindow();
+
+	if(LoadValueFromLocalWork( TipsMode ) < 3)
+		DrawScene("black", 0);
+
+	if(LoadValueFromLocalWork( TipsMode ) == 1)
+		ShowExtras();
+
+	if(LoadValueFromLocalWork( TipsMode ) == 2)
+		ShowChapterScreen();
+
+	if(LoadValueFromLocalWork( TipsMode ) > 2)
+	{
+		ShowTips(LoadValueFromLocalWork( TipsMode ) - 3);
+		CheckTipsAchievements();
+	}
+
+	if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) > 0)
+		CallSection("ViewTipsDisplay");
+}
+
+void YoiDay5bChoice1()
+{
+	CallScript( "yoig_005b_choice1" );
+	
+	if (GetGlobalFlag(GHimatsubushiDay) == 0) 
+	{
+		JumpSection("YoiDay6b");
+	}
+	else 
+	{
+		JumpSection("YoiBadEnd3");
+	}
+
+	//JumpSection("YoiDay6b"); ???
+}
+
+void YoiDay5bChoice2()
+{
+	CallScript( "yoig_005b_choice2" );
+
+	SetLocalFlag(GArc, 4);
+	StoreValueToLocalWork( ChapterNumber, 5 );
+	SavePoint("Ch.5 終わり", "End of Chapter 5");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("YoiDay6b");
+}
+
+void YoiDay6b()
+{
+	CallScript( "yoig_006b" );
+	JumpSection("YoiDay7b");
+}
+
+void YoiBadEnd3()
+{
+	CallScript( "yoig_badend3" );
+	JumpScript( "flow" );
+}
+
+void YoiDay7b()
+{
+	CallScript( "yoig_007b" );
+
+	SetLocalFlag(GArc, 4);
+	StoreValueToLocalWork( ChapterNumber, 8 );
+	SavePoint("Ch.7b 終わり", "End of Chapter 7b");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("YoiBadEnd2");
+}
+
+void YoiBadEnd2()
+{
+	CallScript( "yoig_badend2" );
+	JumpScript( "flow" );
+}

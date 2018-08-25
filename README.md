@@ -12,8 +12,9 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | Kageboushi   | 100%     | 100%        | 100%    | 
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
 | Taraimawashi | 100%     | 100%        | 100%    | 
+| Yoigoshi     |  50%     |   0%        |   0%    | 
 
-Taraimawashi is complete!  Follow the instructions below to download it.
+The next arc is Yoigoshi.  Porting has begun, but it's slow going because this chapter includes a bunch of choices and multiple endings so every path needs to be implemented and tested.  Please be patient!
 
 
 ## Screenshots

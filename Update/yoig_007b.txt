@@ -13,16 +13,13 @@
 
 //#7B 敵の襲撃
 
+	Wait( 500 );
 	PlayBGM( 1, "ame", 128, 0 );
-
 	DrawScene("background/jys1_01", 1000 );
-
-	FadeOutBGM(1, 200, TRUE);
-
+	Wait( 2000 );
+	FadeOutBGM(1, 500, FALSE);
+	DrawBustshot( 4, "sprite/normal/yae_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/yae_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm05_21", 128, 0);
 
 //荒川rvS10/00/410101297.「…おかしいじゃねーか。kvS10/00/410101298.好きだったんなら、…どうして殺したりしたんだよ？」
@@ -116,15 +113,10 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	PlayBGM( 1, "suzume_lp", 128, 0 );
-
 	PlayBGM(2, "hm10_54", 128, 0);
 
 //r緑の芝生が広がった向こうに見える、４階建ての校舎。
@@ -358,7 +350,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r…男の子と指きりなんてしたのは、初めてだった。
@@ -432,8 +423,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("background/sora_01", 1000 );
 
 //r…そんなふうに夢を語る工くんを、私はすてきだなって思った。
@@ -663,7 +653,6 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
 
 //rそれでも、やがて幾年か経って…、私の周りは一人また一人と結婚し、休職したり辞めたりして育児を始めだした。
@@ -677,7 +666,6 @@
 	ClearMessage();
 
 	DrawScene("background/koudou", 1000 );
-
 	PlayBGM(2, "hm10_56", 128, 0);
 
 //十和田rvS10/42/410600302.「工くん、大丈夫…？kvS10/42/410600303.　最近、なんだか元気なくない？」
@@ -840,7 +828,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	DrawScene("black", 1000 );
 
 //rそして、工くんは私を強く、痛いほどに抱きしめて…少しだけ、泣いた。
@@ -948,13 +936,11 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	FadeFilm( 500, TRUE );
 	FadeOutBGM(2, 200, FALSE);
-
+	DrawBustshot( 4, "sprite/normal/yae_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/yae_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //十和田rvS10/42/410600324.「…工くんが変わってしまったのは、それからまもなくのことでした」
 	PlaySE(4, "ps3/s10/42/410600324", 256, 64);
@@ -975,6 +961,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rガタッ…。
 	OutputLine(NULL, "ガタッ…。",
@@ -995,7 +982,6 @@
 	ClearMessage();
 
 	PlaySE(3, "addse19", 256, 64);
-
 	DrawBustshot( 4, "sprite/normal/miono2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //r園崎さんが、さっと顔色を変えて身構える。傍らに置いた刀を手にすると、音を立てずにすっと立ち上がる。
@@ -1017,8 +1003,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r園崎さんは、息をつめて耳を澄ませる。
@@ -1026,8 +1010,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	Wait( 1000 );
 	PlaySE(3, "anahori", 256, 64);
-
 	PlayBGM(2, "hm02_08", 128, 0);
 
 //rガサッ…。
@@ -1046,12 +1030,10 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/js7_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miyuko_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/miyuko_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/js7_01", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //美雪rvS10/40/410300750.「――っ！」
 	PlaySE(4, "ps3/s10/40/410300750", 256, 64);
@@ -1136,8 +1118,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r後を追おうとして、ぎょっとなった。
@@ -1146,10 +1126,8 @@
 	ClearMessage();
 
 	PlaySE(3, "addse19", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
 
 //rガチャリと銃器をいじる音がする。
 	OutputLine(NULL, "ガチャリと銃器をいじる音がする。",
@@ -1161,9 +1139,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/miyuko_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miyuko_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //荒川rvS10/00/410101307.「みっ、美雪ちゃん…？！」
 	PlaySE(4, "ps3/s10/00/410101307", 256, 64);
@@ -1188,9 +1165,7 @@
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/miyuko_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/miyuko_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/miono1_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400420.「……。kvS10/43/410400421.いいだろう、おいで」
@@ -1230,8 +1205,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, FALSE);
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 //r俺はあわてて美雪ちゃんたちの後を追いかける。
@@ -1246,8 +1220,6 @@
 	OutputLine(NULL, "「ぼ…、僕も一緒に行きます…！」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1272,9 +1244,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 3, "sprite/normal/yae_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/yae_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //r部屋を出る時に振り返ると、十和田さんはまだ、ぼんやりと畳に座ったまま、黒澤の死に顔を見つめている。
 	OutputLine(NULL, "部屋を出る時に振り返ると、十和田さんはまだ、ぼんやりと畳に座ったまま、黒澤の死に顔を見つめている。",
@@ -1309,10 +1280,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r園崎さんはじっと十和田さんを見つめると、小さく息をついて、歩き出す。
@@ -1346,8 +1313,9 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
+	Wait( 2000 );
 	PlayBGM( 1, "ame", 128, 0 );
+	DrawFilm( 2, 0, 0, 64, 192, 0, 500, TRUE );
 
 //r雨がまだ、しとしとと降り続けている。
 	OutputLine(NULL, "雨がまだ、しとしとと降り続けている。",
@@ -1396,7 +1364,6 @@
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	PlaySE(3, "anahori", 256, 64);
 
 //rジャリッ…。
@@ -1425,21 +1392,15 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	DrawScene("black", 250 );
+	FadeFilm( 250, FALSE );
 	PlaySE(3, "addse17", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "left", 0, 0, 500 );
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
 	PlaySE(3, "addse17", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "right", 0, 0, 500 );
+	DrawSceneWithMask( "black", "right", 0, 0, 500 );
+	DrawFilm( 2, 0, 0, 64, 192, 0, 500, FALSE );
 
 //r途端、男たちの声とともに、懐中電灯の灯りが俺たちの周りをチラチラと揺れ動いていった。
 	OutputLine(NULL, "途端、男たちの声とともに、懐中電灯の灯りが俺たちの周りをチラチラと揺れ動いていった。",
@@ -1458,9 +1419,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/miono1_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
-
-	DrawBustshot( 4, "sprite/normal/miono1_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //魅音rvS10/43/410400426.「伏せて！」
 	PlaySE(4, "ps3/s10/43/410400426", 256, 64);
@@ -1468,13 +1429,11 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	PlaySE(3, "addse17", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	FadeFilm( 500, FALSE );
+	DrawSceneWithMask( "white", "left", 0, 0, 500 );
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
+	DrawFilm( 2, 0, 0, 64, 192, 0, 500, FALSE );
 
 //rライトの光を避けるように、身をかがめる。…しかしその声は徐々に大きく、そして数も多くなっていった。
 	OutputLine(NULL, "ライトの光を避けるように、身をかがめる。…しかしその声は徐々に大きく、そして数も多くなっていった。",
@@ -1517,7 +1476,6 @@
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/miono1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //r自分の失態を後悔しているのか、ぐっと唇を引き結んだままうつむいている乙部に、園崎さんがヒソヒソ声で話しかけた。
@@ -1589,8 +1547,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, FALSE);
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 //r俺は、うなずくのが精一杯だった。
@@ -1631,15 +1588,13 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/otobe_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	FadeFilm( 150, FALSE );
+	DrawScene("white", 150 );
+	DrawFilm( 2, 0, 0, 64, 192, 0, 150, FALSE );
+	DrawBustshot( 4, "sprite/normal/otobe_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/a/bg_black", 150 );
 	PlaySE(3, "finish", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //乙部rvS10/41/410200578.「…っ！」
 	PlaySE(4, "ps3/s10/41/410200578", 256, 64);
@@ -1648,9 +1603,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse12", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r乙部が玄関脇にあるスイッチを押す。
@@ -1658,34 +1610,28 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	FadeFilm( 250, FALSE );
 	PlaySE(3, "addse16", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
+	DrawFilm( 2, 0, 0, 64, 192, 0, 250, FALSE );
 
 //rたくさんあるスイッチのどれを押したらいいのか分からず…、乙部は手当たり次第にスイッチを押してゆく。
 	OutputLine(NULL, "たくさんあるスイッチのどれを押したらいいのか分からず…、乙部は手当たり次第にスイッチを押してゆく。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	FadeFilm( 250, FALSE );
 	PlaySE(3, "addse16", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
 	PlaySE(3, "addse16", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
 	PlaySE(3, "addse16", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
+	DrawFilm( 2, 0, 0, 64, 192, 0, 250, FALSE );
 
 //r境内に転々と置かれた電灯が、１つ、また１つと点いていき…。
 	OutputLine(NULL, "境内に転々と置かれた電灯が、１つ、また１つと点いていき…。",
@@ -1693,11 +1639,10 @@
 	ClearMessage();
 
 	PlayBGM(2, "hm10_66", 128, 0);
-
 	PlaySE(3, "dsse19", 256, 64);
-
+	Wait( 500 );
 	PlaySE(3, "dsse19", 256, 64);
-
+	Wait( 500 );
 	PlaySE(3, "dsse19", 256, 64);
 
 //rダンッ、ダンッ！　ダァァンッッ！！
@@ -1720,9 +1665,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/jys1_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/otobe_tere_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	FadeFilm( 500, TRUE );
+	DrawBustshot( 4, "sprite/night/otobe_tere_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/jys1_01", 500 );
 
 //乙部rvS10/41/410200579.「うっ、うわぁぁっっ？！」
 	PlaySE(4, "ps3/s10/41/410200579", 256, 64);
@@ -1737,9 +1682,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse12", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r園崎さんの声に弾かれたように、乙部と俺はダッと集会所を飛び出した。
@@ -1779,10 +1721,8 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse24", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
 
 //荒川rvS10/00/410101313.「うわぁぁっ？！」
 	PlaySE(4, "ps3/s10/00/410101313", 256, 64);
@@ -1790,11 +1730,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ji1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/night/miyuko_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/night/miyuko_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/ji1_03", 250 );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //美雪rvS10/40/410300756.「龍ノ介さんっ！kvS10/40/410300757.　――くっ！！」
 	PlaySE(4, "ps3/s10/40/410300756", 256, 64);
@@ -1805,28 +1744,21 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("scene/317a", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("scene/317b", 1000 );
-
+	DrawScene("scene/317a", 250 );
 	PlaySE(3, "dsse19", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("scene/317b", 1000 );
-
+	DrawScene("white", 100 );
+	DrawScene("scene/317b", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
 	PlaySE(3, "dsse19", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("scene/317b", 1000 );
-
+	DrawScene("white", 100 );
+	DrawScene("scene/317b", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	PlaySE(3, "dsse19", 256, 64);
-
+	DrawScene("white", 100 );
+	DrawScene("scene/317b", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	DrawScene("black", 1000 );
 
 //r美雪ちゃんが、拳銃を闇に向かって数発、発砲。俺の鼻先で硝煙が上がる。
@@ -1834,11 +1766,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ji1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/night/miyuko_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/night/miyuko_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/ji1_03", 250 );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101314.「ななっ…！？」
 	PlaySE(4, "ps3/s10/00/410101314", 256, 64);
@@ -1857,23 +1788,17 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("scene/317a", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("scene/317b", 1000 );
-
+	DrawScene("scene/317a", 250 );
 	PlaySE(3, "dsse19", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("scene/317b", 1000 );
-
+	DrawScene("white", 100 );
+	DrawScene("scene/317b", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	PlaySE(3, "dsse19", 256, 64);
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 100 );
+	DrawScene("scene/317b", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	DrawScene("black", 500 );
 
 //rさらに数発。…ダンッ、ダダァンッッ！！
 	OutputLine(NULL, "さらに数発。…ダンッ、ダダァンッッ！！",
@@ -1886,10 +1811,10 @@
 	ClearMessage();
 
 	PlaySE(3, "thisikuki", 256, 64);
-
-	DrawScene("background/ryuuketu1_01", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "background/ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	DrawScene("black", 500 );
 
 //r真っ赤な血を肩口から吹き上げながら、美雪ちゃんの弾丸に倒れてゆく。
 	OutputLine(NULL, "真っ赤な血を肩口から吹き上げながら、美雪ちゃんの弾丸に倒れてゆく。",
@@ -1897,12 +1822,9 @@
 	ClearMessage();
 
 	PlaySE(3, "addse19", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ji1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/night/miyuko_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/night/miyuko_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/ji1_03", 250 );
 
 //荒川rvS10/00/410101315.「…！」
 	PlaySE(4, "ps3/s10/00/410101315", 256, 64);
@@ -1928,15 +1850,11 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawScene("white", 150 );
+	DrawBustshot( 4, "sprite/night/miyuko_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/ji1_03", 150 );
 	PlaySE(3, "down2", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ji1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/night/miyuko_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101316.「おわっ？！」
 	PlaySE(4, "ps3/s10/00/410101316", 256, 64);
@@ -1945,10 +1863,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down3", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
+	DrawScene("black", 250 );
 
 //rズサッ…！
 	OutputLine(NULL, "ズサッ…！",
@@ -1961,19 +1876,16 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse24", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
 
 //r一瞬前までいた場所に黒服の男が放った弾丸が着弾して、泥の塊がぱんっ、と弾け飛んだ。
 	OutputLine(NULL, "一瞬前までいた場所に黒服の男が放った弾丸が着弾して、泥の塊がぱんっ、と弾け飛んだ。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 3, "sprite/night/miono3_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ji1_03", 1000 );
-
-	DrawBustshot( 3, "sprite/night/miono3_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400439.「…気をつけな」
 	PlaySE(4, "ps3/s10/43/410400439", 256, 64);
@@ -1988,10 +1900,6 @@
 	OutputLine(NULL, "「——どうも」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -2012,9 +1920,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/night/miono3_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/jysa1_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/miono3_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400440.「仲間はずいぶん倒れたようだね。kvS10/43/410400441.…命が惜しくないヤツだけ、かかっておいで」
 	PlaySE(4, "ps3/s10/43/410400440", 256, 64);
@@ -2064,19 +1971,15 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/a/cutin2", 1000 );
-
+	DrawScene("black", 250 );
+	Wait( 100 );
 	PlaySE(3, "kyupirn", 256, 64);
-
+	DrawSceneWithMask( "background/cutin2", "left", 0, 0, 250 );
+	Wait( 150 );
+	DrawScene("black", 250 );
 	PlaySE(3, "thisikuki", 256, 64);
-
-	DrawScene("background/ryuuketu1_01", 1000 );
-
+	DrawSceneWithMask( "background/ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	DrawScene("black", 1000 );
 
 //黒服rvS10/00/VT3A_kuroC1003.「ぐわっ？！」
@@ -2085,11 +1988,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/jysa1_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/miono3_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/night/miono3_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/jysa1_01", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r男の鳩尾を、園崎さんの日本刀が突く。男は体をくの字に折って、地面にガックリと膝をつく。
 	OutputLine(NULL, "男の鳩尾を、園崎さんの日本刀が突く。男は体をくの字に折って、地面にガックリと膝をつく。",
@@ -2114,20 +2016,14 @@
 	ClearMessage();
 
 	PlaySE(3, "nageru", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("scene/317a", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("scene/317b", 1000 );
-
+	DrawSceneWithMask( "white", "right", 0, 0, 250 );
+	DrawScene("scene/317a", 250 );
 	PlaySE(3, "dsse19", 256, 64);
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 150 );
+	DrawScene("scene/317b", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
+	DrawScene("black", 250 );
 
 //r別の黒服が、園崎さんに向けて銃口を向けるのを見て、美雪ちゃんがためらいもせず男に向かって発砲する。
 	OutputLine(NULL, "別の黒服が、園崎さんに向けて銃口を向けるのを見て、美雪ちゃんがためらいもせず男に向かって発砲する。",
@@ -2135,41 +2031,31 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r一瞬後、俺たちの目の前で、男の手首から拳銃が弾き飛び、宙を舞う。
 	OutputLine(NULL, "一瞬後、俺たちの目の前で、男の手首から拳銃が弾き飛び、宙を舞う。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jysa1_01", 1000 );
-
-	DrawBustshot( 3, "sprite/night/miono1_akire_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
 	PlaySE(3, "furu", 256, 64);
-
-	DrawBustshot( 5, "sprite/night/miyuko_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawScene("white", 150 );
+	DrawBustshot( 3, "sprite/night/miono1_akire_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, FALSE );
+	DrawScene("background/jysa1_01", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 	PlaySE(3, "furu", 256, 64);
-
+	DrawBustshot( 5, "sprite/night/miyuko_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 	PlaySE(3, "finish", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jysa1_01", 1000 );
-
-	DrawBustshot( 5, "sprite/night/miyuko_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/night/miono1_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawScene("white", 150 );
+	DrawBustshot( 5, "sprite/night/miyuko_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+	DrawBustshot( 3, "sprite/night/miono1_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, FALSE );
+	DrawScene("background/jysa1_01", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 
 //r二人は視線を合せると、その口元に薄い笑みを浮かべた。
 	OutputLine(NULL, "二人は視線を合せると、その口元に薄い笑みを浮かべた。",
@@ -2177,25 +2063,19 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/a/cutin1", 1000 );
-
+	DrawScene("black", 250 );
 	PlaySE(3, "dsse20", 256, 64);
-
-	DrawScene("background/a/cutin6", 1000 );
-
+	DrawSceneWithMask( "background/cutin1", "right", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	DrawScene("black", 250 );
 	PlaySE(3, "dsse20", 256, 64);
-
+	DrawSceneWithMask( "background/cutin6", "left", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	DrawScene("black", 250 );
 	PlaySE(3, "dsse19", 256, 64);
-
+	Wait( 350 );
 	PlaySE(3, "dsse19", 256, 64);
-
+	Wait( 350 );
 	PlaySE(3, "dsse19", 256, 64);
 
 //r…アクション映画でも見ているようだった。
@@ -2214,10 +2094,10 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
+	Wait( 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "dsse12", 256, 64);
+	Wait( 1000 );
 
 //r…やがて、黒服の男たちは実力の差を思い知ったのか、一斉に逃げ去って見えなくなった。
 	OutputLine(NULL, "…やがて、黒服の男たちは実力の差を思い知ったのか、一斉に逃げ去って見えなくなった。",
@@ -2333,6 +2213,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101319.「…はい！」
 	PlaySE(4, "ps3/s10/00/410101319", 256, 64);
@@ -2351,13 +2232,7 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse10", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm06_30", 128, 0);
 
 //rやがて、ぞろぞろと集会室に戻った俺たちが目にしたのは…、足元に転がっている湯呑み。
@@ -2365,9 +2240,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/jsa7", 1000 );
-
 	PlaySE(3, "down2", 256, 64);
+	DrawScene("background/jsa7", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101320.「……あっ？！」
 	PlaySE(4, "ps3/s10/00/410101320", 256, 64);
@@ -2375,9 +2250,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/otobe_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/otobe_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200581.「十和田、さん……っ？！」
 	PlaySE(4, "ps3/s10/41/410200581", 256, 64);
@@ -2389,20 +2263,6 @@
 	OutputLine(NULL, "そして…、黒澤の死体に寄り添うように、……十和田さんが横たわっていた。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

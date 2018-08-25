@@ -1,0 +1,159 @@
+
+void main()
+{
+	CallScript( "yoig_005" );
+	
+	if (GetGlobalFlag(GHimatsubushiDay) == 0) 
+	{
+		JumpSection("YoiDay5Choice1");
+	}
+	else {
+		JumpSection("YoiDay5Choice2");
+	}
+}
+
+void SetDay()
+{
+	int chapter;
+	chapter = LoadValueFromLocalWork( ChapterNumber );
+
+	SetLocalFlag(LHimatsubushiDay, chapter);
+
+	if(GetGlobalFlag(GHimatsubushiDay) < chapter)
+		SetGlobalFlag(GHimatsubushiDay, chapter);
+}
+
+void ViewTips()
+{
+	StoreValueToLocalWork( TipsMode , 2 );
+
+	CallSection("ViewTipsDisplay");
+}
+
+void ViewTipsDisplay()
+{
+	//uses local flag TipsMode to determine what happens
+	//0 - Leave, 1 - Show Extras Menu, 2 - Show Mid Chapter Screen, 3 - Show New Tips, 4 - Show All Tips (Local), 5 - Show All Tips (Global)
+
+	SetValidityOfSaving( TRUE );
+
+	DisableWindow();
+
+	if(LoadValueFromLocalWork( TipsMode ) < 3)
+		DrawScene("black", 0);
+
+	if(LoadValueFromLocalWork( TipsMode ) == 1)
+		ShowExtras();
+
+	if(LoadValueFromLocalWork( TipsMode ) == 2)
+		ShowChapterScreen();
+
+	if(LoadValueFromLocalWork( TipsMode ) > 2)
+	{
+		ShowTips(LoadValueFromLocalWork( TipsMode ) - 3);
+		CheckTipsAchievements();
+	}
+
+	if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) > 0)
+		CallSection("ViewTipsDisplay");
+}
+
+void YoiDay5Choice1()
+{
+	CallScript( "yoig_005_choice1" );
+	JumpSection("YoiDay6");
+}
+
+void YoiDay5Choice2()
+{
+	CallScript( "yoig_005_choice2" );
+
+	SetLocalFlag(GArc, 4);
+	StoreValueToLocalWork( ChapterNumber, 5 );
+	SavePoint("Ch.5 終わり", "End of Chapter 5");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("YoiDay6");
+}
+
+void YoiDay6()
+{
+	CallScript( "yoig_006" );
+
+	if (GetGlobalFlag(GHimatsubushiDay) == 0) 
+	{
+		JumpSection("YoiBadEnd1");
+	}
+	else {
+		JumpSection("YoiDay7");
+	}
+}
+
+void YoiDay7()
+{
+	CallScript( "yoig_007" );
+
+	SetLocalFlag(GArc, 4);
+	StoreValueToLocalWork( ChapterNumber, 7 );
+	SavePoint("Ch.7 終わり", "End of Chapter 7");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("YoiDay8");
+}
+
+void YoiBadEnd1()
+{
+	CallScript( "yoig_badend1" );
+	JumpScript( "flow" );
+}
+
+void YoiDay8()
+{
+	CallScript( "yoig_008" );
+	JumpSection("YoiDay9");
+}
+
+void YoiDay9()
+{
+	CallScript( "yoig_009" );
+	JumpSection("YoiDay10");
+}
+
+void YoiDay10()
+{
+	CallScript( "yoig_010" );
+	JumpSection("YoiDay11");
+}
+
+void YoiDay11()
+{
+	CallScript( "yoig_011" );
+	JumpSection("YoiDay12");
+}
+
+void YoiDay12()
+{
+	CallScript( "yoig_012" );
+	JumpSection("YoiDay13");
+}
+
+void YoiDay13()
+{
+	CallScript( "yoig_013" );
+	JumpSection("YoiDay14");
+}
+
+void YoiDay14()
+{
+	CallScript( "yoig_014" );
+
+	SetLocalFlag(GArc, 4);
+	StoreValueToLocalWork( ChapterNumber, 14 );
+	SavePoint("Ch.14 終わり", "End of Chapter 14");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpScript( "flow" );
+}
