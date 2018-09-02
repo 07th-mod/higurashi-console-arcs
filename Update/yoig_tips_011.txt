@@ -14,7 +14,6 @@
 //じゃじゃ馬
 
 	DrawScene("background/so1_03", 1000 );
-
 	PlayBGM(2, "hm10_54", 128, 0);
 
 //赤坂rvS20/13/VTT_akasaka3001.「…しかし、相変わらずとんだじゃじゃ馬っぷりだな。kvS20/13/VTT_akasaka3002.暴力団の抗争に単身で乗り込むなんて、正気の沙汰じゃないぞ？」
@@ -97,6 +96,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //赤坂rvS20/13/VTT_akasaka3008.「ぐっ…」
 	PlaySE(4, "ps3/s20/13/vtt_akasaka3008", 256, 64);
@@ -165,8 +165,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rまるで納得したふうも無く、美雪はしらけた表情で肩をすくめる。
@@ -184,9 +182,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/miyuko_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/so1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miyuko_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //赤坂rvS20/13/VTT_akasaka3014.「ほんとに、お前はお母さんそっくりになってきたな。kvS20/13/VTT_akasaka3015.今のお前を見たら、草葉の陰から泣き出すぞ」
 	PlaySE(4, "ps3/s20/13/vtt_akasaka3014", 256, 64);
@@ -212,27 +209,11 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/so1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miyuko_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/so1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miyuko_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	Negative( 500, TRUE );
+	Wait( 500 );
+	FadeFilm( 500, TRUE );
 	PlayBGM( 1, "semi_r", 128, 0 );
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //赤坂rvS20/13/VTT_akasaka3016.「……え…？」
@@ -261,9 +242,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/miyuko_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/so1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miyuko_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //赤坂rvS20/13/VTT_akasaka3017.「お、おいおい美雪…、kvS20/13/VTT_akasaka3018.お前、何を言っているんだ？」
 	PlaySE(4, "ps3/s20/13/vtt_akasaka3017", 256, 64);
@@ -330,8 +310,6 @@
 	OutputLine(NULL, "「あ、いや…」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -410,16 +388,13 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1500 );
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/so1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miyuko_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/miyuko_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/so1_03", 250 );
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	PlayBGM(2, "hm10_58", 128, 0);
 
 //美雪rvS20/40/VTT_miyuki3022.「っ？！kvS20/40/VTT_miyuki3023.　ど、どうしたのお父さん？」
@@ -565,6 +540,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //赤坂rvS20/13/VTT_akasaka3032.「なっ？！kvS20/13/VTT_akasaka3033.　あの車って確か、先月買ったばかりの新車だろう？kvS20/13/VTT_akasaka3034.　もうオシャカにしたのか？！」
 	PlaySE(4, "ps3/s20/13/vtt_akasaka3032", 256, 64);
@@ -600,6 +576,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //赤坂rvS20/13/VTT_akasaka3035.「知るかっ」
 	PlaySE(4, "ps3/s20/13/vtt_akasaka3035", 256, 64);

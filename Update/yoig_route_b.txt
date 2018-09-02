@@ -63,17 +63,14 @@ void ViewTipsDisplay()
 void YoiDay5bChoice1()
 {
 	CallScript( "yoig_005b_choice1" );
-	
-	if (GetGlobalFlag(GHimatsubushiDay) == 0) 
-	{
-		JumpSection("YoiDay6b");
-	}
-	else 
-	{
-		JumpSection("YoiBadEnd3");
-	}
 
-	//JumpSection("YoiDay6b"); ???
+	SetLocalFlag(GArc, 4);
+	StoreValueToLocalWork( ChapterNumber, 5 );
+	SavePoint("Ch.5 終わり", "End of Chapter 5");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("YoiDay6b");
 }
 
 void YoiDay5bChoice2()
@@ -86,7 +83,7 @@ void YoiDay5bChoice2()
 	CallSection( "SetDay" );
 	CallSection( "ViewTips" );
 
-	JumpSection("YoiDay6b");
+	JumpSection("YoiBadEnd3");
 }
 
 void YoiDay6b()

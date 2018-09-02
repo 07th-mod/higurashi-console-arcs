@@ -13,6 +13,7 @@
 
 //#12 園崎本家へＡ
 
+	Wait( 500 );
 	PlayBGM( 1, "semi", 128, 0 );
 
 //r練炭自殺の車を背にして、一本道を歩いていく。
@@ -20,8 +21,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("background/m_hi3_04", 1000 );
 
 //荒川rvS10/00/410101597.「おっ…」
@@ -57,9 +57,7 @@
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/otobe_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/otobe_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/miono2_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400681.「何寝ぼけたこと言ってるんだい。kvS10/43/410400682.神社からここまでずっと同じ村、…雛見沢村だよ」
@@ -72,7 +70,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse16", 256, 64);
-
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 //rそう言って、園崎さんはずんずん歩いていく。
@@ -112,8 +109,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rその時ふと、乙部が足を止める。そして顔を向けた先には、白く大きな屋敷が建っていた。
@@ -121,9 +116,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/otobe_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ma3_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/otobe_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200915.「へぇ…。kvS10/41/410200916.古い家ばっかりだと思っていたら、そうじゃないのもあるんだ…」
 	PlaySE(4, "ps3/s10/41/410200915", 256, 64);
@@ -174,8 +168,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそう、俺が声をかけても、園崎さんは答えない。
@@ -188,10 +180,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	FadeOutBGM( 1, 200, FALSE  );
+	DrawScene("white", 1000 );
 	PlayBGM(2, "hm07_32", 128, 0);
-
-	DrawScene("black", 1000 );
-
 	DrawScene("scene/312", 1000 );
 
 //r…………。
@@ -307,14 +298,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM( 1, "semi", 128, 0 );
-
 	DrawScene("background/ma3_03", 1000 );
 
 //魅音rvS10/43/410400685.「――」
@@ -346,9 +333,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse16", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそして園崎さんは、すたすたと歩き出した。
@@ -419,9 +403,7 @@
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/otobe_kanashimi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/otobe_kanashimi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/miono2_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400688.「家っていうより、敷地だね。kvS10/43/410400689.いわゆる私有地ってやつだよ」
@@ -459,10 +441,6 @@
 	OutputLine(NULL, "「……」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -533,11 +511,10 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawBustshot( 4, "sprite/normal/miono2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/miono2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	PlayBGM(2, "hm06_25", 128, 0);
 
 //魅音rvS10/43/410400692.「…！kvS10/43/410400693.　静かにしな…！」
@@ -554,8 +531,6 @@
 	OutputLine(NULL, "「…？！」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -574,11 +549,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 3, "sprite/normal/miono2_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawBustshot( 5, "sprite/normal/otobe_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawScene("background/so1_03", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/miono2_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/otobe_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS10/43/410400694.「抜け道は、園崎の森の中にある。kvS10/43/410400695.庭をつっきって、奥にある地下倉庫が入り口だ。kvS10/43/410400696.だが…、コトはそう簡単じゃない」
 	PlaySE(4, "ps3/s10/43/410400694", 256, 64);
@@ -608,10 +581,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r園崎さんが顎をしゃくる。俺は促されるように扉と扉の隙間を見て…、思わず声をあげそうになってしまった。
@@ -629,11 +598,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 3, "sprite/normal/miono2_akire_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawBustshot( 5, "sprite/normal/otobe_tere_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawScene("background/so1_03", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/miono2_akire_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/otobe_tere_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //荒川rvS10/00/410101610.「ど…、どうしたら…？！」
 	PlaySE(4, "ps3/s10/00/410101610", 256, 64);
@@ -857,10 +824,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r乙部は勢い込んで返事をする。
@@ -883,9 +846,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/miono2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/so1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miono2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400720.「荒川」
 	PlaySE(4, "ps3/s10/43/410400720", 256, 64);
@@ -947,14 +909,9 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "right", 0, 0, 500 );
+	DrawScene("black", 500 );
 
 //r園崎さんは、着物の裾をからげて勢いよく蹴破る。
 	OutputLine(NULL, "園崎さんは、着物の裾をからげて勢いよく蹴破る。",
@@ -962,10 +919,8 @@
 	ClearMessage();
 
 	PlaySE(3, "tatakiwaru", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //rガンッ！
 	OutputLine(NULL, "ガンッ！",
@@ -984,17 +939,14 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_03", 1000 );
-
+	DrawScene("background/rouka1_03", 250 );
 	PlaySE(3, "down", 256, 64);
-
-	PlayBGM(2, "hm02_10", 128, 0);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 500 );
 	PlaySE(3, "addse30", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/rouka1_03", 1000 );
+	DrawScene("white", 150 );
+	DrawScene("background/rouka1_03", 150 );
+	PlayBGM(2, "hm02_10", 128, 0);
 
 //r扉が開くと同時に、中にいた黒服たちが、一斉にこちらへ銃や刀を構える。
 	OutputLine(NULL, "扉が開くと同時に、中にいた黒服たちが、一斉にこちらへ銃や刀を構える。",
@@ -1201,6 +1153,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r乙部が小声で呼びかけながら、そっと俺の腕をつかむ。
 	OutputLine(NULL, "乙部が小声で呼びかけながら、そっと俺の腕をつかむ。",
@@ -1225,9 +1178,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse11", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそれを合図に、…三船の口が、そう動いた。
@@ -1240,9 +1190,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_03", 1000 );
-
+	DrawScene("background/rouka1_03", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101617.「って、ええっ…？！kvS10/00/410101618.　まさか、俺のセリフが戦闘開始の合図とか？！」
 	PlaySE(4, "ps3/s10/00/410101617", 256, 64);
@@ -1265,12 +1215,8 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "left", 0, 0, 500 );
+	DrawScene("black", 500 );
 
 //r乙部が俺の手を引いて、扉の陰に隠れる。
 	OutputLine(NULL, "乙部が俺の手を引いて、扉の陰に隠れる。",
@@ -1278,16 +1224,11 @@
 	ClearMessage();
 
 	PlaySE(3, "mc071", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 250 );
+	DrawScene("black", 500 );
 	PlaySE(3, "mc071", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "c", 0, 0, 250 );
+	DrawScene("black", 500 );
 
 //rそのすぐ後を、黒服の放った銃弾が続けざまに二発。
 	OutputLine(NULL, "そのすぐ後を、黒服の放った銃弾が続けざまに二発。",
@@ -1315,17 +1256,13 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/rouka1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miono2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawSceneWithMask( "white", "left", 0, 0, 500 );
+	DrawBustshot( 4, "sprite/normal/miono2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/rouka1_03", 250 );
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	PlayBGM(2, "hm10_66", 128, 0);
 
 //黒服rvS10/00/VT3A_kuroB1003.「ぐわっ？！」
@@ -1352,27 +1289,21 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/a/cutin5", 1000 );
-
+	DrawScene("black", 250 );
 	PlaySE(3, "k1-swing", 256, 64);
-
-	DrawScene("background/rouka1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miono2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawSceneWithMask( "background/cutin5", "right", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
+	DrawBustshot( 4, "sprite/normal/miono2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/rouka1_03", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //黒服rvS10/00/VT3A_kuroC1004.「がはっ？！」
 	PlaySE(4, "ps3/s10/00/vt3a_kuroc1004", 256, 64);
 	OutputLine(NULL, "「がはっ？！」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1401,11 +1332,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miono2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/miono2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/rouka1_03", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //魅音rvS10/43/410400743.「ソコにいなッ！」
 	PlaySE(4, "ps3/s10/43/410400743", 256, 64);
@@ -1418,8 +1348,6 @@
 	OutputLine(NULL, "「…っ！！」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1444,12 +1372,9 @@
 	ClearMessage();
 
 	PlaySE(3, "kyupirn", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/rouka1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miono3_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/miono3_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/rouka1_03", 500 );
 
 //魅音rvS10/43/410400744.「上品にはできないよ。kvS10/43/410400745.死んでも恨まないヤツだけ、掛かってきなッ！！」
 	PlaySE(4, "ps3/s10/43/410400744", 256, 64);
@@ -1459,8 +1384,6 @@
 	OutputLine(NULL, "死んでも恨まないヤツだけ、掛かってきなッ！！」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1492,12 +1415,9 @@
 	ClearMessage();
 
 	PlaySE(3, "kyupirn", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/rouka1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miono3_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/miono3_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/rouka1_03", 500 );
 
 //魅音rvS10/43/410400746.「…遅いんだよっ！！」
 	PlaySE(4, "ps3/s10/43/410400746", 256, 64);
@@ -1506,18 +1426,18 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/a/cutin2", 1000 );
-
+	DrawScene("black", 250 );
+	Wait( 250 );
 	PlaySE(3, "dsse20", 256, 64);
-
-	DrawScene("background/a/cutin4", 1000 );
-
+	DrawSceneWithMask( "background/cutin2", "left", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
+	DrawScene("black", 250 );
 	PlaySE(3, "dsse20", 256, 64);
+	DrawSceneWithMask( "background/cutin4", "down", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
+	DrawScene("black", 250 );
 
 //黒服rvS10/00/VT3A_kuroA1006.「げはっ？！」
 	PlaySE(4, "ps3/s10/00/vt3a_kuroa1006", 256, 64);
@@ -1558,9 +1478,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/miono3_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/miono3_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //魅音rvS10/43/410400747.「――ふんッ！」
 	PlaySE(4, "ps3/s10/43/410400747", 256, 64);
@@ -1569,14 +1489,12 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/a/cutin6", 1000 );
-
+	DrawScene("black", 250 );
 	PlaySE(3, "dsse20", 256, 64);
+	DrawSceneWithMask( "background/cutin6", "left", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
+	DrawScene("black", 250 );
 
 //r黒服が体当たりしながら繰り出したナイフを、園崎さんの日本刀が弾き飛ばす。そのまま足払いをかけて、よろけたところで鳩尾を一突き…！
 	OutputLine(NULL, "黒服が体当たりしながら繰り出したナイフを、園崎さんの日本刀が弾き飛ばす。そのまま足払いをかけて、よろけたところで鳩尾を一突き…！",
@@ -1584,10 +1502,9 @@
 	ClearMessage();
 
 	PlaySE(3, "tatakiwaru", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/rouka1_03", 1000 );
+	DrawScene("white", 150 );
+	DrawScene("background/rouka1_03", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //黒服rvS10/00/VT3A_kuroC1006.「がっ？！」
 	PlaySE(4, "ps3/s10/00/vt3a_kuroc1006", 256, 64);
@@ -1596,7 +1513,8 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	DrawScene("black", 1000 );
 
 //r十数人いたはずの黒服たちの姿が、…瞬く間に一人、また一人と倒れてゆく。
@@ -1659,9 +1577,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/miono3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/rouka1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miono3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //三船rvS10/00/410800018.「…あの人数を相手に、ひるむどころか果敢に立ち向かい、確実に斬り伏せていく。kvS10/00/410800019.命までは奪わず、だが、確実に相手の動きを封じ込めていく、冷静で的確な攻撃。kvS10/00/410800020.…さすがだな、園崎魅音」
 	PlaySE(4, "ps3/s10/00/410800018", 256, 64);
@@ -1701,9 +1618,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/miono3_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/miono3_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //魅音rvS10/43/410400751.「はっ！kvS10/43/410400752.　その頃合ってのは、もうすぐかもしれないねぇ…！！」
 	PlaySE(4, "ps3/s10/43/410400751", 256, 64);
@@ -1725,6 +1642,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //三船rvS10/00/410800024.「……なっ…？！」
 	PlaySE(4, "ps3/s10/00/410800024", 256, 64);
@@ -1749,10 +1667,7 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse10", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "down", 0, 0, 1000 );
 
 //荒川rvS10/00/410101619.「あら？」
 	PlaySE(4, "ps3/s10/00/410101619", 256, 64);
@@ -1771,9 +1686,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/miono3_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/rouka1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/miono3_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400754.「…ってことは、あんた一人だね」
 	PlaySE(4, "ps3/s10/43/410400754", 256, 64);
@@ -1782,6 +1696,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //若頭rvS10/00/VT3A_Yhead1001.「ひっ…？！」
 	PlaySE(4, "ps3/s10/00/vt3a_yhead1001", 256, 64);
@@ -1872,8 +1787,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r黒服は、大げさに何度も額を地面にこすりつけている。
@@ -1910,8 +1823,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r…そう呟いた直後だった。
@@ -1920,12 +1831,10 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "mc071", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/rouka1_03", 1000 );
+	DrawSceneWithMask( "white", "c", 0, 0, 250 );
+	DrawScene("background/rouka1_03", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rダァァ…ンッッ！
 	OutputLine(NULL, "ダァァ…ンッッ！",
@@ -1966,12 +1875,8 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "left", 0, 0, 500 );
+	DrawScene("black", 500 );
 
 //r駆け寄ったのがあと一歩遅ければ、俺は園崎さんを抱きとめることができなかったかもしれない。
 	OutputLine(NULL, "駆け寄ったのがあと一歩遅ければ、俺は園崎さんを抱きとめることができなかったかもしれない。",
@@ -1988,10 +1893,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_03", 1000 );
-
+	DrawScene("background/rouka1_03", 250 );
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	PlayBGM(2, "hm06_26", 128, 0);
 
 //荒川rvS10/00/410101623.「…？！」
@@ -2001,10 +1906,10 @@
 	ClearMessage();
 
 	PlaySE(3, "thisikuki", 256, 64);
-
-	DrawScene("background/ryuuketu1_01", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "background/ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	DrawScene("black", 500 );
 
 //r咳とともに、ゲホッと血が吐き出され、俺のシャツを真っ赤に濡らす。
 	OutputLine(NULL, "咳とともに、ゲホッと血が吐き出され、俺のシャツを真っ赤に濡らす。",
@@ -2017,10 +1922,8 @@
 	ClearMessage();
 
 	PlaySE(3, "addse19", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/rouka1_03", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/rouka1_03", 500 );
 
 //若頭rvS10/00/VT3A_Yhead1011.「…ほんと、甘ちゃんだな。kvS10/00/VT3A_Yhead1012.だからあんたは、頭首にはなれねぇのさ」
 	PlaySE(4, "ps3/s10/00/vt3a_yhead1011", 256, 64);
@@ -2032,6 +1935,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101624.「きっ…、きさま…！」
 	PlaySE(4, "ps3/s10/00/410101624", 256, 64);
@@ -2109,7 +2013,8 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	DrawBustshot( 4, "sprite/normal/otobe_tere_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200944.「――えっ？！」
@@ -2150,12 +2055,8 @@
 	ClearMessage();
 
 	PlaySE(3, "addse19", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r黒服は改めて手を伸ばすと、拳銃を構えて引き金に指をかける。
 	OutputLine(NULL, "黒服は改めて手を伸ばすと、拳銃を構えて引き金に指をかける。",
@@ -2190,6 +2091,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //乙部rvS10/41/410200946.「うああああっ！」
 	PlaySE(4, "ps3/s10/41/410200946", 256, 64);
@@ -2198,13 +2100,10 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "mc071", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/rouka1_03", 1000 );
-
+	Negative( 500, FALSE );
+	DrawSceneWithMask( "white", "c", 0, 0, 250 );
+	DrawScene("background/rouka1_03", 250 );
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //r黒服の銃から、弾丸が飛び出し、まっすぐに園崎さん目掛けて飛んでくる。
@@ -2228,10 +2127,8 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
+	FadeFilm( 500, TRUE );
 
 //魅音rvS10/43/410400761.「――っぁっっ！！」
 	PlaySE(4, "ps3/s10/43/410400761", 256, 64);
@@ -2240,13 +2137,12 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/a/cutin4", 1000 );
-
 	PlaySE(3, "dsse20", 256, 64);
-
+	DrawSceneWithMask( "background/cutin4", "down", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	DrawScene( "black", 250 );
 	PlaySE(3, "down", 256, 64);
-
 	PlayBGM(2, "hm02_13", 128, 0);
 
 //r園崎さんは俺の身体から思いがけない強さで勢い良く離れると、手にした日本刀を振りかぶり…、上から下へ叩きつけるように一閃する。
@@ -2281,15 +2177,16 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/a/cutin2", 1000 );
-
 	PlaySE(3, "dsse20", 256, 64);
-
+	DrawSceneWithMask( "background/cutin2", "left", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
+	DrawScene("black", 250 );
 	PlaySE(3, "thisikuki", 256, 64);
-
-	DrawScene("background/ryuuketu1_01", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "background/ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	DrawScene("black", 500 );
 
 //若頭rvS10/00/VT3A_Yhead1024.「…ぐわっ？！」
 	PlaySE(4, "ps3/s10/00/vt3a_yhead1024", 256, 64);
@@ -2298,19 +2195,17 @@
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "up", 0, 0, 500 );
+	DrawScene("black", 500 );
 
 //r黒服の身体がのけぞり、…その場に、崩れ落ちる。
 	OutputLine(NULL, "黒服の身体がのけぞり、…その場に、崩れ落ちる。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_03", 1000 );
-
+	DrawScene("background/rouka1_03", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //魅音rvS10/43/410400762.「……」
 	PlaySE(4, "ps3/s10/43/410400762", 256, 64);
@@ -2341,8 +2236,6 @@
 	OutputLine(NULL, "ただの刀だったら、あんたの勝ちだったのにねぇ」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -2389,10 +2282,9 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("background/rouka1_03", 1000 );
-
+	DrawScene("background/rouka1_03", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101627.「園崎さんっ？！」
 	PlaySE(4, "ps3/s10/00/410101627", 256, 64);
@@ -2438,10 +2330,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm05_21", 128, 0);
 
 //r凄絶という言葉が、今ほど似合う場面に俺は遭遇したことがない。
@@ -2509,9 +2398,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/otobe_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/rouka1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/otobe_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200950.「魅音さん！kvS10/41/410200951.　もう…、動かないで下さい！」
 	PlaySE(4, "ps3/s10/41/410200950", 256, 64);
@@ -2528,6 +2416,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //魅音rvS10/43/410400768.「……おと、べ…。kvS10/43/410400769.すまないね…、ちょっと、頼んでも…いいかい…？」
 	PlaySE(4, "ps3/s10/43/410400768", 256, 64);
@@ -2639,9 +2528,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/otobe_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/otobe_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //乙部rvS10/41/410200957.「必ず…、振鈴を見つけ出して妹さんに渡します！kvS10/41/410200958.　約束します！」
 	PlaySE(4, "ps3/s10/41/410200957", 256, 64);
@@ -2706,9 +2595,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse10", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rとっさに俺は門に駆け寄り、間一髪の差で扉を閉じて閂を下ろす。
@@ -2717,7 +2603,7 @@
 	ClearMessage();
 
 	PlaySE(3, "a5_07205", 256, 64);
-
+	Wait( 2000 );
 	PlaySE(3, "addse13", 256, 64);
 
 //r…向こう側から銃撃の音がしたが、厚い壁はそう簡単には貫通しない。多少の時間稼ぎにはなるだろう。
@@ -2735,9 +2621,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/otobe_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/rouka1_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/otobe_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200959.「行って下さい、荒川さん！！」
 	PlaySE(4, "ps3/s10/41/410200959", 256, 64);
@@ -2881,9 +2766,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse10", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそして俺は、もう一度門の方向に目を向ける。
@@ -2892,7 +2774,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down3", 256, 64);
-
+	Wait( 1000 );
 	PlaySE(3, "down3", 256, 64);
 
 //r…扉には激しい衝突音が響き渡り、いまにも突き破られそうだ。
@@ -3020,9 +2902,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_03", 1000 );
-
+	DrawScene("background/rouka1_03", 250 );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101638.「待ってろ、乙部ぇッ！！」
 	PlaySE(4, "ps3/s10/00/410101638", 256, 64);
@@ -3036,7 +2918,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse10", 256, 64);
-
 	DrawScene("black", 1000 );
 
 //r…………。
@@ -3049,9 +2930,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	Wait( 2000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "dsse09", 256, 64);
+	Wait( 2500 );
 
 //r奥の間には、あっという間にたどり着いた。
 	OutputLine(NULL, "奥の間には、あっという間にたどり着いた。",
@@ -3068,10 +2950,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ima3_01", 1000 );
-
+	DrawScene("background/ima3_01", 250 );
 	PlaySE(3, "down2", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	PlayBGM(2, "hm02_09", 128, 0);
 
 //荒川rvS10/00/410101639.「……！！」
@@ -3129,10 +3011,8 @@
 	ClearMessage();
 
 	PlaySE(3, "addse19", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ima3_01", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/ima3_01", 250 );
 
 //三船rvS10/00/410800027.「素人の出る幕じゃ、ねぇんだ。kvS10/00/410800028.…大人しくそいつを渡せば、お前らのことは、見なかったことにしてやる」
 	PlaySE(4, "ps3/s10/00/410800027", 256, 64);
@@ -3144,6 +3024,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //乙部rvS10/41/410200967.「……」
 	PlaySE(4, "ps3/s10/41/410200967", 256, 64);
@@ -3255,11 +3136,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ima3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/otobe_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/otobe_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/ima3_01", 250 );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101643.「っ？！」
 	PlaySE(4, "ps3/s10/00/410101643", 256, 64);
@@ -3287,8 +3167,6 @@
 	OutputLine(NULL, "「乙部…」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -3392,9 +3270,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/otobe_tere_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ima3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/otobe_tere_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //三船rvS10/00/410800029.「…そうかい。kvS10/00/410800030.なら、仕方がない」
 	PlaySE(4, "ps3/s10/00/410800029", 256, 64);
@@ -3424,15 +3301,9 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "down", 0, 0, 500 );
+	DrawScene("black", 500 );
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //r俺は奇声を発しながら、銃を構えている三船に無我夢中で飛び掛った！！
@@ -3441,11 +3312,11 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/ima3_01", 1000 );
-
+	DrawScene("background/ima3_01", 250 );
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
+	FadeOutBGM( 1, 200, FALSE  );
 	PlayBGM(2, "hm08_36", 128, 0);
 
 //三船rvS10/00/410800032.「…なっ？！」
@@ -3478,16 +3349,14 @@
 	ClearMessage();
 
 	PlaySE(3, "tataku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ima3_01", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("background/ima3_01", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 100 );
 	PlaySE(3, "tataku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ima3_01", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/ima3_01", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r三船が俺のあごを、容赦もなく殴りつける。
 	OutputLine(NULL, "三船が俺のあごを、容赦もなく殴りつける。",
@@ -3495,10 +3364,10 @@
 	ClearMessage();
 
 	PlaySE(3, "thisikuki", 256, 64);
-
-	DrawScene("background/ryuuketu1_01", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "background/ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	DrawScene("black", 500 );
 
 //r見掛けに似合わない、苛烈な一撃。自慢の眼鏡が吹っ飛び、鼻に激痛が走って、鼻当ての部分から血が出る。
 	OutputLine(NULL, "見掛けに似合わない、苛烈な一撃。自慢の眼鏡が吹っ飛び、鼻に激痛が走って、鼻当ての部分から血が出る。",
@@ -3510,9 +3379,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ima3_01", 1000 );
-
+	DrawScene("background/ima3_01", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101649.「ぐ、ぐぁぁぁあぁっっ！！」
 	PlaySE(4, "ps3/s10/00/410101649", 256, 64);
@@ -3536,6 +3405,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //三船rvS10/00/410800034.「ぐあっ！　なんだ、こいつッ？！」
 	PlaySE(4, "ps3/s10/00/410800034", 256, 64);
@@ -3555,9 +3425,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/otobe_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/otobe_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //乙部rvS10/41/410200970.「荒川さんっ…！！」
 	PlaySE(4, "ps3/s10/41/410200970", 256, 64);
@@ -3571,23 +3441,18 @@
 	ClearMessage();
 
 	PlaySE(3, "mc071", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "c", 0, 0, 250 );
+	DrawScene("black", 500 );
 
 //rガァァンッッ！
 	OutputLine(NULL, "ガァァンッッ！",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ima3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/otobe_tere_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/otobe_tere_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/ima3_01", 250 );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //乙部rvS10/41/410200971.「――っ？！」
 	PlaySE(4, "ps3/s10/41/410200971", 256, 64);
@@ -3610,12 +3475,8 @@
 	ClearMessage();
 
 	PlaySE(3, "tatakiwaru", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 150 );
+	DrawScene("black", 150 );
 
 //rガンッ！
 	OutputLine(NULL, "ガンッ！",
@@ -3664,10 +3525,8 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
 
 //乙部rvS10/41/410200972.「荒川さん？！」
 	PlaySE(4, "ps3/s10/41/410200972", 256, 64);
@@ -3705,13 +3564,10 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ima3_01", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("background/ima3_01", 250 );
 	PlaySE(3, "dsse19", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //rぐらり、とその身体が、…揺れる。
@@ -3719,17 +3575,15 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/otobe_tere_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/otobe_tere_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //乙部rvS10/41/410200974.「…！！」
 	PlaySE(4, "ps3/s10/41/410200974", 256, 64);
 	OutputLine(NULL, "「…！！」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -3751,28 +3605,15 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
+	Wait( 250 );
+	DrawBustshot( 4, "sprite/normal/shiono_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ima3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/shiono_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //r死んだはずの、園崎魅音だった。
 	OutputLine(NULL, "死んだはずの、園崎魅音だった。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

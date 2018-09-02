@@ -13,12 +13,10 @@
 
 //雛見沢へ
 
+	Wait( 500 );
 	PlayBGM( 1, "dsse03", 128, 0 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("background/kai_jyun", 1000 );
-
 	PlayBGM(2, "hm03_14", 128, 0);
 
 //三島rvS20/00/VTT_mishima3001.「あ、いたいた。kvS20/00/VTT_mishima3002.おーい、荒川ちゃん」
@@ -185,12 +183,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
+	Negative( 500, FALSE );
 	DrawScene("background/oni1", 1000 );
-
 	PlayBGM(2, "hm06_25", 128, 0);
 
 //r…昭和５８年。
@@ -250,11 +246,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
 	PlayBGM( 1, "dsse03", 128, 0 );
-
-	DrawScene("background/kai_jyun", 1000 );
+	FadeFilm( 1000, FALSE );
+	DrawScene("background/kai_jyun", 500 );
 
 //三島rvS20/00/VTT_mishima3015.「不気味というか…奇妙な話だったよなぁ。kvS20/00/VTT_mishima3016.もっとも、俺はお前と違って幽霊は信じないクチだけど」
 	PlaySE(4, "ps3/s20/00/vtt_mishima3015", 256, 64);
@@ -330,6 +325,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //三島rvS20/00/VTT_mishima3019.「ええぇっ？！kvS20/00/VTT_mishima3020.　あ、明日ぁぁあぁっっ？！」
 	PlaySE(4, "ps3/s20/00/vtt_mishima3019", 256, 64);
@@ -470,8 +466,8 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS20/00/VTT_arakawa3030.「……ん？」
 	PlaySE(4, "ps3/s20/00/vtt_arakawa3030", 256, 64);

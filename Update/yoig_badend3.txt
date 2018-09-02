@@ -13,10 +13,9 @@
 
 //BADEND3 (誰もいなくなった)
 
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	PlayBGM(2, "hm05_20", 128, 0);
 
 //r…夢を見ていた。
@@ -67,7 +66,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("background/denwa", 1000 );
 
 //？？？rvS10/00/VT3A_araB1001.「あんたが…、龍ノ介か？」
@@ -332,9 +330,7 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "se137", 256, 64);
-
 	PlayBGM( 1, "addse10", 128, 0 );
 
 //r…………。
@@ -358,7 +354,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "se137", 256, 64);
 
 //荒川r-vS10/00/ds_ara001.（ま、…２０年以上前のテープなんだから、当然だよな）
@@ -375,7 +370,6 @@
 	ClearMessage();
 
 	PlaySE(3, "se137", 256, 64);
-
 	PlayBGM( 1, "addse10", 128, 0 );
 
 //r…………。
@@ -430,7 +424,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "se137", 256, 64);
 
 //r俺は思わず再生を止めると、テープが切れないよう慎重に手で巻き戻してからヘッドホンをかけ、もう一度しっかりと聞き直した。
@@ -439,11 +432,10 @@
 	ClearMessage();
 
 	PlaySE(3, "se137", 256, 64);
-
+	FadeFilm( 500, TRUE );
+	DrawFilm( 2, 0, 0, 0, 128, 0, 500, TRUE );
 	PlayBGM( 1, "addse10", 128, 0 );
-
 	DrawScene("scene/027d", 1000 );
-
 	PlayBGM(2, "hm06_30", 128, 0);
 
 //詩音rvS10/06/ds_shi004.「…結局、あの子の言う通りだったんです。kvS10/06/ds_shi005.オヤシロさまは本当にいて、…そして祟りも、本当にあった。kvS10/06/ds_shi006.そしてみんな、その怒りを受けて死んでしまった…」
@@ -605,7 +597,6 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "himeraretakyousou", 256, 64);
 
 //荒川の父rvS10/00/VT3A_araF1007.「……え？kvS10/00/VT3A_araF1008.　っ？！」
@@ -618,7 +609,7 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
+	FadeFilm( 500, TRUE );
 	PlayBGM( 0, "semi_r", 128, 0 );
 
 //rその時。
@@ -748,10 +739,8 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //荒川の父rvS10/00/VT3A_araF1014.「――ひっ？！」
 	PlaySE(4, "ps3/s10/00/vt3a_araf1014", 256, 64);
@@ -790,12 +779,9 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "down2", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //荒川rvS10/00/ds_ara006.「――っ！！」
 	PlaySE(4, "ps3/s10/00/ds_ara006", 256, 64);
@@ -829,13 +815,9 @@
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 	FadeOutBGM(0, 200, TRUE);
-
 	PlayBGM(2, "hm06_26", 128, 0);
 
 //荒川rvS10/00/ds_ara007.「ひっ…？！」
@@ -868,7 +850,8 @@
 	ClearMessage();
 
 	PlaySE(3, "addse07", 256, 64);
-
+	DrawSceneWithMask( "white", "c", 0, 0, 500 );
+	Negative( 500, FALSE );
 	DrawScene("background/aka1", 1000 );
 
 //rその瞬間、畳の地面は闇の空間へと変わって、…俺はなすすべも無く、その中へと落ちて飲み込まれてゆく。
@@ -876,9 +859,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("black", 500 );
+	FadeFilm( 500, FALSE );
 
 //rそして、意識が急速に遠のき――。
 	OutputLine(NULL, "そして、意識が急速に遠のき——。",
@@ -892,9 +874,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawScene("background/jsa7", 250 );
 	PlaySE(3, "down", 256, 64);
-
-	DrawScene("background/jsa7", 1000 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/ds_ara009.「……んあ？」
 	PlaySE(4, "ps3/s10/00/ds_ara009", 256, 64);
@@ -941,7 +923,6 @@
 	ClearMessage();
 
 	DrawScene("background/js7_01", 1000 );
-
 	PlayBGM(2, "hm01_03", 128, 0);
 
 //荒川rvS10/00/410101113.「ここは…？」
@@ -962,6 +943,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //荒川rvS10/00/410101114.「うわっ？！」
 	PlaySE(4, "ps3/s10/00/410101114", 256, 64);
@@ -1115,15 +1097,10 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/js4_04", 1000 );
-
-	DrawScene("background/js4_04", 1000 );
-
+	Negative( 500, TRUE );
+	Wait( 500 );
+	FadeFilm( 1000, TRUE );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //荒川rvS10/00/410101123.「え…？」
@@ -1329,6 +1306,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r俺の話しかけを無視するかのように、警官が俺の腕を強引に持ち上げる。そして、
 	OutputLine(NULL, "俺の話しかけを無視するかのように、警官が俺の腕を強引に持ち上げる。そして、",
@@ -1406,8 +1384,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	Wait( 2000 );
 	PlayBGM( 1, "ame", 128, 0 );
-
 	DrawScene("background/jys1_01", 1000 );
 
 //r雨はまだ、強く降り続いている。
@@ -1426,7 +1404,6 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse16", 256, 64);
-
 	DrawScene("black", 1000 );
 
 //rそして、俺は彼らに取り囲まれるようにして石段を下っていった。
@@ -1442,12 +1419,9 @@
 	ClearMessage();
 
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jok3", 1000 );
-
-	DrawScene("background/jok3", 1000 );
+	Negative( 500, TRUE );
+	Wait( 500 );
+	FadeFilm( 500, TRUE );
 
 //rちょっと待て。黒塗りの車…だと？
 	OutputLine(NULL, "ちょっと待て。黒塗りの車…だと？",
@@ -1465,13 +1439,9 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	PlaySE(3, "addse22", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/kuruma4_01", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("background/kuruma4_01", 500 );
 	PlayBGM(2, "hm06_25", 128, 0);
 
 //刑事rvS10/00/VT3A_FkeijiA1023.「この人、練炭自殺…、見たそうですよ」
@@ -1542,7 +1512,6 @@
 	ClearMessage();
 
 	PlaySE(3, "addse23", 256, 64);
-
 	DrawScene("black", 1000 );
 
 //r警官はつまらなそうに言う。…が、それ以上は何も訊かれることなく、車はすべるように走りだした。
@@ -1593,12 +1562,9 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "addse17", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/kuruma5_03", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/kuruma5_03", 500 );
 
 //荒川rvS10/00/410101140.「…？！」
 	PlaySE(4, "ps3/s10/00/410101140", 256, 64);
@@ -1624,7 +1590,7 @@
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
-
+	Wait( 100 );
 	PlayBGM(2, "hm02_12", 128, 0);
 
 //rということは、…これは、美雪ちゃんのピアスじゃないのか…？
@@ -1824,13 +1790,9 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //r背筋を、ぞわっと悪寒が這いあがった。
@@ -1849,7 +1811,6 @@
 	ClearMessage();
 
 	DrawScene("background/kuruma5_03", 1000 );
-
 	PlayBGM(2, "hm06_26", 128, 0);
 
 //荒川rvS10/00/410101148.「あの…、どこへ向かっているんですかね？」
@@ -1895,7 +1856,6 @@
 	ClearMessage();
 
 	PlaySE(3, "addse23", 256, 64);
-
 	DrawScene("black", 1000 );
 
 //rそぼ降る雨の中、車は闇を縫って、走り続けていた…。
@@ -1903,12 +1863,10 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	Wait( 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "suzume_lp", 128, 0 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("background/sora", 1000 );
 
 //rそれから数ヵ月後…。
@@ -1922,11 +1880,8 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM( 1, "dsse03", 128, 0 );
-
 	DrawScene("background/denwa", 1000 );
 
 //r『週刊セブン』の編集部はいつも通り、活気に満ちている。そこかしこで電話が鳴り、人の声があり、どの机にも書きかけの原稿や書籍が積みあがっていて…。
@@ -1952,10 +1907,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/kai_ten", 1000 );
-
+	DrawScene("background/kai_ten", 250 );
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM(2, "hm01_07", 128, 0);
 
 //デスクrvS10/00/VT3A_desk1002.「…荒川がいたら、もっと面白い紙面になるだろうに。はぁ～…」
@@ -2009,7 +1963,6 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("black", 1000 );
 
 //ＴＶアナrvS10/00/VT3A_Tvann1001.「次のニュースです。kvS10/00/VT3A_Tvann1002.今日未明、三重県木曽川の河口付近で、白骨死体が発見されました」
@@ -2051,7 +2004,6 @@
 	ClearMessage();
 
 	PlaySE(3, "kami", 256, 64);
-
 	DrawScene("background/kai_jyun", 1000 );
 
 //r木曽川は三重県のほか、愛知県、岐阜県にまたがって流れていて……。
@@ -2096,7 +2048,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r雛見沢村・親子二代祟殺し――。加納の脳裏にふと、そんなタイトルがよぎる。
@@ -2115,27 +2066,13 @@
 	ClearMessage();
 
 	PlayBGM( 1, "higurasi", 128, 0 );
-
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	DrawScene("background/hi1_01", 1000 );
 
 //r全ての謎は謎のまま、生者を食らう鬼の棲む村に飲み込まれていった…。
 	OutputLine(NULL, "全ての謎は謎のまま、生者を食らう鬼の棲む村に飲み込まれていった…。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );
@@ -2149,4 +2086,7 @@
 	DrawScene( "black", 3000 );
 	SetValidityOfInput( TRUE );
 
+	FadeFilm( 500, TRUE );
+	FadeOutBGM(1, 200, FALSE  );
+	FadeOutBGM(2, 200, FALSE);
 }
