@@ -16,7 +16,7 @@ void main()
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
 
-	char Chapter[6];
+	char Chapter[7];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
@@ -24,8 +24,9 @@ void main()
 		Chapter[1] = "Tsukiotoshi";
 		Chapter[2] = "Someutsushi";
 		Chapter[3] = "Kageboushi";
-		Chapter[4] = "Yoigoshi";		
-		Chapter[5] = "Back";
+		Chapter[4] = "Yoigoshi";
+		Chapter[5] = "Police Case Files";
+		Chapter[6] = "Back";
 
 		//Chapter[6] = "Tokihogushi";
 		//Chapter[7] = "Miotsukushi Omote";
@@ -41,7 +42,8 @@ void main()
 		Chapter[2] = "染伝し編";
 		Chapter[3] = "影紡し編";
 		Chapter[4] = "宵越し編";		
-		Chapter[5] = "戻る";
+		Chapter[5] = "警察事件調書";		
+		Chapter[6] = "戻る";
 
 		//Chapter[6] = "解々し編";
 		//Chapter[7] = "澪尽し編 表";
@@ -52,7 +54,7 @@ void main()
 	}
 
 //	InitializeSelectedItem();
-	Select( 6, Chapter );
+	Select( 7, Chapter );
 	DisableWindow();
 	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
@@ -138,7 +140,7 @@ void main()
 			JumpScript( "flow" );
 		}
 	}
-		else if(LoadValueFromLocalWork( SelectResult ) == 4)
+	else if(LoadValueFromLocalWork( SelectResult ) == 4)
 	{
 		DrawScene( "scenario/kageboushi_a", 500 );
 		DrawSceneWithMask( "scenario/kageboushi_b", "5", 0, 0, 500 );
@@ -153,6 +155,27 @@ void main()
 
 			SetValidityOfSaving( TRUE );
 			CallSection("YoiDay1");
+		}
+		else
+		{
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 5)
+	{
+		DrawScene( "scenario/kageboushi_a", 500 );
+		DrawSceneWithMask( "scenario/kageboushi_b", "5", 0, 0, 500 );
+		DrawSceneWithMask( "scenario/kageboushi_c", "5", 0, 0, 500 );
+
+		ShowChapterPreview();
+
+		if(LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1)
+		{
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetValidityOfSaving( TRUE );
+			CallSection("PoliceCaseFiles");
 		}
 		else
 		{
@@ -663,181 +686,23 @@ void YoiDay4()
 {
 	CallScript( "yoig_004" );
 
-//	char Choice1[2];
-
-//	if(GetGlobalFlag(GLanguage) == 1)
-//	{
-//		Choice1[0] = "Taraimawashi";
-//		Choice1[1] = "Tsukiotoshi";
-//	}
-//	else
-//	{
-//		Choice1[0] = "盥回し編";
-//		Choice1[1] = "憑落し編";
-//	}
-
-//	InitializeSelectedItem();
-//	Select( 2, Choice1 );
-//	DisableWindow();
-//	if (LoadValueFromLocalWork( SelectResult ) == 0) 
-//	{
-//		CallScript("yoig_route_a");
-//		JumpSection("YoiDay4_to5");
-//		SetGlobalFlag(GHimatsubushiDay, 0);
-//	}
-//	else 
-//	{
-//		CallScript("yoig_route_b");
-//		JumpSection("YoiDay4_to5b");
-//		SetGlobalFlag(GHimatsubushiDay, 1);
-//	}
-	
 	if (GetGlobalFlag(GHimatsubushiDay) == 0) 
 	{
 		CallScript("yoig_route_a");
-//		JumpSection("YoiDay5");
 	}
 	else 
 	{
 		CallScript("yoig_route_b");
-		JumpSection("YoiDay5b");
 	}
 }
 
-void YoiDay5()
+void PoliceCaseFiles()
 {
-	CallScript( "yoig_005" );
-
-	SetLocalFlag(GArc, 4);
-	StoreValueToLocalWork( ChapterNumber, 5 );
-	SavePoint("Ch.5 終わり", "End of Chapter 5");
+	SetLocalFlag(GArc, 11);
+	StoreValueToLocalWork( ChapterNumber, 1 );
+	SavePoint("警察事件調書", "Police Case Files");
 	CallSection( "SetDay" );
 	CallSection( "ViewTips" );
 
-	JumpSection("YoiDay6");
-}
-
-void YoiDay5b()
-{
-	CallScript( "yoig_005b" );
-
-	if (GetGlobalFlag(GHimatsubushiDay) == 0) 
-	{
-		JumpSection("YoiDay6b");
-	}
-	else {
-		JumpSection("YoiBadEnd3");
-	}
-}
-
-void YoiDay6()
-{
-	CallScript( "yoig_006" );
-
-	if (GetGlobalFlag(GHimatsubushiDay) == 0) 
-	{
-		JumpSection("YoiDay7");
-	}
-	else {
-		JumpSection("YoiBadEnd1");
-	}
-}
-
-void YoiDay6b()
-{
-	CallScript( "yoig_006b" );
-	JumpSection("YoiDay7b");
-}
-
-void YoiBadEnd3()
-{
-	CallScript( "yoig_badend3" );
-	JumpScript( "flow" );
-}
-
-void YoiDay7()
-{
-	CallScript( "yoig_007" );
-
-	SetLocalFlag(GArc, 4);
-	StoreValueToLocalWork( ChapterNumber, 7 );
-	SavePoint("Ch.7 終わり", "End of Chapter 7");
-	CallSection( "SetDay" );
-	CallSection( "ViewTips" );
-
-	JumpSection("YoiDay8");
-}
-
-void YoiBadEnd1()
-{
-	CallScript( "yoig_badend1" );
-	JumpScript( "flow" );
-}
-
-void YoiDay7b()
-{
-	CallScript( "yoig_007b" );
-
-	SetLocalFlag(GArc, 4);
-	StoreValueToLocalWork( ChapterNumber, 8 );
-	SavePoint("Ch.7b 終わり", "End of Chapter 7b");
-	CallSection( "SetDay" );
-	CallSection( "ViewTips" );
-
-	JumpSection("YoiBadEnd2");
-}
-
-void YoiDay8()
-{
-	CallScript( "yoig_008" );
-	JumpSection("YoiDay9");
-}
-
-void YoiBadEnd2()
-{
-	CallScript( "yoig_badend2" );
-	JumpScript( "flow" );
-}
-
-void YoiDay9()
-{
-	CallScript( "yoig_009" );
-	JumpSection("YoiDay10");
-}
-
-void YoiDay10()
-{
-	CallScript( "yoig_010" );
-	JumpSection("YoiDay11");
-}
-
-void YoiDay11()
-{
-	CallScript( "yoig_011" );
-	JumpSection("YoiDay12");
-}
-
-void YoiDay12()
-{
-	CallScript( "yoig_012" );
-	JumpSection("YoiDay13");
-}
-
-void YoiDay13()
-{
-	CallScript( "yoig_013" );
-	JumpSection("YoiDay14");
-}
-
-void YoiDay14()
-{
-	CallScript( "yoig_014" );
-
-	SetLocalFlag(GArc, 4);
-	StoreValueToLocalWork( ChapterNumber, 14 );
-	SavePoint("Ch.14 終わり", "End of Chapter 14");
-	CallSection( "SetDay" );
-	CallSection( "ViewTips" );
-
-	JumpScript( "flow" );
+	JumpSection("flow");
 }
