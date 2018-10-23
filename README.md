@@ -12,7 +12,7 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | Kageboushi   | 100%     | 100%        | 100%    | 
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
 | Taraimawashi | 100%     | 100%        | 100%    | 
-| Yoigoshi     | 100%     |  34%        |   0%    | 
+| Yoigoshi     | 100%     |  42%        |   0%    | 
 
 The next arc is Yoigoshi.  Porting is complete, although some bugfixing may still be required (especially in the choices) Those issues will be sorted out during translation, which is beginning now.
 
