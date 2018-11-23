@@ -12,7 +12,7 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | Kageboushi   | 100%     | 100%        | 100%    | 
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
 | Taraimawashi | 100%     | 100%        | 100%    | 
-| Yoigoshi     | 100%     |  64%        |   0%    | 
+| Yoigoshi     | 100%     |  71%        |   0%    | 
 
 The next arc is Yoigoshi.  Translation is halfway done, and will probably be done by the end of the year if I'm able to maintain the current pace.
 
