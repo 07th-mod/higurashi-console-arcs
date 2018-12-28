@@ -2,7 +2,7 @@
 
 This patch aims to eventually port all the arcs from the PS3 version of Higurashi to Mangagamer's Steam release of Higurashi.  This is a large task and it will take a long time to port them all, so each arc will be rolled out one at a time.
 
-Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fit in with the main series and the recommended reading order.
+Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arcs fit in with the main series and the recommended reading order.
 
 ## Current Status
 
@@ -12,9 +12,9 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arc fi
 | Kageboushi   | 100%     | 100%        | 100%    | 
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
 | Taraimawashi | 100%     | 100%        | 100%    | 
-| Yoigoshi     | 100%     |  99%        |   0%    | 
+| Yoigoshi     | 100%     | 100%        |   0%    | 
 
-The next arc is Yoigoshi.  Translation is halfway done, and will probably be done by the end of the year if I'm able to maintain the current pace.
+Yoigoshi translation is complete.  There are still some technical steps to get everything implemented, and the whole script needs to go through editing.  Hoping for a full release in late January.
 
 
 ## Screenshots
