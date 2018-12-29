@@ -1,4 +1,4 @@
-﻿void main()
+void main()
 {
 
 
@@ -20,41 +20,49 @@
 	DrawScene("background/ke_ky2", 1000 );
 
 //r……最後のファイルを読み終えて表紙を閉じた私は、ふと窓の外に目を向ける。東の空はすっかり明け、朝焼けの赤い陽光がブラインドの隙間から差し込んでいた。
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……最後のファイルを読み終えて表紙を閉じた私は、ふと窓の外に目を向ける。東の空はすっかり明け、朝焼けの赤い陽光がブラインドの隙間から差し込んでいた。",
-			NULL, "...After reading the last case in the file, I closed the cover and suddenly turned my gaze out the window. The eastern sky was clearly visible, and the morning sun was pouring in through the gaps between the blinds.", Line_Normal); 
+			NULL, "...After reading the last case in the file, I closed the cover and suddenly turned my gaze out the window. The eastern sky was clearly visible, and the morning sun was pouring in through the gaps between the blinds.", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0012.「……やれやれ、結局朝までコースか」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0012", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0012", 256, TRUE);
 	OutputLine(NULL, "「……やれやれ、結局朝までコースか」",
-			NULL, "\"...Good grief, have I been in here all night?\"", Line_Normal); 
+			NULL, "\"...Good grief, have I been in here all night?\"", Line_Normal);
 	ClearMessage();
 
 //r軽く目を通す程度で留めるつもりだったのに、つい読みふけってしまった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "軽く目を通す程度で留めるつもりだったのに、つい読みふけってしまった。",
-			NULL, "I was planning to stop after a quick look, but I couldn't help but continue reading.", Line_Normal); 
+			NULL, "I was planning to stop after a quick look, but I couldn't help but continue reading.", Line_Normal);
 	ClearMessage();
 
 //r職業病か、貧乏症か。……いずれにしても、今日で関わるのが最後と思えばこそ、未練が残ってしまったということか。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "職業病か、貧乏症か。……いずれにしても、今日で関わるのが最後と思えばこそ、未練が残ってしまったということか。",
-			NULL, "Is this a pathetic occupational disorder? ...In any case, today is the last day I'll be involved, so maybe I just have a few lingering regrets.", Line_Normal); 
+			NULL, "Is this a pathetic occupational disorder? ...In any case, today is the last day I'll be involved, so maybe I just have a few lingering regrets.", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0013.「…………」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0013", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0013", 256, TRUE);
 	OutputLine(NULL, "「…………」",
-			NULL, "\"......\"", Line_Normal); 
+			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //r本当に、……悲しいほど多くの人が命を落とし、それでなくとも人生を大きく狂わされた。それは、私とて他人事ではない。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "本当に、……悲しいほど多くの人が命を落とし、それでなくとも人生を大きく狂わされた。それは、私とて他人事ではない。",
-			NULL, "It's truly unfortunate... the sheer number of lives lost, and even the people who survived were driven mad. And it's a personal tragedy for me.", Line_Normal); 
+			NULL, "It's truly unfortunate... the sheer number of lives lost, and even the people who survived were driven mad. And it's a personal tragedy for me.", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0014.「……熊ちゃん」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0014", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0014", 256, TRUE);
 	OutputLine(NULL, "「……熊ちゃん」",
-			NULL, "\"...Kuma-chan.\"", Line_Normal); 
+			NULL, "\"...Kuma-chan.\"", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
@@ -62,114 +70,131 @@
 	DrawScene("black", 1000 );
 	PlayBGM(2, "hm10_62", 128, 0);
 	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
-	DrawBustshot( 4, "sprite/normal/kuma_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 19, "sprite/normal/kuma_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //r自分の下で精力的に、そして積極的に動き続けていた若い刑事の顔が脳裏に浮かんで、思わず瞑目する。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "自分の下で精力的に、そして積極的に動き続けていた若い刑事の顔が脳裏に浮かんで、思わず瞑目する。",
-			NULL, "A vision of my energetic subordinate detective suddenly floated to mind as I closed my eyes.", Line_Normal); 
+			NULL, "A vision of my energetic subordinate detective suddenly floated to mind as I closed my eyes.", Line_Normal);
 	ClearMessage();
 
 //r大災害が起こったあの日、たまたま急用で穀倉の県警本部に呼び出された自分に代わって、彼が雛見沢に足を運んでくれていたのだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "大災害が起こったあの日、たまたま急用で穀倉の県警本部に呼び出された自分に代わって、彼が雛見沢に足を運んでくれていたのだ。",
-			NULL, "I happened to be called in to prefectural police headquarters on the day when the disaster struck, but he was working in Hinamizawa at the time.", Line_Normal); 
+			NULL, "I happened to be called in to prefectural police headquarters on the day when the disaster struck, but he was working in Hinamizawa at the time.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/kuma_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 19, "sprite/normal/kuma_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //熊谷rvS01/19/VTF_kumagai_0001.『大丈夫っすよ、大石さん！kvS01/19/VTF_kumagai_0002.　こっちは俺に任せて、もっと面倒っぽいそっちの方をお願いします』
-	PlaySE(4, "ps3/s01/19/vtf_kumagai_0001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>Kumagai</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s01/19/vtf_kumagai_0001", 256, TRUE);
 	OutputLine(NULL, "『大丈夫っすよ、大石さん！",
-			NULL, "\"It's all right, Ooishi-san!", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/19/vtf_kumagai_0002", 256, 64);
+			NULL, "\"It's all right, Ooishi-san!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 19, "ps3/s01/19/vtf_kumagai_0002", 256, TRUE);
 	OutputLine(NULL, "　こっちは俺に任せて、もっと面倒っぽいそっちの方をお願いします』",
-			NULL, " Please, leave it to me. I'll take care of it.\"", Line_Normal); 
+			NULL, " Please, leave it to me. I'll take care of it.\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 	FadeFilm( 500, TRUE );
 
 //大石rvS01/11/VTF_oishi_0015.「バカ野郎……」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0015", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0015", 256, TRUE);
 	OutputLine(NULL, "「バカ野郎……」",
-			NULL, "\"You idiot...\"", Line_Normal); 
+			NULL, "\"You idiot...\"", Line_Normal);
 	ClearMessage();
 
 //rもちろん、その罵りは彼に対してのものではない。私自身に向けたものだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "もちろん、その罵りは彼に対してのものではない。私自身に向けたものだ。",
-			NULL, "Of course, I wasn't directing that abuse toward at him. It was targeted at myself.", Line_Normal); 
+			NULL, "Of course, I wasn't directing that abuse toward at him. It was targeted at myself.", Line_Normal);
 	ClearMessage();
 
 //r彼が雛見沢に行ったのは、私が抱えていた案件に関するもの。それも上の命令に逆らう、ともすれば独断と呼ぶべき捜査だった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "彼が雛見沢に行ったのは、私が抱えていた案件に関するもの。それも上の命令に逆らう、ともすれば独断と呼ぶべき捜査だった。",
-			NULL, "He went to Hinamizawa to take care of something I wanted to do. And he defied orders from above to do it.", Line_Normal); 
+			NULL, "He went to Hinamizawa to take care of something I wanted to do. And he defied orders from above to do it.", Line_Normal);
 	ClearMessage();
 
 //r自分の担当事件で傷つき斃れるのは、この職業につきまとう因果だからそれも本望だろう。……だが、彼は違った。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "自分の担当事件で傷つき斃れるのは、この職業につきまとう因果だからそれも本望だろう。……だが、彼は違った。",
-			NULL, "I was afraid that taking action would cause irreparable damage to my career. ...But he was different.", Line_Normal); 
+			NULL, "I was afraid that taking action would cause irreparable damage to my career. ...But he was different.", Line_Normal);
 	ClearMessage();
 
 //r言い方を変えれば、……彼は、私の代わりに死んだようなものなのだ……。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "言い方を変えれば、……彼は、私の代わりに死んだようなものなのだ……。",
-			NULL, "In other words... it feels like he died in my place...", Line_Normal); 
+			NULL, "In other words... it feels like he died in my place...", Line_Normal);
 	ClearMessage();
 
 	DrawScene("background/ke5", 1000 );
 
 //大石rvS01/11/VTF_oishi_0016.「……。kvS01/11/VTF_oishi_0017.なんで私は、こうして生きているんでしょうねぇ」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0016", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0016", 256, TRUE);
 	OutputLine(NULL, "「……。",
-			NULL, "\"...", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0017", 256, 64);
+			NULL, "\"...", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0017", 256, TRUE);
 	OutputLine(NULL, "なんで私は、こうして生きているんでしょうねぇ」",
-			NULL, " Why am I still alive?\"", Line_Normal); 
+			NULL, " Why am I still alive?\"", Line_Normal);
 	ClearMessage();
 
 //r死者への侮辱にも等しい言葉だと、自分でもわかっている。だが、そう呟かずにはいられない。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "死者への侮辱にも等しい言葉だと、自分でもわかっている。だが、そう呟かずにはいられない。",
-			NULL, "To speak those words was an insult to the dead, even I understood that. But I just couldn't help muttering it.", Line_Normal); 
+			NULL, "To speak those words was an insult to the dead, even I understood that. But I just couldn't help muttering it.", Line_Normal);
 	ClearMessage();
 
 //r家庭を持ち、前途ある未来を残していた若者がこの世を去り、死を賭した自分がこうして、おめおめと生き恥をさらしている。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "家庭を持ち、前途ある未来を残していた若者がこの世を去り、死を賭した自分がこうして、おめおめと生き恥をさらしている。",
-			NULL, "A young man with a family and a promising future has departed this world, and his death only emphasizes the disgrace of my life.", Line_Normal); 
+			NULL, "A young man with a family and a promising future has departed this world, and his death only emphasizes the disgrace of my life.", Line_Normal);
 	ClearMessage();
 
 //r今日まで自分が生きてこられたのは、運か。それとも、謎の背後にいる連中から殺す価値もないと見切られたということか。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "今日まで自分が生きてこられたのは、運か。それとも、謎の背後にいる連中から殺す価値もないと見切られたということか。",
-			NULL, "Was it just luck that allowed me to live as long as I have? Did I give up on finding the killer behind this mystery?", Line_Normal); 
+			NULL, "Was it just luck that allowed me to live as long as I have? Did I give up on finding the killer behind this mystery?", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //大石rvS01/11/VTF_oishi_0018.「……くそったれ」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0018", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0018", 256, TRUE);
 	OutputLine(NULL, "「……くそったれ」",
-			NULL, "\"...You piece of shit.\"", Line_Normal); 
+			NULL, "\"...You piece of shit.\"", Line_Normal);
 	ClearMessage();
 
 //r思わず吐き捨てるが、それも天に唾だ。事実、何もつかめないまま自分は一線から退き、真相は闇の向こう。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "思わず吐き捨てるが、それも天に唾だ。事実、何もつかめないまま自分は一線から退き、真相は闇の向こう。",
-			NULL, "I suddenly looked up toward the heavens and spat those words out. In reality, I'm retreating from this line of work without learning anything. The truth is still in the darkness.", Line_Normal); 
+			NULL, "I suddenly looked up toward the heavens and spat those words out. In reality, I'm retreating from this line of work without learning anything. The truth is still in the darkness.", Line_Normal);
 	ClearMessage();
 
 //r……顔も知らないやつらのあざ笑う声が聞こえてくるようで、思わず固めたこぶしに力が入った。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……顔も知らないやつらのあざ笑う声が聞こえてくるようで、思わず固めたこぶしに力が入った。",
-			NULL, "...I could hear the derisive voices of those people whose faces I couldn't recognize, and suddenly began to clench my fists.", Line_Normal); 
+			NULL, "...I could hear the derisive voices of those people whose faces I couldn't recognize, and suddenly began to clench my fists.", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0019.「ふぅ……」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0019", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0019", 256, TRUE);
 	OutputLine(NULL, "「ふぅ……」",
-			NULL, "\"Haah...\"", Line_Normal); 
+			NULL, "\"Haah...\"", Line_Normal);
 	ClearMessage();
 
 //rとりあえず、……忘れられない、いや忘れてはいけない事件だが、この一日だけは心の片隅にしまっておこう。k何しろ、今日が私の刑事としての、最後の日なのだから。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "とりあえず、……忘れられない、いや忘れてはいけない事件だが、この一日だけは心の片隅にしまっておこう。",
-			NULL, "For the time being... the best I can do is to remember, to absolutely never forget this incident. And keep it locked away in the corner of my heart.", Line_WaitForInput); 
+			NULL, "For the time being... the best I can do is to remember, to absolutely never forget this incident. And keep it locked away in the corner of my heart.", Line_WaitForInput);
 	OutputLine(NULL, "何しろ、今日が私の刑事としての、最後の日なのだから。",
-			NULL, " At any rate, today is my last day as a detective.", Line_Normal); 
+			NULL, " At any rate, today is my last day as a detective.", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
@@ -177,26 +202,30 @@
 	PlayBGM( 1, "suzume_lp", 128, 0 );
 
 //大石rvS01/11/VTF_oishi_0020.「さて、……シャワーを浴びて着替えて、見栄えだけでも小綺麗にしておきますかね」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0020", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0020", 256, TRUE);
 	OutputLine(NULL, "「さて、……シャワーを浴びて着替えて、見栄えだけでも小綺麗にしておきますかね」",
-			NULL, "\"Well... I could probably use a shower and a change of clothes just to keep up appearances.\"", Line_Normal); 
+			NULL, "\"Well... I could probably use a shower and a change of clothes just to keep up appearances.\"", Line_Normal);
 	ClearMessage();
 
 	DrawScene("black", 1000 );
 
 //rさすがに最終日までヨレヨレの薄汚れた身なりでは、送り出してくれる上役や後輩たちに対して失礼というものだろう。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "さすがに最終日までヨレヨレの薄汚れた身なりでは、送り出してくれる上役や後輩たちに対して失礼というものだろう。",
-			NULL, "Naturally, it would be rude to look shabby and filthy, standing before my superiors and juniors as they see me off on my final day.", Line_Normal); 
+			NULL, "Naturally, it would be rude to look shabby and filthy, standing before my superiors and juniors as they see me off on my final day.", Line_Normal);
 	ClearMessage();
 
 //rそう考えて私は、ずっしりと分厚いファイルをまとめて抱え、刑事課の自分の席へと戻る。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう考えて私は、ずっしりと分厚いファイルをまとめて抱え、刑事課の自分の席へと戻る。",
-			NULL, "As I thought that, I bundled the massive set of files together and returned to my seat in the criminal investigation division.", Line_Normal); 
+			NULL, "As I thought that, I bundled the massive set of files together and returned to my seat in the criminal investigation division.", Line_Normal);
 	ClearMessage();
 
 //rそして、机の引き出しからロッカーの鍵を手に取り、シャワー室へと足を向けた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、机の引き出しからロッカーの鍵を手に取り、シャワー室へと足を向けた。",
-			NULL, "Then I grabbed the locker key out of my desk drawer and turned toward the shower room.", Line_Normal); 
+			NULL, "Then I grabbed the locker key out of my desk drawer and turned toward the shower room.", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
@@ -204,364 +233,415 @@
 	DrawScene("background/ke_s2", 1000 );
 
 //大石rvS01/11/VTF_oishi_0021.「……？」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0021", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0021", 256, TRUE);
 	OutputLine(NULL, "「……？」",
-			NULL, "\"...?\"", Line_Normal); 
+			NULL, "\"...?\"", Line_Normal);
 	ClearMessage();
 
 //rその時、机の上の電話機が電子音をたてて鳴り響き、内線ランプがチカチカと点灯する。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その時、机の上の電話機が電子音をたてて鳴り響き、内線ランプがチカチカと点灯する。",
-			NULL, "Just then, an electronic beeping echoed out of the phone on the desk, and the extension light was lit up.", Line_Normal); 
+			NULL, "Just then, an electronic beeping echoed out of the phone on the desk, and the extension light was lit up.", Line_Normal);
 	ClearMessage();
 
 //rそれが自分の席への呼び出しと気付き、私は受話器を取り上げてボタンを押した。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それが自分の席への呼び出しと気付き、私は受話器を取り上げてボタンを押した。",
-			NULL, "When I noticed the call was directed specifically to my desk, I lifted the receiver and pushed the button.", Line_Normal); 
+			NULL, "When I noticed the call was directed specifically to my desk, I lifted the receiver and pushed the button.", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
 	PlaySE(3, "dsse08", 256, 64);
 
 //大石rvS01/11/VTF_oishi_0022.「あー、もしもし？kvS01/11/VTF_oishi_0023.　なっはっはっはっ、こんばんはおはようございます」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0022", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0022", 256, TRUE);
 	OutputLine(NULL, "「あー、もしもし？",
-			NULL, "\"Aah, hello?", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0023", 256, 64);
+			NULL, "\"Aah, hello?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0023", 256, TRUE);
 	OutputLine(NULL, "　なっはっはっはっ、こんばんはおはようございます」",
-			NULL, " Na ha ha ha, good evening, good morning.\"", Line_Normal); 
+			NULL, " Na ha ha ha, good evening, good morning.\"", Line_Normal);
 	ClearMessage();
 
 //興宮ＰＳrvS01/00/VTF_keijiA_0001.「っと、大石さん？」
-	PlaySE(4, "ps3/s01/00/vtf_keijia_0001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>Okinomiya PS</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s01/00/vtf_keijia_0001", 256, TRUE);
 	OutputLine(NULL, "「っと、大石さん？」",
-			NULL, "\"Is this Ooishi-san?\"", Line_Normal); 
+			NULL, "\"Is this Ooishi-san?\"", Line_Normal);
 	ClearMessage();
 
 //r電話の相手は、後輩刑事の一人だった。確か今日は、夜間当番を務めていたはず。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "電話の相手は、後輩刑事の一人だった。確か今日は、夜間当番を務めていたはず。",
-			NULL, "I heard a junior detective on the other end of the phone. That's right, he should be on night duty today.", Line_Normal); 
+			NULL, "I heard a junior detective on the other end of the phone. That's right, he should be on night duty today.", Line_Normal);
 	ClearMessage();
 
 //r私が出るのが意外だったのか、少し動揺したような口調だ。まぁ、こんな早朝にベテラン刑事が詰めていることが異例なのだから、戸惑って当然か。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私が出るのが意外だったのか、少し動揺したような口調だ。まぁ、こんな早朝にベテラン刑事が詰めていることが異例なのだから、戸惑って当然か。",
-			NULL, "", Line_Normal); 
+			NULL, "", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0024.「はい、大石ですよ。kvS01/11/VTF_oishi_0025.どうかしましたか？」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0024", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0024", 256, TRUE);
 	OutputLine(NULL, "「はい、大石ですよ。",
-			NULL, "\"Yes, this is Ooishi.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0025", 256, 64);
+			NULL, "\"Yes, this is Ooishi.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0025", 256, TRUE);
 	OutputLine(NULL, "どうかしましたか？」",
-			NULL, " Is something wrong?\"", Line_Normal); 
+			NULL, " Is something wrong?\"", Line_Normal);
 	ClearMessage();
 
 //興宮ＰＳrvS01/00/VTF_keijiA_0002.「あ、はい。kvS01/00/VTF_keijiA_0003.大石さんに、外線からお電話です。kvS01/00/VTF_keijiA_0004.赤坂という方からだそうですが」
-	PlaySE(4, "ps3/s01/00/vtf_keijia_0002", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>Okinomiya PS</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s01/00/vtf_keijia_0002", 256, TRUE);
 	OutputLine(NULL, "「あ、はい。",
-			NULL, "\"Oh, yes.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/00/vtf_keijia_0003", 256, 64);
+			NULL, "\"Oh, yes.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s01/00/vtf_keijia_0003", 256, TRUE);
 	OutputLine(NULL, "大石さんに、外線からお電話です。",
-			NULL, " Ooishi-san, you have a call from an outside line.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/00/vtf_keijia_0004", 256, 64);
+			NULL, " Ooishi-san, you have a call from an outside line.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s01/00/vtf_keijia_0004", 256, TRUE);
 	OutputLine(NULL, "赤坂という方からだそうですが」",
-			NULL, " I think it was from someone named Akasaka.\"", Line_Normal); 
+			NULL, " I think it was from someone named Akasaka.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0026.「赤坂？kvS01/11/VTF_oishi_0027.　はて……、っ？」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0026", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0026", 256, TRUE);
 	OutputLine(NULL, "「赤坂？",
-			NULL, "\"Akasaka?", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0027", 256, 64);
+			NULL, "\"Akasaka?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0027", 256, TRUE);
 	OutputLine(NULL, "　はて……、っ？」",
-			NULL, " Really...?\"", Line_Normal); 
+			NULL, " Really...?\"", Line_Normal);
 	ClearMessage();
 
 //r一瞬首を傾げかけたが、すぐに思い出す。少し前にとある事件の捜査でご一緒した、東京の若手のエリートさんじゃないか。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "一瞬首を傾げかけたが、すぐに思い出す。少し前にとある事件の捜査でご一緒した、東京の若手のエリートさんじゃないか。",
-			NULL, "I tilted my head for a moment and quickly remembered. Wasn't he the elite investigator from Tokyo who collaborated with me on a case a while back?", Line_Normal); 
+			NULL, "I tilted my head for a moment and quickly remembered. Wasn't he the elite investigator from Tokyo who collaborated with me on a case a while back?", Line_Normal);
 	ClearMessage();
 
 //rやれやれ、彼の名前を聞いてすぐに誰、と気づけないとは……これも寄る年波というやつだろうか。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "やれやれ、彼の名前を聞いてすぐに誰、と気づけないとは……これも寄る年波というやつだろうか。",
-			NULL, "Good grief, if I can't remember someone right after hearing their name... I guess the old age is kicking in.", Line_Normal); 
+			NULL, "Good grief, if I can't remember someone right after hearing their name... I guess the old age is kicking in.", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0028.「あぁすみません、その人は私の知り合いです。kvS01/11/VTF_oishi_0029.つないでいただけますか」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0028", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0028", 256, TRUE);
 	OutputLine(NULL, "「あぁすみません、その人は私の知り合いです。",
-			NULL, "\"Aah, sorry, he's an old acquaintance of mine.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0029", 256, 64);
+			NULL, "\"Aah, sorry, he's an old acquaintance of mine.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0029", 256, TRUE);
 	OutputLine(NULL, "つないでいただけますか」",
-			NULL, " Please patch him through.\"", Line_Normal); 
+			NULL, " Please patch him through.\"", Line_Normal);
 	ClearMessage();
 
 //興宮ＰＳrvS01/00/VTF_keijiA_0005.「わかりました」
-	PlaySE(4, "ps3/s01/00/vtf_keijia_0005", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>Okinomiya PS</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s01/00/vtf_keijia_0005", 256, TRUE);
 	OutputLine(NULL, "「わかりました」",
-			NULL, "\"Understood.\"", Line_Normal); 
+			NULL, "\"Understood.\"", Line_Normal);
 	ClearMessage();
 
 	DrawScene("black", 1000 );
 
 //rそしてほどなく、受話器の向こうから懐かしい声が届いてきた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そしてほどなく、受話器の向こうから懐かしい声が届いてきた。",
-			NULL, "And shortly thereafter, I heard a familiar voice coming through the receiver.", Line_Normal); 
+			NULL, "And shortly thereafter, I heard a familiar voice coming through the receiver.", Line_Normal);
 	ClearMessage();
 
 	DrawScene("background/ke_s2", 1000 );
 	PlayBGM(2, "hm10_54", 128, 0);
 
 //赤坂rvS01/13/VTF_akasaka0001.「大石さん、お久しぶりです」
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0001", 256, TRUE);
 	OutputLine(NULL, "「大石さん、お久しぶりです」",
-			NULL, "\"Ooishi-san, it's been a long time.\"", Line_Normal); 
+			NULL, "\"Ooishi-san, it's been a long time.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0030.「おぉ、赤坂さん！kvS01/11/VTF_oishi_0031.　懐かしいですねぇ、何年ぶりでしょうか」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0030", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0030", 256, TRUE);
 	OutputLine(NULL, "「おぉ、赤坂さん！",
-			NULL, "\"Ohh, Akasaka-san!", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0031", 256, 64);
+			NULL, "\"Ohh, Akasaka-san!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0031", 256, TRUE);
 	OutputLine(NULL, "　懐かしいですねぇ、何年ぶりでしょうか」",
-			NULL, " How nostalgic. It's been years, hasn't it?\"", Line_Normal); 
+			NULL, " How nostalgic. It's been years, hasn't it?\"", Line_Normal);
 	ClearMessage();
 
 //赤坂rvS01/13/VTF_akasaka0002.「５年ぶりです。kvS01/13/VTF_akasaka0003.あの時は、本当にお世話になりました」
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0002", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0002", 256, TRUE);
 	OutputLine(NULL, "「５年ぶりです。",
-			NULL, "\"It's been 5 years.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0003", 256, 64);
+			NULL, "\"It's been 5 years.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0003", 256, TRUE);
 	OutputLine(NULL, "あの時は、本当にお世話になりました」",
-			NULL, " Really, thank you so much for all your help back then.\"", Line_Normal); 
+			NULL, " Really, thank you so much for all your help back then.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0032.「いやいや、そんなことは。kvS01/11/VTF_oishi_0033.たいしてお役にも立てませんでしたからねぇ」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0032", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0032", 256, TRUE);
 	OutputLine(NULL, "「いやいや、そんなことは。",
-			NULL, "\"Oh no, it's no big deal.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0033", 256, 64);
+			NULL, "\"Oh no, it's no big deal.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0033", 256, TRUE);
 	OutputLine(NULL, "たいしてお役にも立てませんでしたからねぇ」",
-			NULL, " I wasn't much help anyway.\"", Line_Normal); 
+			NULL, " I wasn't much help anyway.\"", Line_Normal);
 	ClearMessage();
 
 //赤坂rvS01/13/VTF_akasaka0004.「そんなことはありません。kvS01/13/VTF_akasaka0005.おかげで目的を果たすことが出来ましたし、それ以上にたくさんのことを教わりました。kvS01/13/VTF_akasaka0006.ありがとうございます」
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0004", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0004", 256, TRUE);
 	OutputLine(NULL, "「そんなことはありません。",
-			NULL, "\"That's not true.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0005", 256, 64);
+			NULL, "\"That's not true.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0005", 256, TRUE);
 	OutputLine(NULL, "おかげで目的を果たすことが出来ましたし、それ以上にたくさんのことを教わりました。",
-			NULL, " I was able to complete my mission thanks to you, and I learned a lot along the way.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0006", 256, 64);
+			NULL, " I was able to complete my mission thanks to you, and I learned a lot along the way.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0006", 256, TRUE);
 	OutputLine(NULL, "ありがとうございます」",
-			NULL, " Thank you.\"", Line_Normal); 
+			NULL, " Thank you.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0034.「んっふっふっふっ、やめてくださいよ。kvS01/11/VTF_oishi_0035.そんなことを言われ続けてると、おだてられて舞い上がった豚が木に登っちゃいますよぉ～？」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0034", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0034", 256, TRUE);
 	OutputLine(NULL, "「んっふっふっふっ、やめてくださいよ。",
-			NULL, "\"Nfu fu fu. Please, enough of that.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0035", 256, 64);
+			NULL, "\"Nfu fu fu. Please, enough of that.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0035", 256, TRUE);
 	OutputLine(NULL, "そんなことを言われ続けてると、おだてられて舞い上がった豚が木に登っちゃいますよぉ～？」",
-			NULL, " If you keep saying things like that, I'll get so carried away I might fly off~.\"", Line_Normal); 
+			NULL, " If you keep saying things like that, I'll get so carried away I might fly off~.\"", Line_Normal);
 	ClearMessage();
 
 //r照れ隠しに茶化してはみたものの、……これまで、多くの人間の嘘と欺瞞に関わってきた商売だから、言葉からも伝わるこの真摯さが心地よい。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "照れ隠しに茶化してはみたものの、……これまで、多くの人間の嘘と欺瞞に関わってきた商売だから、言葉からも伝わるこの真摯さが心地よい。",
-			NULL, "Although I tried to downplay it... until now I've been working in a industry that surrounds me in lies and human deception, so it was comforting to hear someone speak so earnestly.", Line_Normal); 
+			NULL, "Although I tried to downplay it... until now I've been working in a industry that surrounds me in lies and human deception, so it was comforting to hear someone speak so earnestly.", Line_Normal);
 	ClearMessage();
 
 //r実に、気持ちの良い御仁だ。彼のような人間がきちんと出世して偉い役職についてくれるのであれば、警察の前途も洋々というものだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "実に、気持ちの良い御仁だ。彼のような人間がきちんと出世して偉い役職についてくれるのであれば、警察の前途も洋々というものだ。",
-			NULL, "It was actually quite pleasant. If a man like him continues down this career path, he's destined to do great things.", Line_Normal); 
+			NULL, "It was actually quite pleasant. If a man like him continues down this career path, he's destined to do great things.", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0036.「して、赤坂さん。今日はどんなご用件で？」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0036", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0036", 256, TRUE);
 	OutputLine(NULL, "「して、赤坂さん。今日はどんなご用件で？」",
-			NULL, "\"So, Akasaka-san. Did you have something to discuss today?\"", Line_Normal); 
+			NULL, "\"So, Akasaka-san. Did you have something to discuss today?\"", Line_Normal);
 	ClearMessage();
 
 //赤坂rvS01/13/VTF_akasaka0007.「もちろん、お祝いのご挨拶ですよ。kvS01/13/VTF_akasaka0008.勤続４０年越えのお勤め、お疲れ様でした」
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0007", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0007", 256, TRUE);
 	OutputLine(NULL, "「もちろん、お祝いのご挨拶ですよ。",
-			NULL, "\"Of course, I'm calling to congratulate you.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0008", 256, 64);
+			NULL, "\"Of course, I'm calling to congratulate you.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0008", 256, TRUE);
 	OutputLine(NULL, "勤続４０年越えのお勤め、お疲れ様でした」",
-			NULL, " Thank you so much for your 40 years of service.\"", Line_Normal); 
+			NULL, " Thank you so much for your 40 years of service.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0037.「あ……これはこれは、どうもご丁寧に。kvS01/11/VTF_oishi_0038.よくご存知でしたねぇ、誰からお聞きになったんです？」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0037", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0037", 256, TRUE);
 	OutputLine(NULL, "「あ……これはこれは、どうもご丁寧に。",
-			NULL, "\"Aah... that's very thoughtful of you.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0038", 256, 64);
+			NULL, "\"Aah... that's very thoughtful of you.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0038", 256, TRUE);
 	OutputLine(NULL, "よくご存知でしたねぇ、誰からお聞きになったんです？」",
-			NULL, " We haven't been very close recently. Who did you hear that from?\"", Line_Normal); 
+			NULL, " We haven't been very close recently. Who did you hear that from?\"", Line_Normal);
 	ClearMessage();
 
 //赤坂rvS01/13/VTF_akasaka0009.「そちらの公安課の、本田屋さんからです。kvS01/13/VTF_akasaka0010.先週の、合同研修の際に教えていただきまして……」
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0009", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0009", 256, TRUE);
 	OutputLine(NULL, "「そちらの公安課の、本田屋さんからです。",
-			NULL, "\"I heard it from Hondaya-san in the public safety department up there.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0010", 256, 64);
+			NULL, "\"I heard it from Hondaya-san in the public safety department up there.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0010", 256, TRUE);
 	OutputLine(NULL, "先週の、合同研修の際に教えていただきまして……」",
-			NULL, " I found out last week, when we met during joint training...\"", Line_Normal); 
+			NULL, " I found out last week, when we met during joint training...\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0039.「あー、なるほどなるほど。kvS01/11/VTF_oishi_0040.そういうことですかぁ」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0039", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0039", 256, TRUE);
 	OutputLine(NULL, "「あー、なるほどなるほど。",
-			NULL, "\"Aah, I see, I see.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0040", 256, 64);
+			NULL, "\"Aah, I see, I see.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0040", 256, TRUE);
 	OutputLine(NULL, "そういうことですかぁ」",
-			NULL, " That's how it happened, huh?\"", Line_Normal); 
+			NULL, " That's how it happened, huh?\"", Line_Normal);
 	ClearMessage();
 
 //赤坂rvS01/13/VTF_akasaka0011.「……色々と、お話をお伺いしました。kvS01/13/VTF_akasaka0012.連絡が今日まで遅くなってしまって、本当に……申し訳ありません」
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0011", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0011", 256, TRUE);
 	OutputLine(NULL, "「……色々と、お話をお伺いしました。",
-			NULL, "\"...It came up when we were sharing stories.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0012", 256, 64);
+			NULL, "\"...It came up when we were sharing stories.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0012", 256, TRUE);
 	OutputLine(NULL, "連絡が今日まで遅くなってしまって、本当に……申し訳ありません」",
-			NULL, " But I haven't been able to call you until today. Honestly... I'm sorry about that.\"", Line_Normal); 
+			NULL, " But I haven't been able to call you until today. Honestly... I'm sorry about that.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0041.「……。kvS01/11/VTF_oishi_0042.お気遣い、痛み入ります」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0041", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0041", 256, TRUE);
 	OutputLine(NULL, "「……。",
-			NULL, "\"......", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0042", 256, 64);
+			NULL, "\"......", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0042", 256, TRUE);
 	OutputLine(NULL, "お気遣い、痛み入ります」",
-			NULL, " Your concern is embarrassing me.\"", Line_Normal); 
+			NULL, " Your concern is embarrassing me.\"", Line_Normal);
 	ClearMessage();
 
 //r……おそらく本田屋から、雛見沢の一件と部下の殉職について聞かされたのだろう。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……おそらく本田屋から、雛見沢の一件と部下の殉職について聞かされたのだろう。",
-			NULL, "...Hondaya probably also told him that one of my subordinates died while investigating the Hinamizawa case.", Line_Normal); 
+			NULL, "...Hondaya probably also told him that one of my subordinates died while investigating the Hinamizawa case.", Line_Normal);
 	ClearMessage();
 
 //rもちろん、赤坂さんがこうして謝ることも、そして私が彼に恨み言をぶつける道理など、ない。全くない。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "もちろん、赤坂さんがこうして謝ることも、そして私が彼に恨み言をぶつける道理など、ない。全くない。",
-			NULL, "Of course, Akasaka-san isn't the kind of guy who would require an apology for that, or the type to hold a grudge. Not at all.", Line_Normal); 
+			NULL, "Of course, Akasaka-san isn't the kind of guy who would require an apology for that, or the type to hold a grudge. Not at all.", Line_Normal);
 	ClearMessage();
 
 //rそれでも、……彼はそれを知って、悔やんだに違いない。もっと早く知っていれば、あるいは捜査に乗り出して何らかの情報を掴み、私の役に立つことができたのでは、……と。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それでも、……彼はそれを知って、悔やんだに違いない。もっと早く知っていれば、あるいは捜査に乗り出して何らかの情報を掴み、私の役に立つことができたのでは、……と。",
-			NULL, "Still... it must've filled him with regret when he found out. He probably wishes he could've helped sooner and found some useful information for me.", Line_Normal); 
+			NULL, "Still... it must've filled him with regret when he found out. He probably wishes he could've helped sooner and found some useful information for me.", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0043.「…………」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0043", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0043", 256, TRUE);
 	OutputLine(NULL, "「…………」",
-			NULL, "\"......\"", Line_Normal); 
+			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //rそして私も、……またひとつ、後悔を抱く。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして私も、……またひとつ、後悔を抱く。",
-			NULL, "And the same goes for me... One more thing to regret.", Line_Normal); 
+			NULL, "And the same goes for me... One more thing to regret.", Line_Normal);
 	ClearMessage();
 
 //rあの大災害が起きた直後、私は誰かを巻き込むことを、ひどく恐れていた。熊谷のような犠牲者を、これ以上出したくなかったからだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あの大災害が起きた直後、私は誰かを巻き込むことを、ひどく恐れていた。熊谷のような犠牲者を、これ以上出したくなかったからだ。",
-			NULL, "Right after the disaster occurred, I was terrified of getting anyone else involved. After all, I didn't want anyone else to end up like Kumagai.", Line_Normal); 
+			NULL, "Right after the disaster occurred, I was terrified of getting anyone else involved. After all, I didn't want anyone else to end up like Kumagai.", Line_Normal);
 	ClearMessage();
 
 //r……しかし、そのせいで雛見沢に関する捜査はまるで進展を見せず、私の引退とともにおそらくは、立ち消えとなってしまうだろう。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……しかし、そのせいで雛見沢に関する捜査はまるで進展を見せず、私の引退とともにおそらくは、立ち消えとなってしまうだろう。",
-			NULL, "...But as a result, no progress was made on the Hinamizawa investigation, and it will probably end with my retirement.", Line_Normal); 
+			NULL, "...But as a result, no progress was made on the Hinamizawa investigation, and it will probably end with my retirement.", Line_Normal);
 	ClearMessage();
 
 //rこれほどまでに不可解で、辛辣で……そして、狡猾な相手にひとりで立ち向かっても、何もできやしない。私はもっと、仲間を集めるべきだった……。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "これほどまでに不可解で、辛辣で……そして、狡猾な相手にひとりで立ち向かっても、何もできやしない。私はもっと、仲間を集めるべきだった……。",
-			NULL, "It's so incomprehensible, so horrible... and when faced with an opponent like that, I can't accomplish anything on my own. I should have asked for help.", Line_Normal); 
+			NULL, "It's so incomprehensible, so horrible... and when faced with an opponent like that, I can't accomplish anything on my own. I should have asked for help.", Line_Normal);
 	ClearMessage();
 
 //赤坂rvS01/13/VTF_akasaka0013.「そんなわけですから、大石さん。kvS01/13/VTF_akasaka0014.私も本日はそちらにお邪魔させていただきます。kvS01/13/VTF_akasaka0015.部外者の分際で申し訳ありませんが、どうかよろしくお願いします」
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0013", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0013", 256, TRUE);
 	OutputLine(NULL, "「そんなわけですから、大石さん。",
-			NULL, "\"That's why, Ooishi-san.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0014", 256, 64);
+			NULL, "\"That's why, Ooishi-san.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0014", 256, TRUE);
 	OutputLine(NULL, "私も本日はそちらにお邪魔させていただきます。",
-			NULL, " That's why I had to bother you today.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0015", 256, 64);
+			NULL, " That's why I had to bother you today.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0015", 256, TRUE);
 	OutputLine(NULL, "部外者の分際で申し訳ありませんが、どうかよろしくお願いします」",
-			NULL, " I'm sorry if it was wrong for an outsider to say anything.\"", Line_Normal); 
+			NULL, " I'm sorry if it was wrong for an outsider to say anything.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0044.「いやいや……って、ひょっとして赤坂さん、わざわざ東京からですか？kvS01/11/VTF_oishi_0045.　そんなそんな、申し訳ないです。kvS01/11/VTF_oishi_0046.まったく、こんなおっさんがいなくなるだけでみんな、大げさすぎますよ……なっはっはっはっ！」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0044", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0044", 256, TRUE);
 	OutputLine(NULL, "「いやいや……って、ひょっとして赤坂さん、わざわざ東京からですか？",
-			NULL, "\"Oh, no... Akasaka-san, you're the one who went to the trouble of calling me all the way out from Tokyo, right?", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0045", 256, 64);
+			NULL, "\"Oh, no... Akasaka-san, you're the one who went to the trouble of calling me all the way out from Tokyo, right?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0045", 256, TRUE);
 	OutputLine(NULL, "　そんなそんな、申し訳ないです。",
-			NULL, " I'm the one who should be apologizing.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0046", 256, 64);
+			NULL, " I'm the one who should be apologizing. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0046", 256, TRUE);
 	OutputLine(NULL, "まったく、こんなおっさんがいなくなるだけでみんな、大げさすぎますよ……なっはっはっはっ！」",
-			NULL, " Everyole is going to so much trouble just because this old man is leaving... Na ha ha ha!\"", Line_Normal); 
+			NULL, "Everyole is going to so much trouble just because this old man is leaving... Na ha ha ha!\"", Line_Normal);
 	ClearMessage();
 
 //赤坂rvS01/13/VTF_akasaka0016.「何をおっしゃるんですか。kvS01/13/VTF_akasaka0017.この程度では、とても受けた御恩をお返ししたことにはなりません。kvS01/13/VTF_akasaka0018.どうかこれからも色々とご鞭撻いただきたいので、末永いお付き合いをお願いします」
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0016", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0016", 256, TRUE);
 	OutputLine(NULL, "「何をおっしゃるんですか。",
-			NULL, "\"What are you talking about?", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0017", 256, 64);
+			NULL, "\"What are you talking about?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0017", 256, TRUE);
 	OutputLine(NULL, "この程度では、とても受けた御恩をお返ししたことにはなりません。",
-			NULL, " At this point, I still haven't repaid the favor I owe you.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/13/vtf_akasaka0018", 256, 64);
+			NULL, " At this point, I still haven't repaid the favor I owe you.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s01/13/vtf_akasaka0018", 256, TRUE);
 	OutputLine(NULL, "どうかこれからも色々とご鞭撻いただきたいので、末永いお付き合いをお願いします」",
-			NULL, " So, I want to encourage you from now on and I hope we have a long lasting relationship.\"", Line_Normal); 
+			NULL, " So, I want to encourage you from now on and I hope we have a long lasting relationship.\"", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0047.「……赤坂さん」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0047", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0047", 256, TRUE);
 	OutputLine(NULL, "「……赤坂さん」",
-			NULL, "\"...Akasaka-san.\"", Line_Normal); 
+			NULL, "\"...Akasaka-san.\"", Line_Normal);
 	ClearMessage();
 
 //r良い青年……いや、もうそれは失礼か。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "良い青年……いや、もうそれは失礼か。",
-			NULL, "Such a kind young man... No, I've already done enough to disrespect him.", Line_Normal); 
+			NULL, "Such a kind young man... No, I've already done enough to disrespect him.", Line_Normal);
 	ClearMessage();
 
 //rそれにしても、激務の中遠路はるばる足を運んでくれるなど、こんなにありがたいことはない。情けは人のためならずというが、彼と知り合えたことが本当に誇らしい思いだった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それにしても、激務の中遠路はるばる足を運んでくれるなど、こんなにありがたいことはない。情けは人のためならずというが、彼と知り合えたことが本当に誇らしい思いだった。",
-			NULL, "Still, he's walking the long road on a path full of backbreaking work and little thanks. People like that get little sympathy, but I was truly proud I had the opportunity to know him.", Line_Normal); 
+			NULL, "Still, he's walking the long road on a path full of backbreaking work and little thanks. People like that get little sympathy, but I was truly proud I had the opportunity to know him.", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0048.「…………」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0048", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0048", 256, TRUE);
 	OutputLine(NULL, "「…………」",
-			NULL, "\"......\"", Line_Normal); 
+			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //rそうだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そうだ。",
-			NULL, "That's right.", Line_Normal); 
+			NULL, "That's right.", Line_Normal);
 	ClearMessage();
 
 //r彼ならば、……あるいは、やってくれるかもしれない。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "彼ならば、……あるいは、やってくれるかもしれない。",
-			NULL, "If he's involved... maybe he can do it.", Line_Normal); 
+			NULL, "If he's involved... maybe he can do it.", Line_Normal);
 	ClearMessage();
 
 //r自分では到底辿りつけなかった、謎の向こうにある真相というものを……。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "自分では到底辿りつけなかった、謎の向こうにある真相というものを……。",
-			NULL, "The answer I couldn't reach on my own. Finding the truth behind this mystery...", Line_Normal); 
+			NULL, "The answer I couldn't reach on my own. Finding the truth behind this mystery...", Line_Normal);
 	ClearMessage();
 
 //大石rvS01/11/VTF_oishi_0049.「赤坂さん。kvS01/11/VTF_oishi_0050.もしよろしければ、ちょいと今夜、相談に乗ってもらってもいいですかね？」
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0049", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0049", 256, TRUE);
 	OutputLine(NULL, "「赤坂さん。",
-			NULL, "\"Akasaka-san.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s01/11/vtf_oishi_0050", 256, 64);
+			NULL, "\"Akasaka-san.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s01/11/vtf_oishi_0050", 256, TRUE);
 	OutputLine(NULL, "もしよろしければ、ちょいと今夜、相談に乗ってもらってもいいですかね？」",
-			NULL, " I'd like to have a chat with you later tonight, if you don't mind?\"", Line_Normal); 
+			NULL, " I'd like to have a chat with you later tonight, if you don't mind?\"", Line_Normal);
 	ClearMessage();
 
 //r迷惑かもしれない。それでも私は、一縷の望みをかける思いで切り出していった――。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "迷惑かもしれない。それでも私は、一縷の望みをかける思いで切り出していった——。",
-			NULL, "I may just be causing him grief. But even so, if a glimmer of hope is out there I have to reach for it.", Line_Normal); 
+			NULL, "I may just be causing him grief. But even so, if a glimmer of hope is out there I have to reach for it.", Line_Normal);
 	ClearMessage();
 
 	DisableWindow();
