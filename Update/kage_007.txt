@@ -5326,59 +5326,10 @@ void main()
 	DrawScene("black", 3000 );
 	SetValidityOfInput( TRUE );
 
-	EnableJumpingOfReturnIcon();
+	DrawSceneWithMask("tips/kage005", "mask_1900", 7, 0, 300 );
+	SetValidityOfInput( FALSE );
+	Wait( 5000 );
+	SetValidityOfInput( TRUE );
+	DrawSceneWithMask("black", "mask_1900", 7, 0, 300 );
 
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "New TIPS available.",
-		   NULL, "New TIPS available.", Line_Normal);
-	ClearMessage();
-
-	char TIPS132[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		TIPS132[0] = "View TIP 132";
-		TIPS132[1] = "Skip";
-	}
-	else
-	{
-		TIPS132[0] = "TIP132を見る";
-		TIPS132[1] = "無視する";
-	}
-
-//	InitializeSelectedItem();
-	Select( 2, TIPS132 );
-	DisableWindow();
-	if(LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		CallScript( "kage_tips_132" );
-	}
-
-	EnableJumpingOfReturnIcon();
-
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "New TIPS available.",
-		   NULL, "New TIPS available.", Line_Normal);
-	ClearMessage();
-
-	char TIPS133[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		TIPS133[0] = "View TIP 133";
-		TIPS133[1] = "Skip";
-	}
-	else
-	{
-		TIPS133[0] = "TIP133を見る";
-		TIPS133[1] = "無視する";
-	}
-
-//	InitializeSelectedItem();
-	Select( 2, TIPS133 );
-	DisableWindow();
-	if(LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		CallScript( "kage_tips_133" );
-	}
 }

@@ -6118,31 +6118,10 @@ void main()
 	DrawScene("black", 3000 );
 	SetValidityOfInput( TRUE );
 
-	EnableJumpingOfReturnIcon();
+	DrawSceneWithMask("tips/kage003", "mask_1900", 7, 0, 300 );
+	SetValidityOfInput( FALSE );
+	Wait( 5000 );
+	SetValidityOfInput( TRUE );
+	DrawSceneWithMask("black", "mask_1900", 7, 0, 300 );
 
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "New TIPS available.",
-		   NULL, "New TIPS available.", Line_Normal);
-	ClearMessage();
-
-	char TIPS130[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		TIPS130[0] = "View TIP 130";
-		TIPS130[1] = "Skip";
-	}
-	else
-	{
-		TIPS130[0] = "TIP130を見る";
-		TIPS130[1] = "無視する";
-	}
-
-//	InitializeSelectedItem();
-	Select( 2, TIPS130 );
-	DisableWindow();
-	if(LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		CallScript( "kage_tips_130" );
-	}
 }

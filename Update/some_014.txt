@@ -2151,57 +2151,11 @@ void main()
 	SetValidityOfInput( TRUE );
 
 	DrawScene("black", 500 );
-	EnableJumpingOfReturnIcon();
+	
+	DrawSceneWithMask("tips/some005", "mask_1900", 7, 0, 300 );
+	SetValidityOfInput( FALSE );
+	Wait( 5000 );
+	SetValidityOfInput( TRUE );
+	DrawSceneWithMask("black", "mask_1900", 7, 0, 300 );
 
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "New TIPS available.",
-		   NULL, "New TIPS available.", Line_Normal);
-	ClearMessage();
-
-	char TIPS87[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		TIPS87[0] = "View TIP 87";
-		TIPS87[1] = "Skip";
-	}
-	else
-	{
-		TIPS87[0] = "TIP87を見る";
-		TIPS87[1] = "無視する";
-	}
-
-//	InitializeSelectedItem();
-	Select( 2, TIPS87 );
-	DisableWindow();
-	if(LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		CallScript( "some_tips_087" );
-	}
-
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "All-cast review session available.",
-		   NULL, "All-cast review session available.", Line_Normal);
-	ClearMessage();
-
-	char SomeOmake[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		SomeOmake[0] = "View All-cast review session";
-		SomeOmake[1] = "Skip";
-	}
-	else
-	{
-		SomeOmake[0] = "おまけを見る";
-		SomeOmake[1] = "無視する";
-	}
-
-//	InitializeSelectedItem();
-	Select( 2, SomeOmake );
-	DisableWindow();
-	if(LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		CallScript( "some_omake" );
-	}
 }
