@@ -12,7 +12,7 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arcs f
 | Kageboushi   | 100%     | 100%        | 100%    | 
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
 | Taraimawashi | 100%     | 100%        | 100%    | 
-| Yoigoshi     | 100%     | 100%        |  14%    | 
+| Yoigoshi     | 100%     | 100%        |  28%    | 
 
 Yoigoshi translation is complete, and editing has begun.  Hoping for a full release in late January.
 
