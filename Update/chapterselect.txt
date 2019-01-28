@@ -16,7 +16,7 @@ void main()
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
 
-	char Chapter[7];
+	char Chapter[8];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
@@ -25,10 +25,10 @@ void main()
 		Chapter[2] = "Someutsushi";
 		Chapter[3] = "Kageboushi";
 		Chapter[4] = "Yoigoshi";
-		Chapter[5] = "Police Case Files";
-		Chapter[6] = "Back";
+		Chapter[5] = "Tokihogushi";
+		Chapter[6] = "Police Case Files";
+		Chapter[7] = "Back";
 
-		//Chapter[6] = "Tokihogushi";
 		//Chapter[7] = "Miotsukushi Omote";
 		//Chapter[8] = "Miotsukushi Ura";
 		//Chapter[9] = "Kotohogushi";
@@ -42,10 +42,10 @@ void main()
 		Chapter[2] = "染伝し編";
 		Chapter[3] = "影紡し編";
 		Chapter[4] = "宵越し編";
-		Chapter[5] = "警察事件調書";
-		Chapter[6] = "戻る";
+		Chapter[5] = "解々し編";
+		Chapter[6] = "警察事件調書";
+		Chapter[7] = "戻る";
 
-		//Chapter[6] = "解々し編";
 		//Chapter[7] = "澪尽し編 表";
 		//Chapter[8] = "澪尽し編 裏";
 		//Chapter[9] = "言祝し編";
@@ -54,7 +54,7 @@ void main()
 	}
 
 //	InitializeSelectedItem();
-	Select( 7, Chapter );
+	Select( 8, Chapter );
 	DisableWindow();
 	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
@@ -237,6 +237,42 @@ void main()
 		}
 	}
 	else if(LoadValueFromLocalWork( SelectResult ) == 5)
+	{
+		DrawScene("scenario/tokihogushi/background", 1200 );
+		DrawBustshot(5, "scenario/tokihogushi/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
+		DrawBustshot(6, "scenario/tokihogushi/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
+		DrawBustshot(7, "scenario/logo", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, TRUE );
+		DrawBustshot(8, "scenario/stripes", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, TRUE );
+		Wait( 100 );
+		FadeBustshotWithFiltering(5, "5", 1, FALSE, 0, 0, 1000, TRUE );
+		Wait( 200 );
+
+		DrawBustshotWithFiltering(9, "scenario/tokihogushi/description", "5", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+		Wait( 200 );
+
+		SetValidityOfInput( TRUE );
+
+		ShowChapterPreview();
+
+		if (LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1) {
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+			FadeBustshot( 9, FALSE, 0, 0, 0, 0, 1000, TRUE );
+			DrawBustshot(9, "scenario/shortcuts", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+			Wait(10000);
+
+			DrawScene( "black", 1000 );
+
+			SetValidityOfSaving( TRUE );
+			CallSection("TokiDay1");
+		}
+		else
+		{
+			StopBGM( 2 );
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 6)
 	{
 		DrawScene("scenario/police/background", 1200 );
 		DrawBustshot(5, "scenario/police/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
@@ -901,6 +937,150 @@ void PoliceCaseFiles()
 	SetLocalFlag(LConsoleArc, 11);
 	StoreValueToLocalWork( ChapterNumber, 1 );
 	SavePoint("警察事件調書", "Police Case Files");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpScript( "flow" );
+}
+
+void TokiDay1()
+{
+	if (ModGetHighestChapterFlag(5)<1)
+		ModSetHighestChapterFlag(5, 1);
+	CallScript( "toki_001" );
+
+	JumpSection("TokiDay2");
+}
+
+void TokiDay2()
+{
+	if (ModGetHighestChapterFlag(5)<2)
+		ModSetHighestChapterFlag(5, 2);
+	CallScript( "toki_002" );
+
+	JumpSection("TokiDay3");
+}
+
+void TokiDay3()
+{
+	if (ModGetHighestChapterFlag(5)<3)
+		ModSetHighestChapterFlag(5, 3);
+	CallScript( "toki_003" );
+
+	SetLocalFlag(LConsoleArc, 5);
+	StoreValueToLocalWork( ChapterNumber, 3 );
+	SavePoint("Ch.3 終わり", "End of Chapter 3");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("TokiDay4");
+}
+
+void TokiDay4()
+{
+	if (ModGetHighestChapterFlag(5)<4)
+		ModSetHighestChapterFlag(5, 4);
+	CallScript( "toki_004" );
+
+	JumpSection("TokiDay5");
+}
+
+void TokiDay5()
+{
+	if (ModGetHighestChapterFlag(5)<5)
+		ModSetHighestChapterFlag(5, 5);
+	CallScript( "toki_005" );
+
+	SetLocalFlag(LConsoleArc, 5);
+	StoreValueToLocalWork( ChapterNumber, 5 );
+	SavePoint("Ch.5 終わり", "End of Chapter 5");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("TokiDay6");
+}
+
+void TokiDay6()
+{
+	if (ModGetHighestChapterFlag(5)<6)
+		ModSetHighestChapterFlag(5, 6);
+	CallScript( "toki_006" );
+
+	JumpSection("TokiDay7");
+}
+
+void TokiDay7()
+{
+	if (ModGetHighestChapterFlag(5)<7)
+		ModSetHighestChapterFlag(5, 7);
+	CallScript( "toki_007" );
+
+	SetLocalFlag(LConsoleArc, 5);
+	StoreValueToLocalWork( ChapterNumber, 7 );
+	SavePoint("Ch.7 終わり", "End of Chapter 7");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("TokiDay8");
+}
+
+void TokiDay8()
+{
+	if (ModGetHighestChapterFlag(5)<8)
+		ModSetHighestChapterFlag(5, 8);
+	CallScript( "toki_008" );
+
+	SetLocalFlag(LConsoleArc, 5);
+	StoreValueToLocalWork( ChapterNumber, 8 );
+	SavePoint("Ch.8 終わり", "End of Chapter 8");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("TokiDay9");
+}
+
+void TokiDay9()
+{
+	if (ModGetHighestChapterFlag(5)<9)
+		ModSetHighestChapterFlag(5, 9);
+	CallScript( "toki_009" );
+
+	SetLocalFlag(LConsoleArc, 5);
+	StoreValueToLocalWork( ChapterNumber, 9 );
+	SavePoint("Ch.9 終わり", "End of Chapter 9");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("TokiDay10");
+}
+
+void TokiDay10()
+{
+	if (ModGetHighestChapterFlag(5)<10)
+		ModSetHighestChapterFlag(5, 10);
+	CallScript( "toki_010" );
+
+	JumpSection("TokiDay11");
+}
+
+void TokiDay11()
+{
+	if (ModGetHighestChapterFlag(5)<11)
+		ModSetHighestChapterFlag(5, 11);
+	CallScript( "toki_011" );
+
+	JumpSection("TokiDay12");
+}
+
+void TokiDay12()
+{
+	if (ModGetHighestChapterFlag(5)<12)
+		ModSetHighestChapterFlag(5, 12);
+	CallScript( "toki_012" );
+
+	SetLocalFlag(LConsoleArc, 5);
+	StoreValueToLocalWork( ChapterNumber, 12 );
+	SavePoint("Ch.12 終わり", "End of Chapter 12");
 	CallSection( "SetDay" );
 	CallSection( "ViewTips" );
 
