@@ -14,7 +14,7 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arcs f
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
 | Taraimawashi | 100%     | 100%        | 100%    | 
 | Yoigoshi     | 100%     | 100%        | 100%    | 
-| Tokihogushi  | 100%     |   0%        |   0%    | 
+| Tokihogushi  | 100%     |   9%        |   0%    | 
 
 Yoigoshi has been released!  Here's a [walkthrough](https://ibb.co/1Z463wp) for anyone who wants to know which choices in Yoigoshi lead to which endings.
 
