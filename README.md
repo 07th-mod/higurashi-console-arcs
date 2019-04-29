@@ -14,7 +14,7 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arcs f
 | Tsukiotoshi  | 100%     | 100%        | 100%    | 
 | Taraimawashi | 100%     | 100%        | 100%    | 
 | Yoigoshi     | 100%     | 100%        | 100%    | 
-| Tokihogushi  | 100%     | 100%        |  55%    | 
+| Tokihogushi  | 100%     | 100%        |  64%    | 
 
 Tokihogushi translation is complete!
 
