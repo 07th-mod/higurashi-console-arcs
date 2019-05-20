@@ -15,11 +15,9 @@ void main()
 
 //#1 羽入のいない世界
 
+	DrawScene("white", 1000 );
 	PlayBGM(2, "hm04_18", 128, 0);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/oyashirosama", 1000 );
+	DrawSceneWithMask( "background/oyashirosama", "c", 0, 0, 1000 );
 
 //rあたたかい。
 	OutputLine(NULL, "あたたかい。",
@@ -131,12 +129,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, FALSE );
 	PlayBGM( 1, "suzume_lp", 128, 0 );
-
 	DrawScene("background/hu_tenjyou", 1000 );
 
 //梨花rvS14/05/210500001.「……ん…」
@@ -221,7 +217,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	FadeFilm( 1000, FALSE );
+	DrawScene("white", 1000 );
 
 //梨花rvS14/05/210500004.「ふぁ…」
 	PlaySE(4, "ps3/s14/05/210500004", 256, 64);
@@ -244,6 +241,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, FALSE );
 	DrawScene("background/hu_rika", 1000 );
 
 //梨花rvS14/05/210500005.「そうだ、ここは…」
@@ -253,7 +251,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm01_03", 128, 0);
 
 //r私の、家だ。
@@ -349,7 +346,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("background/hu_tenjyou", 1000 );
 
 //梨花rvS14/05/210500009.「そうだ……」
@@ -380,7 +376,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	FadeFilm( 1000, FALSE );
+	DrawScene("white", 1000 );
 
 //梨花rvS14/05/210500010.「おかあ…さん」
 	PlaySE(4, "ps3/s14/05/210500010", 256, 64);
@@ -389,7 +386,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm05_20", 128, 0);
 
 //r影だけでも…なんで見間違えるものか。
@@ -428,6 +424,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, FALSE );
 	DrawScene("background/hu_rika", 1000 );
 
 //梨花rvS14/05/210500012.「……あ…」
@@ -724,14 +721,12 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	FadeFilm( 1000, FALSE );
+	DrawSceneWithMask( "white", "left", 0, 0, 1000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	Wait( 3000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "yoru", 128, 0 );
-
 	DrawScene("background/hu_r4", 1000 );
 
 //梨花rvS14/05/210500020.「…………」
@@ -841,11 +836,12 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/moon", 1000 );
-
-	DrawScene("background/moon_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/ta3_akuwarai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("background/moon", 2000 );
+	Wait( 2000 );
+	DrawSceneWithMask( "background/moon_01", "m1", 0, 0, 2000 );
+	Wait( 2000 );
+	DrawBustshot( 4, "sprite/transparent/ta3_akuwarai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 1000, TRUE );
+	Wait( 500 );
 
 //梨花rvS14/05/VT4Ba_rika1003.「――っ…！」
 	PlaySE(4, "ps3/s14/05/vt4ba_rika1003", 256, 64);
@@ -853,9 +849,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
 
 //rでも、それはもう…忘れる。
 	OutputLine(NULL, "でも、それはもう…忘れる。",
@@ -991,6 +985,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	Wait( 4000 );
+
 //梨花rvS14/05/VT4Ba_rika1009.「…………羽入？」
 	PlaySE(4, "ps3/s14/05/vt4ba_rika1009", 256, 64);
 	OutputLine(NULL, "「…………羽入？」",
@@ -998,7 +994,6 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm06_25", 128, 0);
 
 //rおかしい。
@@ -1033,7 +1028,7 @@ void main()
 	ClearMessage();
 
 //r…………………………………………………………………………r…………………………………………………………………………r…………………………………………………………………………r…………………………………………………………………変だ。
-	OutputLine(NULL, "…………………………………………………………………………r…………………………………………………………………………r…………………………………………………………………………r…………………………………………………………………変だ。",
+	OutputLine(NULL, "…………………………………………………………………………\n…………………………………………………………………………\n…………………………………………………………………………\n…………………………………………………………………変だ。",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
@@ -1070,6 +1065,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	FadeOutBGM(2, 200, FALSE);
 
 //梨花rvS14/05/VT4Ba_rika1014_a.「羽入ぅっ？！」
@@ -1077,6 +1073,8 @@ void main()
 	OutputLine(NULL, "「羽入ぅっ？！」",
 			NULL, "", Line_Normal);
 	ClearMessage();
+
+	Wait( 500 );
 
 //沙都子rvS14/04/210400002.「……んにゅ、どうかしましたの、梨花ぁ…？」
 	PlaySE(4, "ps3/s14/04/210400002", 256, 64);
@@ -1158,10 +1156,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "door", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/yhu2", 1000 );
+	DrawScene("white", 250 );
+	DrawSceneWithMask( "background/yhu2", "right", 0, 0, 500 );
 
 //梨花rvS14/05/VT4Ba_rika1015.「羽入？　聞こえないのですか、羽入？kvS14/05/VT4Ba_rika1016.　返事をしてっ！」
 	PlaySE(4, "ps3/s14/05/vt4ba_rika1015", 256, 64);
@@ -1193,11 +1189,8 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm10_62", 128, 0);
-
 	DrawScene("background/moon", 1000 );
 
 //梨花rvS14/05/VT4Ba_rika1017.「…羽入……っ」
@@ -1282,10 +1275,6 @@ void main()
 	OutputLine(NULL, "この世界には、……なかった。",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	DrawScene("black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );
