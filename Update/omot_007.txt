@@ -14,9 +14,7 @@ void main()
 //#7 夜の語らい
 
 	PlayBGM( 1, "yoru", 128, 0 );
-
 	DrawScene("background/jy1", 1000 );
-
 	PlayBGM(2, "hm01_07", 128, 0);
 
 //r辺りは、もうすっかり真っ暗闇に包まれていた。
@@ -138,7 +136,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("background/heya6", 1000 );
 
 //圭一rvS14/01/210100324.「…ダム、工事…ですか？」
@@ -382,8 +379,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 0, 0, 0, 128, 0, 1000, FALSE );
 	DrawScene("black", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/re1a_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //r…そういえば、レナも言っていた。
@@ -396,8 +393,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeFilm( 1000, FALSE );
 	DrawScene("background/heya6", 1000 );
 
 //茜rvS14/16/212200034.「それでも狭い村のことだから、いつかはわかる話だろう。kvS14/16/212200035.だけど、隠していたのはそういう理由だっていうこと、わかってあげてほしいんだ」
@@ -450,8 +446,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 0, 0, 0, 128, 0, 1000, FALSE );
 	DrawScene("black", 1000 );
-
 	DrawBustshot( 4, "sprite/normal/me1a_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //r魅音の心が、冷たい――。
@@ -481,8 +477,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeFilm( 1000, FALSE );
 	DrawScene("background/heya6", 1000 );
 
 //圭一rvS14/01/210100334.「正直、疑いそうになったことは、…あります。kvS14/01/210100335.けど、やっぱり魅音は最高の仲間です。kvS14/01/210100336.少なくとも俺は、そして俺達はそう思っています」
@@ -683,6 +678,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //圭一rvS14/01/210100344.「むぐっ？」
 	PlaySE(4, "ps3/s14/01/210100344", 256, 64);
@@ -720,6 +716,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse07", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rぶっっっ！？！
 	OutputLine(NULL, "ぶっっっ！？！",
@@ -741,10 +738,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	PlayBGM( 1, "yoru", 128, 0 );
-
 	DrawScene("background/jy1", 1000 );
 
 //圭一rvS14/01/210100346.「……ふぅ」
@@ -845,14 +840,12 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	Wait( 2000 );
+	DrawSceneWithMask( "black", "down", 0, 0, 1500 );
 	FadeOutBGM(1, 200, TRUE);
-
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("background/jys1", 1000 );
-
+	Wait( 1000 );
+	DrawSceneWithMask( "background/jys1", "left", 0, 0, 1000 );
 	PlaySE(3, "addse08", 256, 64);
 
 //r鈴虫の鳴き声と、かすかに聞こえる集会場の騒ぎ声。
@@ -882,7 +875,6 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	PlayBGM( 1, "addse10", 128, 0 );
 
 //声rvS14/05/VT4Ba_rika1039.「――――圭一」
@@ -941,15 +933,10 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jyt2", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jyt1", 1000 );
-
+	DrawSceneWithMask( "black", "right", 0, 0, 500 );
+	DrawSceneWithMask( "background/jyt2", "right", 0, 0, 500 );
+	DrawSceneWithMask( "black", "right", 0, 0, 500 );
+	DrawSceneWithMask( "background/jyt1", "right", 0, 0, 500 );
 	PlayBGM( 1, "yoru", 128, 0 );
 
 //r俺のたどり着いた先…そこは、以前来たことのある見晴らしのいい高台だった。
@@ -1497,15 +1484,12 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "suzu_1", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/t/ad009", 1000 );
-
+	DisableWindow();
+	DrawScene("white", 1000 );
+	DrawScene("text/ad009", 1000 );
+	PlaySE(4, "ps3/s14/05/vrh_rika_0003", 256, 64);
+	Wait( 3000 );
 	DrawScene("black", 1000 );
 
 //圭一rvS14/01/210100381.「……え？」
@@ -1515,16 +1499,14 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "suzu_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/t/hanyu_01", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DisableWindow();
+	DrawScene("white", 1000 );
+	DrawScene("text/hanyu_01", 1000 );
+	PlaySE(4, "ps3/s14/05/vrh_rika_0004", 256, 64);
+	Wait( 5000 );
+	DrawScene("white", 1000 );
+	DrawBustshot( 4, "sprite/night/ri1_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/jyt1", 1000 );
-
-	DrawBustshot( 4, "sprite/night/ri1_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //rな、なんだ……？
 	OutputLine(NULL, "な、なんだ……？",
@@ -1560,8 +1542,6 @@ void main()
 	OutputLine(NULL, "じゃあ、今の声は、…いったい…？",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1599,10 +1579,8 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm10_54", 128, 0);
-
+	DrawBustshot( 4, "sprite/night/ri1_komaru_a2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/jyt1", 1000 );
-
-	DrawBustshot( 4, "sprite/night/ri1_komaru_a2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //圭一rvS14/01/210100385.「――あのさ、梨花ちゃん…。kvS14/01/210100386.無理しなくても、いいんだぞ？」
 	PlaySE(4, "ps3/s14/01/210100385", 256, 64);
@@ -2059,7 +2037,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("black", 1000 );
 
 //r小さな背中の向こうで、吐息の音が聞こえる。
@@ -2073,9 +2050,7 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm10_53", 128, 0);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("scene/011a", 1000 );
 
 //梨花rvS14/05/210500280.「もうすぐ…綿流しのお祭りがはじまります。kvS14/05/210500281.そして――」
@@ -2163,6 +2138,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	DrawScene("scene/011c", 1000 );
 
 //梨花rvS14/05/210500288.「…なぜボクが殺されるのか、わからないのです。kvS14/05/210500289.それにみんながその後、どんな運命に巻き込まれるのかも…」
@@ -2201,6 +2177,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	DrawScene("scene/011a", 1000 );
 
 //rそこで梨花ちゃんは、黒髪をかきあげて俺に一歩、歩み寄る。
@@ -2279,6 +2256,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	DrawScene("scene/011b", 1000 );
 
 //梨花rvS14/05/VT4Ba_rika1050.「あなたには、初めて見せることになると思います。kvS14/05/VT4Ba_rika1051.――そう。これが、本当のボクです。kvS14/05/VT4Ba_rika1052.古手梨花の、もうひとつの姿です」
@@ -2327,6 +2305,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	DrawScene("scene/011a", 1000 );
 
 //梨花rvS14/05/VT4Ba_rika1057.「答えてください、圭一。kvS14/05/VT4Ba_rika1058.あなたはボクに、いったい何を見せてくれるというのですか？」
@@ -2344,11 +2323,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jyt2", 1000 );
-
-	DrawBustshot( 4, "sprite/night/kei1_majime_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawSceneWithMask( "black", "down", 0, 0, 1500 );
+	DrawBustshot( 4, "sprite/night/kei1_majime_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawSceneWithMask( "background/jyt2", "up", 0, 0, 1500 );
 
 //圭一rvS14/01/210100437.「……梨花、ちゃん…」
 	PlaySE(4, "ps3/s14/01/210100437", 256, 64);
@@ -2665,13 +2642,11 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/moon", 1000 );
-
-	DrawScene("background/jyt2", 1000 );
-
-	DrawBustshot( 4, "sprite/night/kei1_majime2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DisableWindow();
+	DrawScene("background/moon", 2000 );
+	Wait( 3000 );
+	DrawBustshot( 4, "sprite/night/kei1_majime2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/jyt2", 2000 );
 
 //圭一rvS14/01/210100457.「…………」
 	PlaySE(4, "ps3/s14/01/210100457", 256, 64);
@@ -2839,8 +2814,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r…今でも、網膜に焼き付いて離れない。
@@ -2848,9 +2821,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	PlaySE(3, "down2", 256, 64);
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "red", "aa", 0, 0, 500 );
+	Wait( 250 );
 
 //r人の死を数え切れないほど見てきたけど、…あの時の身を引き裂かれるような光景は、せっかく奮い立った気持ちをしり込みさせるには、十分すぎるものだった。
 	OutputLine(NULL, "人の死を数え切れないほど見てきたけど、…あの時の身を引き裂かれるような光景は、せっかく奮い立った気持ちをしり込みさせるには、十分すぎるものだった。",
@@ -2867,9 +2841,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/night/kei1_majime_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/jyt2", 1000 );
-
-	DrawBustshot( 4, "sprite/night/kei1_majime_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS14/05/VT4Ba_rika1085.「確かに、敵が誰なのかは、もうわかっていますのです。kvS14/05/VT4Ba_rika1086.でも、…こんな世界は初めてだから、どう動いていいのかがわからないのです」
 	PlaySE(4, "ps3/s14/05/vt4ba_rika1085", 256, 64);
@@ -3015,17 +2988,13 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DisableWindow();
+	DrawSceneWithMask( "black", "down", 0, 0, 1500 );
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "yoru", 128, 0 );
-
-	DrawScene("background/moon", 1000 );
-
-	DrawScene("background/jyt1", 1000 );
+	DrawScene("background/moon", 1500 );
+	Wait( 1500 );
+	DrawScene("background/jyt1", 1500 );
 
 //r沈黙が、続く。
 	OutputLine(NULL, "沈黙が、続く。",
@@ -3210,8 +3179,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("background/moon", 1000 );
 
 //r静まり返った境内に、俺の咆哮が轟き渡る。
@@ -3240,12 +3207,9 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm10_72", 128, 0);
-
+	DrawBustshot( 4, "sprite/night/ri1_niyari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/jyt1", 1000 );
-
-	DrawBustshot( 4, "sprite/night/ri1_niyari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS14/05/VT4Ba_rika1097.「……くすくす」
 	PlaySE(4, "ps3/s14/05/vt4ba_rika1097", 256, 64);
@@ -3324,8 +3288,6 @@ void main()
 	OutputLine(NULL, "そして、この世界の可能性を…」",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("background/moon", 1000 );
 
@@ -3428,20 +3390,6 @@ void main()
 	OutputLine(NULL, "——それが、この長い戦いの始まりだった。",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

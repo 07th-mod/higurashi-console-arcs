@@ -13,11 +13,9 @@ void main()
 
 //#6 就任祝い…？
 
+	DrawScene("white", 1000 );
 	PlayBGM(2, "hm01_01", 128, 0);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ma_g1", 1000 );
+	DrawSceneWithMask( "background/ma_g1", "m1", 0, 0, 1000 );
 
 //圭一rvS14/01/210100255.「よーし。kvS14/01/210100256.…じゃあ母さん、行って来るよ！」
 	PlaySE(4, "ps3/s14/01/210100255", 256, 64);
@@ -78,6 +76,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r有無を言わさず、母さんは俺に米袋を強引に持たせる。つい反射的に胸で抱え込んだが、さすがに予想もしていなかったのでよたよたっ、と前のめりになりそうになった。
 	OutputLine(NULL, "有無を言わさず、母さんは俺に米袋を強引に持たせる。つい反射的に胸で抱え込んだが、さすがに予想もしていなかったのでよたよたっ、と前のめりになりそうになった。",
@@ -122,6 +121,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //圭一rvS14/01/210100262.「ぶほっ？！」
 	PlaySE(4, "ps3/s14/01/210100262", 256, 64);
@@ -134,7 +134,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/ma1", 1000 );
+	DrawSceneWithMask( "background/ma1", "left", 0, 0, 1000 );
 
 //圭一rvS14/01/210100263.「…はぁ。じゃ、行ってきます」
 	PlaySE(4, "ps3/s14/01/210100263", 256, 64);
@@ -169,7 +169,6 @@ void main()
 	ClearMessage();
 
 	PlayBGM( 1, "semi", 128, 0 );
-
 	DrawScene("background/sora", 1000 );
 
 //r澄み渡るような群青の空には、夏の太陽がまぶしく輝いている。
@@ -213,11 +212,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/ie1", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/re1a_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/me1a_def_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/re1a_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/me1a_def_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawSceneWithMask( "background/ie1", "down", 0, 0, 1000 );
 
 //rいつもの待ち合わせ場所には、やはりレナと魅音が先に到着していた。
 	OutputLine(NULL, "いつもの待ち合わせ場所には、やはりレナと魅音が先に到着していた。",
@@ -347,11 +344,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/hi5", 1000 );
+	DrawSceneWithMask( "background/hi5", "left", 0, 0, 1000 );
 
 //rそんな感じでわいわいと騒ぎながら、俺たち三人は古手神社へと自転車を走らせた。
 	OutputLine(NULL, "そんな感じでわいわいと騒ぎながら、俺たち三人は古手神社へと自転車を走らせた。",
@@ -368,7 +361,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/ji1", 1000 );
+	DrawSceneWithMask( "background/ji1", "left", 0, 0, 1000 );
 
 //r俺たちは、神社の石段の脇に自転車を止める。…さすがにクラス全員が集まっただけあって、結構な台数の自転車と自動車の量だ。
 	OutputLine(NULL, "俺たちは、神社の石段の脇に自転車を止める。…さすがにクラス全員が集まっただけあって、結構な台数の自転車と自動車の量だ。",
@@ -504,9 +497,7 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawBustshot( 5, "sprite/normal/sa1a_hannbeso_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
 	PlayBGM(2, "hm01_02", 128, 0);
 
 //沙都子rvS14/04/210400195.「そ、そそそそ、それどころではございませんわっ！」
@@ -516,7 +507,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 5, "sprite/normal/ri1_komaru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //梨花rvS14/05/210500188.「…とんでもびっくりに大変なのです」
@@ -542,7 +532,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 5, "sprite/normal/sa1a_akireru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/210400196.「そ、その台詞はリボンと熨斗をつけてそっくりお返しいたしますわっ！」
@@ -558,7 +547,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/re1a_def_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/210200123.「そうだよ、沙都子ちゃん？kvS14/02/210200124.　熨斗をつけて縛るのは水切りって紐で――」
@@ -598,7 +586,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/me1a_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/210300288.「え？　ちょ、ちょっと？！kvS14/03/210300289.　そ、そんな引っ張らないで――？」
@@ -610,10 +597,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/ri1_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS14/05/210500189.「…圭一も来るのです」
@@ -653,9 +637,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/ji6", 1000 );
-
-	DrawScene("background/jt2", 1000 );
+	DrawSceneWithMask( "background/ji6", "left", 0, 0, 500 );
+	Wait( 500 );
+	DrawSceneWithMask( "background/jt2", "left", 0, 0, 500 );
 
 //圭一rvS14/01/210100275.「……は？」
 	PlaySE(4, "ps3/s14/01/210100275", 256, 64);
@@ -805,14 +789,10 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "kyupirn", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jt2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/kameda1a_niyari_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/kameda1a_niyari_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/jt2", 500 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rそう言って亀田くんたちは胸を張る。…つーか、口元をクリームまみれでそう言われても、嬉しさは微妙だ。むしろ、便乗して乙女たち――じゃない、ケーキを食べ荒らしに来たようにしか見えないぞ？
 	OutputLine(NULL, "そう言って亀田くんたちは胸を張る。…つーか、口元をクリームまみれでそう言われても、嬉しさは微妙だ。むしろ、便乗して乙女たち——じゃない、ケーキを食べ荒らしに来たようにしか見えないぞ？",
@@ -825,7 +805,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/ri1_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS14/05/210500191.「神社は公共の場所なのです。kvS14/05/210500192.だから、みんなのお庭にしようなのです」
@@ -852,9 +831,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 3, "sprite/normal/ri1_komaru_a2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawBustshot( 3, "sprite/normal/ri1_komaru_a2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawBustshot( 5, "sprite/normal/me1a_yowaki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS14/03/210300290.「にしても圭ちゃん…心の友って…」
@@ -886,7 +863,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/sa1a_akireru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/VT4Ba_satoko1031.「にしても、ものすごい数でございますわ。kvS14/04/VT4Ba_satoko1032.村の半分以上の人間がお集まりになっているようですわね？」
@@ -899,7 +875,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/ri1_niko_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/210500194.「…プチ綿流しなみのお祭りなのです」
@@ -932,9 +907,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
+	FadeAllBustshots( 200, TRUE );
 
 //大人たちro55.vS14/18/213300001|S14/00/makino10001|S14/00/eldA10001|S14/00/eldB10001|S14/00/eldC10001.「「がぁっはっはっはっ！！！」」
 	PlaySE(4, "ps3/s14/18/213300001", 256, 64);
@@ -1029,7 +1002,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/ki_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //喜一郎rvS14/18/213300002.「お～、魅音ちゃん！kvS14/18/213300003.　ようやくお出ましかい？」
@@ -1116,6 +1088,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse05", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //圭一rvS14/01/210100288.「いててててっっ？！」
 	PlaySE(4, "ps3/s14/01/210100288", 256, 64);
@@ -1270,22 +1243,20 @@ void main()
 	FadeOutBGM(2, 200, FALSE);
 
 //r…………………………………………………………………………r…………………………………………………………………………r…………………………………………………………………………r……………………………………………………………………へ？
-	OutputLine(NULL, "…………………………………………………………………………r…………………………………………………………………………r…………………………………………………………………………r……………………………………………………………………へ？",
+	OutputLine(NULL, "…………………………………………………………………………\n…………………………………………………………………………\n…………………………………………………………………………\n……………………………………………………………………へ？",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "a6", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jt1", 1000 );
-
-	DrawScene("background/t/mio_nani", 1000 );
-
+	DrawScene("white", 150 );
+	DrawScene("background/jt1", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	PlaySE(4, "ps3/s14/03/210300311", 256, 64);
+	PlaySE(5, "ps3/s14/01/210100291", 256, 64);
+	PlaySE(6, "ps3/s14/05/210500198", 256, 64);
+	PlaySE(7, "ps3/s14/02/210200127", 256, 64);
+	DrawSprite( 6, "text/mio_nani", NULL, -320, 160, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 32, 100, TRUE );
+	MoveSprite( 6, -320, -1000, 0, 0, 0, 0, 0, 3000, TRUE );
 	DrawScene("black", 1000 );
 
 //rその、あまりの声の大きさに。
@@ -1304,12 +1275,9 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm01_06", 128, 0);
-
+	DrawBustshot( 5, "sprite/normal/sa1a_akireru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/ri1_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/jt2", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/sa1a_akireru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/ri1_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/210400203.「伴侶って……、kvS14/04/210400204.なんなんですの？」
 	PlaySE(4, "ps3/s14/04/210400203", 256, 64);
@@ -1326,10 +1294,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/re1a_bikkuri_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS14/02/210200128.「は、はははははははは、はん、はん、はんっ、伴侶っ？！kvS14/02/210200129.　ど、どどどどど、どっ、どっ、どこでそんなっっ？？！！」
@@ -1342,7 +1307,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/ki_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //喜一郎rvS14/18/213300021.「え、違うのかい？kvS14/18/213300022.　魅音ちゃん、プロポーズされたんだろう？」
@@ -1355,15 +1319,15 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "a6", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jt1", 1000 );
-
-	DrawScene("background/t/mio_eee", 1000 );
-
+	DrawScene("white", 150 );
+	DrawScene("background/jt1", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	PlaySE(4, "ps3/s14/03/210300312", 256, 64);
+	PlaySE(5, "ps3/s14/01/210100292", 256, 64);
+	PlaySE(6, "ps3/s14/05/210500200", 256, 64);
+	PlaySE(7, "ps3/s14/02/210200130", 256, 64);
+	DrawSprite( 6, "text/mio_eee", NULL, -320, 160, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 32, 100, TRUE );
+	MoveSprite( 6, -320, -1000, 0, 0, 0, 0, 0, 3000, TRUE );
 	DrawScene("black", 1000 );
 
 //r今度は、さっきの一斉の咆哮に乗り遅れた沙都子も加わって、まさに絶叫が響き渡った。
@@ -1371,11 +1335,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/re1a_bikkuri_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/jt2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/re1a_bikkuri_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	PlayBGM(2, "hm01_06", 128, 0);
 
 //レナrvS14/02/210200131.「み、みみみみみみみみみみ、魅ぃちゃんッ？！kvS14/02/210200132.　ど、どどどどどういうことっっ！？！」
 	PlaySE(4, "ps3/s14/02/210200131", 256, 64);
@@ -1387,7 +1348,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/me1a_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/210300313.「し、しししししししししし、知らない知らない！　私知らないッッ！！」
@@ -1397,14 +1357,9 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "bb", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/jt2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/re1a_hig_okoru_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 150 );
+	DrawBustshot( 4, "sprite/normal/re1a_hig_okoru_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/jt2", 150 );
 
 //レナrvS14/02/210200133.「知らないはずはないでしょっ！kvS14/02/210200134.　圭一くんといつの間に、そんな約束をしたりなんかりしてそうなったのっ！？！？」
 	PlaySE(4, "ps3/s14/02/210200133", 256, 64);
@@ -1421,12 +1376,17 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	PlaySE(4, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 	PlaySE(3, "furu", 256, 64);
-
-	PlaySE(3, "furu", 256, 64);
-
-	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	PlaySE(4, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 
 //rぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんっ！！
 	OutputLine(NULL, "ぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんっ！！",
@@ -1467,12 +1427,17 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	PlaySE(4, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 	PlaySE(3, "furu", 256, 64);
-
-	PlaySE(3, "furu", 256, 64);
-
-	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	PlaySE(4, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 
 //rぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんっ！！
 	OutputLine(NULL, "ぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんぶんっ！！",
@@ -1503,9 +1468,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/re1a_okoru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/re1a_okoru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/ri1_komaru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/210500201.「レナ、止めるのですっ。kvS14/05/210500202.魅ぃが幽体離脱しかけて昇天直前なのですっ！」
@@ -1533,6 +1496,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down3", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //魅音rvS14/03/210300318.「――ぶべらっ？！」
 	PlaySE(4, "ps3/s14/03/210300318", 256, 64);
@@ -1545,14 +1509,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 3, "sprite/normal/ri1_komaru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/re1a_bikkuri_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	FadeAllBustshots( 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/ri1_komaru_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawBustshot( 5, "sprite/normal/re1a_bikkuri_a1_0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 4, "sprite/normal/sa1a_akireru_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //沙都子rvS14/04/210400206.「…無様ですわね」
@@ -1561,7 +1520,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/ri1_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/ri1_warai_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/210500203.「…崇りなのです。kvS14/05/210500204.成仏するのです、なむ～☆」
 	PlaySE(4, "ps3/s14/05/210500203", 256, 64);
@@ -1572,12 +1531,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/me1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/210300319.「勝手に殺すなッッ！！kvS14/03/210300320.　…はぁっ、はぁっ…！」
@@ -1600,9 +1554,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 3, "sprite/normal/me1a_ikari_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawBustshot( 3, "sprite/normal/me1a_ikari_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawBustshot( 5, "sprite/normal/re1a_kaii_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS14/02/210200139.「は、はう～…。kvS14/02/210200140.ごめん、魅ぃちゃん……。kvS14/02/210200141.こういう時、どんな顔していいかわかんなくて…」
@@ -1625,14 +1577,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/re1a_kaii_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/sa1a_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	FadeAllBustshots( 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/re1a_kaii_a1_0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/sa1a_odoroki_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawBustshot( 4, "sprite/normal/me1a_tohoho_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //沙都子rvS14/04/210400207.「そ、それにしても知らなかったですわ…！kvS14/04/210400208.　そんな、超巨大プロジェクトが水面下で進行していたなんて！」
@@ -1644,7 +1591,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/ri1_niko_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/ri1_niko_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/210500205.「圭一も魅ぃも水臭いのです。kvS14/05/210500206.ボクたちにだけは打ち明けてほしかったのです」
 	PlaySE(4, "ps3/s14/05/210500205", 256, 64);
@@ -1681,8 +1628,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 3, "sprite/normal/sa1a_akireru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/sa1a_akireru_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/VT4Ba_satoko1033.「…そもそも魅音さん。kvS14/04/VT4Ba_satoko1034.村長さんにこのパーティーのことを、どのようにお伝えになったんですの？」
 	PlaySE(4, "ps3/s14/04/vt4ba_satoko1033", 256, 64);
@@ -1719,18 +1665,9 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	DrawBustshot( 4, "sprite/normal/me2_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/heya1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/me2_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/210300326.「おじいちゃん！kvS14/03/210300327.　今度の日曜にみんなでバーベキューパーティーを開きたいんだけど、協力してくれないかな？」
 	PlaySE(4, "ps3/s14/03/210300326", 256, 64);
@@ -1751,14 +1688,10 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "kyupirn", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/heya1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/me2_wink_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 150 );
+	DrawBustshot( 4, "sprite/normal/me2_wink_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/heya1", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //魅音rvS14/03/210300328.「うん！　やっとさ…やっと、見つけたんだ！kvS14/03/210300329.　私の全てを任せられる男の子をね！」
 	PlaySE(4, "ps3/s14/03/210300328", 256, 64);
@@ -1769,17 +1702,12 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	PlayBGM( 1, "semi", 128, 0 );
-
-	DrawScene("background/jt2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/me1a_tohoho_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/me1a_tohoho_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/jt2", 150 );
 	PlaySE(3, "lf226", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //全員r「「…………」」
 	OutputLine(NULL, "「「…………」」",
@@ -1803,13 +1731,9 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/sa1a_akireru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/ri1_komaru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/sa1a_akireru_a1_0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/ri1_komaru_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawBustshot( 4, "sprite/normal/re1a_nande_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm10_68", 128, 0);
 
 //沙都子rvS14/04/210400211.「ま、まぁ、確かに……。kvS14/04/210400212.意図は間違っては、おりませんが…」
@@ -1848,12 +1772,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/ki_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //喜一郎rvS14/18/213300025.「それでね、『せっかくの園崎家頭首の婚約とあっちゃ、村をあげてお祝いしなきゃ体裁が付かない！』って町会の大人衆が言い合ってね！kvS14/18/213300026.　もちろん、御三家としても――」
@@ -1866,9 +1785,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 3, "sprite/normal/ki_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawBustshot( 3, "sprite/normal/ki_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawBustshot( 5, "sprite/normal/me1a_tohoho_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS14/03/210300332.「――ちょっ？！　ちょちょちょちょちょちょ、ちょっと待ってっ！kvS14/03/210300333.　こ、この話が、ば、婆っちゃの耳に入ったらっ！！」
@@ -1926,10 +1843,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/ki_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //喜一郎rvS14/18/213300031.「なんせ前原くんは、いまや村一番の有名人だからね！kvS14/18/213300032.　聞いたよ、今度の祭りでも色々やってくれるんだって？kvS14/18/213300033.　楽しみにしてるよ！！」
@@ -2050,10 +1964,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/si1a_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600191.「…あ、おじいちゃん。kvS14/06/210600192.向こうで牧野さんが呼んで――」
@@ -2115,9 +2026,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/si1a_akuwarai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/si1a_akuwarai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/me1a_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/210300337.「――――はっ？！」
@@ -2238,8 +2147,8 @@ void main()
 	ClearMessage();
 
 	DrawBustshot( 3, "sprite/normal/me1a_ikari_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //魅音rvS14/03/210300351.「そ、それはあんたたちだけでしょうがぁぁっっ！！」
 	PlaySE(4, "ps3/s14/03/210300351", 256, 64);
@@ -2300,10 +2209,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/re1a_kaii_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS14/02/210200144.「け、圭一くんと魅ぃちゃんの、赤ちゃん……kvS14/02/210200145.は、はううぅぅっっ☆　か、かかかかかぁいいかぁいい…！」
@@ -2325,9 +2231,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/re1a_kaii_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/re1a_kaii_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/sa1a_hannbeso_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/210400213.「ぎ、ぎええぇぇぇっっ？！kvS14/04/210400214.　れ、レナさん首、首締まってますっ！！kvS14/04/210400215.　ろ、ロープっ！　ブレイク！kvS14/04/210400216.　試合ストップなのでございますわ～～～っっ！？！」
@@ -2355,10 +2259,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/si1a_wink_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600210.「くっくっく…。kvS14/06/210600211.まぁ、そんなに心配しなくても。kvS14/06/210600212.みんな冗談半分ですし」
@@ -2455,9 +2356,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/si1a_huteki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/si1a_huteki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/me1a_yowaki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/210300353.「あ…あんた、kvS14/03/210300354.なんてことを……っ！！」
@@ -2500,7 +2399,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/ri1_komaru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/210500210.「…自分で言ってると世話ないのです」
@@ -2525,10 +2423,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/me1a_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/210300355.「け、圭ちゃん！kvS14/03/210300356.　逃げようっ！！」
@@ -2598,7 +2493,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/re1a_bikkuri_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS14/02/210200147.「え、ええぇっ？！」
@@ -2608,6 +2502,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down3", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //沙都子rvS14/04/VT4Ba_satoko1035.「……はうっっ？！」
 	PlaySE(4, "ps3/s14/04/vt4ba_satoko1035", 256, 64);
@@ -2641,9 +2536,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/jt1", 1000 );
+	DrawSceneWithMask( "background/jt1", "left", 0, 0, 500 );
 
 //魅音rvS14/03/210300361.「――んがっ？！」
 	PlaySE(4, "ps3/s14/03/210300361", 256, 64);
@@ -2652,8 +2545,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r俺に振り返りながら走り出した魅音は、目の前に立つ女性に気づかず、激突した。
 	OutputLine(NULL, "俺に振り返りながら走り出した魅音は、目の前に立つ女性に気づかず、激突した。",
@@ -2726,26 +2619,17 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/jt2", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/si1a_tokui_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/ri1_komaru_a2_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/si1a_tokui_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawBustshot( 5, "sprite/normal/ri1_komaru_a2_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawSceneWithMask( "background/jt2", "left", 0, 0, 500 );
 
 //rおそるおそる、背後の詩音たちに振り返る。詩音は諦めろ、と言いたげに首を振り、横の梨花ちゃんは…合掌？！
 	OutputLine(NULL, "おそるおそる、背後の詩音たちに振り返る。詩音は諦めろ、と言いたげに首を振り、横の梨花ちゃんは…合掌？！",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/jt1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/aka_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/aka_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawSceneWithMask( "background/jt1", "right", 0, 0, 500 );
 
 //圭一rvS14/01/210100320.「あ、アノヲ……？」
 	PlaySE(4, "ps3/s14/01/210100320", 256, 64);
@@ -2778,26 +2662,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse06", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	DrawScene("white", 1000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
-	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );
