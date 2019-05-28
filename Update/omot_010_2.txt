@@ -1,0 +1,76 @@
+void main()
+{
+
+
+//*Miotsukushi Omote Day 10 after 1st question
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+
+	DrawBustshot( 5, "sprite/normal/kei2_komaru_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/re2a_okoru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//レナrvS14/02/210200192.「何処で働いていようと、関係ない。kvS14/02/210200193.お父さんの好きになった人がどんな職業の人でも、別にどうでもいいことだと思う。kvS14/02/210200194.……違うかな？」
+	PlaySE(4, "ps3/s14/02/210200192", 256, 64);
+	OutputLine(NULL, "「何処で働いていようと、関係ない。",
+			NULL, "", Line_WaitForInput);
+	PlaySE(4, "ps3/s14/02/210200193", 256, 64);
+	OutputLine(NULL, "お父さんの好きになった人がどんな職業の人でも、別にどうでもいいことだと思う。",
+			NULL, "", Line_WaitForInput);
+	PlaySE(4, "ps3/s14/02/210200194", 256, 64);
+	OutputLine(NULL, "……違うかな？」",
+			NULL, "", Line_Normal);
+	ClearMessage();
+
+	DrawBustshot( 5, "sprite/normal/kei2_majime_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//圭一rvS14/01/210100833.「いや、違わない。kvS14/01/210100834.……いい人なら、な」
+	PlaySE(4, "ps3/s14/01/210100833", 256, 64);
+	OutputLine(NULL, "「いや、違わない。",
+			NULL, "", Line_WaitForInput);
+	PlaySE(4, "ps3/s14/01/210100834", 256, 64);
+	OutputLine(NULL, "……いい人なら、な」",
+			NULL, "", Line_Normal);
+	ClearMessage();
+
+//レナrvS14/02/210200195.「……それ、どういう意味かな？」
+	PlaySE(4, "ps3/s14/02/210200195", 256, 64);
+	OutputLine(NULL, "「……それ、どういう意味かな？」",
+			NULL, "", Line_Normal);
+	ClearMessage();
+
+//rレナの目が、ますます剣呑なものへと変わっていく。
+	OutputLine(NULL, "レナの目が、ますます剣呑なものへと変わっていく。",
+			NULL, "", Line_Normal);
+	ClearMessage();
+
+//r…おかしい。確かに聞かされて楽しい内容ではないが、…それにしてもレナの反応は、妙に排他的だ。だから私は思わず、余計かもと思ったがつい、口を挟んでしまった。
+	OutputLine(NULL, "…おかしい。確かに聞かされて楽しい内容ではないが、…それにしてもレナの反応は、妙に排他的だ。だから私は思わず、余計かもと思ったがつい、口を挟んでしまった。",
+			NULL, "", Line_Normal);
+	ClearMessage();
+
+	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+	char OmoteChoice9[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		OmoteChoice9[0] = "";
+		OmoteChoice9[1] = "";
+	}
+	else
+	{
+		OmoteChoice9[0] = "その人は、悪い人なのです。";
+		OmoteChoice9[1] = "レナはその人のこと、どう思っていますか？";
+	}
+
+	Select( 2, OmoteChoice9 );
+	DisableWindow();
+	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+	if (LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		SetGlobalFlag(GConsoleChoice, 0);
+	}
+	else
+	{
+		SetGlobalFlag(GConsoleChoice, 1);
+	}
+}
