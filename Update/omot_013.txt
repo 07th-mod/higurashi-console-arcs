@@ -14,20 +14,16 @@ void main()
 //#13 図書館デート
 
 	PlayBGM(2, "hm01_04", 128, 0);
-
 	PlaySE(3, "suzume_lp", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/sora", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/mati3", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/tosyo1", 1000 );
+	DrawScene("white", 1000 );
+	DrawSceneWithMask( "background/sora", "m1", 0, 0, 1000 );
+	Wait( 250 );
+	DrawSceneWithMask( "black", "right", 0, 0, 1500 );
+	Wait( 250 );
+	DrawSceneWithMask( "background/mati3", "left", 0, 0, 1500 );
+	DrawSceneWithMask( "black", "right", 0, 0, 1500 );
+	Wait( 250 );
+	DrawSceneWithMask( "background/tosyo1", "left", 0, 0, 1500 );
 
 //r約束より３０分早く、俺は興宮の図書館に着いた。
 	OutputLine(NULL, "約束より３０分早く、俺は興宮の図書館に着いた。",
@@ -240,9 +236,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/tosyo2", 1000 );
+	DrawSceneWithMask( "black", "right", 0, 0, 1500 );
+	DrawSceneWithMask( "background/tosyo2", "left", 0, 0, 1500 );
 
 //r図書館の自動ドアを潜ると、途端にエアコンで制御されたひやりとした冷気に包まれる。涼しくて爽快だけど、まだ日中の暑さを抜けてこなかった俺には少し、寒く感じた。
 	OutputLine(NULL, "図書館の自動ドアを潜ると、途端にエアコンで制御されたひやりとした冷気に包まれる。涼しくて爽快だけど、まだ日中の暑さを抜けてこなかった俺には少し、寒く感じた。",
@@ -271,6 +266,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rゴンッ！
 	OutputLine(NULL, "ゴンッ！",
@@ -344,7 +340,6 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "fly", 256, 64);
-
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 //r目が合うと、魅音はいきなりびくっ、となって飛びのいた。
@@ -398,6 +393,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rどんっ…。
 	OutputLine(NULL, "どんっ…。",
@@ -420,6 +416,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rごんっ！
 	OutputLine(NULL, "ごんっ！",
@@ -440,7 +437,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawBustshot( 4, "sprite/normal/me2_yowaki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/210300563.「たたたぁ…ひ～ん…」
@@ -646,7 +642,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawBustshot( 4, "sprite/normal/me2_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/210300581.「………」
@@ -661,7 +656,6 @@ void main()
 	ClearMessage();
 
 	DrawBustshot( 4, "sprite/normal/me2_tokui_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm01_04", 128, 0);
 
 //魅音rvS14/03/210300582.「…はぁ、そうだよね。kvS14/03/210300583.圭ちゃんなんだから、今までどおりで問題ないか～」
@@ -700,8 +694,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r開始、３０分後。
@@ -709,7 +701,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("scene/028c", 1000 );
+	DisableWindow();
+	DrawScene("scene/028c", 1500 );
 
 //魅音rvS14/03/210300585.「あ、圭ちゃん。kvS14/03/210300586.ここ、この訳で合ってるかな…？」
 	PlaySE(4, "ps3/s14/03/210300585", 256, 64);
@@ -952,6 +945,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "boyoon", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rしかも間違ってるし！　…はぁ、本気で先が思いやられるぞ…？
 	OutputLine(NULL, "しかも間違ってるし！　…はぁ、本気で先が思いやられるぞ…？",
@@ -996,9 +990,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "hikaru", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("scene/028c", 1000 );
 
 //圭一rvS14/01/210101216.「大丈夫なわけあるかこのくそたわけっ！kvS14/01/210101217.　この学力で合格できるなら、世の中の志願者数は合格者数を越えたりせんわっ！」
@@ -1206,7 +1198,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("scene/028b", 1000 );
 
 //魅音rvS14/03/210300613.「いっ…。kvS14/03/210300614.一緒の学校に、行きたいなと思って！　…ね」
@@ -1238,8 +1229,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	PlayBGM(2, "hm01_06", 128, 0);
 
 //r俺と一緒に学校に通いたくて…受験勉強を、…始めた？！
@@ -1370,7 +1360,6 @@ void main()
 	ClearMessage();
 
 	DrawBustshot( 4, "sprite/normal/me2_wink_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm09_42", 128, 0);
 
 //魅音rvS14/03/210300623.「大学ぐらいは、許してもらうつもりだよ。kvS14/03/210300624.そりゃあ…園崎家じゃ、きっと一波乱あるだろうけどさ」
@@ -1505,8 +1494,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("background/hi1", 1000 );
 
 //rそれでも。
@@ -1586,9 +1573,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/me2_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/tosyo2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/me2_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/210300639.「圭ちゃん……」
 	PlaySE(4, "ps3/s14/03/210300639", 256, 64);
@@ -1678,10 +1664,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
 
 //詩音rvS14/06/210600407.「あれ、圭ちゃん…kvS14/06/210600408.と、お姉？」
@@ -1710,10 +1693,8 @@ void main()
 	ClearMessage();
 
 	PlayBGM( 1, "semi", 128, 0 );
-
-	DrawScene("background/tosyo2", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/si1a_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/si1a_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawSceneWithMask( "background/tosyo2", "left", 0, 0, 1500 );
 
 //圭一rvS14/01/210101251.「あれ…詩音？」
 	PlaySE(4, "ps3/s14/01/210101251", 256, 64);
@@ -1732,7 +1713,6 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "iwakannnohatuga", 256, 64);
-
 	DrawBustshot( 3, "sprite/normal/ta1_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //鷹野rvS14/09/210900024.「あらあら、こんにちは。kvS14/09/210900025.圭一くんに魅音ちゃん」
@@ -1756,15 +1736,9 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
+	DrawFilm( 2, 0, 0, 0, 128, 0, 250, TRUE );
 	PlayBGM( 1, "kaze_lp", 128, 0 );
-
 	DrawBustshot( 4, "sprite/normal/ta1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //rこの人が……俺たちの、敵…？！
@@ -1793,17 +1767,11 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
+	FadeFilm( 500, TRUE );
+	DrawBustshot( 5, "sprite/normal/si1a_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/ta1_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/tosyo2", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/si1a_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/ta1_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
 	PlayBGM( 1, "semi", 128, 0 );
 
 //鷹野rvS14/09/210900026.「くすくすくす…。kvS14/09/210900027.今日はデートかしら？」
@@ -1937,7 +1905,6 @@ void main()
 	ClearMessage();
 
 	DrawBustshot( 5, "sprite/normal/si1a_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
 	PlayBGM(2, "hm02_12", 128, 0);
 
 //詩音rvS14/06/210600416.「ああ、これですか？kvS14/06/210600417.　鷹野さんが、雛見沢についての話をまとめたものです。kvS14/06/210600418.たとえば『鬼隠し』とか、この村の伝説とか、…色々、ね」
@@ -2146,8 +2113,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rガタンッ！
 	OutputLine(NULL, "ガタンッ！",
@@ -2162,7 +2129,6 @@ void main()
 	ClearMessage();
 
 	DrawBustshot( 3, "sprite/normal/me2_majime_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
 	PlayBGM(2, "hm03_17", 128, 0);
 
 //魅音rvS14/03/210300653.「あんた、まだ疑ってるの？kvS14/03/210300654.　いい加減にしないと私、どうなっても知らないよ？！」
@@ -2271,7 +2237,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawBustshot( 3, "sprite/normal/me2_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/210300659.「ッッ？！」
@@ -2281,7 +2246,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 //rついに激昂したのか、魅音が手を振り上げたのを見て、俺は後ろから魅音を押さえつける。そしてくるりと後ろを向かせると、背中越しに詩音に振り返った。
@@ -2475,10 +2440,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm05_21", 128, 0);
 
 //r…それは、雛見沢で続く崇りの話だった。…もっとも、その内容はほとんど、茜さんと梨花ちゃんから聞いたものと重複するものだったけど。
@@ -2506,9 +2468,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/me2_yowaki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/tosyo2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/me2_yowaki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //圭一rvS14/01/210101280.「…なんで、詩音はあんなに必死になって調べてるんだ？」
 	PlaySE(4, "ps3/s14/01/210101280", 256, 64);
@@ -2539,10 +2500,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
 	DrawScene("scene/011a", 1000 );
 
 //梨花rvS14/05/210500716.「…去年、沙都子の叔母が殺され、兄がいなくなりました」
@@ -2551,11 +2510,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
+	FadeFilm( 250, TRUE );
+	DrawBustshot( 4, "sprite/normal/me2_sinmyou_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/tosyo2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/me2_sinmyou_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //r確か以前に、梨花ちゃんがそのことを教えてくれた。
 	OutputLine(NULL, "確か以前に、梨花ちゃんがそのことを教えてくれた。",
@@ -2652,6 +2610,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	FadeOutBGM(1, 200, FALSE);
 	FadeOutBGM(2, 200, FALSE);
 
 //rはっ、となって魅音は俺を見つめ、それから唇をかんでうなだれる。
@@ -2664,10 +2623,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm05_22", 128, 0);
 
 //詩音rvS14/06/150602132.「詩音、あんたには罪がある。kvS14/06/150602133.あんたは今まで魅音だった。kvS14/06/150602134.園崎家の鬼を継ぐ魅音という強い立場がありながら、悟史くんを救わなかった救おうとしなかった！」
@@ -2698,6 +2654,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //詩音rvS14/06/150602138A.「私はお前を殺すだろう、絶対に殺す！！kvS14/06/150602139.　お前を一番残酷に殺す方法が何なのか、今日から毎日考えて過してやる！！」
 	PlaySE(4, "ps3/s14/06/150602138a", 256, 64);
@@ -2742,9 +2699,9 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "thisikuki", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "red", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 	DrawScene("black", 1000 );
 
 //r『魅音』の鬼の形相がただ、怖かった。膝を抱えて、ぶるぶると震えるだけだった。
@@ -2763,13 +2720,9 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/tosyo2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/me2_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawScene("white", 1000 );
+	DrawBustshot( 4, "sprite/normal/me2_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawSceneWithMask( "background/tosyo2", "c", 0, 0, 1000 );
 	PlayBGM(2, "hm05_21", 128, 0);
 
 //魅音rvS14/03/210300682.「わかる、…わかるよ…。kvS14/03/210300683.ううん、今…やっと、気づいた…！」
@@ -2811,8 +2764,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r…詩音は、鬼隠しに遭っていなくなった悟史を、今でも想っているんだろう。
@@ -2830,6 +2781,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 0, 0, 0, 128, 0, 250, TRUE );
 	DrawBustshot( 4, "sprite/normal/si1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600445.「……ふん。kvS14/06/210600446.二人で勝手に、勉強でも何でも、楽しくやってなさいな！kvS14/06/210600447.　お子ちゃまカップルがっ！！」
@@ -2844,11 +2796,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/tosyo2", 1000 );
+	DrawScene("white", 1000 );
+	FadeFilm( 500, TRUE );
+	DrawSceneWithMask( "background/tosyo2", "c", 0, 0, 1000 );
 
 //rそんなことを考えているときに、俺たちを見た詩音の心境は推して量るべくもない。
 	OutputLine(NULL, "そんなことを考えているときに、俺たちを見た詩音の心境は推して量るべくもない。",
@@ -3104,20 +3054,6 @@ void main()
 	OutputLine(NULL, "俺にあとできることは、ただ二人の思いを信じるだけだった。",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );
