@@ -19,7 +19,6 @@ void main()
 	ClearMessage();
 
 	PlayBGM( 1, "yoru", 128, 0 );
-
 	DrawScene("background/sinryou_soto1_01", 1000 );
 
 //詩音rvS14/06/220600010.「……あれ？」
@@ -75,9 +74,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/sinryou_soto3_01", 1000 );
+	DrawSceneWithMask( "black", "left", 0, 0, 1500 );
+	DrawSceneWithMask( "background/sinryou_soto3_01", "right", 0, 0, 1500 );
 
 //r私はこっそり足音をしのばせながら、診療所の裏に回る。
 	OutputLine(NULL, "私はこっそり足音をしのばせながら、診療所の裏に回る。",
@@ -206,11 +204,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
+	DrawBustshot( 4, "sprite/normal/ta1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/tosyo2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/ta1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //鷹野rvS14/09/220900001.「かつての雛見沢ではね、研究と称して人体を用いた実験が行われていたそうよ。kvS14/09/220900002.ばらばらに解剖して、その細胞内に含まれている色々な成分を調べるサンプルとして扱われていたらしいわね」
 	PlaySE(4, "ps3/s14/09/220900001", 256, 64);
@@ -227,10 +224,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	FadeFilm( 250, TRUE );
 	DrawScene("black", 1000 );
 
 //rうそでしょ…？
@@ -254,7 +249,6 @@ void main()
 	ClearMessage();
 
 	DrawScene("background/aka1", 1000 );
-
 	PlayBGM(2, "hm06_30", 128, 0);
 
 //r………ああ、そうか。そうなんだ。
@@ -338,7 +332,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawScene("white", 1000 );
 
 //悟史rvS14/07/satoshi11001.「沙都子のこと……頼んだよ」
 	PlaySE(4, "ps3/s14/07/satoshi11001", 256, 64);
@@ -372,17 +366,11 @@ void main()
 	ClearMessage();
 
 	DrawScene("background/sinryou_soto3_01", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/so5", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/rouka1_02", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
+	DrawSceneWithMask( "background/so5", "right", 0, 0, 500 );
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
+	DrawSceneWithMask( "background/rouka1_02", "right", 0, 0, 500 );
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
 	DrawScene("background/jsa7_01", 1000 );
 
 //r…そして私は、園崎本家の魅音の部屋に忍び込んだ。中では当然魅音が眠っていたが、その晩は泊まって一緒に寝る約束をしていたので、彼女はわずかに身じろぎしたのみで、すぐに寝息を立ててしまった。
@@ -390,7 +378,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "down", 0, 0, 2000 );
 
 //r物音を立てないよう用心しながら、私は魅音の机に置かれた、常日頃から彼女が携帯していた改造モデルガンと、…引き出しにしまった弾倉を取り出す。
 	OutputLine(NULL, "物音を立てないよう用心しながら、私は魅音の机に置かれた、常日頃から彼女が携帯していた改造モデルガンと、…引き出しにしまった弾倉を取り出す。",
@@ -407,15 +395,12 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	Wait( 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "semi", 128, 0 );
-
+	DrawBustshot( 4, "sprite/normal/si1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/sinryou_sinsatu1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/si1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/220600015.「もう一度聞きます。kvS14/06/220600016.悟史くんはどこっ？」
 	PlaySE(4, "ps3/s14/06/220600015", 256, 64);
@@ -453,20 +438,13 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/si1a_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/si1a_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "mc071", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/sinryou_sinsatu1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/si1a_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/si1a_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/sinryou_sinsatu1", 500 );
 	PlaySE(3, "garasu", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM(2, "hm02_12", 128, 0);
 
 //r再び銃声がとどろき、背後の窓ガラスが粉々になって外に弾け飛ぶ。詩音の表情は全く変化することなく、もはやその目にはためらいの揺らぎすらなかった。
@@ -585,10 +563,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("background/sinryou_matiai1", 1000 );
-
 	DrawScene("black", 1000 );
 
 //r診療室を出て、廊下の突き当たりの扉へと向かう。そして扉を開けると、二階へと向かう階段。
@@ -655,10 +630,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM( 1, "addse14", 128, 0 );
-
 	FadeOutBGM(1, 200, TRUE);
 
 //r入江の肩越しに下を見れば、薄ぼんやりした中に地下一階に入る扉が見える。…詩音は油断なく入江の様子をうかがいながら、足を踏み外さないよう慎重に階段を降りていった。
@@ -677,7 +649,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "a5_07205", 256, 64);
-
+	DrawFilm( 2, 0, 0, 0, 128, 0, 250, TRUE );
 	DrawScene("background/chika_rouka", 1000 );
 
 //r入江が扉を開き、詩音は彼を先に進ませて、その中へと入った。
@@ -765,13 +737,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "left", 0, 0, 1500 );
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("background/chika_shisetsu", 1000 );
+	DrawSceneWithMask( "background/chika_shisetsu", "right", 0, 0, 1500 );
 
 //rやがて、廊下をまっすぐ進んでいた入江は、その突き当たりにある扉の前に来て立ち止まる。そして、ゆっくりと後ろの詩音に振り返っていった。
 	OutputLine(NULL, "やがて、廊下をまっすぐ進んでいた入江は、その突き当たりにある扉の前に来て立ち止まる。そして、ゆっくりと後ろの詩音に振り返っていった。",
@@ -791,8 +759,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
 
 //rいてもたってもいられなかった。詩音は入江を横に突き飛ばすと、扉についたガラス窓に飛びつくと、目を凝らして中を覗き込む。
 	OutputLine(NULL, "いてもたってもいられなかった。詩音は入江を横に突き飛ばすと、扉についたガラス窓に飛びつくと、目を凝らして中を覗き込む。",
@@ -854,9 +821,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/si1a_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/chika_shisetsu", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/si1a_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/220600041.「…い、…生きてるんだよね…？kvS14/06/220600042.　悟史くん、生きてるんだよね…？！」
 	PlaySE(4, "ps3/s14/06/220600041", 256, 64);
@@ -991,14 +957,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "mc071", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
-	PlaySE(3, "down3", 256, 64);
+	FadeFilm( 250, FALSE );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
+	Wait( 250 );
+	PlaySE(4, "down3", 256, 64);
 
 //r銃声がとどろき、入江はその場でよろめく。
 	OutputLine(NULL, "銃声がとどろき、入江はその場でよろめく。",
@@ -1037,9 +1000,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/chika_shisetsu", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/si1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawFilm( 2, 0, 0, 0, 128, 0, 250, TRUE );
+	DrawBustshot( 4, "sprite/normal/si1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawSceneWithMask( "background/chika_shisetsu", "up", 0, 0, 1000 );
 
 //入江rvS14/10/22100182.「……詩音さん…！」
 	PlaySE(4, "ps3/s14/10/22100182", 256, 64);
@@ -1093,13 +1056,11 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	PlaySE(3, "mc071", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/chika_shisetsu", 1000 );
+	FadeFilm( 250, FALSE );
+	DrawScene("white", 250 );
+	DrawFilm( 2, 0, 0, 0, 128, 0, 500, FALSE );
+	DrawScene("background/chika_shisetsu", 500 );
 
 //r初めて見る入江の咆哮と必死の形相に、詩音はびくっと震えて思わず引き金を引いてしまった。照準をつけていなかったそれは床を跳ね、入江の頬を鋭く切り裂く。
 	OutputLine(NULL, "初めて見る入江の咆哮と必死の形相に、詩音はびくっと震えて思わず引き金を引いてしまった。照準をつけていなかったそれは床を跳ね、入江の頬を鋭く切り裂く。",
@@ -1150,6 +1111,7 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 250, TRUE );
 
 //rそこで詩音はやっと気付く。…悟史はベッドの上に毛布を掛けられているが、…その上からシートベルトのようなものが２本掛り、彼がベッドから起きられないようにされているのを。
 	OutputLine(NULL, "そこで詩音はやっと気付く。…悟史はベッドの上に毛布を掛けられているが、…その上からシートベルトのようなものが２本掛り、彼がベッドから起きられないようにされているのを。",
@@ -1216,6 +1178,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r詩音が涙を浮かべながらガラスをどんと叩く。
 	OutputLine(NULL, "詩音が涙を浮かべながらガラスをどんと叩く。",
@@ -1279,6 +1242,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 0, 0, 0, 128, 0, 250, TRUE );
 	DrawScene("background/chika_shisetsu", 1000 );
 
 //詩音rvS14/06/220600078.「…なんで……！」
@@ -1509,10 +1473,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "down", 0, 0, 2000 );
+	FadeFilm( 250, TRUE );
+	Wait( 2000 );
 	PlayBGM( 1, "semi", 128, 0 );
 
 //r診察室に入ったとき…床に転がったぬいぐるみと、粉々に割れた窓ガラスを見て、俺たちは異常な事態が起こっていることを悟った。
@@ -1520,9 +1483,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 5, "sprite/normal/me2_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawScene("background/sinryou_sinsatu1", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/me2_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS14/03/220300021.「い、いったい何があったの？kvS14/03/220300022.　監督はっ？！」
 	PlaySE(4, "ps3/s14/03/220300021", 256, 64);
@@ -1541,9 +1503,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
+	FadeAllBustshots( 200, TRUE );
 
 //r狼狽する魅音の横をすり抜けて、目を覚ました梨花ちゃんが飛び込んできてベッドに駆け寄った。
 	OutputLine(NULL, "狼狽する魅音の横をすり抜けて、目を覚ました梨花ちゃんが飛び込んできてベッドに駆け寄った。",
@@ -1595,7 +1555,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/re2a_okoru_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS14/02/220200018.「考えている時間はないよ、圭一くん！kvS14/02/220200019.　二人を探さなきゃ！！」
@@ -1607,11 +1566,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/sinryou_sinsatu1", 1000 );
+	DrawSceneWithMask( "black", "left", 0, 0, 250 );
+	Wait( 250 );
+	DrawSceneWithMask( "background/sinryou_sinsatu1", "up", 0, 0, 1500 );
 
 //沙都子rvS14/04/220400001.「…………………」
 	PlaySE(4, "ps3/s14/04/220400001", 256, 64);
@@ -1620,11 +1577,10 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
+	DrawFilm( 2, 0, 0, 0, 128, 0, 250, TRUE );
+	Wait( 1000 );
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/chika_rouka", 1000 );
-
+	DrawSceneWithMask( "background/chika_rouka", "right", 0, 0, 500 );
 	PlayBGM(2, "hm03_17", 128, 0);
 
 //rここにたどり着けたのは、まさに奇跡ともいってよかった。
@@ -1650,11 +1606,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/chika_shisetsu", 1000 );
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
+	DrawSceneWithMask( "background/chika_shisetsu", "right", 0, 0, 500 );
 
 //rしかし、それが幸運にもプラスに働いた。視力のいいレナが、突き当たりの奥に見えるドアの前で仁王立ちになって、白衣を着てこちらに背を向けている男に拳銃を構えているのをいち早く発見したのだ。
 	OutputLine(NULL, "しかし、それが幸運にもプラスに働いた。視力のいいレナが、突き当たりの奥に見えるドアの前で仁王立ちになって、白衣を着てこちらに背を向けている男に拳銃を構えているのをいち早く発見したのだ。",
@@ -1684,14 +1637,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "mc071", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/chika_shisetsu", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/si1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	FadeFilm( 250, FALSE );
+	DrawScene("white", 250 );
+	DrawFilm( 2, 0, 0, 0, 128, 0, 500, FALSE );
+	DrawBustshot( 4, "sprite/normal/si1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("background/chika_shisetsu", 500 );
 
 //圭一rvS14/01/220100096.「うっ…？！」
 	PlaySE(4, "ps3/s14/01/220100096", 256, 64);
@@ -1725,7 +1675,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/me2_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/220300026.「はぁっ？！kvS14/03/220300027.　何言ってるのさ詩音！kvS14/03/220300028.　悟史がいったいどうしたって言うの？！」
@@ -1775,9 +1724,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/me2_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/me2_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/ri2_komaru_a2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/220500159.「魅ぃ……ごめんなさい。kvS14/05/220500160.ボクの、…せいなのです」
@@ -1818,7 +1765,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/si1a_ikari_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/220600109.「梨花ちゃま……！kvS14/06/220600110.　あんたも、この悪党とグルだったんですか？！kvS14/06/220600111.　悟史くんの身体を弄んで、人体実験をしていたこの男とっ！！」
@@ -1843,7 +1789,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/re2b_komaru_b2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/220200021.「じ、人体実験って…梨花ちゃん、なんなの？kvS14/02/220200022.　意味わかんないよ、説明してっ！！」
@@ -1860,12 +1805,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/kei2_majime_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	FadeAllBustshots( 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/kei2_majime_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/ri2_komaru_a2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //圭一rvS14/01/220100098.「……その、詩音の後ろの部屋に…、kvS14/01/220100099.悟史が、いるのか…？」
@@ -1895,10 +1836,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/si1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/220600112.「生きてるなんて言えるかぁッッ！！」
@@ -1920,9 +1858,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawBustshot( 4, "sprite/normal/ri2_fuman_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS14/05/220500166.「…試検体というなら、ボクも同じなのです。kvS14/05/220500167.ボクも沙都子も、試検体としてこの雛見沢症候群の研究に協力しています」
@@ -1941,9 +1877,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 5, "sprite/normal/me2_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/me2_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/re2a_bikkuri_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/220200023.「えぇっ…？！」
@@ -1970,10 +1904,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/ri2_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS14/05/220500169.「沙都子は知らないのです。kvS14/05/220500170.…もう全て打ち明けますが、沙都子は一時、雛見沢症候群の末期症状に陥りました」
@@ -1992,9 +1923,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 3, "sprite/normal/ri2_majime_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawBustshot( 3, "sprite/normal/ri2_majime_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawBustshot( 5, "sprite/normal/kei2_ikari2_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //圭一rvS14/01/220100101.「…なぜ、それを言ってくれなかったんだ？kvS14/01/220100102.　それは俺も初耳だぞ？！」
@@ -2024,7 +1953,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 5, "sprite/normal/me2_yowaki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS14/03/220300038.「それって…まさか、あの…？」
@@ -2038,10 +1966,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/iri2_majime2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //入江rvS14/10/22100219.「３年前の、綿流しのときです。kvS14/10/22100220.沙都子ちゃんのご両親は、彼女を連れてドライブに行きましたが…、kvS14/10/22100221.その到着した先の崖で転落事故に遭われてしまった」
@@ -2080,7 +2005,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/si1a_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/220600117.「じゃあ、沙都子の両親はあの子が殺したとでも言うんですか？！」
@@ -2108,7 +2032,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 4, "sprite/normal/ri2_fuman_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS14/05/VT4Bc_rika1182.「……それをしてしまうのが、雛見沢症候群なのです」
@@ -2178,12 +2101,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	FadeFilm( 1000, FALSE );
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm05_20", 128, 0);
 
 //入江rvS14/10/22100228.「悟史くんは、…もう白状しますが、叔母を殺したことを私に打ち明けてくれました」
@@ -2198,6 +2119,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
 	DrawScene("background/kuruma5", 1000 );
 
 //入江rvS14/10/22100230.「そして、…そのぬいぐるみを買い、警察署へと向かう途中でした」
@@ -2301,6 +2223,7 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 250, TRUE );
 
 //入江rvS14/10/22100246.「でも……皮肉ですね」
 	PlaySE(4, "ps3/s14/10/22100246", 256, 64);
@@ -2314,9 +2237,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/chika_shisetsu", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/si1a_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawFilm( 2, 0, 0, 0, 128, 0, 250, TRUE );
+	DrawBustshot( 4, "sprite/normal/si1a_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawSceneWithMask( "background/chika_shisetsu", "up", 0, 0, 1500 );
 
 //詩音rvS14/06/220600122.「……じゃあ、沙都子が今、研究に協力しているというのは…？」
 	PlaySE(4, "ps3/s14/06/220600122", 256, 64);
@@ -2450,9 +2373,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
+	FadeFilm( 250, TRUE );
 
 //rそう言って詩音は激情のあまり詰め寄ると、拳銃の先を監督の眉間に突き当てる。そして、ハンマーをかちりと上げて、引き金にかけた指に力を込めた。
 	OutputLine(NULL, "そう言って詩音は激情のあまり詰め寄ると、拳銃の先を監督の眉間に突き当てる。そして、ハンマーをかちりと上げて、引き金にかけた指に力を込めた。",
@@ -2504,13 +2426,11 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/chika_shisetsu", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/si1a_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/sa2a_sakebu_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawSceneWithMask( "white", "left", 0, 0, 500 );
+	DrawFilm( 2, 0, 0, 0, 128, 0, 500, FALSE );
+	DrawBustshot( 3, "sprite/normal/si1a_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawBustshot( 5, "sprite/normal/sa2a_sakebu_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawSceneWithMask( "background/chika_shisetsu", "right", 0, 0, 500 );
 
 //詩音rvS14/06/220600136.「……さ、……沙都子……ッッ？！」
 	PlaySE(4, "ps3/s14/06/220600136", 256, 64);
@@ -2548,7 +2468,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/sa2a_hannbesoa3_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/sa2a_hannbeso_a3_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/220400006.「………聞かせていただきましたわ……。kvS14/04/220400007.私の、３年前のあの事件のことから病気のことまで、全部……！」
 	PlaySE(4, "ps3/s14/04/220400006", 256, 64);
@@ -2614,7 +2534,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/re2a_okoru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/220200025.「そうだよ！！kvS14/02/220200026.　レナ、沙都子ちゃんのことが大好きだよ！！kvS14/02/220200027.　沙都子ちゃんがいるから、毎日がとっても楽しいんだからっ！！」
@@ -2630,7 +2549,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/me2_majime_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300040.「沙都子、…村の人間があんたに冷たくしても何もできなくて、本当に悪いと思ってる！kvS14/03/220300041.　でも、これからは私たちがあんたのことを、全力で守ってみせる！！」
@@ -2649,7 +2567,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/ri2_komaru_a2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/220500184.「沙都子、……そんな悲しいことを言わないでくださいなのです。kvS14/05/220500185.沙都子が疫病神なら、ボクは神様なんて信じないのです。kvS14/05/220500186.それに沙都子と一緒にいるボクは、とても幸せなのですよ…！」
@@ -2677,7 +2594,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/sa2a_hannbesoa3_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/sa2a_hannbeso_a3_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/VT4Bc_satoko1010.「私は、本当にだめな人間ですわ…！kvS14/04/VT4Bc_satoko1011.　だけど、そんな私をこんなにも優しく、力強く励ましてくれるみんながいる…！」
 	PlaySE(4, "ps3/s14/04/vt4bc_satoko1010", 256, 64);
@@ -2695,7 +2612,6 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawBustshot( 3, "sprite/normal/si1a_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/220600137.「そ、それは…！kvS14/06/220600138.　あ、あんたを、試検体としてっ…！！」
@@ -2724,7 +2640,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/sa2a_hannbesoa3_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/sa2a_hannbeso_a3_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/220400020.「私の幸せのために、こんなにも頑張ってくれる人がいる…！kvS14/04/220400021.　だから私は、そんな皆さんのためにできることをしたいのです！！」
 	PlaySE(4, "ps3/s14/04/220400020", 256, 64);
@@ -2852,11 +2768,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
+	FadeFilm( 1000, FALSE );
+	DrawScene("white", 1000 );
 
 //r沙都子の、…その言葉が。
 	OutputLine(NULL, "沙都子の、…その言葉が。",
@@ -2914,11 +2827,9 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "down2", 256, 64);
-
-	DrawScene("background/chika_shisetsu", 1000 );
-
+	DrawScene("background/chika_shisetsu", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM(2, "hm07_32", 128, 0);
 
 //詩音rvS14/06/220600143.「う、…うわぁぁあぁぁっっ…うああぁぁあぁっっ…っっ！！」
@@ -2994,20 +2905,6 @@ void main()
 	OutputLine(NULL, "それは、とても優しい、…優しい姉妹の、涙だった…。",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

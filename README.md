@@ -17,7 +17,7 @@ Here's a [walkthrough](https://ibb.co/1Z463wp) for anyone who wants to know whic
 | Taraimawashi       | 100%     | 100%        | 100%    | 
 | Yoigoshi           | 100%     | 100%        | 100%    | 
 | Tokihogushi        | 100%     | 100%        | 100%    | 
-| Miotsukushi Omote  |  65%     |   0%        |   0%    | 
+| Miotsukushi Omote  |  77%     |   0%        |   0%    | 
 
 Tokihogushi has been released.  Work on Miotsukushi is starting soon.
 
