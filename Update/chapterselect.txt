@@ -16,7 +16,7 @@ void main()
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
 
-	char Chapter[8];
+	char Chapter[9];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
@@ -26,8 +26,9 @@ void main()
 		Chapter[3] = "Kageboushi";
 		Chapter[4] = "Yoigoshi";
 		Chapter[5] = "Tokihogushi";
-		Chapter[6] = "Police Case Files";
-		Chapter[7] = "Back";
+		Chapter[6] = "Miotsukushi Omote";
+		Chapter[7] = "Police Case Files";
+		Chapter[8] = "Back";
 
 		//Chapter[7] = "Miotsukushi Omote";
 		//Chapter[8] = "Miotsukushi Ura";
@@ -43,10 +44,10 @@ void main()
 		Chapter[3] = "影紡し編";
 		Chapter[4] = "宵越し編";
 		Chapter[5] = "解々し編";
-		Chapter[6] = "警察事件調書";
-		Chapter[7] = "戻る";
+		Chapter[6] = "澪尽し編 表";
+		Chapter[7] = "警察事件調書";
+		Chapter[8] = "戻る";
 
-		//Chapter[7] = "澪尽し編 表";
 		//Chapter[8] = "澪尽し編 裏";
 		//Chapter[9] = "言祝し編";
 		//Chapter[10] = "羞晒し編";
@@ -54,7 +55,7 @@ void main()
 	}
 
 //	InitializeSelectedItem();
-	Select( 8, Chapter );
+	Select( 9, Chapter );
 	DisableWindow();
 	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
@@ -273,6 +274,42 @@ void main()
 		}
 	}
 	else if(LoadValueFromLocalWork( SelectResult ) == 6)
+	{
+		DrawScene("scenario/omote/background", 1200 );
+		DrawBustshot(5, "scenario/omote/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
+		DrawBustshot(6, "scenario/omote/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
+		DrawBustshot(7, "scenario/logo", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, TRUE );
+		DrawBustshot(8, "scenario/stripes", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, TRUE );
+		Wait( 100 );
+		FadeBustshotWithFiltering(5, "5", 1, FALSE, 0, 0, 1000, TRUE );
+		Wait( 200 );
+
+		DrawBustshotWithFiltering(9, "scenario/omote/description", "5", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+		Wait( 200 );
+
+		SetValidityOfInput( TRUE );
+
+		ShowChapterPreview();
+
+		if (LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1) {
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+			FadeBustshot( 9, FALSE, 0, 0, 0, 0, 1000, TRUE );
+			DrawBustshot(9, "scenario/shortcuts", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+			Wait(10000);
+
+			DrawScene( "black", 1000 );
+
+			SetValidityOfSaving( TRUE );
+			CallSection("OmoteDay1");
+		}
+		else
+		{
+			StopBGM( 2 );
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 7)
 	{
 		DrawScene("scenario/police/background", 1200 );
 		DrawBustshot(5, "scenario/police/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
@@ -1086,3 +1123,580 @@ void TokiDay12()
 
 	JumpScript( "flow" );
 }
+
+void OmoteDay1()
+{
+	if (ModGetHighestChapterFlag(6)<1)
+		ModSetHighestChapterFlag(6, 1);
+	CallScript( "omot_001" );
+
+	JumpSection("OmoteDay2");
+}
+
+void OmoteDay2()
+{
+	if (ModGetHighestChapterFlag(6)<2)
+		ModSetHighestChapterFlag(6, 2);
+	CallScript( "omot_002" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay2Choice1");
+	}
+	else {
+		JumpSection("OmoteDay2Choice2");
+	}
+}
+
+void OmoteDay2Choice1()
+{
+	CallScript( "omot_002_choice1" );
+	CallScript( "omot_002_2" );
+
+	JumpSection("OmoteDay3");
+}
+
+void OmoteDay2Choice2()
+{
+	CallScript( "omot_002_choice2" );
+	CallScript( "omot_002_2" );
+
+	JumpSection("OmoteDay3");
+}
+
+void OmoteDay3()
+{
+	if (ModGetHighestChapterFlag(6)<3)
+		ModSetHighestChapterFlag(6, 3);
+	CallScript( "omot_003" );
+
+	JumpSection("OmoteDay4");
+}
+
+void OmoteDay4()
+{
+	if (ModGetHighestChapterFlag(6)<4)
+		ModSetHighestChapterFlag(6, 4);
+	CallScript( "omot_004" );
+
+	JumpSection("OmoteDay5");
+}
+
+void OmoteDay5()
+{
+	if (ModGetHighestChapterFlag(6)<5)
+		ModSetHighestChapterFlag(6, 5);
+	CallScript( "omot_005" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay5Choice1");
+	}
+	else {
+		JumpSection("OmoteDay5Choice2");
+	}
+}
+
+void OmoteDay5Choice1()
+{
+	CallScript( "omot_005_choice1" );
+	CallScript( "omot_005_choice2" );
+	
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay5Choice3");
+	}
+	else {
+		JumpSection("OmoteDay5Choice4");
+	}
+}
+
+void OmoteDay5Choice2()
+{
+	CallScript( "omot_005_choice2" );
+	
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay5Choice3");
+	}
+	else {
+		JumpSection("OmoteDay5Choice4");
+	}
+}
+
+void OmoteDay5Choice3()
+{
+	CallScript( "omot_005_choice3" );
+	CallScript( "omot_005_choice4" );
+	
+	JumpSection("OmoteDay6");
+}
+
+void OmoteDay5Choice4()
+{
+	CallScript( "omot_005_choice4" );
+	
+	JumpSection("OmoteDay6");
+}
+
+void OmoteDay6()
+{
+	if (ModGetHighestChapterFlag(6)<6)
+		ModSetHighestChapterFlag(6, 6);
+	CallScript( "omot_006" );
+
+	SetLocalFlag(LConsoleArc, 6);
+	StoreValueToLocalWork( ChapterNumber, 6 );
+	SavePoint("Ch.6 終わり", "End of Chapter 6");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("OmoteDay7");
+}
+
+void OmoteDay7()
+{
+	if (ModGetHighestChapterFlag(6)<7)
+		ModSetHighestChapterFlag(6, 7);
+	CallScript( "omot_007" );
+
+	JumpSection("OmoteDay8");
+}
+
+void OmoteDay8()
+{
+	if (ModGetHighestChapterFlag(6)<8)
+		ModSetHighestChapterFlag(6, 8);
+	CallScript( "omot_008" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay8Choice1");
+	}
+	else {
+		JumpSection("OmoteDay8Choice2");
+	}
+}
+
+void OmoteDay8Choice1()
+{
+	CallScript( "omot_008_choice1" );
+	CallScript("omot_badend1");
+
+	JumpScript( "flow" );
+}
+
+void OmoteDay8Choice2()
+{
+	CallScript( "omot_008_choice2" );
+
+	JumpSection("OmoteDay9");
+}
+
+void OmoteDay9()
+{
+	if (ModGetHighestChapterFlag(6)<9)
+		ModSetHighestChapterFlag(6, 9);
+	CallScript( "omot_009" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay9Choice1");
+	}
+	else {
+		JumpSection("OmoteDay9Choice2");
+	}
+}
+
+void OmoteDay9Choice1()
+{
+	CallScript( "omot_009_choice1" );
+	CallScript( "omot_009_2" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay9Choice3");
+	}
+	else {
+		JumpSection("OmoteDay9Choice4Right");
+	}
+}
+
+void OmoteDay9Choice2()
+{
+	CallScript( "omot_009_choice2" );
+	CallScript( "omot_009_2" );
+	
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay9Choice3");
+	}
+	else {
+		JumpSection("OmoteDay9Choice4");
+	}
+}
+
+void OmoteDay9Choice3()
+{
+	CallScript( "omot_009_choice3" );
+	CallScript( "omot_009_3" );
+	
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay9Choice5");
+	}
+	else {
+		JumpSection("OmoteDay9Choice6");
+	}
+}
+
+void OmoteDay9Choice4Right()
+{
+	CallScript( "omot_009_choice4" );
+	CallScript( "omot_009_3" );
+	
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay9Choice5");
+	}
+	else {
+		JumpSection("OmoteDay9Choice6Right");
+	}
+}
+
+void OmoteDay9Choice4()
+{
+	CallScript( "omot_009_choice4" );
+	CallScript( "omot_009_3" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay9Choice5");
+	}
+	else {
+		JumpSection("OmoteDay9Choice6");
+	}
+}
+
+void OmoteDay9Choice5()
+{
+	CallScript( "omot_009_choice5" );
+	CallScript( "omot_009_4" );
+	CallScript( "omot_009_tobadend" );
+	CallScript( "omot_badend2");
+
+	JumpScript( "flow" );
+}
+
+void OmoteDay9Choice6Right()
+{
+	CallScript( "omot_009_choice6" );
+	CallScript( "omot_009_4" );
+	CallScript( "omot_009_togoodend" );
+	
+	SetLocalFlag(LConsoleArc, 6);
+	StoreValueToLocalWork( ChapterNumber, 9 );
+	SavePoint("Ch.9 終わり", "End of Chapter 9");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("OmoteDay10");
+}
+
+void OmoteDay9Choice6()
+{
+	CallScript( "omot_009_choice6" );
+	CallScript( "omot_009_4" );
+	CallScript( "omot_009_tobadend" );
+	CallScript( "omot_badend2");
+
+	JumpScript( "flow" );
+}
+
+void OmoteDay10()
+{
+	if (ModGetHighestChapterFlag(6)<10)
+		ModSetHighestChapterFlag(6, 10);
+	CallScript( "omot_010" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay10Choice1");
+	}
+	else {
+		JumpSection("OmoteDay10Choice2");
+	}
+}
+
+void OmoteDay10Choice1()
+{
+	CallScript( "omot_010_choice1" );
+	CallScript("omot_010_2");
+	
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay10Choice3");
+	}
+	else {
+		JumpSection("OmoteDay10Choice4");
+	}
+}
+
+void OmoteDay10Choice2()
+{
+	CallScript( "omot_010_choice2" );
+	CallScript( "omot_010_2" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay10Choice3");
+	}
+	else {
+		JumpSection("OmoteDay10Choice4Right");
+	}
+}
+
+void OmoteDay10Choice3()
+{
+	CallScript( "omot_010_choice3" );
+	CallScript("omot_010_3");
+	
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay10Choice5");
+	}
+	else {
+		JumpSection("OmoteDay10Choice6");
+	}
+}
+
+void OmoteDay10Choice4()
+{
+	CallScript( "omot_010_choice4" );
+	CallScript( "omot_010_3" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay10Choice5");
+	}
+	else {
+		JumpSection("OmoteDay10Choice6");
+	}
+}
+
+void OmoteDay10Choice4Right()
+{
+	CallScript( "omot_010_choice4" );
+	CallScript( "omot_010_3" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("OmoteDay10Choice5");
+	}
+	else {
+		JumpSection("OmoteDay10Choice6Right");
+	}
+}
+
+void OmoteDay10Choice5()
+{
+	CallScript( "omot_010_choice5" );
+	CallScript("omot_010_4");
+	CallScript( "omot_010_tobadend" );
+
+	CallScript("omot_badend3");
+
+	JumpScript( "flow" );
+}
+
+void OmoteDay10Choice6()
+{
+	CallScript( "omot_010_choice6" );
+	CallScript( "omot_010_4" );
+	CallScript( "omot_010_tobadend" );
+
+	CallScript("omot_badend3");
+
+	JumpScript( "flow" );
+}
+
+void OmoteDay10Choice6Right()
+{
+	CallScript( "omot_010_choice6" );
+	CallScript( "omot_010_4" );
+	CallScript( "omot_010_togoodend" );
+
+	JumpSection("OmoteDay11");
+}
+
+void OmoteDay11()
+{
+	if (ModGetHighestChapterFlag(6)<11)
+		ModSetHighestChapterFlag(6, 11);
+	CallScript( "omot_011" );
+
+	JumpSection("OmoteDay12");
+}
+
+void OmoteDay12()
+{
+	if (ModGetHighestChapterFlag(6)<12)
+		ModSetHighestChapterFlag(6, 12);
+	CallScript( "omot_012" );
+
+	JumpSection("OmoteDay13");
+}
+
+void OmoteDay13()
+{
+	if (ModGetHighestChapterFlag(6)<13)
+		ModSetHighestChapterFlag(6, 13);
+	CallScript( "omot_013" );
+
+	JumpSection("OmoteDay14");
+}
+
+void OmoteDay14()
+{
+	if (ModGetHighestChapterFlag(6)<14)
+		ModSetHighestChapterFlag(6, 14);
+	CallScript( "omot_014" );
+
+	JumpSection("OmoteDay15");
+}
+
+void OmoteDay15()
+{
+	if (ModGetHighestChapterFlag(6)<15)
+		ModSetHighestChapterFlag(6, 15);
+	CallScript( "omot_015" );
+
+	JumpSection("OmoteDay16");
+}
+
+void OmoteDay16()
+{
+	if (ModGetHighestChapterFlag(6)<16)
+		ModSetHighestChapterFlag(6, 16);
+	CallScript( "omot_016" );
+
+	SetLocalFlag(LConsoleArc, 6);
+	StoreValueToLocalWork( ChapterNumber, 16 );
+	SavePoint("Ch.16 終わり", "End of Chapter 16");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("OmoteDay17");
+}
+
+void OmoteDay17()
+{
+	if (ModGetHighestChapterFlag(6)<17)
+		ModSetHighestChapterFlag(6, 17);
+	CallScript( "omot_017" );
+
+	JumpSection("OmoteDay18");
+}
+
+void OmoteDay18()
+{
+	if (ModGetHighestChapterFlag(6)<18)
+		ModSetHighestChapterFlag(6, 18);
+	CallScript( "omot_018" );
+
+	JumpSection("OmoteDay19");
+}
+
+void OmoteDay19()
+{
+	if (ModGetHighestChapterFlag(6)<19)
+		ModSetHighestChapterFlag(6, 19);
+	CallScript( "omot_019" );
+
+	SetLocalFlag(LConsoleArc, 6);
+	StoreValueToLocalWork( ChapterNumber, 19 );
+	SavePoint("Ch.19 終わり", "End of Chapter 19");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("OmoteDay20");
+}
+
+void OmoteDay20()
+{
+	if (ModGetHighestChapterFlag(6)<20)
+		ModSetHighestChapterFlag(6, 20);
+	CallScript( "omot_020" );
+
+	JumpSection("OmoteDay21");
+}
+
+void OmoteDay21()
+{
+	if (ModGetHighestChapterFlag(6)<21)
+		ModSetHighestChapterFlag(6, 21);
+	CallScript( "omot_021" );
+
+	JumpSection("OmoteDay22");
+}
+
+void OmoteDay22()
+{
+	if (ModGetHighestChapterFlag(6)<22)
+		ModSetHighestChapterFlag(6, 22);
+	CallScript( "omot_022" );
+
+	JumpSection("OmoteDay23");
+}
+
+void OmoteDay23()
+{
+	if (ModGetHighestChapterFlag(6)<23)
+		ModSetHighestChapterFlag(6, 23);
+	CallScript( "omot_023" );
+
+	JumpSection("OmoteDay24");
+}
+
+void OmoteDay24()
+{
+	if (ModGetHighestChapterFlag(6)<24)
+		ModSetHighestChapterFlag(6, 24);
+	CallScript( "omot_024" );
+
+	JumpSection("OmoteDay25");
+}
+
+void OmoteDay25()
+{
+	if (ModGetHighestChapterFlag(6)<25)
+		ModSetHighestChapterFlag(6, 25);
+	CallScript( "omot_025" );
+
+	JumpSection("OmoteDay26");
+}
+
+void OmoteDay26()
+{
+	if (ModGetHighestChapterFlag(6)<26)
+		ModSetHighestChapterFlag(6, 26);
+	CallScript( "omot_026" );
+
+	JumpSection("OmoteDay27");
+}
+
+void OmoteDay27()
+{
+	if (ModGetHighestChapterFlag(6)<27)
+		ModSetHighestChapterFlag(6, 27);
+	CallScript( "omot_027" );
+
+	SetLocalFlag(LConsoleArc, 6);
+	StoreValueToLocalWork( ChapterNumber, 27 );
+	SavePoint("Ch.27 終わり", "End of Chapter 27");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+	
+	JumpScript( "flow" );
+}
+
