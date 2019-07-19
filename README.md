@@ -17,7 +17,7 @@ Here's a [walkthrough](https://ibb.co/1Z463wp) for anyone who wants to know whic
 | Taraimawashi       | 100%     | 100%        | 100%    | 
 | Yoigoshi           | 100%     | 100%        | 100%    | 
 | Tokihogushi        | 100%     | 100%        | 100%    | 
-| Miotsukushi Omote  | 100%     |   0%        |   0%    | 
+| Miotsukushi Omote  | 100%     |   1%        |   0%    | 
 
 Porting Miotsukushi Omote is complete and translation has begun!  This arc is huuuge, so translation will probably take until the end of the year.
 
