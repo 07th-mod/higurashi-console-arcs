@@ -17,7 +17,7 @@ Here's a [walkthrough](https://ibb.co/1Z463wp) for anyone who wants to know whic
 | Taraimawashi       | 100%     | 100%        | 100%    | 
 | Yoigoshi           | 100%     | 100%        | 100%    | 
 | Tokihogushi        | 100%     | 100%        | 100%    | 
-| Miotsukushi Omote  | 100%     |  68%        |   0%    | 
+| Miotsukushi Omote  | 100%     |  72%        |   0%    | 
 
 Porting Miotsukushi Omote is complete and translation is in progress.  Translation is going a little slower than expected (sorry!) so it's currently on pace to be done in January, if all goes well.
 
