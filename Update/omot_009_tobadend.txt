@@ -7,28 +7,34 @@ void main()
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 
 //圭一rvS14/01/210100718.「…詩音？」
-	PlaySE(4, "ps3/s14/01/210100718", 256, 64);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100718", 256, TRUE);
 	OutputLine(NULL, "「…詩音？」",
 			NULL, "\"...Shion?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/si1a_warai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModSetLayerFilter(5, 256, "none");
+	ModDrawCharacter(5, 6, "sprite/si1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/210600352.「…なんですか、圭ちゃん？」
-	PlaySE(4, "ps3/s14/06/210600352", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600352", 256, TRUE);
 	OutputLine(NULL, "「…なんですか、圭ちゃん？」",
 			NULL, "\"...What is it, Kei-chan?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/si1b_tokui_b1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si1b_tokui_b1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/210600353.「大丈夫ですよ、ちゃんと聞いていますから」
-	PlaySE(4, "ps3/s14/06/210600353", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600353", 256, TRUE);
 	OutputLine(NULL, "「大丈夫ですよ、ちゃんと聞いていますから」",
 			NULL, "\"It's all right, I've been listening carefully.\"", Line_Normal);
 	ClearMessage();
 
 //r詩音はそう答えながらも、視線は全然別の方向を向いている。…まるで、これ以上の話は必要ない、とでも言いたげに。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "詩音はそう答えながらも、視線は全然別の方向を向いている。…まるで、これ以上の話は必要ない、とでも言いたげに。",
 			NULL, "Shion answered as such, but her gaze was focused in a completely different direction. ...Like she felt there was no longer any need to continue this conversation.", Line_Normal);
 	ClearMessage();
@@ -39,11 +45,13 @@ void main()
 	DrawScene("background/sora2", 1000 );
 
 //r…俺たちはその後、どうでもいい世間話をしてから、店を出た。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…俺たちはその後、どうでもいい世間話をしてから、店を出た。",
 			NULL, "...Shortly thereafter, we felt like we were done chatting, so we made our way out of the store.", Line_Normal);
 	ClearMessage();
 
 //r一応全員にこやかな雰囲気だったが、…去り際の詩音の表情が、どうしても気になっていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "一応全員にこやかな雰囲気だったが、…去り際の詩音の表情が、どうしても気になっていた。",
 			NULL, "We were all engaging in a friendly atmosphere, but... I was really worried about the look on Shion's face.", Line_Normal);
 	ClearMessage();

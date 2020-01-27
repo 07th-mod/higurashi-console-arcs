@@ -6,174 +6,195 @@ void main()
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 
-	DrawBustshot( 5, "sprite/normal/kei2_komaru_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	DrawBustshot( 3, "sprite/normal/re2a_komaru_a2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModSetLayerFilter(5, 256, "none");
+	ModDrawCharacter(5, 1, "sprite/kei2_komaru_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 2, "sprite/re2a_komaru_a2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/210200207.「レナが前の街に住んでいたときにね。kvS14/02/210200208.他に好きな男の人を作って、…離婚しちゃった。kvS14/02/210200209.勝手だよね。kvS14/02/210200210.自分は好きな仕事続けて、お父さんはひたすら応援してきたのに」
-	PlaySE(4, "ps3/s14/02/210200207", 256, 64);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200207", 256, TRUE);
 	OutputLine(NULL, "「レナが前の街に住んでいたときにね。",
 			NULL, "\"Back when Rena lived in another town,", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200208", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200208", 256, TRUE);
 	OutputLine(NULL, "他に好きな男の人を作って、…離婚しちゃった。",
 			NULL, " she found another bam she liked... and they got divorced.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200209", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200209", 256, TRUE);
 	OutputLine(NULL, "勝手だよね。",
 			NULL, " It was so selfish.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200210", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200210", 256, TRUE);
 	OutputLine(NULL, "自分は好きな仕事続けて、お父さんはひたすら応援してきたのに」",
 			NULL, " Dad was always supporting her while she kept working at the job she loved.\"", Line_Normal);
 	ClearMessage();
 
 //圭一rvS14/01/210100835.「……そうなのか」
-	PlaySE(4, "ps3/s14/01/210100835", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100835", 256, TRUE);
 	OutputLine(NULL, "「……そうなのか」",
 			NULL, "\"...So that's how it was?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/re2a_hau_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re2a_hau_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/210200211.「女の人ばかりのお店に通ってることは、当然知ってるよ。kvS14/02/210200212.…でも、お父さんは寂しいんだと思う。kvS14/02/210200213.いきなり独りぼっちになっちゃったからね」
-	PlaySE(4, "ps3/s14/02/210200211", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200211", 256, TRUE);
 	OutputLine(NULL, "「女の人ばかりのお店に通ってることは、当然知ってるよ。",
 			NULL, "\"Of course I know that he's going to women-only shops.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200212", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200212", 256, TRUE);
 	OutputLine(NULL, "…でも、お父さんは寂しいんだと思う。",
 			NULL, " ...But, I think Dad is feeling lonely.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200213", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200213", 256, TRUE);
 	OutputLine(NULL, "いきなり独りぼっちになっちゃったからね」",
 			NULL, " Be cause he was suddenly left all alone.\"", Line_Normal);
 	ClearMessage();
 
 //rレナは苦笑しながら、父親をかばうように言った。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "レナは苦笑しながら、父親をかばうように言った。",
 			NULL, "Rena smiled and continued defending her father.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/re2a_komaru_a2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re2a_komaru_a2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/210200214.「寂しいんだから、しょうがないと思う。kvS14/02/210200215.それでそういう店に行くって、レナは全然悪いことじゃないと思うよ？kvS14/02/210200216.　実際お父さんは、リナさんと知り合ってからとっても、元気になってくれたんだから」
-	PlaySE(4, "ps3/s14/02/210200214", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200214", 256, TRUE);
 	OutputLine(NULL, "「寂しいんだから、しょうがないと思う。",
 			NULL, "\"If he's lonely, I think it can't be helped.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200215", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200215", 256, TRUE);
 	OutputLine(NULL, "それでそういう店に行くって、レナは全然悪いことじゃないと思うよ？",
 			NULL, " So, Rena thinks it's not so bad to go to a store like that, right?", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200216", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200216", 256, TRUE);
 	OutputLine(NULL, "　実際お父さんは、リナさんと知り合ってからとっても、元気になってくれたんだから」",
 			NULL, " In fact, Dad has gotten in higher spirits after getting to know Rina.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/kei2_majime2_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 1, "sprite/kei2_majime2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //圭一rvS14/01/210100836.「ああ、それは悪いことじゃない。kvS14/01/210100837.けど…」
-	PlaySE(4, "ps3/s14/01/210100836", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100836", 256, TRUE);
 	OutputLine(NULL, "「ああ、それは悪いことじゃない。",
 			NULL, "\"Right, there's nothing bad about that. ", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/01/210100837", 256, 64);
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100837", 256, TRUE);
 	OutputLine(NULL, "けど…」",
 			NULL, " But...\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/re2a_okoru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re2a_okoru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/210200217.「けど――なに？」
-	PlaySE(4, "ps3/s14/02/210200217", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200217", 256, TRUE);
 	OutputLine(NULL, "「けど——なに？」",
 			NULL, "\"But... what?\"", Line_Normal);
 	ClearMessage();
 
 //r何とか言いつくろおうとする圭一を見たレナの瞳に、ありありと敵意が浮かんでいる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "何とか言いつくろおうとする圭一を見たレナの瞳に、ありありと敵意が浮かんでいる。",
 			NULL, "Af Keiichi tried to think of what to say, Rena glared at him with hostility in her eyes.", Line_Normal);
 	ClearMessage();
 
 //r…やっぱり、おかしい。まるで圭一の言うことを、頭から拒絶するかのような態度。こんな反応は、完全に予想外だ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…やっぱり、おかしい。まるで圭一の言うことを、頭から拒絶するかのような態度。こんな反応は、完全に予想外だ。",
 			NULL, "...Yes, this is strange. It's like she's refusing to accept what Keiichi is trying to say. This reaction is totally unexpected.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/re2a_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re2a_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/210200218.「お父さんね。kvS14/02/210200219.結婚、するんだって。kvS14/02/210200220.婚約指輪も渡して、受け取ってくれたみたい。kvS14/02/210200221.リナさんも私に挨拶に来て、『気に入ってもらえるよう一生懸命頑張るから』って、笑って言ってくれたんだよ」
-	PlaySE(4, "ps3/s14/02/210200218", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200218", 256, TRUE);
 	OutputLine(NULL, "「お父さんね。",
 			NULL, "\"Dad...", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200219", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200219", 256, TRUE);
 	OutputLine(NULL, "結婚、するんだって。",
 			NULL, " is getting married.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200220", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200220", 256, TRUE);
 	OutputLine(NULL, "婚約指輪も渡して、受け取ってくれたみたい。",
 			NULL, " It seems like he already gave her a wedding ring.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200221", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200221", 256, TRUE);
 	OutputLine(NULL, "リナさんも私に挨拶に来て、『気に入ってもらえるよう一生懸命頑張るから』って、笑って言ってくれたんだよ」",
 			NULL, " And Rina-san came to greet me, smiling while saying \"I'll do my best to get along with you.\"\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/kei2_ikari1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 1, "sprite/kei2_ikari1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //圭一rvS14/01/210100838.「…ほんとか？」
-	PlaySE(4, "ps3/s14/01/210100838", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100838", 256, TRUE);
 	OutputLine(NULL, "「…ほんとか？」",
 			NULL, "\"...Seriously?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/re2a_okoru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re2a_okoru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 	PlaySE(3, "dageki", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //レナrvS14/02/210200222.「嘘言ってどうするの？kvS14/02/210200223.　リナさんも、お父さんも、レナのために色々と無理して、気を遣ってくれている。kvS14/02/210200224.だからレナも、少しくらいは我慢しなくちゃ、って思ってる」
-	PlaySE(4, "ps3/s14/02/210200222", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200222", 256, TRUE);
 	OutputLine(NULL, "「嘘言ってどうするの？",
 			NULL, "\"Why would I lie about that?", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200223", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200223", 256, TRUE);
 	OutputLine(NULL, "　リナさんも、お父さんも、レナのために色々と無理して、気を遣ってくれている。",
 			NULL, " Rina-san and Dad are both doing so much to care for me.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200224", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200224", 256, TRUE);
 	OutputLine(NULL, "だからレナも、少しくらいは我慢しなくちゃ、って思ってる」",
 			NULL, " So, Rena needs to put in a little more effort for their sake.\"", Line_Normal);
 	ClearMessage();
 
 //レナrvS14/02/210200225.「…それ、おかしいかな？kvS14/02/210200226.　間違ってるかな？」
-	PlaySE(4, "ps3/s14/02/210200225", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200225", 256, TRUE);
 	OutputLine(NULL, "「…それ、おかしいかな？",
 			NULL, "\"...Is that so strange?", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200226", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200226", 256, TRUE);
 	OutputLine(NULL, "　間違ってるかな？」",
 			NULL, " Is that wrong?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/kei2_majime_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 1, "sprite/kei2_majime_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //圭一rvS14/01/210100839.「いや…そんなことはない」
-	PlaySE(4, "ps3/s14/01/210100839", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100839", 256, TRUE);
 	OutputLine(NULL, "「いや…そんなことはない」",
 			NULL, "\"No... it's not.\"", Line_Normal);
 	ClearMessage();
 
 //レナrvS14/02/210200227.「…だったら、圭一くん。kvS14/02/210200228.わざわざそんなことを言いに、レナの家にまで来たの？」
-	PlaySE(4, "ps3/s14/02/210200227", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200227", 256, TRUE);
 	OutputLine(NULL, "「…だったら、圭一くん。",
 			NULL, "\"...Then, Keiichi-kun, ", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200228", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200228", 256, TRUE);
 	OutputLine(NULL, "わざわざそんなことを言いに、レナの家にまで来たの？」",
 			NULL, " why did you bother coming all the way out to Rena's house to say something like that?\"", Line_Normal);
 	ClearMessage();
 
 //レナrvS14/02/210200229.「みんな我慢してるのに、それをぶち壊しにきたの？kvS14/02/210200230.　…もしかして一人だと不安だから、梨花ちゃんを付き添いに連れて？」
-	PlaySE(4, "ps3/s14/02/210200229", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200229", 256, TRUE);
 	OutputLine(NULL, "「みんな我慢してるのに、それをぶち壊しにきたの？",
 			NULL, "\"Even though everyone is doing their best to be patient, you came to tear that apart?", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200230", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200230", 256, TRUE);
 	OutputLine(NULL, "　…もしかして一人だと不安だから、梨花ちゃんを付き添いに連れて？」",
 			NULL, " ...And you were too anxious to do it alone, so you brought Rika-chan with you?\"", Line_Normal);
 	ClearMessage();
 
 //r軽蔑するようなレナの視線が、圭一に向けられる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "軽蔑するようなレナの視線が、圭一に向けられる。",
 			NULL, "Rena scornfully glared at Keiichi.", Line_Normal);
 	ClearMessage();
 
 //r…違う。レナは、さっきから何か、勘違いをしている。そう感じた私は、慌てて言い添えた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…違う。レナは、さっきから何か、勘違いをしている。そう感じた私は、慌てて言い添えた。",
 			NULL, "...That's wrong. Rena has misunderstood something for a while now. Guided by that feeling, I rushed to speak up.", Line_Normal);
 	ClearMessage();

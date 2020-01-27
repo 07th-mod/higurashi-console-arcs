@@ -15,7 +15,8 @@ void main()
 
 	DrawScene("white", 1000 );
 	PlayBGM( 1, "semi_r", 128, 0 );
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_warai_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 43, "sprite/miono1_warai_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
 	PlayBGM(2, "hm02_11", 128, 0);
 
@@ -35,9 +36,11 @@ void main()
 
 	PlaySE(3, "furu", 256, 64);
 	DrawSceneWithMask( "white", "down", 0, 0, 500 );
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_warai_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_tere_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
-	ModDrawCharacter(5, 40, "sprite/normal/miyuko_sakebi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 43, "sprite/miono1_warai_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(4, 41, "sprite/otobe_tere_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModSetLayerFilter(5, 256, "none");
+	ModDrawCharacter(5, 40, "sprite/miyuko_sakebi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawScene("background/js7_01", 250 );
 	PlaySE(3, "down3", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
@@ -72,10 +75,10 @@ void main()
 
 	PlaySE(3, "sinzouappaku", 256, 64);
 	Negative( 500, TRUE );
-	ModDrawCharacter(4, 42, "sprite/normal/yae_sakekaku_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 42, "sprite/yae_sakekaku_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 500 );
 	Wait( 250 );
-	ModDrawCharacter(4, 42, "sprite/normal/yae_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 42, "sprite/yae_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	FadeFilm( 500, TRUE );
 
 //十和田rvS10/42/410600222.「いっ、…いやあぁぁぁあぁぁっっ！！」
@@ -94,7 +97,7 @@ void main()
 	PlaySE(3, "tatakiwaru", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 250 );
-	ModDrawCharacter(4, 42, "sprite/normal/yae_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 42, "sprite/yae_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //十和田rvS10/42/410600223.「工くん？！kvS10/42/410600224.　工くんが、どうして！　なんでっ？！　ああぁああぁぁっっ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -175,7 +178,7 @@ void main()
 	ClearMessage();
 
 	DrawScene("background/js7_01", 1000 );
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300638.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -196,7 +199,7 @@ void main()
 			NULL, "Miyuki-chan quietly stared as the situation unfolded... but eventually, she moved closer to Towada-san and turned her eyes toward the corpse.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300639.「…ちょっといいですか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -246,7 +249,7 @@ void main()
 	ClearMessage();
 
 	DrawScene("background/js7_01", 1000 );
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 41, "sprite/otobe_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //荒川rvS10/00/410101017.「…乙部？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5f5248>荒川</color>", NULL, "<color=#5f5248>Arakawa</color>", NULL, Line_ContinueAfterTyping); }
@@ -278,7 +281,7 @@ void main()
 			NULL, "\"Maybe someone decided to carry him here...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 41, "sprite/otobe_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200419.「…でも、いつそんなことを？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -294,7 +297,7 @@ void main()
 			NULL, "\"Well... some time when we weren't here?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 41, "sprite/otobe_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200420.「だって…、変じゃないですか？！kvS10/41/410200421.　僕たち、悲鳴を聞いてすぐに鳥居のところへ行って…、その後、まっすぐここへ来たじゃないですか！kvS10/41/410200422.　そうですよね？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -309,7 +312,7 @@ void main()
 			NULL, " Right?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 41, "sprite/otobe_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200423.「じゃあ、いったいいつ、この人をここへ運んだんですか？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -325,7 +328,7 @@ void main()
 			NULL, "\"Then, maybe it happened while we were standing around on the stone steps?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 41, "sprite/otobe_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200424.「だから、それがおかしいんですよ！kvS10/41/410200425.　神社の境内には、石段のところから入ってくる以外、入れませんよね？！kvS10/41/410200426.　ここの周りは、崖ですよね？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -350,7 +353,7 @@ void main()
 			NULL, " It's fine to have objections, but you need to substantiate them with a proper explanation!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 41, "sprite/otobe_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200427.「…っ。kvS10/41/410200428.それができたら、苦労しませんよ…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -369,7 +372,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(5, 40, "sprite/normal/miyuko_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 40, "sprite/miyuko_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //美雪rvS10/40/410300641.「でも…、乙部くんの言う通り、ちょっと変ですね。kvS10/40/410300642.犯人は、どうしてこんな所に死体をしまったんでしょう…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -448,7 +451,7 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-	ModDrawCharacter(5, 40, "sprite/normal/miyuko_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(5, 40, "sprite/miyuko_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawScene("background/js7_01", 250 );
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
@@ -475,7 +478,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dsse09", 256, 64);
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
 
 //美雪rvS10/40/410300646.「どうして、あんなところにあったんでしょう…？」
@@ -492,7 +495,7 @@ void main()
 			NULL, "\"Aah, so that's where I left it.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300647.「……えっ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -511,7 +514,7 @@ void main()
 			NULL, " I left it over there... Thanks.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300648.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -533,7 +536,7 @@ void main()
 			NULL, "\"...What's the matter?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300649.「置いておいたって…、どうしてですか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -575,7 +578,7 @@ void main()
 			NULL, "Miyuki-chan's face gradually clouded over as she listened to my explanation.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
 	PlayBGM(2, "hm06_25", 128, 0);
 
@@ -593,7 +596,7 @@ void main()
 			NULL, "\"Huh...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300651.「だって、乙部くんのケータイはボロボロに壊されてたのに…。kvS10/40/410300652.どうして龍ノ介さんのケータイは、壊されていないんですか…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -615,7 +618,7 @@ void main()
 			NULL, " Maybe because it's not able to connect?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300653.「…おかしいですよ。kvS10/40/410300654.乙部くんのケータイだって、電池切れで使い物になりませんでした」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -627,7 +630,7 @@ void main()
 			NULL, " Otobe-kun's phone wasn't even usable thanks to the dead battery.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300655.「黒澤さんを殺した犯人は、死体を運び込むためにこの集会所へ来たんでしょう？kvS10/40/410300656.　もし同一犯なんだとしたら、なぜ犯人は乙部くんのケータイを壊して、龍ノ介さんのケータイは見逃したんでしょう…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -699,7 +702,7 @@ void main()
 			NULL, "\"Even if the phone didn't get any signal where it was found... there was still a chance it could connect after moving it to another location...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300659.「つまりそれって…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -708,7 +711,7 @@ void main()
 			NULL, "\"Which means...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 42, "sprite/normal/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 42, "sprite/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //十和田rvS10/42/410600233.「…祟りってことですか」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -764,7 +767,7 @@ void main()
 			NULL, "It seemed strange for an occult specialist to suggest this... but I was hesitant to accept the \"curse\" explanation so easily.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200429.「べ、別の可能性…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -786,7 +789,7 @@ void main()
 			NULL, " Which means... one of us is responsible for breaking Otobe's phone.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
@@ -797,7 +800,7 @@ void main()
 			NULL, "\"...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300660.「…そうね。kvS10/40/410300661.その可能性を考えるほうが、自然ですよね」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -809,7 +812,7 @@ void main()
 			NULL, " It's natural to think so.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200431.「で、でも…、そうとは限らないんじゃないですか？！kvS10/41/410200432.　黒澤さんと十和田さんが襲われている時、僕たちは全員、祭具殿にいたじゃないですか！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -821,7 +824,7 @@ void main()
 			NULL, " We were all in the ritual storehouse when Kurosawa-san and Towada-san were attacked!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200433.「ということは、誰か別の人間が僕のケータイを壊して、黒澤さんたちを襲って――」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -839,7 +842,7 @@ void main()
 
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_sakebi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_sakebi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200434.「わ、わかってますよ…！kvS10/41/410200435.　だから、誰か別の人間がケータイを壊して、黒澤さんたちを襲って…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -851,7 +854,7 @@ void main()
 			NULL, " That's why it has to be someone else who broke my phone and attacked Kurosawa-san...!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300662.「…乙部くん、落ち着いて」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -860,7 +863,7 @@ void main()
 			NULL, "\"...Otobe-kun, calm down.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200436.「だ、だって…！kvS10/41/410200437.　十和田さんが黒澤さんを殺すわけないし、そうなったら一番怪しいのは僕ってことになるじゃないですか？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -874,7 +877,7 @@ void main()
 
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_sakebi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_sakebi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200438.「冗談じゃない…犯人は、僕じゃないですよ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -883,7 +886,7 @@ void main()
 			NULL, "\"Seriously... I'm not a criminal!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300663.「誰も、あなたなんて言ってないわ。…でしょ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -892,7 +895,7 @@ void main()
 			NULL, "\"Nobody's said anything like that. ...Right?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300664.「…だから、落ち着いて？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -901,7 +904,7 @@ void main()
 			NULL, "\"...So, can you calm down?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200439.「……っ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -916,7 +919,7 @@ void main()
 			NULL, "Otobe was breathing erratically, so Miyuki-chan tried to comfort him. ...But her eyes were still carefully watching his expression.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //美雪rvS10/40/410300665.「龍ノ介さんは、あなたを疑ってるわけじゃないの。kvS10/40/410300666.そんなこと言ったら、私も疑いの対象じゃない？kvS10/40/410300667.　…ですよね、龍ノ介さん？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -938,7 +941,7 @@ void main()
 			NULL, "\"...R-right.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200440.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -992,8 +995,8 @@ void main()
 	Wait( 750 );
 	FadeFilm( 500, TRUE );
 	PlayBGM( 1, "semi_r", 128, 0 );
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(4, 40, "sprite/normal/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(4, 40, "sprite/miyuko_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 100 );
@@ -1025,7 +1028,7 @@ void main()
 			NULL, " ...Maybe the culprit is even nearby right now, watching us and smirking quietly.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200443.「わ…、悪い冗談はやめて下さいよ…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1054,7 +1057,7 @@ void main()
 			NULL, "\"Then, what on earth is this all about?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 42, "sprite/normal/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 42, "sprite/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //十和田rvS10/42/410600236.「……荒川さんの言う通りかもしれないですよね」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -1063,7 +1066,7 @@ void main()
 			NULL, "\"...It's likely as Arakawa-san says.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200444.「えっ…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1082,7 +1085,7 @@ void main()
 			NULL, " ...First was Takumi-kun, and next is...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_sakebi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_sakebi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200445.「や…、止めて下さいよ！　十和田さんまで…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1155,7 +1158,7 @@ void main()
 			NULL, "\"...Sonozaki-san?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 43, "sprite/miono1_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400277.「くっくっくっ…。kvS10/43/410400278.バカバカしいったら、ありゃしない」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1183,7 +1186,7 @@ void main()
 			NULL, "When Sonozaki-san saw the look of protest in my eyes, she let out a heavy sigh.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 43, "sprite/miono1_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400279.「あんたたち…、ミステリーだのオカルトだのって、おかしな小説の読みすぎじゃないのかい？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1213,7 +1216,7 @@ void main()
 			NULL, " just so you know, I find you more suspicious than any of us.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 43, "sprite/miono1_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400280.「私が？　ほぉう…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1244,7 +1247,7 @@ void main()
 
 	PlaySE(3, "finish", 256, 64);
 	DrawScene("white", 250 );
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 43, "sprite/miono1_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 250 );
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
@@ -1267,7 +1270,7 @@ void main()
 			NULL, "However, her expression didn't change at all.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 43, "sprite/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400282.「で…？kvS10/43/410400283.　何が言いたい？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1286,7 +1289,7 @@ void main()
 			NULL, "\"Just... who the hell... are you...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 43, "sprite/miono1_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400284.「何者も何も…、最初に言ったじゃないか。kvS10/43/410400285.私は園崎魅音。kvS10/43/410400286.元・雛見沢の住人だって」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1337,7 +1340,7 @@ void main()
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 	PlaySE(3, "kyupirn", 256, 64);
 	DrawScene("white", 250 );
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 43, "sprite/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 250 );
 
 //荒川rvS10/00/410101072.「……！！」
@@ -1347,7 +1350,7 @@ void main()
 			NULL, "\"...!!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 43, "sprite/miono1_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400287.「私だったら、こんな手の込んだことはしないさね。kvS10/43/410400288.…全員まとめて切り伏せる」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1359,7 +1362,7 @@ void main()
 			NULL, " ...I could slice all of you down in a single blow.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 43, "sprite/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400289.「…こうやって、一瞬でね」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1397,7 +1400,7 @@ void main()
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 43, "sprite/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
 
 //魅音rvS10/43/410400290.「隠れて殺人をやるなんざ、弱いモンのやることだ。kvS10/43/410400291.そんな相手なら、私の敵じゃない。kvS10/43/410400292.…私とは、何の関係もないね」
@@ -1434,7 +1437,7 @@ void main()
 			NULL, "Otobe tugged at my sleeve as if to say, \"Please wait,\" and then entered the conversation.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 41, "sprite/otobe_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200448.「確かに荒川さんの言う通り、魅音さんには不審なところがあります…。kvS10/41/410200449.僕も、最初に会った時は信用できないって思った…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1592,8 +1595,8 @@ void main()
 	FadeOutBGM(2, 200, FALSE);
 	FadeFilm( 500, TRUE );
 	PlayBGM( 1, "kaze_lp", 128, 0 );
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_kanashimi_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(5, 41, "sprite/otobe_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_kanashimi_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
 
 //美雪rvS10/40/410300670.「…人は見かけによらないですよ」
@@ -1610,7 +1613,7 @@ void main()
 			NULL, "\"...Miyuki-chan?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300671.「たしかに、園崎さんは悪い人ではないのかもしれないけど…、kvS10/40/410300672.全ての犯罪が、悪意やエゴがもとで行われるわけではないですし…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -1622,7 +1625,7 @@ void main()
 			NULL, " not all crimes are committed with malicious or selfish intentions...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_kanashimi_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_kanashimi_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300673.「いい人だって、人を殺さなければならない時は、あると思いますから」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -1643,7 +1646,7 @@ void main()
 			NULL, "The way she said that, it sounded like she had killed someone, herself.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200461.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1652,7 +1655,7 @@ void main()
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300674.「園崎さんの素性は分かりません。kvS10/40/410300675.けど…、君の素性だって、分からないんですよ？kvS10/40/410300676.　…乙部くん、君…、本当に友達とドライブで、こんな所へ来たんですか…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -1667,7 +1670,7 @@ void main()
 			NULL, " ...Otobe-kun... did you really drive here with your friends...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200462.「…そうですよ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1676,7 +1679,7 @@ void main()
 			NULL, "\"...Yes, that's right.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300677.「本当かしら…？kvS10/40/410300678.　君…、本当に、友達なんて『いた』の？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -1689,7 +1692,7 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM(2, "hm05_22", 128, 0);
@@ -1713,7 +1716,7 @@ void main()
 			NULL, "...Once again, he started acting that way as soon as we began discussing the friends who came here with him.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200464.「な、なんでそんなことを急に言い出すんですか？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1740,7 +1743,7 @@ void main()
 
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200465.「な、なんですかそれは？！kvS10/41/410200466.　なんであなたに、そんなこと言われなきゃいけないんですか？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1752,7 +1755,7 @@ void main()
 			NULL, " Why would you say something like that?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_kanashimi_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_kanashimi_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300681.「さぁ…、なんででしょうね。kvS10/40/410300682.ちょっとした勘、…ってやつかな？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -1764,7 +1767,7 @@ void main()
 			NULL, " I guess you could call it... a bit of intuition?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200467.「……っ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1779,7 +1782,7 @@ void main()
 			NULL, "Miyuki-chan stared at Otobe while he bit at his lip. ...But his eyes reminded me of a small animal being stalked by a hunter.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300683.「そもそも、友達とオカルトスポットにドライブ？kvS10/40/410300684.　…悪いけど私には、君がそういうことを好む人には見えない。kvS10/40/410300685.そういうものに飛びつく人ってね、…わかるの」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -1805,7 +1808,7 @@ void main()
 			NULL, " Why is that? ...Please, tell me.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200468.「そ、それはっ…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1832,7 +1835,7 @@ void main()
 			NULL, "As I listened to their exchange, something felt unfathomable about Miyuki-chan's powers of observation.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200469.「ぼ、僕だって皆のこと、心配ですよ！kvS10/41/410200470.　決め付けないで下さい！kvS10/41/410200471.　それに…、ドライブは、友達が言い出したんです！kvS10/41/410200472.　行き先は、雛見沢がいいんじゃないかって…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1850,7 +1853,7 @@ void main()
 			NULL, " They told me Hinamizawa was a nice place to visit...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300688.「それじゃ…、何人で来たの…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -1859,7 +1862,7 @@ void main()
 			NULL, "\"Well then... how many people did you come here with...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200473.「それは……、さ、３人です」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1868,7 +1871,7 @@ void main()
 			NULL, "\"There were... th-three others.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300689.「３人…ということは、あなたを入れて４人よね。kvS10/40/410300690.ちなみに、男はあなた一人？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -1880,7 +1883,7 @@ void main()
 			NULL, " By the way, were you the only male in the group?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200474.「い、いえ…もう、一人です。kvS10/41/410200475.女の子が、二人で…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1892,7 +1895,7 @@ void main()
 			NULL, " And two girls...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300691.「じゃあ、ダブルデートか。kvS10/40/410300692.…それなら、一緒にいたのってあなたの彼女よね？kvS10/40/410300693.　心配じゃないの？　もしかしたら祟りでとり殺されているかもしれないのに…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -1909,7 +1912,7 @@ void main()
 
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200476.「だ、だから心配してるって言ってるじゃないですか？！kvS10/41/410200477.　それに、一緒にいたのは彼女じゃないです！kvS10/41/410200478.　い、一緒にいたやつの、…友達、ですっ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1950,8 +1953,8 @@ void main()
 			NULL, "Or maybe...?", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(5, 41, "sprite/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
 
 //美雪rvS10/40/410300694.「……。kvS10/40/410300695.乙部くん、あなた…何を隠しているの？kvS10/40/410300696.　少なくとも…、普通の学生さんじゃ、ないんじゃない？」
@@ -1967,7 +1970,7 @@ void main()
 			NULL, " At the very least... you're not an ordinary student, are you?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
@@ -1978,7 +1981,7 @@ void main()
 			NULL, "\"I-I'm not hiding anything...!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200480.「僕はただの大学生ですよ！kvS10/41/410200481.　僕のどこが変だっていうんですか！kvS10/41/410200482.　…だ、だいたい！　そういうあなたこそ、どうなんですか？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -1993,7 +1996,7 @@ void main()
 			NULL, " ...B-besides, what about you?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300697.「私…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -2002,7 +2005,7 @@ void main()
 			NULL, "\"Me...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200483.「あなただって、フリーライターになんか見えないですよ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -2064,7 +2067,7 @@ void main()
 			NULL, "I still had no idea who Miyuki-chan really was.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_warai_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_warai_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300702.「…まぁ、いいか。kvS10/40/410300703.疑い出したら、キリがないですよね？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -2095,7 +2098,7 @@ void main()
 			NULL, "It was nice that our conversation got back on track, but... seriously, who the hell is this girl?", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200484.「と、…とにかく、変にお互いを疑っていてもしょうがないでしょう？kvS10/41/410200485.　みんなで固まっていれば、誰も手出せないと思いますし…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -2131,7 +2134,7 @@ void main()
 			NULL, "\"Don't you mean the six of us...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_tere_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200488.「え…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -2147,7 +2150,7 @@ void main()
 			NULL, "\"Even though one of us is already dead.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 41, "sprite/normal/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 41, "sprite/otobe_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //乙部rvS10/41/410200489.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -2207,7 +2210,7 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-	ModDrawCharacter(3, 42, "sprite/normal/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(3, 42, "sprite/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/js7_01", 250 );
 	PlaySE(3, "tataku", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
@@ -2255,7 +2258,7 @@ void main()
 			NULL, "And first off, isn't it improper to shut off your critical thinking the moment you hear the word curse?", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 40, "sprite/normal/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 40, "sprite/miyuko_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //美雪rvS10/40/410300704.「龍ノ介さん、落ち着いて下さい…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -2286,7 +2289,7 @@ void main()
 			NULL, " If you know something, please tell us!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 43, "sprite/normal/miono1_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 43, "sprite/miono1_kanashimi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS10/43/410400294.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2295,7 +2298,7 @@ void main()
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 43, "sprite/normal/miono1_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 43, "sprite/miono1_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //r巻物を読んでいた園崎さんは瞼を閉じ、目頭を両手で軽くもみこむように動かすと、ゆっくりと目を開けた。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -2315,7 +2318,7 @@ void main()
 			NULL, "Then she rolled up the scroll and tied it with a string like it had been originally.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 43, "sprite/normal/miono1_warai_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 43, "sprite/miono1_warai_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS10/43/410400295.「そういや…、kvS10/43/410400296.オヤシロさまにはその使いがいたって話…、聞いたことがあるよ。kvS10/43/410400297.生贄になるやつを選び出して、そいつの元にやってくる、ってね」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2337,7 +2340,7 @@ void main()
 			NULL, "\"They start hearing mysterious footsteps... coming from behind.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 42, "sprite/normal/yae_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 42, "sprite/yae_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //十和田rvS10/42/410600243.「…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2353,7 +2356,7 @@ void main()
 			NULL, "\"Then maybe... you're already being manipulated by Oyashiro-sama...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 43, "sprite/normal/miono1_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 43, "sprite/miono1_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 	PlaySE(3, "tataku", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
@@ -2377,7 +2380,7 @@ void main()
 			NULL, "Sonozaki-san's eyes became viciously sharp. ...I couldn't help but choke on my breath after witnessing a level of \"rage\" I'd never experienced before.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 43, "sprite/normal/miono1_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 43, "sprite/miono1_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS10/43/410400300.「もちろん、私が知ってることはいろいろとあるさ。kvS10/43/410400301.でもね…、今ここで起きている殺人事件ごっこは、私とは無関係。kvS10/43/410400302.…もちろん、オヤシロさまとも無関係さ！kvS10/43/410400303.　だいたいねぇ…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2395,7 +2398,7 @@ void main()
 			NULL, " That's what really matters here...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 43, "sprite/normal/miono1_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 43, "sprite/miono1_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 	PlaySE(3, "tatakiwaru", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
@@ -2406,7 +2409,7 @@ void main()
 			NULL, "\"This shoddy incident can't be the curse of Oyashiro-sama!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 42, "sprite/normal/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 42, "sprite/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //十和田rvS10/42/410600244.「っ……！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2423,7 +2426,7 @@ void main()
 			NULL, "Towada-san's spirit was being pushed to the limit. Her shoulders were shaking. Then, Sonozaki-san got up and slowly stepped beside her.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 43, "sprite/miono1_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400305.「…どきな」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2432,7 +2435,7 @@ void main()
 			NULL, "\"...Step aside.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 42, "sprite/normal/yae_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 42, "sprite/yae_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //十和田rvS10/42/410600245.「え……？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2441,7 +2444,7 @@ void main()
 			NULL, "\"Huh...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 43, "sprite/normal/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 43, "sprite/miono1_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS10/43/410400306.「どきなって言ってるんだ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2450,7 +2453,7 @@ void main()
 			NULL, "\"I said step aside.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 42, "sprite/normal/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 42, "sprite/yae_kanashimi_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //十和田rvS10/42/410600246.「あ、…は、はい…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2468,7 +2471,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400307.「…まず、聞くけど。kvS10/43/410400308.どうして犯人は、この死体をここへ運び込んだんだろうねぇ…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2480,7 +2483,7 @@ void main()
 			NULL, " Why did the culprit bring the corpse here...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 42, "sprite/normal/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 42, "sprite/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //十和田rvS10/42/410600247.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2496,7 +2499,7 @@ void main()
 			NULL, "\"W-we were talking about that earlier. To threaten...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400309.「それが、思考停止って言うんだよ。kvS10/43/410400310.もう少しよく考えてみな」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2514,7 +2517,7 @@ void main()
 			NULL, "Sonozaki-san outright dismissed that theory. Then, she relentlessly fixated her gaze straight ahead... toward Towada-san.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 42, "sprite/normal/yae_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 42, "sprite/yae_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //十和田rvS10/42/410600248.「そんなの…、わかるわけないじゃないですか…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2523,7 +2526,7 @@ void main()
 			NULL, "\"Where are you going with this...? I don't understand...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_warai_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_warai_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400311.「ふぅん…。kvS10/43/410400312.じゃあ、私の推論を言ってみるとさ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2535,7 +2538,7 @@ void main()
 			NULL, " Well, let me try to explain my reasoning.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400313.「こいつの死体は運び込まれたんじゃなくて、kvS10/43/410400314.……ずーっと、ここにあったんじゃないのかい？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2554,7 +2557,7 @@ void main()
 			NULL, "\"...Huh?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 41, "sprite/otobe_kanashimi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200490.「それって、どういう意味ですか…？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -2563,7 +2566,7 @@ void main()
 			NULL, "\"What is that supposed to mean...?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400315.「どういうもこういうも…、その通りの意味さ。kvS10/43/410400316.外から運び込んだんじゃないし、もちろん、外で襲われたんでもない」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2582,7 +2585,7 @@ void main()
 			NULL, "\"Then... Kurosawa was...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400317.「私たちが見てたのは、毛布をかぶって寝ている姿だけ。kvS10/43/410400318.つまりさ、…黒澤工は私たちが来る前から、死んでたんじゃないかって言ってるんだよ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2630,7 +2633,7 @@ void main()
 			NULL, "If so, the one person who could've killed him was... No way...?!", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 42, "sprite/normal/yae_akire_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(5, 42, "sprite/yae_akire_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	FadeFilm( 500, TRUE );
 	PlayBGM(2, "hm06_26", 128, 0);
 
@@ -2644,7 +2647,7 @@ void main()
 			NULL, " Are you seriously suggesting... that Towada-san murdered Kurosawa?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_tere_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 41, "sprite/otobe_tere_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //乙部rvS10/41/410200491.「ちょ、…待ってください、魅音さん！kvS10/41/410200492.　…もしも、十和田さんが本当に犯人なら、すぐにその場から逃げ出すんじゃないですか？！kvS10/41/410200493.　それっておかしいですよ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#e8af52>乙部</color>", NULL, "<color=#e8af52>Otobe</color>", NULL, Line_ContinueAfterTyping); }
@@ -2678,7 +2681,7 @@ void main()
 			NULL, "She had no reason to lie to us about being \"attacked\" and then come back here.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400319.「むぅ…。kvS10/43/410400320.確かに、そうだねぇ…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2690,7 +2693,7 @@ void main()
 			NULL, " That's certainly true...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 42, "sprite/normal/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 42, "sprite/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //十和田rvS10/42/410600249.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2711,7 +2714,7 @@ void main()
 			NULL, "...Her shoulders were drooped and she had a look of terror on her face, like she was being stalked by a predator.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400321.「どうしてこの子がここへ戻ってきたのかは、分からないよ。kvS10/43/410400322.本当は、逃げるつもりだったのかもしれない。kvS10/43/410400323.でも、戻ってこなきゃいけない事情があった…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2726,7 +2729,7 @@ void main()
 			NULL, " but some circumstance forced her to return here...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 42, "sprite/normal/yae_akire_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 42, "sprite/yae_akire_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //十和田rvS10/42/410600250.「そ、そんな事情なんて…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2735,7 +2738,7 @@ void main()
 			NULL, "\"W-what kind of circumstance...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_warai_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_warai_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400324.「もしかしたら本当に…、kvS10/43/410400325.誰かを“見ちまった”のかもしれないねぇ。kvS10/43/410400326.祟りと言い張るだけの、何かを…さ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2750,7 +2753,7 @@ void main()
 			NULL, " So, why were you so insistent on blaming the curse...?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 42, "sprite/normal/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 42, "sprite/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //十和田rvS10/42/410600251.「――」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2790,7 +2793,7 @@ void main()
 			NULL, "...Her gaze had enough power behind it to stop an opponent in their tracks with just a mere glance.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400327.「十和田。kvS10/43/410400328.愛する男の死体を見せたくないのは分かるけど…、kvS10/43/410400329.少しだけ…、確認してもいいかい？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2805,7 +2808,7 @@ void main()
 			NULL, " would it be all right... if we gave it a brief examination?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 42, "sprite/normal/yae_akire_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 42, "sprite/yae_akire_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //十和田rvS10/42/410600252.「――っ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2814,7 +2817,7 @@ void main()
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400330.「ちょっと、…黒澤の身体にかかってる布団、取ってみておくれよ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2823,7 +2826,7 @@ void main()
 			NULL, "\"Only for a minute... We need to take Kurosawa's body out of the futons to look at it, all right?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 42, "sprite/normal/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 42, "sprite/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //十和田rvS10/42/410600253.「祟りだって…、言ってるでしょう…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2838,7 +2841,7 @@ void main()
 			NULL, "Her voice quivered as she said that, doing her utmost to resist. However, her counterargument lacked the power to stop it.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_akire_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400331.「そうだね。そうかもしれないね。kvS10/43/410400332.…でもね、確かめておきたいことがあるんだよ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2850,7 +2853,7 @@ void main()
 			NULL, " ...However, there's something I want to verify.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400333.「…もしもあんたの言う通り、黒澤工が外で襲われたのなら、その体は雨に濡れてるはずなんだ。kvS10/43/410400334.…少なくとも、ズボンの裾は雨や泥でぐちゃぐちゃだろうね」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2862,7 +2865,7 @@ void main()
 			NULL, " ...At the very least, the hem of his pants should be caked with rain and mud.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 42, "sprite/normal/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 42, "sprite/yae_kanashimi_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //十和田rvS10/42/410600254.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }
@@ -2871,7 +2874,7 @@ void main()
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_warai_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_warai_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400335.「…確かめても…、いいかい？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2953,7 +2956,7 @@ void main()
 			NULL, " Ahahahahah... haah...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 41, "sprite/normal/otobe_tere_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 41, "sprite/otobe_tere_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 250 );
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
@@ -3010,7 +3013,7 @@ void main()
 			NULL, " ...I killed Takumi-kun.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 43, "sprite/normal/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 43, "sprite/miono1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS10/43/410400336.「……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -3031,7 +3034,7 @@ void main()
 			NULL, "I had no words to respond to Towada-san's incriminating confession.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 40, "sprite/normal/miyuko_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 40, "sprite/miyuko_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //美雪rvS10/40/410300706.「…それじゃ、鳥居のところで二人一緒に襲われたっていうのは…、嘘だったの…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#aa886c>美雪</color>", NULL, "<color=#aa886c>Miyuki</color>", NULL, Line_ContinueAfterTyping); }
@@ -3058,7 +3061,7 @@ void main()
 			NULL, "Then she paused her explanation for a moment, in thought...", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 42, "sprite/normal/yae_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 42, "sprite/yae_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/js7_01", 1000 );
 
 //十和田rvS10/42/410600266.「私…、工くんのことが…、大好きでした…。kvS10/42/410600267.大好きだったから……」
@@ -3071,7 +3074,7 @@ void main()
 			NULL, " And because I loved him...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 42, "sprite/normal/yae_defkaku_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 42, "sprite/yae_defkaku_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //十和田rvS10/42/410600268.「……殺してしまったんです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#efb2c1>十和田</color>", NULL, "<color=#efb2c1>Towada</color>", NULL, Line_ContinueAfterTyping); }

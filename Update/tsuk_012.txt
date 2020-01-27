@@ -57,8 +57,10 @@ void main()
 			NULL, "I couldn't hear any other sounds coming from inside.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 2, "sprite/sunset/re1a_okoru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
-	ModDrawCharacter(4, 5, "sprite/sunset/ri1_komaru_a2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModSetLayerFilter(3, 256, "sunset");
+	ModDrawCharacter(3, 2, "sprite/re1a_okoru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModSetLayerFilter(4, 256, "sunset");
+	ModDrawCharacter(4, 5, "sprite/ri1_komaru_a2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS18/05/160500087.「誰もいないのです……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
@@ -100,7 +102,7 @@ void main()
 			NULL, "We went around the side of the house. However, the curtains were closed so we couldn't see inside.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 2, "sprite/sunset/re1a_komaru_a2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re1a_komaru_a2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS18/02/160200449.「これじゃ、中がよくわからないね。kvS18/02/160200450.どうしようか……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -228,7 +230,7 @@ void main()
 	DrawSceneWithMask("white", "left", 0, 0, 250 );
 	DrawSceneWithMask("black", "right", 0, 0, 250 );
 	DrawScene("background/ho1_02", 1000 );
-	ModDrawCharacter(3, 2, "sprite/sunset/re1a_nande_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re1a_nande_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS18/02/160200451.「圭一くん……？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -251,7 +253,7 @@ void main()
 	ClearMessage();
 
 	PlayBGM( 2, "hm06_30", 128, 0 );
-	ModDrawCharacter(3, 2, "sprite/sunset/re1a_bikkuri_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re1a_bikkuri_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //r俺は羽織っていたシャツを脱ぐと、右手の拳にぐるぐると巻きつける。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -275,7 +277,7 @@ void main()
 			NULL, "The glass made a clamorous racket as it shattered.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 2, "sprite/sunset/re1a_okoru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re1a_okoru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS18/02/160200452.「圭一くん？　いきなり、どうしたの？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -384,7 +386,8 @@ void main()
 	ClearMessage();
 
 	DrawScene("background/ho_r1", 1000 );
-	ModDrawCharacter(3, 5, "sprite/normal/ri1_komaru_a2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 5, "sprite/ri1_komaru_a2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS18/05/160500088.「……いやなにおいがするのです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
@@ -412,8 +415,9 @@ void main()
 	ClearMessage();
 
 	FadeBustshot( 3, FALSE, 0, 0, 0, 0, 200, TRUE );
-	ModDrawCharacter(3, 2, "sprite/normal/re1a_nande_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
-	ModDrawCharacter(4, 5, "sprite/normal/ri1_komaru_a2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re1a_nande_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(4, 5, "sprite/ri1_komaru_a2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS18/02/160200453.「朝ごはん……かな？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -434,7 +438,7 @@ void main()
 			NULL, "I could also make out a pile of dishes and old toast on the corner of the tatami mat.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 5, "sprite/normal/ri1_majime_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 5, "sprite/ri1_majime_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS18/05/160500089.「沙都子はいつも、朝は和食です。kvS18/05/160500090.お味噌汁にごはんじゃないと、朝が始まらないのです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
@@ -782,7 +786,7 @@ void main()
 	ClearMessage();
 
 	DrawScene("background/ho_r1", 1000 );
-	ModDrawCharacter(3, 2, "sprite/normal/re1a_hig_okoru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re1a_hig_okoru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS18/02/160200459.「ああああああああぁぁぁぁぁっ！！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -951,7 +955,7 @@ void main()
 			NULL, "I was surprised... because I've only ever seen adults make that facial expression.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 5, "sprite/normal/ri1_fuman_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 5, "sprite/ri1_fuman_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS18/05/160500092.「圭一。kvS18/05/160500093.これは、決まっていたことなのです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
@@ -970,7 +974,7 @@ void main()
 			NULL, "\"Who... decided this?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 5, "sprite/normal/ri1_komaru_a2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 5, "sprite/ri1_komaru_a2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //r梨花ちゃんは、首を振る。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1048,7 +1052,7 @@ void main()
 			NULL, "And as a result, the two of them were killed on the day of Watanagashi...?", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 2, "sprite/normal/re1a_hig_muhyou_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re1a_hig_muhyou_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS18/02/160200473.「これが、オヤシロさまの……た……た……り……？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -1127,7 +1131,7 @@ void main()
 			NULL, " Do you know something?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 2, "sprite/normal/re1a_hig_okoru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 2, "sprite/re1a_hig_okoru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS18/02/160200475.「知らない。kvS18/02/160200476.……知らないけど、レナは絶対に許さないよ！kvS18/02/160200477.　綿流しだからって、オヤシロさまの祟りだからって、こんなことをしていいはずがない」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -1242,7 +1246,8 @@ void main()
 			NULL, "We fluctuated between anger and sorrow as we stared down at Satoko and Shion's bodies...", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 5, "sprite/sunset/ri1_fuman_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModSetLayerFilter(3, 256, "sunset");
+	ModDrawCharacter(3, 5, "sprite/ri1_fuman_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS18/05/160500094.「…………期待していたけど、結局また……。kvS18/05/160500095.もういいわ、馬鹿馬鹿しいッ…………！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }

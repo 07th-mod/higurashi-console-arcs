@@ -6,103 +6,119 @@ void main()
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 
-	DrawBustshot( 5, "sprite/normal/re1a_bikkuri_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModSetLayerFilter(5, 256, "none");
+	ModDrawCharacter(5, 2, "sprite/re1a_bikkuri_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawScene("background/gk3", 1000 );
 	PlayBGM(2, "hm01_06", 128, 0);
 
 //レナrvS14/02/210200028.「だ、大丈夫かな詩ぃちゃん？！」
-	PlaySE(4, "ps3/s14/02/210200028", 256, 64);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200028", 256, TRUE);
 	OutputLine(NULL, "「だ、大丈夫かな詩ぃちゃん？！」",
 			NULL, "\"A-are you all right, Shii-chan?!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si3_yowaki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 6, "sprite/si3_yowaki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/210600103.「…じゅ、寿命が４半世紀は縮まりました……！！」
-	PlaySE(4, "ps3/s14/06/210600103", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600103", 256, TRUE);
 	OutputLine(NULL, "「…じゅ、寿命が４半世紀は縮まりました……！！」",
 			NULL, "\"...Th-that took a quarter century off my lifespan...!!\"", Line_Normal);
 	ClearMessage();
 
 //rその台詞すら、大げさには聞こえない。どこぞのコミックなら、今ごろ詩音の髪の毛は真っ白になってるはずだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その台詞すら、大げさには聞こえない。どこぞのコミックなら、今ごろ詩音の髪の毛は真っ白になってるはずだ。",
 			NULL, "As exaggerated as that line was, I could barely hear her say it. If this was a comic, her hair would've turned white by now.", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/sa1a_akireru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_akireru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/210400067.「ま、まったく…少しは考えて発言してもらいたいものですわね。kvS14/04/210400068.一時はどうなることかと思いましてよ…」
-	PlaySE(4, "ps3/s14/04/210400067", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400067", 256, TRUE);
 	OutputLine(NULL, "「ま、まったく…少しは考えて発言してもらいたいものですわね。",
 			NULL, "\"S-seriously... Please think carefully before saying something like that.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400068", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400068", 256, TRUE);
 	OutputLine(NULL, "一時はどうなることかと思いましてよ…」",
 			NULL, " I wonder what will happen next time...?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si3_ikari_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_ikari_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/210600104.「誰のせいだ、誰のッッ！！！」
-	PlaySE(4, "ps3/s14/06/210600104", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600104", 256, TRUE);
 	OutputLine(NULL, "「誰のせいだ、誰のッッ！！！」",
 			NULL, "\"Who started this?! Who?!!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/sa1a_hannbeso_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_hannbeso_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/210400069.「ひ、ひぃっ！？！kvS14/04/210400070.　そ、それ以上近づいたらまた、これを――、kvS14/04/210400071.ふぁえっ？！」
-	PlaySE(4, "ps3/s14/04/210400069", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400069", 256, TRUE);
 	OutputLine(NULL, "「ひ、ひぃっ！？！",
 			NULL, "\"E-eek!?!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400070", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400070", 256, TRUE);
 	OutputLine(NULL, "　そ、それ以上近づいたらまた、これを——、",
 			NULL, " I-if you come any closer, I'll use this agai...", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400071", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400071", 256, TRUE);
 	OutputLine(NULL, "ふぁえっ？！」",
 			NULL, " Wha?!\"", Line_Normal);
 	ClearMessage();
 
 //rとっさに切り札である缶詰をつかもうとした沙都子は、さっき置いたはずの場所に手を伸ばして空をつかみ、ぎょっとなって顔を戻す。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "とっさに切り札である缶詰をつかもうとした沙都子は、さっき置いたはずの場所に手を伸ばして空をつかみ、ぎょっとなって顔を戻す。",
 			NULL, "Satoko quickly reached out to where she had left the can of food, but once her hand came up empty she turned back.", Line_Normal);
 	ClearMessage();
 
 //rそこには、果たして――。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そこには、果たして——。",
 			NULL, "Sure enough, right there...", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si3_huteki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_huteki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/210600105.「お探しの品は、こちらでしょうか…っっ？！」
-	PlaySE(4, "ps3/s14/06/210600105", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600105", 256, TRUE);
 	OutputLine(NULL, "「お探しの品は、こちらでしょうか…っっ？！」",
 			NULL, "\"Is this what you were looking for...?!\"", Line_Normal);
 	ClearMessage();
 
 //r口元は笑いながら、それでも目だけは全く笑っていない表情で凄みながら、詩音はいつの間にか奪取した缶詰を掲げてみせた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "口元は笑いながら、それでも目だけは全く笑っていない表情で凄みながら、詩音はいつの間にか奪取した缶詰を掲げてみせた。",
 			NULL, "With a smile on her lips but a look in her eyes that clearly wasn't smiling at all, Shion held up the can that she had grabbed long earlier.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si3_majime_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_majime_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/210600106.「……くっ……！」
-	PlaySE(4, "ps3/s14/06/210600106", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600106", 256, TRUE);
 	OutputLine(NULL, "「……くっ……！」",
 			NULL, "\"...Heh...!\"", Line_Normal);
 	ClearMessage();
 
 //rよく見ると眉間には深い皺が寄って、その額には脂汗が浮かんでいる。…そんなにも嫌なのかよ、缶詰が？！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "よく見ると眉間には深い皺が寄って、その額には脂汗が浮かんでいる。…そんなにも嫌なのかよ、缶詰が？！",
 			NULL, "Looking more closely, her forehead was covered in deep wrinkles oily sweat. ...Did she really hate canned food that much?!", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si3_tokui_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_tokui_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/210600107.「とりあえず――これはポイ、っと」
-	PlaySE(4, "ps3/s14/06/210600107", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600107", 256, TRUE);
 	OutputLine(NULL, "「とりあえず——これはポイ、っと」",
 			NULL, "\"For now... let's get rid of this.\"", Line_Normal);
 	ClearMessage();
@@ -111,32 +127,36 @@ void main()
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r詩音は窓の外に、缶詰を投げ捨てた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "詩音は窓の外に、缶詰を投げ捨てた。",
 			NULL, "Shion tossed the can out the window.", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "vse_can", 256, 64);
-	DrawBustshot( 5, "sprite/normal/sa1a_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_odoroki_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/210400072.「あああっっ？！kvS14/04/210400073.　缶のぽ、ポイ捨てはいけませんのよっ？！」
-	PlaySE(4, "ps3/s14/04/210400072", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400072", 256, TRUE);
 	OutputLine(NULL, "「あああっっ？！",
 			NULL, "\"Aaaah?!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400073", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400073", 256, TRUE);
 	OutputLine(NULL, "　缶のぽ、ポイ捨てはいけませんのよっ？！」",
 			NULL, " You c-can't just throw the can away!\"", Line_Normal);
 	ClearMessage();
 
 //詩音rvS14/06/210600108.「ふぅ…そうですね」
-	PlaySE(4, "ps3/s14/06/210600108", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600108", 256, TRUE);
 	OutputLine(NULL, "「ふぅ…そうですね」",
 			NULL, "\"Heh... that's true.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si3_majime_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_majime_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/210600109.「でもま、ここまできたら私も本気ということで――」
-	PlaySE(4, "ps3/s14/06/210600109", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600109", 256, TRUE);
 	OutputLine(NULL, "「でもま、ここまできたら私も本気ということで——」",
 			NULL, "\"But if you're willing to go that far, I have to get serious too...\"", Line_Normal);
 	ClearMessage();
@@ -145,33 +165,40 @@ void main()
 	PlaySE(3, "kaminari2", 256, 64);
 
 //rゴゴゴゴゴゴゴゴゴ……！！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ゴゴゴゴゴゴゴゴゴ……！！！",
 			NULL, "*rumble* *rumble*", Line_Normal);
 	ClearMessage();
 
 //r全身から蒼銀の闘気を吹き出し、詩音はゆっくりと足を踏み出す。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "全身から蒼銀の闘気を吹き出し、詩音はゆっくりと足を踏み出す。",
 			NULL, "A shimmering aura emanated out of Shion's whole body as she slowly stepped forward.", Line_Normal);
 	ClearMessage();
 
 //r心なしか、その歩みごとに床が『みしっ』ではなく『じゅっ…！』と嫌すぎる臭いとともにしなる音が聞こえるのは…きっと気のせいではないのだろう。そう思いたい。うん。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
 	OutputLine(NULL, "心なしか、その歩みごとに床が『みしっ』ではなく『じゅっ…！』と嫌すぎる臭いとともにしなる音が聞こえるのは…きっと気のせいではないのだろう。そう思いたい。うん。",
 			NULL, "I could hear the sound of the blood bending underfoot with every step she took... The floor didn't <i>creak</i>, it <i>sizzled</i> unpleasantly. Surely that couldn't just be my imagination. Yeah. I wanted to think so.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/si3_ikari_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(4, 6, "sprite/si3_ikari_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600110.「覚悟しぃや……沙都子ぉぉっっ！！！」
-	PlaySE(4, "ps3/s14/06/210600110", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600110", 256, TRUE);
 	OutputLine(NULL, "「覚悟しぃや……沙都子ぉぉっっ！！！」",
 			NULL, "\"Prepare yourself... Satokooo!!!\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 4, "sprite/normal/sa1a_hannbeso_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 4, "sprite/sa1a_hannbeso_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //沙都子rvS14/04/210400074.「ひ……ひあぁぁあっっ！？！」
-	PlaySE(4, "ps3/s14/04/210400074", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400074", 256, TRUE);
 	OutputLine(NULL, "「ひ……ひあぁぁあっっ！？！」",
 			NULL, "\"H... hyaaaah!?!\"", Line_Normal);
 	ClearMessage();
@@ -179,28 +206,31 @@ void main()
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 //r殺される――間違いなく、殺されるっっ？！　その迫力に怯えまくった沙都子はだっ、と文字通り脱兎のごとく逃げ出す。しかし、
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "殺される——間違いなく、殺されるっっ？！　その迫力に怯えまくった沙都子はだっ、と文字通り脱兎のごとく逃げ出す。しかし、",
 			NULL, "She's going to die... She's definitely going to get killed! Flabbergasted by that display of raw power, Satoko bounded away at lightning speed. However,", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/si3_huteki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/si3_huteki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600111.「富田！kvS14/06/210600112.　岡村っ！！」
-	PlaySE(4, "ps3/s14/06/210600111", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600111", 256, TRUE);
 	OutputLine(NULL, "「富田！",
 			NULL, "\"Tomita!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600112", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600112", 256, TRUE);
 	OutputLine(NULL, "　岡村っ！！」",
 			NULL, " Okamura!!\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/tomita1_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	DrawBustshot( 3, "sprite/normal/oka1_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 24, "sprite/tomita1_shinken_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 25, "sprite/oka1_shinken_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //富田＆岡村ro75.vS14/24/212400001|S14/25/212500001.「「はいっ！！」」
-	PlaySE(4, "ps3/s14/24/212400001", 256, 64);
-	PlaySE(5, "ps3/s14/25/212500001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a17d6b>富田</color>＆<color=#7a7e7d>岡村</color>", NULL, "<color=#a17d6b>Tomita</color> & <color=#7a7e7d>Okamura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 24, "ps3/s14/24/212400001", 256, TRUE);
+	ModPlayVoiceLS(5, 25, "ps3/s14/25/212500001", 256, TRUE);
 	OutputLine(NULL, "「「はいっ！！」」",
 			NULL, "\"\"On it!!\"\"", Line_Normal);
 	ClearMessage();
@@ -208,74 +238,83 @@ void main()
 	FadeAllBustshots( 200, TRUE );
 
 //r詩音の号令とともに、富田君と岡村君が素早く同時に立ち上がり、教室の入り口の前に立ち塞がった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "詩音の号令とともに、富田君と岡村君が素早く同時に立ち上がり、教室の入り口の前に立ち塞がった。",
 			NULL, "On Shion's signal, Tomita-kun and Okamura-kun both jumped to their feet at the same time and the stood in front of the entrance to the classroom.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/tomita1_shinken_0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	DrawBustshot( 4, "sprite/normal/sa1a_hannbeso_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
-	DrawBustshot( 3, "sprite/normal/oka1_shinken_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 24, "sprite/tomita1_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(4, 4, "sprite/sa1a_hannbeso_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(3, 25, "sprite/oka1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/210400075.「なっ？！kvS14/04/210400076.　と、富田さんと岡村さん？？」
-	PlaySE(4, "ps3/s14/04/210400075", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400075", 256, TRUE);
 	OutputLine(NULL, "「なっ？！",
 			NULL, "\"Wha?!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400076", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400076", 256, TRUE);
 	OutputLine(NULL, "　と、富田さんと岡村さん？？」",
 			NULL, " T-Tomita-san? Okamura-san??\"", Line_Normal);
 	ClearMessage();
 
 //富田rvS14/24/212400002.「すまん、北条！」
-	PlaySE(4, "ps3/s14/24/212400002", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a17d6b>富田</color>", NULL, "<color=#a17d6b>Tomita</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 24, "ps3/s14/24/212400002", 256, TRUE);
 	OutputLine(NULL, "「すまん、北条！」",
 			NULL, "\"Sorry, Houjou!\"", Line_Normal);
 	ClearMessage();
 
 //岡村rvS14/25/212500002.「お前に恨みはないが、許してくれ！」
-	PlaySE(4, "ps3/s14/25/212500002", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#7a7e7d>岡村</color>", NULL, "<color=#7a7e7d>Okamura</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 25, "ps3/s14/25/212500002", 256, TRUE);
 	OutputLine(NULL, "「お前に恨みはないが、許してくれ！」",
 			NULL, "\"It's nothing personal. Please forgive me!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/sa1a_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 4, "sprite/sa1a_odoroki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //沙都子rvS14/04/210400077.「ど、どうして……、はっ！？！」
-	PlaySE(4, "ps3/s14/04/210400077", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400077", 256, TRUE);
 	OutputLine(NULL, "「ど、どうして……、はっ！？！」",
 			NULL, "\"W-why...? Huh!?!\"", Line_Normal);
 	ClearMessage();
 
 //rぎょっ！　と沙都子が振り返ると、数歩後ろの距離に立つ詩音が手に持ったカラフルな紙切れを、ひらひらと口元で振っている。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ぎょっ！　と沙都子が振り返ると、数歩後ろの距離に立つ詩音が手に持ったカラフルな紙切れを、ひらひらと口元で振っている。",
 			NULL, "When Satoko looked back in a panic, Shion was standing a few steps behind waving a colorful piece of paper near her face.", Line_Normal);
 	ClearMessage();
 
 //rその紙切れには、大きな目立つ文字が印刷されていた…そう、『デザートフェスタ食べ放題ご招待券』と！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その紙切れには、大きな目立つ文字が印刷されていた…そう、『デザートフェスタ食べ放題ご招待券』と！！",
 			NULL, "With large, distinct text written on the paper... Oh, it says \"Dessert Fest. All you can eat ticket!!\"", Line_Normal);
 	ClearMessage();
 
 	FadeAllBustshots( 200, TRUE );
-	DrawBustshot( 4, "sprite/normal/si3_wink_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/si3_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600113.「さっきの台詞、そっくり返しますね。kvS14/06/210600114.『切り札は最後の最後に取っておく』。kvS14/06/210600115.くっくっくっ…♪」
-	PlaySE(4, "ps3/s14/06/210600113", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600113", 256, TRUE);
 	OutputLine(NULL, "「さっきの台詞、そっくり返しますね。",
 			NULL, "\"Allow me to repeat what you said earlier.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600114", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600114", 256, TRUE);
 	OutputLine(NULL, "『切り札は最後の最後に取っておく』。",
 			NULL, " \"Always save your trump cards for the final, final moment.\"", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600115", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600115", 256, TRUE);
 	OutputLine(NULL, "くっくっくっ…♪」",
 			NULL, " He he he...♪\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/si3_wink_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	DrawBustshot( 3, "sprite/normal/sa1a_hannbeso_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_wink_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 4, "sprite/sa1a_hannbeso_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/210400078.「あ、あうあうあうあうあうあうあうあう…」
-	PlaySE(4, "ps3/s14/04/210400078", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400078", 256, TRUE);
 	OutputLine(NULL, "「あ、あうあうあうあうあうあうあうあう…」",
 			NULL, "\"A-au au au au au au au au...\"", Line_Normal);
 	ClearMessage();
@@ -283,11 +322,13 @@ void main()
 	DrawFilm( 2, 255, 255, 255, 255, 0, 1000, TRUE );
 
 //r…経過時間１８分にて北条沙都子、bギブアップ.<投了>。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…経過時間１８分にて北条沙都子、投了(ギブアップ)。",
 			NULL, "...Elapsed time, 18 minutes. Satoko houjou resigns. (By giving up)", Line_Normal);
 	ClearMessage();
 
 //rちなみにトトカルチョは、勝利者無しに終わった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ちなみにトトカルチョは、勝利者無しに終わった。",
 			NULL, "As it turns out, the betting pool ended without a winner.", Line_Normal);
 	ClearMessage();
@@ -296,171 +337,191 @@ void main()
 	FadeFilm( 500, TRUE );
 	Wait( 1500 );
 	PlayBGM(2, "hm10_68", 128, 0);
-	DrawBustshot( 4, "sprite/normal/me1a_tohoho_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 3, "sprite/me1a_tohoho_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/gk1", 1000 );
 
 //魅音rvS14/03/210300055.「ちぇ～、今度こそ親の胴元独り占めのはずだったのに～～！」
-	PlaySE(4, "ps3/s14/03/210300055", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300055", 256, TRUE);
 	OutputLine(NULL, "「ちぇ～、今度こそ親の胴元独り占めのはずだったのに～～！」",
 			NULL, "\"Tch~, and even though I had total control as the bookie~~!\"", Line_Normal);
 	ClearMessage();
 
 //r魅音は悔しそうに席に戻ると、ミートボールをぱくりと口に放り込んだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "魅音は悔しそうに席に戻ると、ミートボールをぱくりと口に放り込んだ。",
 			NULL, "Mion dejectedly returned to her seat and began shoveling meatballs into her mouth.", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/me1a_tohoho_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	DrawBustshot( 3, "sprite/normal/re1a_komaru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 3, "sprite/me1a_tohoho_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 2, "sprite/re1a_komaru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/210200029.「み、魅ぃちゃん…」
-	PlaySE(4, "ps3/s14/02/210200029", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200029", 256, TRUE);
 	OutputLine(NULL, "「み、魅ぃちゃん…」",
 			NULL, "\"M-Mii-chan...\"", Line_Normal);
 	ClearMessage();
 
 //r小鬼だ…小鬼がいる…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "小鬼だ…小鬼がいる…。",
 			NULL, "A little demon... she's a little demon.", Line_Normal);
 	ClearMessage();
 
 //rレナでさえ引きつった笑みのまま、呆れるやら何とやらで複雑な表情だった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "レナでさえ引きつった笑みのまま、呆れるやら何とやらで複雑な表情だった。",
 			NULL, "Even though there was still a smile on Rena's face, she wore a complex expression that looked disgusted.", Line_Normal);
 	ClearMessage();
 
 //圭一rvS14/01/210100033.「魅音、さすがにいくらなんでもやりすぎだろ…？」
-	PlaySE(4, "ps3/s14/01/210100033", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100033", 256, TRUE);
 	OutputLine(NULL, "「魅音、さすがにいくらなんでもやりすぎだろ…？」",
 			NULL, "\"Mion, don't you think that was a bit much...?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/me1a_tokui_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 3, "sprite/me1a_tokui_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS14/03/210300056.「いーのいーの。kvS14/03/210300057.沙都子だって部活メンバーなんだからさ、これくらいの試練は耐えてみせないと、ね」
-	PlaySE(4, "ps3/s14/03/210300056", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300056", 256, TRUE);
 	OutputLine(NULL, "「いーのいーの。",
 			NULL, "\"It's fine, it's fine.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/03/210300057", 256, 64);
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300057", 256, TRUE);
 	OutputLine(NULL, "沙都子だって部活メンバーなんだからさ、これくらいの試練は耐えてみせないと、ね」",
 			NULL, " Satoko is a club member. She has to be capable of enduring this sort of trial.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/me1a_wink_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 3, "sprite/me1a_wink_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS14/03/210300058.「詩音に関してはもっと論外、これくらい平気だって！」
-	PlaySE(4, "ps3/s14/03/210300058", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300058", 256, TRUE);
 	OutputLine(NULL, "「詩音に関してはもっと論外、これくらい平気だって！」",
 			NULL, "\"And as for Shion, something even more outrageous would've been perfectly acceptable!\"", Line_Normal);
 	ClearMessage();
 
 	FadeAllBustshots( 200, TRUE );
-	DrawBustshot( 4, "sprite/normal/si3_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/si3_majime_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600116.「お姉…あんたにいつか、天罰が下ることを祈ってますから」
-	PlaySE(4, "ps3/s14/06/210600116", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600116", 256, TRUE);
 	OutputLine(NULL, "「お姉…あんたにいつか、天罰が下ることを祈ってますから」",
 			NULL, "\"Sis... I pray you receive your divine punishment some day.\"", Line_Normal);
 	ClearMessage();
 
 //rじろっ、と恨めしげな視線を送りながら、詩音は沙都子に紙ナプキンを手渡す。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "じろっ、と恨めしげな視線を送りながら、詩音は沙都子に紙ナプキンを手渡す。",
 			NULL, "Shion flashed a resentful glare while passing Satoko a napkin.", Line_Normal);
 	ClearMessage();
 
 //r『カボチャ尽くしの昼食はかわいそう』とのレナの提案と、一矢報いたファイヤーガッツに免じて、ミートボールをしこたまゲットした沙都子はさっきまでの半ベソ顔は何処へやら…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "『カボチャ尽くしの昼食はかわいそう』とのレナの提案と、一矢報いたファイヤーガッツに免じて、ミートボールをしこたまゲットした沙都子はさっきまでの半ベソ顔は何処へやら…。",
 			NULL, "Since Satoko was on the verge of tears just a moment ago, Rena offered her a meatball out of respect for her fiery passion, and to say \"sorry about the squash lunch fiasco.\"", Line_Normal);
 	ClearMessage();
 
 //r満足そうな笑顔で腹をさすっていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "満足そうな笑顔で腹をさすっていた。",
 			NULL, "There was a content smile on her face as she rubbed her stomach.", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 3, "sprite/normal/si3_def_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
-	DrawBustshot( 5, "sprite/normal/sa1a_warai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_def_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //rまぁ…なんだかんだで、いいコンビだと思う。意外と言えば意外だったけど、本当の姉妹といっても、誰も疑ったりしないだろう。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "まぁ…なんだかんだで、いいコンビだと思う。意外と言えば意外だったけど、本当の姉妹といっても、誰も疑ったりしないだろう。",
 			NULL, "Well... somehow, I think they're a good combination. It was a surprising thing to say, but nobody would doubt that they were actually sisters.", Line_Normal);
 	ClearMessage();
 
 //圭一rvS14/01/210100034.「でもま、詩音が加わると賑やかでいいよな！kvS14/01/210100035.　いっそのこと、正式にこっちに転校して来いよ！」
-	PlaySE(4, "ps3/s14/01/210100034", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100034", 256, TRUE);
 	OutputLine(NULL, "「でもま、詩音が加わると賑やかでいいよな！",
 			NULL, "\"Anyway, it's always so lively when Shion shows up!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/01/210100035", 256, 64);
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100035", 256, TRUE);
 	OutputLine(NULL, "　いっそのこと、正式にこっちに転校して来いよ！」",
 			NULL, " In fact, it'd be nice if you officially transferred here!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si3_wink_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_wink_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/210600117.「あはははは！kvS14/06/210600118.　そうしたいのは山々ですけど、さすがにバァさんが許してくれませんよ」
-	PlaySE(4, "ps3/s14/06/210600117", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600117", 256, TRUE);
 	OutputLine(NULL, "「あはははは！",
 			NULL, "\"Ahahahaha!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600118", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600118", 256, TRUE);
 	OutputLine(NULL, "　そうしたいのは山々ですけど、さすがにバァさんが許してくれませんよ」",
 			NULL, " I really want to, but Granny would never allow it.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/sa1a_akireru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_akireru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/210400079.「ご勘弁ですわ！kvS14/04/210400080.　たまにでも来るたびに大騒動ですのに、毎日毎時間だとさすがに身体が持ちませんことよ！　べー」
-	PlaySE(4, "ps3/s14/04/210400079", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400079", 256, TRUE);
 	OutputLine(NULL, "「ご勘弁ですわ！",
 			NULL, "\"Inexcusable!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400080", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400080", 256, TRUE);
 	OutputLine(NULL, "　たまにでも来るたびに大騒動ですのに、毎日毎時間だとさすがに身体が持ちませんことよ！　べー」",
 			NULL, " Coming here once in a while isn't such a big deal, but every hour every day? My body can't hold out any longer! Blegh.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si3_tokui_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_tokui_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/210600119.「明日はアスパラガス弁当で行きましょうか。kvS14/06/210600120.もちろん生で、マヨネーズだけで」
-	PlaySE(4, "ps3/s14/06/210600119", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600119", 256, TRUE);
 	OutputLine(NULL, "「明日はアスパラガス弁当で行きましょうか。",
 			NULL, "\"How does asparagus sound for tomorrow's lunch?", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600120", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600120", 256, TRUE);
 	OutputLine(NULL, "もちろん生で、マヨネーズだけで」",
 			NULL, " Served raw, of course. Topped with just mayonaise.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/sa1a_naku_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_naku_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/210400081.「ふ、ふあぁぁぁんっっ！kvS14/04/210400082.　れ、レナさあぁん、詩音さんがいじめますのよ～～っっ！！」
-	PlaySE(4, "ps3/s14/04/210400081", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400081", 256, TRUE);
 	OutputLine(NULL, "「ふ、ふあぁぁぁんっっ！",
 			NULL, "\"F-fwaaaah!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400082", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400082", 256, TRUE);
 	OutputLine(NULL, "　れ、レナさあぁん、詩音さんがいじめますのよ～～っっ！！」",
 			NULL, " R-Rena-saaan, Shion-san is bullying meee~~!!\"", Line_Normal);
 	ClearMessage();
 
 	FadeAllBustshots( 200, TRUE );
-	DrawBustshot( 4, "sprite/normal/re1a_kaii_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 2, "sprite/re1a_kaii_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS14/02/210200030.「は、はうぅ～～！　沙都子ちゃんの泣き顔、かぁいい☆kvS14/02/210200031.　大丈夫だよ、レナが――」
-	PlaySE(4, "ps3/s14/02/210200030", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200030", 256, TRUE);
 	OutputLine(NULL, "「は、はうぅ～～！　沙都子ちゃんの泣き顔、かぁいい☆",
 			NULL, "\"H-hauu~~! Satoko-chan's crying face is sho kyute☆.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200031", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200031", 256, TRUE);
 	OutputLine(NULL, "　大丈夫だよ、レナが——」",
 			NULL, " It's all right, Rena will...\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot( 4, FALSE, 0, 0, 0, 0, 200, TRUE );
-	DrawBustshot( 4, "sprite/normal/si3_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/si3_def_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600121.「あら、こんなところにチケットが。kvS14/06/210600122.デザートフェスタの招待券♪」
-	PlaySE(4, "ps3/s14/06/210600121", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600121", 256, TRUE);
 	OutputLine(NULL, "「あら、こんなところにチケットが。",
 			NULL, "\"Oh my, I just happen to have these tickets.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600122", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600122", 256, TRUE);
 	OutputLine(NULL, "デザートフェスタの招待券♪」",
 			NULL, " They're invitations to the Dessert Fest♪.\"", Line_Normal);
 	ClearMessage();
@@ -470,60 +531,67 @@ void main()
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //rしゅぱぱぱっっ！！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "しゅぱぱぱっっ！！",
 			NULL, "*swoosh*", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/re1a_warai_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 2, "sprite/re1a_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS14/02/210200032.「お姉さんの言うことは聞いたほうがいいよ？　はぅ～♪」
-	PlaySE(4, "ps3/s14/02/210200032", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200032", 256, TRUE);
 	OutputLine(NULL, "「お姉さんの言うことは聞いたほうがいいよ？　はぅ～♪」",
 			NULL, "\"You need to listen to what you sister has to say, all right? Hau~♪.\"", Line_Normal);
 	ClearMessage();
 
 //r早っ！　変わり身早っ？！　しかもチケットもう手に取ってるし！　…つーか詩音、レナの扱い方までもはや取得済みかよ？！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "早っ！　変わり身早っ？！　しかもチケットもう手に取ってるし！　…つーか詩音、レナの扱い方までもはや取得済みかよ？！",
 			NULL, "Whoa! That was a fast change of heart! And she already had the tickwets in hand! ...Wow, has Shion already figured out how to tame Rena?!", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/sa1a_hannbeso_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_hannbeso_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/210400083.「卑怯でございますわよ！kvS14/04/210400084.　モノで人の関心を買おうなどと！！」
-	PlaySE(4, "ps3/s14/04/210400083", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400083", 256, TRUE);
 	OutputLine(NULL, "「卑怯でございますわよ！",
 			NULL, "\"How cowardly!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400084", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400084", 256, TRUE);
 	OutputLine(NULL, "　モノで人の関心を買おうなどと！！」",
 			NULL, " Buying people's favor by leveraging their interests!!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si3_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS14/06/210600123.「あはははっ、ルーズドッグの声が心地いいですねぇ！！」
-	PlaySE(4, "ps3/s14/06/210600123", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600123", 256, TRUE);
 	OutputLine(NULL, "「あはははっ、ルーズドッグの声が心地いいですねぇ！！」",
 			NULL, "\"Ahahahah, this yappy dog voice feels really nice!!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/sa1a_naku_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_naku_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/210400085.「し、詩音さんは横暴ですわー！kvS14/04/210400086.　梨花ぁ、あなたも何とか言ってくださいまし――」
-	PlaySE(4, "ps3/s14/04/210400085", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400085", 256, TRUE);
 	OutputLine(NULL, "「し、詩音さんは横暴ですわー！",
 			NULL, "\"Sh-Shion-san, that's brutal!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400086", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400086", 256, TRUE);
 	OutputLine(NULL, "　梨花ぁ、あなたも何とか言ってくださいまし——」",
 			NULL, " Rikaa, come on, say something here...\"", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-	DrawBustshot( 3, "sprite/normal/si3_majime_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
-	DrawBustshot( 5, "sprite/normal/sa1a_akireru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(3, 6, "sprite/si3_majime_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_akireru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/210400087.「あ…」
-	PlaySE(4, "ps3/s14/04/210400087", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400087", 256, TRUE);
 	OutputLine(NULL, "「あ…」",
 			NULL, "\"Ah...\"", Line_Normal);
 	ClearMessage();
@@ -531,157 +599,180 @@ void main()
 	DrawScene("black", 1000 );
 
 //圭一rvS14/01/210100036.「…………」
-	PlaySE(4, "ps3/s14/01/210100036", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100036", 256, TRUE);
 	OutputLine(NULL, "「…………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //レナrvS14/02/210200033.「…………」
-	PlaySE(4, "ps3/s14/02/210200033", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200033", 256, TRUE);
 	OutputLine(NULL, "「…………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //魅音rvS14/03/210300059.「…………」
-	PlaySE(4, "ps3/s14/03/210300059", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300059", 256, TRUE);
 	OutputLine(NULL, "「…………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //詩音rvS14/06/210600124.「…………」
-	PlaySE(4, "ps3/s14/06/210600124", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600124", 256, TRUE);
 	OutputLine(NULL, "「…………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //rそう、いつものように賑やかで、大騒ぎなこの昼休み。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう、いつものように賑やかで、大騒ぎなこの昼休み。",
 			NULL, "Indeed, it was a lively, bustling lunch break.", Line_Normal);
 	ClearMessage();
 
 //rそれ以外にも、楽しく、ふざけあって、大真面目に部活で勝負しあう放課後。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それ以外にも、楽しく、ふざけあって、大真面目に部活で勝負しあう放課後。",
 			NULL, "And besides that, we had fun playing and competing seriously in our club activities.", Line_Normal);
 	ClearMessage();
 
 //r本来なら、少し控えめでも確実な存在感でいるはずの一人が、…ここ１週間ほどずっと、…輪の外に、いた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "本来なら、少し控えめでも確実な存在感でいるはずの一人が、…ここ１週間ほどずっと、…輪の外に、いた。",
 			NULL, "Normally, there would be one more slightly meek person here with us... but for the past week... she wasn't here.", Line_Normal);
 	ClearMessage();
 
 //r転校してきた当初、彼女は沙都子とつるんでよく俺をからかってきたり、その一方で何かと気を遣ってくれたものだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "転校してきた当初、彼女は沙都子とつるんでよく俺をからかってきたり、その一方で何かと気を遣ってくれたものだ。",
 			NULL, "When I first transferred here, she was always hanging out with Satoko and teasing me, but at the same time she always seemed worried about something.", Line_Normal);
 	ClearMessage();
 
 //rそれがなぜか、…ある日を境にふっつりと、距離を置くようになったのだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それがなぜか、…ある日を境にふっつりと、距離を置くようになったのだ。",
 			NULL, "Maybe that's why... one day, she put up a barricade and distanced herself from us.", Line_Normal);
 	ClearMessage();
 
 //rひょっとして、俺が何か嫌われるようなことをしたのだろうか？…そう思って魅音にも聞いてみたが、どうやらそうでもないらしい。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ひょっとして、俺が何か嫌われるようなことをしたのだろうか？…そう思って魅音にも聞いてみたが、どうやらそうでもないらしい。",
 			NULL, "Could I have done something to upset her? ...I considered that, but when I asked Mion she said that probably wasn't the case. ", Line_Normal);
 	ClearMessage();
 
 //rそれに、会話が減ったのは俺だけじゃない。魅音やレナ、そしてなにより同居人の沙都子に対してもだった…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それに、会話が減ったのは俺だけじゃない。魅音やレナ、そしてなにより同居人の沙都子に対してもだった…。",
 			NULL, "Besides, I'm not the only one she's been avoiding. Mion, Rena, and even her housemate Satoko...", Line_Normal);
 	ClearMessage();
 
 	PlayBGM( 1, "semi", 128, 0 );
-	DrawBustshot( 4, "sprite/normal/re1a_komaru_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 2, "sprite/re1a_komaru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/gk1", 1000 );
 
 //レナrvS14/02/210200034.「…ほんとに、どうしちゃったのかな、梨花ちゃん…」
-	PlaySE(4, "ps3/s14/02/210200034", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200034", 256, TRUE);
 	OutputLine(NULL, "「…ほんとに、どうしちゃったのかな、梨花ちゃん…」",
 			NULL, "\"...Seriously, I wonder what's wrong with Rika-chan...?\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/re1a_komaru_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	DrawBustshot( 3, "sprite/normal/me1a_tohoho_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 2, "sprite/re1a_komaru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 3, "sprite/me1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/210300060.「ん、まぁ…今年の風邪は、たち悪いって言うからね。kvS14/03/210300061.あんまり構いすぎて、かえって無理させちゃかわいそうだしさ」
-	PlaySE(4, "ps3/s14/03/210300060", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300060", 256, TRUE);
 	OutputLine(NULL, "「ん、まぁ…今年の風邪は、たち悪いって言うからね。",
 			NULL, "\"Mmm, well... they say that colds this year are particularly bad.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/03/210300061", 256, 64);
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300061", 256, TRUE);
 	OutputLine(NULL, "あんまり構いすぎて、かえって無理させちゃかわいそうだしさ」",
 			NULL, " It's really easy to overexert yourself.\"", Line_Normal);
 	ClearMessage();
 
 //r……魅音はそう言うが、本当はみんなわかっている。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……魅音はそう言うが、本当はみんなわかっている。",
 			NULL, "...Mion said that, but everyone already knew.", Line_Normal);
 	ClearMessage();
 
 //r梨花ちゃんが元気ないのは、なにか悩みがあるからなんだ、ということに。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "梨花ちゃんが元気ないのは、なにか悩みがあるからなんだ、ということに。",
 			NULL, "The reason Rika-chan isn't feeling well is because she has some kind of problem.", Line_Normal);
 	ClearMessage();
 
 //rそしてそれだけに、力になりたいとは思うが、…梨花ちゃんの悩みの正体がわからない以上、何もできない状態が続いていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そしてそれだけに、力になりたいとは思うが、…梨花ちゃんの悩みの正体がわからない以上、何もできない状態が続いていた。",
 			NULL, "And as much as I want to lend her my strength... I can't do anything without knowing the true nature of Rika-chan's troubles.", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/si3_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/210600125.「で、今梨花ちゃまは？」
-	PlaySE(4, "ps3/s14/06/210600125", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600125", 256, TRUE);
 	OutputLine(NULL, "「で、今梨花ちゃまは？」",
 			NULL, "\"So, where is Rika-chama right now?\"", Line_Normal);
 	ClearMessage();
 
 //魅音rvS14/03/210300062.「さぁ…鞄まだあるみたいだし、帰ってはいないと思うけど」
-	PlaySE(4, "ps3/s14/03/210300062", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300062", 256, TRUE);
 	OutputLine(NULL, "「さぁ…鞄まだあるみたいだし、帰ってはいないと思うけど」",
 			NULL, "\"Well... her bag is still here, so I don't think she went home.\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 3, "sprite/normal/sa1a_akireru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 4, "sprite/sa1a_akireru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/210400088.「…………」
-	PlaySE(4, "ps3/s14/04/210400088", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400088", 256, TRUE);
 	OutputLine(NULL, "「…………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/si3_yowaki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_yowaki_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/210600126.「あ、さと――」
-	PlaySE(4, "ps3/s14/06/210600126", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600126", 256, TRUE);
 	OutputLine(NULL, "「あ、さと——」",
 			NULL, "\"Oh, Sato...\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa1a_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 4, "sprite/sa1a_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //r隣で消沈する沙都子に気づき、詩音が声をかけようとする。が、暗い気持ちを振り払うかのように顔を上げると、沙都子は元気のいい笑顔で言った。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "隣で消沈する沙都子に気づき、詩音が声をかけようとする。が、暗い気持ちを振り払うかのように顔を上げると、沙都子は元気のいい笑顔で言った。",
 			NULL, "When she noticed Satoko sulking right next to her, Shion tried to call out to her. But Satoko quickly raised her head with a cheerful smile on her face to shake off the hard feelings, and spoke up.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa1a_def_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 4, "sprite/sa1a_def_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/210400089.「まぁ、そんなに心配することはございませんわ！kvS14/04/210400090.　昨日の夜だってちゃんと夕食を召し上がりましたし、きっとそろそろ風邪も治ることだと思いますのよ？」
-	PlaySE(4, "ps3/s14/04/210400089", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400089", 256, TRUE);
 	OutputLine(NULL, "「まぁ、そんなに心配することはございませんわ！",
 			NULL, "\"Anyway, there's nothing to worry about!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400090", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400090", 256, TRUE);
 	OutputLine(NULL, "　昨日の夜だってちゃんと夕食を召し上がりましたし、きっとそろそろ風邪も治ることだと思いますのよ？」",
 			NULL, " We had a proper dinner together last night, so I'm sure her cold will get better soon.\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/re1a_nande_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 2, "sprite/re1a_nande_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS14/02/210200035.「沙都子ちゃん…」
-	PlaySE(4, "ps3/s14/02/210200035", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200035", 256, TRUE);
 	OutputLine(NULL, "「沙都子ちゃん…」",
 			NULL, "\"Satoko-chan...\"", Line_Normal);
 	ClearMessage();
@@ -689,97 +780,105 @@ void main()
 	PlayBGM(2, "hm10_54", 128, 0);
 
 //圭一rvS14/01/210100037.「……そっか。kvS14/01/210100038.沙都子がそう言うなら、間違いないよな！kvS14/01/210100039.　よーし、それなら風邪が治ったときには、みんなで全快祝いやってやろうぜ！！」
-	PlaySE(4, "ps3/s14/01/210100037", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100037", 256, TRUE);
 	OutputLine(NULL, "「……そっか。",
 			NULL, "\"...I see.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/01/210100038", 256, 64);
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100038", 256, TRUE);
 	OutputLine(NULL, "沙都子がそう言うなら、間違いないよな！",
 			NULL, " If Satoko says so, then there's no doubt about it!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/01/210100039", 256, 64);
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100039", 256, TRUE);
 	OutputLine(NULL, "　よーし、それなら風邪が治ったときには、みんなで全快祝いやってやろうぜ！！」",
 			NULL, " All right, let's all celebrate together once her cold clears up!!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/re1a_warai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 2, "sprite/re1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS14/02/210200036.「だね？　だね！kvS14/02/210200037.　そのときはレナも、思いっきり腕ふるっちゃうから！！」
-	PlaySE(4, "ps3/s14/02/210200036", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200036", 256, TRUE);
 	OutputLine(NULL, "「だね？　だね！",
 			NULL, "\"Right? Right?!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/02/210200037", 256, 64);
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200037", 256, TRUE);
 	OutputLine(NULL, "　そのときはレナも、思いっきり腕ふるっちゃうから！！」",
 			NULL, " And when that time comes, Rena's gonna squeeze her with all her strength!!\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/me1a_warai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 3, "sprite/me1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS14/03/210300063.「あはははは！kvS14/03/210300064.　それじゃおじさんも、盛大に美味しいもの準備しておくよ！」
-	PlaySE(4, "ps3/s14/03/210300063", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300063", 256, TRUE);
 	OutputLine(NULL, "「あはははは！",
 			NULL, "\"Ahahahaha!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/03/210300064", 256, 64);
+	ModPlayVoiceLS(4, 3, "ps3/s14/03/210300064", 256, TRUE);
 	OutputLine(NULL, "　それじゃおじさんも、盛大に美味しいもの準備しておくよ！」",
 			NULL, " Alright then, this ol' man is gonna prepare a delicious treat!\"", Line_Normal);
 	ClearMessage();
 
 //圭一rvS14/01/210100040.「おおぉう！　魅音の盛大な料理～～じゅるるるっ！kvS14/01/210100041.　もちろん沙都子のはない！kvS14/01/210100042.　俺が全部いただく！！」
-	PlaySE(4, "ps3/s14/01/210100040", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100040", 256, TRUE);
 	OutputLine(NULL, "「おおぉう！　魅音の盛大な料理～～じゅるるるっ！",
 			NULL, "\"Ohhh! Mion's glorious cuisine~~! *drool*", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/01/210100041", 256, 64);
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100041", 256, TRUE);
 	OutputLine(NULL, "　もちろん沙都子のはない！",
 			NULL, " Of course, Satoko can't have any!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/01/210100042", 256, 64);
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100042", 256, TRUE);
 	OutputLine(NULL, "　俺が全部いただく！！」",
 			NULL, " It's all for me!!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa1a_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 4, "sprite/sa1a_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/210400091.「をーっほっほっほっほっ！kvS14/04/210400092.　圭一さんは進歩がありませんわぁ！！kvS14/04/210400093.　極悪非道の詩音さんに鍛えられた私が、そう簡単に勝利を譲ると思いまして？！」
-	PlaySE(4, "ps3/s14/04/210400091", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400091", 256, TRUE);
 	OutputLine(NULL, "「をーっほっほっほっほっ！",
 			NULL, "\"Oh ho ho ho ho!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400092", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400092", 256, TRUE);
 	OutputLine(NULL, "　圭一さんは進歩がありませんわぁ！！",
 			NULL, " Keiichi-san, you'll do nothing of the sort!!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400093", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400093", 256, TRUE);
 	OutputLine(NULL, "　極悪非道の詩音さんに鍛えられた私が、そう簡単に勝利を譲ると思いまして？！」",
 			NULL, " I've been tempered by my experiences with the wicked Shion-san. Do you truly believe I'll yield so easily?!\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/si3_ikari_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_ikari_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 	PlaySE(3, "dageki", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //詩音rvS14/06/210600127.「だぅぅるれぇぇが、極悪ですかぁぁ～～っっ！！」
-	PlaySE(4, "ps3/s14/06/210600127", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600127", 256, TRUE);
 	OutputLine(NULL, "「だぅぅるれぇぇが、極悪ですかぁぁ～～っっ！！」",
 			NULL, "\"Whoooo are you caaalling wicked~~?!\"", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "a5_13391", 256, 64);
-	DrawBustshot( 3, "sprite/normal/sa1a_naku_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 4, "sprite/sa1a_naku_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/210400094.「ふ、ふあぁぁぁぁあんんっっ！！kvS14/04/210400095.　い、痛い痛い痛い痛い、いたい～～っっ！！kvS14/04/210400096.　げ、ゲンコツで頭グリグリは反則ですわぁ～～～っっ！！」
-	PlaySE(4, "ps3/s14/04/210400094", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400094", 256, TRUE);
 	OutputLine(NULL, "「ふ、ふあぁぁぁぁあんんっっ！！",
 			NULL, "\"F-fwaaaaahh!!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400095", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400095", 256, TRUE);
 	OutputLine(NULL, "　い、痛い痛い痛い痛い、いたい～～っっ！！",
 			NULL, " O-owowowow, oww~~!!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/04/210400096", 256, 64);
+	ModPlayVoiceLS(4, 4, "ps3/s14/04/210400096", 256, TRUE);
 	OutputLine(NULL, "　げ、ゲンコツで頭グリグリは反則ですわぁ～～～っっ！！」",
 			NULL, " A-a direct blow to the head is foul plaaay~~~!!\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/re1a_warai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 2, "sprite/re1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS14/02/210200038.「あはははははは！！！」
-	PlaySE(4, "ps3/s14/02/210200038", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s14/02/210200038", 256, TRUE);
 	OutputLine(NULL, "「あはははははは！！！」",
 			NULL, "\"Ahahahahahaha!!!\"", Line_Normal);
 	ClearMessage();
@@ -787,11 +886,13 @@ void main()
 	DrawScene("background/gr2", 1000 );
 
 //rそんな感じで、賑やかに過ぎてゆく昼休み。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんな感じで、賑やかに過ぎてゆく昼休み。",
 			NULL, "Our rambunctious lunchbreak was filled with that levity.", Line_Normal);
 	ClearMessage();
 
 //r梨花ちゃん、…何を悩んでいるかは分からないけど、いつか打ち明けてくれることをみんなで待ってるからな。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "梨花ちゃん、…何を悩んでいるかは分からないけど、いつか打ち明けてくれることをみんなで待ってるからな。",
 			NULL, "Rika-chan... I don't know what's bothering you, but I'll be waiting until you decide to let me know.", Line_Normal);
 	ClearMessage();
