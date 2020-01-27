@@ -19,8 +19,10 @@ void main()
 	Wait( 1000 );
 	DrawScene("black", 1000 );
 	PlayBGM(2, "hm01_01", 128, 0);
-	ModDrawCharacter(5, 2, "sprite/normal/re1a_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_def_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModSetLayerFilter(5, 256, "none");
+	ModDrawCharacter(5, 2, "sprite/re1a_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 3, "sprite/me1a_def_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ie1", 1000 );
 
 //r待ち合わせ場所では、やはりレナと魅音が先に到着して、俺を待ってくれていた。
@@ -30,7 +32,7 @@ void main()
 			NULL, "Rena and Mion had already arrived at the meeting place and were waiting for me.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 2, "sprite/normal/re1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 2, "sprite/re1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS14/02/220200140.「あはははは！kvS14/02/220200141.　圭一くん、早く早く～！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -42,7 +44,7 @@ void main()
 			NULL, " Keiichi-kun, hurry up~!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300293.「もう、圭ちゃん遅いぞー！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -51,7 +53,7 @@ void main()
 			NULL, "\"You're late, Kei-chan!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_tokui_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_tokui_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300294.「はいカウント５秒前～、３、２、１…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -85,8 +87,8 @@ void main()
 			NULL, "*slam* *rattle* *rattle*", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 2, "sprite/normal/re1a_bikkuri_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(5, 2, "sprite/re1a_bikkuri_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 3, "sprite/me1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawSceneWithMask( "background/ie1", "up", 0, 0, 2000 );
 
 //レナrvS14/02/220200142.「け、圭一くん大丈夫っ？！」
@@ -109,7 +111,7 @@ void main()
 			NULL, " Ah, ow ow!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_yowaki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_yowaki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300295.「はぁ、全く何やってるのさ…kvS14/03/220300296.ほら、つかまって！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -127,7 +129,7 @@ void main()
 			NULL, "I grabbed Mion's outstretched hand and rose to my feet, while wiping the dirt from my waist and back. ...My body ached in a couple places, but oddly enough, there were no actual injuries.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300297.「そのかわりに、自転車が御臨終だよ。kvS14/03/220300298.…どうすんの、これ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -151,7 +153,7 @@ void main()
 			NULL, "...The chain had broken off in the heavy fall, and the brakes hardly looked like they'd work on the front wheel. The front basket was broken, and a few spokes were missing... Man, it was a total wreck.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_akuwarai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_akuwarai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300299.「だいたいね～、圭ちゃんはやることに無茶が多すぎるんだよ。kvS14/03/220300300.せっかく怪我が部活メンバーで一番早く治ったのに、校長先生に戦いを挑んだりしてさ～！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -170,7 +172,7 @@ void main()
 			NULL, "\"You were the one who thought up that punishment, Mion!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 2, "sprite/normal/re1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 2, "sprite/re1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS14/02/220200143.「あはははは！kvS14/02/220200144.　でも校長先生感心してたよね！kvS14/02/220200145.『自分の服にかすったやつは、戦後になって君で２人目だ』なんて言ってくれたでしょ？kvS14/02/220200146.　さっすが部長さんだよね～？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -204,7 +206,7 @@ void main()
 			NULL, " From now on, you can call me king of the end of the century!!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_tokui_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_tokui_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300301.「…新しい世紀が来るのはまだまだ先だよ。kvS14/03/220300302.その前に人間やめちゃうほうに、私は一生分の時間を賭けてもいいね」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -216,7 +218,7 @@ void main()
 			NULL, " By the time that comes around, I'll be on a new stage of my life.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 2, "sprite/normal/re1a_kaii_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 2, "sprite/re1a_kaii_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS14/02/220200147.「え？　ええ？！kvS14/02/220200148.　それって、人間のままだったら…kvS14/02/220200149.結婚、ってこと？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -231,7 +233,7 @@ void main()
 			NULL, " Are you talking about marriage?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300303.「なっ？！kvS14/03/220300304.　ななななな、なぁぁんで、そうなるかこの耳年増はぁぁあぁっっ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -271,7 +273,8 @@ void main()
 			NULL, "Shion Sonozaki and Rena Ryuugu. ...I have no idea just how much my life would be impacted by my inability to stop the formation of the strongest, most evil tag-team duo in history. I didn't even want to think about it.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 3, "sprite/normal/me1a_ikari_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(4, 3, "sprite/me1a_ikari_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/220300305.「ほらっ！　さっさと行くよ、レナ！kvS14/03/220300306.　圭ちゃんも準備して！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -293,7 +296,7 @@ void main()
 			NULL, " but with my bike like this...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 3, "sprite/normal/me1a_tohoho_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 3, "sprite/me1a_tohoho_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/220300307.「あ、そうか。kvS14/03/220300308.…仕方ないなぁ、それじゃ、私と二人乗りで――」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -306,8 +309,8 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
-	ModDrawCharacter(5, 2, "sprite/normal/re1a_kaii_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(5, 2, "sprite/re1a_kaii_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS14/02/220200150.「はう～、二人乗り？！kvS14/02/220200151.　いいないいなそれ～！kvS14/02/220200152.　圭一くんが運転して～、魅ぃちゃんが後ろで～！kvS14/02/220200153.　背中と胸がごっつんこ☆　はうはうぅ～♪」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -325,7 +328,7 @@ void main()
 			NULL, " With her chest against his back☆. Hau, hauu~♪.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300309.「～～～～～、さっ、先に行くよ！kvS14/03/220300310.　圭ちゃんは走っておいで、じゃっ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -338,7 +341,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(5, 2, "sprite/normal/re1a_bikkuri_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 2, "sprite/re1a_bikkuri_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS14/02/220200154.「ああっ？！kvS14/02/220200155.　魅ぃちゃん、待ってよ～～！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -389,7 +392,7 @@ void main()
 			NULL, "A happy time, when we're looking forward to tomorrow so much we can't sleep.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 6, "sprite/normal/si3_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 6, "sprite/si3_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ji1", 1000 );
 
 //詩音rvS14/06/220600292.「…あ、来た来た！kvS14/06/220600293.　こっちこっち～！」
@@ -409,8 +412,8 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(5, 6, "sprite/normal/si3_wink_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(3, 2, "sprite/normal/re1a_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_wink_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 2, "sprite/re1a_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/220200156.「やっほー、詩ぃちゃん♪kvS14/02/220200157.　今日もいい天気だね～！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
@@ -423,9 +426,9 @@ void main()
 	ClearMessage();
 
 	FadeAllBustshots( 200, TRUE );
-	ModDrawCharacter(5, 6, "sprite/normal/si3_wink_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_tohoho_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
-	ModDrawCharacter(4, 2, "sprite/normal/re1a_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_wink_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 3, "sprite/me1a_tohoho_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(4, 2, "sprite/re1a_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/220300311.「…今日の集まりには詩音は呼んでないはずだけど～？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -434,7 +437,7 @@ void main()
 			NULL, "\"...Maybe we shouldn't have invited Shion to today's gathering~?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 6, "sprite/normal/si3_tokui_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_tokui_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600294.「何を言ってるんですか。kvS14/06/220600295.沙都子の行くところ、保護者役のねーねーがいなくてどうしようっていうんですか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -447,7 +450,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(4, 4, "sprite/normal/sa1a_akireru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 4, "sprite/sa1a_akireru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //沙都子rvS14/04/220400264.「私だって呼びたくありませんでしたが、kvS14/04/220400265.…梨花のおしゃべりが、べらっと」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
@@ -459,7 +462,7 @@ void main()
 			NULL, " Rika went on and on about it.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 6, "sprite/normal/si3_huteki_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_huteki_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600296.「…沙都子の明日からの昼食は、にんじんのグラッセとピーマンの肉詰めと…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -468,7 +471,7 @@ void main()
 			NULL, "\"...Satoko, starting tomorrow your lunch is going to include glazed carrots and meat stuffed peppers...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 4, "sprite/normal/sa1a_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 4, "sprite/sa1a_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //沙都子rvS14/04/220400266.「ねっ、ねーねーがいるほうがあのっ、kvS14/04/220400267.こういう場はと、とても楽しくてございましてよ！kvS14/04/220400268.　をーっほっほっほ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
@@ -490,7 +493,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(3, 5, "sprite/normal/ri1_warai_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 5, "sprite/ri1_warai_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/220500520.「生きていれば、きっといいことがあるはずなのです。kvS14/05/220500521.ふぁいと、おーなのですよ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
@@ -502,7 +505,7 @@ void main()
 			NULL, " Fight on.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 4, "sprite/normal/sa1a_akireru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 4, "sprite/sa1a_akireru_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //沙都子rvS14/04/220400269.「…そう思うなら、kvS14/04/220400270.せめてニヤニヤ笑いながら言うのは止めてくださいませんことっ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
@@ -528,7 +531,7 @@ void main()
 			NULL, "I finally managed to reach the shrine, with my whole body drenched in sweat.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 4, "sprite/normal/sa1a_akireru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_akireru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/220400271.「…相変わらず時間にルーズな方ですわね、圭一さんは」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
@@ -537,7 +540,7 @@ void main()
 			NULL, "\"...Your punctuality is as lacking as ever, Keiichi-san.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 5, "sprite/normal/ri1_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 5, "sprite/ri1_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/220500522.「ワープロ以下の学習機能なのです、にぱ～♪」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
@@ -547,7 +550,7 @@ void main()
 	ClearMessage();
 
 	FadeAllBustshots( 200, TRUE );
-	ModDrawCharacter(5, 6, "sprite/normal/si3_tohoho_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_tohoho_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600297.「…なんで走ってきたんですか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -556,7 +559,7 @@ void main()
 			NULL, "\"...Why did you run all the way here?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 6, "sprite/normal/si3_wink_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_wink_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600298.「下半身強化？kvS14/06/220600299.　ねぇ、お姉？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -568,7 +571,7 @@ void main()
 			NULL, " Know what I mean, Sis?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_ikari_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_ikari_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300312.「な・ん・で・も・な・い・のっ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -577,7 +580,7 @@ void main()
 			NULL, "\"NOT AT ALL!!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 6, "sprite/normal/si3_yowaki_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_yowaki_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600300.「…何怒ってるんです？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -596,7 +599,7 @@ void main()
 			NULL, " Oh, Shion, is that barley tea you've got there?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 6, "sprite/normal/si3_tohoho_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_tohoho_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600301.「あ、それ…、kvS14/06/220600302.うどんだしですよ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -721,7 +724,7 @@ void main()
 			NULL, "On the way back home... Rika-chan cautiously called out to me, then smiled as she spoke up.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 5, "sprite/normal/ri1_niko_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 5, "sprite/ri1_niko_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS14/05/220500524.「――ボクが楽しく過ごせることが、羽入の一番望んでいたことなのです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
@@ -730,7 +733,7 @@ void main()
 			NULL, "\"...The thing Hanyuu wanted most was for me to have a fun, enjoyable life.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 5, "sprite/normal/ri1_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 5, "sprite/ri1_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS14/05/220500525.「だからボクは、これからも一生懸命、笑っていこうと思うのですよ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
@@ -785,7 +788,7 @@ void main()
 			NULL, " Go right ahead!!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 22, "sprite/normal/tie_2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 22, "sprite/tie_2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //知恵rvS14/22/221400003.「カレー万歳！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
@@ -794,7 +797,7 @@ void main()
 			NULL, "\"Hooray, curry!!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 22, "sprite/normal/tie_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 22, "sprite/tie_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //知恵rvS14/22/221400004.「――乾杯ッ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
@@ -890,7 +893,7 @@ void main()
 			NULL, " By the way, I heard from Mion that you're planning to go to nursing school?\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 6, "sprite/normal/si3_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/si3_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/220600303.「ええ、来年ね。kvS14/06/220600304.…ちょうどいい機会だし、頑張ってみますよ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -914,7 +917,7 @@ void main()
 			NULL, "...It was easy to imagine she was pursuing that path for Satoshi's sake.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 6, "sprite/normal/si3_def_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/si3_def_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/220600305.「まぁ、それも確かにありますよ。kvS14/06/220600306.でも、それだけじゃないです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -934,7 +937,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(4, 3, "sprite/normal/me1a_huteki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 3, "sprite/me1a_huteki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS14/03/220300315.「くっくっく！kvS14/03/220300316.　沙都子、気をつけなよ？kvS14/03/220300317.　さっさと病気を治さないと、いつかあんたの担当の看護師さんが詩音になるかもしれないよ～？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -950,8 +953,8 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_huteki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
-	ModDrawCharacter(5, 4, "sprite/normal/sa1a_hannbeso_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_huteki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_hannbeso_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //rそれを聞いて、沙都子の顔がムンクの叫びのように『ひぃぃいぃっ！！』とそれはもう派手に引きつった。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -959,7 +962,7 @@ void main()
 			NULL, "Hearing that, Satoko's face twisted to resemble that painting The Scream, as she let out a flashy \"Eeeeek!!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 4, "sprite/normal/sa1a_naku_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 4, "sprite/sa1a_naku_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //沙都子rvS14/04/220400274.「ふ、ふわぁぁあぁっ！！kvS14/04/220400275.　それは悪夢ですわっ！kvS14/04/220400276.　まさに生き地獄でございますわぁぁあぁっ～～！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
@@ -975,7 +978,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(5, 6, "sprite/normal/si3_ikari_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_ikari_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600308.「ちょっと、沙都子！kvS14/06/220600309.　それはどういう意味ですか、ああんっ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -987,7 +990,7 @@ void main()
 			NULL, " What's that supposed to mean? Huuh?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_wink_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_wink_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300318.「まぁ、ちょっとは冗談だって」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -996,7 +999,7 @@ void main()
 			NULL, "\"Come on, it's just a joke.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 6, "sprite/normal/si3_majime_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_majime_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600310.「かなり本気ってことでしょうがっ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1005,7 +1008,7 @@ void main()
 			NULL, "\"I'm being serious here!!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300319.「あっはっはっ！kvS14/03/220300320.　だいたい、詩音が看護師なんて無理無理！kvS14/03/220300321.　看護師ってのはね、そりゃもう難しい試験と実習を経て、責任重大な仕事を昼夜問わずに頑張らなきゃいけない大変な仕事で…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1021,7 +1024,7 @@ void main()
 			NULL, "After all, nurses have endure difficult exams and practical training. It's a hard job with a lot of responsibility, where you have to work hard day and night...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 6, "sprite/normal/si3_akuwarai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_akuwarai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600311.「大丈夫ですよ。kvS14/06/220600312.少なくともお姉よりは勉強も成績が上ですしね？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1033,7 +1036,7 @@ void main()
 			NULL, " I'm at least better at studying than you are, Sis.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_tohoho_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300322.「むっ？　なら、問題出すよ。kvS14/03/220300323.ズバリ、アメリカの首都は？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1045,7 +1048,7 @@ void main()
 			NULL, " What is the capital of America?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 6, "sprite/normal/si3_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/220600313.「ニューヨーク」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1054,7 +1057,7 @@ void main()
 			NULL, "\"New York.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(3, 3, "sprite/normal/me1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 3, "sprite/me1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS14/03/220300324.「げっ？！kvS14/03/220300325.　あ、あってる……！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1389,7 +1392,7 @@ void main()
 			NULL, "I think that's the best way for the Rika Furude you loved to go on living a life you can be proud of...", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(4, 6, "sprite/normal/si3_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/si3_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/220600314.「あ、やっと監督が来ましたよー！kvS14/06/220600315.　おーい！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
@@ -1402,8 +1405,8 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(5, 6, "sprite/normal/si3_wink_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(3, 4, "sprite/normal/sa1a_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_wink_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 4, "sprite/sa1a_warai_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS14/04/220400277.「一体なんでございますかねぇ？kvS14/04/220400278.　快気祝いにプレゼントなんて…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
@@ -1416,8 +1419,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-	ModDrawCharacter(5, 6, "sprite/normal/si3_odoroki_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(3, 4, "sprite/normal/sa1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/si3_odoroki_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 4, "sprite/sa1a_odoroki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音＆沙都子ro75.vS14/06/220600316|S14/04/220400279.「「……っ！」」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>＆<color=#fcdb77>沙都子</color>", NULL, "<color=#5ec69a>Shion</color> & <color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
