@@ -6,47 +6,53 @@ void main()
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 
-	DrawBustshot( 4, "sprite/normal/si1a_tohoho_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/normal/si1a_tohoho_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600263.「へ？　なんですかいきなり？」
-	PlaySE(4, "ps3/s14/06/210600263", 256, 64);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600263", 256, TRUE);
 	OutputLine(NULL, "「へ？　なんですかいきなり？」",
 			NULL, "\"Huh? What's this all of a sudden?\"", Line_Normal);
 	ClearMessage();
 
 //rちょっと目を丸くして詩音は首をかしげる。それを見て、梨花ちゃんはスプーンを置くと俺の言葉を継いで言った。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ちょっと目を丸くして詩音は首をかしげる。それを見て、梨花ちゃんはスプーンを置くと俺の言葉を継いで言った。",
 			NULL, "Shion's eyes opened a little wide and tilted her head to the side. Seeing that, Rika-chan sat down her spoon and continued from there.", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/si1a_tohoho_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	DrawBustshot( 3, "sprite/normal/ri2_def_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/normal/si1a_tohoho_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 5, "sprite/normal/ri2_def_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/210500517.「園崎系列のお店で働く、間宮リナという人のお話なのです」
-	PlaySE(4, "ps3/s14/05/210500517", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s14/05/210500517", 256, TRUE);
 	OutputLine(NULL, "「園崎系列のお店で働く、間宮リナという人のお話なのです」",
 			NULL, "\"This is about a woman named Rina Mamiya, who works at a Sonozaki affiliated store.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/si1a_majime_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/normal/si1a_majime_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //詩音rvS14/06/210600264.「園崎系列の店で…リナ？kvS14/06/210600265.　…知らないなー。kvS14/06/210600266.葛西は？」
-	PlaySE(4, "ps3/s14/06/210600264", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600264", 256, TRUE);
 	OutputLine(NULL, "「園崎系列の店で…リナ？",
 			NULL, "\"Sonozaki affiliated store? ...Rina?", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600265", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600265", 256, TRUE);
 	OutputLine(NULL, "　…知らないなー。",
 			NULL, " ...I don't know anything.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600266", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600266", 256, TRUE);
 	OutputLine(NULL, "葛西は？」",
 			NULL, " Kasai?\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 3, "sprite/normal/kasa_2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 15, "sprite/normal/kasa_2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //r葛西さんは少し考えるようにうつむく。やがて、口にしようかすまいか一瞬迷ったのちに、答えた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "葛西さんは少し考えるようにうつむく。やがて、口にしようかすまいか一瞬迷ったのちに、答えた。",
 			NULL, "Kasai-san thought it over for a moment. After seemingly getting lost on how to respond, he eventually answered.", Line_Normal);
 	ClearMessage();

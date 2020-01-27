@@ -7,122 +7,138 @@ void main()
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 
 //r幸い、知恵先生は俺から見て背中を向けている。それに気づいて俺はとっさに、机の中にしまってあったノートを取り出してメッセージを書き、詩音に見えるように掲げた。
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "幸い、知恵先生は俺から見て背中を向けている。それに気づいて俺はとっさに、机の中にしまってあったノートを取り出してメッセージを書き、詩音に見えるように掲げた。",
 			NULL, "Fortunately, Chie-sensei was facing away from me. As soon as I noticed that, I quickly pulled a notebook out of my desk, wrote down a message, and held it up toward Shion.", Line_Normal);
 	ClearMessage();
 
 //r曰く、『とにかく褒めろ！！』と。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "曰く、『とにかく褒めろ！！』と。",
 			NULL, "It said \"just praise it!!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/si3_yowaki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/normal/si3_yowaki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600095.「……か、カレーは…」
-	PlaySE(4, "ps3/s14/06/210600095", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600095", 256, TRUE);
 	OutputLine(NULL, "「……か、カレーは…」",
 			NULL, "\"...C-curry is...\"", Line_Normal);
 	ClearMessage();
 
 //知恵rvS14/22/211400031.「――カレーは？」
-	PlaySE(4, "ps3/s14/22/211400031", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 22, "ps3/s14/22/211400031", 256, TRUE);
 	OutputLine(NULL, "「——カレーは？」",
 			NULL, "\"...Curry is?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/si3_warai_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/normal/si3_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600096.「す、すばらしい食べ物です…。kvS14/06/210600097.人間の生み出した、文化の叡智です…！」
-	PlaySE(4, "ps3/s14/06/210600096", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600096", 256, TRUE);
 	OutputLine(NULL, "「す、すばらしい食べ物です…。",
 			NULL, "\"A-an excellent food product...", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600097", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600097", 256, TRUE);
 	OutputLine(NULL, "人間の生み出した、文化の叡智です…！」",
 			NULL, " Made from the wisdom of human culture...!\"", Line_Normal);
 	ClearMessage();
 
 //rやっとのことで、精一杯考えたのだろう賛辞を口にする詩音。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "やっとのことで、精一杯考えたのだろう賛辞を口にする詩音。",
 			NULL, "Shion thought hard about it, and then finally uttered that praise.", Line_Normal);
 	ClearMessage();
 
 //知恵rvS14/22/211400032.「――ええ、それは人類開闢以来不変の定理であります。kvS14/22/211400033.では、あなたのカレーに対する思いをぜひ聞かせてもらいましょう。kvS14/22/211400034.…はい、どうぞ」
-	PlaySE(4, "ps3/s14/22/211400032", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 22, "ps3/s14/22/211400032", 256, TRUE);
 	OutputLine(NULL, "「——ええ、それは人類開闢以来不変の定理であります。",
 			NULL, "\"...Indeed, it's one of the greatest inventions since the dawn of the human race.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/22/211400033", 256, 64);
+	ModPlayVoiceLS(4, 22, "ps3/s14/22/211400033", 256, TRUE);
 	OutputLine(NULL, "では、あなたのカレーに対する思いをぜひ聞かせてもらいましょう。",
 			NULL, " Then let's hear what you have to say about this curry.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/22/211400034", 256, 64);
+	ModPlayVoiceLS(4, 22, "ps3/s14/22/211400034", 256, TRUE);
 	OutputLine(NULL, "…はい、どうぞ」",
 			NULL, " ...Go on, now.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/si3_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/normal/si3_odoroki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600098.「んがっ？！kvS14/06/210600099.　え、えと、えと……！」
-	PlaySE(4, "ps3/s14/06/210600098", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600098", 256, TRUE);
 	OutputLine(NULL, "「んがっ？！",
 			NULL, "\"Ngh?!", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600099", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600099", 256, TRUE);
 	OutputLine(NULL, "　え、えと、えと……！」",
 			NULL, " Uh, uhhh...!\"", Line_Normal);
 	ClearMessage();
 
 //知恵rvS14/22/211400035.「…………」
-	PlaySE(4, "ps3/s14/22/211400035", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 22, "ps3/s14/22/211400035", 256, TRUE);
 	OutputLine(NULL, "「…………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/si3_yowaki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/normal/si3_yowaki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600100.「…あ、あう、あう、あう……っ！」
-	PlaySE(4, "ps3/s14/06/210600100", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600100", 256, TRUE);
 	OutputLine(NULL, "「…あ、あう、あう、あう……っ！」",
 			NULL, "\"...Ah, au au au...!\"", Line_Normal);
 	ClearMessage();
 
 //知恵rvS14/22/211400036.「…………」
-	PlaySE(4, "ps3/s14/22/211400036", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 22, "ps3/s14/22/211400036", 256, TRUE);
 	OutputLine(NULL, "「…………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/si3_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/normal/si3_odoroki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/VT4Ba_shion1001.「………マ、マスター、かか、カレーライス…、kvS14/06/VT4Ba_shion1002.大盛で、４枚…っ！」
-	PlaySE(4, "ps3/s14/06/vt4ba_shion1001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/vt4ba_shion1001", 256, TRUE);
 	OutputLine(NULL, "「………マ、マスター、かか、カレーライス…、",
 			NULL, "\"...I-it's master c-c-curry and rice...", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/vt4ba_shion1002", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/vt4ba_shion1002", 256, TRUE);
 	OutputLine(NULL, "大盛で、４枚…っ！」",
 			NULL, " Four large helpings...!\"", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "finish", 256, 64);
 	DrawScene("white", 250 );
-	DrawBustshot( 4, "sprite/normal/si3_odoroki_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 6, "sprite/normal/si3_odoroki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/gk3", 1000 );
 
 //r……とっさとはいえ、その意味不明な珍妙回答にクラス全員が『はい？？』とあっけに取られた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……とっさとはいえ、その意味不明な珍妙回答にクラス全員が『はい？？』とあっけに取られた。",
 			NULL, "...Even though the whole class was dumbfounded by that unusual answer, they all shouted \"Right??\"", Line_Normal);
 	ClearMessage();
 
 //rしかし、それはカレー好きには共通する何かの符牒なのか、知恵先生の機嫌は一気に良くなり、張り詰めていた空気がぱあっ、とゆるやかに変わっていく。そして、
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "しかし、それはカレー好きには共通する何かの符牒なのか、知恵先生の機嫌は一気に良くなり、張り詰めていた空気がぱあっ、とゆるやかに変わっていく。そして、",
 			NULL, "However, sensing some kind of kinship in a fellow curry lover, Chie-sensei's mood slowly started to improve and the tense atmosphere began to dissipate.", Line_Normal);
 	ClearMessage();
 
 //知恵rvS14/22/211400037.「――よろしい。kvS14/22/211400038.私の気のせいでしたね。kvS14/22/211400039.ではみなさん、楽しい昼食を」
-	PlaySE(4, "ps3/s14/22/211400037", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>Chie</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 22, "ps3/s14/22/211400037", 256, TRUE);
 	OutputLine(NULL, "「——よろしい。",
 			NULL, "\"...Very well.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/22/211400038", 256, 64);
+	ModPlayVoiceLS(4, 22, "ps3/s14/22/211400038", 256, TRUE);
 	OutputLine(NULL, "私の気のせいでしたね。",
 			NULL, " It was just my imagination.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/22/211400039", 256, 64);
+	ModPlayVoiceLS(4, 22, "ps3/s14/22/211400039", 256, TRUE);
 	OutputLine(NULL, "ではみなさん、楽しい昼食を」",
 			NULL, " Alright everyone, enjoy your lunch.\"", Line_Normal);
 	ClearMessage();
@@ -132,6 +148,7 @@ void main()
 	DrawSceneWithMask( "black", "right", 0, 0, 500 );
 
 //rそう言って、知恵先生はにっこりと微笑むと、教室を出て行った。その途端、地獄の戒めから解放された詩音がへなへな～、とその場にへたり込む。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう言って、知恵先生はにっこりと微笑むと、教室を出て行った。その途端、地獄の戒めから解放された詩音がへなへな～、とその場にへたり込む。",
 			NULL, "Having said that, Chie-sensei smiled and then made her way out of the classroom. The next moment, Shion was released from her hellish shackles and helplessly slumped to the floor.", Line_Normal);
 	ClearMessage();

@@ -6,63 +6,71 @@ void main()
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 
-	DrawBustshot( 4, "sprite/normal/si1a_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 6, "sprite/normal/si1a_majime_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //詩音rvS14/06/210600267.「…なんですか、いきなり」
-	PlaySE(4, "ps3/s14/06/210600267", 256, 64);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600267", 256, TRUE);
 	OutputLine(NULL, "「…なんですか、いきなり」",
 			NULL, "\"...What's this all of a sudden?\"", Line_Normal);
 	ClearMessage();
 
 //r不快な名前を聞いたようにあからさまに眉間にしわを寄せながら、詩音は訝しげに首をかしげる。梨花ちゃんはスプーンを置くと、俺の言葉を継いで言った。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "不快な名前を聞いたようにあからさまに眉間にしわを寄せながら、詩音は訝しげに首をかしげる。梨花ちゃんはスプーンを置くと、俺の言葉を継いで言った。",
 			NULL, "Shion furrowed her eyebrows and craned her neck after hearing an unpleasant name. Seeing that, Rika-chan sat down her spoon and continued from there.", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 5, "sprite/normal/si1a_majime_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	DrawBustshot( 3, "sprite/normal/ri2_def_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(5, 6, "sprite/normal/si1a_majime_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 5, "sprite/normal/ri2_def_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //梨花rvS14/05/210500518.「その鉄平の知人に、間宮リナという女性がいます。kvS14/05/210500519.…知りませんでしたか？」
-	PlaySE(4, "ps3/s14/05/210500518", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s14/05/210500518", 256, TRUE);
 	OutputLine(NULL, "「その鉄平の知人に、間宮リナという女性がいます。",
 			NULL, "\"There's an acquaintance of Teppei's, a woman named Rina Mamiya.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/05/210500519", 256, 64);
+	ModPlayVoiceLS(4, 5, "ps3/s14/05/210500519", 256, TRUE);
 	OutputLine(NULL, "…知りませんでしたか？」",
 			NULL, " ...Do you know her?\"", Line_Normal);
 	ClearMessage();
 
 //詩音rvS14/06/210600268.「間宮…リナ？kvS14/06/210600269.　…知らないなー。kvS14/06/210600270.それがどうしたんですか？」
-	PlaySE(4, "ps3/s14/06/210600268", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600268", 256, TRUE);
 	OutputLine(NULL, "「間宮…リナ？",
 			NULL, "\"Rina... Mamiya?", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600269", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600269", 256, TRUE);
 	OutputLine(NULL, "　…知らないなー。",
 			NULL, " ...I don't know anything.", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/06/210600270", 256, 64);
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600270", 256, TRUE);
 	OutputLine(NULL, "それがどうしたんですか？」",
 			NULL, " What about her?\"", Line_Normal);
 	ClearMessage();
 
 //圭一rvS14/01/210100670.「そいつ、園崎系列の店で働いているそうなんだけど…。kvS14/01/210100671.知ってるか？」
-	PlaySE(4, "ps3/s14/01/210100670", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100670", 256, TRUE);
 	OutputLine(NULL, "「そいつ、園崎系列の店で働いているそうなんだけど…。",
 			NULL, "\"She works at a Sonozaki affiliated store...", Line_WaitForInput);
-	PlaySE(4, "ps3/s14/01/210100671", 256, 64);
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100671", 256, TRUE);
 	OutputLine(NULL, "知ってるか？」",
 			NULL, " You don't know her?\"", Line_Normal);
 	ClearMessage();
 
 //詩音rvS14/06/210600271.「…葛西？」
-	PlaySE(4, "ps3/s14/06/210600271", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600271", 256, TRUE);
 	OutputLine(NULL, "「…葛西？」",
 			NULL, "\"...Kasai?\"", Line_Normal);
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-	DrawBustshot( 3, "sprite/normal/kasa_2_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModDrawCharacter(3, 15, "sprite/normal/kasa_2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //r詩音に尋ねられ、葛西さんは少し考えるようにうつむく。やがて、口にしようかすまいか一瞬迷ったのちに、答えた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "詩音に尋ねられ、葛西さんは少し考えるようにうつむく。やがて、口にしようかすまいか一瞬迷ったのちに、答えた。",
 			NULL, "When Shion asked, Kasai-san hung his head and thought about it for a moment. After seemingly getting lost on how to respond, he eventually answered.", Line_Normal);
 	ClearMessage();
