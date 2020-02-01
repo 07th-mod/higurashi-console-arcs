@@ -249,8 +249,8 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 5, "ps3/s14/05/210500491", 256, TRUE);
 	OutputLine(NULL, "「…みぃ。ボクには、先に教えてくれてもいいと思うのです。",
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/210500492", 256, TRUE);
 			NULL, "\"...Mii. It's okay to tell me first.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s14/05/210500492", 256, TRUE);
 	OutputLine(NULL, "内緒にしても、意味があるとは思えないのです…」",
 			NULL, " I don't think it makes any sense to keep secrets...\"", Line_Normal);
 	ClearMessage();
@@ -459,7 +459,8 @@ void main()
 	ClearMessage();
 
 //圭一rvS14/01/210100654.「…梨花ちゃん？」
-	PlaySE(4, "ps3/s14/01/210100654", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100654", 256, TRUE);
 	OutputLine(NULL, "「…梨花ちゃん？」",
 			NULL, "\"...Rika-chan?\"", Line_Normal);
 	ClearMessage();
@@ -728,11 +729,13 @@ void main()
 	ClearMessage();
 
 //r何かイチャモンでも付けられるのかと緊張していたマスターは、ホッとしたのか、大急ぎでカウンターの向こうへ下がっていった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "何かイチャモンでも付けられるのかと緊張していたマスターは、ホッとしたのか、大急ぎでカウンターの向こうへ下がっていった。",
 			NULL, "The host, who was clearly nervous about inadvertently saying something improper, looked relieved as he rushed to the other side of the counter.", Line_Normal);
 	ClearMessage();
 
 //r…あの、今言った『スイート』ってのは…なに？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…あの、今言った『スイート』ってのは…なに？",
 			NULL, "...Uh, that guy just said \"sweets\" right now... right?", Line_Normal);
 	ClearMessage();
