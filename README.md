@@ -17,9 +17,9 @@ Here's a [walkthrough](https://ibb.co/1Z463wp) for anyone who wants to know whic
 | Taraimawashi       | 100%     | 100%        | 100%    | 
 | Yoigoshi           | 100%     | 100%        | 100%    | 
 | Tokihogushi        | 100%     | 100%        | 100%    | 
-| Miotsukushi Omote  | 100%     | 100%        |  98%    | 
+| Miotsukushi Omote  | 100%     | 100%        | 100%    | 
 
-Translation of Miotsukushi Omote is complete.  Technical stuff has been sorted out and editing has begun. Still aiming for a February release!
+Miotsukushi Omote has been released!  The next arc will be Miotsukushi Ura, but I'm also planning to implement the extra fragments added in the console version of Matsuribayashi some time after MG releases Matsuri.
 
 
 
