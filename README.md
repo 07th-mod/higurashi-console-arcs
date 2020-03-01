@@ -6,6 +6,7 @@ Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arcs f
 
 Here's a [walkthrough](https://ibb.co/1Z463wp) for anyone who wants to know which choices in Yoigoshi lead to which endings.
 
+And here's a [walkthrough](https://ibb.co/mDX326V) for Miotsukushi Omote.
 
 ## Current Status
 
