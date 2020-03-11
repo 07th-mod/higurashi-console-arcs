@@ -19,8 +19,9 @@ And here's a [walkthrough](https://ibb.co/mDX326V) for Miotsukushi Omote.
 | Yoigoshi           | 100%     | 100%        | 100%    | 
 | Tokihogushi        | 100%     | 100%        | 100%    | 
 | Miotsukushi Omote  | 100%     | 100%        | 100%    | 
+| Miotsukushi Ura    |   4%     |   0%        |   0%    | 
 
-Miotsukushi Omote has been released!  The next arc will be Miotsukushi Ura, but I'm also planning to implement the extra fragments added in the console version of Matsuribayashi some time after MG releases Matsuri.
+Work on Miotsukushi Ura has begun. This is another long arc, so expect it to take a couple months. I'm also planning to implement the extra fragments added in the console version of Matsuribayashi some time after MG releases Matsuri.
 
 
 
