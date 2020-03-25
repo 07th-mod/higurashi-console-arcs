@@ -19,7 +19,7 @@ And here's a [walkthrough](https://ibb.co/mDX326V) for Miotsukushi Omote.
 | Yoigoshi           | 100%     | 100%        | 100%    | 
 | Tokihogushi        | 100%     | 100%        | 100%    | 
 | Miotsukushi Omote  | 100%     | 100%        | 100%    | 
-| Miotsukushi Ura    | 100%     |   0%        |   0%    | 
+| Miotsukushi Ura    | 100%     |   2%        |   0%    | 
 
 Work on Miotsukushi Ura has begun. This is another long arc, so expect it to take a couple months. I'm also planning to implement the extra fragments added in the console version of Matsuribayashi some time after MG releases Matsuri.
 
