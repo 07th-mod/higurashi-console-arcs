@@ -13,10 +13,8 @@ void main()
 
 //END (過去との絆)
 
+	DrawScene("white", 1000 );
 	PlayBGM(2, "hm01_03", 128, 0);
-
-	DrawScene("black", 1000 );
-
 	DrawScene("background/kukou1", 1000 );
 
 //秘書rvS14/00/VT4Bb_secA1001.「…先生、お時間です」
@@ -189,12 +187,9 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "dsse132", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
 
 //反町rvS14/00/VT4Bb_sorima1280.「…失礼。kvS14/00/VT4Bb_sorima1281.前の厚生大臣、千葉明彦先生ですね」
 	PlaySE(4, "ps3/s14/00/vt4bb_sorima1280", 256, 64);
@@ -206,7 +201,6 @@ void main()
 	ClearMessage();
 
 	PlayBGM( 1, "addse09", 128, 0 );
-
 	DrawScene("background/kukou1", 1000 );
 
 //千葉rvS14/00/VT4Bb_chiba1011.「何かね、君は？」
@@ -311,15 +305,11 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/kukou1", 1000 );
-
-	DrawScene("black", 1000 );
-
+	Negative( 500, TRUE );
+	Wait( 500 );
+	FadeFilm( 1000, FALSE );
+	DrawScene("black", 500 );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //千葉rvS14/00/VT4Bb_chiba1017.「……！」
@@ -349,10 +339,10 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm03_16", 128, 0);
-
-	DrawScene("background/kukou1", 1000 );
+	DrawScene("background/kukou1", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //千葉rvS14/00/VT4Bb_chiba1019.「……検事正ごときがつまらぬ嫌疑をかけてくるものだ。kvS14/00/VT4Bb_chiba1020.万一の時に逆告訴される覚悟はできているのか？」
 	PlaySE(4, "ps3/s14/00/vt4bb_chiba1019", 256, 64);
@@ -388,6 +378,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //千葉rvS14/00/VT4Bb_chiba1021.「――っ？！」
 	PlaySE(4, "ps3/s14/00/vt4bb_chiba1021", 256, 64);
@@ -408,6 +400,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse17", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //千葉rvS14/00/VT4Bb_chiba1022.「…な……！」
 	PlaySE(4, "ps3/s14/00/vt4bb_chiba1022", 256, 64);
@@ -425,6 +419,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse13", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //r反町の厳かな宣言を受けて、彼の後ろに控えていた部下ふたりが護衛たちを押しのけ、千葉の両側に回り込む。
 	OutputLine(NULL, "反町の厳かな宣言を受けて、彼の後ろに控えていた部下ふたりが護衛たちを押しのけ、千葉の両側に回り込む。",
@@ -437,13 +433,10 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
+	Wait( 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "suzume_lp", 128, 0 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 2000 );
 	DrawScene("background/sora", 1000 );
 
 //巴rvS14/28/VT4Bb_tomoe3270.「よいしょ…っと」
@@ -482,9 +475,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/re2a_bikkuri_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/re2a_bikkuri_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //レナrvS14/02/VT4Bb_rena1250.「み…南井さんっ？kvS14/02/VT4Bb_rena1251.　どうしたんですか、そのお怪我は？！」
 	PlaySE(4, "ps3/s14/02/vt4bb_rena1250", 256, 64);
@@ -503,8 +497,6 @@ void main()
 	OutputLine(NULL, "交通事故っていうか…まぁ、似たようなものよ」",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -528,9 +520,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/re2a_komaru_a2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ohaka_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/re2a_komaru_a2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS14/28/VT4Bb_tomoe3273.「それより…来てたのね。kvS14/28/VT4Bb_tomoe3274.今日は平日だけど、学校は大丈夫なの？」
 	PlaySE(4, "ps3/s14/28/vt4bb_tomoe3273", 256, 64);
@@ -660,8 +651,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそう言って巴は、墓前に向き直ると花立てに持ってきた花を飾り、線香に火をつけて手を合わせる。
@@ -704,16 +693,11 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm09_42", 128, 0);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
+	DrawBustshot( 4, "sprite/normal/tomo1a_warai2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ohaka_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/tomo1a_warai2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS14/28/VT4Bb_tomoe3291.「異動になったの。kvS14/28/VT4Bb_tomoe3292.しばらく茨城の、警察学校の先生に…ね」
 	PlaySE(4, "ps3/s14/28/vt4bb_tomoe3291", 256, 64);
@@ -741,10 +725,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
 	DrawScene("background/ke_keijika1", 1000 );
 
 //前野rvS14/00/VT4Bb_maeno1324.「ま、少し頭冷やして来い。kvS14/00/VT4Bb_maeno1325.そのうち呼び戻して、今回の貸しを倍にして返してもらうからな」
@@ -757,6 +739,7 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 250, TRUE );
 
 //r辞令を手渡しながらそう言った時の、前野の何ともいえぬ苦笑いが今でも思い出される。
 	OutputLine(NULL, "辞令を手渡しながらそう言った時の、前野の何ともいえぬ苦笑いが今でも思い出される。",
@@ -783,21 +766,16 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawBustshot( 4, "sprite/normal/huji_odoroki_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ke_shochou", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/huji_odoroki_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //藤田rvS14/31/VT4Bb_fujita1248.「…本当に、お辞めになるんですか」
 	PlaySE(4, "ps3/s14/31/vt4bb_fujita1248", 256, 64);
 	OutputLine(NULL, "「…本当に、お辞めになるんですか」",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -837,9 +815,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/huji_huan_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ke_shochou", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/huji_huan_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //藤田rvS14/31/VT4Bb_fujita1250.「山村さんと岡部さんは異動、山口管理官はけん責。kvS14/31/VT4Bb_fujita1251.堂島さんは警察学校の校長になるそうです。kvS14/31/VT4Bb_fujita1252.なのに、どうして山沖さんの辞表だけ受理されたんですか？kvS14/31/VT4Bb_fujita1253.　他の人は慰留されたってのに…」
 	PlaySE(4, "ps3/s14/31/vt4bb_fujita1250", 256, 64);
@@ -879,8 +856,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r外資系製薬会社の未認可薬が国内に持ち込まれて、流通先の医療機関ではその臨床実験が行われていた。
@@ -918,9 +893,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/huji_huan_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ke_shochou", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/huji_huan_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //山沖rvS14/30/VT4Bb_yamaoki1326.「確かに、その通りだ。kvS14/30/VT4Bb_yamaoki1327.だが…あれだけの損害をこうむって、こちら側では誰の首も飛ばなかったとしたら、政治家連中も面白く思わないだろう。kvS14/30/VT4Bb_yamaoki1328.このあたりで、少しは溜飲を下げておかないとな」
 	PlaySE(4, "ps3/s14/30/vt4bb_yamaoki1326", 256, 64);
@@ -983,17 +957,16 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/huji_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/huji_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "pou", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //藤田rvS14/31/VT4Bb_fujita1260.「…金は取るんですね」
 	PlaySE(4, "ps3/s14/31/vt4bb_fujita1260", 256, 64);
 	OutputLine(NULL, "「…金は取るんですね」",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1002,11 +975,11 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/ke2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/mado_odoroki_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/mado_odoroki_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/ke2", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //山沖rvS14/30/VT4Bb_yamaoki1335.「…おっ」
 	PlaySE(4, "ps3/s14/30/vt4bb_yamaoki1335", 256, 64);
@@ -1055,8 +1028,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rにこやかに白い歯を見せて、山沖は笑う。
@@ -1084,9 +1055,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/mado_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ke2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/mado_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //まどかrvS14/29/VT4Bb_madoka1220.「だったら私、今度お買い物に付き合ってあげますよ。kvS14/29/VT4Bb_madoka1221.確かに薫さんの服って、前から地味だと思っていたから、ちょうどいいかな。kvS14/29/VT4Bb_madoka1222.…今度の休み、空けておいてくださいよ？」
 	PlaySE(4, "ps3/s14/29/vt4bb_madoka1220", 256, 64);
@@ -1152,7 +1122,6 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse08", 256, 64);
-
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 //まどかrvS14/29/VT4Bb_madoka1227.「頑張っていきましょうね――パパ♪」
@@ -1171,10 +1140,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "kyupirn", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
 
 //r…………。
 	OutputLine(NULL, "…………。",
@@ -1182,10 +1149,10 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "bb", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ke_kakiuchi_02", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/ke_kakiuchi_02", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //変なおじさんrvS14/30/VT4Bb_yamaoki1343b.「ひいぃぃぃぃぃぃぃやあぁぁぁぁぁぁぁぁ！！！！！！！」
 	PlaySE(4, "ps3/s14/30/vt4bb_yamaoki1343b", 256, 64);
@@ -1208,13 +1175,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawBustshot( 4, "sprite/normal/re2a_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ohaka_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/re2a_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS14/02/VT4Bb_rena1265.「…先生ですか。kvS14/02/VT4Bb_rena1266.失礼な言い方かもしれませんが、とても似合っていると思いますよ」
 	PlaySE(4, "ps3/s14/02/vt4bb_rena1265", 256, 64);
@@ -1248,8 +1212,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rおかしそうに笑いながら、レナはその子の気持ちがわかる、と内心でうなずく。
@@ -1267,9 +1229,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/re2a_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ohaka_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/re2a_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS14/02/VT4Bb_rena1268.「…南井さん。kvS14/02/VT4Bb_rena1269.実は私…信じてくれないかもしれませんが、…渚ちゃんに会ったんです」
 	PlaySE(4, "ps3/s14/02/vt4bb_rena1268", 256, 64);
@@ -1300,8 +1261,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r…夢なら覚めないでと、懸命に願った。
@@ -1324,9 +1283,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/re2a_warai_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ohaka_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/re2a_warai_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS14/28/VT4Bb_tomoe3298.「レナさん…」
 	PlaySE(4, "ps3/s14/28/vt4bb_tomoe3298", 256, 64);
@@ -1386,10 +1344,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
 	DrawScene("black", 1000 );
 
 //r…花田を送検した後、事件の始末書などの書類整理に追われていた昨日の晩のことだ。
@@ -1402,9 +1357,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
+	DrawBustshot( 4, "sprite/normal/tomo1a_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ke_keijika1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/tomo1a_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //速水rvS14/00/VT4Bb_hayami1079.「…姫さんが脱出できたのは、どうやら後部座席のドアロックが壊れていたせいだな。kvS14/00/VT4Bb_hayami1080.フックが曲がった上に、ネジが外れていた。kvS14/00/VT4Bb_hayami1081.アマチュア整備士なら、一見では損傷に気づきづらい箇所の傷だ」
 	PlaySE(4, "ps3/s14/00/vt4bb_hayami1079", 256, 64);
@@ -1453,8 +1408,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r渚は、ロックのかかったドアを中から突き破ろうと、何度も体当たりをしたという。
@@ -1477,9 +1430,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/tomo1b_odoroki_b1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ke_keijika1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/tomo1b_odoroki_b1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS14/28/VT4Bb_tomoe3307.「…そんなことが、ありえるのですか？」
 	PlaySE(4, "ps3/s14/28/vt4bb_tomoe3307", 256, 64);
@@ -1570,13 +1522,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/minato_02", 1000 );
-
-	DrawBustshot( 4, "sprite/night/nagisa_ikari_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 500 );
+	DrawBustshot( 4, "sprite/night/nagisa_ikari_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/minato_02", 500 );
 
 //渚rvS14/35/VT4Bb_nagisa1077.『南井さん、後ろ！kvS14/35/VT4Bb_nagisa1078.　後ろのドアです！！kvS14/35/VT4Bb_nagisa1079.　ぶち破ってッ！！！』
 	PlaySE(4, "ps3/s14/35/vt4bb_nagisa1077", 256, 64);
@@ -1590,11 +1538,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r…そうか。
 	OutputLine(NULL, "…そうか。",
@@ -1617,20 +1562,19 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/ke_keijika1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/tomo1b_odoroki_b1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/tomo1b_odoroki_b1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/ke_keijika1", 250 );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //rはっ、と思い出して、…巴は息をのむ。
 	OutputLine(NULL, "はっ、と思い出して、…巴は息をのむ。",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
+	FadeFilm( 250, TRUE );
 
 //r垣内空港で、輸送機に突っ込んで体当たりを敢行しようとした時だ。
 	OutputLine(NULL, "垣内空港で、輸送機に突っ込んで体当たりを敢行しようとした時だ。",
@@ -1652,11 +1596,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
+	DrawBustshot( 4, "sprite/normal/re2a_warai_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ohaka_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/re2a_warai_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //レナrvS14/02/VT4Bb_rena1279.「…そうなんですか。kvS14/02/VT4Bb_rena1280.きっとそれ、…渚ちゃんだと思います。kvS14/02/VT4Bb_rena1281.なんとなくだけど、そんな気がします」
 	PlaySE(4, "ps3/s14/02/vt4bb_rena1279", 256, 64);
@@ -1682,8 +1624,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r…レナには、渚の死の真相を伝えていない。これからも伝える気はないし、伝えても何もいいことはないだろう。
@@ -1707,10 +1647,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "kaze_lp", 256, 64);
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 3000 );
 
 //渚rvS14/35/VT4Bb_nagisa1080.『……礼奈。kvS14/35/VT4Bb_nagisa1081.南井さん』
 	PlaySE(4, "ps3/s14/35/vt4bb_nagisa1080", 256, 64);
@@ -1749,10 +1687,8 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm10_79", 128, 0);
-
 	PlaySE(3, "se051", 256, 64);
-
-	DrawBustshot( 4, "sprite/normal/nagisa_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal-66/nagisa_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 2000, TRUE );
 
 //レナrvS14/02/VT4Bb_rena1283.「……。kvS14/02/VT4Bb_rena1284.南井さん…見えますか？」
 	PlaySE(4, "ps3/s14/02/vt4bb_rena1283", 256, 64);
@@ -1855,6 +1791,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //レナrvS14/02/VT4Bb_rena1289.「ごめんなさい…渚ちゃん、本当にごめんなさい…！！」
 	PlaySE(4, "ps3/s14/02/vt4bb_rena1289", 256, 64);
@@ -1886,6 +1824,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //レナrvS14/02/VT4Bb_rena1293.「……っ？！」
 	PlaySE(4, "ps3/s14/02/vt4bb_rena1293", 256, 64);
@@ -1934,10 +1874,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "se051", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 2000 );
 
 //渚rvS14/35/VT4Bb_nagisa1088.『…ありがとう、礼奈。kvS14/35/VT4Bb_nagisa1089.南井さん、ありがとう…』
 	PlaySE(4, "ps3/s14/35/vt4bb_nagisa1088", 256, 64);
@@ -1961,9 +1898,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/re2b_nande_b1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ohaka_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/re2b_nande_b1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS14/28/VT4Bb_tomoe3319.「……。kvS14/28/VT4Bb_tomoe3320.レナさん、これ…」
 	PlaySE(4, "ps3/s14/28/vt4bb_tomoe3319", 256, 64);
@@ -2007,17 +1943,16 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/re2a_hau_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/re2a_hau_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //レナrvS14/02/VT4Bb_rena1299.「……っ…！」
 	PlaySE(4, "ps3/s14/02/vt4bb_rena1299", 256, 64);
 	OutputLine(NULL, "「……っ…！」",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -2031,11 +1966,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 5, "sprite/normal/tomo1a_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/re2a_bikkuri_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ohaka_01", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tomo1a_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/re2a_bikkuri_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //レナrvS14/02/VT4Bb_rena1300.「これ…キキョウです。kvS14/02/VT4Bb_rena1301.渚ちゃんが、一番好きだった…」
 	PlaySE(4, "ps3/s14/02/vt4bb_rena1300", 256, 64);
@@ -2073,12 +2006,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
 	DrawScene("background/sora", 1000 );
 
 //r…………。
@@ -2135,22 +2063,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
 	DisableWindow();
-	SetValidityOfInput( FALSE );
-	Wait( 3000 );
-	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
-	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
 	Wait( 2000 );
-	DrawBustshot(6, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
-	Wait( 1000 );
-	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
-	DrawScene( "black", 3000 );
-	SetValidityOfInput( TRUE );
-
+	DrawScene("white", 3000 );
+	FadeOutBGM(2, 200, FALSE);
+	DrawScene("black", 3000 );
+	Wait( 2000 );
 }

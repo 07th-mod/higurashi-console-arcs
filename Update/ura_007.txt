@@ -13,13 +13,12 @@ void main()
 
 //#7 壊れた心
 
+	DrawScene("white", 1000 );
 	PlayBGM( 1, "suzume_lp", 128, 0 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/kimi_n1", 1000 );
-
+	DrawScene("background/kimi_n1", 250 );
 	PlaySE(3, "addse13", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_natsu1438.「ぃやぁああぁっっ！！kvS14/36/VT4Bb_natsu1439.　――はっ？！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1438", 256, 64);
@@ -47,7 +46,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	DrawScene("black", 1000 );
 
 //r荒い息を懸命に整えながら、胸を押さえてうずくまる。
@@ -93,7 +93,6 @@ void main()
 	ClearMessage();
 
 	DrawScene("background/kimi_n1", 1000 );
-
 	PlayBGM(2, "hm01_03", 128, 0);
 
 //rここは、…私の部屋。
@@ -270,11 +269,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "door", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "left", 0, 0, 500 );
 	DrawScene("background/sora", 1000 );
-
 	PlaySE(3, "kaze_lp", 256, 64);
 
 //r…朝独特のさわやかな風が吹き込んできて、まだ高くない太陽の光がまぶしい。
@@ -486,16 +482,13 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse17", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
+	DrawBustshot( 4, "sprite/normal/tou1a_hohoemi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/tou1a_hohoemi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	Wait( 500 );
 	DrawScene("black", 1000 );
+	FadeFilm( 250, TRUE );
 
 //r昨日、暁くんに約束したことを思い出して、…再び落胆する。
 	OutputLine(NULL, "昨日、暁くんに約束したことを思い出して、…再び落胆する。",
@@ -551,6 +544,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_natsu1457.「――よしっ」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1457", 256, 64);
@@ -574,9 +569,7 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(1, 200, TRUE);
-
 	FadeOutBGM(2, 200, FALSE);
 
 //夏美rvS14/36/VT4Bb_natsu1458.「さーてとっ、kvS14/36/VT4Bb_natsu1459.………あれ？」
@@ -617,11 +610,10 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/aka1", 1000 );
-
+	Negative( 500, TRUE );
+	DrawScene("background/aka1", 500 );
+	Wait( 250 );
+	FadeFilm( 1500, FALSE );
 	DrawScene("black", 1000 );
 
 //r思わず、…さっきの悪夢が、脳裏によみがえる。それを懸命に振り払って、私は足を踏み出し廊下を歩いていった。
@@ -629,16 +621,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM( 1, "addse14", 128, 0 );
-
+	DrawSceneWithMask( "white", "right", 0, 0, 500 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm06_27", 128, 0);
 
 //r考えすぎだ。
@@ -727,10 +713,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "left", 0, 0, 250 );
+	DrawScene("black", 250 );
 
 //夏美rvS14/36/VT4Bb_natsu1461.「――っ？！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1461", 256, 64);
@@ -807,24 +791,28 @@ void main()
 //rたん、…たん。k|y…ぺた。
 	OutputLine(NULL, "たん、…たん。",
 			NULL, "", Line_WaitForInput);
-	OutputLine(NULL, "|y…ぺた。",
+	PlaySE(3, "suzu_1", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
+	OutputLine(NULL, "…ぺた。",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	PlaySE(3, "suzu_1", 256, 64);
 
 //rたん、…たん、…たん。k|y…ぺた、…ぺた、…ぺた。
 	OutputLine(NULL, "たん、…たん、…たん。",
 			NULL, "", Line_WaitForInput);
-	OutputLine(NULL, "|y…ぺた、…ぺた、…ぺた。",
+	PlaySE(3, "suzu_1", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
+	PlaySE(4, "suzu_1", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
+	PlaySE(3, "suzu_1", 256, 64);
+	OutputLine(NULL, "…ぺた、…ぺた、…ぺた。",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	PlaySE(3, "suzu_1", 256, 64);
-
-	PlaySE(3, "suzu_1", 256, 64);
-
-	PlaySE(3, "suzu_1", 256, 64);
 
 //夏美rvS14/36/VT4Bb_natsu1463.「…………」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1463", 256, 64);
@@ -865,24 +853,30 @@ void main()
 //rたん。k|y…ぺた。
 	OutputLine(NULL, "たん。",
 			NULL, "", Line_WaitForInput);
-	OutputLine(NULL, "|y…ぺた。",
+	PlaySE(3, "suzu_1", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
+	OutputLine(NULL, "…ぺた。",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	PlaySE(3, "suzu_1", 256, 64);
 
 //rたん、…たん。k|y…ぺた、…ぺた。
 	OutputLine(NULL, "たん、…たん。",
 			NULL, "", Line_WaitForInput);
-	OutputLine(NULL, "|y…ぺた、…ぺた。",
+	PlaySE(3, "suzu_1", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
+	PlaySE(4, "suzu_1", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
+	OutputLine(NULL, "…ぺた、…ぺた。",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	PlaySE(3, "suzu_1", 256, 64);
-
-	PlaySE(3, "suzu_1", 256, 64);
-
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_natsu1464.「……っ…！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1464", 256, 64);
@@ -947,15 +941,10 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "jikuunosakeme", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
+	DrawBustshot( 4, "sprite/normal/na4a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/aka1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/na4a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm06_26", 128, 0);
 
 //夏美rvS14/36/VT4Bb_natsu1466.「……っ、ぁ……！！」
@@ -985,16 +974,12 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	PlaySE(3, "thisikuki", 256, 64);
-
-	DrawScene("background/ryuuketu1_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/na4a_okoru_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	PlaySE(4, "thisikuki", 256, 64);
+	DrawBustshot( 4, "sprite/normal/na4a_okoru_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawSceneWithMask( "background/ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //rその全身には真っ赤な血がべっとりとついて、今も、床に垂れ出してにちゃり、にちゃりと気持ち悪く粘った音を立てて、足跡をつけている…ッ！！
 	OutputLine(NULL, "その全身には真っ赤な血がべっとりとついて、今も、床に垂れ出してにちゃり、にちゃりと気持ち悪く粘った音を立てて、足跡をつけている…ッ！！",
@@ -1002,10 +987,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse07", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/ryuuketu2", 1000 );
+	DrawSceneWithMask( "background/ryuuketu2", "c", 0, 0, 500 );
 
 //夏美rvS14/36/VT4Bb_natsu1467.「――ひっ？！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1467", 256, 64);
@@ -1018,11 +1000,12 @@ void main()
 //rたん。k|y…ぺた。
 	OutputLine(NULL, "たん。",
 			NULL, "", Line_WaitForInput);
-	OutputLine(NULL, "|y…ぺた。",
+	PlaySE(3, "suzu_1", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
+	OutputLine(NULL, "…ぺた。",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	PlaySE(3, "suzu_1", 256, 64);
 
 //r全身を押しつぶすような恐怖と、不安に耐え切れずに私は、…あと数段を残す場所で足を、止めてしまう。
 	OutputLine(NULL, "全身を押しつぶすような恐怖と、不安に耐え切れずに私は、…あと数段を残す場所で足を、止めてしまう。",
@@ -1119,10 +1102,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "left", 0, 0, 250 );
+	DrawScene("black", 500 );
 
 //夏美rvS14/36/VT4Bb_natsu1470.「…………」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1470", 256, 64);
@@ -1166,6 +1147,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //r……まさか。
 	OutputLine(NULL, "……まさか。",
@@ -1203,14 +1186,10 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "se068", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/na4a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/aka1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/na4a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS14/36/VT4Bb_Bnatsu1031.「……そうよ。kvS14/36/VT4Bb_Bnatsu1032.さっきからそう、言ってるじゃない？」
 	PlaySE(4, "ps3/s14/36/vt4bb_bnatsu1031", 256, 64);
@@ -1222,19 +1201,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "jikuunosakeme", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/aka1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/na4a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	Negative( 500, TRUE );
+	Wait( 500 );
+	DrawScene("black", 500 );
+	FadeFilm( 500, TRUE );
+	Wait( 2000 );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //夏美r-vS14/36/VT4Bb_natsu1471.（――っ？！）
@@ -1253,9 +1224,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/na4a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/aka1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/na4a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS14/36/VT4Bb_Bnatsu1033.「くすくす…何を言っているの、夏美？kvS14/36/VT4Bb_Bnatsu1034.　これはあなたの『声』でしょう？」
 	PlaySE(4, "ps3/s14/36/vt4bb_bnatsu1033", 256, 64);
@@ -1279,6 +1249,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_Bnatsu1035.「身体を乗っ取った、とでも言いたいの？kvS14/36/VT4Bb_Bnatsu1036.　…くすくす、違うわね。kvS14/36/VT4Bb_Bnatsu1037.私はずっと、あなたの中に『いた』、あなた自身よ……！」
 	PlaySE(4, "ps3/s14/36/vt4bb_bnatsu1035", 256, 64);
@@ -1293,6 +1265,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "tataku", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美r-vS14/36/VT4Bb_natsu1475.（なっ…？！）
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1475", 256, 64);
@@ -1352,6 +1326,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美r-vS14/36/VT4Bb_natsu1477.（だ、黙れっっ！！）
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1477", 256, 64);
@@ -1381,6 +1357,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美r-vS14/36/VT4Bb_natsu1478.（うっ…！！）
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1478", 256, 64);
@@ -1407,6 +1385,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美r-vS14/36/VT4Bb_natsu1479.（そ、そんなっ…わ、私っ…！！）
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1479", 256, 64);
@@ -1466,6 +1446,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美r-vS14/36/VT4Bb_natsu1481.（い…嫌だ！kvS14/36/VT4Bb_natsu1482.　嫌だあぁぁあぁッッ！！）
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1481", 256, 64);
@@ -1494,13 +1476,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "bb", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 500 );
+	DrawScene("black", 1500 );
 	PlaySE(3, "down", 256, 64);
 
 //r私ははじかれたように身体を前に乗り出し、…そのあおりで足を踏み外して、滑り落ちるように下へと落ちた。
@@ -1509,10 +1486,10 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse13", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
+	DrawScene("black", 500 );
 
 //夏美rvS14/36/VT4Bb_natsu1484.「きゃぁあぁッッ！kvS14/36/VT4Bb_natsu1485.　――痛ぅッ！！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1484", 256, 64);
@@ -1533,8 +1510,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/kimi_g1", 1000 );
-
+	DrawSceneWithMask( "background/kimi_g1", "up", 0, 0, 1500 );
 	PlayBGM( 1, "suzume_lp", 128, 0 );
 
 //夏美rvS14/36/VT4Bb_natsu1486.「あ、…あれ…？」
@@ -1559,17 +1535,14 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse22", 256, 64);
-
+	DrawScene("white", 1000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	Wait( 1000 );
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "thisikuki", 256, 64);
-
-	DrawScene("background/ryuuketu1_01", 1000 );
-
+	DrawSceneWithMask( "background/ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	DrawScene("black", 1000 );
 
 //夏美rvS14/36/VT4Bb_natsu1487.「……ぎ…、ぎゃあぁぁぁあぁぁっっっ！！！」
@@ -1579,16 +1552,15 @@ void main()
 	ClearMessage();
 
 //c900.r…………。
-	OutputLine(NULL, "…………。",
+	OutputLine(NULL, "<color=#ff0000>…………。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "addse07", 256, 64);
-
-	DrawScene("background/ryuuketu2", 1000 );
-
+	DrawSceneWithMask( "background/ryuuketu2", "c", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlayBGM( 1, "semi_r", 128, 0 );
-
 	DrawBustshot( 4, "sprite/normal/na4a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS14/36/VT4Bb_Bnatsu1071.うふっ、うふふふふふふふふ。
@@ -1603,21 +1575,15 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 2000 );
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	Wait( 1000 );
+	DrawScene("black", 2000 );
+	Wait( 2000 );
 	PlayBGM(2, "hm01_03", 128, 0);
-
+	DrawBustshot( 5, "sprite/normal/tou1b_kanashimi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/chisa1_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tou1b_kanashimi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/chisa1_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //暁rvS14/39/VT4Bb_akira1195.「え？kvS14/39/VT4Bb_akira1196.　今日、なつ…公由、休みなのか？」
 	PlaySE(4, "ps3/s14/39/vt4bb_akira1195", 256, 64);
@@ -1647,10 +1613,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r思わず言い返そうとまくしたてかけた暁は、…ふと、違和感に気づいて首をかしげる。
@@ -1673,11 +1635,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 5, "sprite/normal/tou1a_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/chisa1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tou1a_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/chisa1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //暁rvS14/39/VT4Bb_akira1198.「どうした、チサ？」
 	PlaySE(4, "ps3/s14/39/vt4bb_akira1198", 256, 64);
@@ -1785,12 +1745,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("background/res_s1", 1000 );
 
 //rそれを千紗登が知ったのは、彼女の父の運転手の息子でもあり、諸々の事情で懇意にしている先輩の山科守と休日、食事に出掛けた時のことだった。
@@ -1803,9 +1758,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/chisa1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/res5", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/chisa1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //千紗登rvS14/37/VT4Bb_chisa1282.「…あれ？」
 	PlaySE(4, "ps3/s14/37/vt4bb_chisa1282", 256, 64);
@@ -1897,8 +1851,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r逆に手玉に取られていることを悟って、千紗登はふんっ、と鼻を鳴らしながら悪態をつく。
@@ -1930,9 +1882,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/chisa1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/res5", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/chisa1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //千紗登rvS14/37/VT4Bb_chisa1293.「やっぱさ、相性ってのは大事だよね。kvS14/37/VT4Bb_chisa1294.…こうやって守先輩と喋ってると、つくづくそう思うよ」
 	PlaySE(4, "ps3/s14/37/vt4bb_chisa1293", 256, 64);
@@ -1986,8 +1937,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r言葉とは裏腹に、千紗登の胸にあたたかいものが広がって、…嬉しくなる。
@@ -2005,9 +1954,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/chisa1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/res5", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/chisa1_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //千紗登rvS14/37/VT4Bb_chisa1299.「…お？kvS14/37/VT4Bb_chisa1300.　見てよ、守先輩」
 	PlaySE(4, "ps3/s14/37/vt4bb_chisa1299", 256, 64);
@@ -2036,21 +1984,11 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "jikuunosakeme", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/res5", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/chisa1_hau_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	Negative( 1000, TRUE );
+	Wait( 500 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	FadeFilm( 1000, TRUE );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //守rvS14/00/VT4Bb_mamoru1013.「綿流し…？」
@@ -2065,9 +2003,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "right", 0, 0, 250 );
 	DrawScene("black", 1000 );
 
 //rそしてパンフレットを半ば強引にひったくり、そこに書かれた内容をじっと見つめてから、…彼はそっと千紗登の肩を叩いて、『出よう』と促した。
@@ -2076,9 +2012,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "addse11", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("black", 1000 );
 
 //千紗登rvS14/37/VT4Bb_chisa1303.「え？kvS14/37/VT4Bb_chisa1304.　ど、どうしたの？kvS14/37/VT4Bb_chisa1305.　ちょっと？」
@@ -2093,9 +2027,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/chisa1_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/res_s1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/chisa1_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //守rvS14/00/VT4Bb_mamoru1014.「……。kvS14/00/VT4Bb_mamoru1015.中じゃ、ちょっと話しづらいと思ってな。kvS14/00/VT4Bb_mamoru1016.従業員に雛見沢出身がいるかもしれんし」
 	PlaySE(4, "ps3/s14/00/vt4bb_mamoru1014", 256, 64);
@@ -2126,9 +2059,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/chisa1_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/chisa1_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //千紗登rvS14/37/VT4Bb_chisa1307.「え…？！」
 	PlaySE(4, "ps3/s14/37/vt4bb_chisa1307", 256, 64);
@@ -2136,19 +2070,12 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1500 );
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm02_12", 128, 0);
-
-	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tou1b_kanashimi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/chisa1_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/tou1b_kanashimi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/chisa1_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawScene("background/ng_bijyutu", 1500 );
 
 //暁rvS14/39/VT4Bb_akira1204.「…それで？」
 	PlaySE(4, "ps3/s14/39/vt4bb_akira1204", 256, 64);
@@ -2214,9 +2141,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/tou1b_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/tou1b_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //暁rvS14/39/VT4Bb_akira1206.「っ…！」
 	PlaySE(4, "ps3/s14/39/vt4bb_akira1206", 256, 64);
@@ -2224,14 +2152,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //夏美rvS14/36/VT4Bb_natsu1488.「…………」
@@ -2241,22 +2163,21 @@ void main()
 	ClearMessage();
 
 //c900.r…聞こえる。
-	OutputLine(NULL, "…聞こえる。",
+	OutputLine(NULL, "<color=#ff0000>…聞こえる。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r千紗登ちゃんと暁くんが、私のことを話している。
-	OutputLine(NULL, "千紗登ちゃんと暁くんが、私のことを話している。",
+	OutputLine(NULL, "<color=#ff0000>千紗登ちゃんと暁くんが、私のことを話している。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rそして、その中には『雛見沢』の言葉が…入っていた。
-	OutputLine(NULL, "そして、その中には『雛見沢』の言葉が…入っていた。",
+	OutputLine(NULL, "<color=#ff0000>そして、その中には『雛見沢』の言葉が…入っていた。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm02_11", 128, 0);
 
 //夏美rvS14/36/VT4Bb_natsu1489.「ふふ、うふふふっ…」
@@ -2266,35 +2187,33 @@ void main()
 	ClearMessage();
 
 //c900.rああ、ばれちゃったんだね…雛見沢の祟りのこと。
-	OutputLine(NULL, "ああ、ばれちゃったんだね…雛見沢の祟りのこと。",
+	OutputLine(NULL, "<color=#ff0000>ああ、ばれちゃったんだね…雛見沢の祟りのこと。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rそして、私がその村の人間の、血を引いているってこと…。
-	OutputLine(NULL, "そして、私がその村の人間の、血を引いているってこと…。",
+	OutputLine(NULL, "<color=#ff0000>そして、私がその村の人間の、血を引いているってこと…。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r誰から聞いたんだろう。
-	OutputLine(NULL, "誰から聞いたんだろう。",
+	OutputLine(NULL, "<color=#ff0000>誰から聞いたんだろう。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rどうやって調べたんだろう。
-	OutputLine(NULL, "どうやって調べたんだろう。",
+	OutputLine(NULL, "<color=#ff0000>どうやって調べたんだろう。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r…まぁ、いいや。後で力ずくで、聞き出せばいいだけだし。
-	OutputLine(NULL, "…まぁ、いいや。後で力ずくで、聞き出せばいいだけだし。",
+	OutputLine(NULL, "<color=#ff0000>…まぁ、いいや。後で力ずくで、聞き出せばいいだけだし。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 5, "sprite/normal/tou1a_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/chisa1_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tou1a_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/chisa1_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //暁rvS14/39/VT4Bb_akira1207.「だ、だけどっ！kvS14/39/VT4Bb_akira1208.　夏美は雛見沢の隣の、興宮に住んでいたんだろ？kvS14/39/VT4Bb_akira1209.　だったら雛見沢とは直接、何も関係はないじゃないか！」
 	PlaySE(4, "ps3/s14/39/vt4bb_akira1207", 256, 64);
@@ -2334,9 +2253,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/tou1a_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/tou1a_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //暁rvS14/39/VT4Bb_akira1211.「なっ…！」
 	PlaySE(4, "ps3/s14/39/vt4bb_akira1211", 256, 64);
@@ -2359,10 +2279,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //夏美rvS14/36/VT4Bb_natsu1490.「――――」
@@ -2372,88 +2288,87 @@ void main()
 	ClearMessage();
 
 //c900.rなんで…？
-	OutputLine(NULL, "なんで…？",
+	OutputLine(NULL, "<color=#ff0000>なんで…？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rなんで千紗登ちゃん、そういうことを言って暁くんを怖がらせるの？
-	OutputLine(NULL, "なんで千紗登ちゃん、そういうことを言って暁くんを怖がらせるの？",
+	OutputLine(NULL, "<color=#ff0000>なんで千紗登ちゃん、そういうことを言って暁くんを怖がらせるの？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rそんな言い方して、私を怖いモノ扱いするの？
-	OutputLine(NULL, "そんな言い方して、私を怖いモノ扱いするの？",
+	OutputLine(NULL, "<color=#ff0000>そんな言い方して、私を怖いモノ扱いするの？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r…………。
-	OutputLine(NULL, "…………。",
+	OutputLine(NULL, "<color=#ff0000>…………。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rああ、なるほどね。
-	OutputLine(NULL, "ああ、なるほどね。",
+	OutputLine(NULL, "<color=#ff0000>ああ、なるほどね。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rやっとわかったよ。千紗登ちゃん、そう言って…私と暁くんの仲を、引き裂くつもりなんだね？
-	OutputLine(NULL, "やっとわかったよ。千紗登ちゃん、そう言って…私と暁くんの仲を、引き裂くつもりなんだね？",
+	OutputLine(NULL, "<color=#ff0000>やっとわかったよ。千紗登ちゃん、そう言って…私と暁くんの仲を、引き裂くつもりなんだね？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rあははははは、…わかってたよ。千紗登ちゃんが、暁くんのことを本当は、好きだったってこと。
-	OutputLine(NULL, "あははははは、…わかってたよ。千紗登ちゃんが、暁くんのことを本当は、好きだったってこと。",
+	OutputLine(NULL, "<color=#ff0000>あははははは、…わかってたよ。千紗登ちゃんが、暁くんのことを本当は、好きだったってこと。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rでも、知らないふりをしていたの。私。
-	OutputLine(NULL, "でも、知らないふりをしていたの。私。",
+	OutputLine(NULL, "<color=#ff0000>でも、知らないふりをしていたの。私。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rだって、まともに争ったら…私じゃ勝ち目ないでしょ？
-	OutputLine(NULL, "だって、まともに争ったら…私じゃ勝ち目ないでしょ？",
+	OutputLine(NULL, "<color=#ff0000>だって、まともに争ったら…私じゃ勝ち目ないでしょ？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r千紗登ちゃんのように明るくもないし、お金持ちでもないし。
-	OutputLine(NULL, "千紗登ちゃんのように明るくもないし、お金持ちでもないし。",
+	OutputLine(NULL, "<color=#ff0000>千紗登ちゃんのように明るくもないし、お金持ちでもないし。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rなにより、暁くんとは幼馴染でもないから、彼のことを知っている度合では比べものにもならない。
-	OutputLine(NULL, "なにより、暁くんとは幼馴染でもないから、彼のことを知っている度合では比べものにもならない。",
+	OutputLine(NULL, "<color=#ff0000>なにより、暁くんとは幼馴染でもないから、彼のことを知っている度合では比べものにもならない。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rだからね、…千紗登ちゃんには、最初から勝負を降りてもらうつもりだったの。
-	OutputLine(NULL, "だからね、…千紗登ちゃんには、最初から勝負を降りてもらうつもりだったの。",
+	OutputLine(NULL, "<color=#ff0000>だからね、…千紗登ちゃんには、最初から勝負を降りてもらうつもりだったの。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r私が、暁くんを好きだってことを、言葉ではなく態度で伝えて。
-	OutputLine(NULL, "私が、暁くんを好きだってことを、言葉ではなく態度で伝えて。",
+	OutputLine(NULL, "<color=#ff0000>私が、暁くんを好きだってことを、言葉ではなく態度で伝えて。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rいじらしさを演出して、…千紗登ちゃんが気を遣って、あるいは応援したくなるように、見せかけたの。
-	OutputLine(NULL, "いじらしさを演出して、…千紗登ちゃんが気を遣って、あるいは応援したくなるように、見せかけたの。",
+	OutputLine(NULL, "<color=#ff0000>いじらしさを演出して、…千紗登ちゃんが気を遣って、あるいは応援したくなるように、見せかけたの。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r相談しなかったのも、そのためだよ？…だって、口に出して言えば千紗登ちゃんも、私に言うかもしれないじゃない。
-	OutputLine(NULL, "相談しなかったのも、そのためだよ？…だって、口に出して言えば千紗登ちゃんも、私に言うかもしれないじゃない。",
+	OutputLine(NULL, "<color=#ff0000>相談しなかったのも、そのためだよ？…だって、口に出して言えば千紗登ちゃんも、私に言うかもしれないじゃない。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r自分も、暁くんのことが好きだって…。
-	OutputLine(NULL, "自分も、暁くんのことが好きだって…。",
+	OutputLine(NULL, "<color=#ff0000>自分も、暁くんのことが好きだって…。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/na5a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/aka1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/na5a_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //夏美rvS14/36/VT4Bb_natsu1491.「うふ…うふふふふふ…。kvS14/36/VT4Bb_natsu1492.あはははは……」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1491", 256, 64);
@@ -2465,77 +2380,65 @@ void main()
 	ClearMessage();
 
 //c900.rずるい？　汚い？
-	OutputLine(NULL, "ずるい？　汚い？",
+	OutputLine(NULL, "<color=#ff0000>ずるい？　汚い？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rうん、その通りだね。…でも、いま千紗登ちゃんが暁くんにやってることは、どうなのかな？
-	OutputLine(NULL, "うん、その通りだね。…でも、いま千紗登ちゃんが暁くんにやってることは、どうなのかな？",
+	OutputLine(NULL, "<color=#ff0000>うん、その通りだね。…でも、いま千紗登ちゃんが暁くんにやってることは、どうなのかな？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rそれって綺麗なの？
-	OutputLine(NULL, "それって綺麗なの？",
+	OutputLine(NULL, "<color=#ff0000>それって綺麗なの？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rそれってフェアなやり方なの？
-	OutputLine(NULL, "それってフェアなやり方なの？",
+	OutputLine(NULL, "<color=#ff0000>それってフェアなやり方なの？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r違うよね？
-	OutputLine(NULL, "違うよね？",
+	OutputLine(NULL, "<color=#ff0000>違うよね？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rずるいよね？
-	OutputLine(NULL, "ずるいよね？",
+	OutputLine(NULL, "<color=#ff0000>ずるいよね？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r汚いよね？
-	OutputLine(NULL, "汚いよね？",
+	OutputLine(NULL, "<color=#ff0000>汚いよね？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rだったら、…私もやっても、いいよね？
-	OutputLine(NULL, "だったら、…私もやっても、いいよね？",
+	OutputLine(NULL, "<color=#ff0000>だったら、…私もやっても、いいよね？</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/aka1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/na5a_okoru_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 250 );
+	DrawBustshot( 4, "sprite/normal/na5a_okoru_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/aka1", 250 );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //c900.rずるくて汚いこと、私もオマエに、やってもいいよねぇぇッッ？！
-	OutputLine(NULL, "ずるくて汚いこと、私もオマエに、やってもいいよねぇぇッッ？！",
+	OutputLine(NULL, "<color=#ff0000>ずるくて汚いこと、私もオマエに、やってもいいよねぇぇッッ？！</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "garasu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	DrawScene("white", 250 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tou1b_kanashimi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/chisa1_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/tou1b_kanashimi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+	DrawBustshot( 3, "sprite/normal/chisa1_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, FALSE );
+	DrawScene("background/ng_bijyutu", 250 );
 
 //夏美rvS14/36/VT4Bb_natsu1493.「―――暁くん」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1493", 256, 64);
@@ -2543,18 +2446,11 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tou1b_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/tou1b_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawBustshot( 3, "sprite/normal/chisa1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
 	PlaySE(3, "down2", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlayBGM(2, "hm06_26", 128, 0);
 
 //暁rvS14/39/VT4Bb_akira1212.「っ？！」
@@ -2571,75 +2467,59 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tou1b_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/chisa1_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawFilm( 2, 255, 255, 255, 255, 0, 500, TRUE );
 
 //c900.rぎょっ、と目を見開いて暁くんと『そいつ』は、美術室の出口に立っていた私を見返してくる。
-	OutputLine(NULL, "ぎょっ、と目を見開いて暁くんと『そいつ』は、美術室の出口に立っていた私を見返してくる。",
+	OutputLine(NULL, "<color=#ff0000>ぎょっ、と目を見開いて暁くんと『そいつ』は、美術室の出口に立っていた私を見返してくる。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rあはははは、…いかにも内緒の話をしていたって感じだね。
-	OutputLine(NULL, "あはははは、…いかにも内緒の話をしていたって感じだね。",
+	OutputLine(NULL, "<color=#ff0000>あはははは、…いかにも内緒の話をしていたって感じだね。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rだめだよ、千紗登ちゃん。
-	OutputLine(NULL, "だめだよ、千紗登ちゃん。",
+	OutputLine(NULL, "<color=#ff0000>だめだよ、千紗登ちゃん。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rそれを、暁くんにやっていいのは、私だけ。
-	OutputLine(NULL, "それを、暁くんにやっていいのは、私だけ。",
+	OutputLine(NULL, "<color=#ff0000>それを、暁くんにやっていいのは、私だけ。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rだから、どいて。
-	OutputLine(NULL, "だから、どいて。",
+	OutputLine(NULL, "<color=#ff0000>だから、どいて。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rそこを、どいて。
-	OutputLine(NULL, "そこを、どいて。",
+	OutputLine(NULL, "<color=#ff0000>そこを、どいて。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r…………。
-	OutputLine(NULL, "…………。",
+	OutputLine(NULL, "<color=#ff0000>…………。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r…ほら、さっさとどけよ。
-	OutputLine(NULL, "…ほら、さっさとどけよ。",
+	OutputLine(NULL, "<color=#ff0000>…ほら、さっさとどけよ。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rそこは、私の場所。
-	OutputLine(NULL, "そこは、私の場所。",
+	OutputLine(NULL, "<color=#ff0000>そこは、私の場所。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rオマエなんかに、渡してたまるかぁぁッッ！！！
-	OutputLine(NULL, "オマエなんかに、渡してたまるかぁぁッッ！！！",
+	OutputLine(NULL, "<color=#ff0000>オマエなんかに、渡してたまるかぁぁッッ！！！</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tou1b_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/chisa1_shinken_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	FadeFilm( 500, TRUE );
 
 //夏美rvS14/36/VT4Bb_natsu1494.「…ねぇ、千紗登ちゃん。kvS14/36/VT4Bb_natsu1495.どうして？」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1494", 256, 64);
@@ -2688,9 +2568,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/chisa1_sakebi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawBustshot( 3, "sprite/normal/chisa1_sakebi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //千紗登rvS14/37/VT4Bb_chisa1324.「ち、違っ…！」
 	PlaySE(4, "ps3/s14/37/vt4bb_chisa1324", 256, 64);
@@ -2699,18 +2580,12 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "daidageki", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/tou1b_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/chisa1_sakebi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawScene("white", 150 );
+	DrawBustshot( 5, "sprite/normal/tou1b_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+	DrawBustshot( 3, "sprite/normal/chisa1_sakebi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, FALSE );
+	DrawScene("background/ng_bijyutu", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_natsu1502.「嘘だッッっ！！！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1502", 256, 64);
@@ -2726,47 +2601,41 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //c900.r…だまされない。
-	OutputLine(NULL, "…だまされない。",
+	OutputLine(NULL, "<color=#ff0000>…だまされない。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rもう、だまされないよ。
-	OutputLine(NULL, "もう、だまされないよ。",
+	OutputLine(NULL, "<color=#ff0000>もう、だまされないよ。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rオマエの言うことなんて、何も信じない。
-	OutputLine(NULL, "オマエの言うことなんて、何も信じない。",
+	OutputLine(NULL, "<color=#ff0000>オマエの言うことなんて、何も信じない。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r言い訳なんか、聞くつもりもない。
-	OutputLine(NULL, "言い訳なんか、聞くつもりもない。",
+	OutputLine(NULL, "<color=#ff0000>言い訳なんか、聞くつもりもない。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rよくも、裏切ったな。
-	OutputLine(NULL, "よくも、裏切ったな。",
+	OutputLine(NULL, "<color=#ff0000>よくも、裏切ったな。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r私のことをだまして、よくも…よくもッッ！！
-	OutputLine(NULL, "私のことをだまして、よくも…よくもッッ！！",
+	OutputLine(NULL, "<color=#ff0000>私のことをだまして、よくも…よくもッッ！！</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "kyupirn", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //夏美rvS14/36/VT4Bb_natsu1503.「……っ！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1503", 256, 64);
@@ -2775,51 +2644,53 @@ void main()
 	ClearMessage();
 
 //c900.rその時。
-	OutputLine(NULL, "その時。",
+	OutputLine(NULL, "<color=#ff0000>その時。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r視界の隅に、暁くんのそばの絵筆立てに立てかけてあったペインティングナイフがきらり、と映る。
-	OutputLine(NULL, "視界の隅に、暁くんのそばの絵筆立てに立てかけてあったペインティングナイフがきらり、と映る。",
+	OutputLine(NULL, "<color=#ff0000>視界の隅に、暁くんのそばの絵筆立てに立てかけてあったペインティングナイフがきらり、と映る。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rああ、綺麗だね…それ。
-	OutputLine(NULL, "ああ、綺麗だね…それ。",
+	OutputLine(NULL, "<color=#ff0000>ああ、綺麗だね…それ。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rとっても固そうで。
-	OutputLine(NULL, "とっても固そうで。",
+	OutputLine(NULL, "<color=#ff0000>とっても固そうで。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r軽そうで、鋭そうで。
-	OutputLine(NULL, "軽そうで、鋭そうで。",
+	OutputLine(NULL, "<color=#ff0000>軽そうで、鋭そうで。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.r刺したら結構、深くまで刺さりそうだなぁ…。
-	OutputLine(NULL, "刺したら結構、深くまで刺さりそうだなぁ…。",
+	OutputLine(NULL, "<color=#ff0000>刺したら結構、深くまで刺さりそうだなぁ…。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rあぁ、それよりも喉を引き裂くのには、ぴったりかもね。
-	OutputLine(NULL, "あぁ、それよりも喉を引き裂くのには、ぴったりかもね。",
+	OutputLine(NULL, "<color=#ff0000>あぁ、それよりも喉を引き裂くのには、ぴったりかもね。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rきっと噴水みたいに、真っ赤な血が勢いよく噴き出すよ。
-	OutputLine(NULL, "きっと噴水みたいに、真っ赤な血が勢いよく噴き出すよ。",
+	OutputLine(NULL, "<color=#ff0000>きっと噴水みたいに、真っ赤な血が勢いよく噴き出すよ。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
 //c900.rそれで刺せば…斬り裂けば――ッ。
-	OutputLine(NULL, "それで刺せば…斬り裂けば——ッ。",
+	OutputLine(NULL, "<color=#ff0000>それで刺せば…斬り裂けば——ッ。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	Wait( 500 );
 	PlaySE(3, "addse05", 256, 64);
+	Wait( 500 );
 
 //夏美rvS14/36/VT4Bb_natsu1504.「……？！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1504", 256, 64);
@@ -2854,11 +2725,11 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/na5b_kanashii_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/na5b_kanashii_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/ng_bijyutu", 250 );
 	PlaySE(3, "addse05", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_natsu1505.「う…、う、ぐっ…？！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1505", 256, 64);
@@ -2867,9 +2738,9 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	PlaySE(3, "addse13", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 	DrawBustshot( 3, "sprite/normal/chisa1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //千紗登rvS14/37/VT4Bb_chisa1326.「っ、な、夏美っ？！」
@@ -2879,7 +2750,7 @@ void main()
 	ClearMessage();
 
 //c900.r『そいつ』はうずくまった私を気遣うように、必死の形相で駆けてくる。
-	OutputLine(NULL, "『そいつ』はうずくまった私を気遣うように、必死の形相で駆けてくる。",
+	OutputLine(NULL, "<color=#ff0000>『そいつ』はうずくまった私を気遣うように、必死の形相で駆けてくる。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
@@ -2907,9 +2778,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/chisa1_sakebi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawBustshot( 3, "sprite/normal/chisa1_sakebi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //千紗登rvS14/37/VT4Bb_chisa1327.「大丈夫なの、夏美？！kvS14/37/VT4Bb_chisa1328.　あんた顔、真っ青だよ…！kvS14/37/VT4Bb_chisa1329.　暁、先生呼んできてっ！！」
 	PlaySE(4, "ps3/s14/37/vt4bb_chisa1327", 256, 64);
@@ -2932,9 +2804,7 @@ void main()
 	ClearMessage();
 
 	PlayBGM( 1, "addse14", 128, 0 );
-
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	FadeOutBGM(1, 200, TRUE);
 
 //夏美rvS14/36/VT4Bb_natsu1508.「うぅ…っ、ぐっ…！！」
@@ -2942,8 +2812,6 @@ void main()
 	OutputLine(NULL, "「うぅ…っ、ぐっ…！！」",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -2953,7 +2821,7 @@ void main()
 	ClearMessage();
 
 //c900.r邪魔な暁がいなくなって、チサトは間抜けにも喉をさらして私のもとへ寄ってくる…。
-	OutputLine(NULL, "邪魔な暁がいなくなって、チサトは間抜けにも喉をさらして私のもとへ寄ってくる…。",
+	OutputLine(NULL, "<color=#ff0000>邪魔な暁がいなくなって、チサトは間抜けにも喉をさらして私のもとへ寄ってくる…。</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
@@ -2976,6 +2844,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_Bnatsu1078.さっさと来い！　チサトは私が殺してやるッ！！
 	PlaySE(4, "ps3/s14/36/vt4bb_bnatsu1078", 256, 64);
@@ -2983,9 +2853,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 3, "sprite/normal/chisa1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/chisa1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //夏美rvS14/36/VT4Bb_natsu1511.「……ぃ…っ…」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1511", 256, 64);
@@ -3006,18 +2875,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "hikaru", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 500, TRUE );
 	PlayBGM(2, "hm10_77", 128, 0);
-
+	DrawBustshot( 4, "sprite/normal/na2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/byo_oku1_01", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/na2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //千紗登rvS14/37/VT4Bb_chisa1331.「なら、…私も付き合うよ。kvS14/37/VT4Bb_chisa1332.私、あんたと一緒に、…地獄まで付き合ってあげる」
 	PlaySE(4, "ps3/s14/37/vt4bb_chisa1331", 256, 64);
@@ -3078,8 +2940,9 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 100, TRUE);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_natsu1515.「…わ、わた、し……ッ！kvS14/36/VT4Bb_natsu1516.　私、はっ……っ！！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1515", 256, 64);
@@ -3120,11 +2983,12 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ng_bijyutu", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
+	FadeFilm( 250, FALSE );
+	DrawScene("background/ng_bijyutu", 250 );
 	PlaySE(3, "addse13", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_natsu1517.「っ？！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1517", 256, 64);
@@ -3155,8 +3019,6 @@ void main()
 	OutputLine(NULL, "「はぁっ、はぁっ、はぁっ…！！」",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -3201,17 +3063,16 @@ void main()
 	ClearMessage();
 
 //c900.r殺したい殺したい殺したい殺したいコロシタイイイィィィッッ！！
-	OutputLine(NULL, "殺したい殺したい殺したい殺したいコロシタイイイィィィッッ！！",
+	OutputLine(NULL, "<color=#ff0000>殺したい殺したい殺したい殺したいコロシタイイイィィィッッ！！</color>",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ng_bijyutu", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/chisa1_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawScene("white", 150 );
+	DrawBustshot( 4, "sprite/normal/chisa1_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/ng_bijyutu", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //千紗登rvS14/37/VT4Bb_chisa1342.「な、夏美っ？！」
 	PlaySE(4, "ps3/s14/37/vt4bb_chisa1342", 256, 64);
@@ -3250,12 +3111,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "right", 0, 0, 250 );
+	DrawScene("black", 500 );
 
 //夏美rvS14/36/VT4Bb_natsu1523.「――ッ！！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1523", 256, 64);
@@ -3273,18 +3130,14 @@ void main()
 	ClearMessage();
 
 	PlayBGM( 1, "addse14", 128, 0 );
-
 	FadeOutBGM(2, 200, FALSE);
-
-	FadeOutBGM(1, 200, TRUE);
-
+	Wait( 2000 );
 	PlayBGM( 1, "semi", 128, 0 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/k_kouen1", 1000 );
-
+	DrawScene("white", 1000 );
+	DrawScene("background/k_kouen1", 250 );
 	PlaySE(3, "addse13", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美rvS14/36/VT4Bb_natsu1524.「はぁっ、はぁっ、はぁっ…！！」
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1524", 256, 64);
@@ -3308,11 +3161,10 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "addse05", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm08_34", 128, 0);
 
 //夏美rvS14/36/VT4Bb_natsu1525.「っ、ぐ、うぁがぁ…ッ！！」
@@ -3331,9 +3183,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/k_kouen1", 1000 );
-
+	DrawScene("background/k_kouen1", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美r-vS14/36/VT4Bb_natsu1526.（そ、そうだ…薬っ…！）
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1526", 256, 64);
@@ -3404,6 +3257,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //夏美r-vS14/36/VT4Bb_natsu1529.（あ…？）
 	PlaySE(4, "ps3/s14/36/vt4bb_natsu1529", 256, 64);
@@ -3416,6 +3271,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 0, 0, 0, 128, 0, 250, TRUE );
 	DrawBustshot( 4, "sprite/normal/tomo1a_huan_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //巴rvS14/28/VT4Bb_tomoe1520.「大丈夫、夏美さんっ？！」
@@ -3444,20 +3300,6 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
-
 	DisableWindow();
 	SetValidityOfInput( FALSE );
 	Wait( 3000 );
@@ -3469,5 +3311,5 @@ void main()
 	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
 	DrawScene( "black", 3000 );
 	SetValidityOfInput( TRUE );
-
+	FadeFilm( 250, TRUE );
 }
