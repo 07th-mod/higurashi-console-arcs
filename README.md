@@ -2,11 +2,11 @@
 
 This patch aims to eventually port all the arcs from the PS3 version of Higurashi to Mangagamer's Steam release of Higurashi.  This is a large task and it will take a long time to port them all, so each arc will be rolled out one at a time.
 
-Here's a [flowchart](https://ibb.co/dTRmmb) that explains where all these arcs fit in with the main series and the recommended reading order.
+Here's a [flowchart](http://07th-mod.com/wiki/Higurashi/img/flow.png) that explains where all these arcs fit in with the main series and the recommended reading order.
 
-Here's a [walkthrough](https://ibb.co/1Z463wp) for anyone who wants to know which choices in Yoigoshi lead to which endings.
+Here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-yoig.png) for anyone who wants to know which choices in Yoigoshi lead to which endings.
 
-And here's a [walkthrough](https://ibb.co/mDX326V) for Miotsukushi Omote.
+And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg) for Miotsukushi Omote.
 
 ## Current Status
 
