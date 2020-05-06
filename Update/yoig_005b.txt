@@ -1057,30 +1057,40 @@ void main()
 			NULL, "After thinking it over, I called out to Towada-san.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
-	char Choice4[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		Choice4[0] = "Shall I get you a blanket?";
-		Choice4[1] = "Would you like some tea?";
-	}
-	else
-	{
-		Choice4[0] = "毛布でも出そうか？";
-		Choice4[1] = "お茶でもいれようか？";
-	}
-
-	Select( 2, Choice4 );
-	DisableWindow();
-	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
-	if (LoadValueFromLocalWork( SelectResult ) == 0)
-	{
+	if (GetGlobalFlag(GChoiceMode) == 0) {
 		SetGlobalFlag(GConsoleChoice, 0);
 	}
 	else
 	{
-		SetGlobalFlag(GConsoleChoice, 1);
-	}
+		if (GetGlobalFlag(GChoiceMode) == 2) {
+			DrawBustshotWithFiltering( 6, "2choices_3", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		else {
+			DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		char Choice4[2];
 
+		if(GetGlobalFlag(GLanguage) == 1)
+		{
+			Choice4[0] = "Shall I get you a blanket?";
+			Choice4[1] = "Would you like some tea?";
+		}
+		else
+		{
+			Choice4[0] = "毛布でも出そうか？";
+			Choice4[1] = "お茶でもいれようか？";
+		}
+
+		Select( 2, Choice4 );
+		DisableWindow();
+		FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+		if (LoadValueFromLocalWork( SelectResult ) == 0)
+		{
+			SetGlobalFlag(GConsoleChoice, 0);
+		}
+		else
+		{
+			SetGlobalFlag(GConsoleChoice, 1);
+		}
+	}
 }

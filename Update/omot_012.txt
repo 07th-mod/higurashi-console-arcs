@@ -496,23 +496,34 @@ void main()
 			NULL, "...Okay, so help me God! A man's gotta have fighting spirit!!", Line_Normal);
 	ClearMessage();
 
-	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
-	char OmoteChoice11[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		OmoteChoice11[0] = "Left.";
-		OmoteChoice11[1] = "Right.";
+	if (GetGlobalFlag(GChoiceMode) == 0) {
+		SetGlobalFlag(GConsoleChoice, 0);
 	}
 	else
 	{
-		OmoteChoice11[0] = "左";
-		OmoteChoice11[1] = "右";
-	}
+		if (GetGlobalFlag(GChoiceMode) == 2) {
+			DrawBustshotWithFiltering( 6, "2choices_0", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		else {
+			DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		char OmoteChoice11[2];
 
-	Select( 2, OmoteChoice11 );
-	DisableWindow();
-	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+		if(GetGlobalFlag(GLanguage) == 1)
+		{
+			OmoteChoice11[0] = "Left.";
+			OmoteChoice11[1] = "Right.";
+		}
+		else
+		{
+			OmoteChoice11[0] = "左";
+			OmoteChoice11[1] = "右";
+		}
+
+		Select( 2, OmoteChoice11 );
+		DisableWindow();
+		FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+	}
 
 //圭一rvS14/01/210101094.「善でも悪でもいいッ！kvS14/01/210101095.　俺に、力をぉぉぉおぉ――っっ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }

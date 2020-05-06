@@ -2314,30 +2314,39 @@ void main()
 			NULL, "So, I...", Line_Normal);
 	ClearMessage();
 
-	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
-	char OmoteChoice1[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		OmoteChoice1[0] = "Announce \"It was me\"";
-		OmoteChoice1[1] = "Offer Shion advice";
-	}
-	else
-	{
-		OmoteChoice1[0] = "「俺です」と名乗りです";
-		OmoteChoice1[1] = "詩音にアドバイスを送る";
-	}
-
-	Select( 2, OmoteChoice1 );
-	DisableWindow();
-	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
-	if (LoadValueFromLocalWork( SelectResult ) == 0)
-	{
+	if (GetGlobalFlag(GChoiceMode) == 0) {
 		SetGlobalFlag(GConsoleChoice, 0);
 	}
 	else
 	{
-		SetGlobalFlag(GConsoleChoice, 1);
-	}
+		if (GetGlobalFlag(GChoiceMode) == 2) {
+			DrawBustshotWithFiltering( 6, "2choices_0", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		else {
+			DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		char OmoteChoice1[2];
 
+		if(GetGlobalFlag(GLanguage) == 1) 
+		{
+			OmoteChoice1[0] = "Announce \"It was me\"";
+			OmoteChoice1[1] = "Offer Shion advice";
+		}
+		else 
+		{
+			OmoteChoice1[0] = "「俺です」と名乗りです";
+			OmoteChoice1[1] = "詩音にアドバイスを送る";
+		}
+
+		Select( 2, OmoteChoice1 );
+		DisableWindow();
+		FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+		if (LoadValueFromLocalWork( SelectResult ) == 0) 
+		{
+			SetGlobalFlag(GConsoleChoice, 0);
+		}
+		else {
+			SetGlobalFlag(GConsoleChoice, 1);
+		}
+	}
 }
