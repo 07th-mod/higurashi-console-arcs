@@ -20,8 +20,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ryuuketu2", 1000 );
-
+	DrawSceneWithMask( "background/ryuuketu2", "c", 0, 0, 1000 );
 	PlayBGM(2, "hm06_26", 128, 0);
 
 //夏美rvS20/36/VTK2_natsumi2007.「…あ…」
@@ -74,6 +73,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawFilm( 2, 255, 0, 0, 128, 0, 150, TRUE );
 	DrawScene("background/ng_kyo", 1000 );
 
 //rその背中を見送った私は、…ふと足元に転がったハサミに気づいて、それを拾い上げた。
@@ -97,6 +97,9 @@
 	OutputLine(NULL, "だから、それを返そうと思っただけなんだけど…。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
+
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 
 //男子生徒rvS20/00/VTK2_StuMa2001.「――ひっ、ひぃぃっ？！」
 	PlaySE(4, "ps3/s20/00/vtk2_stuma2001", 256, 64);
@@ -140,16 +143,16 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ng_kyo", 1000 );
+	FadeFilm( 2000, TRUE );
 
 //rぼんやりと自分の手をしげしげと眺めているうち、ようやく真っ白になっていた頭に彩りが戻り始めて、k|y…それから急に、全身ががたがたと震えだす。
 	OutputLine(NULL, "ぼんやりと自分の手をしげしげと眺めているうち、ようやく真っ白になっていた頭に彩りが戻り始めて、",
 			NULL, "", Line_WaitForInput); 
-	OutputLine(NULL, "|y…それから急に、全身ががたがたと震えだす。",
+	PlayBGM( 1, "semi_r", 128, 0 );
+	OutputLine(NULL, "…それから急に、全身ががたがたと震えだす。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	PlayBGM( 1, "semi_r", 128, 0 );
 
 //r…私が、やったの？
 	OutputLine(NULL, "…私が、やったの？",
@@ -167,11 +170,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/ng_kyo", 1000 );
-
-	DrawScene("background/ng_kyo", 1000 );
-
+	Negative( 1000, TRUE );
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //夏美rvS20/36/VTK2_natsumi2010.「…あ…！」
@@ -200,9 +199,11 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	ShakeScreen( 1, 15, 15, 2, 0, );
+
 //夏美rvS20/36/VTK2_natsumi2011.「ち…ちがっ…！」|y
 	PlaySE(4, "ps3/s20/36/vtk2_natsumi2011", 256, 64);
-	OutputLine(NULL, "「ち…ちがっ…！」|y",
+	OutputLine(NULL, "「ち…ちがっ…！」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
@@ -272,9 +273,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/ng_kyo", 1000 );
-
+	FadeFilm( 150, TRUE );
 	PlaySE(3, "door", 256, 64);
 
 //rその時、救急箱を手に入れてきた女子が保健の先生を伴って、中に飛び込んでくる。
@@ -324,7 +323,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ng_kyo", 1000 );
+	DrawFilm( 2, 255, 0, 0, 64, 0, 250, TRUE );
 
 //r…違う。
 	OutputLine(NULL, "…違う。",
@@ -341,7 +340,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ng_kyo", 1000 );
+	DrawFilm( 2, 255, 0, 0, 96, 0, 250, TRUE );
 
 //r私、悪くない！
 	OutputLine(NULL, "私、悪くない！",
@@ -353,24 +352,13 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ng_kyo", 1000 );
+	DrawFilm( 2, 255, 0, 0, 128, 0, 250, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r私の話を聞いてよぉぉぉッッ！！！|y
-	OutputLine(NULL, "私の話を聞いてよぉぉぉッッ！！！|y",
+	OutputLine(NULL, "私の話を聞いてよぉぉぉッッ！！！",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );
@@ -382,6 +370,7 @@
 	Wait( 1000 );
 	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
 	DrawScene( "black", 3000 );
+	FadeFilm( 250, TRUE );
 	SetValidityOfInput( TRUE );
 
 }

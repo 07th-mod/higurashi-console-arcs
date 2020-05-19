@@ -14,7 +14,6 @@
 //G5 新学期、そして
 
 	DrawScene("background/sora", 1000 );
-
 	PlayBGM( 1, "suzume_lp", 128, 0 );
 
 //夏美r-vS20/36/VTK2_natsumi2001.（…こんな、晴れやかな気分で空を見上げたのは何年ぶりかな）
@@ -53,9 +52,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM( 1, "addse21", 128, 0 );
 
 //r玄関を出て、学校までの道をてくてくと進みながら…胸に手を当てて、鼓動を確かめる。
@@ -79,9 +76,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/koudou", 1000 );
-
+	DrawSceneWithMask( "background/koudou", "right", 0, 0, 500 );
 	PlayBGM( 1, "suzume_lp", 128, 0 );
 
 //女子生徒rvS20/00/VTK2_StuFa2001.「…あれ？kvS20/00/VTK2_StuFa2002.　ひょっとして、あの子…」
@@ -108,9 +103,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("background/aka1", 1000 );
-
 	PlayBGM(2, "hm06_27", 128, 0);
 
 //r…少し前までの私にとって、そんな『ノイズ』は何よりも耐えがたい苦痛だった。
@@ -171,14 +164,14 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/koudou", 1000 );
+	DrawSceneWithMask( "background/koudou", "down", 0, 0, 500 );
 
 //r周りの人たちは、特に意識して私を見ているわけではない。
 	OutputLine(NULL, "周りの人たちは、特に意識して私を見ているわけではない。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/koudou", 1000 );
+	DrawFilm( 2, 255, 255, 255, 255, 0, 500, TRUE );
 
 //rそして、たとえ見ていても私がそれに関心を寄せなければ、ただの背景物だ。
 	OutputLine(NULL, "そして、たとえ見ていても私がそれに関心を寄せなければ、ただの背景物だ。",
@@ -201,6 +194,7 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 250, TRUE );
 
 //rそう思えばいいだけ。
 	OutputLine(NULL, "そう思えばいいだけ。",
@@ -212,6 +206,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawFilm( 2, 255, 0, 0, 64, 0, 250, TRUE );
 	DrawScene("background/koudou", 1000 );
 
 //夏美rvS20/36/VTK2_natsumi2006.「あはは…あははははっ…」
@@ -270,7 +265,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/koudou", 1000 );
+	DrawFilm( 2, 255, 0, 0, 128, 0, 250, TRUE );
 
 //rそれでいい。
 	OutputLine(NULL, "それでいい。",
@@ -287,20 +282,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
-
 	DisableWindow();
 	SetValidityOfInput( FALSE );
 	Wait( 3000 );
@@ -311,6 +292,7 @@
 	Wait( 1000 );
 	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
 	DrawScene( "black", 3000 );
+	FadeFilm( 250, TRUE );
 	SetValidityOfInput( TRUE );
 
 }

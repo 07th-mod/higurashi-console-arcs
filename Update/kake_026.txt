@@ -14,7 +14,6 @@
 //D6 戦勝会にて
 
 	DrawScene("background/ryoutei2_01", 1000 );
-
 	PlayBGM(2, "hm06_28", 128, 0);
 
 //夏美r-vS20/36/VTK1_natsumi1001.（…何が、そんなに愉快なんだろう）
@@ -122,7 +121,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_01", 1000 );
+	DrawSceneWithMask( "background/rouka1_01", "right", 0, 0, 500 );
 
 //夏美rvS20/36/VTK1_natsumi1002.「…はぁ」
 	PlaySE(4, "ps3/s20/36/vtk1_natsumi1002", 256, 64);
@@ -155,9 +154,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
 
 //夏美の母rvS20/00/VTK1_natsumiM1001.「…雛見沢から立ち退く家には、結構な補償金が国からあてがわれるそうよ。kvS20/00/VTK1_natsumiM1002.それこそちょっとした都市部でも、一戸建ての家が持てるくらいの」
 	PlaySE(4, "ps3/s20/00/vtk1_natsumim1001", 256, 64);
@@ -243,7 +241,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_01", 1000 );
+	DrawSceneWithMask( "background/rouka1_01", "down", 0, 0, 250 );
 
 //rそして今夜のことで、その思いは『嫌い』に大きく傾きつつあった。
 	OutputLine(NULL, "そして今夜のことで、その思いは『嫌い』に大きく傾きつつあった。",
@@ -267,8 +265,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	DrawFilm( 2, 255, 255, 255, 255, 0, 250, TRUE );
 	DrawScene("background/y_damu2", 1000 );
 
 //rダム建設現場で、そこの現場監督を務めていた人が作業員たちに惨殺されて、…バラバラ死体となって見つかった。
@@ -296,7 +294,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "down", 0, 0, 250 );
+	FadeFilm( 250, TRUE );
 
 //夏美rvS20/36/VTK1_natsumi1006.「でも、…どうして、そこまで喜べるのかな。kvS20/36/VTK1_natsumi1007.自分たちさえよければ、誰かは不幸になってもいいの…？」
 	PlaySE(4, "ps3/s20/36/vtk1_natsumi1006", 256, 64);
@@ -356,7 +355,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ryuuketu1_01", 1000 );
+	DrawSceneWithMask( "background/ryuuketu1", "aa", 0, 0, 250 );
 
 //r殺されたんだ。
 	OutputLine(NULL, "殺されたんだ。",
@@ -378,7 +377,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawScene("black", 500 );
 
 //rなのに…それなのに、この人たちは…。
 	OutputLine(NULL, "なのに…それなのに、この人たちは…。",
@@ -416,7 +415,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_01", 1000 );
+	DrawSceneWithMask( "background/rouka1_01", "down", 0, 0, 250 );
 
 //夏美rvS20/36/VTK1_natsumi1011.「…バカみたい」
 	PlaySE(4, "ps3/s20/36/vtk1_natsumi1011", 256, 64);
@@ -475,7 +474,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "down", 0, 0, 250 );
 
 //rさかんに言い募る郷土愛と、仲間意識。
 	OutputLine(NULL, "さかんに言い募る郷土愛と、仲間意識。",
@@ -492,16 +491,16 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_01", 1000 );
+	DrawScene("background/rouka1_01", 150 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //夏美rvS20/36/VTK1_natsumi1013.「…っ…」|y
 	PlaySE(4, "ps3/s20/36/vtk1_natsumi1013", 256, 64);
-	OutputLine(NULL, "「…っ…」|y",
+	OutputLine(NULL, "「…っ…」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/rouka1_01", 1000 );
-
+	DrawFilm( 2, 255, 0, 0, 128, 0, 500, TRUE );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //r…頭が、痛い。
@@ -519,20 +518,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
-
 	DisableWindow();
 	SetValidityOfInput( FALSE );
 	Wait( 3000 );
@@ -543,6 +528,7 @@
 	Wait( 1000 );
 	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
 	DrawScene( "black", 3000 );
+	FadeFilm( 250, TRUE );
 	SetValidityOfInput( TRUE );
 
 }

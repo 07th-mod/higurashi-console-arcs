@@ -14,7 +14,6 @@
 //M4 失敗の報復
 
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm10_59", 128, 0);
 
 //r…どうやってここにたどり着いたのか、もう覚えていない。
@@ -57,7 +56,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "right", 0, 0, 500 );
 
 //r私は手ごろな芝生を見つけて腰をおろし、…そのままごろん、と寝そべって天を仰ぐ。
 	OutputLine(NULL, "私は手ごろな芝生を見つけて腰をおろし、…そのままごろん、と寝そべって天を仰ぐ。",
@@ -80,6 +79,8 @@
 	PlaySE(4, "ps3/s20/09/vtk2_takano2051", 256, 64);
 	OutputLine(NULL, "「…っくそ…！",
 			NULL, "", Line_WaitForInput); 
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlaySE(4, "ps3/s20/09/vtk2_takano2052", 256, 64);
 	OutputLine(NULL, "　くそったれ…ッ！！」",
 			NULL, "", Line_Normal); 
@@ -164,11 +165,8 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
 	PlayBGM(2, "hm08_34", 128, 0);
 
 //r…綿流しの夜から、数日後。
@@ -240,9 +238,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ka4", 1000 );
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
+	DrawSceneWithMask( "background/ka4", "c", 0, 0, 1000 );
 
 //官僚rvS20/00/VTK2_kanryouA2001.『女王感染者が死ぬと、４８時間以内に村人全員が異常行動を引き起こす。kvS20/00/VTK2_kanryouA2002.ゆえに、その被害の余波が周辺地域に広がる前に部隊を派遣して、速やかに予防措置を取るべき…』
 	PlaySE(4, "ps3/s20/00/vtk2_kanryoua2001", 256, 64);
@@ -305,7 +303,7 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
+	FadeFilm( 250, TRUE );
 	PlaySE(3, "down", 256, 64);
 
 //rそう言って彼は舌打ちしながら、手に持っていたファイルを床に叩きつける。
@@ -379,8 +377,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("black", 3000 );
 	FadeOutBGM(2, 200, FALSE);
 
 //鷹野rvS20/09/VTK2_takano2065.『…っ…！！』
@@ -432,7 +429,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/k_kouen1", 1000 );
+	DrawSceneWithMask( "background/k_kouen1", "right", 0, 0, 500 );
 
 //rふと、かすかに聞こえてきた話し声に覚えがあって、私はその方向に顔を傾けて見る。
 	OutputLine(NULL, "ふと、かすかに聞こえてきた話し声に覚えがあって、私はその方向に顔を傾けて見る。",
@@ -562,13 +559,7 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //鷹野rvS20/09/VTK2_takano2067.「……」
@@ -615,6 +606,8 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //鷹野rvS20/09/VTK2_takano2068.「…っ…！」
 	PlaySE(4, "ps3/s20/09/vtk2_takano2068", 256, 64);
@@ -623,7 +616,6 @@
 	ClearMessage();
 
 	DrawScene("background/aka2", 1000 );
-
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //r…ああ、そうだ。
@@ -719,7 +711,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそれどころか…身体の中から、何かがわき出すような衝動。
@@ -727,25 +718,17 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/k_kouen1", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/k_kouen1", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/k_kouen1", 1000 );
+	DrawScene("white", 150 );
+	DrawScene("background/k_kouen1", 150 );
+	DrawScene("white", 150 );
+	DrawScene("background/k_kouen1", 150 );
 
 //r…視界が、ちかちかと閃く。
 	OutputLine(NULL, "…視界が、ちかちかと閃く。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "down", 0, 0, 500 );
 	PlayBGM(2, "hm08_38", 128, 0);
 
 //rこの疼きは、そう…そうだ、あの症状だ。
@@ -773,11 +756,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 3, "sprite/normal/kei2_def1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawBustshot( 5, "sprite/normal/me2_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawScene("background/k_kouen1", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/kei2_def1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/me2_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS06/03/330300222.「…あ、今何時ぐらい？」
 	PlaySE(4, "ps3/s06/03/330300222", 256, 64);
@@ -861,32 +842,26 @@
 	PlaySE(4, "ps3/s06/01/330100455", 256, 64);
 	OutputLine(NULL, "「え？",
 			NULL, "", Line_WaitForInput); 
+	DrawBustshot( 3, "sprite/normal/kei2_def1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 	PlaySE(4, "ps3/s06/01/330100456", 256, 64);
 	OutputLine(NULL, "　ああ、こんにち、……は…、——」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/kei2_def1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "thisikuki", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/ryuuketu1_01", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "background/ryuuketu1", "aa", 0, 0, 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	DrawScene("black", 500 );
 
 //r……。
 	OutputLine(NULL, "……。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/me2_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/k_kouen1", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/me2_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM( 1, "semi", 128, 0 );
 
 //魅音rvS06/03/330300231.「…あれ、圭ちゃん寝ちゃったの？kvS06/03/330300232.　もう、しょうがないなぁ。kvS06/03/330300233.女の子とのデート中に居眠りなんて、エチケット違反だよ～？」
@@ -940,13 +915,10 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/ryuuketu2", 1000 );
-
+	DrawScene("background/ryuuketu2", 150 );
 	PlaySE(3, "down2", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //魅音rvS06/03/330300239_b.「い、…いやあぁぁぁあぁぁ――ッッ！！」
@@ -955,10 +927,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	Wait( 2000 );
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm07_33", 128, 0);
 
 //鷹野rvS20/09/VTK2_takano2073.「…ふふ。kvS20/09/VTK2_takano2074.うふふふふふふふ、あははははははは。kvS20/09/VTK2_takano2075.あーっははははははははっっ！！」
@@ -983,9 +954,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/ta1_akuwarai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/minato", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/ta1_akuwarai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //鷹野rvS20/09/VTK2_takano2076.「…なぁに。kvS20/09/VTK2_takano2077.何か、用かしら？」
 	PlaySE(4, "ps3/s20/09/vtk2_takano2076", 256, 64);
@@ -1034,7 +1004,6 @@
 	ClearMessage();
 
 	DrawBustshot( 4, "sprite/normal/ta1_hatena_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	FadeOutBGM(2, 200, FALSE);
 
 //鷹野rvS20/09/VTK2_takano2082.「え？　――」
@@ -1059,12 +1028,12 @@
 	PlaySE(4, "ps3/s20/09/vtk2_takano2083", 256, 64);
 	OutputLine(NULL, "「な…何の話よ…？",
 			NULL, "", Line_WaitForInput); 
+	FadeBustshot( 4, FALSE, 0, 0, 0, 0, 100, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlaySE(4, "ps3/s20/09/vtk2_takano2084", 256, 64);
 	OutputLine(NULL, "　ちょ、ちょっとどこへ、…ッ？！」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1087,18 +1056,6 @@
 	OutputLine(NULL, "今さら掘り起こさないでください。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

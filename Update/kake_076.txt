@@ -14,7 +14,6 @@
 //M6 臨床試験開始
 
 	DrawScene("background/byo_ten", 1000 );
-
 	PlayBGM(2, "hm06_27", 128, 0);
 
 //精神科医rvS20/00/VTK2_menD2001.「…どうですか、その後の具合は？」
@@ -122,7 +121,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
 
 //夏美rvS20/36/VTK2_natsumi2024.「…っ…」
 	PlaySE(4, "ps3/s20/36/vtk2_natsumi2024", 256, 64);
@@ -214,8 +213,8 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("black", 1000 );
+	Wait( 2000 );
 
 //r……。
 	OutputLine(NULL, "……。",
@@ -228,7 +227,6 @@
 	ClearMessage();
 
 	DrawScene("background/denwa", 1000 );
-
 	PlayBGM(2, "hm02_12", 128, 0);
 
 //精神科医rvS20/00/VTK2_menD2011.「…はい。kvS20/00/VTK2_menD2012.例の中学生の患者さんですが、非常に素晴らしい回復ぶりです。kvS20/00/VTK2_menD2013.血液検査の数値も通常値にかなり近づき、脈拍や発汗量も安定してきました」
@@ -337,13 +335,13 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "dsse08", 256, 64);
 
 //精神科医rvS20/00/VTK2_menD2029.「………。k|yvS20/00/VTK2_menD2030.薬の成分的には、絶対に起こり得ないはずなんだけど。kvS20/00/VTK2_menD2031.服用後に幻覚を見る、なんてのは…」
 	PlaySE(4, "ps3/s20/00/vtk2_mend2029", 256, 64);
 	OutputLine(NULL, "「………。",
 			NULL, "", Line_WaitForInput); 
+	PlayBGM( 1, "suzu", 128, 0 );
 	PlaySE(4, "ps3/s20/00/vtk2_mend2030", 256, 64);
 	OutputLine(NULL, "薬の成分的には、絶対に起こり得ないはずなんだけど。",
 			NULL, "", Line_WaitForInput); 
@@ -352,19 +350,6 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	PlayBGM( 1, "suzu", 128, 0 );
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

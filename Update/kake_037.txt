@@ -14,7 +14,6 @@
 //F5 山沖薫
 
 	DrawScene("background/tk_ryou1", 1000 );
-
 	PlayBGM( 1, "yoru", 128, 0 );
 
 //大石r-vS20/11/VTK1_oishi1083.（…はぁ、まさかここまでやってくれるとはなぁ）
@@ -61,7 +60,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/tk_ryou1", 1000 );
+	DrawSceneWithMask( "background/tk_ryou1", "down", 0, 0, 500 );
 
 //山沖rvS20/30/VTK1_yamaoki1001.「大石さん、まぁそう固くならずに。kvS20/30/VTK1_yamaoki1002.南井くんからも、酒にはお強いと伺っております。kvS20/30/VTK1_yamaoki1003.ささ、どうぞご遠慮なくやってください」
 	PlaySE(4, "ps3/s20/30/vtk1_yamaoki1001", 256, 64);
@@ -129,7 +128,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm06_28", 128, 0);
 
 //大石rvS20/11/VTK1_oishi1091.「いやぁ～、それにしても山沖さんにはほとほと頭が下がりますねぇ。kvS20/11/VTK1_oishi1092.わざわざ私なんかのためにこんな素敵な席を設けてくださったんですから。kvS20/11/VTK1_oishi1093.本当にありがたい限りですよ…んっふっふっふっ！」
@@ -182,7 +180,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "up", 0, 0, 500 );
 
 //rそんな彼らが、武装した上に人質を盾にした篭城犯を相手にするなど、危険を通り越して無謀でしかない。
 	OutputLine(NULL, "そんな彼らが、武装した上に人質を盾にした篭城犯を相手にするなど、危険を通り越して無謀でしかない。",
@@ -214,7 +212,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/tk_ryou1", 1000 );
+	DrawSceneWithMask( "background/tk_ryou1", "down", 0, 0, 500 );
 
 //山沖rvS20/30/VTK1_yamaoki1010.「大石さんたちが県警の方々を説得してくれなかったら…山荘への突入はさらに遅れていたでしょう。kvS20/30/VTK1_yamaoki1011.そうなれば、中で囚われていた人質の身はさらに危険なものとなっていたに違いない」
 	PlaySE(4, "ps3/s20/30/vtk1_yamaoki1010", 256, 64);
@@ -351,7 +349,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/tk_ryou1", 1000 );
+	DrawSceneWithMask( "background/tk_ryou1", "up", 0, 0, 500 );
 
 //山沖rvS20/30/VTK1_yamaoki1020.「そういえば例の酒、いかがでしたか？kvS20/30/VTK1_yamaoki1021.　あの程度で皆さんの労功の代価とは思っておりませんが、お口に合えばよかったのですが…」
 	PlaySE(4, "ps3/s20/30/vtk1_yamaoki1020", 256, 64);
@@ -441,7 +439,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
 
 //rふと南井刑事の隣にいた、いかにも才気走った青年の顔を思い出す。
 	OutputLine(NULL, "ふと南井刑事の隣にいた、いかにも才気走った青年の顔を思い出す。",
@@ -581,7 +579,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "down", 0, 0, 500 );
 
 //r発砲禁止の戒厳令の中、犯人に向けて実弾を発射。
 	OutputLine(NULL, "発砲禁止の戒厳令の中、犯人に向けて実弾を発射。",
@@ -610,7 +608,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/tk_ryou1", 1000 );
+	DrawSceneWithMask( "background/tk_ryou1", "up", 0, 0, 500 );
 
 //大石rvS20/11/VTK1_oishi1128.「…しかし、おかしな話だ。kvS20/11/VTK1_oishi1129.南井さんが撃っていなかったら、足を撃たれていた捜査員…前野警部は、おそらく目前に迫った犯人によって殺されていたでしょう」
 	PlaySE(4, "ps3/s20/11/vtk1_oishi1128", 256, 64);
@@ -643,9 +641,11 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	ShakeScreen( 1, 15, 15, 2, 0, );
+
 //大石rvS20/11/VTK1_oishi1131.「…くそったれ」|y
 	PlaySE(4, "ps3/s20/11/vtk1_oishi1131", 256, 64);
-	OutputLine(NULL, "「…くそったれ」|y",
+	OutputLine(NULL, "「…くそったれ」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
@@ -762,18 +762,6 @@
 	ClearMessage();
 
 	PlayBGM( 1, "kaze_lp", 128, 0 );
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

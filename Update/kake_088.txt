@@ -14,7 +14,6 @@
 //W6 捜査打ち切り
 
 	DrawScene("background/ohaka_01", 1000 );
-
 	PlayBGM(2, "hm10_59", 128, 0);
 
 //山沖rvS20/30/VTK2_yamaoki2095.「すまんな…雄介。kvS20/30/VTK2_yamaoki2096.こんな報告、絶対にするまいと誓っていたのに…この体たらくだ。kvS20/30/VTK2_yamaoki2097.…怨んでくれても、構わんぞ」
@@ -62,7 +61,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ohaka_01", 1000 );
+	DrawSceneWithMask( "background/ohaka_01", "right", 0, 0, 500 );
 
 //rすぐ横の足元では、石畳の上に膝を屈して顔を伏せた前野が、ボロボロと大粒の涙を流しながら嗚咽を上げている。
 	OutputLine(NULL, "すぐ横の足元では、石畳の上に膝を屈して顔を伏せた前野が、ボロボロと大粒の涙を流しながら嗚咽を上げている。",
@@ -89,7 +88,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/sora", 1000 );
+	DrawSceneWithMask( "background/sora", "up", 0, 0, 500 );
 
 //山沖rvS20/30/VTK2_yamaoki2098.「…。kvS20/30/VTK2_yamaoki2099.雄介…それに、円美さん。kvS20/30/VTK2_yamaoki2100.事件の真相を突き止めることなく…捜査本部は昨日、解散になった。kvS20/30/VTK2_yamaoki2101.本当に…申し訳ない」
 	PlaySE(4, "ps3/s20/30/vtk2_yamaoki2098", 256, 64);
@@ -107,6 +106,8 @@
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //前野rvS20/00/VTK2_maeno2287.「…っ…！！」
 	PlaySE(4, "ps3/s20/00/vtk2_maeno2287", 256, 64);
@@ -119,20 +120,18 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ohaka_01", 1000 );
+	DrawSceneWithMask( "background/ohaka_01", "down", 0, 0, 500 );
 
 //r…見下ろすと前野が、目の前の地面にそのこぶしを激しく叩きつけていた。
 	OutputLine(NULL, "…見下ろすと前野が、目の前の地面にそのこぶしを激しく叩きつけていた。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
 	PlayBGM(2, "hm05_24", 128, 0);
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
 
 //r…５年前。
 	OutputLine(NULL, "…５年前。",
@@ -195,6 +194,7 @@
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 250, TRUE );
 
 //山沖r-vS20/30/VTK2_yamaoki2104.（前野は上昇志向が強い分、意にそぐわないことに反発もするが…理解されない状況には孤独を感じるやつだった。kvS20/30/VTK2_yamaoki2105.それを雄介は、わかっていたのだな）
 	PlaySE(4, "ps3/s20/30/vtk2_yamaoki2104", 256, 64);
@@ -220,7 +220,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ohaka_01", 1000 );
+	DrawSceneWithMask( "background/ohaka_01", "down", 0, 0, 500 );
 
 //前野rvS20/00/VTK2_maeno2288.「すんません…南井さんッ…！kvS20/00/VTK2_maeno2289.　すんません、すんません…っ！！」
 	PlaySE(4, "ps3/s20/00/vtk2_maeno2288", 256, 64);
@@ -246,12 +246,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm10_69", 128, 0);
 
 //r…最初は誰も、その激しい心の猛りに気づいてはいなかった。
@@ -285,9 +282,11 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	DrawFilm( 2, 255, 255, 255, 255, 0, 250, TRUE );
 	DrawScene("background/sora_01", 1000 );
-
 	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //前野rvS20/00/VTK2_maeno2291.『ちきしょう…ちきしょおぉぉっっ！！kvS20/00/VTK2_maeno2292.　殺してやる…南井さんをあんな目にあわせたやつら、絶対に全員、この手でぶっ殺してやるッッ！！』
 	PlaySE(4, "ps3/s20/00/vtk2_maeno2291", 256, 64);
@@ -308,8 +307,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	DrawScene("background/ke5", 1000 );
 
 //r…その後の前野は、まさに寝食を忘れて犯人探しに没頭していた。
@@ -361,8 +359,9 @@
 	ClearMessage();
 
 	DrawScene("background/ka1_01", 1000 );
-
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //刑事rvS20/00/VTK2_keijiA2005.『ええっ？！』
 	PlaySE(4, "ps3/s20/00/vtk2_keijia2005", 256, 64);
@@ -371,6 +370,8 @@
 	ClearMessage();
 
 	PlaySE(3, "daidageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //刑事rvS20/00/VTK2_keijiB2001.『そ、そんな…ッ！！』
 	PlaySE(4, "ps3/s20/00/vtk2_keijib2001", 256, 64);
@@ -383,7 +384,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "right", 0, 0, 500 );
 
 //r彼らをなだめることなどできるはずもなく、私は高圧的に一喝して立ち去るしかなかった。
 	OutputLine(NULL, "彼らをなだめることなどできるはずもなく、私は高圧的に一喝して立ち去るしかなかった。",
@@ -403,6 +404,8 @@
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //前野rvS20/00/VTK2_maeno2294.『納得できませんよ、山沖理事官っ！』
 	PlaySE(4, "ps3/s20/00/vtk2_maeno2294", 256, 64);
@@ -426,6 +429,8 @@
 	ClearMessage();
 
 	PlaySE(3, "daidageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //刑事たちro75.vS20/00/VTK2_keijiA2006|S20/00/VTK2_keijiB2002.『『そうだそうだっ！！』』
 	PlaySE(4, "ps3/s20/00/vtk2_keijia2006", 256, 64);
@@ -497,14 +502,11 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	FadeFilm( 250, TRUE );
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
 	DrawScene("background/ohaka_01", 1000 );
-
 	PlayBGM(2, "hm10_59", 128, 0);
 
 //山沖rvS20/30/VTK2_yamaoki2111.「前野…」
@@ -601,18 +603,10 @@
 	ClearMessage();
 
 	PlaySE(3, "a5_13391", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ohaka_01", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ohaka_01", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ohaka_01", 1000 );
+	DrawScene("white", 150 );
+	DrawScene("background/ohaka_01", 150 );
+	DrawScene("white", 150 );
+	DrawScene("background/ohaka_01", 150 );
 
 //山沖rvS20/30/VTK2_yamaoki2115.「っ…！！」
 	PlaySE(4, "ps3/s20/30/vtk2_yamaoki2115", 256, 64);
@@ -684,20 +678,6 @@
 	OutputLine(NULL, "それとも…っ？！",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

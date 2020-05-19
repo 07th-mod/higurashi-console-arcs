@@ -14,7 +14,6 @@
 //F6 南井まどか
 
 	DrawScene("background/torishirabeshitu_01", 1000 );
-
 	PlayBGM(2, "hm03_17", 128, 0);
 
 //巴rvS20/28/VTK1_tomoe1048.「…すみませんでした！kvS20/28/VTK1_tomoe1049.　本当に、ご迷惑をおかけしました！」
@@ -97,7 +96,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawScene("black", 500 );
 
 //rもっとも…本当に最低なのは、誰に言われなくてもわかっている。
 	OutputLine(NULL, "もっとも…本当に最低なのは、誰に言われなくてもわかっている。",
@@ -137,7 +136,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/torishirabeshitu_01", 1000 );
+	DrawSceneWithMask( "background/torishirabeshitu_01", "up", 0, 0, 500 );
 
 //少年係rvS20/00/VTK1_keisho1003.「だいたい…君のご両親は？kvS20/00/VTK1_keisho1004.　子どもが遊びまわってるのに、無責任というか…結構な身分だな。kvS20/00/VTK1_keisho1005.ちゃんと連絡したのかね？」
 	PlaySE(4, "ps3/s20/00/vtk1_keisho1003", 256, 64);
@@ -446,7 +445,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/torishirabeshitu_01", 1000 );
+	DrawSceneWithMask( "background/torishirabeshitu_01", "up", 0, 0, 500 );
 
 //係長rvS20/00/VTK1_keikaC1006.「それじゃ、今日はもう気をつけて帰りなさい。kvS20/00/VTK1_keikaC1007.あんまり遅くなると、危ないわ」
 	PlaySE(4, "ps3/s20/00/vtk1_keikac1006", 256, 64);
@@ -483,7 +482,6 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("black", 1000 );
 
 //r……。
@@ -503,8 +501,8 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	Wait( 2000 );
 	DrawScene("background/koudou_02", 1000 );
-
 	PlayBGM( 1, "yoru", 128, 0 );
 
 //rもう、すっかり夜も更けてしまった。
@@ -538,8 +536,7 @@
 	ClearMessage();
 
 	PlaySE(3, "dsse131", 256, 64);
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "right", 0, 0, 500 );
 
 //rぷい、と顔をそむけて私は歩く速度を上げる。
 	OutputLine(NULL, "ぷい、と顔をそむけて私は歩く速度を上げる。",
@@ -572,9 +569,7 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/koudou_02", 1000 );
-
+	DrawSceneWithMask( "background/koudou_02", "left", 0, 0, 500 );
 	PlayBGM(2, "hm05_20", 128, 0);
 
 //巴rvS20/28/VTK1_tomoe1060.「…学校、合わないの？kvS20/28/VTK1_tomoe1061.　だったら、別のところに転校してもいいのよ？」
@@ -663,6 +658,8 @@
 	PlaySE(4, "ps3/s20/29/vtk1_madoka1021", 256, 64);
 	OutputLine(NULL, "「…だから、もう放っておいてよ。",
 			NULL, "", Line_WaitForInput); 
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlaySE(4, "ps3/s20/29/vtk1_madoka1022", 256, 64);
 	OutputLine(NULL, "正直鬱陶しいんだよ、妙な期待ばっかりされてさ」",
 			NULL, "", Line_Normal); 
@@ -784,7 +781,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/moon", 1000 );
+	DrawSceneWithMask( "background/moon", "up", 0, 0, 500 );
 
 //まどかrvS20/29/VTK1_madoka1024.「…。k|yvS20/29/VTK1_madoka1025.あ…」
 	PlaySE(4, "ps3/s20/29/vtk1_madoka1024", 256, 64);
@@ -796,7 +793,6 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "yoru", 128, 0 );
 
 //rふと、空を見上げた時。
@@ -804,8 +800,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
 	DrawScene("background/moon", 1000 );
 
 //r見えた星の瞬きとともに、…先日届いた絵葉書のことを、私は思い出す。
@@ -854,20 +849,6 @@
 	OutputLine(NULL, "姉の元から、いなくなろうと——。",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

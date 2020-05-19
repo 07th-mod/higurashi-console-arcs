@@ -14,7 +14,6 @@
 //E6 広報室勤務初日
 
 	DrawScene("background/chika_rouka", 1000 );
-
 	PlayBGM(2, "hm02_12", 128, 0);
 
 //巴rvS20/28/VTK1_tomoe1001.「…うっ…？！」
@@ -160,7 +159,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/chika_rouka", 1000 );
+	DrawSceneWithMask( "background/chika_rouka", "down", 0, 0, 500 );
 
 //巴rvS20/28/VTK1_tomoe1008.「…。kvS20/28/VTK1_tomoe1009.どういうことなんだろう…？」
 	PlaySE(4, "ps3/s20/28/vtk1_tomoe1008", 256, 64);
@@ -202,7 +201,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "up", 0, 0, 500 );
 
 //rそっと目だけを上に向けて、天井を見る。
 	OutputLine(NULL, "そっと目だけを上に向けて、天井を見る。",
@@ -257,7 +256,6 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "a5_07212", 256, 64);
 
 //rそして、中からほのかに明かりらしきものが灯っているのを確かめてからとん、とん、とノックをして、おもむろにドアを開けた。
@@ -265,10 +263,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/ke_shiryou1_02", 1000 );
-
+	DrawSceneWithMask( "background/ke_shiryou1_02", "right", 0, 0, 500 );
 	PlayBGM(2, "hm06_28", 128, 0);
 
 //巴rvS20/28/VTK1_tomoe1013.「…ぅわ…」
@@ -329,8 +324,8 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //巴rvS20/28/VTK1_tomoe1016.「あ、あのっ…、ぅぐっ？」
 	PlaySE(4, "ps3/s20/28/vtk1_tomoe1016", 256, 64);
@@ -370,7 +365,6 @@
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlaySE(3, "se137", 256, 64);
 
 //rそして、壁際に見つけた空調を最大出力にして…私はようやく息をついた。
@@ -412,7 +406,7 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
-	DrawScene("background/ke_shiryou1_02", 1000 );
+	DrawSceneWithMask( "background/ke_shiryou1_02", "down", 0, 0, 500 );
 
 //前野rvS20/00/VTK1_maeno1002.「…んー？kvS20/00/VTK1_maeno1003.　誰だぁ…こんな朝早くに…ふぁぁ」
 	PlaySE(4, "ps3/s20/00/vtk1_maeno1002", 256, 64);
@@ -445,6 +439,7 @@
 	ClearMessage();
 
 	PlaySE(3, "nageru", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //巴r-vS20/28/VTK1_tomoe1022.（ああ、やめて！kvS20/28/VTK1_tomoe1023.　もうそれ以上、フケたてないでーっ！）
 	PlaySE(4, "ps3/s20/28/vtk1_tomoe1022", 256, 64);
@@ -531,7 +526,6 @@
 	ClearMessage();
 
 	DrawScene("background/ke_shiryou1_02", 1000 );
-
 	PlayBGM(2, "hm10_56", 128, 0);
 
 //巴rvS20/28/VTK1_tomoe1029.「あの、…前野室長、…ですよね？」
@@ -578,7 +572,7 @@
 	ClearMessage();
 
 	PlaySE(3, "boyoon", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlayBGM(2, "hm01_06", 128, 0);
 
 //r汚いジャージ姿で、髭むさいおっさんではなかった…っ！
@@ -681,9 +675,7 @@
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("background/ke_shiryou1_02", 1000 );
-
 	PlayBGM(2, "hm01_04", 128, 0);
 
 //前野rvS20/00/VTK1_maeno1015.「…さて。kvS20/00/VTK1_maeno1016.俺はちょいと出てくる。kvS20/00/VTK1_maeno1017.…南井、だったな。kvS20/00/VTK1_maeno1018.お前、明日朝までにあの資料を清書しておいてくれ」
@@ -705,6 +697,7 @@
 	PlaySE(4, "ps3/s20/28/vtk1_tomoe1037", 256, 64);
 	OutputLine(NULL, "「え…？",
 			NULL, "", Line_WaitForInput); 
+	ShakeScreen( 1, 15, 15, 2, 0, );
 	PlaySE(4, "ps3/s20/28/vtk1_tomoe1038", 256, 64);
 	OutputLine(NULL, "　うっ…？！」",
 			NULL, "", Line_Normal); 
@@ -781,6 +774,8 @@
 	ClearMessage();
 
 	PlaySE(3, "boyoon", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //巴rvS20/28/VTK1_tomoe1044.「んなっっ？！」
 	PlaySE(4, "ps3/s20/28/vtk1_tomoe1044", 256, 64);
@@ -805,6 +800,8 @@
 	ClearMessage();
 
 	PlaySE(3, "daidageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //rふざけるな――――ッッ！！！
 	OutputLine(NULL, "ふざけるな————ッッ！！！",
@@ -852,9 +849,9 @@
 			NULL, "", Line_Normal); 
 	ClearMessage();
 
+	Wait( 2000 );
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("background/chika_rouka", 1000 );
+	DrawSceneWithMask( "background/chika_rouka", "right", 0, 0, 500 );
 
 //r……。
 	OutputLine(NULL, "……。",
@@ -874,18 +871,6 @@
 	OutputLine(NULL, "やっぱり、親子だな…」",
 			NULL, "", Line_Normal); 
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );
