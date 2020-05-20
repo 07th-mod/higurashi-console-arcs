@@ -10,19 +10,19 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 
 ## Current Status
 
-| Chapter            | PC Port  | Translation | Editing |
-| ------------------ | -------- | ----------- | ------- |
-| Someutsushi        | 100%     | 100%        | 100%    | 
-| Kageboushi         | 100%     | 100%        | 100%    | 
-| Tsukiotoshi        | 100%     | 100%        | 100%    | 
-| Taraimawashi       | 100%     | 100%        | 100%    | 
-| Yoigoshi           | 100%     | 100%        | 100%    | 
-| Tokihogushi        | 100%     | 100%        | 100%    | 
-| Miotsukushi Omote  | 100%     | 100%        | 100%    | 
-| Miotsukushi Ura    | 100%     |  49%        |   0%    | 
+| Chapter              | PC Port  | Translation | Editing |
+| -------------------- | -------- | ----------- | ------- |
+| Someutsushi          | 100%     | 100%        | 100%    | 
+| Kageboushi           | 100%     | 100%        | 100%    | 
+| Tsukiotoshi          | 100%     | 100%        | 100%    | 
+| Taraimawashi         | 100%     | 100%        | 100%    | 
+| Yoigoshi             | 100%     | 100%        | 100%    | 
+| Tokihogushi          | 100%     | 100%        | 100%    | 
+| Miotsukushi Omote    | 100%     | 100%        | 100%    | 
+| Miotsukushi Ura      | 100%     |  49%        |   0%    | 
+| Connecting Fragments | 100%     |   5%        |   0%    | 
 
-Work on Miotsukushi Ura has begun. This is another long arc, so expect it to take a couple months. I'm also planning to implement the extra fragments added in the console version of Matsuribayashi some time after MG releases Matsuri.
-
+Work on Miotsukushi Ura has begun. This is another long arc, so expect it to take a couple months. The extra fragments added in the console version of Matsuribayashi will also be included in the next release because those are intended to be read before Ura. And they're actually a pretty big amount of content so I'm statusing them separately.
 
 
 ## Screenshots
