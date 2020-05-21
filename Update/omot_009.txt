@@ -1256,30 +1256,40 @@ void main()
 			NULL, "So, how should I explain it...?", Line_Normal);
 	ClearMessage();
 
-	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
-	char OmoteChoice5[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		OmoteChoice5[0] = "Do you know someone named Rina?";
-		OmoteChoice5[1] = "Do you know about Teppei?";
-	}
-	else
-	{
-		OmoteChoice5[0] = "リナって知ってるか？";
-		OmoteChoice5[1] = "鉄平のこと、知ってるよな？";
-	}
-
-	Select( 2, OmoteChoice5 );
-	DisableWindow();
-	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
-	if (LoadValueFromLocalWork( SelectResult ) == 0)
-	{
+	if (GetGlobalFlag(GChoiceMode) == 0) {
 		SetGlobalFlag(GConsoleChoice, 0);
 	}
 	else
 	{
-		SetGlobalFlag(GConsoleChoice, 1);
-	}
+		if (GetGlobalFlag(GChoiceMode) == 2) {
+			DrawBustshotWithFiltering( 6, "2choices_1", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		else {
+			DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		char OmoteChoice5[2];
 
+		if(GetGlobalFlag(GLanguage) == 1)
+		{
+			OmoteChoice5[0] = "Do you know someone named Rina?";
+			OmoteChoice5[1] = "Do you know about Teppei?";
+		}
+		else
+		{
+			OmoteChoice5[0] = "リナって知ってるか？";
+			OmoteChoice5[1] = "鉄平のこと、知ってるよな？";
+		}
+
+		Select( 2, OmoteChoice5 );
+		DisableWindow();
+		FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+		if (LoadValueFromLocalWork( SelectResult ) == 0)
+		{
+			SetGlobalFlag(GConsoleChoice, 0);
+		}
+		else
+		{
+			SetGlobalFlag(GConsoleChoice, 1);
+		}
+	}
 }

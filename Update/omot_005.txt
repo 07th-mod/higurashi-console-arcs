@@ -2397,7 +2397,7 @@ void main()
 //rいや、ひょっとすると余計な動きが、かえってリスクを高める可能性すら孕んでいる…。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "いや、ひょっとすると余計な動きが、かえってリスクを高める可能性すら孕んでいる…。",
-			NULL, "In fact, there's even a chance that that unnecessary movements could heighten the risk...", Line_Normal);
+			NULL, "In fact, there's even a chance that unnecessary movements could heighten the risk...", Line_Normal);
 	ClearMessage();
 
 	DrawScene("background/sinryou_soto3", 1000 );
@@ -2549,30 +2549,40 @@ void main()
 			NULL, "In which case, my priority should be...", Line_Normal);
 	ClearMessage();
 
-	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
-	char OmoteChoice2[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		OmoteChoice2[0] = "My own survival";
-		OmoteChoice2[1] = "Uncovering Takano's conspiracy";
-	}
-	else
-	{
-		OmoteChoice2[0] = "自分が生き延びること";
-		OmoteChoice2[1] = "鷹野の陰謀を暴くこと";
-	}
-
-	Select( 2, OmoteChoice2 );
-	DisableWindow();
-	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
-	if (LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		SetGlobalFlag(GConsoleChoice, 0);
-	}
-	else
-	{
+	if (GetGlobalFlag(GChoiceMode) == 0) {
 		SetGlobalFlag(GConsoleChoice, 1);
 	}
+	else
+	{
+		if (GetGlobalFlag(GChoiceMode) == 2) {
+			DrawBustshotWithFiltering( 6, "2choices_0", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		else {
+			DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		char OmoteChoice2[2];
 
+		if(GetGlobalFlag(GLanguage) == 1)
+		{
+			OmoteChoice2[0] = "My own survival";
+			OmoteChoice2[1] = "Uncovering Takano's conspiracy";
+		}
+		else
+		{
+			OmoteChoice2[0] = "自分が生き延びること";
+			OmoteChoice2[1] = "鷹野の陰謀を暴くこと";
+		}
+
+		Select( 2, OmoteChoice2 );
+		DisableWindow();
+		FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+		if (LoadValueFromLocalWork( SelectResult ) == 0)
+		{
+			SetGlobalFlag(GConsoleChoice, 0);
+		}
+		else
+		{
+			SetGlobalFlag(GConsoleChoice, 1);
+		}
+	}
 }

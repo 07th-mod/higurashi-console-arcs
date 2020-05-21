@@ -335,36 +335,46 @@ void main()
 			NULL, "And if that's the case, the most dependable person to have on my side is...", Line_Normal);
 	ClearMessage();
 
-	DrawBustshotWithFiltering( 6, "3choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
-	char OmoteChoice3[3];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		OmoteChoice3[0] = "Tomitake";
-		OmoteChoice3[1] = "Ooishi";
-		OmoteChoice3[2] = "Keiichi";
-	}
-	else
-	{
-		OmoteChoice3[0] = "富竹";
-		OmoteChoice3[1] = "大石";
-		OmoteChoice3[2] = "圭一";
-	}
-
-	Select( 3, OmoteChoice3 );
-	DisableWindow();
-	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
-	if (LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		SetGlobalFlag(GConsoleChoice, 0);
-	}
-	else if (LoadValueFromLocalWork( SelectResult ) == 1)
-	{
-		SetGlobalFlag(GConsoleChoice, 1);
-	}
-	else
-	{
+	if (GetGlobalFlag(GChoiceMode) == 0) {
 		SetGlobalFlag(GConsoleChoice, 2);
 	}
+	else
+	{
+		if (GetGlobalFlag(GChoiceMode) == 2) {
+			DrawBustshotWithFiltering( 6, "3choices_0", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		else {
+			DrawBustshotWithFiltering( 6, "3choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		char OmoteChoice3[3];
 
+		if(GetGlobalFlag(GLanguage) == 1)
+		{
+			OmoteChoice3[0] = "Tomitake";
+			OmoteChoice3[1] = "Ooishi";
+			OmoteChoice3[2] = "Keiichi";
+		}
+		else
+		{
+			OmoteChoice3[0] = "富竹";
+			OmoteChoice3[1] = "大石";
+			OmoteChoice3[2] = "圭一";
+		}
+
+		Select( 3, OmoteChoice3 );
+		DisableWindow();
+		FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+		if (LoadValueFromLocalWork( SelectResult ) == 0)
+		{
+			SetGlobalFlag(GConsoleChoice, 0);
+		}
+		else if (LoadValueFromLocalWork( SelectResult ) == 1)
+		{
+			SetGlobalFlag(GConsoleChoice, 1);
+		}
+		else
+		{
+			SetGlobalFlag(GConsoleChoice, 2);
+		}
+	}
 }
