@@ -595,30 +595,40 @@ void main()
 			NULL, "Shion is quick-witted, so of course she wouldn't believe right away. I, myself, only half-believe it, so there's not much that can be done about it.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
-	char OmoteChoice6[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		OmoteChoice6[0] = "Bring up Rina's background.";
-		OmoteChoice6[1] = "Ask Kasai-san about Rina's situation.";
-	}
-	else
-	{
-		OmoteChoice6[0] = "リナの背後関係を持ち出す。";
-		OmoteChoice6[1] = "葛西さんに、リナの様子を聞く。";
-	}
-
-	Select( 2, OmoteChoice6 );
-	DisableWindow();
-	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
-	if (LoadValueFromLocalWork( SelectResult ) == 0)
-	{
-		SetGlobalFlag(GConsoleChoice, 0);
-	}
-	else
-	{
+	if (GetGlobalFlag(GChoiceMode) == 0) {
 		SetGlobalFlag(GConsoleChoice, 1);
 	}
+	else
+	{
+		if (GetGlobalFlag(GChoiceMode) == 2) {
+			DrawBustshotWithFiltering( 6, "2choices_2", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		else {
+			DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		char OmoteChoice6[2];
 
+		if(GetGlobalFlag(GLanguage) == 1)
+		{
+			OmoteChoice6[0] = "Bring up Rina's background.";
+			OmoteChoice6[1] = "Ask Kasai-san about Rina's situation.";
+		}
+		else
+		{
+			OmoteChoice6[0] = "リナの背後関係を持ち出す。";
+			OmoteChoice6[1] = "葛西さんに、リナの様子を聞く。";
+		}
+
+		Select( 2, OmoteChoice6 );
+		DisableWindow();
+		FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+		if (LoadValueFromLocalWork( SelectResult ) == 0)
+		{
+			SetGlobalFlag(GConsoleChoice, 0);
+		}
+		else
+		{
+			SetGlobalFlag(GConsoleChoice, 1);
+		}
+	}
 }

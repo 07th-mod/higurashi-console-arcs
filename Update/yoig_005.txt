@@ -1209,30 +1209,40 @@ void main()
 			NULL, "Otobe began to furrow his eyebrows, but I continued.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
-	char Choice2[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		Choice2[0] = "The suicide party's car.";
-		Choice2[1] = "Sonozaki-san's car.";
-	}
-	else
-	{
-		Choice2[0] = "自殺した奴らの車だよ";
-		Choice2[1] = "園崎さんの車だよ";
-	}
-
-	Select( 2, Choice2 );
-	DisableWindow();
-	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
-	if (LoadValueFromLocalWork( SelectResult ) == 0)
-	{
+	if (GetGlobalFlag(GChoiceMode) == 0) {
 		SetGlobalFlag(GConsoleChoice, 0);
 	}
 	else
 	{
-		SetGlobalFlag(GConsoleChoice, 1);
-	}
+		if (GetGlobalFlag(GChoiceMode) == 2) {
+			DrawBustshotWithFiltering( 6, "2choices_0", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		else {
+			DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		char Choice2[2];
 
+		if(GetGlobalFlag(GLanguage) == 1)
+		{
+			Choice2[0] = "The suicide party's car.";
+			Choice2[1] = "Sonozaki-san's car.";
+		}
+		else
+		{
+			Choice2[0] = "自殺した奴らの車だよ";
+			Choice2[1] = "園崎さんの車だよ";
+		}
+
+		Select( 2, Choice2 );
+		DisableWindow();
+		FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+		if (LoadValueFromLocalWork( SelectResult ) == 0)
+		{
+			SetGlobalFlag(GConsoleChoice, 0);
+		}
+		else
+		{
+			SetGlobalFlag(GConsoleChoice, 1);
+		}
+	}
 }

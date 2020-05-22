@@ -3005,29 +3005,40 @@ void main()
 			NULL, "In the end, I decided to...", Line_Normal);
 	ClearMessage();
 
-	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
-	char Choice1[2];
-
-	if(GetGlobalFlag(GLanguage) == 1)
-	{
-		Choice1[0] = "Search for Kurosawa";
-		Choice1[1] = "Return to the assembly hall";
-	}
-	else
-	{
-		Choice1[0] = "黒澤を探しに行く";
-		Choice1[1] = "集会所へ戻る";
-	}
-
-	Select( 2, Choice1 );
-	DisableWindow();
-	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
-	if (LoadValueFromLocalWork( SelectResult ) == 0)
-	{
+	if (GetGlobalFlag(GChoiceMode) == 0) {
 		SetGlobalFlag(GConsoleChoice, 0);
 	}
 	else
 	{
-		SetGlobalFlag(GConsoleChoice, 1);
+		if (GetGlobalFlag(GChoiceMode) == 2) {
+			DrawBustshotWithFiltering( 6, "2choices_1", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		else {
+			DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+		}
+		char Choice1[2];
+
+		if(GetGlobalFlag(GLanguage) == 1)
+		{
+			Choice1[0] = "Search for Kurosawa";
+			Choice1[1] = "Return to the assembly hall";
+		}
+		else
+		{
+			Choice1[0] = "黒澤を探しに行く";
+			Choice1[1] = "集会所へ戻る";
+		}
+
+		Select( 2, Choice1 );
+		DisableWindow();
+		FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+		if (LoadValueFromLocalWork( SelectResult ) == 0)
+		{
+			SetGlobalFlag(GConsoleChoice, 0);
+		}
+		else
+		{
+			SetGlobalFlag(GConsoleChoice, 1);
+		}
 	}
 }
