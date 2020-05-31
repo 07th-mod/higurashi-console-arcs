@@ -20,7 +20,7 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Tokihogushi          | 100%     | 100%        | 100%    | 
 | Miotsukushi Omote    | 100%     | 100%        | 100%    | 
 | Miotsukushi Ura      | 100%     |  49%        |   0%    | 
-| Connecting Fragments | 100%     |  36%        |   0%    | 
+| Connecting Fragments | 100%     |  39%        |   0%    | 
 
 Work on Miotsukushi Ura has begun. This is another long arc, so expect it to take a couple months. The extra fragments added in the console version of Matsuribayashi will also be included in the next release because those are intended to be read before Ura. And they're actually a pretty big amount of content so I'm statusing them separately.
 
