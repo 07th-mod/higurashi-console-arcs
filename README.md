@@ -19,7 +19,7 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Yoigoshi             | 100%     | 100%        | 100%    | 
 | Tokihogushi          | 100%     | 100%        | 100%    | 
 | Miotsukushi Omote    | 100%     | 100%        | 100%    | 
-| Miotsukushi Ura      | 100%     |  83%        |   0%    | 
+| Miotsukushi Ura      | 100%     |  89%        |   0%    | 
 | Connecting Fragments | 100%     | 100%        |   0%    | 
 
 Work on Miotsukushi Ura is coming along nicely, so I think it's pretty safe to estimate a release some time in September.  It'll include both the Connecting Fragments and Ura.
