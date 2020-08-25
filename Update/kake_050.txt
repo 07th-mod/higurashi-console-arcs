@@ -1,4 +1,4 @@
-﻿void main()
+void main()
 {
 
 
@@ -16,157 +16,184 @@
 	DrawScene("black", 1000 );
 
 //r周囲を取り巻いていた女子が絹を裂くような悲鳴を上げたのを聞いて、ようやく私ははっ、と我に返った。
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "周囲を取り巻いていた女子が絹を裂くような悲鳴を上げたのを聞いて、ようやく私ははっ、と我に返った。",
-			NULL, "When I heard the girls around me shrieking, I suddenly came back to my senses.", Line_Normal); 
+			NULL, "When I heard the girls around me shrieking, I suddenly came back to my senses.", Line_Normal);
 	ClearMessage();
 
 	DrawSceneWithMask( "background/ryuuketu2", "c", 0, 0, 1000 );
 	PlayBGM(2, "hm06_26", 128, 0);
 
 //夏美rvS20/36/VTK2_natsumi2007.「…あ…」
-	PlaySE(4, "ps3/s20/36/vtk2_natsumi2007", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 36, "ps3/s20/36/vtk2_natsumi2007", 256, TRUE);
 	OutputLine(NULL, "「…あ…」",
-			NULL, "\"...Ah...\"", Line_Normal); 
+			NULL, "\"...Ah...\"", Line_Normal);
 	ClearMessage();
 
 //r机の上のノートには血が飛び散って、赤黒い染みを作っている。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "机の上のノートには血が飛び散って、赤黒い染みを作っている。",
-			NULL, "Blood dripped down on the notebook on the desk, staining it dark red.", Line_Normal); 
+			NULL, "Blood dripped down on the notebook on the desk, staining it dark red.", Line_Normal);
 	ClearMessage();
 
 //r私の足もとには、腕を押さえてうずくまる女の子の姿。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私の足もとには、腕を押さえてうずくまる女の子の姿。",
-			NULL, "I saw a girl crouched down by my feet, clinging to her arm.", Line_Normal); 
+			NULL, "I saw a girl crouched down by my feet, clinging to her arm.", Line_Normal);
 	ClearMessage();
 
 //r痛みにうめく声は聞こえてきたが、その表情は垂れ下がった前髪の向こうに隠れて見えなかった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "痛みにうめく声は聞こえてきたが、その表情は垂れ下がった前髪の向こうに隠れて見えなかった。",
-			NULL, "I could hear her moaining in pain, but her face was hidden behind her bangs so I couldn't make out her expression.", Line_Normal); 
+			NULL, "I could hear her moaining in pain, but her face was hidden behind her bangs so I couldn't make out her expression.", Line_Normal);
 	ClearMessage();
 
 //女子生徒rvS20/00/VTK2_StuFa2003.「ぐっ…うぅっ…！！」
-	PlaySE(4, "ps3/s20/00/vtk2_stufa2003", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女子生徒</color>", NULL, "<color=#f5e6d3>Schoolgirl</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_stufa2003", 256, TRUE);
 	OutputLine(NULL, "「ぐっ…うぅっ…！！」",
-			NULL, "\"Gh... uuu...!!\"", Line_Normal); 
+			NULL, "\"Gh... uuu...!!\"", Line_Normal);
 	ClearMessage();
 
 //rその、押さえている手の下から真っ赤な血がどんどんあふれ出して、白い制服の袖をべっとりと染め上げてゆく。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その、押さえている手の下から真っ赤な血がどんどんあふれ出して、白い制服の袖をべっとりと染め上げてゆく。",
-			NULL, "Bright red blood was spilling out from beneath where she was holding her arm, gently dying the sleeves of her white uniform.", Line_Normal); 
+			NULL, "Bright red blood was spilling out from beneath where she was holding her arm, gently dying the sleeves of her white uniform.", Line_Normal);
 	ClearMessage();
 
 //r慌ててその子の友達がふたり、真っ青な顔で駆け寄って大丈夫か、と声をかけているが、k彼女は初めて見る流血の恐怖で混乱しているのか、顔を伏せたまま何も答えなかった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "慌ててその子の友達がふたり、真っ青な顔で駆け寄って大丈夫か、と声をかけているが、",
-			NULL, "Two of her friends rushed over in a hurry with pale looks lon their faces as they called out to her, asking if she was okay.", Line_WaitForInput); 
+			NULL, "Two of her friends rushed over in a hurry with pale looks lon their faces as they called out to her, asking if she was okay. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "彼女は初めて見る流血の恐怖で混乱しているのか、顔を伏せたまま何も答えなかった。",
-			NULL, " Maybe she was afraid of blood or confused for seeing it for the first time, because she kept her head face down and didn't answer them.", Line_Normal); 
+			NULL, "Maybe she was afraid of blood or confused for seeing it for the first time, because she kept her head face down and didn't answer them.", Line_Normal);
 	ClearMessage();
 
 //女子生徒rvS20/00/VTK2_StuFb2003.「せ、先生を呼んできてっ！　早く！！」
-	PlaySE(4, "ps3/s20/00/vtk2_stufb2003", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女子生徒</color>", NULL, "<color=#f5e6d3>Schoolgirl</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_stufb2003", 256, TRUE);
 	OutputLine(NULL, "「せ、先生を呼んできてっ！　早く！！」",
-			NULL, "\"S-someone call the teacher! Hurry!!\"", Line_Normal); 
+			NULL, "\"S-someone call the teacher! Hurry!!\"", Line_Normal);
 	ClearMessage();
 
 //r誰かの声を受けて、クラス委員の男子が教室を飛び出してゆく。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "誰かの声を受けて、クラス委員の男子が教室を飛び出してゆく。",
-			NULL, "A young boy dashed out of the classroom upon hearing that.", Line_Normal); 
+			NULL, "A young boy dashed out of the classroom upon hearing that.", Line_Normal);
 	ClearMessage();
 
 	DrawFilm( 2, 255, 0, 0, 128, 0, 150, TRUE );
 	DrawScene("background/ng_kyo", 1000 );
 
 //rその背中を見送った私は、…ふと足元に転がったハサミに気づいて、それを拾い上げた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その背中を見送った私は、…ふと足元に転がったハサミに気づいて、それを拾い上げた。",
-			NULL, "Watching his back as he went... I suddenly noticed the scissors that had fallen by my feet, and picked them up.", Line_Normal); 
+			NULL, "Watching his back as he went... I suddenly noticed the scissors that had fallen by my feet, and picked them up.", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
 
 //rそして、すぐ隣で愕然とした様子で固まっている男子へ無造作に差し出す。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、すぐ隣で愕然とした様子で固まっている男子へ無造作に差し出す。",
-			NULL, "And then, I handed them over to the boy who stood frozen in shock right beside me.", Line_Normal); 
+			NULL, "And then, I handed them over to the boy who stood frozen in shock right beside me.", Line_Normal);
 	ClearMessage();
 
 //rそのハサミは、その子の持ち物だった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そのハサミは、その子の持ち物だった。",
-			NULL, "Those were his scissors.", Line_Normal); 
+			NULL, "Those were his scissors.", Line_Normal);
 	ClearMessage();
 
 //rだから、それを返そうと思っただけなんだけど…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "だから、それを返そうと思っただけなんだけど…。",
-			NULL, "So, I just wanted to return them...", Line_Normal); 
+			NULL, "So, I just wanted to return them...", Line_Normal);
 	ClearMessage();
 
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 250 );
 
 //男子生徒rvS20/00/VTK2_StuMa2001.「――ひっ、ひぃぃっ？！」
-	PlaySE(4, "ps3/s20/00/vtk2_stuma2001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男子生徒</color>", NULL, "<color=#f5e6d3>Schoolboy</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_stuma2001", 256, TRUE);
 	OutputLine(NULL, "「——ひっ、ひぃぃっ？！」",
-			NULL, "\"...E-eeek?!\"", Line_Normal); 
+			NULL, "\"...E-eeek?!\"", Line_Normal);
 	ClearMessage();
 
 //rその子は恐怖にひきつった表情を私に向けながら、勢いよく後じさる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その子は恐怖にひきつった表情を私に向けながら、勢いよく後じさる。",
-			NULL, "The boy turned to me with a frightened expression and quickly backed up.", Line_Normal); 
+			NULL, "The boy turned to me with a frightened expression and quickly backed up.", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
 
 //rあまりにも慌て過ぎて、後ろに机と椅子があることに気づかなかったのか…彼はそれにつまずいて思い切り派手に転倒した。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "あまりにも慌て過ぎて、後ろに机と椅子があることに気づかなかったのか…彼はそれにつまずいて思い切り派手に転倒した。",
-			NULL, "He must've been too panicked to realize there was a desk and chair behind him... so he stumbled on it and fell to the ground in an extremely over the top manner.", Line_Normal); 
+			NULL, "He must've been too panicked to realize there was a desk and chair behind him... so he stumbled on it and fell to the ground in an extremely over the top manner.", Line_Normal);
 	ClearMessage();
 
 //夏美rvS20/36/VTK2_natsumi2008.「…っ…」
-	PlaySE(4, "ps3/s20/36/vtk2_natsumi2008", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 36, "ps3/s20/36/vtk2_natsumi2008", 256, TRUE);
 	OutputLine(NULL, "「…っ…」",
-			NULL, "\"......\"", Line_Normal); 
+			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 //rその、場違いなほど間抜けなさまに思わずくすっ、と笑ってしまう。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その、場違いなほど間抜けなさまに思わずくすっ、と笑ってしまう。",
-			NULL, "It was so goofy and out of place, I couldn't help but laugh.", Line_Normal); 
+			NULL, "It was so goofy and out of place, I couldn't help but laugh.", Line_Normal);
 	ClearMessage();
 
 //r…ただ、その時になって初めて私は、ハサミを持つその手が血まみれになっていることに…気づいた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…ただ、その時になって初めて私は、ハサミを持つその手が血まみれになっていることに…気づいた。",
-			NULL, "...But, only then did I notice... that the hand holding the scissors was bloody.", Line_Normal); 
+			NULL, "...But, only then did I notice... that the hand holding the scissors was bloody.", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
 
 //夏美rvS20/36/VTK2_natsumi2009.「……」
-	PlaySE(4, "ps3/s20/36/vtk2_natsumi2009", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 36, "ps3/s20/36/vtk2_natsumi2009", 256, TRUE);
 	OutputLine(NULL, "「……」",
-			NULL, "\"......\"", Line_Normal); 
+			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
 
 	FadeFilm( 2000, TRUE );
 
 //rぼんやりと自分の手をしげしげと眺めているうち、ようやく真っ白になっていた頭に彩りが戻り始めて、k|y…それから急に、全身ががたがたと震えだす。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ぼんやりと自分の手をしげしげと眺めているうち、ようやく真っ白になっていた頭に彩りが戻り始めて、",
-			NULL, "I absentmindedly gazed at my hands, until finally my head began to clear up.", Line_WaitForInput); 
+			NULL, "I absentmindedly gazed at my hands, until finally my head began to clear up.", Line_WaitForInput);
 	PlayBGM( 1, "semi_r", 128, 0 );
 	OutputLine(NULL, "…それから急に、全身ががたがたと震えだす。",
-			NULL, " ...And then, my whole body suddenly began to tremble.", Line_Normal); 
+			NULL, " ...And then, my whole body suddenly began to tremble.", Line_Normal);
 	ClearMessage();
 
 
 //r…私が、やったの？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…私が、やったの？",
-			NULL, "...I did this?", Line_Normal); 
+			NULL, "...I did this?", Line_Normal);
 	ClearMessage();
 
 //rこの、足元で痛がっている女の子に、血が出るほどの傷を負わせたのは、…私なの？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "この、足元で痛がっている女の子に、血が出るほどの傷を負わせたのは、…私なの？",
-			NULL, "The one who brought this girl by my feet all this pain, enough to make her bleed... is me?", Line_Normal); 
+			NULL, "The one who brought this girl by my feet all this pain, enough to make her bleed... is me?", Line_Normal);
 	ClearMessage();
 
 //rじゃあ、…いま、教室内の空気を恐怖と驚愕に凍りつかせている元凶は、…私？！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "じゃあ、…いま、教室内の空気を恐怖と驚愕に凍りつかせている元凶は、…私？！",
-			NULL, "Then... the one who brought this shocking, frightening atmosphere to the entire classroom... is me?!", Line_Normal); 
+			NULL, "Then... the one who brought this shocking, frightening atmosphere to the entire classroom... is me?!", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
@@ -174,102 +201,120 @@
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //夏美rvS20/36/VTK2_natsumi2010.「…あ…！」
-	PlaySE(4, "ps3/s20/36/vtk2_natsumi2010", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 36, "ps3/s20/36/vtk2_natsumi2010", 256, TRUE);
 	OutputLine(NULL, "「…あ…！」",
-			NULL, "\"...Ah...!\"", Line_Normal); 
+			NULL, "\"...Ah...!\"", Line_Normal);
 	ClearMessage();
 
 //rそれを裏付けるように、…クラスメイトたちが距離を置いて私へと降り注ぐ、非難と嫌悪の視線。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それを裏付けるように、…クラスメイトたちが距離を置いて私へと降り注ぐ、非難と嫌悪の視線。",
-			NULL, "As if to back that up... the whole class was glaring at me with hatred and blame in their gaze.", Line_Normal); 
+			NULL, "As if to back that up... the whole class was glaring at me with hatred and blame in their gaze.", Line_Normal);
 	ClearMessage();
 
 //r――お前がやった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "——お前がやった。",
-			NULL, "...You did this.", Line_Normal); 
+			NULL, "...You did this.", Line_Normal);
 	ClearMessage();
 
 //r――クラスの子に怪我をさせるなんて、酷いやつ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "——クラスの子に怪我をさせるなんて、酷いやつ。",
-			NULL, "...You're a terrible person for hurting a classmate.", Line_Normal); 
+			NULL, "...You're a terrible person for hurting a classmate.", Line_Normal);
 	ClearMessage();
 
 //rそんな言葉が音と響きを介さなくても、私の耳ではなく頭に直接飛び込んでくる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんな言葉が音と響きを介さなくても、私の耳ではなく頭に直接飛び込んでくる。",
-			NULL, "Even if those words didn't reach my ears, they jumped straight into my head.", Line_Normal); 
+			NULL, "Even if those words didn't reach my ears, they jumped straight into my head.", Line_Normal);
 	ClearMessage();
 
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //夏美rvS20/36/VTK2_natsumi2011.「ち…ちがっ…！」|y
-	PlaySE(4, "ps3/s20/36/vtk2_natsumi2011", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 36, "ps3/s20/36/vtk2_natsumi2011", 256, TRUE);
 	OutputLine(NULL, "「ち…ちがっ…！」",
-			NULL, "\"Th... that's not...!\"", Line_Normal); 
+			NULL, "\"Th... that's not...!\"", Line_Normal);
 	ClearMessage();
 
 //r私じゃない。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私じゃない。",
-			NULL, "It wasn't me.", Line_Normal); 
+			NULL, "It wasn't me.", Line_Normal);
 	ClearMessage();
 
 //r私、そんなつもりじゃ…怪我させるつもりなんて、なかった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私、そんなつもりじゃ…怪我させるつもりなんて、なかった。",
-			NULL, "I... didn't mean to hurt anyone.", Line_Normal); 
+			NULL, "I... didn't mean to hurt anyone.", Line_Normal);
 	ClearMessage();
 
 //rただ、自分の身を守るために、ちょっとだけ…本当にちょっとだけ力を込めて、手を振り払っただけなのに…！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ただ、自分の身を守るために、ちょっとだけ…本当にちょっとだけ力を込めて、手を振り払っただけなのに…！",
-			NULL, "I was just trying to defend myself... and I put a little strength into pushing it away with  my hand...!", Line_Normal); 
+			NULL, "I was just trying to defend myself... and I put a little strength into pushing it away with  my hand...!", Line_Normal);
 	ClearMessage();
 
 //夏美r-vS20/36/VTK2_natsumi2012.（なんで…なんで私が悪いのっ？）
-	PlaySE(4, "ps3/s20/36/vtk2_natsumi2012", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 36, "ps3/s20/36/vtk2_natsumi2012", 256, TRUE);
 	OutputLine(NULL, "（なんで…なんで私が悪いのっ？）",
-			NULL, "(Why...? Why am I the one in the wrong?)", Line_Normal); 
+			NULL, "(Why...? Why am I the one in the wrong?)", Line_Normal);
 	ClearMessage();
 
 //r…いたずらで、私の髪の毛を切ろうとしてきた男子。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…いたずらで、私の髪の毛を切ろうとしてきた男子。",
-			NULL, "...It was the boy teasing me and trying to cut my hair.", Line_Normal); 
+			NULL, "...It was the boy teasing me and trying to cut my hair.", Line_Normal);
 	ClearMessage();
 
 //rその子がハサミなんか振りかざさなければ、何も起きなかった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その子がハサミなんか振りかざさなければ、何も起きなかった。",
-			NULL, "If he wasn't waving the scissors at me, none of this would've happened.", Line_Normal); 
+			NULL, "If he wasn't waving the scissors at me, none of this would've happened.", Line_Normal);
 	ClearMessage();
 
 //rそして、それを面白がって見つめながら、決して止めようとはしてくれなかった周囲のクラスメイトたち。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして、それを面白がって見つめながら、決して止めようとはしてくれなかった周囲のクラスメイトたち。",
-			NULL, "And the classmates around me stared at it in amusement without making any effort to stop it.", Line_Normal); 
+			NULL, "And the classmates around me stared at it in amusement without making any effort to stop it.", Line_Normal);
 	ClearMessage();
 
 //r彼らの一人でも『やめろ』と言ってくれたら、こんな事態にならかなかった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "彼らの一人でも『やめろ』と言ってくれたら、こんな事態にならかなかった。",
-			NULL, "If even one of them had said \"stop it,\" none of this would've happened.", Line_Normal); 
+			NULL, "If even one of them had said \"stop it,\" none of this would've happened.", Line_Normal);
 	ClearMessage();
 
 //rなのに…なんで？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なのに…なんで？",
-			NULL, "And yet... why?", Line_Normal); 
+			NULL, "And yet... why?", Line_Normal);
 	ClearMessage();
 
 //rなんで私が悪いの？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なんで私が悪いの？",
-			NULL, "Why am I the one in the wrong?", Line_Normal); 
+			NULL, "Why am I the one in the wrong?", Line_Normal);
 	ClearMessage();
 
 //r私一人が、そんなに悪いことをしたのっ？！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私一人が、そんなに悪いことをしたのっ？！",
-			NULL, "I alone did something bad?!", Line_Normal); 
+			NULL, "I alone did something bad?!", Line_Normal);
 	ClearMessage();
 
 //夏美rvS20/36/VTK2_natsumi2013.「わ、わたっ…！kvS20/36/VTK2_natsumi2014.　私、は…っ…！」
-	PlaySE(4, "ps3/s20/36/vtk2_natsumi2013", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#94a567>夏美</color>", NULL, "<color=#94a567>Natsumi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 36, "ps3/s20/36/vtk2_natsumi2013", 256, TRUE);
 	OutputLine(NULL, "「わ、わたっ…！",
-			NULL, "\"I-I...!", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/36/vtk2_natsumi2014", 256, 64);
+			NULL, "\"I-I...!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 36, "ps3/s20/36/vtk2_natsumi2014", 256, TRUE);
 	OutputLine(NULL, "　私、は…っ…！」",
-			NULL, " I was...!\"", Line_Normal); 
+			NULL, " I was...!\"", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
@@ -277,87 +322,100 @@
 	PlaySE(3, "door", 256, 64);
 
 //rその時、救急箱を手に入れてきた女子が保健の先生を伴って、中に飛び込んでくる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "その時、救急箱を手に入れてきた女子が保健の先生を伴って、中に飛び込んでくる。",
-			NULL, "Just then, a girl came rushing in with a first asid kit, along with the health teacher.", Line_Normal); 
+			NULL, "Just then, a girl came rushing in with a first asid kit, along with the health teacher.", Line_Normal);
 	ClearMessage();
 
 //rそして怪我をした女子に駆け寄ると、その腕の傷を確かめて顔をしかめた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そして怪我をした女子に駆け寄ると、その腕の傷を確かめて顔をしかめた。",
-			NULL, "And when she ran up to the injured girl, she checked the wound on her arm and frowned.", Line_Normal); 
+			NULL, "And when she ran up to the injured girl, she checked the wound on her arm and frowned.", Line_Normal);
 	ClearMessage();
 
 //保健医rvS20/00/VTK2_hoken2001.「酷い…これは縫わなくちゃ！kvS20/00/VTK2_hoken2002.　担任に連絡して、救急車を呼んで！kvS20/00/VTK2_hoken2003.　そこの男子、止血を手伝って！kvS20/00/VTK2_hoken2004.　――っ？！」
-	PlaySE(4, "ps3/s20/00/vtk2_hoken2001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>保健医</color>", NULL, "<color=#f5e6d3>Doctor</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_hoken2001", 256, TRUE);
 	OutputLine(NULL, "「酷い…これは縫わなくちゃ！",
-			NULL, "\"This is awful... this will need stitches!", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_hoken2002", 256, 64);
+			NULL, "\"This is awful... this will need stitches!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_hoken2002", 256, TRUE);
 	OutputLine(NULL, "　担任に連絡して、救急車を呼んで！",
-			NULL, " Contact her homeroom teacher, and call an ambulance!", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_hoken2003", 256, 64);
+			NULL, " Contact her homeroom teacher, and call an ambulance!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_hoken2003", 256, TRUE);
 	OutputLine(NULL, "　そこの男子、止血を手伝って！",
-			NULL, " You there, help stop the bleeding!", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_hoken2004", 256, 64);
+			NULL, " You there, help stop the bleeding!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_hoken2004", 256, TRUE);
 	OutputLine(NULL, "　——っ？！」",
-			NULL, " ...?!\"", Line_Normal); 
+			NULL, " ...?!\"", Line_Normal);
 	ClearMessage();
 
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //rそしてふと、先生はそばに立つ私に気づいて、…手に握られたハサミが血に染まっているのを見てとるや、私にきっ、と非難の視線を向ける。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そしてふと、先生はそばに立つ私に気づいて、…手に握られたハサミが血に染まっているのを見てとるや、私にきっ、と非難の視線を向ける。",
-			NULL, "Suddenly, the teacher noticed me standing nearby... and when she saw the bloody scissors in my hand, she turned to me with condemnation in her eyes.", Line_Normal); 
+			NULL, "Suddenly, the teacher noticed me standing nearby... and when she saw the bloody scissors in my hand, she turned to me with condemnation in her eyes.", Line_Normal);
 	ClearMessage();
 
 //r…この子に怪我をさせたのは、お前か？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…この子に怪我をさせたのは、お前か？",
-			NULL, "...You're the one who hurt this girl?", Line_Normal); 
+			NULL, "...You're the one who hurt this girl?", Line_Normal);
 	ClearMessage();
 
 //rなんて残酷なやつ、なんて乱暴なやつ…！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なんて残酷なやつ、なんて乱暴なやつ…！",
-			NULL, "So cruel, so violent...!", Line_Normal); 
+			NULL, "So cruel, so violent...!", Line_Normal);
 	ClearMessage();
 
 //rそんな声が冷たい眼光とともに、私の耳朶を震わせる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんな声が冷たい眼光とともに、私の耳朶を震わせる。",
-			NULL, "The cold gaze in her eyes transmitted that message to my ears.", Line_Normal); 
+			NULL, "The cold gaze in her eyes transmitted that message to my ears.", Line_Normal);
 	ClearMessage();
 
 	DrawFilm( 2, 255, 0, 0, 64, 0, 250, TRUE );
 
 //r…違う。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…違う。",
-			NULL, "...That's not it.", Line_Normal); 
+			NULL, "...That's not it.", Line_Normal);
 	ClearMessage();
 
 //r私じゃない。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私じゃない。",
-			NULL, "It wasn't me.", Line_Normal); 
+			NULL, "It wasn't me.", Line_Normal);
 	ClearMessage();
 
 //r私じゃない！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私じゃない！",
-			NULL, "It wasn't me!", Line_Normal); 
+			NULL, "It wasn't me!", Line_Normal);
 	ClearMessage();
 
 	DrawFilm( 2, 255, 0, 0, 96, 0, 250, TRUE );
 
 //r私、悪くない！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私、悪くない！",
-			NULL, "I'm not the one who did something wrong!", Line_Normal); 
+			NULL, "I'm not the one who did something wrong!", Line_Normal);
 	ClearMessage();
 
 //r誰か、聞いて！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "誰か、聞いて！",
-			NULL, "Someone, listen!", Line_Normal); 
+			NULL, "Someone, listen!", Line_Normal);
 	ClearMessage();
 
 	DrawFilm( 2, 255, 0, 0, 128, 0, 250, TRUE );
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
 //r私の話を聞いてよぉぉぉッッ！！！|y
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私の話を聞いてよぉぉぉッッ！！！",
-			NULL, "Listen to meeeeee!!!", Line_Normal); 
+			NULL, "Listen to meeeeee!!!", Line_Normal);
 	ClearMessage();
 
 	DisableWindow();

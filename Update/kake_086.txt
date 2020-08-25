@@ -1,4 +1,4 @@
-﻿void main()
+void main()
 {
 
 
@@ -17,9 +17,11 @@
 	PlayBGM(2, "hm02_09", 128, 0);
 
 //レポーターrvS20/00/VTK2_repo2001.「――あっ、今大沼茂容疑者を乗せた車が厚生省の地下駐車場から出てまいりました！」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2001", 256, 64);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2001", 256, TRUE);
 	OutputLine(NULL, "「——あっ、今大沼茂容疑者を乗せた車が厚生省の地下駐車場から出てまいりました！」",
-			NULL, "\"...Oh, a car carrying the suspect Shigeru Ounuma has just emerged from the underground parking lot of the Ministry of Health and Welfare!\"", Line_Normal); 
+			NULL, "\"...Oh, a car carrying the suspect Shigeru Ounuma has just emerged from the underground parking lot of the Ministry of Health and Welfare!\"", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "kamera", 256, 64);
@@ -33,13 +35,15 @@
 	DrawScene("background/mati12", 150 );
 
 //r…現地リポーターのその声と同時に、車の進む先で待ち構えていたカメラ群が一斉にフラッシュを焚いて車内の様子を撮影する。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…現地リポーターのその声と同時に、車の進む先で待ち構えていたカメラ群が一斉にフラッシュを焚いて車内の様子を撮影する。",
-			NULL, "...The moment the local reporter said that, a group of cameras waiting in front of the car all used their burning flashes at once to take pictures of the inside of the car.", Line_Normal); 
+			NULL, "...The moment the local reporter said that, a group of cameras waiting in front of the car all used their burning flashes at once to take pictures of the inside of the car.", Line_Normal);
 	ClearMessage();
 
 //r厚生省の薬事局次長…大沼茂の姿は、両側を刑事に挟まれる形で後部座席中央にあった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "厚生省の薬事局次長…大沼茂の姿は、両側を刑事に挟まれる形で後部座席中央にあった。",
-			NULL, "The deputy director of the Ministry of Health and Welfare's pharmaceutical affairs bureau... Shigeru Ounuma was sitting in the center of the back seat, between two detectives.", Line_Normal); 
+			NULL, "The deputy director of the Ministry of Health and Welfare's pharmaceutical affairs bureau... Shigeru Ounuma was sitting in the center of the back seat, between two detectives.", Line_Normal);
 	ClearMessage();
 
 	PlaySE(4, "kamera", 256, 64);
@@ -50,28 +54,32 @@
 	DrawScene("background/mati12", 150 );
 
 //レポーターrvS20/00/VTK2_repo2002.「今、待ち構えていた報道陣のカメラが後部座席に向かって、一斉に撮影を行っています。kvS20/00/VTK2_repo2003.ものすごい数です…！」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2002", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2002", 256, TRUE);
 	OutputLine(NULL, "「今、待ち構えていた報道陣のカメラが後部座席に向かって、一斉に撮影を行っています。",
-			NULL, "\"Right now, the press in waiting are shooting their cameras at the back seat all at once.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_repo2003", 256, 64);
+			NULL, "\"Right now, the press in waiting are shooting their cameras at the back seat all at once.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2003", 256, TRUE);
 	OutputLine(NULL, "ものすごい数です…！」",
-			NULL, " A momumental quantity of them...!\"", Line_Normal); 
+			NULL, " A momumental quantity of them...!\"", Line_Normal);
 	ClearMessage();
 
 //レポーターrvS20/00/VTK2_repo2004.「私も気をつけていなければ、この人ごみの波にさらわれてしまいそうなほどです」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2004", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2004", 256, TRUE);
 	OutputLine(NULL, "「私も気をつけていなければ、この人ごみの波にさらわれてしまいそうなほどです」",
-			NULL, "\"If I'm not careful, I might be taken away by this wave of a crows.\"", Line_Normal); 
+			NULL, "\"If I'm not careful, I might be taken away by this wave of a crows.\"", Line_Normal);
 	ClearMessage();
 
 //r…そして、その一段から少し離れた先では、横断幕やプラカードを掲げる集団の姿が見える。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…そして、その一段から少し離れた先では、横断幕やプラカードを掲げる集団の姿が見える。",
-			NULL, "...And a short ways bbeyond that, a group of people could be seen waving banners and placards.", Line_Normal); 
+			NULL, "...And a short ways bbeyond that, a group of people could be seen waving banners and placards.", Line_Normal);
 	ClearMessage();
 
 //rそこには『人殺し』や『悪徳役人』などの様々な罵詈雑言が乱雑な文字で綴られており、集団の人々は一斉にゆっくりと進む車に向かって、怒声を口々にぶつけていった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そこには『人殺し』や『悪徳役人』などの様々な罵詈雑言が乱雑な文字で綴られており、集団の人々は一斉にゆっくりと進む車に向かって、怒声を口々にぶつけていった。",
-			NULL, "With various abusive phrases written on them in jumbled letters, like \"murderer\" and \"corrupt official.\" And the mob of people slowly moved toward the car all at once, shouting in rage.", Line_Normal); 
+			NULL, "With various abusive phrases written on them in jumbled letters, like \"murderer\" and \"corrupt official.\" And the mob of people slowly moved toward the car all at once, shouting in rage.", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
@@ -79,12 +87,13 @@
 	Wait( 150 );
 
 //野次rvS20/00/VTK2_yajiA2001.「人殺し！kvS20/00/VTK2_yajiA2002.　うちの子を返せっ！！」
-	PlaySE(4, "ps3/s20/00/vtk2_yajia2001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野次</color>", NULL, "<color=#f5e6d3>Heckler</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_yajia2001", 256, TRUE);
 	OutputLine(NULL, "「人殺し！",
-			NULL, "\"Murderer!", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_yajia2002", 256, 64);
+			NULL, "\"Murderer!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_yajia2002", 256, TRUE);
 	OutputLine(NULL, "　うちの子を返せっ！！」",
-			NULL, " Give me back my child!!\"", Line_Normal); 
+			NULL, " Give me back my child!!\"", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "waru", 256, 64);
@@ -92,12 +101,13 @@
 	Wait( 150 );
 
 //野次rvS20/00/VTK2_yajiB2001.「あんたは人間じゃない、鬼だ！kvS20/00/VTK2_yajiB2002.　患者たちの命を踏みにじって、どうして平気な顔してられるんだよ！！」
-	PlaySE(4, "ps3/s20/00/vtk2_yajib2001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野次</color>", NULL, "<color=#f5e6d3>Heckler</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_yajib2001", 256, TRUE);
 	OutputLine(NULL, "「あんたは人間じゃない、鬼だ！",
-			NULL, "\"You're not human! You're a demon!", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_yajib2002", 256, 64);
+			NULL, "\"You're not human! You're a demon!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_yajib2002", 256, TRUE);
 	OutputLine(NULL, "　患者たちの命を踏みにじって、どうして平気な顔してられるんだよ！！」",
-			NULL, " How can you look so calm after trampling on the lives of so many patients!?!\"", Line_Normal); 
+			NULL, " How can you look so calm after trampling on the lives of so many patients!?!\"", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "daidageki", 256, 64);
@@ -105,117 +115,131 @@
 	Wait( 150 );
 
 //野次rvS20/00/VTK2_yajiC2001.「そこまで金が欲しかったのかよ！kvS20/00/VTK2_yajiC2002.　税金で雇われた人間のくせに…恥を知りやがれ！！」
-	PlaySE(4, "ps3/s20/00/vtk2_yajic2001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野次</color>", NULL, "<color=#f5e6d3>Heckler</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_yajic2001", 256, TRUE);
 	OutputLine(NULL, "「そこまで金が欲しかったのかよ！",
-			NULL, "\"Does money matter that much to you?!", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_yajic2002", 256, 64);
+			NULL, "\"Does money matter that much to you?!", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_yajic2002", 256, TRUE);
 	OutputLine(NULL, "　税金で雇われた人間のくせに…恥を知りやがれ！！」",
-			NULL, " Even though you're already paid with our tax dollars! ...How shameful!!\"", Line_Normal); 
+			NULL, " Even though you're already paid with our tax dollars! ...How shameful!!\"", Line_Normal);
 	ClearMessage();
 
 //r……。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……。",
-			NULL, "......", Line_Normal); 
+			NULL, "......", Line_Normal);
 	ClearMessage();
 
 //レポーターrvS20/00/VTK2_repo2005.「…あそこに集まっているのは被害者の会の皆さんです。kvS20/00/VTK2_repo2006.患者のご家族、知人、そして病院関係者…相当な人数に見受けられます」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2005", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2005", 256, TRUE);
 	OutputLine(NULL, "「…あそこに集まっているのは被害者の会の皆さんです。",
-			NULL, "\"...The aggrieved parties are all gathered over there.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_repo2006", 256, 64);
+			NULL, "\"...The aggrieved parties are all gathered over there.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2006", 256, TRUE);
 	OutputLine(NULL, "患者のご家族、知人、そして病院関係者…相当な人数に見受けられます」",
-			NULL, " Family members of patients, acquaintances, and hospital personnel... gathered together in a considerably large group.\"", Line_Normal); 
+			NULL, " Family members of patients, acquaintances, and hospital personnel... gathered together in a considerably large group.\"", Line_Normal);
 	ClearMessage();
 
 //レポーターrvS20/00/VTK2_repo2007.「彼らは一斉に、大沼容疑者の乗る車に向かって罵声を浴びせています。k|yvS20/00/VTK2_repo2008.…あっ、いま投石がありました！」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2007", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2007", 256, TRUE);
 	OutputLine(NULL, "「彼らは一斉に、大沼容疑者の乗る車に向かって罵声を浴びせています。",
-			NULL, "\"They're all hurling harsh words toward the car the suspect Ounuma is riding.", Line_WaitForInput); 
+			NULL, "\"They're all hurling harsh words toward the car the suspect Ounuma is riding.", Line_WaitForInput);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
-	PlaySE(4, "ps3/s20/00/vtk2_repo2008", 256, 64);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2008", 256, TRUE);
 	OutputLine(NULL, "…あっ、いま投石がありました！」",
-			NULL, " ...Oh, one of them threw a stone just now!\"", Line_Normal); 
+			NULL, " ...Oh, one of them threw a stone just now!\"", Line_Normal);
 	ClearMessage();
 
 //野次rvS20/00/VTK2_yajiA2003.「ちくしょう…ちくしょうっっ！！k|yvS20/00/VTK2_yajiA2004.　お前らのせいで俺の娘は…娘はぁぁっっ！！！」
-	PlaySE(4, "ps3/s20/00/vtk2_yajia2003", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>野次</color>", NULL, "<color=#f5e6d3>Heckler</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_yajia2003", 256, TRUE);
 	OutputLine(NULL, "「ちくしょう…ちくしょうっっ！！",
-			NULL, "\"Damn you... Damn you!!", Line_WaitForInput); 
+			NULL, "\"Damn you... Damn you!!", Line_WaitForInput);
 	PlaySE(3, "daidageki", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
-	PlaySE(4, "ps3/s20/00/vtk2_yajia2004", 256, 64);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_yajia2004", 256, TRUE);
 	OutputLine(NULL, "　お前らのせいで俺の娘は…娘はぁぁっっ！！！」",
-			NULL, " Thanks to you, my daugher... my daughter is...!!!\"", Line_Normal); 
+			NULL, " Thanks to you, my daugher... my daughter is...!!!\"", Line_Normal);
 	ClearMessage();
 
 //r……！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……！",
-			NULL, "...!", Line_Normal); 
+			NULL, "...!", Line_Normal);
 	ClearMessage();
 
 //レポーターrvS20/00/VTK2_repo2009.「石を投げつけた人は、周囲の警察官によってとりおさえられたとのことです。kvS20/00/VTK2_repo2010.ただ、その怒り猛る感情は私たちにも理解できるものです」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2009", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2009", 256, TRUE);
 	OutputLine(NULL, "「石を投げつけた人は、周囲の警察官によってとりおさえられたとのことです。",
-			NULL, "\"The person who threw the stone has been seized by surrounding police officers.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_repo2010", 256, 64);
+			NULL, "\"The person who threw the stone has been seized by surrounding police officers.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2010", 256, TRUE);
 	OutputLine(NULL, "ただ、その怒り猛る感情は私たちにも理解できるものです」",
-			NULL, " But that expression of anger is something we all can understand.\"", Line_Normal); 
+			NULL, " But that expression of anger is something we all can understand.\"", Line_Normal);
 	ClearMessage();
 
 //レポーターrvS20/00/VTK2_repo2011.「なにしろ今回、プラシルの副作用で病状が悪化した患者の数は、現状確認できるだけでも５００人以上…」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2011", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2011", 256, TRUE);
 	OutputLine(NULL, "「なにしろ今回、プラシルの副作用で病状が悪化した患者の数は、現状確認できるだけでも５００人以上…」",
-			NULL, "\"Anyway, it has been confirmed that the number of patients whose condition worsened due to side effects of Placil is now over 500...\"", Line_Normal); 
+			NULL, "\"Anyway, it has been confirmed that the number of patients whose condition worsened due to side effects of Placil is now over 500...\"", Line_Normal);
 	ClearMessage();
 
 //レポーターrvS20/00/VTK2_repo2012.「元々分母の小さな精神疾患の分野において、この数値は異常なものと専門家からもご意見をいただいております。kvS20/00/VTK2_repo2013.さらに、患者が死に至った事例もいくつか判明しています」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2012", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2012", 256, TRUE);
 	OutputLine(NULL, "「元々分母の小さな精神疾患の分野において、この数値は異常なものと専門家からもご意見をいただいております。",
-			NULL, "\"While mental disorders are a small field, we have received work from experts that this number is far beyond the norm.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_repo2013", 256, 64);
+			NULL, "\"While mental disorders are a small field, we have received work from experts that this number is far beyond the norm.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2013", 256, TRUE);
 	OutputLine(NULL, "さらに、患者が死に至った事例もいくつか判明しています」",
-			NULL, " Additionally, some of these cases have even resulted in death.\"", Line_Normal); 
+			NULL, " Additionally, some of these cases have even resulted in death.\"", Line_Normal);
 	ClearMessage();
 
 //ＴＶアナrvS20/00/VTK2_Tvann2001.『…現場の吉村さん。kvS20/00/VTK2_Tvann2002.護送される大沼容疑者の様子はどんな感じでしたか？』
-	PlaySE(4, "ps3/s20/00/vtk2_tvann2001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>ＴＶアナ</color>", NULL, "<color=#f5e6d3>TV Announcer</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_tvann2001", 256, TRUE);
 	OutputLine(NULL, "『…現場の吉村さん。",
-			NULL, "\"...Yoshimura-san, as someone on the scene,", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_tvann2002", 256, 64);
+			NULL, "\"...Yoshimura-san, as someone on the scene,", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_tvann2002", 256, TRUE);
 	OutputLine(NULL, "護送される大沼容疑者の様子はどんな感じでしたか？』",
-			NULL, " can you tell us how the suspect Ounuma was acting while being escorted?\"", Line_Normal); 
+			NULL, " can you tell us how the suspect Ounuma was acting while being escorted?\"", Line_Normal);
 	ClearMessage();
 
 //レポーターrvS20/00/VTK2_repo2014.「はい、…ちょっと車内が暗く覆われていて、しかも大沼容疑者は頭からすっぽりジャケットをかぶっていましたので、表情等はわかりませんでした」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2014", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2014", 256, TRUE);
 	OutputLine(NULL, "「はい、…ちょっと車内が暗く覆われていて、しかも大沼容疑者は頭からすっぽりジャケットをかぶっていましたので、表情等はわかりませんでした」",
-			NULL, "\"Right... the interior of the car was slightly dark, and Ounuma was wearing a jacket on his head so I couldn't get a good look at his expression.\"", Line_Normal); 
+			NULL, "\"Right... the interior of the car was slightly dark, and Ounuma was wearing a jacket on his head so I couldn't get a good look at his expression.\"", Line_Normal);
 	ClearMessage();
 
 //レポーターrvS20/00/VTK2_repo2015.「ただ、関係者の話ですと警察官が彼の職場に訪れる前から落ち着き払った表情で、もはや覚悟を決めたという様子であったとのことです」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2015", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2015", 256, TRUE);
 	OutputLine(NULL, "「ただ、関係者の話ですと警察官が彼の職場に訪れる前から落ち着き払った表情で、もはや覚悟を決めたという様子であったとのことです」",
-			NULL, "\"However, according to people connected with him, he seemed to be calm and ready to go even before the police arrived on the scene.\"", Line_Normal); 
+			NULL, "\"However, according to people connected with him, he seemed to be calm and ready to go even before the police arrived on the scene.\"", Line_Normal);
 	ClearMessage();
 
 //ＴＶアナrvS20/00/VTK2_Tvann2003.『以前の取材では、確か自らの潔白を訴えておりましたよね？kvS20/00/VTK2_Tvann2004.　そのあたりはどうだったのでしょう？』
-	PlaySE(4, "ps3/s20/00/vtk2_tvann2003", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>ＴＶアナ</color>", NULL, "<color=#f5e6d3>TV Announcer</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_tvann2003", 256, TRUE);
 	OutputLine(NULL, "『以前の取材では、確か自らの潔白を訴えておりましたよね？",
-			NULL, "\"The suspect claimed his innocence in previous interviews, did he not?", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_tvann2004", 256, 64);
+			NULL, "\"The suspect claimed his innocence in previous interviews, did he not?", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_tvann2004", 256, TRUE);
 	OutputLine(NULL, "　そのあたりはどうだったのでしょう？』",
-			NULL, " Has anything changed on that front?\"", Line_Normal); 
+			NULL, " Has anything changed on that front?\"", Line_Normal);
 	ClearMessage();
 
 //レポーターrvS20/00/VTK2_repo2016.「残念ながら、その点につきましてはまだ不確定な状況ですので、今後の関係者への取材によってご報告したいと思います。kvS20/00/VTK2_repo2017.現場からは、以上です」
-	PlaySE(4, "ps3/s20/00/vtk2_repo2016", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レポーター</color>", NULL, "<color=#f5e6d3>Reporter</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2016", 256, TRUE);
 	OutputLine(NULL, "「残念ながら、その点につきましてはまだ不確定な状況ですので、今後の関係者への取材によってご報告したいと思います。",
-			NULL, "\"Unfortunately, that point remains unclear at the moment, so we are looking to interview related personnel going forward.", Line_WaitForInput); 
-	PlaySE(4, "ps3/s20/00/vtk2_repo2017", 256, 64);
+			NULL, "\"Unfortunately, that point remains unclear at the moment, so we are looking to interview related personnel going forward.", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_repo2017", 256, TRUE);
 	OutputLine(NULL, "現場からは、以上です」",
-			NULL, " And that is all from the scene.\"", Line_Normal); 
+			NULL, " And that is all from the scene.\"", Line_Normal);
 	ClearMessage();
 
 	DrawScene("background/tk_yo1", 1000 );
@@ -224,9 +248,10 @@
 	Wait( 150 );
 
 //真澄rvS20/00/VTK2_masumi2001.「デタラメよッッ！！」
-	PlaySE(4, "ps3/s20/00/vtk2_masumi2001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>真澄</color>", NULL, "<color=#f5e6d3>Masumi</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk2_masumi2001", 256, TRUE);
 	OutputLine(NULL, "「デタラメよッッ！！」",
-			NULL, "\"Bullshit!!\"", Line_Normal); 
+			NULL, "\"Bullshit!!\"", Line_Normal);
 	ClearMessage();
 
 	DisableWindow();
