@@ -16,7 +16,7 @@ void main()
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
 
-	char Chapter[9];
+	char Chapter[11];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
@@ -27,14 +27,14 @@ void main()
 		Chapter[4] = "Yoigoshi";
 		Chapter[5] = "Police Case Files";
 		Chapter[6] = "Tokihogushi";
-		Chapter[7] = "Miotsukushi Omote";
-		Chapter[8] = "Back";
+		Chapter[7] = "Connecting Fragments";
+		Chapter[8] = "Miotsukushi Omote";
+		Chapter[9] = "Miotsukushi Ura";
+		Chapter[10] = "Back";
 
-		//Chapter[8] = "Connecting Fragments";
-		//Chapter[9] = "Miotsukushi Ura";
-		//Chapter[10] = "Miotsukushi PS2 version";
-		//Chapter[11] = "Kotohogushi";
-		//Chapter[12] = "Hajisarashi";
+		//Chapter[11] = "Miotsukushi PS2 version";
+		//Chapter[12] = "Kotohogushi";
+		//Chapter[13] = "Hajisarashi";
 	}
 	else
 	{
@@ -45,18 +45,18 @@ void main()
 		Chapter[4] = "宵越し編";
 		Chapter[5] = "警察事件調書";
 		Chapter[6] = "解々し編";
-		Chapter[7] = "澪尽し編 表";
-		Chapter[8] = "戻る";
+		Chapter[7] = "カケラ紡ぎ";
+		Chapter[8] = "澪尽し編 表";
+		Chapter[9] = "澪尽し編 裏";
+		Chapter[10] = "戻る";
 
-		//Chapter[8] = "カケラ結び";
-		//Chapter[9] = "澪尽し編 裏";
-		//Chapter[10] = "澪尽し編 PS2版";	
-		//Chapter[11] = "言祝し編";
-		//Chapter[12] = "羞晒し編";
+		//Chapter[11] = "澪尽し編 PS2版";	
+		//Chapter[12] = "言祝し編";
+		//Chapter[13] = "羞晒し編";
 	}
 
 //	InitializeSelectedItem();
-	Select( 9, Chapter );
+	Select( 11, Chapter );
 	DisableWindow();
 	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
@@ -291,6 +291,39 @@ void main()
 	}
 	else if(LoadValueFromLocalWork( SelectResult ) == 7)
 	{
+		DrawScene("scenario/connecting/background", 1200 );
+		DrawBustshot(5, "scenario/connecting/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
+		DrawBustshot(6, "scenario/connecting/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
+		DrawBustshot(7, "scenario/logo", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, TRUE );
+		DrawBustshot(8, "scenario/stripes", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, TRUE );
+		Wait( 100 );
+		FadeBustshotWithFiltering(5, "5", 1, FALSE, 0, 0, 1000, TRUE );
+		Wait( 200 );
+
+		DrawBustshotWithFiltering(9, "scenario/connecting/description", "5", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+		Wait( 200 );
+
+		SetValidityOfInput( TRUE );
+
+		ShowChapterPreview();
+
+		if (LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1) {
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetGlobalFlag(GArtStyle , 0);
+
+			SetValidityOfSaving( TRUE );
+			CallSection("ConnectingFragments");
+		}
+		else
+		{
+			StopBGM( 2 );
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 8)
+	{
 		DrawScene("scenario/omote/background", 1200 );
 		DrawBustshot(5, "scenario/omote/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
 		DrawBustshot(6, "scenario/omote/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
@@ -315,6 +348,40 @@ void main()
 
 			SetValidityOfSaving( TRUE );
 			CallSection("OmoteDay1");
+		}
+		else
+		{
+			StopBGM( 2 );
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 9)
+	{
+		DrawScene("scenario/ura/background", 1200 );
+		DrawBustshot(5, "scenario/ura/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
+		DrawBustshot(6, "scenario/ura/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
+		DrawBustshot(7, "scenario/logo", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, TRUE );
+		DrawBustshot(8, "scenario/stripes", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, TRUE );
+		Wait( 100 );
+		FadeBustshotWithFiltering(5, "5", 1, FALSE, 0, 0, 1000, TRUE );
+		Wait( 200 );
+
+		DrawBustshotWithFiltering(9, "scenario/ura/description", "5", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+		Wait( 200 );
+
+		SetValidityOfInput( TRUE );
+
+		ShowChapterPreview();
+
+		if (LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1) {
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetGlobalFlag(GArtStyle , 0);
+			FadeAllBustshots( 100, FALSE );
+
+			SetValidityOfSaving( TRUE );
+			CallSection("UraDay1");
 		}
 		else
 		{
@@ -360,7 +427,16 @@ void ViewTipsDisplay()
 	DisableWindow();
 
 	if(LoadValueFromLocalWork( TipsMode ) < 3)
-		DrawScene("black", 0);
+	{
+		if (GetLocalFlag(LConsoleArc)==12) 
+		{
+			DrawScene("background/fure2", 0);
+		}
+		else
+		{
+			DrawScene("black", 0);
+		}
+	}
 
 	if(LoadValueFromLocalWork( TipsMode ) == 1)
 		ShowExtras();
@@ -1677,3 +1753,170 @@ void OmoteDay27()
 	JumpScript( "flow" );
 }
 
+void ConnectingFragments()
+{
+	CallScript( "kake_001" );
+
+	SetLocalFlag(LConsoleArc, 12);
+	StoreValueToLocalWork( ChapterNumber, 1 );
+	SavePoint("カケラ紡ぎ", "Connecting Fragments");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpScript( "flow" );
+}
+
+void UraDay1()
+{
+	if (ModGetHighestChapterFlag(7)<0)
+		ModSetHighestChapterFlag(7, 0);
+	CallScript( "ura_001" );
+
+	JumpSection("UraDay2");
+}
+
+void UraDay2()
+{
+	if (ModGetHighestChapterFlag(7)<1)
+		ModSetHighestChapterFlag(7, 1);
+	CallScript( "ura_002" );
+
+	JumpSection("UraDay3");
+}
+
+void UraDay3()
+{
+	if (ModGetHighestChapterFlag(7)<2)
+		ModSetHighestChapterFlag(7, 2);
+	CallScript( "ura_003" );
+
+	JumpSection("UraDay4");
+}
+
+void UraDay4()
+{
+	if (ModGetHighestChapterFlag(7)<3)
+		ModSetHighestChapterFlag(7, 3);
+	CallScript( "ura_004" );
+
+	JumpSection("UraDay5");
+}
+
+void UraDay5()
+{
+	if (ModGetHighestChapterFlag(7)<4)
+		ModSetHighestChapterFlag(7, 4);
+	CallScript( "ura_005" );
+
+	JumpSection("UraDay6");
+}
+
+void UraDay6()
+{
+	if (ModGetHighestChapterFlag(7)<5)
+		ModSetHighestChapterFlag(7, 5);
+	CallScript( "ura_006" );
+
+	JumpSection("UraDay7");
+}
+
+void UraDay7()
+{
+	if (ModGetHighestChapterFlag(7)<6)
+		ModSetHighestChapterFlag(7, 6);
+	CallScript( "ura_007" );
+
+	JumpSection("UraDay8");
+}
+
+void UraDay8()
+{
+	if (ModGetHighestChapterFlag(7)<7)
+		ModSetHighestChapterFlag(7, 7);
+	CallScript( "ura_008" );
+
+	JumpSection("UraDay9");
+}
+
+void UraDay9()
+{
+	if (ModGetHighestChapterFlag(7)<8)
+		ModSetHighestChapterFlag(7, 8);
+	CallScript( "ura_009" );
+
+	JumpSection("UraDay10");
+}
+
+void UraDay10()
+{
+	if (ModGetHighestChapterFlag(7)<9)
+		ModSetHighestChapterFlag(7, 9);
+	CallScript( "ura_010" );
+
+	JumpSection("UraDay11");
+}
+
+void UraDay11()
+{
+	if (ModGetHighestChapterFlag(7)<10)
+		ModSetHighestChapterFlag(7, 10);
+	CallScript( "ura_011" );
+
+	JumpSection("UraDay12");
+}
+
+void UraDay12()
+{
+	if (ModGetHighestChapterFlag(7)<11)
+		ModSetHighestChapterFlag(7, 11);
+	CallScript( "ura_012" );
+
+	JumpSection("UraDay13");
+}
+
+void UraDay13()
+{
+	if (ModGetHighestChapterFlag(7)<12)
+		ModSetHighestChapterFlag(7, 12);
+	CallScript( "ura_013" );
+
+	JumpSection("UraDay14");
+}
+
+void UraDay14()
+{
+	if (ModGetHighestChapterFlag(7)<13)
+		ModSetHighestChapterFlag(7, 13);
+	CallScript( "ura_014" );
+
+	JumpSection("UraDay15");
+}
+
+void UraDay15()
+{
+	if (ModGetHighestChapterFlag(7)<14)
+		ModSetHighestChapterFlag(7, 14);
+	CallScript( "ura_015" );
+
+	JumpSection("UraDay16");
+}
+
+void UraDay16()
+{
+	if (ModGetHighestChapterFlag(7)<15)
+		ModSetHighestChapterFlag(7, 15);
+	CallScript( "ura_016" );
+
+	JumpSection("UraDay17");
+}
+
+void UraDay17()
+{
+	if (ModGetHighestChapterFlag(7)<16)
+		ModSetHighestChapterFlag(7, 16);
+	CallScript( "ura_017" );
+
+	CallScript( "mio_omake" );
+
+	JumpScript( "flow" );
+}
