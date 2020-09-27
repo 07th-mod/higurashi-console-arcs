@@ -19,10 +19,10 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Yoigoshi             | 100%     | 100%        | 100%    | 
 | Tokihogushi          | 100%     | 100%        | 100%    | 
 | Miotsukushi Omote    | 100%     | 100%        | 100%    | 
-| Miotsukushi Ura      | 100%     | 100%        |  93%    | 
+| Miotsukushi Ura      | 100%     | 100%        | 100%    | 
 | Connecting Fragments | 100%     | 100%        | 100%    | 
 
-Miotsukushi Ura translation is complete. It still needs to go through editing and some other small steps, so we're on pace for a release in mid/late September.  It'll include both the Connecting Fragments and Ura.
+Miotsukushi Ura translation and editing are complete!  Just gotta put all the pieces together, and we may have a release tomorrow.  It'll include both the Connecting Fragments and Ura.
 
 
 ## Screenshots
