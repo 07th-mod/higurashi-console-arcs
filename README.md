@@ -22,7 +22,7 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Miotsukushi Ura      | 100%     | 100%        | 100%    | 
 | Connecting Fragments | 100%     | 100%        | 100%    | 
 
-Miotsukushi Ura translation and editing are complete!  Just gotta put all the pieces together, and we may have a release tomorrow.  It'll include both the Connecting Fragments and Ura.
+Miotsukushi Ura and the Connecting Fragments have been released!  The next thing I'm planning to look into is the PS2 version of Miotsukushi. Other folks are also working on Hajisarashi and Kotohogushi, so expect those eventually.
 
 
 ## Screenshots
