@@ -21,8 +21,9 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Miotsukushi Omote    | 100%     | 100%        | 100%    | 
 | Miotsukushi Ura      | 100%     | 100%        | 100%    | 
 | Connecting Fragments | 100%     | 100%        | 100%    | 
+| Miotsukushi PS2      |  11%     |  11%        |   0%    | 
 
-Miotsukushi Ura and the Connecting Fragments have been released!  The next thing I'm planning to look into is the PS2 version of Miotsukushi. Other folks are also working on Hajisarashi and Kotohogushi, so expect those eventually.
+PS2 Miotsukushi is under development. This is a little different from other arcs, so I'm doing the porting and translation concurrently. Expect it by the end of the year. Other folks are also working on Hajisarashi and Kotohogushi, so expect those eventually.
 
 
 ## Screenshots

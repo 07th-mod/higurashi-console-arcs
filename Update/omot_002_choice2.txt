@@ -106,12 +106,21 @@ void main()
 
 //詩音rvS14/06/VT4Ba_shion1001.「………マ、マスター、かか、カレーライス…、kvS14/06/VT4Ba_shion1002.大盛で、４枚…っ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>Shion</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 6, "ps3/s14/06/vt4ba_shion1001", 256, TRUE);
-	OutputLine(NULL, "「………マ、マスター、かか、カレーライス…、",
-			NULL, "\"...M-my favorite is... c-c-curry and rice...", Line_WaitForInput);
-	ModPlayVoiceLS(4, 6, "ps3/s14/06/vt4ba_shion1002", 256, TRUE);
-	OutputLine(NULL, "大盛で、４枚…っ！」",
-			NULL, " I could eat four huge helpings...!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 6, "ps2/06/210600101", 540, TRUE);
+		OutputLine(NULL, "「………か、かか、カレーライス…、",
+				NULL, "\"...C-c-curry and rice is, umm...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 6, "ps2/06/210600102", 540, TRUE);
+		OutputLine(NULL, "大盛、４枚……っ！」",
+				NULL, " I could eat four huge helpings...!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 6, "ps3/s14/06/vt4ba_shion1001", 256, TRUE);
+		OutputLine(NULL, "「………マ、マスター、かか、カレーライス…、",
+				NULL, "\"...M-my favorite is... c-c-curry and rice...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 6, "ps3/s14/06/vt4ba_shion1002", 256, TRUE);
+		OutputLine(NULL, "大盛で、４枚…っ！」",
+				NULL, " I could eat four huge helpings...!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	PlaySE(3, "finish", 256, 64);

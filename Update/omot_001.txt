@@ -913,11 +913,19 @@ void main()
 	ClearMessage();
 
 //梨花rvS14/05/VT4Ba_rika1001.「……ぅ、そういえば…」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1001", 256, TRUE);
-	OutputLine(NULL, "「……ぅ、そういえば…」",
-			NULL, "\"...Oh, that's right...\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 5, "ps2/05/210500022", 540, TRUE);
+		OutputLine(NULL, "「…………ああ、そうか」",
+				NULL, "\"...Oh, right...\"", Line_Normal);
+		ClearMessage();
+	} else {
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1001", 256, TRUE);
+		OutputLine(NULL, "「……ぅ、そういえば…」",
+				NULL, "\"...Oh, that's right...\"", Line_Normal);
+		ClearMessage();
+	}
 
 //r寝ぼけた意識と、ノイズだらけの記憶を叩き起こして。…私は今自分が、時間を戻して再び『あの時』に帰ってきたことを思い出した。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -947,7 +955,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1002.「――鷹野、三四…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1002", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500023", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1002", 256, TRUE);
+	}
 	OutputLine(NULL, "「——鷹野、三四…」",
 			NULL, "\"...Miyo Takano...\"", Line_Normal);
 	ClearMessage();
@@ -998,7 +1010,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1003.「――っ…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1003", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500024", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1003", 256, TRUE);
+	}
 	OutputLine(NULL, "「——っ…！」",
 			NULL, "\"...!\"", Line_Normal);
 	ClearMessage();
@@ -1033,7 +1049,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1004.「ふう…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1004", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500025", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1004", 256, TRUE);
+	}
 	OutputLine(NULL, "「ふう…」",
 			NULL, "\"Haah...\"", Line_Normal);
 	ClearMessage();
@@ -1058,7 +1078,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1005.「―そうだ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1005", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500026", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1005", 256, TRUE);
+	}
 	OutputLine(NULL, "「—そうだ」",
 			NULL, "\"...Right.\"", Line_Normal);
 	ClearMessage();
@@ -1071,13 +1095,23 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1006.「…羽入、今はいつなのです？kvS14/05/VT4Ba_rika1007.　昭和何年の、何月何日ですか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1006", 256, TRUE);
-	OutputLine(NULL, "「…羽入、今はいつなのです？",
-			NULL, "\"...Hanyuu, what day is it now?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1007", 256, TRUE);
-	OutputLine(NULL, "　昭和何年の、何月何日ですか？」",
-			NULL, " What year, month, and day?\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500027", 540, TRUE);
+		OutputLine(NULL, "「…羽入、今はいつ？",
+				NULL, "\"...Hanyuu, what day is it now?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500028", 540, TRUE);
+		OutputLine(NULL, "　昭和何年の、何月何日？」",
+				NULL, " What year, month, and day?\"", Line_Normal);
+		ClearMessage();
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1006", 256, TRUE);
+		OutputLine(NULL, "「…羽入、今はいつなのです？",
+				NULL, "\"...Hanyuu, what day is it now?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1007", 256, TRUE);
+		OutputLine(NULL, "　昭和何年の、何月何日ですか？」",
+				NULL, " What year, month, and day?\"", Line_Normal);
+		ClearMessage();
+	}
 
 //r毎回、私が一番初めに聞く問いかけ。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1129,7 +1163,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1008.「…それでも」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1008", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500029", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1008", 256, TRUE);
+	}
 	OutputLine(NULL, "「…それでも」",
 			NULL, "\"...But even so.\"", Line_Normal);
 	ClearMessage();
@@ -1168,7 +1206,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1009.「…………羽入？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1009", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500030", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1009", 256, TRUE);
+	}
 	OutputLine(NULL, "「…………羽入？」",
 			NULL, "\"......Hanyuu?\"", Line_Normal);
 	ClearMessage();
@@ -1204,13 +1246,24 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1010.「羽入？kvS14/05/VT4Ba_rika1011.　どうしたのですか、羽入？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1010", 256, TRUE);
-	OutputLine(NULL, "「羽入？",
-			NULL, "\"Hanyuu?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1011", 256, TRUE);
-	OutputLine(NULL, "　どうしたのですか、羽入？」",
-			NULL, " What's the matter, Hanyuu?\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500031", 540, TRUE);
+		OutputLine(NULL, "「羽入？",
+				NULL, "\"Hanyuu?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500032", 540, TRUE);
+		OutputLine(NULL, "　どうしたの、羽入？」",
+				NULL, " What's the matter, Hanyuu?\"", Line_Normal);
+		ClearMessage();
+
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1010", 256, TRUE);
+		OutputLine(NULL, "「羽入？",
+				NULL, "\"Hanyuu?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1011", 256, TRUE);
+		OutputLine(NULL, "　どうしたのですか、羽入？」",
+				NULL, " What's the matter, Hanyuu?\"", Line_Normal);
+		ClearMessage();
+	}
 
 //r…………………………………………………………………………r…………………………………………………………………………r…………………………………………………………………………r…………………………………………………………………変だ。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1220,7 +1273,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1012.「羽入…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1012", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500033", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1012", 256, TRUE);
+	}
 	OutputLine(NULL, "「羽入…？」",
 			NULL, "\"Hanyuu...?\"", Line_Normal);
 	ClearMessage();
@@ -1233,7 +1290,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1013.「羽入？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1013", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500034", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1013", 256, TRUE);
+	}
 	OutputLine(NULL, "「羽入？」",
 			NULL, "\"Hanyuu?\"", Line_Normal);
 	ClearMessage();
@@ -1246,7 +1307,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1014.「羽入っ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1014", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500035", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1014", 256, TRUE);
+	}
 	OutputLine(NULL, "「羽入っ？」",
 			NULL, "\"Hanyuu?\"", Line_Normal);
 	ClearMessage();
@@ -1262,7 +1327,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1014_a.「羽入ぅっ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1014_a", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500036", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1014_a", 256, TRUE);
+	}
 	OutputLine(NULL, "「羽入ぅっ？！」",
 			NULL, "\"Hanyuu?!\"", Line_Normal);
 	ClearMessage();
@@ -1297,13 +1366,22 @@ void main()
 
 //沙都子rvS14/04/VT4Ba_satoko1001.「夜中に変な声を上げて…。kvS14/04/VT4Ba_satoko1002.どこか、おかげんでも悪いんですの？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1001", 256, TRUE);
-	OutputLine(NULL, "「夜中に変な声を上げて…。",
-			NULL, "\"You're shouting weird things in the middle of the night...", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1002", 256, TRUE);
-	OutputLine(NULL, "どこか、おかげんでも悪いんですの？」",
-			NULL, " Is something wrong?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/04/210400003", 540, TRUE);
+		OutputLine(NULL, "「夜中に変な声を上げて…。",
+				NULL, "\"You're shouting weird things in the middle of the night...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/04/210400004", 540, TRUE);
+		OutputLine(NULL, "どこか、おかげんでも悪いのでございますか？」",
+				NULL, " Is something wrong?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1001", 256, TRUE);
+		OutputLine(NULL, "「夜中に変な声を上げて…。",
+				NULL, "\"You're shouting weird things in the middle of the night...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1002", 256, TRUE);
+		OutputLine(NULL, "どこか、おかげんでも悪いんですの？」",
+				NULL, " Is something wrong?\"", Line_Normal);
 	ClearMessage();
+	}
 
 //梨花rvS14/05/210500038.「み…みぃ、なんでもないのですよ。kvS14/05/210500039.悪い夢を見てしまったようなのです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
@@ -1365,12 +1443,21 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1015.「羽入？　聞こえないのですか、羽入？kvS14/05/VT4Ba_rika1016.　返事をしてっ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1015", 256, TRUE);
-	OutputLine(NULL, "「羽入？　聞こえないのですか、羽入？",
-			NULL, "\"Hanyuu? Can you hear me, Hanyuu?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1016", 256, TRUE);
-	OutputLine(NULL, "　返事をしてっ！」",
-			NULL, " Answer me!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500042", 540, TRUE);
+		OutputLine(NULL, "「羽入？　聞こえないの、羽入？",
+				NULL, "\"Hanyuu? Can you hear me, Hanyuu?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500043", 540, TRUE);
+		OutputLine(NULL, "　返事をしてっ！」",
+				NULL, " Answer me!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1015", 256, TRUE);
+		OutputLine(NULL, "「羽入？　聞こえないのですか、羽入？",
+				NULL, "\"Hanyuu? Can you hear me, Hanyuu?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1016", 256, TRUE);
+		OutputLine(NULL, "　返事をしてっ！」",
+				NULL, " Answer me!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //r必死に、虚空に向かって呼びかける。
@@ -1404,7 +1491,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1017.「…羽入……っ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1017", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500044", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1017", 256, TRUE);
+	}
 	OutputLine(NULL, "「…羽入……っ」",
 			NULL, "\"...Hanyuu...\"", Line_Normal);
 	ClearMessage();
@@ -1423,7 +1514,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1018.「…………」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1018", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500045", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1018", 256, TRUE);
+	}
 	OutputLine(NULL, "「…………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
@@ -1478,16 +1573,22 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1019.「……羽入…っ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500046", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019", 256, TRUE);
+	}
 	OutputLine(NULL, "「……羽入…っ！」",
 			NULL, "\"...Hanyuu...!\"", Line_Normal);
 	ClearMessage();
 
 //r愕然と…その事実の意味を悟った私は、…その場に崩れ落ちるように、膝をつく。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "愕然と…その事実の意味を悟った私は、…その場に崩れ落ちるように、膝をつく。",
-			NULL, "Feeling shocked... and finally recognizing the implications of that fact... I fell down to my knees on the spot.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc) < 10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "愕然と…その事実の意味を悟った私は、…その場に崩れ落ちるように、膝をつく。",
+				NULL, "Feeling shocked... and finally recognizing the implications of that fact... I fell down to my knees on the spot.", Line_Normal);
+		ClearMessage();
+	}
 
 //r一番、頼りにならなくて…でも、一番心の安らぎをくれた同朋の姿が……。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }

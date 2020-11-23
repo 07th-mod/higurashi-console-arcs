@@ -31,7 +31,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1019a.「……ふう…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019a", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500047", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019a", 256, TRUE);
+	}
 	OutputLine(NULL, "「……ふう…」",
 			NULL, "\"...Haah...\"", Line_Normal);
 	ClearMessage();
@@ -62,7 +66,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1019b.「あと……２０日……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019b", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500048", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019b", 256, TRUE);
+	}
 	OutputLine(NULL, "「あと……２０日……」",
 			NULL, "\"Just... 20 days left...\"", Line_Normal);
 	ClearMessage();
@@ -121,7 +129,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1019c.「……っ…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019c", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500049", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019c", 256, TRUE);
+	}
 	OutputLine(NULL, "「……っ…！」",
 			NULL, "\"......!\"", Line_Normal);
 	ClearMessage();
@@ -190,7 +202,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1019d.「――――羽入…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019d", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500050", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1019d", 256, TRUE);
+	}
 	OutputLine(NULL, "「————羽入…」",
 			NULL, "\"......Hanyuu...\"", Line_Normal);
 	ClearMessage();
@@ -865,12 +881,23 @@ void main()
 	PlaySE(3, "suzu_1", 256, 64);
 	DisableWindow();
 	DrawScene("white", 1000 );
-	DrawScene("text/hanyu_03a", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0001", 256, TRUE);
-	Wait( 7000 );
-	DrawScene("text/hanyu_04a", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0002", 256, TRUE);
-	Wait( 5000 );
+	if (GetLocalFlag(LConsoleArc)==10) {
+		DrawScene("text/hanyu_03a_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100001", 256, TRUE);
+		Wait( 2000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100002", 256, TRUE);
+		Wait( 3000 );
+		DrawScene("text/hanyu_04a_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100003", 256, TRUE);
+		Wait( 5000 );
+	} else {
+		DrawScene("text/hanyu_03a", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0001", 256, TRUE);
+		Wait( 7000 );
+		DrawScene("text/hanyu_04a", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0002", 256, TRUE);
+		Wait( 5000 );
+	}
 	DrawScene("white", 1000 );
 	PlayBGM( 1, "semi", 128, 0 );
 	ModDrawCharacter(4, 6, "sprite/si3_majime_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
@@ -1472,9 +1499,15 @@ void main()
 
 //沙都子rvS14/04/VT4Ba_satoko1010.「わ、私たちの部活って、こんなに皆さんから認知されておりましたのね…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1010", 256, TRUE);
-	OutputLine(NULL, "「わ、私たちの部活って、こんなに皆さんから認知されておりましたのね…！」",
-			NULL, "\"E-every single one of them has acknowledged our club activities...!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/210400100", 540, TRUE);
+		OutputLine(NULL, "「わ、私たちの部活って、こんなに皆さんから認知されていたのでございますのね……！」",
+				NULL, "\"E-every single one of them has acknowledged our club activities...!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1010", 256, TRUE);
+		OutputLine(NULL, "「わ、私たちの部活って、こんなに皆さんから認知されておりましたのね…！」",
+				NULL, "\"E-every single one of them has acknowledged our club activities...!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //rレナも沙都子も、そのあまりの規模に呆然とする。しかし、それは俺も同じだった。
