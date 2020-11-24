@@ -9,10 +9,17 @@ void main()
 //梨花rvS14/05/VT4Ba_rika1037.「…やっぱり、圭一ですね」
 	ClearMessage();
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1037", 256, TRUE);
-	OutputLine(NULL, "「…やっぱり、圭一ですね」",
-			NULL, "\"...That's right, it's Keiichi.\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500180", 540, TRUE);
+		OutputLine(NULL, "「……やっぱり、圭一かしら」",
+				NULL, "\"...That's right, it's Keiichi.\"", Line_Normal);
+		ClearMessage();
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1037", 256, TRUE);
+		OutputLine(NULL, "「…やっぱり、圭一ですね」",
+				NULL, "\"...That's right, it's Keiichi.\"", Line_Normal);
+		ClearMessage();
+	}
 
 	ModSetLayerFilter(4, 256, "none");
 	ModDrawCharacter(4, 1, "sprite/kei1_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -70,9 +77,15 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1038.「…、そうか……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1038", 256, TRUE);
-	OutputLine(NULL, "「…、そうか……」",
-			NULL, "\"...Right...\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500181", 540, TRUE);
+		OutputLine(NULL, "「……ああ、そうか……」",
+				NULL, "\"...Oh, right...\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1038", 256, TRUE);
+		OutputLine(NULL, "「…、そうか……」",
+				NULL, "\"...Right...\"", Line_Normal);
+	}
 	ClearMessage();
 
 //rいつもならこういう時、羽入の存在が背中を押してくれるのだ。
