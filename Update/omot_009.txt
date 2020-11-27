@@ -529,10 +529,17 @@ void main()
 			NULL, "Right. Whether I believe what Rika-chan told me or not, if this Rina woman's plan comes to fruition, she'll probably disappear from Okinomiya regardless of success or failure.", Line_Normal);
 	ClearMessage();
 
-//rその結果、鉄平は北条家に戻って、生活のため沙都子を連れ戻そうと考えるだろう。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "その結果、鉄平は北条家に戻って、生活のため沙都子を連れ戻そうと考えるだろう。",
-			NULL, "And as a result, Teppei will return to the Houjou household and take Satoko back for his own livelihood.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rそしてそうなれば鉄平は北条家に戻って、生活のため沙都子を連れ戻そうと考えるだろう。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そしてそうなれば鉄平は北条家に戻って、生活のため沙都子を連れ戻そうと考えるだろう。",
+				NULL, "And if that's the case, Teppei will return to the Houjou household and take Satoko back for his own livelihood.", Line_Normal);
+	} else {
+	//rその結果、鉄平は北条家に戻って、生活のため沙都子を連れ戻そうと考えるだろう。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "その結果、鉄平は北条家に戻って、生活のため沙都子を連れ戻そうと考えるだろう。",
+				NULL, "And as a result, Teppei will return to the Houjou household and take Satoko back for his own livelihood.", Line_Normal);
+	}
 	ClearMessage();
 
 //r梨花ちゃんから聞かされた、去年叔父夫婦と暮らしていたときの沙都子の生活は、酷いと一言では片付けられないほどのものだった。
@@ -1174,6 +1181,13 @@ void main()
 	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600254", 256, TRUE);
 	OutputLine(NULL, "「ほら、葛西も一度くらい食べてみなさいよ。",
 			NULL, "\"Come on Kasai, at least try a bite.", Line_WaitForInput);
+
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 6, "ps2/06/210600255", 540, TRUE);
+		OutputLine(NULL, "こういう機会でもなければスイーツなんて食べること、一生に何度あるか分かりませんよ～？",
+				NULL, " If you don't take this opportunity, who knows how many chances you'll have in your lifetime to eat sweets~?", Line_WaitForInput);
+	}
+
 	ModPlayVoiceLS(4, 6, "ps3/s14/06/210600256", 256, TRUE);
 	OutputLine(NULL, "くっくっくっ！」",
 			NULL, " Hehehe!\"", Line_Normal);

@@ -137,11 +137,13 @@ void main()
 			NULL, "\"It's nothing.\"", Line_Normal);
 	ClearMessage();
 
-//r苦笑いとともに、詩音は首を振って肩をすくめる。そして気持ちを鎮めるように、すっかり氷が溶けてなくなったお冷をあおり飲んだ。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "苦笑いとともに、詩音は首を振って肩をすくめる。そして気持ちを鎮めるように、すっかり氷が溶けてなくなったお冷をあおり飲んだ。",
-			NULL, "Shion shook her head and shrugged her shoulders with a bitter smile on her face. Then, she took a drink of her completely melted ice water to calm herself down.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc) < 10) {
+	//r苦笑いとともに、詩音は首を振って肩をすくめる。そして気持ちを鎮めるように、すっかり氷が溶けてなくなったお冷をあおり飲んだ。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "苦笑いとともに、詩音は首を振って肩をすくめる。そして気持ちを鎮めるように、すっかり氷が溶けてなくなったお冷をあおり飲んだ。",
+				NULL, "Shion shook her head and shrugged her shoulders with a bitter smile on her face. Then, she took a drink of her completely melted ice water to calm herself down.", Line_Normal);
+		ClearMessage();
+	}
 
 	ModDrawCharacter(5, 6, "sprite/si1a_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
@@ -343,16 +345,29 @@ void main()
 			NULL, "...No way...\"", Line_Normal);
 	ClearMessage();
 
-//r…その時ふと、詩音の脳裏に過去の記憶が蘇る。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "…その時ふと、詩音の脳裏に過去の記憶が蘇る。",
-			NULL, "...Suddenly, past memories revived in the back of Shion's mind.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//r…その時ふと、詩音の脳裏に過去の記憶が蘇る。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……だが、現実は算数じゃない。",
+				NULL, "...Reality isn't always the same as math.", Line_Normal);
+		ClearMessage();
 
-//rそういえば、去年ルチーアを抜け出した際、…あの時も鍵開けで、頭の中が真っ白になるほどの思いを味わったっけ…。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そういえば、去年ルチーアを抜け出した際、…あの時も鍵開けで、頭の中が真っ白になるほどの思いを味わったっけ…。",
-			NULL, "Come to think of it, she tasted the exact same feeling when she escaped from Lucia last year... Her mind went completely blank when she struggled to turn the keys.", Line_Normal);
+	//rそういえば、去年ルチーアを抜け出した際、…あの時も鍵開けで、頭の中が真っ白になるほどの思いを味わったっけ…。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "私の目の前に突きつけられた現実は、どのカギも外れであるという致命的なものだった。",
+				NULL, "What happened was worse than my worst-case scenario... None of the keys worked at all.", Line_Normal);
+	} else {
+	//r…その時ふと、詩音の脳裏に過去の記憶が蘇る。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…その時ふと、詩音の脳裏に過去の記憶が蘇る。",
+				NULL, "...Suddenly, past memories revived in the back of Shion's mind.", Line_Normal);
+		ClearMessage();
+
+	//rそういえば、去年ルチーアを抜け出した際、…あの時も鍵開けで、頭の中が真っ白になるほどの思いを味わったっけ…。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そういえば、去年ルチーアを抜け出した際、…あの時も鍵開けで、頭の中が真っ白になるほどの思いを味わったっけ…。",
+				NULL, "Come to think of it, she tasted the exact same feeling when she escaped from Lucia last year... Her mind went completely blank when she struggled to turn the keys.", Line_Normal);
+	}
 	ClearMessage();
 
 	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
@@ -833,12 +848,21 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1122.「……ここで、『あれ』が来るなんて…！kvS14/05/VT4Ba_rika1123.　神様はやっぱり、性悪なのでしょうか…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1122", 256, TRUE);
-	OutputLine(NULL, "「……ここで、『あれ』が来るなんて…！",
-			NULL, "\"...So, <i>that</i> is happening here, too...?!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1123", 256, TRUE);
-	OutputLine(NULL, "　神様はやっぱり、性悪なのでしょうか…！」",
-			NULL, " Can God really be so cruel...?!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500536", 540, TRUE);
+		OutputLine(NULL, "「……ここで、『あれ』が来るなんて…！",
+				NULL, "\"...So, <i>that</i> is happening here, too...?!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500537", 540, TRUE);
+		OutputLine(NULL, "　神様ってやっぱり、性悪なのかしら……！」",
+				NULL, " Can God really be so cruel...?!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1122", 256, TRUE);
+		OutputLine(NULL, "「……ここで、『あれ』が来るなんて…！",
+				NULL, "\"...So, <i>that</i> is happening here, too...?!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1123", 256, TRUE);
+		OutputLine(NULL, "　神様はやっぱり、性悪なのでしょうか…！」",
+				NULL, " Can God really be so cruel...?!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	DrawScene("black", 1000 );

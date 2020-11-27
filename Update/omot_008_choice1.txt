@@ -68,17 +68,31 @@ void main()
 			NULL, "Rika-chan tightly clenched her bottle and bit at her lip.", Line_Normal);
 	ClearMessage();
 
-//rその、耐えている様子に俺はそれ以上何も言えず、手元のグレープジュースを一気に飲み干した。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "その、耐えている様子に俺はそれ以上何も言えず、手元のグレープジュースを一気に飲み干した。",
-			NULL, "I couldn't say anything more as I endured this, so I simply drank the rest of my grape juice in one gulp.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rその、耐えている様子に俺はそれ以上何も言えず、手元のサイダ一を一気に飲み干した。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "その、耐えている様子に俺はそれ以上何も言えず、手元のサイダ一を一気に飲み干した。",
+				NULL, "I couldn't say anything more as I endured this, so I simply drank the rest of my cider in one gulp.", Line_Normal);
+		ClearMessage();
 
-//r…喉元がいがらっぽく痛んだのは、ぬるくなった甘さのせいだけじゃなかったのかもしれない。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "…喉元がいがらっぽく痛んだのは、ぬるくなった甘さのせいだけじゃなかったのかもしれない。",
-			NULL, "...My throat hurt, and probably not just because of the slimy sweetness.", Line_Normal);
-	ClearMessage();
+	//r……喉元がいがらっぽく痛んだのは、炭酸だけのせいじゃなかったかもしれない。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……喉元がいがらっぽく痛んだのは、炭酸だけのせいじゃなかったかもしれない。",
+				NULL, "...My throat ached, and it probably wasn't just because of the carbonation.", Line_Normal);
+		ClearMessage();
+	} else {
+	//rその、耐えている様子に俺はそれ以上何も言えず、手元のグレープジュースを一気に飲み干した。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "その、耐えている様子に俺はそれ以上何も言えず、手元のグレープジュースを一気に飲み干した。",
+				NULL, "I couldn't say anything more as I endured this, so I simply drank the rest of my grape juice in one gulp.", Line_Normal);
+		ClearMessage();
+
+	//r…喉元がいがらっぽく痛んだのは、ぬるくなった甘さのせいだけじゃなかったのかもしれない。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…喉元がいがらっぽく痛んだのは、ぬるくなった甘さのせいだけじゃなかったのかもしれない。",
+				NULL, "...My throat ached, and it probably wasn't just because of the slimy sweetness.", Line_Normal);
+		ClearMessage();
+	}
 
 	DrawScene("black", 1000 );
 	FadeOutBGM(1, 200, TRUE);

@@ -998,9 +998,15 @@ void main()
 
 //圭一rvS14/01/VT4Ba_keiichi1006.「俺はマヨラーじゃねぇぇッ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4ba_keiichi1006", 256, TRUE);
-	OutputLine(NULL, "「俺はマヨラーじゃねぇぇッ！！」",
-			NULL, "\"I'm not some mayo lover!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 1, "ps2/01/210100544", 540, TRUE);
+		OutputLine(NULL, "「木工ボンドの海に沈めたろかっ！」",
+				NULL, "\"I'd rather choke on wood glue!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4ba_keiichi1006", 256, TRUE);
+		OutputLine(NULL, "「俺はマヨラーじゃねぇぇッ！！」",
+				NULL, "\"I'm not some mayo lover!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 3, "sprite/me3_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -1369,9 +1375,15 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1117.「……うぷっ…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1117", 256, TRUE);
-	OutputLine(NULL, "「……うぷっ…？」",
-			NULL, "\"...Ulp...?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500386", 540, TRUE);
+		OutputLine(NULL, "「…………やっぱり、来ないか」",
+				NULL, "\"...Maybe we shouldn't have come after all?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1117", 256, TRUE);
+		OutputLine(NULL, "「……うぷっ…？」",
+				NULL, "\"...Ulp...?\"", Line_Normal);
+	}
 	ClearMessage();
 
 //圭一rvS14/01/210100553.「ん？kvS14/01/210100554.　どうした、梨花ちゃん？」
@@ -1388,30 +1400,46 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1118.「…みぃ、なんでもないのです。kvS14/05/VT4Ba_rika1119.圭一、ボクはそっちのサイダーでもいいですか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1118", 256, TRUE);
-	OutputLine(NULL, "「…みぃ、なんでもないのです。",
-			NULL, "\"...Meep, it's nothing.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1119", 256, TRUE);
-	OutputLine(NULL, "圭一、ボクはそっちのサイダーでもいいですか？」",
-			NULL, " Keiichi, you mind if I have that cider?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500387", 540, TRUE);
+		OutputLine(NULL, "「なんでもないのです。",
+				NULL, "\"It's nothing.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500388", 540, TRUE);
+		OutputLine(NULL, "いただきますのですよ」",
+				NULL, " Thanks for the drink.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1118", 256, TRUE);
+		OutputLine(NULL, "「…みぃ、なんでもないのです。",
+				NULL, "\"...Meep, it's nothing.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1119", 256, TRUE);
+		OutputLine(NULL, "圭一、ボクはそっちのサイダーでもいいですか？」",
+				NULL, " Keiichi, you mind if I have that cider?\"", Line_Normal);
+	}
 	ClearMessage();
 
-//圭一rvS14/01/VT4Ba_keiichi1007.「へ？　ああ、いいぜ。kvS14/01/VT4Ba_keiichi1008.ほらっ」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4ba_keiichi1007", 256, TRUE);
-	OutputLine(NULL, "「へ？　ああ、いいぜ。",
-			NULL, "\"Huh? Ah, sure.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4ba_keiichi1008", 256, TRUE);
-	OutputLine(NULL, "ほらっ」",
-			NULL, " Here.\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc) < 10) {
+	//圭一rvS14/01/VT4Ba_keiichi1007.「へ？　ああ、いいぜ。kvS14/01/VT4Ba_keiichi1008.ほらっ」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4ba_keiichi1007", 256, TRUE);
+		OutputLine(NULL, "「へ？　ああ、いいぜ。",
+				NULL, "\"Huh? Ah, sure.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4ba_keiichi1008", 256, TRUE);
+		OutputLine(NULL, "ほらっ」",
+				NULL, " Here.\"", Line_Normal);
+		ClearMessage();
+	}
 
 	DrawScene("background/sora", 1000 );
 
 //rそう言って俺はサイダーの瓶をグレープジュースのそれと取り換える。…久々に味わう甘くて芳醇な香りは、日差しの暑さで汗ばんだ身体にとても心地が良かった。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そう言って俺はサイダーの瓶をグレープジュースのそれと取り換える。…久々に味わう甘くて芳醇な香りは、日差しの暑さで汗ばんだ身体にとても心地が良かった。",
-			NULL, "As I said that, I swapped my cider for her grape juice bottle. ...The sweet, mellow scent that I hadn't tasted in such a long time soothed my sweaty body in the heat of the sun.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		OutputLine(NULL, "そう言って、俺たちは一気にそれをあおって飲み干す。シュワシュワとした喉越しが、日差しの暑さで汗ばんだ身体にはとても心地が良かった。",
+				NULL, "After saying that, we each took a big gulp from our drinks. ...The bubbly sensation going down my throat was soothing on sweaty body in the heat of the sun.", Line_Normal);
+	} else {
+		OutputLine(NULL, "そう言って俺はサイダーの瓶をグレープジュースのそれと取り換える。…久々に味わう甘くて芳醇な香りは、日差しの暑さで汗ばんだ身体にとても心地が良かった。",
+				NULL, "As I said that, I swapped my cider for her grape juice bottle. ...The sweet, mellow scent that I hadn't tasted in such a long time was soothing on my sweaty body in the heat of the sun.", Line_Normal);
+	}
 	ClearMessage();
 
 //r立ち並ぶ背の高い木々からは、セミの降り注ぐような喧しい鳴き声。絵に描いたような、田舎ののんびりとした風景。
@@ -1604,12 +1632,22 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1120.「その沙都子が…。kvS14/05/VT4Ba_rika1121.近い将来にひどく傷つけられるとしたら、…どうしますか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1120", 256, TRUE);
-	OutputLine(NULL, "「その沙都子が…。",
-			NULL, "\"Then, if that same Satoko...", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1121", 256, TRUE);
-	OutputLine(NULL, "近い将来にひどく傷つけられるとしたら、…どうしますか？」",
-			NULL, " is going to be badly hurt in the near future... what would you do?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500393", 540, TRUE);
+		OutputLine(NULL, "「その沙都子が…。",
+				NULL, "\"Then, if that same Satoko...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500394", 540, TRUE);
+		OutputLine(NULL, "傷つけられるとしたら、どうしますか？」",
+				NULL, " is going to be hurt, what would you do?\"", Line_Normal);
+
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1120", 256, TRUE);
+		OutputLine(NULL, "「その沙都子が…。",
+				NULL, "\"Then, if that same Satoko...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1121", 256, TRUE);
+		OutputLine(NULL, "近い将来にひどく傷つけられるとしたら、…どうしますか？」",
+				NULL, " is going to be badly hurt in the near future... what would you do?\"", Line_Normal);
+	}
 	ClearMessage();
 
 //圭一rvS14/01/210100563.「っ？！kvS14/01/210100564.　決まってる、そいつを見つけ出してぶっ飛ばす！！」
@@ -1619,7 +1657,7 @@ void main()
 			NULL, "\"?!", Line_WaitForInput);
 	ModPlayVoiceLS(4, 1, "ps3/s14/01/210100564", 256, TRUE);
 	OutputLine(NULL, "　決まってる、そいつを見つけ出してぶっ飛ばす！！」",
-			NULL, " I've already decided, I'll find the person responsible and drive them away!!\"", Line_Normal);
+			NULL, " Isn't it obvious? I'll find the person responsible and drive them away!!\"", Line_Normal);
 	ClearMessage();
 
 //r思わず、反射的にそう答える。乱暴な言い方だったかな、と思って梨花ちゃんを見ると、驚いた様子もなくにぱ～、と笑顔で頷いてくれた。
@@ -2545,8 +2583,13 @@ void main()
 
 //r梨花ちゃんはサイダーをやや飲みにくそうにあおりながら、そう言い放った。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "梨花ちゃんはサイダーをやや飲みにくそうにあおりながら、そう言い放った。",
-			NULL, "Rika-chan took a small drink of cider after saying that.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		OutputLine(NULL, "梨花ちゃんはグレ一プジュ一スを飲みながら、そう言い放った。",
+				NULL, "Rika-chan took a sip of grape juice after saying that.", Line_Normal);
+	} else {
+		OutputLine(NULL, "梨花ちゃんはサイダーをやや飲みにくそうにあおりながら、そう言い放った。",
+				NULL, "Rika-chan drank a slightly strained gulp of cider after saying that.", Line_Normal);
+	}
 	ClearMessage();
 
 	PlayBGM(2, "hm06_29", 128, 0);

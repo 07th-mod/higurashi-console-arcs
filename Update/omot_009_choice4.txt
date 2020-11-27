@@ -90,10 +90,17 @@ void main()
 			NULL, "\"...Yes.\"", Line_Normal);
 	ClearMessage();
 
-//r…やっぱりか。その返事を俺は心強く思って、さらに身を乗り出していった。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "…やっぱりか。その返事を俺は心強く思って、さらに身を乗り出していった。",
-			NULL, "...Just as I thought. Feeling reassured by his answer, I leaned forward to hear more.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rその返事を、俺は心強く思った。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "その返事を、俺は心強く思った。",
+				NULL, "That response felt reassuring.", Line_Normal);
+	} else {
+	//r…やっぱりか。その返事を俺は心強く思って、さらに身を乗り出していった。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…やっぱりか。その返事を俺は心強く思って、さらに身を乗り出していった。",
+				NULL, "...Just as I thought. Feeling reassured by his answer, I leaned forward to hear more.", Line_Normal);
+	}
 	ClearMessage();
 
 //葛西rvS14/15/2115000036.「リナは最近、金の貸し借りで同僚とトラブルがあったとかで、店にはあまり顔を出さなくなりました」
