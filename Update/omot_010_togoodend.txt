@@ -6,6 +6,49 @@ void main()
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 //＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
 
+	if (GetLocalFlag(LConsoleArc)==10) {
+		PlaySE(3, "suzu_1", 256, 64);
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>声</color>", NULL, "<color=#f5e6d3>Voice</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 12, "ps2/12/211100009", 540, TRUE);
+		OutputLine(NULL, "「————ごめんなさい……」",
+				NULL, "\"...I'm sorry...\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 1, "ps2/01/210100903", 540, TRUE);
+		OutputLine(NULL, "「…………え？」",
+				NULL, "\"...Huh?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "なんだ……今の声？",
+				NULL, "What was that voice...?", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 5, "ps2/05/210500600", 540, TRUE);
+		OutputLine(NULL, "「……どうしましたか？」",
+				NULL, "\"...Is something wrong?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 1, "ps2/01/210100904", 540, TRUE);
+		OutputLine(NULL, "「あ、いや……」",
+				NULL, "\"Oh, it's nothing...\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "かぶりを振って、耳をとんとんと叩く。",
+				NULL, "I shook my head and patted my ears.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "空耳かな……。",
+				NULL, "Must be hearing things...", Line_Normal);
+		ClearMessage();
+	}
+
 //圭一rvS14/01/210100905.「しかし、オヤシロさまか…。kvS14/01/210100906.ほんとにいるのだとしたら、余計なことをしてくれたよな」
 	ClearMessage();
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
@@ -45,24 +88,52 @@ void main()
 
 	PlaySE(3, "suzu_1", 256, 64);
 	DrawScene("white", 1000 );
-	DrawScene("black", 1000 );
 
-//rそう呟きながらふと、天井を見上げたその時、…俺の脳裏に、ある光景が浮かび上がってくる。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そう呟きながらふと、天井を見上げたその時、…俺の脳裏に、ある光景が浮かび上がってくる。",
-			NULL, "I looked up at the ceiling as I muttered that to myself, and suddenly... a scene emerged in my mind.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		DisableWindow();
+		DrawScene("text/hanyu_02_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100010", 540, TRUE);
+		Wait(2500);
+		ModPlayVoiceLS(4, 12, "ps2/12/211100011", 540, TRUE);
+		Wait(2000);
+		DrawScene("white", 1000 );
 
-//rオヤシロさまという存在に怯え…何が正しいのかわからなくなって、何も信じられなくなった、『あの時』。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "オヤシロさまという存在に怯え…何が正しいのかわからなくなって、何も信じられなくなった、『あの時』。",
-			NULL, "When I feared the being known as Oyashiro-sama... I didn't know what was right, and didn't trust anything. \"That time.\"", Line_Normal);
-	ClearMessage();
+	//rそのとき頭の中で、……誰かの声が響き渡る。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そのとき頭の中で、……誰かの声が響き渡る。",
+				NULL, "Just then... a voice echoed inside my head.", Line_Normal);
+		ClearMessage();
 
-//rそして、その罪深い過ちに苛まれ、打ちひしがれた俺に対して、優しく尊い手を差し伸べてくれたのは…間違いなく……！
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そして、その罪深い過ちに苛まれ、打ちひしがれた俺に対して、優しく尊い手を差し伸べてくれたのは…間違いなく……！",
-			NULL, "And, tormented by that sinful mistake, I struck down the person who was kind enough to extended a precious hand to me... No doubt about it...!", Line_Normal);
+	//rどこかで……聞いたような声……？
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "どこかで……聞いたような声……？",
+				NULL, "Where... have I heard that voice before...?", Line_Normal);
+		ClearMessage();
+
+	//rそして、その罪深い過ちに苛まれ、打ちひしがれた俺に対して、優しく尊い手を差し伸べてくれたのは…間違いなく……！
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "いや、……これは…………『あの時』の……？！",
+				NULL, "Wait... it was... from <i>back then</i>...?!", Line_Normal);
+	} else {
+		DrawScene("black", 1000 );
+
+	//rそう呟きながらふと、天井を見上げたその時、…俺の脳裏に、ある光景が浮かび上がってくる。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そう呟きながらふと、天井を見上げたその時、…俺の脳裏に、ある光景が浮かび上がってくる。",
+				NULL, "I looked up at the ceiling as I muttered that to myself, and suddenly... a scene emerged in my mind.", Line_Normal);
+		ClearMessage();
+
+	//rオヤシロさまという存在に怯え…何が正しいのかわからなくなって、何も信じられなくなった、『あの時』。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "オヤシロさまという存在に怯え…何が正しいのかわからなくなって、何も信じられなくなった、『あの時』。",
+				NULL, "When I feared the being known as Oyashiro-sama... I didn't know what was right, and didn't trust anything. \"That time.\"", Line_Normal);
+		ClearMessage();
+
+	//rそして、その罪深い過ちに苛まれ、打ちひしがれた俺に対して、優しく尊い手を差し伸べてくれたのは…間違いなく……！
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そして、その罪深い過ちに苛まれ、打ちひしがれた俺に対して、優しく尊い手を差し伸べてくれたのは…間違いなく……！",
+				NULL, "And, tormented by that sinful mistake, I struck down the person who was kind enough to extended a precious hand to me... No doubt about it...!", Line_Normal);
+	}
 	ClearMessage();
 
 //圭一rvS14/01/210100910.「！！　……そうか…」
@@ -133,7 +204,11 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1123c.「……この、無責任男」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1123c", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500605", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1123c", 256, TRUE);
+	}
 	OutputLine(NULL, "「……この、無責任男」",
 			NULL, "\"...You irresponsible boy.\"", Line_Normal);
 	ClearMessage();
@@ -211,16 +286,29 @@ void main()
 
 	DrawScene("background/sinryou_sinsatu4", 1000 );
 
-//r…その進行度は、従来服用していた薬ではとうてい抑制できるものではなかった。いったんは予後不良の診断すら下されたほどなのだ。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "…その進行度は、従来服用していた薬ではとうてい抑制できるものではなかった。いったんは予後不良の診断すら下されたほどなのだ。",
-			NULL, "...The drugs she had been taking before that were simply incapable of suppressing that level of progression. At one point, she was even given a high-risk prognosis.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//r…その進行度は、従来服用していた薬ではとうてい抑制できるものではなかった。いったんは予後不良の診断すら下されたほどなのだ。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……『東京』の研究グル一プがレナの発病を知りえたのは、本当に偶然だった。",
+				NULL, "...It really was a coincidence that the \"Tokyo\" research group learned of Rena's illness.", Line_Normal);
+		ClearMessage();
 
-//rそれでも、幸運なことにレナは雛見沢に戻った後すぐ、入江が当時開発したばかりの新薬実験を投与する被験体に選ばれ、穀倉で集中治療を受けることとなる。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "それでも、幸運なことにレナは雛見沢に戻った後すぐ、入江が当時開発したばかりの新薬実験を投与する被験体に選ばれ、穀倉で集中治療を受けることとなる。",
-			NULL, "Nevertheless, Rena was fortunate that after she returned to Hinamizawa, she was selected to receive treatment with a new drug that Irie had just developed, and to receive intensive care in Gogura.", Line_Normal);
+	//rそれでも、幸運なことにレナは雛見沢に戻った後すぐ、入江が当時開発したばかりの新薬実験を投与する被験体に選ばれ、穀倉で集中治療を受けることとなる。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "レナは雛見沢に戻った後すぐ、運良く入江が当時開発したばかりの新薬実験を投与する被験体に選ばれ、穀倉で集中治療を受けることとなる。",
+				NULL, "Fortunately, after Rena returned to Hinamizawa she was selected to receive treatment with a new drug that Irie had just developed, and to receive intensive care in Gogura.", Line_Normal);
+	} else {
+	//r…その進行度は、従来服用していた薬ではとうてい抑制できるものではなかった。いったんは予後不良の診断すら下されたほどなのだ。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…その進行度は、従来服用していた薬ではとうてい抑制できるものではなかった。いったんは予後不良の診断すら下されたほどなのだ。",
+				NULL, "...The drugs she had been taking before that were simply incapable of suppressing that level of progression. At one point, she was even given a high-risk prognosis.", Line_Normal);
+		ClearMessage();
+
+	//rそれでも、幸運なことにレナは雛見沢に戻った後すぐ、入江が当時開発したばかりの新薬実験を投与する被験体に選ばれ、穀倉で集中治療を受けることとなる。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "それでも、幸運なことにレナは雛見沢に戻った後すぐ、入江が当時開発したばかりの新薬実験を投与する被験体に選ばれ、穀倉で集中治療を受けることとなる。",
+				NULL, "Nevertheless, Rena was fortunate that after she returned to Hinamizawa, she was selected to receive treatment with a new drug that Irie had just developed, and to receive intensive care in Gogura.", Line_Normal);
+	}
 	ClearMessage();
 
 //rその結果、レナはなんとか日常生活を営むことができる程度に回復して、現在に至っていた。
@@ -1489,20 +1577,81 @@ void main()
 
 //声rvS14/05/VT4Ba_rika1128.「…思い出してほしかったの。kvS14/05/VT4Ba_rika1129.かつてに得た、かけがえのない仲間たちへの信頼を」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>声</color>", NULL, "<color=#f5e6d3>Voice</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1128", 256, TRUE);
-	OutputLine(NULL, "「…思い出してほしかったの。",
-			NULL, "\"...I wanted you to remember.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1129", 256, TRUE);
-	OutputLine(NULL, "かつてに得た、かけがえのない仲間たちへの信頼を」",
-			NULL, " To trust in the irreplaceable friends you've made.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 12, "ps2/12/211100012", 540, TRUE);
+		OutputLine(NULL, "「…思い出してほしかったのです。",
+				NULL, "\"...I wanted you to remember.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 12, "ps2/12/211100013", 540, TRUE);
+		OutputLine(NULL, "かつてに得た、かけがえのない仲間たちへの信頼を」",
+				NULL, " To trust in the irreplaceable friends you've made.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1128", 256, TRUE);
+		OutputLine(NULL, "「…思い出してほしかったの。",
+				NULL, "\"...I wanted you to remember.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1129", 256, TRUE);
+		OutputLine(NULL, "かつてに得た、かけがえのない仲間たちへの信頼を」",
+				NULL, " To trust in the irreplaceable friends you've made.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //声rvS14/05/VT4Ba_rika1130.「頼りたいと思うことを、誰も迷惑には感じたりしない。それに気づいて欲しかった…でなければ、きっと後悔するから…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>声</color>", NULL, "<color=#f5e6d3>Voice</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1130", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 12, "ps2/12/211100014", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1130", 256, TRUE);
+	}
 	OutputLine(NULL, "「頼りたいと思うことを、誰も迷惑には感じたりしない。それに気づいて欲しかった…でなければ、きっと後悔するから…」",
 			NULL, "\"Nobody wants to feel like a nuisance for depending on others. They want others to notice it on their own... otherwise they'll end up feeling regret over it...\"", Line_Normal);
 	ClearMessage();
+
+	if (GetLocalFlag(LConsoleArc)==10) {
+		DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
+		DrawScene("background/mo2", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……これはたぶん、夢だ。",
+				NULL, "...This is probably a dream.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "私はきっと、あの林の中で眠っているに違いない。",
+				NULL, "I'm sure I'm sleeping in those woods.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "レナの夢の中に、みんなが部活をしに来たんだ…。",
+				NULL, "In Rena's dream, everyone came to play club games...", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "ねぇ、レナも仲間に入れてよ……。せっかく遊びに来てくれたんだもん、レナも一緒に鬼ごっこしたいよ。",
+				NULL, "Hey, let Rena join in too... You came all this way to play together, so let me play tag too.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "あれ……？",
+				NULL, "Huh...?", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "私、泣きたい気持ちでいっぱいだ。……なんでだろう。心がぐしゃぐしゃに濡れていて、胸が締め付けられるように、痛い……。",
+				NULL, "I really feel like crying.  ...But why? It's painful, like my heart is soggy and wet, and my chest is tight...", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "戻りたい……。何にもなかった頃に、戻りたい……。",
+				NULL, "I want to go back... Back before all of this...", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "毎日部活にあけくれて楽しかったあの頃に、戻りたい……。戻りたいよぅ……。魅ぃちゃん……。圭一くん……。",
+				NULL, "Back to those days when we were having lively club activities every day... I want to go back... Mii-chan... Keiichi-kun...", Line_Normal);
+		ClearMessage();
+
+		DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+		FadeFilm( 250, TRUE );
+	}
 
 	DrawScene("background/sora6", 1000 );
 

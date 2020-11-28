@@ -1036,12 +1036,21 @@ void main()
 
 //沙都子rvS14/04/VT4Ba_satoko1036.「なんだか前に見たときよりも、さらにグレードアップしておりましたのよ！kvS14/04/VT4Ba_satoko1037.　特にあの信号機なんて、どうやって手に入れたのかしら？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1036", 256, TRUE);
-	OutputLine(NULL, "「なんだか前に見たときよりも、さらにグレードアップしておりましたのよ！",
-			NULL, "\"It was upgraded even further from what I had witnessed before!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1037", 256, TRUE);
-	OutputLine(NULL, "　特にあの信号機なんて、どうやって手に入れたのかしら？」",
-			NULL, " Especially that traffic light. How ever did you manage to obtain one of those?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/210400221", 540, TRUE);
+		OutputLine(NULL, "「なんだか前に見たときよりも、さらにグレ一ドアップしてたのでございますわ！",
+				NULL, "\"It was upgraded even further from what I had witnessed before!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/210400222", 540, TRUE);
+		OutputLine(NULL, "　特にあの信号機なんて、どうやって手に入れたのでございましょうねぇ？」",
+				NULL, " Especially that traffic light. How ever did you manage to obtain one of those?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1036", 256, TRUE);
+		OutputLine(NULL, "「なんだか前に見たときよりも、さらにグレードアップしておりましたのよ！",
+				NULL, "\"It was upgraded even further from what I had witnessed before!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4ba_satoko1037", 256, TRUE);
+		OutputLine(NULL, "　特にあの信号機なんて、どうやって手に入れたのかしら？」",
+				NULL, " Especially that traffic light. How ever did you manage to obtain one of those?\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(5, 2, "sprite/re1a_warai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );

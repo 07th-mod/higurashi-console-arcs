@@ -495,12 +495,21 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1124.「僕の知っている圭一は、そんなに強い人ではなかった。kvS14/05/VT4Ba_rika1125.だから時には疑ったり、恐れたりして、…結局……」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1124", 256, TRUE);
-	OutputLine(NULL, "「僕の知っている圭一は、そんなに強い人ではなかった。",
-			NULL, "\"The Keiichi I knew wasn't this strong.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1125", 256, TRUE);
-	OutputLine(NULL, "だから時には疑ったり、恐れたりして、…結局……」",
-			NULL, " Sometimes, he felt doubt, and fear... And as a result...\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500644", 540, TRUE);
+		OutputLine(NULL, "「私の知っている圭一は、そんなに強い人ではなかった。",
+				NULL, "\"The Keiichi I knew wasn't this strong.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500645", 540, TRUE);
+		OutputLine(NULL, "だから時には疑ったり、恐れたりして、…結局……」",
+				NULL, " Sometimes, he felt doubt, and fear... And as a result...\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1124", 256, TRUE);
+		OutputLine(NULL, "「僕の知っている圭一は、そんなに強い人ではなかった。",
+				NULL, "\"The Keiichi I knew wasn't this strong.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1125", 256, TRUE);
+		OutputLine(NULL, "だから時には疑ったり、恐れたりして、…結局……」",
+				NULL, " Sometimes, he felt doubt, and fear... And as a result...\"", Line_Normal);
+	}
 	ClearMessage();
 
 //圭一rvS14/01/210100984.「…………」
@@ -1500,15 +1509,31 @@ void main()
 			NULL, "\"That is the most unbelievable and precious of miracles that could exist in this world...\"", Line_Normal);
 	ClearMessage();
 
-	DisableWindow();
-	FadeOutBGM(2, 200, FALSE);
-	PlaySE(3, "suzu_1", 256, 64);
-	FadeFilm( 2000, FALSE );
-	DrawScene("white", 1000 );
-	DrawScene("text/ad008", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0007", 256, TRUE);
-	Wait( 9000 );
-	DrawScene("white", 1000 );
+	if (GetLocalFlag(LConsoleArc)==10) {
+		PlaySE(3, "suzu_1", 256, 64);
+		DrawScene("white", 1000 );
+		FadeFilm( 250, TRUE );
+		Wait( 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100015", 540, TRUE);
+		OutputLine(NULL, "「……あなたは、逃げなかった。",
+				NULL, "\"...You didn't run away.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 12, "ps2/12/211100016", 540, TRUE);
+		OutputLine(NULL, "だから、……梨花も本心から、そう言ってあげられたのですよ……」",
+				NULL, " That's why... Rika-chan was able to tell you that, from the bottom of her heart...\"", Line_Normal);
+		ClearMessage();
+		FadeOutBGM(2, 200, FALSE);
+	} else {
+		DisableWindow();
+		FadeOutBGM(2, 200, FALSE);
+		PlaySE(3, "suzu_1", 256, 64);
+		FadeFilm( 2000, FALSE );
+		DrawScene("white", 1000 );
+		DrawScene("text/ad008", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0007", 256, TRUE);
+		Wait( 9000 );
+		DrawScene("white", 1000 );
+	}
+
 	PlayBGM(2, "hm10_58", 128, 0);
 	ModSetLayerFilter(4, 256, "night");
 	ModDrawCharacter(4, 1, "sprite/kei2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
@@ -1767,15 +1792,27 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1125a.「ずっと秘密にしておこうと思ったこと、あなたには打ち明けます。kvS14/05/VT4Ba_rika1125b.…だから、救い出してくれますか？kvS14/05/VT4Ba_rika1125c.　この無限に続く地獄の輪廻の監獄から、僕と、大切な仲間たちを――」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1125a", 256, TRUE);
-	OutputLine(NULL, "「ずっと秘密にしておこうと思ったこと、あなたには打ち明けます。",
-			NULL, "\"I'll tell you what I've wanted to keep secret all this time.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1125b", 256, TRUE);
-	OutputLine(NULL, "…だから、救い出してくれますか？",
-			NULL, " ...And if I do, will you be able to save me?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1125c", 256, TRUE);
-	OutputLine(NULL, "　この無限に続く地獄の輪廻の監獄から、僕と、大切な仲間たちを——」",
-			NULL, " From this hellish prison of endless reincarnation? Me, and my precious friends...\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500684", 540, TRUE);
+		OutputLine(NULL, "「ずっと秘密にしておこうと思ったこと、あなたには打ち明けます。",
+				NULL, "\"I'll tell you what I've wanted to keep secret all this time.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500685", 540, TRUE);
+		OutputLine(NULL, "…だから、救い出してくれますか？",
+				NULL, " ...And if I do, will you be able to save me?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500686", 540, TRUE);
+		OutputLine(NULL, "　この、無限に続く地獄の輪廻の監獄から、私と、大切な仲間たちを——」",
+				NULL, " From this hellish prison of endless reincarnation? Me, and my precious friends...\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1125a", 256, TRUE);
+		OutputLine(NULL, "「ずっと秘密にしておこうと思ったこと、あなたには打ち明けます。",
+				NULL, "\"I'll tell you what I've wanted to keep secret all this time.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1125b", 256, TRUE);
+		OutputLine(NULL, "…だから、救い出してくれますか？",
+				NULL, " ...And if I do, will you be able to save me?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1125c", 256, TRUE);
+		OutputLine(NULL, "　この無限に続く地獄の輪廻の監獄から、僕と、大切な仲間たちを——」",
+				NULL, " From this hellish prison of endless reincarnation? Me, and my precious friends...\"", Line_Normal);
+	}
 	ClearMessage();
 
 //圭一rvS14/01/210101087.「ああ、もちろんだ」
@@ -1793,12 +1830,21 @@ void main()
 
 //梨花rvS14/05/VT4Ba_rika1126.「――僕たちの敵は、鷹野三四。kvS14/05/VT4Ba_rika1127.雛見沢で起きている祟りは、全て人為的に起こされた陰謀なのです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1126", 256, TRUE);
-	OutputLine(NULL, "「——僕たちの敵は、鷹野三四。",
-			NULL, "\"...Our enemy is Miyo Takano.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1127", 256, TRUE);
-	OutputLine(NULL, "雛見沢で起きている祟りは、全て人為的に起こされた陰謀なのです」",
-			NULL, " All the events related to the curse in Hinamizawa are a product of a man-made conspiracy.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500687", 540, TRUE);
+		OutputLine(NULL, "「——私たちの敵は、鷹野三四。",
+				NULL, "\"...Our enemy is Miyo Takano.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500688", 540, TRUE);
+		OutputLine(NULL, "雛見沢で起きている祟りは、全て人為的に起こされた陰謀なのです」",
+				NULL, " All the events related to the curse in Hinamizawa are a product of a man-made conspiracy.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1126", 256, TRUE);
+		OutputLine(NULL, "「——僕たちの敵は、鷹野三四。",
+				NULL, "\"...Our enemy is Miyo Takano.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4ba_rika1127", 256, TRUE);
+		OutputLine(NULL, "雛見沢で起きている祟りは、全て人為的に起こされた陰謀なのです」",
+				NULL, " All the events related to the curse in Hinamizawa are a product of a man-made conspiracy.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //rそして、私はゆっくりと圭一に語って聞かせる。

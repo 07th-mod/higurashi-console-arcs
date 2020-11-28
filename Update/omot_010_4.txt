@@ -1034,10 +1034,17 @@ void main()
 			NULL, "I can say for certain that those weren't just fleeting words. They came from the heart.", Line_Normal);
 	ClearMessage();
 
-//r怖くて、不安で…逃げ出したくなるほどのつらさ。そこから踏み出す勇気を持つことがどんなに大変か、俺にも理解できるつもりだ…。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "怖くて、不安で…逃げ出したくなるほどのつらさ。そこから踏み出す勇気を持つことがどんなに大変か、俺にも理解できるつもりだ…。",
-			NULL, "Fear and anxiety... so painful that it makes you want to run away. Even I can understand how hard it is to have the courage to take a step forward...", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rだって、俺は今のレナの話で、ようやく忘れかけていた『あのこと』をはっきりと、思い出すことができたんだから……！
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "だって、俺は今のレナの話で、ようやく忘れかけていた『あのこと』をはっきりと、思い出すことができたんだから……！",
+				NULL, "And thanks to what Rena said just now, I could finally remember <i>that thing</i> I had nearly forgotten...!", Line_Normal);
+	} else {
+	//r怖くて、不安で…逃げ出したくなるほどのつらさ。そこから踏み出す勇気を持つことがどんなに大変か、俺にも理解できるつもりだ…。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "怖くて、不安で…逃げ出したくなるほどのつらさ。そこから踏み出す勇気を持つことがどんなに大変か、俺にも理解できるつもりだ…。",
+				NULL, "Fear and anxiety... so painful that it makes you want to run away. Even I can understand how hard it is to have the courage to take a step forward...", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(5, 5, "sprite/ri2_fuman_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
@@ -1179,10 +1186,17 @@ void main()
 			NULL, " Where should I put these packages?\"", Line_Normal);
 	ClearMessage();
 
-//r運送業者らしい張りのある声が、この２階の部屋にまで響いてくる。…それを聞き流しながら、俺と梨花ちゃんは顔を見合わせた。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "運送業者らしい張りのある声が、この２階の部屋にまで響いてくる。…それを聞き流しながら、俺と梨花ちゃんは顔を見合わせた。",
-			NULL, "The firm voice of a deliveryman echoed all the way up to the second floor. Rika-chan and I looked at one another as we heard it.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//r運送業者らしい張りのある声が、家の中にまで聞こえてくる。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "運送業者らしい張りのある声が、家の中にまで聞こえてくる。",
+				NULL, "I heard the firm voice of a deliveryman coming from inside the house.", Line_Normal);
+	} else {
+	//r運送業者らしい張りのある声が、この２階の部屋にまで響いてくる。…それを聞き流しながら、俺と梨花ちゃんは顔を見合わせた。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "運送業者らしい張りのある声が、この２階の部屋にまで響いてくる。…それを聞き流しながら、俺と梨花ちゃんは顔を見合わせた。",
+				NULL, "The firm voice of a deliveryman echoed all the way up to the second floor. Rika-chan and I looked at one another as we heard it.", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(5, 5, "sprite/ri2_majime_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
