@@ -1407,11 +1407,13 @@ void main()
 	DrawScene("white", 1000 );
 	PlayBGM(2, "hm01_06", 128, 0);
 
-//r俺と一緒に学校に通いたくて…受験勉強を、…始めた？！
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "俺と一緒に学校に通いたくて…受験勉強を、…始めた？！",
-			NULL, "She started studying for entrance exams... because she wanted to go to the same school... as me?!", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc) < 10) {
+	//r俺と一緒に学校に通いたくて…受験勉強を、…始めた？！
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "俺と一緒に学校に通いたくて…受験勉強を、…始めた？！",
+				NULL, "She started studying for entrance exams... because she wanted to go to the same school... as me?!", Line_Normal);
+		ClearMessage();
+	}
 
 //r予想外の答えに、思わず声を失う。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1500,17 +1502,19 @@ void main()
 			NULL, "\"N-no, I'm certain it'll be fun! Yeah!!\"", Line_Normal);
 	ClearMessage();
 
-//r思わず裏返ってしまった声で、俺は懸命に言葉をつなぐ。…いや、だから落ち着けっての。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "思わず裏返ってしまった声で、俺は懸命に言葉をつなぐ。…いや、だから落ち着けっての。",
-			NULL, "My voice had suddenly turned upside down and I was desperately trying to string together the words. ...Come on, I need to stay calm.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc) < 10) {
+	//r思わず裏返ってしまった声で、俺は懸命に言葉をつなぐ。…いや、だから落ち着けっての。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "思わず裏返ってしまった声で、俺は懸命に言葉をつなぐ。…いや、だから落ち着けっての。",
+				NULL, "My voice had suddenly turned upside down and I was desperately trying to string together the words. ...Come on, I need to stay calm.", Line_Normal);
+		ClearMessage();
 
-//rにしても、…別に同じ学校目指すからって、そのためにわざわざ受験勉強を頑張る必要なんて…。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "にしても、…別に同じ学校目指すからって、そのためにわざわざ受験勉強を頑張る必要なんて…。",
-			NULL, "Anyway... if the goal is to get into the same school, then we're going to have to work really hard studying for exams...", Line_Normal);
-	ClearMessage();
+	//rにしても、…別に同じ学校目指すからって、そのためにわざわざ受験勉強を頑張る必要なんて…。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "にしても、…別に同じ学校目指すからって、そのためにわざわざ受験勉強を頑張る必要なんて…。",
+				NULL, "Anyway... if the goal is to get into the same school, then we're going to have to work really hard studying for exams...", Line_Normal);
+		ClearMessage();
+	}
 
 //魅音rvS14/03/210300620.「このままいけば圭ちゃん、…大学はきっと、東京でしょ？kvS14/03/210300621.　そうなったら…今の私の学力じゃ、絶対無理だし。だから…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -2427,7 +2431,7 @@ void main()
 //r怒りを隠そうともせず、魅音は椅子を蹴倒して凄い勢いで立ち上がって、詩音に迫る。詩音もその勢いに負けない形相で、魅音を睨み返した。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "怒りを隠そうともせず、魅音は椅子を蹴倒して凄い勢いで立ち上がって、詩音に迫る。詩音もその勢いに負けない形相で、魅音を睨み返した。",
-			NULL, "Mion kicked her chair over while abruptly rising to her feet and then glared at Shion, making no effort to hide her anger.", Line_Normal);
+			NULL, "Mion kicked her chair over while abruptly rising to her feet and then glared at Shion, making no effort to hide her anger. Unswayed by Mion's momentum, Shion glared back at her.", Line_Normal);
 	ClearMessage();
 
 	ModDrawCharacter(3, 3, "sprite/me2_majime_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
@@ -2689,12 +2693,21 @@ void main()
 
 //圭一rvS14/01/VT4Bc_keiichi1002a.「…あ、別に問い詰めているんじゃないぞ？kvS14/01/VT4Bc_keiichi1002b.　言いたくないなら、無理には聞かないしさ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4bc_keiichi1002a", 256, TRUE);
-	OutputLine(NULL, "「…あ、別に問い詰めているんじゃないぞ？",
-			NULL, "\"...Oh, I don't need to ask anything else, okay?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4bc_keiichi1002b", 256, TRUE);
-	OutputLine(NULL, "　言いたくないなら、無理には聞かないしさ」",
-			NULL, " If you don't want to talk about it, I won't force you.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 1, "ps2/01/210101276", 540, TRUE);
+		OutputLine(NULL, "「…別に隠す必要はないぞ？",
+				NULL, "\"...There's no need to hide anything, okay?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 1, "ps2/01/210101276_277", 540, TRUE);
+		OutputLine(NULL, "　言いたくないなら、無理には聞かないけど……」",
+				NULL, " But if you don't want to talk about it, I won't force you.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4bc_keiichi1002a", 256, TRUE);
+		OutputLine(NULL, "「…あ、別に問い詰めているんじゃないぞ？",
+				NULL, "\"...Oh, I don't need to ask anything else, okay?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 1, "ps3/s14/01/vt4bc_keiichi1002b", 256, TRUE);
+		OutputLine(NULL, "　言いたくないなら、無理には聞かないしさ」",
+				NULL, " If you don't want to talk about it, I won't force you.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //魅音rvS14/03/210300665.「楽しい話じゃないよ…？」
@@ -2747,22 +2760,35 @@ void main()
 			NULL, "After nodding to her, I went on to tell her the things I heard from Akane-san the other night, about Hinamizawa, and about Mion and everyone else.", Line_Normal);
 	ClearMessage();
 
-//r…隠していたことが実は既知だとわかり、さすがに魅音は最初不愉快そうに顔をしかめる。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "…隠していたことが実は既知だとわかり、さすがに魅音は最初不愉快そうに顔をしかめる。",
-			NULL, "...Of course, Mion frowned at first, learning that I already knew about the things she wanted to keep hidden from me.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//r……隠していたことが実は既知だとわかり、さすがに魅音は最初不愉快そうに顔をしかめていたが、
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……隠していたことが実は既知だとわかり、さすがに魅音は最初不愉快そうに顔をしかめていたが、",
+				NULL, "...Of course, Mion frowned at first, learning that I already knew about the things she wanted to keep hidden from me, but...", Line_Normal);
+		ClearMessage();
 
-//rただ、それでも俺の気持ち、そして信頼が変わりないものだと伝えると、ほっとしたように苦笑しながら納得してくれた。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "ただ、それでも俺の気持ち、そして信頼が変わりないものだと伝えると、ほっとしたように苦笑しながら納得してくれた。",
-			NULL, "But when I told her that my feelings remained unchanged and I trusted her all the same after hearing these stories, she began to smile bitterly and seemed convinced.", Line_Normal);
-	ClearMessage();
+	//rそれでも俺の気持ち、そして信頼が変わりないものだと伝えると、ほっとしたように苦笑した。そして、
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "それでも俺の気持ち、そして信頼が変わりないものだと伝えると、ほっとしたように苦笑した。そして、",
+				NULL, "When I told her that my feelings remained unchanged and I trusted her all the same after hearing these stories, she had a relieved bitter smile on her face. And then...", Line_Normal);
+	} else {
+	//r…隠していたことが実は既知だとわかり、さすがに魅音は最初不愉快そうに顔をしかめる。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…隠していたことが実は既知だとわかり、さすがに魅音は最初不愉快そうに顔をしかめる。",
+				NULL, "...Of course, Mion frowned at first, learning that I already knew about the things she wanted to keep hidden from me.", Line_Normal);
+		ClearMessage();
 
-//rそして…。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そして…。",
-			NULL, "Then...", Line_Normal);
+	//rただ、それでも俺の気持ち、そして信頼が変わりないものだと伝えると、ほっとしたように苦笑しながら納得してくれた。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "ただ、それでも俺の気持ち、そして信頼が変わりないものだと伝えると、ほっとしたように苦笑しながら納得してくれた。",
+				NULL, "But when I told her that my feelings remained unchanged and I trusted her all the same after hearing these stories, she had a relieved bitter smile on her face, and seemed convinced.", Line_Normal);
+		ClearMessage();
+
+	//rそして…。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そして…。",
+				NULL, "Then...", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 3, "sprite/me2_majime_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -3267,10 +3293,17 @@ void main()
 			NULL, " that I... really...\"", Line_Normal);
 	ClearMessage();
 
-//rそこにいるのは園崎家頭首でもなく、部活のリーダーでもなく…ただの一人の少女。そして、なによりも妹を想う…ひとりのお姉さんだった。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そこにいるのは園崎家頭首でもなく、部活のリーダーでもなく…ただの一人の少女。そして、なによりも妹を想う…ひとりのお姉さんだった。",
-			NULL, "The person before me was not the future Sonozaki family head, or the leader of our club... She was just a lone girl. And above all else... she was an older sister, thinking of her younger sister.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rそこにいるのは園崎家頭首でもなく、部活のリーダーでもなく、…ただの一人の少女。そして、――妹を思う、ひとりのお姉さんだった。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そこにいるのは園崎家頭首でもなく、部活のリーダーでもなく…ただの一人の少女。そして、――妹を思う、ひとりのお姉さんだった。",
+				NULL, "The person before me was not the future Sonozaki family head, or the leader of our club... She was just a lone girl. And... she was an older sister, thinking of her younger sister.", Line_Normal);
+	} else {
+	//rそこにいるのは園崎家頭首でもなく、部活のリーダーでもなく、…ただの一人の少女。そして、なによりも妹を想う…ひとりのお姉さんだった。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そこにいるのは園崎家頭首でもなく、部活のリーダーでもなく…ただの一人の少女。そして、なによりも妹を想う…ひとりのお姉さんだった。",
+				NULL, "The person before me was not the future Sonozaki family head, or the leader of our club... She was just a lone girl. And above all else... she was an older sister, thinking of her younger sister.", Line_Normal);
+	}
 	ClearMessage();
 
 //rだから、俺も。
@@ -3348,10 +3381,17 @@ void main()
 			NULL, " ...But that's something you have to make certain of for yourself, Mion.\"", Line_Normal);
 	ClearMessage();
 
-//rそう。それは、他の誰にでもなく…魅音にしか、確かめられないこと。彼女自身が動いてこそ、その答えが求められるものなんだ…。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そう。それは、他の誰にでもなく…魅音にしか、確かめられないこと。彼女自身が動いてこそ、その答えが求められるものなんだ…。",
-			NULL, "Right. Nobody else can do it for her... Mion has to do it herself. She'll only reach an answer if she makes the first move...", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rそう、魅音にしか、……確かめられないことなんだ。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そう、魅音にしか、……確かめられないことなんだ。",
+				NULL, "Right, Mion alone... has to do that, herself.", Line_Normal);
+	} else {
+	//rそう。それは、他の誰にでもなく…魅音にしか、確かめられないこと。彼女自身が動いてこそ、その答えが求められるものなんだ…。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そう。それは、他の誰にでもなく…魅音にしか、確かめられないこと。彼女自身が動いてこそ、その答えが求められるものなんだ…。",
+				NULL, "Right. Nobody else can do it for her... Mion has to do that herself. She'll only reach an answer if she makes the first move...", Line_Normal);
+	}
 	ClearMessage();
 
 //魅音rvS14/03/210300701.「…え？」
