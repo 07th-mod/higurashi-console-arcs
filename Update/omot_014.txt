@@ -110,10 +110,17 @@ void main()
 			NULL, "\"Has cake replaced bread as the staple food of your household, Marie Antoinette?!\"", Line_Normal);
 	ClearMessage();
 
-//rしかもこれだけの量、一体どれだけのカロリーなんだ。こいつは俺をメタボにして早死にさせたいのかっ？
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "しかもこれだけの量、一体どれだけのカロリーなんだ。こいつは俺をメタボにして早死にさせたいのかっ？",
-			NULL, "And just how many calories are in all this? Does she want me to die early from metabolic syndrome?", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rしかもこれだけの量、一体どれだけのカロリ一なんだ。こいつは俺を関取にでもしたいのか？
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "しかもこれだけの量、一体どれだけのカロリ一なんだ。こいつは俺を関取にでもしたいのか？",
+				NULL, "And just how many calories are in all this? Does she want to fatten me up like a sumo wrestler?", Line_Normal);
+	} else {
+	//rしかもこれだけの量、一体どれだけのカロリーなんだ。こいつは俺をメタボにして早死にさせたいのかっ？
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "しかもこれだけの量、一体どれだけのカロリーなんだ。こいつは俺をメタボにして早死にさせたいのかっ？",
+				NULL, "And just how many calories are in all this? Does she want me to die young from metabolic syndrome?", Line_Normal);
+	}
 	ClearMessage();
 
 	DrawFilm( 2, 255, 225, 195, 255, 0, 1000, FALSE );
@@ -1514,12 +1521,24 @@ void main()
 	DisableWindow();
 	FadeOutBGM(2, 200, FALSE);
 	PlaySE(3, "suzu_1", 256, 64);
-	DrawScene("text/hanyu_14", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0005", 256, TRUE);
-	Wait( 5000 );
-	DrawScene("text/hanyu_15", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0006", 256, TRUE);
-	Wait( 5000 );
+
+	if (GetLocalFlag(LConsoleArc)==10) {
+		DrawScene("text/hanyu_14_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100017", 540, TRUE);
+		Wait( 3500 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100018_1", 540, TRUE);
+		Wait( 2000 );
+		DrawScene("text/hanyu_15_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100018_2", 540, TRUE);
+		Wait( 5000 );
+	} else {
+		DrawScene("text/hanyu_14", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0005", 256, TRUE);
+		Wait( 5000 );
+		DrawScene("text/hanyu_15", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0006", 256, TRUE);
+		Wait( 5000 );
+	}
 	DrawScene("white", 1000 );
 	DrawScene("background/si_g1", 1000 );
 
@@ -2190,28 +2209,53 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1015.「……凄いのです、圭一」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1015", 256, TRUE);
-	OutputLine(NULL, "「……凄いのです、圭一」",
-			NULL, "\"...That's amazing, Keiichi.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500730", 540, TRUE);
+		OutputLine(NULL, "「へぇ…………」",
+				NULL, "\"Wow...\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1015", 256, TRUE);
+		OutputLine(NULL, "「……凄いのです、圭一」",
+				NULL, "\"...That's amazing, Keiichi.\"", Line_Normal);
+	}
 	ClearMessage();
 
-//r梨花ちゃんは感心したようにため息をついて、にっこりと笑った。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "梨花ちゃんは感心したようにため息をついて、にっこりと笑った。",
-			NULL, "Rika-chan sighed as if she was impressed, and then put on a bright smile.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//r梨花ちゃんは口調を一変させ、感心したように笑った。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "梨花ちゃんは口調を一変させ、感心したように笑った。",
+				NULL, "Rika-chan switched her tone of voice, and smiled like she was impressed.", Line_Normal);
+	} else {
+	//r梨花ちゃんは感心したようにため息をついて、にっこりと笑った。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "梨花ちゃんは感心したようにため息をついて、にっこりと笑った。",
+				NULL, "Rika-chan sighed as if she was impressed, and then put on a bright smile.", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1016.「なるほど…そこに行き着いたのですね。kvS14/05/VT4Bc_rika1017.やっぱり圭一なのです。kvS14/05/VT4Bc_rika1018.ボクもそこまでは、考えたこともありませんでした」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1016", 256, TRUE);
-	OutputLine(NULL, "「なるほど…そこに行き着いたのですね。",
-			NULL, "\"I see... so you've made it that far.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1017", 256, TRUE);
-	OutputLine(NULL, "やっぱり圭一なのです。",
-			NULL, " I figured you would, Keiichi.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1018", 256, TRUE);
-	OutputLine(NULL, "ボクもそこまでは、考えたこともありませんでした」",
-			NULL, " I had never even thought about it like that.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500731", 540, TRUE);
+		OutputLine(NULL, "「なるほど…そこに行き着いたのね、圭一。",
+				NULL, "\"I see... so you've made it that far, Keiichi.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500732", 540, TRUE);
+		OutputLine(NULL, "大したものだわ。",
+				NULL, " Impressive.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500733", 540, TRUE);
+		OutputLine(NULL, "私もそこまでは、考えたこともなかった」",
+				NULL, " I had never even thought about it like that.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1016", 256, TRUE);
+		OutputLine(NULL, "「なるほど…そこに行き着いたのですね。",
+				NULL, "\"I see... so you've made it that far.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1017", 256, TRUE);
+		OutputLine(NULL, "やっぱり圭一なのです。",
+				NULL, " I figured you would, Keiichi.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1018", 256, TRUE);
+		OutputLine(NULL, "ボクもそこまでは、考えたこともありませんでした」",
+				NULL, " I had never even thought about it like that.\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 5, "sprite/ri2_fuman_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -2226,29 +2270,53 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1019.「………病死。kvS14/05/VT4Bc_rika1020.と、言っても信じてはくれませんでしょう」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1019", 256, TRUE);
-	OutputLine(NULL, "「………病死。",
-			NULL, "\"......A natural death.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1020", 256, TRUE);
-	OutputLine(NULL, "と、言っても信じてはくれませんでしょう」",
-			NULL, " I couldn't believe it.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500734", 540, TRUE);
+		OutputLine(NULL, "「………病死。",
+				NULL, "\"......A natural death.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500735", 540, TRUE);
+		OutputLine(NULL, "と、言っても信じないのでしょうね」",
+				NULL, " I couldn't believe it.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1019", 256, TRUE);
+		OutputLine(NULL, "「………病死。",
+				NULL, "\"......A natural death.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1020", 256, TRUE);
+		OutputLine(NULL, "と、言っても信じてはくれませんでしょう」",
+				NULL, " I couldn't believe it.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1021.「でも、おそらくあなたも疑っている通り…祟りでないことは確かなのです。kvS14/05/VT4Bc_rika1022.そして、人為的な動機が垣間見えないのも無理はありません」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1021", 256, TRUE);
-	OutputLine(NULL, "「でも、おそらくあなたも疑っている通り…祟りでないことは確かなのです。",
-			NULL, "\"But, as I'm sure you suspect... it's certainly not the work of a curse.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1022", 256, TRUE);
-	OutputLine(NULL, "そして、人為的な動機が垣間見えないのも無理はありません」",
-			NULL, " And there's no obvious motive for a person to have done it.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500736", 540, TRUE);
+		OutputLine(NULL, "「でも、まだあなたに話せる時期じゃないから詳しくはいえないけど…祟りでないことは確かよ。",
+				NULL, "\"It's still not yet time to tell you the details, but... it's certainly not the work of a curse.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500737", 540, TRUE);
+		OutputLine(NULL, "そして、人為的な動機が垣間見えないのも無理はないわ」",
+				NULL, " And there's no obvious motive for a person to have done it.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1021", 256, TRUE);
+		OutputLine(NULL, "「でも、おそらくあなたも疑っている通り…祟りでないことは確かなのです。",
+				NULL, "\"But, as I'm sure you suspect... it's certainly not the work of a curse.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1022", 256, TRUE);
+		OutputLine(NULL, "そして、人為的な動機が垣間見えないのも無理はありません」",
+				NULL, " And there's no obvious motive for a person to have done it.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1023.「犯人は、『祟り』を隠れみのに利用したのですから」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1023", 256, TRUE);
-	OutputLine(NULL, "「犯人は、『祟り』を隠れみのに利用したのですから」",
-			NULL, "\"The culprit used the \"curse\" to hide it.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500738", 540, TRUE);
+		OutputLine(NULL, "「犯人は、『祟り』を隠れみのに利用したんだから」",
+				NULL, "\"The culprit used the \"curse\" to hide it.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1023", 256, TRUE);
+		OutputLine(NULL, "「犯人は、『祟り』を隠れみのに利用したのですから」",
+				NULL, "\"The culprit used the \"curse\" to hide it.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //圭一rvS14/01/210101348.「『祟り』を…利用した？kvS14/01/210101349.　その犯人って、やっぱり…」
@@ -2270,10 +2338,17 @@ void main()
 			NULL, "\"...Meep. That's enough for now.\"", Line_Normal);
 	ClearMessage();
 
-//rそして梨花ちゃんは、申し訳なさそうな口調でぺこりと頭を下げる。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そして梨花ちゃんは、申し訳なさそうな口調でぺこりと頭を下げる。",
-			NULL, "Then, Rika-chan apologetically bowed her head.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rそして梨花ちゃんは、さっきまでの冷たい雰囲気を取り払って、普段の口調でぺこりと頭を下げる。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そして梨花ちゃんは、さっきまでの冷たい雰囲気を取り払って、普段の口調でぺこりと頭を下げる。",
+				NULL, "Then, Rika-chan dispersed the cold aura she had a moment ago and returned to her usual tone of voice as she bowed her head.", Line_Normal);
+	} else {
+	//rそして梨花ちゃんは、申し訳なさそうな口調でぺこりと頭を下げる。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そして梨花ちゃんは、申し訳なさそうな口調でぺこりと頭を下げる。",
+				NULL, "Then, Rika-chan apologetically bowed her head.", Line_Normal);
+	}
 	ClearMessage();
 
 //r本当は、もっと深く聞きたかったが…いつか話してくれることを信じて、俺はそれ以上何も言わなかった。
@@ -2542,9 +2617,15 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1024.「…まさか、…鷹野は祟りを人為的に発生させて、村人全員を殺す気なのですか…ッ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1024", 256, TRUE);
-	OutputLine(NULL, "「…まさか、…鷹野は祟りを人為的に発生させて、村人全員を殺す気なのですか…ッ？！」",
-			NULL, "\"...No way... Takano wants to artificially make the curse happen and kill the entire village...?!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500756", 540, TRUE);
+		OutputLine(NULL, "「……まさか、……鷹野は祟りを人為的に発生させて、村人全員を殺す気なの……ッ？！」",
+				NULL, "\"...No way... Takano wants to artificially make the curse happen and kill the entire village...?!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1024", 256, TRUE);
+		OutputLine(NULL, "「…まさか、…鷹野は祟りを人為的に発生させて、村人全員を殺す気なのですか…ッ？！」",
+				NULL, "\"...No way... Takano wants to artificially make the curse happen and kill the entire village...?!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //圭一rvS14/01/210101361.「――なっ？！」
