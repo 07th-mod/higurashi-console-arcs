@@ -1342,17 +1342,19 @@ void main()
 			NULL, "\"...Huh?\"", Line_Normal);
 	ClearMessage();
 
-//rその時…入り口近くの持ち帰り客向けのショーケースに並んでいた列の中から、男性が俺のところに歩み寄ってくる。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "その時…入り口近くの持ち帰り客向けのショーケースに並んでいた列の中から、男性が俺のところに歩み寄ってくる。",
-			NULL, "Just then... a man walked over to me from the carry-out line near the entrance. ", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc) < 10) {
+	//rその時…入り口近くの持ち帰り客向けのショーケースに並んでいた列の中から、男性が俺のところに歩み寄ってくる。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "その時…入り口近くの持ち帰り客向けのショーケースに並んでいた列の中から、男性が俺のところに歩み寄ってくる。",
+				NULL, "Just then... a man walked over to me from the carry-out line near the entrance. ", Line_Normal);
+		ClearMessage();
 
-//rそして、訝しげに目を向ける俺に手をあげて失礼を詫びながら、彼は問いただすように口を開いていった。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そして、訝しげに目を向ける俺に手をあげて失礼を詫びながら、彼は問いただすように口を開いていった。",
-			NULL, "Then, he regretfully looked at me while raising his hands to apologize for his rudeness, and then opened his mouth to ask a question.", Line_Normal);
-	ClearMessage();
+	//rそして、訝しげに目を向ける俺に手をあげて失礼を詫びながら、彼は問いただすように口を開いていった。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そして、訝しげに目を向ける俺に手をあげて失礼を詫びながら、彼は問いただすように口を開いていった。",
+				NULL, "Then, he regretfully looked at me while raising his hands to apologize for his rudeness, and then opened his mouth to ask a question.", Line_Normal);
+		ClearMessage();
+	}
 
 //赤坂rvS14/13/211300083.「今…君たち、梨花ちゃんって…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
@@ -1381,7 +1383,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1025.「沙都子、沙都子――っ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1025", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500757", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1025", 256, TRUE);
+	}
 	OutputLine(NULL, "「沙都子、沙都子——っ！」",
 			NULL, "\"Satoko, Satoko...!\"", Line_Normal);
 	ClearMessage();
@@ -1409,9 +1415,15 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1026.「お願いなのです…沙都子、いたら返事をしてくださいっ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1026", 256, TRUE);
-	OutputLine(NULL, "「お願いなのです…沙都子、いたら返事をしてくださいっ！」",
-			NULL, "\"Please... Satoko. If you're there, please answer me!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500758", 540, TRUE);
+		OutputLine(NULL, "「お願い……沙都子、いたら返事をしてっ！」",
+				NULL, "\"Please... Satoko. If you're there, please answer me!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1026", 256, TRUE);
+		OutputLine(NULL, "「お願いなのです…沙都子、いたら返事をしてくださいっ！」",
+				NULL, "\"Please... Satoko. If you're there, please answer me!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //r喉が痛い。
@@ -1519,12 +1531,21 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1004.「大丈夫ですわ、梨花。kvS14/04/VT4Bc_satoko1005.もう頭痛も抜けてきましたし、ちょっと外を歩く方が気分も良くなると思いますわ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1004", 256, TRUE);
-	OutputLine(NULL, "「大丈夫ですわ、梨花。",
-			NULL, "\"It's all right, Rika.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1005", 256, TRUE);
-	OutputLine(NULL, "もう頭痛も抜けてきましたし、ちょっと外を歩く方が気分も良くなると思いますわ」",
-			NULL, " My headache is already letting up, and I think I will feel better after taking a stroll outside.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/210400242", 540, TRUE);
+		OutputLine(NULL, "「大丈夫ですわ、梨花。",
+				NULL, "\"It's all right, Rika.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/210400243", 540, TRUE);
+		OutputLine(NULL, "もう頭痛も抜けてきましたし、ちょっと外を歩く方が気分も良くてございましてよ？」",
+				NULL, " My headache is already letting up, and I'll feel better after taking a stroll outside, won't I?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1004", 256, TRUE);
+		OutputLine(NULL, "「大丈夫ですわ、梨花。",
+				NULL, "\"It's all right, Rika.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1005", 256, TRUE);
+		OutputLine(NULL, "もう頭痛も抜けてきましたし、ちょっと外を歩く方が気分も良くなると思いますわ」",
+				NULL, " My headache is already letting up, and I think I will feel better after taking a stroll outside.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/210500761.「無理をしてはだめなのです。kvS14/05/210500762.…寄り合いが終わったらボクが買い物に行きますから、おとなしくしていてくださいなのです」
@@ -1541,12 +1562,21 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1006.「もう、心配性ですわねぇ、梨花は！kvS14/04/VT4Bc_satoko1007.　ですけど、最近連日打ち合わせと練習で忙しい梨花に、そうそう負担ばかりかけてはいられませんわ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1006", 256, TRUE);
-	OutputLine(NULL, "「もう、心配性ですわねぇ、梨花は！",
-			NULL, "\"Stop being such a worrywart, Rika!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1007", 256, TRUE);
-	OutputLine(NULL, "　ですけど、最近連日打ち合わせと練習で忙しい梨花に、そうそう負担ばかりかけてはいられませんわ」",
-			NULL, " But Rika, you've been busy lately with meetings and practice every single day. I can't force such a heavy burden on you.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/210400244", 540, TRUE);
+		OutputLine(NULL, "「もう、心配性でございますわねぇ、梨花は！",
+				NULL, "\"Stop being such a worrywart, Rika!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/210400245", 540, TRUE);
+		OutputLine(NULL, "　ですけど、最近連日打ち合わせと練習で忙しい梨花に、そうそう負担ばかりはかけられませんわ」",
+				NULL, " But Rika, you've been busy lately with meetings and practice every single day. I can't force such a heavy burden on you.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1006", 256, TRUE);
+		OutputLine(NULL, "「もう、心配性ですわねぇ、梨花は！",
+				NULL, "\"Stop being such a worrywart, Rika!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1007", 256, TRUE);
+		OutputLine(NULL, "　ですけど、最近連日打ち合わせと練習で忙しい梨花に、そうそう負担ばかりかけてはいられませんわ」",
+				NULL, " But Rika, you've been busy lately with meetings and practice every single day. I can't force such a heavy burden on you.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/210500763.「いいのです。kvS14/05/210500764.気にしなくてもいいのです、だから…」
@@ -1563,12 +1593,21 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1008.「それに最近、ようやくブロッコリーとカリフラワーを区分けするやり方を発見しましたのよ！kvS14/04/VT4Bc_satoko1009.　今度こそ間違えずに買ってきて、梨花に笑われないようにしてみせますから楽しみにしてあそばせ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1008", 256, TRUE);
-	OutputLine(NULL, "「それに最近、ようやくブロッコリーとカリフラワーを区分けするやり方を発見しましたのよ！",
-			NULL, "\"By the way, I recently discovered a means to distinguish broccoli and cauliflower!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1009", 256, TRUE);
-	OutputLine(NULL, "　今度こそ間違えずに買ってきて、梨花に笑われないようにしてみせますから楽しみにしてあそばせ！」",
-			NULL, " I'll buy the correct one this time so you won't have to laugh at me, Rika. Look forward to it!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/210400246", 540, TRUE);
+		OutputLine(NULL, "「それに最近、ようやくブロッコリ一とカリフラワ一を区分けするやり方を発見たのでございますのよ！",
+				NULL, "\"By the way, I recently discovered a means to distinguish broccoli and cauliflower!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/210400247", 540, TRUE);
+		OutputLine(NULL, "　今度こそ間違えずに買ってきて、梨花に笑われないようにしてみせますから楽しみにしてあそばせ！」",
+				NULL, " I'll buy the correct one this time so you won't have to laugh at me, Rika. Look forward to it!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1008", 256, TRUE);
+		OutputLine(NULL, "「それに最近、ようやくブロッコリーとカリフラワーを区分けするやり方を発見しましたのよ！",
+				NULL, "\"By the way, I recently discovered a means to distinguish broccoli and cauliflower!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1009", 256, TRUE);
+		OutputLine(NULL, "　今度こそ間違えずに買ってきて、梨花に笑われないようにしてみせますから楽しみにしてあそばせ！」",
+				NULL, " I'll buy the correct one this time so you won't have to laugh at me, Rika. Look forward to it!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 4, "sprite/sa2a_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -1803,7 +1842,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1026a.「………っ、そうだ、沙都子っ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1026a", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500767", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1026a", 256, TRUE);
+	}
 	OutputLine(NULL, "「………っ、そうだ、沙都子っ！」",
 			NULL, "\"......That's right. Satoko!\"", Line_Normal);
 	ClearMessage();
@@ -1842,7 +1885,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1026b.「はぁっ、はぁっ、はぁっ、はぁっ、…はぁっ…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1026b", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500768", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1026b", 256, TRUE);
+	}
 	OutputLine(NULL, "「はぁっ、はぁっ、はぁっ、はぁっ、…はぁっ…！」",
 			NULL, "\"Haah, haah, haah, haah... haah...!\"", Line_Normal);
 	ClearMessage();
@@ -1923,7 +1970,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1026c.「沙都子、沙都子、沙都子、さと…あっ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1026c", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500769", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1026c", 256, TRUE);
+	}
 	OutputLine(NULL, "「沙都子、沙都子、沙都子、さと…あっ？！」",
 			NULL, "\"Satoko, Satoko, Satoko, Satoko, Sato... Ah?!\"", Line_Normal);
 	ClearMessage();
@@ -2011,9 +2062,15 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1027.「――見たのですか、沙都子をッ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1027", 256, TRUE);
-	OutputLine(NULL, "「——見たのですか、沙都子をッ！！」",
-			NULL, "\"...Have you seen Satoko?!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500770", 540, TRUE);
+		OutputLine(NULL, "「——見たのね、沙都子をッ！！」",
+				NULL, "\"...Have you seen Satoko?!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1027", 256, TRUE);
+		OutputLine(NULL, "「——見たのですか、沙都子をッ！！」",
+				NULL, "\"...Have you seen Satoko?!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //r私は立ち上がって、おかみさんに詰め寄る。そして、彼女が気まずそうに目をそらしたのを見て、私はさらに確信した。
@@ -2024,15 +2081,27 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1028.「鉄平が来たのですねっ？kvS14/05/VT4Bc_rika1029.　どうして！kvS14/05/VT4Bc_rika1030.　どうして止めてくれなかったのですかっ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1028", 256, TRUE);
-	OutputLine(NULL, "「鉄平が来たのですねっ？",
-			NULL, "\"Teppei was here, right?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1029", 256, TRUE);
-	OutputLine(NULL, "　どうして！",
-			NULL, " Why?!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1030", 256, TRUE);
-	OutputLine(NULL, "　どうして止めてくれなかったのですかっ？！」",
-			NULL, " Why didn't you stop him?!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500771", 540, TRUE);
+		OutputLine(NULL, "「鉄平が来たの？",
+				NULL, "\"Teppei was here, right?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500772", 540, TRUE);
+		OutputLine(NULL, "　どうして！",
+				NULL, " Why?!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500773", 540, TRUE);
+		OutputLine(NULL, "　どうして止めてくれなかったの、なんでっ？！」",
+				NULL, " Why didn't you stop him?! Why?!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1028", 256, TRUE);
+		OutputLine(NULL, "「鉄平が来たのですねっ？",
+				NULL, "\"Teppei was here, right?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1029", 256, TRUE);
+		OutputLine(NULL, "　どうして！",
+				NULL, " Why?!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1030", 256, TRUE);
+		OutputLine(NULL, "　どうして止めてくれなかったのですかっ？！」",
+				NULL, " Why didn't you stop him?!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //八百屋さんrvS14/00/yaoya10003.「……申し訳ないです…。kvS14/00/yaoya10004.すみません…」
@@ -2047,12 +2116,21 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1031.「謝るくらいだったらっ！kvS14/05/VT4Bc_rika1032.　せめて、かくまってあげてもっ…、っ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1031", 256, TRUE);
-	OutputLine(NULL, "「謝るくらいだったらっ！",
-			NULL, "\"If you feel the need to apologize!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1032", 256, TRUE);
-	OutputLine(NULL, "　せめて、かくまってあげてもっ…、っ？！」",
-			NULL, " Couldn't you have at least tried to hide her...?!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500774", 540, TRUE);
+		OutputLine(NULL, "「謝るくらいだったらっ！",
+				NULL, "\"If you feel the need to apologize!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500775", 540, TRUE);
+		OutputLine(NULL, "　せめて、かくまってあげてもっ…、っ？！」",
+				NULL, " Couldn't you have at least tried to hide her...?!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1031", 256, TRUE);
+		OutputLine(NULL, "「謝るくらいだったらっ！",
+				NULL, "\"If you feel the need to apologize!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1032", 256, TRUE);
+		OutputLine(NULL, "　せめて、かくまってあげてもっ…、っ？！」",
+				NULL, " Couldn't you have at least tried to hide her...?!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	DrawScene("background/ta2", 1000 );
@@ -2101,7 +2179,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1033.「………」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1033", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500776", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1033", 256, TRUE);
+	}
 	OutputLine(NULL, "「………」",
 			NULL, "\"......\"", Line_Normal);
 	ClearMessage();
@@ -2122,7 +2204,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1034.「…ごめんなさいっ…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1034", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500777", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1034", 256, TRUE);
+	}
 	OutputLine(NULL, "「…ごめんなさいっ…」",
 			NULL, "\"...I'm sorry...\"", Line_Normal);
 	ClearMessage();
@@ -2328,10 +2414,17 @@ void main()
 			NULL, "Satoko said that in a whisper, like she was trying to hide her sadness behind a smile... It was painful just watching.", Line_Normal);
 	ClearMessage();
 
-//rしかも、その顔には痛々しい痕が…目をそらすな。しっかり見るんだ、私。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "しかも、その顔には痛々しい痕が…目をそらすな。しっかり見るんだ、私。",
-			NULL, "And there were painful marks on her face... that I couldn't look away from. I carefully gazed at her.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rしかも、その顔には痛々しい痕が…目をそらすな。しっかり見るんだ、私。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "しかも、その顔は表情だけではない。……目をそらすな、しっかり見るんだ古手梨花。",
+				NULL, "And it wasn't just the expression on her face that looked painful... Don't look away, look closely, Rika Furude.", Line_Normal);
+	} else {
+	//rしかも、その顔には痛々しい痕が…目をそらすな。しっかり見るんだ、私。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "しかも、その顔には痛々しい痕が…目をそらすな。しっかり見るんだ、私。",
+				NULL, "And there were painful marks on her face... But don't look away, look closely.", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/210500780.「沙都子、……こんなところにいないで、お家へ帰りましょうです」
@@ -2567,9 +2660,15 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1034a.「…待ってください、沙都子」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1034a", 256, TRUE);
-	OutputLine(NULL, "「…待ってください、沙都子」",
-			NULL, "\"...Satoko, please wait.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500781", 540, TRUE);
+		OutputLine(NULL, "「……待って、沙都子」",
+				NULL, "\"...Satoko, wait.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1034a", 256, TRUE);
+		OutputLine(NULL, "「…待ってください、沙都子」",
+				NULL, "\"...Satoko, please wait.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //沙都子rvS14/04/210400257.「え……」
@@ -2627,12 +2726,21 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1035.「出張…？kvS14/05/VT4Bc_rika1036.　どこに行ってたのですか…？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1035", 256, TRUE);
-	OutputLine(NULL, "「出張…？",
-			NULL, "\"Business trip...?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1036", 256, TRUE);
-	OutputLine(NULL, "　どこに行ってたのですか…？」",
-			NULL, " Where did you go...?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500782", 540, TRUE);
+		OutputLine(NULL, "「出張…？",
+				NULL, "\"Business trip...?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500783", 540, TRUE);
+		OutputLine(NULL, "　どこに……？」",
+				NULL, " To where...?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1035", 256, TRUE);
+		OutputLine(NULL, "「出張…？",
+				NULL, "\"Business trip...?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1036", 256, TRUE);
+		OutputLine(NULL, "　どこに行ってたのですか…？」",
+				NULL, " Where did you go...?\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 21, "sprite/tetu_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -2649,12 +2757,21 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1037.「…みぃ…初めて知りましたのです。kvS14/05/VT4Bc_rika1038.同居人の女性の家でゴロゴロするのが、出張なのですか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1037", 256, TRUE);
-	OutputLine(NULL, "「…みぃ…初めて知りましたのです。",
-			NULL, "\"...Meep... this is the first I heard about it.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1038", 256, TRUE);
-	OutputLine(NULL, "同居人の女性の家でゴロゴロするのが、出張なのですか？」",
-			NULL, " Was it the kind of business trip where you loaf around doing nothing at some other lady's house?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500784", 540, TRUE);
+		OutputLine(NULL, "「…ふふ…初めて知ったわ。",
+				NULL, "\"...Hehe... this is the first I've heard of it.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500785", 540, TRUE);
+		OutputLine(NULL, "同居人の女性の家でゴロゴロするのが、出張っていうのね？」",
+				NULL, " Was it the sort of business trip where you loaf around doing nothing at some other lady's house?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1037", 256, TRUE);
+		OutputLine(NULL, "「…みぃ…初めて知りましたのです。",
+				NULL, "\"...Meep... this is the first I've heard of it.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1038", 256, TRUE);
+		OutputLine(NULL, "同居人の女性の家でゴロゴロするのが、出張なのですか？」",
+				NULL, " Was it the sort of business trip where you loaf around doing nothing at some other lady's house?\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 21, "sprite/tetu_3_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -2671,12 +2788,21 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1039.「ふふ、ふふふ…！kvS14/05/VT4Bc_rika1040.　あはははは、あっはっはっはっはっはっ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1039", 256, TRUE);
-	OutputLine(NULL, "「ふふ、ふふふ…！",
-			NULL, "\"Hehe, hehehe...!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1040", 256, TRUE);
-	OutputLine(NULL, "　あはははは、あっはっはっはっはっはっ！！」",
-			NULL, " Ahahahaha, ahh ha ha ha ha ha!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500786", 540, TRUE);
+		OutputLine(NULL, "「ふふ、ふふふ…！",
+				NULL, "\"Hehe, hehehe...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500787", 540, TRUE);
+		OutputLine(NULL, "　あはははは、あっはっはっはっはっはっ！！」",
+				NULL, " Ahahahaha, ahh ha ha ha ha ha!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1039", 256, TRUE);
+		OutputLine(NULL, "「ふふ、ふふふ…！",
+				NULL, "\"Hehe, hehehe...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1040", 256, TRUE);
+		OutputLine(NULL, "　あはははは、あっはっはっはっはっはっ！！」",
+				NULL, " Ahahahaha, ahh ha ha ha ha ha!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //r笑える。あまりに馬鹿馬鹿しくて、目の前の男が愚かに思えて、私は盛大に笑ってしまった。
@@ -2959,7 +3085,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1041.「…たああぁぁあぁぁっっ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1041", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500788", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1041", 256, TRUE);
+	}
 	OutputLine(NULL, "「…たああぁぁあぁぁっっ！！」",
 			NULL, "\"...Haaaaaaahh!!\"", Line_Normal);
 	ClearMessage();
@@ -2996,9 +3126,15 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1042.「行きましょうなのです、沙都子っ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1042", 256, TRUE);
-	OutputLine(NULL, "「行きましょうなのです、沙都子っ！」",
-			NULL, "\"Satoko, let's go!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500789", 540, TRUE);
+		OutputLine(NULL, "「行きましょう、沙都子っ！」",
+				NULL, "\"Satoko, let's go!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1042", 256, TRUE);
+		OutputLine(NULL, "「行きましょうなのです、沙都子っ！」",
+				NULL, "\"Satoko, let's go!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //沙都子rvS14/04/210400264.「り、梨花――っ？！」
@@ -3022,40 +3158,73 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1043.「さぁ、早くっ！kvS14/05/VT4Bc_rika1044.　鉄平が動けないうちにっ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1043", 256, TRUE);
-	OutputLine(NULL, "「さぁ、早くっ！",
-			NULL, "\"Now! Hurry!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1044", 256, TRUE);
-	OutputLine(NULL, "　鉄平が動けないうちにっ！」",
-			NULL, " While Teppei can't move!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500790", 540, TRUE);
+		OutputLine(NULL, "「さぁ、早くっ！",
+				NULL, "\"Now! Hurry!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500791", 540, TRUE);
+		OutputLine(NULL, "　鉄平が動けないうちにっ！」",
+				NULL, " While Teppei can't move!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1043", 256, TRUE);
+		OutputLine(NULL, "「さぁ、早くっ！",
+				NULL, "\"Now! Hurry!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1044", 256, TRUE);
+		OutputLine(NULL, "　鉄平が動けないうちにっ！」",
+				NULL, " While Teppei can't move!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 4, "sprite/sa2a_muhyou_a2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //沙都子rvS14/04/VT4Bc_satoko1009a.「…梨花…あなたのお気持ちは、嬉しいですわ…すごく。kvS14/04/VT4Bc_satoko1009b.だけど――」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1009a", 256, TRUE);
-	OutputLine(NULL, "「…梨花…あなたのお気持ちは、嬉しいですわ…すごく。",
-			NULL, "\"...Rika... I'm glad that you feel this way... Truly.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1009b", 256, TRUE);
-	OutputLine(NULL, "だけど——」",
-			NULL, " However...\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/210400265", 540, TRUE);
+		OutputLine(NULL, "「…梨花…気持ちは、嬉しいのでございます…すごく。",
+				NULL, "\"...Rika... I'm glad that you feel this way... Truly.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/210400266", 540, TRUE);
+		OutputLine(NULL, "だけど——」",
+				NULL, " However...\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1009a", 256, TRUE);
+		OutputLine(NULL, "「…梨花…あなたのお気持ちは、嬉しいですわ…すごく。",
+				NULL, "\"...Rika... I'm glad that you feel this way... Truly.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1009b", 256, TRUE);
+		OutputLine(NULL, "だけど——」",
+				NULL, " However...\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1045.「…あなたは耐えることが、悟史への贖罪、そして自分が強くなることだと思っているのかもしれない。kvS14/05/VT4Bc_rika1046.でも、それじゃ誰も喜ばないのです！kvS14/05/VT4Bc_rika1047.　みんな救われないのです！kvS14/05/VT4Bc_rika1048.　悟史だってっ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1045", 256, TRUE);
-	OutputLine(NULL, "「…あなたは耐えることが、悟史への贖罪、そして自分が強くなることだと思っているのかもしれない。",
-			NULL, "\"...You probably think that enduring this is necessary to atone for Satoshi and to become stronger.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1046", 256, TRUE);
-	OutputLine(NULL, "でも、それじゃ誰も喜ばないのです！",
-			NULL, " But, nobody will be happy with that!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1047", 256, TRUE);
-	OutputLine(NULL, "　みんな救われないのです！",
-			NULL, " Nobody thinks you need redemption!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1048", 256, TRUE);
-	OutputLine(NULL, "　悟史だってっ！！」",
-			NULL, " Not even Satoshi!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500792", 540, TRUE);
+		OutputLine(NULL, "「…あなたは耐えることが、悟史への贖罪、そして自分が強くなることだと思っているのかもしれない。",
+				NULL, "\"...You probably think that enduring this is necessary to atone for Satoshi and to become stronger.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500793", 540, TRUE);
+		OutputLine(NULL, "　でも、それじゃ誰も喜ばない！",
+				NULL, " But, nobody will be happy with that!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500794", 540, TRUE);
+		OutputLine(NULL, "　みんな救われない！",
+				NULL, " Nobody thinks you need redemption!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500795", 540, TRUE);
+		OutputLine(NULL, "　悟史だってっ！！」",
+				NULL, " Not even Satoshi!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1045", 256, TRUE);
+		OutputLine(NULL, "「…あなたは耐えることが、悟史への贖罪、そして自分が強くなることだと思っているのかもしれない。",
+				NULL, "\"...You probably think that enduring this is necessary to atone for Satoshi and to become stronger.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1046", 256, TRUE);
+		OutputLine(NULL, "　でも、それじゃ誰も喜ばないのです！",
+				NULL, " But, nobody will be happy with that!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1047", 256, TRUE);
+		OutputLine(NULL, "　みんな救われないのです！",
+				NULL, " Nobody thinks you need redemption!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1048", 256, TRUE);
+		OutputLine(NULL, "　悟史だってっ！！」",
+				NULL, " Not even Satoshi!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 4, "sprite/sa2a_hannbeso_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -3069,26 +3238,47 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1049.「耐えて辛抱して、何が生まれますか？kvS14/05/VT4Bc_rika1050.　あなたは、前に自分が頑張らなかったから、悟史がいなくなった…だから今、耐えるべきだと思っているのですか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1049", 256, TRUE);
-	OutputLine(NULL, "「耐えて辛抱して、何が生まれますか？",
-			NULL, "\"Who is born to be so tolerant, so patient?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1050", 256, TRUE);
-	OutputLine(NULL, "　あなたは、前に自分が頑張らなかったから、悟史がいなくなった…だから今、耐えるべきだと思っているのですか？」",
-			NULL, " You think Satoshi is gone because you didn't work hard enough before... So, you think you need to endure it now?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500796", 540, TRUE);
+		OutputLine(NULL, "「耐えて辛抱して、何が生まれるの？",
+				NULL, "\"Who is born to be so tolerant, so patient?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500797", 540, TRUE);
+		OutputLine(NULL, "　あなたは、自分が頑張らなかったから、悟史がいなくなったと思っているかもしれない。」",
+				NULL, " You probably think Satoshi is gone because you didn't work hard enough before.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1049", 256, TRUE);
+		OutputLine(NULL, "「耐えて辛抱して、何が生まれますか？",
+				NULL, "\"Who is born to be so tolerant, so patient?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1050", 256, TRUE);
+		OutputLine(NULL, "　あなたは、前に自分が頑張らなかったから、悟史がいなくなった…だから今、耐えるべきだと思っているのですか？」",
+				NULL, " You think Satoshi is gone because you didn't work hard enough before... So, you think you need to endure it now?\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1051.「それは違う、間違っています！　悟史の頑張りは、耐え続けることじゃなかったのですよ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1051", 256, TRUE);
-	OutputLine(NULL, "「それは違う、間違っています！　悟史の頑張りは、耐え続けることじゃなかったのですよ！」",
-			NULL, "\"That's wrong! You're mistaken! Satoshi worked as hard as he did so you wouldn't have to endure this!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500798", 540, TRUE);
+		OutputLine(NULL, "「でも、悟史の頑張りは耐え続けることじゃなかった！」",
+				NULL, "\"But Satoshi worked as hard as he did so you wouldn't have to endure this!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1051", 256, TRUE);
+		OutputLine(NULL, "「それは違う、間違っています！　悟史の頑張りは、耐え続けることじゃなかったのですよ！」",
+				NULL, "\"That's wrong! You're mistaken! Satoshi worked as hard as he did so you wouldn't have to endure this!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1052.「むしろあなたを守るために、勇敢にその身を投げ出して戦い続けることだったのですよっ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1052", 256, TRUE);
-	OutputLine(NULL, "「むしろあなたを守るために、勇敢にその身を投げ出して戦い続けることだったのですよっ！！」",
-			NULL, "\"He continued fighting bravely because he wanted to protect you!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500799", 540, TRUE);
+		OutputLine(NULL, "「むしろあなたを守るために、勇敢にその身を投げ出して戦い続けたのよ！！」",
+				NULL, "\"He continued fighting bravely because he wanted to protect you!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1052", 256, TRUE);
+		OutputLine(NULL, "「むしろあなたを守るために、勇敢にその身を投げ出して戦い続けることだったのですよっ！！」",
+				NULL, "\"He continued fighting bravely because he wanted to protect you!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 4, "sprite/sa2a_odoroki_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -3102,29 +3292,53 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1053.「ここに来るまでに、見ましたですか？kvS14/05/VT4Bc_rika1054.　あなたを鉄平から守ろうとして、今まで冷たいと思っていた人たちが立ち上がってくれました！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1053", 256, TRUE);
-	OutputLine(NULL, "「ここに来るまでに、見ましたですか？",
-			NULL, "\"Didn't you see it right before you came here?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1054", 256, TRUE);
-	OutputLine(NULL, "　あなたを鉄平から守ろうとして、今まで冷たいと思っていた人たちが立ち上がってくれました！」",
-			NULL, " The people you thought were treating you coldly up until now stood up and protected you from Teppei!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500800", 540, TRUE);
+		OutputLine(NULL, "「ここに来るまでに、見たでしょう！",
+				NULL, "\"Didn't you see it right before you came here?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500801", 540, TRUE);
+		OutputLine(NULL, "　あなたを鉄平から守ろうとして、今まで冷たいと思っていた人たちが立ち上がってくれた！」",
+				NULL, " The people you thought were treating you coldly up until now stood up and protected you from Teppei!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1053", 256, TRUE);
+		OutputLine(NULL, "「ここに来るまでに、見ましたですか？",
+				NULL, "\"Didn't you see it right before you came here?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1054", 256, TRUE);
+		OutputLine(NULL, "　あなたを鉄平から守ろうとして、今まで冷たいと思っていた人たちが立ち上がってくれました！」",
+				NULL, " The people you thought were treating you coldly up until now stood up and protected you from Teppei!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1055.「それが迷惑をかけることだと感じたから、あなたは抵抗せずにこの男に従った！kvS14/05/VT4Bc_rika1056.　…でも、迷惑をかけたり助けを求めることは、決して悪いことじゃないのです！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1055", 256, TRUE);
-	OutputLine(NULL, "「それが迷惑をかけることだと感じたから、あなたは抵抗せずにこの男に従った！",
-			NULL, "\"But you didn't want to be a bother for them, so you followed this man without resisting!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1056", 256, TRUE);
-	OutputLine(NULL, "　…でも、迷惑をかけたり助けを求めることは、決して悪いことじゃないのです！」",
-			NULL, " ...And yet, it's never a bad thing to bother someone to ask for help!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500802", 540, TRUE);
+		OutputLine(NULL, "「でも、それが迷惑をかけることだと感じたから、あなたは抵抗せずにこの男に従った。",
+				NULL, "\"But you didn't want to be a bother for them, so you followed this man without resisting.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500803", 540, TRUE);
+		OutputLine(NULL, "　……でもね、迷惑をかけたり助けを求めることは、決して悪いことじゃない！」",
+				NULL, " ...And yet, it's never a bad thing to bother someone to ask for help!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1055", 256, TRUE);
+		OutputLine(NULL, "「それが迷惑をかけることだと感じたから、あなたは抵抗せずにこの男に従った！",
+				NULL, "\"But you didn't want to be a bother for them, so you followed this man without resisting!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1056", 256, TRUE);
+		OutputLine(NULL, "　…でも、迷惑をかけたり助けを求めることは、決して悪いことじゃないのです！」",
+				NULL, " ...And yet, it's never a bad thing to bother someone to ask for help!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1057.「本当にいけないのは、それだけ身を投げ出して戦ってくれた人の思いと努力から、顔を背けてしまうことなのですよっ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1057", 256, TRUE);
-	OutputLine(NULL, "「本当にいけないのは、それだけ身を投げ出して戦ってくれた人の思いと努力から、顔を背けてしまうことなのですよっ？！」",
-			NULL, "\"What you really shouldn't do is to turn away from the people who put in the thought and effort to fight on your behalf, right?!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500804", 540, TRUE);
+		OutputLine(NULL, "「本当にいけないのは、それだけ身を投げ出して戦ってくれた人の思いを、努力から顔を背けてしまうことなの！」",
+				NULL, "\"What you really shouldn't do is to turn away from the people who put in the thought and effort to fight on your behalf, right?!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1057", 256, TRUE);
+		OutputLine(NULL, "「本当にいけないのは、それだけ身を投げ出して戦ってくれた人の思いと努力から、顔を背けてしまうことなのですよっ？！」",
+				NULL, "\"What you really shouldn't do is to turn away from the people who put in the thought and effort to fight on your behalf, right?!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 4, "sprite/sa2a_hannbeso_a3_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -3138,29 +3352,51 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1058.「思い出してください、沙都子！kvS14/05/VT4Bc_rika1059.　あなたは覚えているはずです！kvS14/05/VT4Bc_rika1060.　たった一人で大人たちに立ち向かい、あなたを守り続けた兄の姿を！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1058", 256, TRUE);
-	OutputLine(NULL, "「思い出してください、沙都子！",
-			NULL, "\"Satoko, please remember!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1059", 256, TRUE);
-	OutputLine(NULL, "　あなたは覚えているはずです！",
-			NULL, " You should still remember it!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1060", 256, TRUE);
-	OutputLine(NULL, "　たった一人で大人たちに立ち向かい、あなたを守り続けた兄の姿を！！」",
-			NULL, " That image of your brother standing alone to protect you!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500805", 540, TRUE);
+		OutputLine(NULL, "「思い出して、沙都子！",
+				NULL, "\"Satoko, please remember!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500806", 540, TRUE);
+		OutputLine(NULL, "　あなたは覚えているはずよ！",
+				NULL, " You should still remember it!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500807", 540, TRUE);
+		OutputLine(NULL, "　たった一人で大人たちに立ち向かい、あなたを守り続けた兄の姿を！！」",
+				NULL, " That image of your brother standing alone to protect you!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1058", 256, TRUE);
+		OutputLine(NULL, "「思い出してください、沙都子！",
+				NULL, "\"Satoko, please remember!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1059", 256, TRUE);
+		OutputLine(NULL, "　あなたは覚えているはずです！",
+				NULL, " You should still remember it!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1060", 256, TRUE);
+		OutputLine(NULL, "　たった一人で大人たちに立ち向かい、あなたを守り続けた兄の姿を！！」",
+				NULL, " That image of your brother standing alone to protect you!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1061.「そしてゼロからたくさんの力をかき集めて、あなたを救い出した勇気あるもう一人の兄の姿をっ！！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1061", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500808", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1061", 256, TRUE);
+	}
 	OutputLine(NULL, "「そしてゼロからたくさんの力をかき集めて、あなたを救い出した勇気あるもう一人の兄の姿をっ！！！」",
 			NULL, "\"Now picture another courageous brother, gathering immense strength from absolutely nothing in order to save you!!!\"", Line_Normal);
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1062.「それでも、最後まで諦めずに、あなたのことを思ってくれた人たちのことまで無視し続けるのですか、北条沙都子ォッッ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1062", 256, TRUE);
-	OutputLine(NULL, "「それでも、最後まで諦めずに、あなたのことを思ってくれた人たちのことまで無視し続けるのですか、北条沙都子ォッッ！！」",
-			NULL, "\"And even until the end, he never gave up. Are you going to continue ignoring the people who have been thinking so hard about you, Satoko Houjooou?!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500809", 540, TRUE);
+		OutputLine(NULL, "「それでも、最後まで諦めずに、あなたのことを思ってくれた人たちのことまで無視し続けるのか、北条沙都子ォッッ！！」",
+				NULL, "\"And even until the end, he never gave up. Are you going to continue ignoring the people who have been thinking so hard about you, Satoko Houjooou?!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1062", 256, TRUE);
+		OutputLine(NULL, "「それでも、最後まで諦めずに、あなたのことを思ってくれた人たちのことまで無視し続けるのですか、北条沙都子ォッッ！！」",
+				NULL, "\"And even until the end, he never gave up. Are you going to continue ignoring the people who have been thinking so hard about you, Satoko Houjooou?!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
@@ -3247,12 +3483,25 @@ void main()
 	PlaySE(3, "suzu_1", 256, 64);
 	DrawScene("white", 1000 );
 	FadeFilm( 250, TRUE );
-	DrawScene("text/hanyu_11", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0008", 256, TRUE);
-	Wait( 2500 );
-	DrawScene("text/hanyu_12", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0009", 256, TRUE);
-	Wait( 7000 );
+
+	if (GetLocalFlag(LConsoleArc)==10) {
+		DrawScene("text/hanyu_11_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100019", 540, TRUE);
+		Wait( 2000 );
+		DrawScene("text/hanyu_12_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100020", 540, TRUE);
+		Wait( 4500 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100021", 540, TRUE);
+		Wait( 3000 );
+	} else {
+		DrawScene("text/hanyu_11", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0008", 256, TRUE);
+		Wait( 2500 );
+		DrawScene("text/hanyu_12", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0009", 256, TRUE);
+		Wait( 7000 );
+	}
+
 	DrawScene("white", 1000 );
 	ModDrawCharacter(4, 4, "sprite/sa2a_hannbeso_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ho1", 1000 );
@@ -3311,7 +3560,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1063.「なっ…？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1063", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500810", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1063", 256, TRUE);
+	}
 	OutputLine(NULL, "「なっ…？！」",
 			NULL, "\"Wha...?!\"", Line_Normal);
 	ClearMessage();
@@ -3399,7 +3652,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1064.「――？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1064", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500811", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1064", 256, TRUE);
+	}
 	OutputLine(NULL, "「——？！」",
 			NULL, "\"...?!\"", Line_Normal);
 	ClearMessage();
@@ -3587,9 +3844,15 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1065.「言っちゃダメです、沙都子ぉぉおぉっっ！！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1065", 256, TRUE);
-	OutputLine(NULL, "「言っちゃダメです、沙都子ぉぉおぉっっ！！！」",
-			NULL, "\"Don't say anything, Satokoooo!!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500813", 540, TRUE);
+		OutputLine(NULL, "「言うなあぁぁあぁ、沙都子ぉぉおぉっっ！！！」",
+				NULL, "\"Don't say anythiiiing, Satokoooo!!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1065", 256, TRUE);
+		OutputLine(NULL, "「言っちゃダメです、沙都子ぉぉおぉっっ！！！」",
+				NULL, "\"Don't say anything, Satokoooo!!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 4, "sprite/sa2a_hannbeso_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -3615,29 +3878,53 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1066.「…ずっと、僕は…あなたを助けることができないって、諦めていましたのです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1066", 256, TRUE);
-	OutputLine(NULL, "「…ずっと、僕は…あなたを助けることができないって、諦めていましたのです」",
-			NULL, "\"...For the longest time... I had given up, thinking there was nothing I could do to help you.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500814", 540, TRUE);
+		OutputLine(NULL, "「……ずっとね、私は……あなたを助けることができないって、諦めていた」",
+				NULL, "\"...For the longest time... I had given up, thinking there was nothing I could do to help you.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1066", 256, TRUE);
+		OutputLine(NULL, "「…ずっと、僕は…あなたを助けることができないって、諦めていましたのです」",
+				NULL, "\"...For the longest time... I had given up, thinking there was nothing I could do to help you.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1067.「…でも、今は違いますです…！kvS14/05/VT4Bc_rika1068.　意志の強さがあれば、運命なんて関係ない、袋小路だって突破してみせる！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1067", 256, TRUE);
-	OutputLine(NULL, "「…でも、今は違いますです…！",
-			NULL, "\"...But now, it's different...!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1068", 256, TRUE);
-	OutputLine(NULL, "　意志の強さがあれば、運命なんて関係ない、袋小路だって突破してみせる！」",
-			NULL, " Fate means nothing as long as you have the strength of will. So we can burst right through this dead end!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500815", 540, TRUE);
+		OutputLine(NULL, "「…でも、今は違う…！",
+				NULL, "\"...But now, it's different...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500816", 540, TRUE);
+		OutputLine(NULL, "　意志の強さがあれば、運命なんて関係ない、袋小路だって突破してみせる！」",
+				NULL, " Fate means nothing as long as you have the strength of will. So we can burst right through this dead end!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1067", 256, TRUE);
+		OutputLine(NULL, "「…でも、今は違いますです…！",
+				NULL, "\"...But now, it's different...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1068", 256, TRUE);
+		OutputLine(NULL, "　意志の強さがあれば、運命なんて関係ない、袋小路だって突破してみせる！」",
+				NULL, " Fate means nothing as long as you have the strength of will. So we can burst right through this dead end!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1069.「…そして、その意志に基づく行動が、全てを開く！！kvS14/05/VT4Bc_rika1070.　その証拠を、あなたに見せてあげますです…！　僕がいま、ここでッッ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1069", 256, TRUE);
-	OutputLine(NULL, "「…そして、その意志に基づく行動が、全てを開く！！",
-			NULL, "\"...And as long as we're willing to take action, we can open the door to anything!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1070", 256, TRUE);
-	OutputLine(NULL, "　その証拠を、あなたに見せてあげますです…！　僕がいま、ここでッッ！！」",
-			NULL, " I'll prove it to you...! Right here, right now!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500817", 540, TRUE);
+		OutputLine(NULL, "「…そして、その意志に基づく行動が、全てを開くの！！",
+				NULL, "\"...And as long as we're willing to take action, we can open the door to anything!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500818", 540, TRUE);
+		OutputLine(NULL, "　その証拠を、あなたに見せてあげる……私がっっ！！」",
+				NULL, " I'll prove it to you...! Right here, right now!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1069", 256, TRUE);
+		OutputLine(NULL, "「…そして、その意志に基づく行動が、全てを開く！！",
+				NULL, "\"...And as long as we're willing to take action, we can open the door to anything!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1070", 256, TRUE);
+		OutputLine(NULL, "　その証拠を、あなたに見せてあげますです…！　僕がいま、ここでッッ！！」",
+				NULL, " I'll prove it to you...! Right here, right now!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //rそうだ。
@@ -3646,10 +3933,17 @@ void main()
 			NULL, "Right.", Line_Normal);
 	ClearMessage();
 
-//rやっと、僕は気づいた。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "やっと、僕は気づいた。",
-			NULL, "At last, I realized.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rやっと、僕は気づいた。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "やっと、私は気づいた。",
+				NULL, "At last, I realized.", Line_Normal);
+	} else {
+	//rやっと、僕は気づいた。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "やっと、僕は気づいた。",
+				NULL, "At last, I realized.", Line_Normal);
+	}
 	ClearMessage();
 
 //r最高の運命を手繰り寄せるのは、意志の力だけじゃない。
@@ -3664,10 +3958,17 @@ void main()
 			NULL, "It requires the effort to put those strong feelings into action.", Line_Normal);
 	ClearMessage();
 
-//rだから、僕はもう逃げない。諦めない。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "だから、僕はもう逃げない。諦めない。",
-			NULL, "So, I won't run away anymore. I won't give up.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rだから、私は逃げない。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "だから、私は逃げない。",
+				NULL, "So, I won't run away.", Line_Normal);
+	} else {
+	//rだから、僕はもう逃げない。諦めない。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "だから、僕はもう逃げない。諦めない。",
+				NULL, "So, I won't run away anymore. I won't give up.", Line_Normal);
+	}
 	ClearMessage();
 
 //r沙都子を助け出す。
@@ -3676,20 +3977,36 @@ void main()
 			NULL, "I'm going to save Satoko.", Line_Normal);
 	ClearMessage();
 
-//rそのためには、こんなやつのために僕たちの幸せをぶち壊しにされてたまるかぁぁッッ！！
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そのためには、こんなやつのために僕たちの幸せをぶち壊しにされてたまるかぁぁッッ！！",
-			NULL, "And in order to do that, we need to take back the happiness that these guys stole from uuuus!!", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rそのためには、こんなやつのために僕たちの幸せをぶち壊しにされてたまるかぁぁッッ！！
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そのためには、こんなやつのために私の幸せをぶち壊しにされてたまるかぁぁッッ！！",
+				NULL, "And in order to do that, I need to take back the happiness that these guys stole from meee!!", Line_Normal);
+	} else {
+	//rそのためには、こんなやつのために僕たちの幸せをぶち壊しにされてたまるかぁぁッッ！！
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そのためには、こんなやつのために僕たちの幸せをぶち壊しにされてたまるかぁぁッッ！！",
+				NULL, "And in order to do that, we need to take back the happiness that these guys stole from uuuus!!", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1071.「…倒れるもんか…！kvS14/05/VT4Bc_rika1072.　…僕は、絶対…沙都子を、連れて帰るッッ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1071", 256, TRUE);
-	OutputLine(NULL, "「…倒れるもんか…！",
-			NULL, "\"...You think I've given up...?!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1072", 256, TRUE);
-	OutputLine(NULL, "　…僕は、絶対…沙都子を、連れて帰るッッ！！」",
-			NULL, " ...I swear... I'm going to bring Satoko home!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500819", 540, TRUE);
+		OutputLine(NULL, "「…倒れるもんか…！",
+				NULL, "\"...You think I've given up...?!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500820", 540, TRUE);
+		OutputLine(NULL, "　……私は、沙都子を連れて帰るんだぁッッ！！」",
+				NULL, " ...I swear... I'm going to bring Satoko home!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1071", 256, TRUE);
+		OutputLine(NULL, "「…倒れるもんか…！",
+				NULL, "\"...You think I've given up...?!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1072", 256, TRUE);
+		OutputLine(NULL, "　…僕は、絶対…沙都子を、連れて帰るッッ！！」",
+				NULL, " ...I swear... I'm going to bring Satoko home!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
@@ -4226,15 +4543,28 @@ void main()
 	FadeOutBGM(2, 200, FALSE);
 	PlaySE(3, "suzu_1", 256, 64);
 	DrawScene("white", 1000 );
-	DrawScene("text/hanyu_11", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0010", 256, TRUE);
-	Wait( 2000 );
-	DrawScene("text/hanyu_12", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0011", 256, TRUE);
-	Wait( 6500 );
-	DrawScene("text/hanyu_12a", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0012", 256, TRUE);
-	Wait( 2500 );
+
+	if (GetLocalFlag(LConsoleArc)==10) {
+		DrawScene("text/hanyu_11_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100022", 540, TRUE);
+		Wait( 2000 );
+		DrawScene("text/hanyu_12_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100023", 540, TRUE);
+		Wait( 4000 );
+		DrawScene("text/hanyu_12a_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/211100024", 540, TRUE);
+		Wait( 4000 );
+	} else {
+		DrawScene("text/hanyu_11", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0010", 256, TRUE);
+		Wait( 2000 );
+		DrawScene("text/hanyu_12", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0011", 256, TRUE);
+		Wait( 6500 );
+		DrawScene("text/hanyu_12a", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0012", 256, TRUE);
+		Wait( 2500 );
+	}
 	DrawScene("white", 500 );
 	DrawScene("background/ho1", 250 );
 	PlaySE(3, "down", 256, 64);
@@ -4423,29 +4753,31 @@ void main()
 			NULL, "Teppei stumbled to the ground, as Satoko looked down at him from above. Now, their situation was completely reversed.", Line_Normal);
 	ClearMessage();
 
-//r鉄平はさらに立ち上がって、凶悪な怒声とともに沙都子めがけて拳を、そして蹴りを何度も繰り出す。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "鉄平はさらに立ち上がって、凶悪な怒声とともに沙都子めがけて拳を、そして蹴りを何度も繰り出す。",
-			NULL, "Teppei rose to his feet once more, and swung his arms and legs at Satoko over and over while screaming in a brutal, rage-filled voice.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc) < 10) {
+	//r鉄平はさらに立ち上がって、凶悪な怒声とともに沙都子めがけて拳を、そして蹴りを何度も繰り出す。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "鉄平はさらに立ち上がって、凶悪な怒声とともに沙都子めがけて拳を、そして蹴りを何度も繰り出す。",
+				NULL, "Teppei rose to his feet once more, and swung his arms and legs at Satoko over and over while screaming in a brutal, rage-filled voice.", Line_Normal);
+		ClearMessage();
 
-//rそれでも、所詮は弱いやつを相手に威張りくさっていただけの、ただの小者！　そんな輩の力だけの攻撃など、沙都子の前には全くの無意味ッ！
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "それでも、所詮は弱いやつを相手に威張りくさっていただけの、ただの小者！　そんな輩の力だけの攻撃など、沙都子の前には全くの無意味ッ！",
-			NULL, "But in the end, it was just a weakling putting on airs to try and intimidate someone smaller than him! That wanton display of power had no meaning before Satoko!", Line_Normal);
-	ClearMessage();
+	//rそれでも、所詮は弱いやつを相手に威張りくさっていただけの、ただの小者！　そんな輩の力だけの攻撃など、沙都子の前には全くの無意味ッ！
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "それでも、所詮は弱いやつを相手に威張りくさっていただけの、ただの小者！　そんな輩の力だけの攻撃など、沙都子の前には全くの無意味ッ！",
+				NULL, "But in the end, it was just a weakling putting on airs to try and intimidate someone smaller than him! That wanton display of power had no meaning before Satoko!", Line_Normal);
+		ClearMessage();
 
-//r早々にリーチの間合いを見切られ、そして怒りに我を忘れればその分、その打撃の精度は落ちてゆく。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "早々にリーチの間合いを見切られ、そして怒りに我を忘れればその分、その打撃の精度は落ちてゆく。",
-			NULL, "His anger massively reduced the accuracy of his attacks, so she was able to quickly move beyond his reach.", Line_Normal);
-	ClearMessage();
+	//r早々にリーチの間合いを見切られ、そして怒りに我を忘れればその分、その打撃の精度は落ちてゆく。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "早々にリーチの間合いを見切られ、そして怒りに我を忘れればその分、その打撃の精度は落ちてゆく。",
+				NULL, "His anger massively reduced the accuracy of his attacks, so she was able to quickly move beyond his reach.", Line_Normal);
+		ClearMessage();
 
-//rそして相対しながら沙都子は、こんな程度の男に今まで恐怖を抱いていたのかと、内心可笑しさすら感じ始めていた…。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そして相対しながら沙都子は、こんな程度の男に今まで恐怖を抱いていたのかと、内心可笑しさすら感じ始めていた…。",
-			NULL, "And when they faced each other like this, Satoko was beginning to laugh at herself for ever fearing a man of this caliber...", Line_Normal);
-	ClearMessage();
+	//rそして相対しながら沙都子は、こんな程度の男に今まで恐怖を抱いていたのかと、内心可笑しさすら感じ始めていた…。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そして相対しながら沙都子は、こんな程度の男に今まで恐怖を抱いていたのかと、内心可笑しさすら感じ始めていた…。",
+				NULL, "And when they faced each other like this, Satoko was beginning to laugh at herself for ever fearing a man of this caliber...", Line_Normal);
+		ClearMessage();
+	}
 
 	ModDrawCharacter(4, 4, "sprite/sa2a_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
@@ -4517,7 +4849,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1073.「やめろおぉぉおぉ――っっっ！！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1073", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500829", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1073", 256, TRUE);
+	}
 	OutputLine(NULL, "「やめろおぉぉおぉ——っっっ！！！」",
 			NULL, "\"Stop iiiiiit...!!!\"", Line_Normal);
 	ClearMessage();
@@ -4554,15 +4890,27 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1074.「さ、沙都子…！kvS14/05/VT4Bc_rika1075.　だめっ、思い出しては！！kvS14/05/VT4Bc_rika1076.　あんなのデタラメ――、っ？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1074", 256, TRUE);
-	OutputLine(NULL, "「さ、沙都子…！",
-			NULL, "\"S-Satoko...!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1075", 256, TRUE);
-	OutputLine(NULL, "　だめっ、思い出しては！！",
-			NULL, " You don't have to remember!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1076", 256, TRUE);
-	OutputLine(NULL, "　あんなのデタラメ——、っ？！」",
-			NULL, " That memory is nonsense...!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500830", 540, TRUE);
+		OutputLine(NULL, "「さ、沙都子…！",
+				NULL, "\"S-Satoko...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500831", 540, TRUE);
+		OutputLine(NULL, "　だめっ、思い出しては！！",
+				NULL, " You don't have to remember!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/210500832", 540, TRUE);
+		OutputLine(NULL, "　あんなのデタラメ——、っ？！」",
+				NULL, " That memory is nonsense...!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1074", 256, TRUE);
+		OutputLine(NULL, "「さ、沙都子…！",
+				NULL, "\"S-Satoko...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1075", 256, TRUE);
+		OutputLine(NULL, "　だめっ、思い出しては！！",
+				NULL, " You don't have to remember!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1076", 256, TRUE);
+		OutputLine(NULL, "　あんなのデタラメ——、っ？！」",
+				NULL, " That memory is nonsense...!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 21, "portrait/tetu_2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -4590,7 +4938,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1077.「――っ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1077", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500833", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1077", 256, TRUE);
+	}
 	OutputLine(NULL, "「——っ！！」",
 			NULL, "\"...!!\"", Line_Normal);
 	ClearMessage();
@@ -4604,7 +4956,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1078.「………………え？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1078", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/210500834", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1078", 256, TRUE);
+	}
 	OutputLine(NULL, "「………………え？」",
 			NULL, "\"......Huh?\"", Line_Normal);
 	ClearMessage();
