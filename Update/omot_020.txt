@@ -1105,17 +1105,25 @@ void main()
 	Wait( 250 );
 	PlaySE(4, "down3", 256, 64);
 
-//r銃声がとどろき、入江はその場でよろめく。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "銃声がとどろき、入江はその場でよろめく。",
-			NULL, "A gunshot roared out, and Irie staggered in place.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "銃声がとどろき、入江はその場に崩れ落ちる。その右腕からはおびただしい鮮血があふれだし、白衣を真っ赤に染めていた。",
+				NULL, "A gunshot roared out, and Irie collapsed on the spot. His right arm was now spilling fresh blood, staining his white coat in deep red.", Line_Normal);
+		ClearMessage();
 
-//r…威嚇のつもりで撃った銃弾は彼の右腕をかすめ、裂け目になったそこから鮮血がにじみ出ていた。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "…威嚇のつもりで撃った銃弾は彼の右腕をかすめ、裂け目になったそこから鮮血がにじみ出ていた。",
-			NULL, "...A bullet fired to intimidate him grazed his right arm, and fresh blood came oozing from the wound.", Line_Normal);
-	ClearMessage();
+	} else {
+	//r銃声がとどろき、入江はその場でよろめく。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "銃声がとどろき、入江はその場でよろめく。",
+				NULL, "A gunshot roared out, and Irie staggered in place.", Line_Normal);
+		ClearMessage();
+
+	//r…威嚇のつもりで撃った銃弾は彼の右腕をかすめ、裂け目になったそこから鮮血がにじみ出ていた。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…威嚇のつもりで撃った銃弾は彼の右腕をかすめ、裂け目になったそこから鮮血がにじみ出ていた。",
+				NULL, "...A bullet fired to intimidate him grazed his right arm, and fresh blood came oozing from the wound.", Line_Normal);
+		ClearMessage();
+	}
 
 //入江rvS14/10/22100181.「ぐ…うっ…！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>Irie</color>", NULL, Line_ContinueAfterTyping); }
@@ -1222,8 +1230,14 @@ void main()
 
 //rつうっ…と流れ落ちる一筋の赤い血。だが入江は臆することなくきっ、と眼光鋭く詩音を見据えて向き直り、銃口の前に立ち塞がっていった。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "つうっ…と流れ落ちる一筋の赤い血。だが入江は臆することなくきっ、と眼光鋭く詩音を見据えて向き直り、銃口の前に立ち塞がっていった。",
-			NULL, "...A line of red blood came trailing down. But Irie didn't show any hesitation. He stared straight at Shion and stood directly in front of the muzzle.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		OutputLine(NULL, "つうっ……と流れ落ちる一筋の赤い血。だが入江は臆することなく、肩を押さえながら苦悶の表情で立ち上がり、そして銃を構える詩音に向き直っていった。",
+				NULL, "...A line of red blood came trailing down, but Irie didn't show any hesitation. He clung to his shoulder and stood up with an agonized look on his face, then turned toward Shion who was still holding the gun.", Line_Normal);
+	} else {
+		OutputLine(NULL, "つうっ…と流れ落ちる一筋の赤い血。だが入江は臆することなくきっ、と眼光鋭く詩音を見据えて向き直り、銃口の前に立ち塞がっていった。",
+				NULL, "...A line of red blood came trailing down, but Irie didn't show any hesitation. He stared straight at Shion and stood directly in front of the muzzle.", Line_Normal);
+
+	}
 	ClearMessage();
 
 	PlayBGM(2, "hm08_34", 128, 0);
@@ -1708,7 +1722,11 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1181a.「――圭一っ！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1181a", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/220500158", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1181a", 256, TRUE);
+	}
 	OutputLine(NULL, "「——圭一っ！！」",
 			NULL, "\"...Keiichi!!\"", Line_Normal);
 	ClearMessage();
@@ -2307,9 +2325,15 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1182.「……それをしてしまうのが、雛見沢症候群なのです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1182", 256, TRUE);
-	OutputLine(NULL, "「……それをしてしまうのが、雛見沢症候群なのです」",
-			NULL, "\"...That's true, but it's because of Hinamizawa Syndrome.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/220500175", 540, TRUE);
+		OutputLine(NULL, "「……それをしてしまうのが、雛見沢症候群なの」",
+				NULL, "\"...That's true, but it's because of Hinamizawa Syndrome.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1182", 256, TRUE);
+		OutputLine(NULL, "「……それをしてしまうのが、雛見沢症候群なのです」",
+				NULL, "\"...That's true, but it's because of Hinamizawa Syndrome.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //r梨花ちゃんはかぶりを振って、沈痛な声で言った。
@@ -2322,39 +2346,72 @@ void main()
 
 //梨花rvS14/05/VT4Bc_rika1183.「雛見沢症候群にかかった人は、周りの全ての人が自分に敵意を向けていると思い込んでしまいます」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1183", 256, TRUE);
-	OutputLine(NULL, "「雛見沢症候群にかかった人は、周りの全ての人が自分に敵意を向けていると思い込んでしまいます」",
-			NULL, "\"People affected with Hinamizawa Syndrome perceive everyone around them as an enemy.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/220500176", 540, TRUE);
+		OutputLine(NULL, "「雛見沢症候群にかかった人は、周りの全ての人が自分に敵意を向けていると思い込んでしまう」",
+				NULL, "\"People affected with Hinamizawa Syndrome perceive everyone around them as an enemy.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1183", 256, TRUE);
+		OutputLine(NULL, "「雛見沢症候群にかかった人は、周りの全ての人が自分に敵意を向けていると思い込んでしまいます」",
+				NULL, "\"People affected with Hinamizawa Syndrome perceive everyone around them as an enemy.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1184.「ちょっとした言動、仕草にも疑い、邪推し、不安を抱いて、kvS14/05/VT4Bc_rika1185.…自分を防衛しようと思うあまりに攻撃的な感情になってしまうのですよ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1184", 256, TRUE);
-	OutputLine(NULL, "「ちょっとした言動、仕草にも疑い、邪推し、不安を抱いて、",
-			NULL, "\"Even seemingly trivial words or actions will make them feel doubt and groundless suspicion, filling them with insecurity.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1185", 256, TRUE);
-	OutputLine(NULL, "…自分を防衛しようと思うあまりに攻撃的な感情になってしまうのですよ」",
-			NULL, " ...It leads to aggressive emotions driving one to self-defense.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/220500177", 540, TRUE);
+		OutputLine(NULL, "「ちょっとした言動、仕草にも疑い、邪推し、不安を抱いて、",
+				NULL, "\"Even seemingly trivial words or actions will make them feel doubt and groundless suspicion, filling them with insecurity.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/220500178", 540, TRUE);
+		OutputLine(NULL, "…自分を防衛しようと思うあまりに攻撃的な感情になる」",
+				NULL, " ...It leads to aggressive emotions driving one to self-defense.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1184", 256, TRUE);
+		OutputLine(NULL, "「ちょっとした言動、仕草にも疑い、邪推し、不安を抱いて、",
+				NULL, "\"Even seemingly trivial words or actions will make them feel doubt and groundless suspicion, filling them with insecurity.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1185", 256, TRUE);
+		OutputLine(NULL, "…自分を防衛しようと思うあまりに攻撃的な感情になってしまうのですよ」",
+				NULL, " ...It leads to aggressive emotions driving one to self-defense.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1186.「…でも、詩音。kvS14/05/VT4Bc_rika1187.あなたの言うように、沙都子は悪くありませんのです」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1186", 256, TRUE);
-	OutputLine(NULL, "「…でも、詩音。",
-			NULL, "\"...But Shion,", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1187", 256, TRUE);
-	OutputLine(NULL, "あなたの言うように、沙都子は悪くありませんのです」",
-			NULL, " what you said is true. Satoko isn't a bad person.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/220500179", 540, TRUE);
+		OutputLine(NULL, "「…でも、詩音。",
+				NULL, "\"...But Shion,", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/220500180", 540, TRUE);
+		OutputLine(NULL, "あなたの言うように、沙都子は悪くない」",
+				NULL, " what you said is true. Satoko isn't a bad person.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1186", 256, TRUE);
+		OutputLine(NULL, "「…でも、詩音。",
+				NULL, "\"...But Shion,", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1187", 256, TRUE);
+		OutputLine(NULL, "あなたの言うように、沙都子は悪くありませんのです」",
+				NULL, " what you said is true. Satoko isn't a bad person.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/VT4Bc_rika1188.「あの子はとても優しくて、甘えん坊で、…それが病気のせいで、間違った方向に行ってしまっただけ。kvS14/05/VT4Bc_rika1189.それはボクも、この入江もわかっていることなのです…」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1188", 256, TRUE);
-	OutputLine(NULL, "「あの子はとても優しくて、甘えん坊で、…それが病気のせいで、間違った方向に行ってしまっただけ。",
-			NULL, "\"She's a sweet, gentle girl... but it's this disease's fault that she's being pushed in another direction.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1189", 256, TRUE);
-	OutputLine(NULL, "それはボクも、この入江もわかっていることなのです…」",
-			NULL, " Irie and I both understand that.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 5, "ps2/05/220500181", 540, TRUE);
+		OutputLine(NULL, "「あの子はとても優しくて、甘えん坊で、…それが病気のせいで、間違った方向に行ってしまっただけ。",
+				NULL, "\"She's a sweet, gentle girl... but it's this disease's fault that she's being pushed in another direction.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/220500182", 540, TRUE);
+		OutputLine(NULL, "それは私も、この入江もわかっていること…」",
+				NULL, " Irie and I both understand that.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1188", 256, TRUE);
+		OutputLine(NULL, "「あの子はとても優しくて、甘えん坊で、…それが病気のせいで、間違った方向に行ってしまっただけ。",
+				NULL, "\"She's a sweet, gentle girl... but it's this disease's fault that she's being pushed in another direction.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1189", 256, TRUE);
+		OutputLine(NULL, "それはボクも、この入江もわかっていることなのです…」",
+				NULL, " Irie and I both understand that.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //入江rvS14/10/22100224.「――だから、私は沙都子ちゃんを救いたいと思いました。kvS14/10/22100225.そのために投薬と検査を繰り返してみましたが、ずっとはかばかしい結果は望めなくて…」
@@ -2942,19 +2999,34 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1010.「私は、本当にだめな人間ですわ…！kvS14/04/VT4Bc_satoko1011.　だけど、そんな私をこんなにも優しく、力強く励ましてくれるみんながいる…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1010", 256, TRUE);
-	OutputLine(NULL, "「私は、本当にだめな人間ですわ…！",
-			NULL, "\"I truly am an awful human being...!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1011", 256, TRUE);
-	OutputLine(NULL, "　だけど、そんな私をこんなにも優しく、力強く励ましてくれるみんながいる…！」",
-			NULL, " But despite that, there are people willing to give me strong, kindhearted encouragement...!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/220400015", 540, TRUE);
+		OutputLine(NULL, "「私は、本当にだめな人間でございます…！",
+				NULL, "\"I truly am an awful human being...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/220400016", 540, TRUE);
+		OutputLine(NULL, "　だけど、そんな私をこんなにも優しく、力強く励ましてくれるみんながいる…！」",
+				NULL, " But despite that, there are people willing to give me strong, kindhearted encouragement...!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1010", 256, TRUE);
+		OutputLine(NULL, "「私は、本当にだめな人間ですわ…！",
+				NULL, "\"I truly am an awful human being...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1011", 256, TRUE);
+		OutputLine(NULL, "　だけど、そんな私をこんなにも優しく、力強く励ましてくれるみんながいる…！」",
+				NULL, " But despite that, there are people willing to give me strong, kindhearted encouragement...!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //沙都子rvS14/04/VT4Bc_satoko1012.「そして、みんなと同じように監督もこんな私を、いつも元気付けてくださったり、心配してくださいました…！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1012", 256, TRUE);
-	OutputLine(NULL, "「そして、みんなと同じように監督もこんな私を、いつも元気付けてくださったり、心配してくださいました…！」",
-			NULL, "\"And just like everyone else, the coach has always been worried about me and doing his best to cheer me up...!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/b_220400017", 540, TRUE);
+		OutputLine(NULL, "「そして、みんなと同じように監督さんもこんな私を、いつも元気付けてくださったり、心配してくださいましたわ…！」",
+				NULL, "\"And just like everyone else, the coach has always been worried about me and doing his best to cheer me up...!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1012", 256, TRUE);
+		OutputLine(NULL, "「そして、みんなと同じように監督もこんな私を、いつも元気付けてくださったり、心配してくださいました…！」",
+				NULL, "\"And just like everyone else, the coach has always been worried about me and doing his best to cheer me up...!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
@@ -3015,15 +3087,27 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1013.「みんなが私のことを思いやってくださっていたのだから、私もその優しさを疑ったりしない！！kvS14/04/VT4Bc_satoko1014.　仲間も、監督も、kvS14/04/VT4Bc_satoko1015.…そして詩音さん、私のねーねーもッッ！！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1013", 256, TRUE);
-	OutputLine(NULL, "「みんなが私のことを思いやってくださっていたのだから、私もその優しさを疑ったりしない！！",
-			NULL, "\"Everyone was being considerate of me, so I have no reason to doubt their kindness!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1014", 256, TRUE);
-	OutputLine(NULL, "　仲間も、監督も、",
-			NULL, " My friends, the coach...", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1015", 256, TRUE);
-	OutputLine(NULL, "…そして詩音さん、私のねーねーもッッ！！！」",
-			NULL, " ...And you too, Shion-san. You're my Nee-nee!!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/220400024", 540, TRUE);
+		OutputLine(NULL, "「みんなも私のことを思いやってくださっていたのだから、私もその優しさを疑ったりしない！！",
+				NULL, "\"Everyone was being considerate of me, so I have no reason to doubt their kindness!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/220400025", 540, TRUE);
+		OutputLine(NULL, "　仲間も、監督さんも、",
+				NULL, " My friends, the coach...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/220400026", 540, TRUE);
+		OutputLine(NULL, "…そして詩音さん、私のねーねーもッッ！！！」",
+				NULL, " ...And you too, Shion-san. You're my Nee-nee!!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1013", 256, TRUE);
+		OutputLine(NULL, "「みんなが私のことを思いやってくださっていたのだから、私もその優しさを疑ったりしない！！",
+				NULL, "\"Everyone was being considerate of me, so I have no reason to doubt their kindness!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1014", 256, TRUE);
+		OutputLine(NULL, "　仲間も、監督も、",
+				NULL, " My friends, the coach...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1015", 256, TRUE);
+		OutputLine(NULL, "…そして詩音さん、私のねーねーもッッ！！！」",
+				NULL, " ...And you too, Shion-san. You're my Nee-nee!!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(3, 6, "sprite/si1a_yowaki_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
