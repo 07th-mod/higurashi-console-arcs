@@ -27,140 +27,151 @@ void main()
 			NULL, "When he heard the story, he felt totally lost. ...After all, he thought retirement pay was something precious.", Line_Normal);
 	ClearMessage();
 
-//rだが…最終的に、大石は決断した。その後押しになったのは、昨日山沖から伝えられた、巴の一件だった…。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "だが…最終的に、大石は決断した。その後押しになったのは、昨日山沖から伝えられた、巴の一件だった…。",
-			NULL, "However... Ooishi ultimately came to a decision. The final push came from something he heard from Yamaoki yesterday concerning Tomoe's case...", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		DrawScene("white", 1000 );
 
-	DrawScene("white", 1000 );
-	Wait( 1000 );
-	FadeOutBGM(1, 200, TRUE);
-	PlayBGM(2, "hm10_79", 128, 0);
-	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
-	DrawScene("background/denwa", 1000 );
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "それでも夜が明けてすぐ、タバコを一箱まるごと空けてから大石は心を決めた。そして別室に鑑識のジジィと熊谷の二人を呼び出し、全てを打ち明けた。",
+				NULL, "Nevertheless, by the crack of dawn, and after burning through an entire pack of cigarettes, Ooishi had made up his mind. He called Kumagai and the old man from forensics into a room, then told them everything.", Line_Normal);
+		ClearMessage();
 
-//大石rvS14/11/VT4Bc_oishi1036.「……えっ？kvS14/11/VT4Bc_oishi1037.　じゃ、じゃあ…あの垣内空港での捕り物劇で、巴ちゃんは…ご両親の仇を、討ったっていうんですかっ？」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1036", 256, TRUE);
-	OutputLine(NULL, "「……えっ？",
-			NULL, "\"...Huh?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1037", 256, TRUE);
-	OutputLine(NULL, "　じゃ、じゃあ…あの垣内空港での捕り物劇で、巴ちゃんは…ご両親の仇を、討ったっていうんですかっ？」",
-			NULL, " Y-you mean... that arrest drama at the Kakiuchi airport... was Tomoe-chan avenging her parents?\"", Line_Normal);
-	ClearMessage();
+		DrawScene("background/ka4", 1000 );
+	} else {
+	//rだが…最終的に、大石は決断した。その後押しになったのは、昨日山沖から伝えられた、巴の一件だった…。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "だが…最終的に、大石は決断した。その後押しになったのは、昨日山沖から伝えられた、巴の一件だった…。",
+				NULL, "However... Ooishi ultimately came to a decision. The final push came from something he heard from Yamaoki yesterday concerning Tomoe's case...", Line_Normal);
+		ClearMessage();
 
-//山沖rvS14/30/VT4Bc_yamaoki1001.「はい。kvS14/30/VT4Bc_yamaoki1002.足かけ１２年…あの子は、ついにやってみせましたよ」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#7d746d>山沖</color>", NULL, "<color=#7d746d>Yamaoki</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1001", 256, TRUE);
-	OutputLine(NULL, "「はい。",
-			NULL, "\"That's right.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1002", 256, TRUE);
-	OutputLine(NULL, "足かけ１２年…あの子は、ついにやってみせましたよ」",
-			NULL, " After 12 long years... she finally managed to do it.\"", Line_Normal);
-	ClearMessage();
+		DrawScene("white", 1000 );
+		Wait( 1000 );
+		FadeOutBGM(1, 200, TRUE);
+		PlayBGM(2, "hm10_79", 128, 0);
+		DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
+		DrawScene("background/denwa", 1000 );
 
-	DrawScene("black", 1000 );
-	FadeFilm( 250, TRUE );
+	//大石rvS14/11/VT4Bc_oishi1036.「……えっ？kvS14/11/VT4Bc_oishi1037.　じゃ、じゃあ…あの垣内空港での捕り物劇で、巴ちゃんは…ご両親の仇を、討ったっていうんですかっ？」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1036", 256, TRUE);
+		OutputLine(NULL, "「……えっ？",
+				NULL, "\"...Huh?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1037", 256, TRUE);
+		OutputLine(NULL, "　じゃ、じゃあ…あの垣内空港での捕り物劇で、巴ちゃんは…ご両親の仇を、討ったっていうんですかっ？」",
+				NULL, " Y-you mean... that arrest drama at the Kakiuchi airport... was Tomoe-chan avenging her parents?\"", Line_Normal);
+		ClearMessage();
 
-//r垣内空港の話は、大石もテレビなどの媒体を通じて知っていた。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "垣内空港の話は、大石もテレビなどの媒体を通じて知っていた。",
-			NULL, "Ooishi had heard about the Kakiuchi airport incident through TV and other media.", Line_Normal);
-	ClearMessage();
+	//山沖rvS14/30/VT4Bc_yamaoki1001.「はい。kvS14/30/VT4Bc_yamaoki1002.足かけ１２年…あの子は、ついにやってみせましたよ」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#7d746d>山沖</color>", NULL, "<color=#7d746d>Yamaoki</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1001", 256, TRUE);
+		OutputLine(NULL, "「はい。",
+				NULL, "\"That's right.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1002", 256, TRUE);
+		OutputLine(NULL, "足かけ１２年…あの子は、ついにやってみせましたよ」",
+				NULL, " After 12 long years... she finally managed to do it.\"", Line_Normal);
+		ClearMessage();
 
-//rしかも、どうやら取引の影には大企業か、大物の個人の存在があることがうかがえて、そのためにかなりの報道制限がかけられていることもわかっていた。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "しかも、どうやら取引の影には大企業か、大物の個人の存在があることがうかがえて、そのためにかなりの報道制限がかけられていることもわかっていた。",
-			NULL, "And what's more, there were powerful organizations and big-name individuals lurking in the shadow behind these deals, so significant media restrictions were in place.", Line_Normal);
-	ClearMessage();
+		DrawScene("black", 1000 );
+		FadeFilm( 250, TRUE );
 
-//rしかし、それほどまでの陰謀と暗躍があったとは…さすがに想定外だった。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "しかし、それほどまでの陰謀と暗躍があったとは…さすがに想定外だった。",
-			NULL, "But, of course... nobody could ever expect that a conspiracy of that magnitude was playing out behind the scenes.", Line_Normal);
-	ClearMessage();
+	//r垣内空港の話は、大石もテレビなどの媒体を通じて知っていた。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "垣内空港の話は、大石もテレビなどの媒体を通じて知っていた。",
+				NULL, "Ooishi had heard about the Kakiuchi airport incident through TV and other media.", Line_Normal);
+		ClearMessage();
 
-	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
-	DrawScene("background/denwa", 1000 );
+	//rしかも、どうやら取引の影には大企業か、大物の個人の存在があることがうかがえて、そのためにかなりの報道制限がかけられていることもわかっていた。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "しかも、どうやら取引の影には大企業か、大物の個人の存在があることがうかがえて、そのためにかなりの報道制限がかけられていることもわかっていた。",
+				NULL, "And what's more, there were powerful organizations and big-name individuals lurking in the shadow behind these deals, so significant media restrictions were in place.", Line_Normal);
+		ClearMessage();
 
-//山沖rvS14/30/VT4Bc_yamaoki1003.「これも、あの子が父親から受け継いだ刑事魂と強い意思が、不可能を可能へとのし上げたのでしょう。kvS14/30/VT4Bc_yamaoki1004.…私は、あの子を誇りに思います」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#7d746d>山沖</color>", NULL, "<color=#7d746d>Yamaoki</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1003", 256, TRUE);
-	OutputLine(NULL, "「これも、あの子が父親から受け継いだ刑事魂と強い意思が、不可能を可能へとのし上げたのでしょう。",
-			NULL, "\"And it would never have been possible without the strong will and detective's soul she inherited from her father.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1004", 256, TRUE);
-	OutputLine(NULL, "…私は、あの子を誇りに思います」",
-			NULL, " ...I'm deeply proud of her.\"", Line_Normal);
-	ClearMessage();
+	//rしかし、それほどまでの陰謀と暗躍があったとは…さすがに想定外だった。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "しかし、それほどまでの陰謀と暗躍があったとは…さすがに想定外だった。",
+				NULL, "But, of course... nobody could ever expect that a conspiracy of that magnitude was playing out behind the scenes.", Line_Normal);
+		ClearMessage();
 
-//山沖rvS14/30/VT4Bc_yamaoki1005.「いずれ、折を見て彼女がご報告にあがるでしょうが、あなたにだけは、先にお知らせしておこうと思いまして…」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#7d746d>山沖</color>", NULL, "<color=#7d746d>Yamaoki</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1005", 256, TRUE);
-	OutputLine(NULL, "「いずれ、折を見て彼女がご報告にあがるでしょうが、あなたにだけは、先にお知らせしておこうと思いまして…」",
-			NULL, "\"She'll provide a full report before long, but I wanted to be the first to let you know...\"", Line_Normal);
-	ClearMessage();
+		DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
+		DrawScene("background/denwa", 1000 );
 
-//大石rvS14/11/VT4Bc_oishi1038.「…………」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1038", 256, TRUE);
-	OutputLine(NULL, "「…………」",
-			NULL, "\"......\"", Line_Normal);
-	ClearMessage();
+	//山沖rvS14/30/VT4Bc_yamaoki1003.「これも、あの子が父親から受け継いだ刑事魂と強い意思が、不可能を可能へとのし上げたのでしょう。kvS14/30/VT4Bc_yamaoki1004.…私は、あの子を誇りに思います」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#7d746d>山沖</color>", NULL, "<color=#7d746d>Yamaoki</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1003", 256, TRUE);
+		OutputLine(NULL, "「これも、あの子が父親から受け継いだ刑事魂と強い意思が、不可能を可能へとのし上げたのでしょう。",
+				NULL, "\"And it would never have been possible without the strong will and detective's soul she inherited from her father.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1004", 256, TRUE);
+		OutputLine(NULL, "…私は、あの子を誇りに思います」",
+				NULL, " ...I'm deeply proud of her.\"", Line_Normal);
+		ClearMessage();
 
-	FadeFilm( 1000, FALSE );
-	DrawScene("white", 1000 );
-	DrawScene("black", 1000 );
+	//山沖rvS14/30/VT4Bc_yamaoki1005.「いずれ、折を見て彼女がご報告にあがるでしょうが、あなたにだけは、先にお知らせしておこうと思いまして…」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#7d746d>山沖</color>", NULL, "<color=#7d746d>Yamaoki</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 30, "ps3/s14/30/vt4bc_yamaoki1005", 256, TRUE);
+		OutputLine(NULL, "「いずれ、折を見て彼女がご報告にあがるでしょうが、あなたにだけは、先にお知らせしておこうと思いまして…」",
+				NULL, "\"She'll provide a full report before long, but I wanted to be the first to let you know...\"", Line_Normal);
+		ClearMessage();
 
-//r両親を失ってから、１２年間…巴はずっと信念を持って、諦めなかった。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "両親を失ってから、１２年間…巴はずっと信念を持って、諦めなかった。",
-			NULL, "Even 12 years after losing her parents... Tomoe kept on believing, and never gave up.", Line_Normal);
-	ClearMessage();
+	//大石rvS14/11/VT4Bc_oishi1038.「…………」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1038", 256, TRUE);
+		OutputLine(NULL, "「…………」",
+				NULL, "\"......\"", Line_Normal);
+		ClearMessage();
 
-//rもちろん、年老いた自分と若い彼女では、それと引き換えに失うものの大きさが違う…そういう言い方も、できるかもしれない。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "もちろん、年老いた自分と若い彼女では、それと引き換えに失うものの大きさが違う…そういう言い方も、できるかもしれない。",
-			NULL, "Of course, with him being old and her being young... you could say that the size of what they lost was not the same.", Line_Normal);
-	ClearMessage();
+		FadeFilm( 1000, FALSE );
+		DrawScene("white", 1000 );
+		DrawScene("black", 1000 );
 
-//rだが…山沖と同じように、大石にも自負がある。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "だが…山沖と同じように、大石にも自負がある。",
-			NULL, "But... just like Yamaoki, Ooishi felt proud.", Line_Normal);
-	ClearMessage();
+	//r両親を失ってから、１２年間…巴はずっと信念を持って、諦めなかった。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "両親を失ってから、１２年間…巴はずっと信念を持って、諦めなかった。",
+				NULL, "Even 12 years after losing her parents... Tomoe kept on believing, and never gave up.", Line_Normal);
+		ClearMessage();
 
-//r巴に正義が何たるかの心構えを教え、その範となるべく職務に当たってきたという、刑事としての誇りだ。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "巴に正義が何たるかの心構えを教え、その範となるべく職務に当たってきたという、刑事としての誇りだ。",
-			NULL, "Proud of his work as a detective, having done as much as he could to teach Tomoe the nature of justice.", Line_Normal);
-	ClearMessage();
+	//rもちろん、年老いた自分と若い彼女では、それと引き換えに失うものの大きさが違う…そういう言い方も、できるかもしれない。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "もちろん、年老いた自分と若い彼女では、それと引き換えに失うものの大きさが違う…そういう言い方も、できるかもしれない。",
+				NULL, "Of course, with him being old and her being young... you could say that the size of what they lost was not the same.", Line_Normal);
+		ClearMessage();
 
-//rならば…彼自身も、それを裏切るわけにはいかない。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "ならば…彼自身も、それを裏切るわけにはいかない。",
-			NULL, "And if that's the case... then he can't betray himself.", Line_Normal);
-	ClearMessage();
+	//rだが…山沖と同じように、大石にも自負がある。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "だが…山沖と同じように、大石にも自負がある。",
+				NULL, "But... just like Yamaoki, Ooishi felt proud.", Line_Normal);
+		ClearMessage();
 
-//r偉そうに語った自分がそれを反故にするような生き方をしては、どんな顔をして巴に会えるというのか…？
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "偉そうに語った自分がそれを反故にするような生き方をしては、どんな顔をして巴に会えるというのか…？",
-			NULL, "How could he face Tomoe next time they met if he went back on his word after talking so big...?", Line_Normal);
-	ClearMessage();
+	//r巴に正義が何たるかの心構えを教え、その範となるべく職務に当たってきたという、刑事としての誇りだ。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "巴に正義が何たるかの心構えを教え、その範となるべく職務に当たってきたという、刑事としての誇りだ。",
+				NULL, "Proud of his work as a detective, having done as much as he could to teach Tomoe the nature of justice.", Line_Normal);
+		ClearMessage();
 
-//rそんな、熱く激しい気概が、…弱気になりかけていた大石の心を、確かに奮い立たせていった。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そんな、熱く激しい気概が、…弱気になりかけていた大石の心を、確かに奮い立たせていった。",
-			NULL, "That fierce, burning-hot spirit... was truly inspiring Ooishi's feeble heart.", Line_Normal);
-	ClearMessage();
+	//rならば…彼自身も、それを裏切るわけにはいかない。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "ならば…彼自身も、それを裏切るわけにはいかない。",
+				NULL, "And if that's the case... then he can't betray himself.", Line_Normal);
+		ClearMessage();
 
-//rそして大石は、夜明けとともに別室へ鑑識のジジィと熊谷の二人を呼び出し、全てを打ち明けた。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そして大石は、夜明けとともに別室へ鑑識のジジィと熊谷の二人を呼び出し、全てを打ち明けた。",
-			NULL, "And at dawn, Ooishi called the old man from forensics and Kumagai to a room and confessed everything.", Line_Normal);
-	ClearMessage();
+	//r偉そうに語った自分がそれを反故にするような生き方をしては、どんな顔をして巴に会えるというのか…？
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "偉そうに語った自分がそれを反故にするような生き方をしては、どんな顔をして巴に会えるというのか…？",
+				NULL, "How could he face Tomoe next time they met if he went back on his word after talking so big...?", Line_Normal);
+		ClearMessage();
 
-	DrawScene("background/ka4", 1000 );
+	//rそんな、熱く激しい気概が、…弱気になりかけていた大石の心を、確かに奮い立たせていった。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そんな、熱く激しい気概が、…弱気になりかけていた大石の心を、確かに奮い立たせていった。",
+				NULL, "That fierce, burning-hot spirit... was truly inspiring Ooishi's feeble heart.", Line_Normal);
+		ClearMessage();
+
+	//rそして大石は、夜明けとともに別室へ鑑識のジジィと熊谷の二人を呼び出し、全てを打ち明けた。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そして大石は、夜明けとともに別室へ鑑識のジジィと熊谷の二人を呼び出し、全てを打ち明けた。",
+				NULL, "And at dawn, Ooishi called the old man from forensics and Kumagai to a room and confessed everything.", Line_Normal);
+		ClearMessage();
+
+		DrawScene("background/ka4", 1000 );
+	}
 
 //大石rvS14/11/220700115.「重ねて申し上げますが、こいつぁヤバイ橋になります。kvS14/11/220700116.…諭旨ならいいですがね、懲戒だったら退職金も吹っ飛びます」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
@@ -174,18 +185,33 @@ void main()
 
 //鑑識rvS14/00/223000001.「かっかっかっか！kvS14/00/223000002.　なぁんだ大石。kvS14/00/223000003.お前、ヤバイ作戦の前にはいつも、隣の雀荘に部下を集めて、そう脅してるそうじゃないか。kvS14/00/223000004.いつもと変わらん変わらん。のぅ？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000001", 256, TRUE);
-	OutputLine(NULL, "「かっかっかっか！",
-			NULL, "\"Ha ha ha ha!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000002", 256, TRUE);
-	OutputLine(NULL, "　なぁんだ大石。",
-			NULL, " Hey, Ooishi.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000003", 256, TRUE);
-	OutputLine(NULL, "お前、ヤバイ作戦の前にはいつも、隣の雀荘に部下を集めて、そう脅してるそうじゃないか。",
-			NULL, " I hear you always gather your colleagues at the mahjong parlor next door and threaten them every time you have a dangerous mission.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000004", 256, TRUE);
-	OutputLine(NULL, "いつもと変わらん変わらん。のぅ？」",
-			NULL, " It's the same old thing, right?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000001", 540, TRUE);
+		OutputLine(NULL, "「かっかっかっか！",
+				NULL, "\"Ha ha ha ha!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000002", 540, TRUE);
+		OutputLine(NULL, "　なぁんだ大石。",
+				NULL, " Hey, Ooishi.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000003", 540, TRUE);
+		OutputLine(NULL, "お前、ヤバイ作戦の前にはいつも、隣の雀荘に部下を集めて、そう脅してるそうじゃないか。",
+				NULL, " I hear you always gather your colleagues at the mahjong parlor next door and threaten them every time you have a dangerous mission.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000004", 540, TRUE);
+		OutputLine(NULL, "いつもと変わらん変わらん。のぅ？」",
+				NULL, " It's the same old thing, right?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000001", 256, TRUE);
+		OutputLine(NULL, "「かっかっかっか！",
+				NULL, "\"Ha ha ha ha!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000002", 256, TRUE);
+		OutputLine(NULL, "　なぁんだ大石。",
+				NULL, " Hey, Ooishi.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000003", 256, TRUE);
+		OutputLine(NULL, "お前、ヤバイ作戦の前にはいつも、隣の雀荘に部下を集めて、そう脅してるそうじゃないか。",
+				NULL, " I hear you always gather your colleagues at the mahjong parlor next door and threaten them every time you have a dangerous mission.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000004", 256, TRUE);
+		OutputLine(NULL, "いつもと変わらん変わらん。のぅ？」",
+				NULL, " It's the same old thing, right?\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModSetLayerFilter(4, 256, "none");
@@ -193,15 +219,27 @@ void main()
 
 //熊谷rvS14/19/VTD_kumagai_0001.「えぇ、そうっすよ大石さん！kvS14/19/VTD_kumagai_0002.　いつものようにもっと元気に、『退職金が惜しいヤツは１０数える間に出てってください』ってやってくださいよ。kvS14/19/VTD_kumagai_0003.そうじゃないと調子狂うっす！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>Kumagai</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0001", 256, TRUE);
-	OutputLine(NULL, "「えぇ、そうっすよ大石さん！",
-			NULL, "\"Yeah, Ooishi-san!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0002", 256, TRUE);
-	OutputLine(NULL, "　いつものようにもっと元気に、『退職金が惜しいヤツは１０数える間に出てってください』ってやってくださいよ。",
-			NULL, " Why don't you say 'if you don't want to lose your pension, leave while I count to ten' with more oomph in your voice, like you usually do?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0003", 256, TRUE);
-	OutputLine(NULL, "そうじゃないと調子狂うっす！」",
-			NULL, " Unless you say it that way, it just doesn't sound right!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 19, "ps2/19/223100001", 540, TRUE);
+		OutputLine(NULL, "「えぇ、そうっすよ大石さん！",
+				NULL, "\"Yeah, Ooishi-san!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps2/19/223100002", 540, TRUE);
+		OutputLine(NULL, "　いつものようにもっと元気に、『退職金が惜しいヤツは１０数える間に出てってください』ってやってくださいよ。",
+				NULL, " Why don't you say 'if you don't want to lose your pension, leave while I count to ten' with more oomph in your voice, like you usually do?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps2/19/223100003", 540, TRUE);
+		OutputLine(NULL, "そうじゃないと調子狂うっす！」",
+				NULL, " Unless you say it that way, it just doesn't sound right!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0001", 256, TRUE);
+		OutputLine(NULL, "「えぇ、そうっすよ大石さん！",
+				NULL, "\"Yeah, Ooishi-san!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0002", 256, TRUE);
+		OutputLine(NULL, "　いつものようにもっと元気に、『退職金が惜しいヤツは１０数える間に出てってください』ってやってくださいよ。",
+				NULL, " Why don't you say 'if you don't want to lose your pension, leave while I count to ten' with more oomph in your voice, like you usually do?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0003", 256, TRUE);
+		OutputLine(NULL, "そうじゃないとなんか変な感じっす！」",
+				NULL, " Unless you say it that way, it just doesn't sound right!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //大石rvS14/11/220700117.「……いや、本当にヤバイ話なんですよ熊ちゃん。kvS14/11/220700118.その覚悟は本当にあるんですか…？！」
@@ -218,18 +256,33 @@ void main()
 
 //熊谷rvS14/19/VTD_kumagai_0004.「試しに１０数えてみればいいじゃないっすか！kvS14/19/VTD_kumagai_0005.　なら今日は俺が数えるっす！！kvS14/19/VTD_kumagai_0006.　退職金が惜しいヤツは１０数える間に退出してくださーい。kvS14/19/VTD_kumagai_0007.１～、２～、３～！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>Kumagai</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0004", 256, TRUE);
-	OutputLine(NULL, "「試しに１０数えてみればいいじゃないっすか！",
-			NULL, "\"Why don't you count to ten then!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0005", 256, TRUE);
-	OutputLine(NULL, "　なら今日は俺が数えるっす！！",
-			NULL, " Fine, I'll count!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0006", 256, TRUE);
-	OutputLine(NULL, "　退職金が惜しいヤツは１０数える間に退出してくださーい。",
-			NULL, " If you don't want to lose your retirement money, leave before I count to ten.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0007", 256, TRUE);
-	OutputLine(NULL, "１～、２～、３～！！」",
-			NULL, " One, two, three!!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 19, "ps2/19/223100004", 540, TRUE);
+		OutputLine(NULL, "「試しに１０数えてみればいいじゃないっすか！",
+				NULL, "\"Why don't you count to ten then!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps2/19/223100005", 540, TRUE);
+		OutputLine(NULL, "　なら今日は俺が数えるっす！！",
+				NULL, " Fine, I'll count!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps2/19/223100006", 540, TRUE);
+		OutputLine(NULL, "　退職金が惜しいヤツは１０数える間に退出してくださーい。",
+				NULL, " If you don't want to lose your retirement money, leave before I count to ten.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps2/19/223100007", 540, TRUE);
+		OutputLine(NULL, "１～、２～、３～！！」",
+				NULL, " One, two, three!!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0004", 256, TRUE);
+		OutputLine(NULL, "「試しに１０数えてみればいいじゃないっすか！",
+				NULL, "\"Why don't you count to ten then!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0005", 256, TRUE);
+		OutputLine(NULL, "　なら今日は俺が数えるっす！！",
+				NULL, " Fine, I'll count!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0006", 256, TRUE);
+		OutputLine(NULL, "　退職金が惜しいヤツは１０数える間に退出してくださーい。",
+				NULL, " If you don't want to lose your retirement money, leave before I count to ten.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 19, "ps3/s14/19/vtd_kumagai_0007", 256, TRUE);
+		OutputLine(NULL, "１～、２～、３～！！」",
+				NULL, " One, two, three!!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
@@ -282,18 +335,33 @@ void main()
 
 //鑑識rvS14/00/223000005.「かっかっかっか！kvS14/00/223000006.　若いというのはいいのう！kvS14/00/223000007.　こいつな、あの日以来、赤坂くんにだいぶ感化されおっての？kvS14/00/223000008.　秘密捜査や秘密事件に関わりたいと息巻いとったんじゃ」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000005", 256, TRUE);
-	OutputLine(NULL, "「かっかっかっか！",
-			NULL, "\"Ha ha ha ha!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000006", 256, TRUE);
-	OutputLine(NULL, "　若いというのはいいのう！",
-			NULL, " How nice it is to be young!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000007", 256, TRUE);
-	OutputLine(NULL, "　こいつな、あの日以来、赤坂くんにだいぶ感化されおっての？",
-			NULL, " You know, Akasaka-kun's become quite the inspiration for him.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000008", 256, TRUE);
-	OutputLine(NULL, "　秘密捜査や秘密事件に関わりたいと息巻いとったんじゃ」",
-			NULL, " He keeps talking about how he wants to be involved in secret investigations now.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000005", 540, TRUE);
+		OutputLine(NULL, "「かっかっかっか！",
+				NULL, "\"Ha ha ha ha!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000006", 540, TRUE);
+		OutputLine(NULL, "　若いというのはいいのう！",
+				NULL, " How nice it is to be young!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000007", 540, TRUE);
+		OutputLine(NULL, "　こいつな、あの日以来、赤坂くんにだいぶ感化されおっての？",
+				NULL, " You know, Akasaka-kun's become quite the inspiration for him.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000008", 540, TRUE);
+		OutputLine(NULL, "　秘密捜査や秘密事件に関わりたいと息巻いとったんじゃ」",
+				NULL, " He keeps talking about how he wants to be involved in secret investigations now.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000005", 256, TRUE);
+		OutputLine(NULL, "「かっかっかっか！",
+				NULL, "\"Ha ha ha ha!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000006", 256, TRUE);
+		OutputLine(NULL, "　若いというのはいいのう！",
+				NULL, " How nice it is to be young!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000007", 256, TRUE);
+		OutputLine(NULL, "　こいつな、あの日以来、赤坂くんにだいぶ感化されおっての？",
+				NULL, " You know, Akasaka-kun's become quite the inspiration for him.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000008", 256, TRUE);
+		OutputLine(NULL, "　秘密捜査や秘密事件に関わりたいと息巻いとったんじゃ」",
+				NULL, " He keeps talking about how he wants to be involved in secret investigations now.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //大石rvS14/11/220700122.「…は、…はぁ…。kvS14/11/220700123.いや、なはははは…、若いっていいなぁ…。kvS14/11/220700124.…それで、爺さまはどうします？」
@@ -311,25 +379,46 @@ void main()
 
 //鑑識rvS14/00/223000009.「ハ！　わしも乗るぞい！kvS14/00/223000010.　というか、そこまで言われたらガイシャの検死が、そいつらをしょっ引けるかどうかを左右することにもなるからのう。kvS14/00/223000011.今日まで散々不養生を重ねてきた」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000009", 256, TRUE);
-	OutputLine(NULL, "「ハ！　わしも乗るぞい！",
-			NULL, "\"Hah! I'm in!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000010", 256, TRUE);
-	OutputLine(NULL, "　というか、そこまで言われたらガイシャの検死が、そいつらをしょっ引けるかどうかを左右することにもなるからのう。",
-			NULL, " I mean, it sounds like everything depends on if I can pull the victim's autopsy report.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000011", 256, TRUE);
-	OutputLine(NULL, "今日まで散々不養生を重ねてきた」",
-			NULL, " I've been neglecting my health all these years.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000009", 540, TRUE);
+		OutputLine(NULL, "「ハ！　わしも乗るぞい！",
+				NULL, "\"Hah! I'm in!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000010", 540, TRUE);
+		OutputLine(NULL, "　というか、そこまで言われたらガイシャの検死が、そいつらをしょっ引けるかどうかを左右することにもなるからのう。",
+				NULL, " I mean, it sounds like everything depends on if I can pull the victim's autopsy report.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000011", 540, TRUE);
+		OutputLine(NULL, "今日まで散々不養生を重ねてきた」",
+				NULL, " I've been neglecting my health all these years.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000009", 256, TRUE);
+		OutputLine(NULL, "「ハ！　わしも乗るぞい！",
+				NULL, "\"Hah! I'm in!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000010", 256, TRUE);
+		OutputLine(NULL, "　というか、そこまで言われたらガイシャの検死が、そいつらをしょっ引けるかどうかを左右することにもなるからのう。",
+				NULL, " I mean, it sounds like everything depends on if I can pull the victim's autopsy report.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000011", 256, TRUE);
+		OutputLine(NULL, "今日まで散々不養生を重ねてきた」",
+				NULL, " I've been neglecting my health all these years.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //鑑識rvS14/00/223000012.「そうそうこの老いぼれが長生きすることもないだろ。kvS14/00/223000013.なら、男に生まれたからには最後くらいデカイ花を咲かせたいもんじゃい！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000012", 256, TRUE);
-	OutputLine(NULL, "「そうそうこの老いぼれが長生きすることもないだろ。",
-			NULL, "\"Frankly, I don't think I have much longer to live.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000013", 256, TRUE);
-	OutputLine(NULL, "なら、男に生まれたからには最後くらいデカイ花を咲かせたいもんじゃい！」",
-			NULL, " As a man, I want to do something grand before I die!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000012", 540, TRUE);
+		OutputLine(NULL, "「そうそうこの老いぼれが長生きすることもないだろ。",
+				NULL, "\"Frankly, I don't think I have much longer to live.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000013", 540, TRUE);
+		OutputLine(NULL, "なら、男に生まれたからには最後くらいデカイ花を咲かせたいもんじゃい！」",
+				NULL, " As a man, I want to do something grand before I die!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000012", 256, TRUE);
+		OutputLine(NULL, "「そうそうこの老いぼれが長生きすることもないだろ。",
+				NULL, "\"Frankly, I don't think I have much longer to live.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000013", 256, TRUE);
+		OutputLine(NULL, "なら、男に生まれたからには最後くらいデカイ花を咲かせたいもんじゃい！」",
+				NULL, " As a man, I want to do something grand before I die!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //大石rvS14/11/220700125.「…やれやれ…。kvS14/11/220700126.爺さまも熊ちゃんも、とにかく怖い物知らずだなぁ…。kvS14/11/220700127.だからドラが３つも捲れてても強気でリーチ入っちゃうんだなぁ」
@@ -362,7 +451,11 @@ void main()
 
 //鑑識rvS14/00/223000014.「うむ。違いない違いない！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000014", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000014", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000014", 256, TRUE);
+	}
 	OutputLine(NULL, "「うむ。違いない違いない！」",
 			NULL, "\"Mm-hmm. He's not wrong!\"", Line_Normal);
 	ClearMessage();
@@ -379,20 +472,36 @@ void main()
 
 //鑑識rvS14/00/223000015.「…そうと決まればわしの方も少々準備がいる。kvS14/00/223000016.今の面子と機材じゃ、薬物系まで調べるのは難しいからな。kvS14/00/223000017.急いで知り合いの鑑識の中から、手の空いた連中を呼びつけるか」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000015", 256, TRUE);
-	OutputLine(NULL, "「…そうと決まればわしの方も少々準備がいる。",
-			NULL, "\"...I'll have to make some preparations first.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000016", 256, TRUE);
-	OutputLine(NULL, "今の面子と機材じゃ、薬物系まで調べるのは難しいからな。",
-			NULL, " It's difficult to investigate with our current personnel and equipment.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000017", 256, TRUE);
-	OutputLine(NULL, "急いで知り合いの鑑識の中から、手の空いた連中を呼びつけるか」",
-			NULL, " Maybe I'll call in my acquaintances in forensics to lend a hand.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000015", 540, TRUE);
+		OutputLine(NULL, "「…そうと決まればわしの方も少々準備がいる。",
+				NULL, "\"...I'll have to make some preparations first.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000016", 540, TRUE);
+		OutputLine(NULL, "今の面子と機材じゃ、薬物系まで調べるのは難しいからな。",
+				NULL, " It's difficult to investigate with our current personnel and equipment.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000017", 540, TRUE);
+		OutputLine(NULL, "急いで知り合いの鑑識の中から、手の空いた連中を呼びつけるか」",
+				NULL, " Maybe I'll call in my acquaintances in forensics to lend a hand.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000015", 256, TRUE);
+		OutputLine(NULL, "「…そうと決まればわしの方も少々準備がいる。",
+				NULL, "\"...I'll have to make some preparations first.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000016", 256, TRUE);
+		OutputLine(NULL, "今の面子と機材じゃ、薬物系まで調べるのは難しいからな。",
+				NULL, " It's difficult to investigate with our current personnel and equipment.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000017", 256, TRUE);
+		OutputLine(NULL, "急いで知り合いの鑑識の中から、手の空いた連中を呼びつけるか」",
+				NULL, " Maybe I'll call in my acquaintances in forensics to lend a hand.\"", Line_Normal);
+	}
 	ClearMessage();
 
 //鑑識rvS14/00/223000018.「…大石、全部終わった後は、ちょいとデカくおごってもらうぞい！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000018", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000018", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000018", 256, TRUE);
+	}
 	OutputLine(NULL, "「…大石、全部終わった後は、ちょいとデカくおごってもらうぞい！」",
 			NULL, "\"Ooishi, when all this is over, you have to treat me to something big, okay?\"", Line_Normal);
 	ClearMessage();
@@ -415,12 +524,21 @@ void main()
 
 //鑑識rvS14/00/223000019.「わかっとる。わしも伊達に人は見とらん！kvS14/00/223000020.　任せとけい！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000019", 256, TRUE);
-	OutputLine(NULL, "「わかっとる。わしも伊達に人は見とらん！",
-			NULL, "\"Don't worry. I know who I can trust!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000020", 256, TRUE);
-	OutputLine(NULL, "　任せとけい！」",
-			NULL, " Count on me for that, at least!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000019", 540, TRUE);
+		OutputLine(NULL, "「わかっとる。わしも伊達に人は見とらん！",
+				NULL, "\"Don't worry. I know who I can trust!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000020", 540, TRUE);
+		OutputLine(NULL, "　任せとけい！」",
+				NULL, " Count on me for that, at least!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000019", 256, TRUE);
+		OutputLine(NULL, "「わかっとる。わしも伊達に人は見とらん！",
+				NULL, "\"Don't worry. I know who I can trust!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000020", 256, TRUE);
+		OutputLine(NULL, "　任せとけい！」",
+				NULL, " Count on me for that, at least!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 19, "sprite/kuma_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -460,18 +578,33 @@ void main()
 
 //鑑識rvS14/00/223000021.「何、構わん！kvS14/00/223000022.　久々に男の血が疼いてきよった。kvS14/00/223000023.これほど腕の鳴る大舞台、わしの人生でもこの歳になって初めてじゃわい。kvS14/00/223000024.ビビるどころか、ここは楽しませてもらうぞい！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000021", 256, TRUE);
-	OutputLine(NULL, "「何、構わん！",
-			NULL, "\"Nah, don't worry about that!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000022", 256, TRUE);
-	OutputLine(NULL, "　久々に男の血が疼いてきよった。",
-			NULL, " It's been a while since something got my blood boiling.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000023", 256, TRUE);
-	OutputLine(NULL, "これほど腕の鳴る大舞台、わしの人生でもこの歳になって初めてじゃわい。",
-			NULL, " In all the years of my life, this is the first big stage to really test my manhood.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000024", 256, TRUE);
-	OutputLine(NULL, "ビビるどころか、ここは楽しませてもらうぞい！」",
-			NULL, " I'm not afraid! I'm going to enjoy this!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000021", 540, TRUE);
+		OutputLine(NULL, "「何、構わん！",
+				NULL, "\"Nah, don't worry about that!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000022", 540, TRUE);
+		OutputLine(NULL, "　久々に男の血が疼いてきよった。",
+				NULL, " It's been a while since something got my blood boiling.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000023", 540, TRUE);
+		OutputLine(NULL, "これほど腕の鳴る大舞台、わしの人生でもこの歳になって初めてじゃわい。",
+				NULL, " In all the years of my life, this is the first big stage to really test my manhood.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000024", 540, TRUE);
+		OutputLine(NULL, "ビビるどころか、ここは楽しませてもらうぞい！」",
+				NULL, " I'm not afraid! I'm going to enjoy this!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000021", 256, TRUE);
+		OutputLine(NULL, "「何、構わん！",
+				NULL, "\"Nah, don't worry about that!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000022", 256, TRUE);
+		OutputLine(NULL, "　久々に男の血が疼いてきよった。",
+				NULL, " It's been a while since something got my blood boiling.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000023", 256, TRUE);
+		OutputLine(NULL, "これほど腕の鳴る大舞台、わしの人生でもこの歳になって初めてじゃわい。",
+				NULL, " In all the years of my life, this is the first big stage to really test my manhood.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000024", 256, TRUE);
+		OutputLine(NULL, "ビビるどころか、ここは楽しませてもらうぞい！」",
+				NULL, " I'm not afraid! I'm going to enjoy this!\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 19, "sprite/kuma_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -495,6 +628,985 @@ void main()
 	OutputLine(NULL, "大石は力強い笑顔を向けてくれる二人に、深々と頭を下げて感謝した…。",
 			NULL, "Ooishi turned to the two of them with a powerful smile and deeply bowed his head in appreciation...", Line_Normal);
 	ClearMessage();
+
+	if (GetLocalFlag(LConsoleArc)==10) {
+		DrawSceneWithMask( "black", "right", 0, 0, 1500 );
+		FadeOutBGM(2, 200, TRUE);
+		Wait( 1000 );
+		DrawScene("white", 1000 );
+		DrawSceneWithMask( "background/sora5", "m1", 0, 0, 1500 );
+		PlayBGM(2, "hm05_21", 128, 0);
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "３日前に供えた桔梗の花は、少ししなびていたがまだ咲いていた。",
+				NULL, "The balloon flowers he bought three days ago for the offering were still in bloom, albeit a little shriveled.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "白い花びらが、昼の日差しを反射している。",
+				NULL, "And those white petals shined in the afternoon sun.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "今日は、６月２２日。",
+				NULL, "The date was June 22nd.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "本当の命日は少し前だが、毎年、綿流しの警備のためその日は丸一日張り付くので、一日遅くお参りをして、そして終わった後もう一度、ここに来ていた。",
+				NULL, "The real anniversary was some time ago, but as Ooishi had to work on Watanagashi every year, he usually commemorated it on a later date. And here he was once again.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……そうすることで、いつか墓前に報告を持っていけると願をかけていたのだが、……結局、今年も謝罪の報告をする羽目になってしまった。",
+				NULL, "...He was hoping to one day deliver a report at this grave... but in the end, he came to deliver another apology this year.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……大石が、親友とも兄貴分とも、そして親父とも思い慕ってきた、おやっさん。黒光りする墓石の中から、ゲンコツを構えて豪快に怒鳴り散らす懐かしい顔が一瞬、浮かんで消えていった。",
+				NULL, "...To the man Ooishi considered a best friend, a brother, and father. A familiar-looking face appeared for a moment amongst the black tombstones, shouting and readying himself for a fight, before vanishing.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700137", 540, TRUE);
+		OutputLine(NULL, "「……毎年毎年。",
+				NULL, "\"...Every year,", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700138", 540, TRUE);
+		OutputLine(NULL, "今年こそは犯人を捕まえてやる、そして犠牲者は出さない。",
+				NULL, " I say this is the year I catch the killer, and there won't be any more victims.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700139", 540, TRUE);
+		OutputLine(NULL, "……なんて誓っていますが、今年もやられちゃいましたよ。たはは……」",
+				NULL, " ...I swore that, and yet I failed again this year. Tahaha...\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "大石は墓石に向かって呟く。折からのそよ風に、白い桔梗と青紫の紫陽花が揺れていた。",
+				NULL, "The white balloon flowers and purple hydrangeas swayed in the breeze as Ooishi muttered that toward the tombstone.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700140", 540, TRUE);
+		OutputLine(NULL, "「ですが、…………ようやくおやっさんの死の真相に近付く機会を得ました。",
+				NULL, "\"But...... I've finally got the chance to get close to the truth.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700141", 540, TRUE);
+		OutputLine(NULL, "……ただね？　それが笑っちゃうんですよ。",
+				NULL, " ...You know? It's kind of funny.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700142", 540, TRUE);
+		OutputLine(NULL, "…園崎家は関係ないって言うんです」",
+				NULL, " ...As it turns out, the Sonozaki family has nothing to do with it.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700143", 540, TRUE);
+		OutputLine(NULL, "「……私ゃ毎年、ここにお魎の婆さんを連れて来て土下座させるって誓ってきたのに、…それがまったくの大ハズレだ、って言うんですよ」",
+				NULL, "\"...I kept promising you year after year that I'd bring Oryou here and have her grovel in apology... but I was so wrong this whole time.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700144", 540, TRUE);
+		OutputLine(NULL, "「…………たはははは、私ゃすっかり参ってしまいましてね。",
+				NULL, "\"......Tahahaha, I don't know what to say.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700145", 540, TRUE);
+		OutputLine(NULL, "……まぁた、おやっさんにゲンコツもらっちまいます」",
+				NULL, " ...You'd probably smack me if you were here.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700146", 540, TRUE);
+		OutputLine(NULL, "「…勝手に当たり牌を誤解してベタ降りしまくった挙句にドカンと痛い目に遭う。",
+				NULL, "\"...I thought I knew the winning tiles, and after countless safe discards, I got slammed with a bad hit.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700147", 540, TRUE);
+		OutputLine(NULL, "…決め付けないで、キッチリ手を進めてりゃあ、でっかい手がちゃんと出来てたかもしれないのにです」",
+				NULL, " ...If I hadn't made that assumption and focused on filling my hand, then I might have been able to get a big one.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700148", 540, TRUE);
+		OutputLine(NULL, "「…………私ゃ全然進歩してません。",
+				NULL, "\"...I haven't made any progress at all.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700149", 540, TRUE);
+		OutputLine(NULL, "麻雀も相変わらずですよ」",
+				NULL, " It's the same with mahjong.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700150", 540, TRUE);
+		OutputLine(NULL, "「…こんな一度思い込んだら疑うことも知らない頭の固いヤツは、多分、馬鹿って言うだろうなぁって思います。",
+				NULL, "\"...I'm a fool for getting ideas into my head and then not doubting them even a bit.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700151", 540, TRUE);
+		OutputLine(NULL, "たっはっはっは…」",
+				NULL, " Ta ha ha ha...\"", Line_Normal);
+		ClearMessage();
+
+		DrawFilm( 2, 255, 225, 195, 255, 0, 500, FALSE );
+		DrawScene("background/damu2", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "入江のあの少し遠慮した言い方から、大石にも何となく想像がついていた。おやっさんの惨殺事件の裏には、……何もなかったのだ。",
+				NULL, "...The way Irie had phrased it, even Ooishi could already guess. There was no dark secret behind the old man's tragic murder.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "その後に続く事件は、その後の都合。……あの事件自体はそれひとつの事件でしかなく、……何とも関係がない。",
+				NULL, "The events that followed were separate incidents. That particular murder was an individual incident... and it had nothing to do with anything else.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そして、主犯格だけが未だ捕まらず、憎む相手が欲しかった大石にとって、怪しげに振舞う園崎家はとても都合がよかっただけで、……多分、大石がそうだと信じる復讐劇は、最初から存在しなかった。",
+				NULL, "And since the main culprit was the only one who wasn't caught, Ooishi needed someone to blame, and the mysterious Sonozaki family was the perfect target. ...So the drama of revenge that Ooishi believed in never existed.", Line_Normal);
+		ClearMessage();
+
+		FadeFilm( 1500, FALSE );
+		DrawScene("background/sora5", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700152", 540, TRUE);
+		OutputLine(NULL, "「…………私ゃ今、ヤバイ橋を渡ろうとしてます。",
+				NULL, "\"......I'm thinking of doing something really dangerous.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700153", 540, TRUE);
+		OutputLine(NULL, "リスクの割に大した見返りはありません。",
+				NULL, " Considering the risk, there isn't much in terms of reward.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700154", 540, TRUE);
+		OutputLine(NULL, "…せいぜい、…私という馬鹿の思い込みを解いてくれるだろう、真実ってヤツを教えてもらえるだけです」",
+				NULL, " ...If anything... I might find out the truth.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700155", 540, TRUE);
+		OutputLine(NULL, "「……ですが、………何だかやっと、私は自分ってヤツを許せそうな気がします」",
+				NULL, "\"...But... I feel like I can finally forgive myself.\"", Line_Normal);
+		ClearMessage();
+
+		DrawScene("black", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "大石は墓石に向って深々と頭を下げ、黙礼を捧げる。……と、そこへ誰かの足音が近付いてくるのが聞こえた。",
+				NULL, "Ooishi bowed deeply before the grave... and then he heard footsteps behind him.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……おやっさんの関係者だろう。どうもその人も、毎年綿流しの日は都合は悪いらしく、大石と同じように前日に墓参りに来ている。そしてその人は決まって、青い紫陽花の花を飾ってくれていた。",
+				NULL, "...It had to be someone else who knew the old man. That person can't come on the day of Watanagashi every year either, so they come on another day, just like Ooishi does. And they always bring blue hydrangeas.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……その青と桔梗の青紫では少々、色の取り合わせが悪い。だから、大石はわざわざ白い桔梗を選んでいた。",
+				NULL, "...Purple balloon flowers and those blue flowers don't go well together. That's the reason why Ooishi always picks white ones.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "今年もまた、その紫陽花が飾られてある。",
+				NULL, "And those hydrangeas were on display once again this year.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "……まだ二日しかたっていないが、墓参りは競争じゃない。心だ。……それより、あの日から欠かさず命日と、自分と同じようにその前後日に花を捧げてくれるのが誰なのか気になって、大石は顔を上げた。",
+				NULL, "...It's been two days, but visiting a grave isn't a race. It's a spiritual matter. ...Wondering who it might be that always leaves flowers before and after the anniversary date just like him, Ooishi looked up.", Line_Normal);
+		ClearMessage();
+
+		FadeOutBGM(2, 200, TRUE);
+		DrawScene("background/sora5", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700156", 540, TRUE);
+		OutputLine(NULL, "「………………これは、……これは、。",
+				NULL, "\".........Well... well.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700157", 540, TRUE);
+		OutputLine(NULL, "…皆さんもどなたかのお墓参りですかな？」",
+				NULL, " Are you visiting someone's grave too?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "大石はつい白々しいことを言ってしまう。",
+				NULL, "Ooishi stated the obvious.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "でも、…………全てを察した。彼女が持っている紫陽花の花束を見て、全てを察した。",
+				NULL, "But... from one glance, he could guess everything. Upon seeing the hydrangeas in her arms, it all made sense.", Line_Normal);
+		ClearMessage();
+
+		PlayBGM(2, "hm09_42", 128, 0);
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200001", 540, TRUE);
+		OutputLine(NULL, "「おやおや。",
+				NULL, "\"Oh, my!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200002", 540, TRUE);
+		OutputLine(NULL, "あんた、勤務中じゃないのかい？",
+				NULL, " Aren't you supposed to be working?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200003", 540, TRUE);
+		OutputLine(NULL, "　悪いお人だねぇ、まったく」",
+				NULL, " What are you doing here?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "悪態をつくように笑いながら、園崎茜は紫陽花の花束を、隣の葛西に手渡した。",
+				NULL, "Akane Sonozaki laughed as she handed a bouquet of hydrangeas to Kasai, who was standing beside her.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "葛西はちら、と大石に目を向けて、黙ってサングラスを直す。……お互いに長年の仇敵と思っていた関係上、かける愛想もなく複雑な気分だった。",
+				NULL, "Kasai turned toward Ooishi and silently adjusted his sunglasses. ...He had mixed feelings, considering they both regarded one another as long-standing enemies.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200004", 540, TRUE);
+		OutputLine(NULL, "「…ほら、いつまでもお墓の前で突っ立ってんじゃないよ。",
+				NULL, "\"...Hey, how long are you going to stand there?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200005", 540, TRUE);
+		OutputLine(NULL, "そこをおどき」",
+				NULL, " Come on, move over.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700158", 540, TRUE);
+		OutputLine(NULL, "「………まさか、あんたが毎年、おやっさんに紫陽花を？」",
+				NULL, "\"...So you're the one leaving hydrangeas every year?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200006", 540, TRUE);
+		OutputLine(NULL, "「綺麗だろう？　ウチの庭のヤツなのさ。",
+				NULL, "\"Aren't they beautiful?  They're from my backyard.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200007", 540, TRUE);
+		OutputLine(NULL, "やっぱり６月は紫陽花さね。",
+				NULL, " Hydrangeas are beautiful in June.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200008", 540, TRUE);
+		OutputLine(NULL, "あんたの桔梗も珍しいね。",
+				NULL, " Your balloon flowers are fairly unusual.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200009", 540, TRUE);
+		OutputLine(NULL, "白いのもあるのかい。",
+				NULL, " White ones, huh?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200010", 540, TRUE);
+		OutputLine(NULL, "それも涼しそうで良さげだよ」",
+				NULL, " They're nice.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#76523d>葛西</color>", NULL, "<color=#76523d>Kasai</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 15, "ps2/15/2215000001", 540, TRUE);
+		OutputLine(NULL, "「……失礼」",
+				NULL, "\"...Pardon me.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "茜は墓前にしゃがむと、葛西から花を受け取って手馴れた様子で花束を開くと、すでに桔梗の花の飾られた花立ての横に並ぶ、少しくたびれた紫陽花と交換して添える。",
+				NULL, "Kasai took the bouquet from Akane, then knelt down in front of the grave and got the flowers ready. He replaced the slightly worn hydrangeas in the vase and sat them alongside the balloon flowers.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "白い桔梗と青い紫陽花はとても映え、初夏の訪れを感じさせるとても涼しい色合いを見せていた。",
+				NULL, "The flowers looked beautiful in the vase together, reminding their onlookers that summer was about to start.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200011", 540, TRUE);
+		OutputLine(NULL, "「偶然にしちゃ、いい取り合わせじゃないかい。",
+				NULL, "\"What a coincidence. They match very well.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200012", 540, TRUE);
+		OutputLine(NULL, "白に青に、よく引き立てあってるよ」",
+				NULL, " It makes a nice contrast with the white and the blue.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700159", 540, TRUE);
+		OutputLine(NULL, "「……毎年、私が来ると紫陽花がありましたからね。",
+				NULL, "\"...I saw blue hydrangeas every year I came.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700160", 540, TRUE);
+		OutputLine(NULL, "青い花じゃ相性が悪いと思いまして」",
+				NULL, " I thought blue flowers wouldn't go well with purple ones.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200013", 540, TRUE);
+		OutputLine(NULL, "「なぁんだ、なら私たち、相性はばっちりじゃないかい」",
+				NULL, "\"I see, then we should get along just fine, huh?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700161", 540, TRUE);
+		OutputLine(NULL, "「………そうですねぇ。",
+				NULL, "\"...Yeah, I guess.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700162", 540, TRUE);
+		OutputLine(NULL, "…なっはっはっは」",
+				NULL, " Na ha ha ha.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200014", 540, TRUE);
+		OutputLine(NULL, "「……どうしたんだい、今日は愛想がいいねえ。",
+				NULL, "\"...What's the matter? You're less cordial than usual.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200015", 540, TRUE);
+		OutputLine(NULL, "ひよっとして医者に不支治の病でも宣告されたのかい？",
+				NULL, " Perhaps you recently got a terminal diagnosis?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200016", 540, TRUE);
+		OutputLine(NULL, "　だとしたら、色々世話になった手向けだ、あんたの墓にもちゃんと紫陽花を飾ってやるから安心しな！」",
+				NULL, " Don't worry, I'll be sure to honor all you've done for us by bringing hydrangeas to your grave too!\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200017", 540, TRUE);
+		OutputLine(NULL, "「あとうちの組の店にツケが残ってるだろ。",
+				NULL, "\"Oh, by the way, you still owe us at one of our shops, don't you?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200018", 540, TRUE);
+		OutputLine(NULL, "そいつの請求書を供えに来てやるよ」",
+				NULL, " I'll bring a bill too.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700163", 540, TRUE);
+		OutputLine(NULL, "「なっはっはっはっは…。",
+				NULL, "\"Na ha ha ha...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700164", 540, TRUE);
+		OutputLine(NULL, "やれやれ、相も変わらず口の減らないお人です。",
+				NULL, " Oh boy, you never run out of things to say, do you?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700165", 540, TRUE);
+		OutputLine(NULL, "生憎、まだ当分、お迎えは来ないみたいです。",
+				NULL, " Well, I don't plan on leaving this world quite yet.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700166", 540, TRUE);
+		OutputLine(NULL, "定年までもうラストスパートですが、まだまだ行きますよう？」",
+				NULL, " It won't be long until my retirement, but I'm still going strong!!\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200019", 540, TRUE);
+		OutputLine(NULL, "「なら結構！",
+				NULL, "\"That's good, then!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200020", 540, TRUE);
+		OutputLine(NULL, "興宮の一市民としては公僕の頼もしい一言で安心だねぇ。",
+				NULL, " As a citizen of Okinomiya, I'm glad to hear such reliable words!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200021", 540, TRUE);
+		OutputLine(NULL, "はっはっはっは！」",
+				NULL, " Ha ha ha ha!\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "それは、社交儀礼で塗り固められた会話のはずなのに、…何か、ちょっとだけ違うような気がした。",
+				NULL, "Their conversation should have been coated in social courtesies, yet... something felt a little off about it.", Line_Normal);
+		ClearMessage();
+
+		DrawScene("background/kawa4", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700167", 540, TRUE);
+		OutputLine(NULL, "「………しかし、ひとつ教えちゃくれませんかね。",
+				NULL, "\"...Can you tell me one thing?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700168", 540, TRUE);
+		OutputLine(NULL, "死守同盟と現場監督のおやっさんは犬猿の仲だったはずでしょ。",
+				NULL, " The Guardians and the old man, the site manager, they didn't get along, did they?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700169", 540, TRUE);
+		OutputLine(NULL, "そのトップの関係者のあんたが、どうして花を供えてくれるんです…？」",
+				NULL, " So why would a top official like you bring flowers for him?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200022", 540, TRUE);
+		OutputLine(NULL, "「そりゃあ犬猿さね！",
+				NULL, "\"No, we didn't get along at all!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200023", 540, TRUE);
+		OutputLine(NULL, "　私たちゃ敵同士！",
+				NULL, " We were mighty enemies!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200024", 540, TRUE);
+		OutputLine(NULL, "　ねぇ葛西？！」",
+				NULL, " Right, Kasai?!\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#76523d>葛西</color>", NULL, "<color=#76523d>Kasai</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 15, "ps2/15/2215000002", 540, TRUE);
+		OutputLine(NULL, "「……はは、まぁ。",
+				NULL, "\"...Haha, you could say that.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 15, "ps2/15/2215000003", 540, TRUE);
+		OutputLine(NULL, "あのころは私も若かったものですから。",
+				NULL, " I was much younger myself, back in those days.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 15, "ps2/15/2215000004", 540, TRUE);
+		OutputLine(NULL, "色々と無茶をさせてもらいましたよ」",
+				NULL, " I was involved in my share of reckless activities.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200025", 540, TRUE);
+		OutputLine(NULL, "「……勝手に老け込んだ言い方してるんじゃないよ。",
+				NULL, "\"Don't just go talking like we've gotten so old.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200026", 540, TRUE);
+		OutputLine(NULL, "あたしゃまだ若いんだからね」",
+				NULL, " I'm still young, you know.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "じろ、とにらみつける茜を、葛西は慣れたように受け流す。そんな様子に、思わず口も利きたくないと思っていた相手にも関わらず、大石はなんだか可笑しさがこみ上げてきた。",
+				NULL, "Akane glared at Kasai, but he brushed it off like he was used to it. Despite not being in the mood to chat, Ooishi couldn't help but feel amused.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700170", 540, TRUE);
+		OutputLine(NULL, "「まして、組の重鎮たる葛西辰由が、どんな経緯でここへ墓参りに来てるんですか」",
+				NULL, "\"And a big-name in the group like Tatsuyoshi Kasai is coming to visit his grave, too.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#76523d>葛西</color>", NULL, "<color=#76523d>Kasai</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 15, "ps2/15/2215000005", 540, TRUE);
+		OutputLine(NULL, "「……憎むべき相手でしたが、それと同時に一目置ける男でした。",
+				NULL, "\"...He was a man I resented, but at the same time he was a man I respected.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 15, "ps2/15/2215000006", 540, TRUE);
+		OutputLine(NULL, "決着もつけずにこういう終わり方は、敵同士であっても口惜しいものです」",
+				NULL, " Even among enemies, it's a shame for things to end unsettled like this.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700171", 540, TRUE);
+		OutputLine(NULL, "「……………………」",
+				NULL, "\".........\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200027", 540, TRUE);
+		OutputLine(NULL, "「何だい、納得いかないのかい？",
+				NULL, "\"What? You don't get it?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200028", 540, TRUE);
+		OutputLine(NULL, "終わった戦争さね。",
+				NULL, " The war is over now.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200029", 540, TRUE);
+		OutputLine(NULL, "ラグビーだって終わったらノーサイド、敵味方ナシなんだろ。",
+				NULL, " Even in a rugby game, once a game is over, no one is on opposing sides.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200030", 540, TRUE);
+		OutputLine(NULL, "そういうことさ」",
+				NULL, " Nothing more than that.\"", Line_Normal);
+		ClearMessage();
+
+		DrawScene("background/sora5", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "茜はさも当然のように言うが、大石は納得しかねていた。",
+				NULL, "Akane said it as though it was a normal thing, but Ooishi just couldn't understand.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "第一、あれだけ対立してきたのだ。……憎み合い、唾棄し合うべき関係で、…墓前に花を供えようという気持ちになるわけがない。でも茜は、そんなのは当然のことだという。…………茜と大石の価値観が合わない。",
+				NULL, "First of all, they hated each other. They hated each other, they spat at each other... How could they even feel like bringing flowers to his gravesite? However, Akane said that it was normal. ......Their moral standards weren't matching up.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200031", 540, TRUE);
+		OutputLine(NULL, "「私にゃあんたの方が理解できないねぇ。",
+				NULL, "\"Actually, you're the one I can't understand.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200032", 540, TRUE);
+		OutputLine(NULL, "私の中ではダム戦争は終わったことになってんだけど、あんたの頭の中ではまだ続いてるってのかい？」",
+				NULL, " I think the dam conflict has ended, yet in your head, it's still going, isn't it?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700172", 540, TRUE);
+		OutputLine(NULL, "「んっふっふ！　まさか。",
+				NULL, "\"Nfu fu! Oh, no.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700173", 540, TRUE);
+		OutputLine(NULL, "ちゃんと終わってますよ。",
+				NULL, " It's over for me.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700174", 540, TRUE);
+		OutputLine(NULL, "…あの騒々しいスピーカーが未だ頭の中から鳴り止まないなんて、冗談じゃないです」",
+				NULL, " I can't even imagine hearing all that noise anymore. You've got to be kidding me.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200033", 540, TRUE);
+		OutputLine(NULL, "「なら、園崎家が墓参りしてもおかしいことはないだろ？",
+				NULL, "\"Then what's wrong with the Sonozaki family visiting his gravesite?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200034", 540, TRUE);
+		OutputLine(NULL, "ほら、どきなどきな。",
+				NULL, " Come on, move over.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200035", 540, TRUE);
+		OutputLine(NULL, "私もお供えを持ってきたんだから」",
+				NULL, " I brought something for him, too.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そう言いながら、茜は巾着の中から小さな包みを取り出し、それを墓前に供えた。",
+				NULL, "Akane took out a small package from her bag and put it down in front of the grave.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700175", 540, TRUE);
+		OutputLine(NULL, "「……その包み、毎年見かけてましたが、中身は何なんです？」",
+				NULL, "\"I see that package every year... what's in it?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#76523d>葛西</color>", NULL, "<color=#76523d>Kasai</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 15, "ps2/15/2215000007", 540, TRUE);
+		OutputLine(NULL, "「お魎頭首お手製のおはぎです。",
+				NULL, "\"This is ohagi, handmade by the family head, Oryou.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 15, "ps2/15/2215000008", 540, TRUE);
+		OutputLine(NULL, "酒飲みは甘いのは苦手かもしれないと、砂糖は抜いてあるそうですが」",
+				NULL, " She said drinkers usually don't like sweets, so she made them without sugar.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700176", 540, TRUE);
+		OutputLine(NULL, "「…お魎の婆さんが、ダム監督の命日のために、おはぎを握ったと仰るんですか」",
+				NULL, "\"...Are you saying that Oryou-san made ohagi for the site manager's anniversary?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200036", 540, TRUE);
+		OutputLine(NULL, "「毎年握って供えてるよ。",
+				NULL, "\"She does it every year.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200037", 540, TRUE);
+		OutputLine(NULL, "あんた、毎年見てるって今言ったでしょうが」",
+				NULL, " You did just say that you see it every time you come here, didn't you?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "大石は半ば、呆然とするしかない。……お魎は鬼ヶ淵死守同盟のタカ派のタカ派。",
+				NULL, "Ooishi was stunned. ...Oryou was the biggest hardliner in the Onigafuchi Guardians, no question about that.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…そして、おやっさんを殺した真の黒幕だと信じてきたのだ。それが、毎年命日におはぎを供えてくれていたなんて、…信じられない。",
+				NULL, "...Ooishi had believed for a long time that she was the mastermind behind the old man's murder. Because of that, he just couldn't believe that she had been making ohagi every year for his anniversary.", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 11, "sprite/oisi1_1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, FALSE );
+		ModDrawCharacter(5, 16, "sprite/aka_warai_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+		DrawScene("background/mati3", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200038", 540, TRUE);
+		OutputLine(NULL, "「そんな顔しなさんな。",
+				NULL, "\"Hey, don't give me that look.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200039", 540, TRUE);
+		OutputLine(NULL, "……もうさ、そういうのはおしまいにしようじゃないかい」",
+				NULL, " Let's not do this anymore, okay?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700177", 540, TRUE);
+		OutputLine(NULL, "「……そういうの、とは何のことですかな？」",
+				NULL, "\"...Do what?\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 16, "sprite/aka_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200040", 540, TRUE);
+		OutputLine(NULL, "「園崎家が、ダムの監督の墓前に花を供えちゃいけないとか、そういうのさ」",
+				NULL, "\"Pretend that the Sonozaki family shouldn't visit the site manager's grave...\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700178", 540, TRUE);
+		OutputLine(NULL, "「……………………………」",
+				NULL, "\".........\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200041", 540, TRUE);
+		OutputLine(NULL, "「もう昭和も６０年になろうってんだ。",
+				NULL, "\"It won't be long now until it's 1990.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200042", 540, TRUE);
+		OutputLine(NULL, "下手すりゃ数年もしない内に元号も変わるかもしれない。",
+				NULL, " By then, even the Emperor might be dead.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200043", 540, TRUE);
+		OutputLine(NULL, "……そんな時代にまで、あんたは終わっちまった戦争をずるずる引き摺りたいってのかい？」",
+				NULL, " How much longer are you planning to drag out this war, which has already ended?\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 11, "sprite/oisi1_2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700179", 540, TRUE);
+		OutputLine(NULL, "「…ご冗談を。",
+				NULL, "\"...Please.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700180", 540, TRUE);
+		OutputLine(NULL, "もうあんな戦争はごめんです。",
+				NULL, " I don't even want to think about the dam conflict.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700181", 540, TRUE);
+		OutputLine(NULL, "平和が一番ですよ」",
+				NULL, " There's nothing better than peace.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200044", 540, TRUE);
+		OutputLine(NULL, "「国にも悪いところがあった。",
+				NULL, "\"The government was at fault.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200045", 540, TRUE);
+		OutputLine(NULL, "反省が必要だね」",
+				NULL, " They should think about what they've done.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200046", 540, TRUE);
+		OutputLine(NULL, "「でも私たちにも悪いところがあった。",
+				NULL, "\"But we were at fault too.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200047", 540, TRUE);
+		OutputLine(NULL, "だから私たちは反省するよ。",
+				NULL, " That's why we have regrets.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200048", 540, TRUE);
+		OutputLine(NULL, "そして、それはそれでおしまいになったなら、あとはいつまでもぐだぐだ言ってても仕方ないだろ」",
+				NULL, " And when things are done, that's it. There is no point dragging them out.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200049", 540, TRUE);
+		OutputLine(NULL, "「古い時代を片付けて、新しい時代を作るのが若者の仕事さね。",
+				NULL, "\"We need to wrap up the era of our forefathers, and young people need to create a new one.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200050", 540, TRUE);
+		OutputLine(NULL, "………不幸な事件があって、この御仁は死んじまったけど。」",
+				NULL, " ...What happened was very unfortunate, and I regret that the old man had to die.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200051", 540, TRUE);
+		OutputLine(NULL, "「…もし生きてたなら、私ゃ一緒に酒を飲んで全部水に流したいと思ったさ」",
+				NULL, "\"If he was still alive, we could have shared a toast together and made up.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200052", 540, TRUE);
+		OutputLine(NULL, "「…でも死んじまった。",
+				NULL, "\"...But he's dead.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200053", 540, TRUE);
+		OutputLine(NULL, "だから、この御仁とはもう仲直りできない。",
+				NULL, " So we can't reconcile.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200054", 540, TRUE);
+		OutputLine(NULL, "…………悲しいことさ」",
+				NULL, " ......I think that's very sad.\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 11, "sprite/oisi1_1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700182", 540, TRUE);
+		OutputLine(NULL, "「……………………………それが、死別というもんですからねぇ…」",
+				NULL, "\"........Well, that's what happens when someone dies...\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200055", 540, TRUE);
+		OutputLine(NULL, "「……でも、あんたは生きているじゃないかい」",
+				NULL, "\"But you're still alive.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700183", 540, TRUE);
+		OutputLine(NULL, "「そうですね。私は生きてます。",
+				NULL, "\"That's right, I am.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700184", 540, TRUE);
+		OutputLine(NULL, "あんたらも生きてます」",
+				NULL, " And so are you.\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 16, "sprite/aka_warai_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200056", 540, TRUE);
+		OutputLine(NULL, "「……なら、あんたともいつか、仲良くできる日も来るかもしれないねぇ」",
+				NULL, "\"...Then maybe a day will come when we can get along, huh?\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 11, "sprite/oisi1_2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700185", 540, TRUE);
+		OutputLine(NULL, "「なっはっはっは…。",
+				NULL, "\"Na ha ha ha...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700186", 540, TRUE);
+		OutputLine(NULL, "さぁて、どうでしょうねぇ…」",
+				NULL, " Well, I don't know about that...\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 16, "sprite/aka_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200057", 540, TRUE);
+		OutputLine(NULL, "「葛西、こいつを住職さんに。",
+				NULL, "\"Kasai, take this to the priest.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200058", 540, TRUE);
+		OutputLine(NULL, "その後は、表に車を回してきておくれ」",
+				NULL, " And when you're done, pull the car out front, would you?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#76523d>葛西</color>", NULL, "<color=#76523d>Kasai</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 15, "ps2/15/2215000009", 540, TRUE);
+		OutputLine(NULL, "「わかりました」",
+				NULL, "\"Understood.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "茜は懐から何か封筒を取り出すとそれを葛西に渡す。",
+				NULL, "Akane took out an envelope from her pocket and gave it to Kasai.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "葛西はそれを受け取り、大石に静かに会釈すると踵を返し去っていった。",
+				NULL, " Kasai took the envelope, then quietly bowed to Ooishi before taking his leave.", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 11, "sprite/oisi1_1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700187", 540, TRUE);
+		OutputLine(NULL, "「…………ダム戦争の時は、いつか目にもの見せてやると意気込んでいたものですが。",
+				NULL, "\"......During the dam conflict, he was so determined to show what he could do.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700188", 540, TRUE);
+		OutputLine(NULL, "……妙なものです」",
+				NULL, " ...It's a strange thing.\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 16, "sprite/aka_warai_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200059", 540, TRUE);
+		OutputLine(NULL, "「ダム戦争から何年経ってると思ってんだい。",
+				NULL, "\"How long do you think it's been since then?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200060", 540, TRUE);
+		OutputLine(NULL, "いつまでも戦争状態じや、心も体も持たないよ。",
+				NULL, " Your mind and body can't stay in a perpetual state of war.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200061", 540, TRUE);
+		OutputLine(NULL, "それだけの時間が経ってるんだ。",
+				NULL, " That's how long it's been.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200062", 540, TRUE);
+		OutputLine(NULL, "ウチの子供たちも好きな相手ができて、色づく年頃になってるんだから」",
+				NULL, " My own children have grown so much they're now at the age they've taken a liking to boys.\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 11, "sprite/oisi1_4_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700189", 540, TRUE);
+		OutputLine(NULL, "「……それだけの時間が経ったんですねぇ。",
+				NULL, "\"...Yeah, many years have passed.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700190", 540, TRUE);
+		OutputLine(NULL, "…時間は若者ほど濃密で、…年寄りほど希薄になる」",
+				NULL, " ...Time is dense for young people, but diluted for old folks.\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 16, "sprite/aka_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200063", 540, TRUE);
+		OutputLine(NULL, "「変わらないのは年寄りだけさ。",
+				NULL, "\"The old ones are the ones who don't change.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200064", 540, TRUE);
+		OutputLine(NULL, "……でも、時代と若者は絶えず成長してる。",
+				NULL, " But young people keep growing.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200065", 540, TRUE);
+		OutputLine(NULL, "そして、ぼんやりしてる間に私たちを追い抜いて行っちまうのさ。",
+				NULL, " And before we know it, they pass us by.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200066", 540, TRUE);
+		OutputLine(NULL, "で、私たちは隠居して若者を見守るのさ。オツなもんだろ？」",
+				NULL, " Then we simply withdraw ourselves and watch over them. See how it works?\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 11, "sprite/oisi1_2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700191", 540, TRUE);
+		OutputLine(NULL, "「オツなもんですなぁ。",
+				NULL, "\"Yeah, I guess.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700192", 540, TRUE);
+		OutputLine(NULL, "……あの鹿骨の鬼姫、園崎蒐に、いつの間にか説教をされるようになったんですから」",
+				NULL, " I can't believe I'm getting a talking-to from the Demon Princess of Shishibone, Akane Sonozaki...\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 16, "sprite/aka_warai_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200067", 540, TRUE);
+		OutputLine(NULL, "「嫌だね、そんな通り名、まだ覚えてるのかい？",
+				NULL, "\"Hey, I can't believe you still remember that name!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200068", 540, TRUE);
+		OutputLine(NULL, "　今じゃ鹿骨のレディ一で通ってるんだよ？",
+				NULL, " I'm a Lady of Shishibone nowadays, you know.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200069", 540, TRUE);
+		OutputLine(NULL, "　そいつぁ内緒にしてくれるとありがたいねぇ」",
+				NULL, " I'd appreciate it if you kept that name to yourself.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700193", 540, TRUE);
+		OutputLine(NULL, "「んっふっふっふっふ！",
+				NULL, "\"Heh heh heh!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700194", 540, TRUE);
+		OutputLine(NULL, "　ダム戦争も終わったんですしねぇ」",
+				NULL, " Yeah, I guess, since the dam conflict is over now, huh?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200070", 540, TRUE);
+		OutputLine(NULL, "「そうさ。",
+				NULL, "\"That's right.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200071", 540, TRUE);
+		OutputLine(NULL, "もう終わったことなのさ」",
+				NULL, " It's all over.\"", Line_Normal);
+		ClearMessage();
+
+		DrawScene("background/sora5", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "無言だけれども、なぜか心地がいい時間。風は吹かないけれど、……モンシロチョウがひらひらと舞い、涼感を誘ってくれた。",
+				NULL, "Both were silent, but the air between them was comforting. There was no breeze... and a cabbage-white butterfly flittered around them.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200072", 540, TRUE);
+		OutputLine(NULL, "「………勤務中だろうけどさ。",
+				NULL, "\"...You're supposed to be at work...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200073", 540, TRUE);
+		OutputLine(NULL, "どうだいひとつ。ひんやり冷酒でも行かないかい？」",
+				NULL, " But how about a round? Up for some fresh, cold sake?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700195", 540, TRUE);
+		OutputLine(NULL, "「今日は遠慮しましょう。",
+				NULL, "\"Maybe not today.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700196", 540, TRUE);
+		OutputLine(NULL, "私も車ですし、あなたも車じゃないんですか？」",
+				NULL, " I have to drive and so do you, right?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200074", 540, TRUE);
+		OutputLine(NULL, "「くっくっくっく。",
+				NULL, "\"Heh heh heh heh.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200075", 540, TRUE);
+		OutputLine(NULL, "そりゃあ残念だね。",
+				NULL, " That's too bad.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200076", 540, TRUE);
+		OutputLine(NULL, "またの機会にしようかい」",
+				NULL, " Well, maybe next time, eh?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700197", 540, TRUE);
+		OutputLine(NULL, "「そうですなぁ。",
+				NULL, "\"Yeah.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700198", 540, TRUE);
+		OutputLine(NULL, "またの機会にしましょう」",
+				NULL, " Next time...\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "大石の中の、…長いこと居座っていた何かがぱあっ、と霧散してゆく。凝り固まっていた何かがそろそろと解けていく感覚を、大石は確かに掴み取っていた。",
+				NULL, "Something that had been sitting inside Ooishi for a long time dissipated in a flash. Ooishi was certain he felt something that had been frozen in place slowly melting away.", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700199", 540, TRUE);
+		OutputLine(NULL, "「そろそろ戻ります。",
+				NULL, "\"I better get going.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700200", 540, TRUE);
+		OutputLine(NULL, "あなたもお連れさんを待たせているでしょう」",
+				NULL, " Your ride is waiting too, right?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200077", 540, TRUE);
+		OutputLine(NULL, "「そうさね。お開きにしよう。",
+				NULL, "\"Yeah, he is.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200078", 540, TRUE);
+		OutputLine(NULL, "………あんたとは色々あった気がするけどさ。",
+				NULL, " We've gone through a lot,", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200079", 540, TRUE);
+		OutputLine(NULL, "これで一度、ぱーっとチャラにしちゃいたいね」",
+				NULL, " but let's forget about it all. How about that?\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700201", 540, TRUE);
+		OutputLine(NULL, "「その辺りの清算会は、また後日に改めてやりましょう。",
+				NULL, "\"We'll have a party one of these days.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700202", 540, TRUE);
+		OutputLine(NULL, "いずれ、きっと」",
+				NULL, " We will.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "茜は、晴れ渡った空に負けないくらいの笑顔で、それに頷き返すのだった。",
+				NULL, "Akane turned around with a big smile on her face.", Line_Normal);
+		ClearMessage();
+
+		DrawScene("black", 1000 );
+		FadeOutBGM(2, 200, TRUE);
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "だが突然、その表情が媚びたものに変わる。",
+				NULL, "But all of a sudden, it changed into an impish grin.", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(4, 16, "sprite/aka_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+		DrawScene("background/mati3", 1000 );
+		PlayBGM(2, "hm01_06", 128, 0);
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200080", 540, TRUE);
+		OutputLine(NULL, "「それでねぇ、大石の旦那！",
+				NULL, "\"Hey, Officer Ooishi!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200081", 540, TRUE);
+		OutputLine(NULL, "　…私たちのわだかまりがぱーっとなくなったところでさ」",
+				NULL, " Since we made up just now...\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(4, 16, "sprite/aka_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200082", 540, TRUE);
+		OutputLine(NULL, "「えっへっへっへ～！",
+				NULL, "\"Eh heh heh heh!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200083", 540, TRUE);
+		OutputLine(NULL, "　昨日、反則切符もらっちゃったんだけど、むしゃくしゃして、ぱーっと破り捨てちゃってさー！",
+				NULL, " I got a traffic ticket yesterday, and I was so mad that I ripped it in half!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200084", 540, TRUE);
+		OutputLine(NULL, "　…これもぱーっとなかったことにできないかねぇ？」",
+				NULL, " Do you think you can do something about that?\"", Line_Normal);
+		ClearMessage();
+
+		FadeBustshot( 4, FALSE, 0, 0, 0, 0, 200, TRUE );
+		ModDrawCharacter(3, 11, "sprite/oisi1_2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+		ModDrawCharacter(5, 16, "sprite/aka_warai_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700203", 540, TRUE);
+		OutputLine(NULL, "「……そいつは最寄の警察署へどうぞ。",
+				NULL, "\"Just go to the nearest police station for that.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700204", 540, TRUE);
+		OutputLine(NULL, "私に声を掛けてくれりゃあ、順番待ちを優遇するくらいはしますよ。",
+				NULL, " Maybe I can give you a priority spot in the waiting line.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700205", 540, TRUE);
+		OutputLine(NULL, "んっふっふっふ…！」",
+				NULL, " Nfu fu fu...!\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 16, "sprite/aka_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200085", 540, TRUE);
+		OutputLine(NULL, "「ちぇー。サービスの悪い人だよ」",
+				NULL, "\"Tch. What are friends even for, huh?\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 16, "sprite/aka_warai_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200086", 540, TRUE);
+		OutputLine(NULL, "「くっくっくっく」",
+				NULL, "\"Heh heh heh heh.\"", Line_Normal);
+		ClearMessage();
+
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700206", 540, TRUE);
+		OutputLine(NULL, "「なっはっはっはっはっは…！」",
+				NULL, "\"Na ha ha ha ha ha...!!!\"", Line_Normal);
+		ClearMessage();
+
+		DrawScene("background/sora", 1000 );
+
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "真っ青な空の下で、二人の小気味のいい笑い声が響くのだった……。",
+				NULL, "Their laughter echoed under the blue sky...", Line_Normal);
+		ClearMessage();
+
+		DrawScene("white", 1000 );
+		FadeOutBGM(2, 500, FALSE);
+	}
 
 	DrawScene("black", 1000 );
 	Wait( 2000 );
@@ -803,19 +1915,33 @@ void main()
 	FadeAllBustshots( 200, TRUE );
 	ModDrawCharacter(3, 4, "sprite/sa2a_akireru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//沙都子rvS14/04/VT4Bc_satoko1015a.「…だけどにーにーの件は、明らかに梨花の説明不足が原因だと思いますわ」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1015a", 256, TRUE);
-	OutputLine(NULL, "「…だけどにーにーの件は、明らかに梨花の説明不足が原因だと思いますわ」",
-			NULL, "\"...However, with regard to Nii-nii's situation, I believe that Rika's lack of explanation is at fault.\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 4, "ps2/04/220400037", 540, TRUE);
+		OutputLine(NULL, "「…だけどにーにーの件は、明らかに梨花の説明不足が原因だと思いますわ」",
+				NULL, "\"...However, with regard to Nii-nii's situation, I believe that Rika's lack of explanation is at fault.\"", Line_Normal);
+		ClearMessage();
 
-//沙都子rvS14/04/VT4Bc_satoko1015b.「もう少し手順がよろしければ詩音さんもあんなに取り乱さなかったでしょうし、監督だってきっと怪我をせずに済んだはずでしてよ？」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1015b", 256, TRUE);
-	OutputLine(NULL, "「もう少し手順がよろしければ詩音さんもあんなに取り乱さなかったでしょうし、監督だってきっと怪我をせずに済んだはずでしてよ？」",
-			NULL, "\"If the situation were handled slightly better, perhaps Shion-san wouldn't have gotten so upset and the coach wouldn't have ended up getting hurt?\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 4, "ps2/04/220400038", 540, TRUE);
+		OutputLine(NULL, "「もう少し手順がよろしければ詩音さんもあんなに取り乱さなかったでしょうし、監督だって怪我をせずに済んだのでございますわよ？」",
+				NULL, "\"If the situation were handled slightly better, perhaps Shion-san wouldn't have gotten so upset and the coach wouldn't have ended up getting hurt?\"", Line_Normal);
+		ClearMessage();
+	} else {
+	//沙都子rvS14/04/VT4Bc_satoko1015a.「…だけどにーにーの件は、明らかに梨花の説明不足が原因だと思いますわ」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1015a", 256, TRUE);
+		OutputLine(NULL, "「…だけどにーにーの件は、明らかに梨花の説明不足が原因だと思いますわ」",
+				NULL, "\"...However, with regard to Nii-nii's situation, I believe that Rika's lack of explanation is at fault.\"", Line_Normal);
+		ClearMessage();
+
+	//沙都子rvS14/04/VT4Bc_satoko1015b.「もう少し手順がよろしければ詩音さんもあんなに取り乱さなかったでしょうし、監督だってきっと怪我をせずに済んだはずでしてよ？」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1015b", 256, TRUE);
+		OutputLine(NULL, "「もう少し手順がよろしければ詩音さんもあんなに取り乱さなかったでしょうし、監督だってきっと怪我をせずに済んだはずでしてよ？」",
+				NULL, "\"If the situation were handled slightly better, perhaps Shion-san wouldn't have gotten so upset and the coach wouldn't have ended up getting hurt?\"", Line_Normal);
+		ClearMessage();
+	}
 
 	ModDrawCharacter(5, 5, "sprite/ri2_komaru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
@@ -834,10 +1960,16 @@ void main()
 			NULL, "Rika-chan looked downcast and bowed once again to apologize to the coach who was sitting in the back of the room, and to Shion who was beside him bandaging him.", Line_Normal);
 	ClearMessage();
 
-//r幸い、銃で撃たれた時にできた傷は浅く、監督自身が簡単な止血と治療を済ませていた。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "幸い、銃で撃たれた時にできた傷は浅く、監督自身が簡単な止血と治療を済ませていた。",
-			NULL, "Fortunately, the gunshots left only shallow wounds, and the coach was able to treat them to stop the bleeding.", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "幸い肩の傷は骨を傷つけず弾が貫通していたようで、監督が自分で止血と簡単な縫合を済ませていた。",
+				NULL, "Fortunately, the gunshot passed right through his shoulder without hitting the bone, and the coach was able to halt the bleeding with some simple sutures.", Line_Normal);
+	} else {
+	//r幸い、銃で撃たれた時にできた傷は浅く、監督自身が簡単な止血と治療を済ませていた。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "幸い、銃で撃たれた時にできた傷は浅く、監督自身が簡単な止血と治療を済ませていた。",
+				NULL, "Fortunately, the gunshots left only shallow wounds, and the coach was able to treat them to stop the bleeding.", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(4, 10, "sprite/iri2_def2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -861,12 +1993,21 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1016.「それはもうよろしいのですわ、監督。kvS14/04/VT4Bc_satoko1017.…にーにーが生きているとわかっただけでも、私は本当にうれしいのですから」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1016", 256, TRUE);
-	OutputLine(NULL, "「それはもうよろしいのですわ、監督。",
-			NULL, "\"It's all right, Coach.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1017", 256, TRUE);
-	OutputLine(NULL, "…にーにーが生きているとわかっただけでも、私は本当にうれしいのですから」",
-			NULL, " ...I'm truly happy just knowing that Nii-nii is still alive.\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/220400039", 540, TRUE);
+		OutputLine(NULL, "「それはもういいのですわ、監督さん。",
+				NULL, "\"It's all right, Coach.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/220400040", 540, TRUE);
+		OutputLine(NULL, "…にーにーが生きているとわかっただけでも、私は本当にうれしいのでございますから」",
+				NULL, " ...I'm truly happy just knowing that Nii-nii is still alive.\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1016", 256, TRUE);
+		OutputLine(NULL, "「それはもうよろしいのですわ、監督。",
+				NULL, "\"It's all right, Coach.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1017", 256, TRUE);
+		OutputLine(NULL, "…にーにーが生きているとわかっただけでも、私は本当にうれしいのですから」",
+				NULL, " ...I'm truly happy just knowing that Nii-nii is still alive.\"", Line_Normal);
+	}
 	ClearMessage();
 
 	ModDrawCharacter(3, 4, "sprite/sa2a_hannbeso_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
@@ -1160,9 +2301,15 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1018.「え？　な、なんですの、梨花？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1018", 256, TRUE);
-	OutputLine(NULL, "「え？　な、なんですの、梨花？」",
-			NULL, "\"Huh? Wh-what is it, Rika?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/220400045", 540, TRUE);
+		OutputLine(NULL, "「え？　な、なんでございますか、梨花？」",
+				NULL, "\"Huh? Wh-what is it, Rika?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1018", 256, TRUE);
+		OutputLine(NULL, "「え？　な、なんですの、梨花？」",
+				NULL, "\"Huh? Wh-what is it, Rika?\"", Line_Normal);
+	}
 	ClearMessage();
 
 //梨花rvS14/05/220500196.「とりあえず呼んであげてくださいなのです。kvS14/05/220500197.話がぜんぜん進まないのです…」
@@ -1631,12 +2778,21 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1019.「なら、私が部屋に戻りますわ。kvS14/04/VT4Bc_satoko1020.それで、梨花の看病をしているってことにするのはいかがでしょう？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1019", 256, TRUE);
-	OutputLine(NULL, "「なら、私が部屋に戻りますわ。",
-			NULL, "\"Then, I'll go back to the house.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1020", 256, TRUE);
-	OutputLine(NULL, "それで、梨花の看病をしているってことにするのはいかがでしょう？」",
-			NULL, " We can say that I'm staying there to take care of Rika?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/220400049", 540, TRUE);
+		OutputLine(NULL, "「なら、私が部屋に戻りますわ。",
+				NULL, "\"Then, I'll go back to the house.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/220400050", 540, TRUE);
+		OutputLine(NULL, "それで、梨花の看病をしているってことにするのはいかがでございましょう？」",
+				NULL, " We can say that I'm staying there to take care of Rika?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1019", 256, TRUE);
+		OutputLine(NULL, "「なら、私が部屋に戻りますわ。",
+				NULL, "\"Then, I'll go back to the house.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1020", 256, TRUE);
+		OutputLine(NULL, "それで、梨花の看病をしているってことにするのはいかがでしょう？」",
+				NULL, " We can say that I'm staying there to take care of Rika?\"", Line_Normal);
+	}
 	ClearMessage();
 
 //圭一rvS14/01/220100150.「それも却下だ。kvS14/01/220100151.行き先を知っているということで、今度は沙都子が狙われる。kvS14/01/220100152.沙都子が目覚めたってことはここにいる連中しか知らないんだから、沙都子はまだ動かないほうがいい」
@@ -1999,15 +3155,27 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1021.「そうですわよ！kvS14/04/VT4Bc_satoko1022.　もし諜報活動で優秀な方だとしたら、自分に何かあったときのための緊急の連絡手段は必ず用意しているものですわ。kvS14/04/VT4Bc_satoko1023.富竹さんの宿泊先に、何か手がかりが残されている可能性は？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1021", 256, TRUE);
-	OutputLine(NULL, "「そうですわよ！",
-			NULL, "\"That's right!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1022", 256, TRUE);
-	OutputLine(NULL, "　もし諜報活動で優秀な方だとしたら、自分に何かあったときのための緊急の連絡手段は必ず用意しているものですわ。",
-			NULL, " Any experienced intelligence agent would prepare an emergency contact scheme in the event of unforeseen circumstances.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1023", 256, TRUE);
-	OutputLine(NULL, "富竹さんの宿泊先に、何か手がかりが残されている可能性は？」",
-			NULL, " Perhaps Tomitake-san left some clues behind at his lodging facility?\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/220400053", 540, TRUE);
+		OutputLine(NULL, "「そうですわよ！",
+				NULL, "\"That's right!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/220400054", 540, TRUE);
+		OutputLine(NULL, "　もし諜報活動で優秀な方だとしたら、自分に何かあったときのための緊急の連絡手段は必ず用意しているものですわ。",
+				NULL, " Any experienced intelligence agent would prepare an emergency contact scheme in the event of unforeseen circumstances.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps2/04/220400055", 540, TRUE);
+		OutputLine(NULL, "富竹さんの宿泊先に、何か手がかりは残されていないでしょうか？」",
+				NULL, " Perhaps Tomitake-san left some clues behind at his lodging facility?\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1021", 256, TRUE);
+		OutputLine(NULL, "「そうですわよ！",
+				NULL, "\"That's right!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1022", 256, TRUE);
+		OutputLine(NULL, "　もし諜報活動で優秀な方だとしたら、自分に何かあったときのための緊急の連絡手段は必ず用意しているものですわ。",
+				NULL, " Any experienced intelligence agent would prepare an emergency contact scheme in the event of unforeseen circumstances.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1023", 256, TRUE);
+		OutputLine(NULL, "富竹さんの宿泊先に、何か手がかりが残されている可能性は？」",
+				NULL, " Perhaps Tomitake-san left some clues behind at his lodging facility?\"", Line_Normal);
+	}
 	ClearMessage();
 
 	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
@@ -2180,9 +3348,15 @@ void main()
 
 //沙都子rvS14/04/VT4Bc_satoko1024.「まぁ、あそこに逃げ込めば、追っ手は大変なことになりますわね～！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>Satoko</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1024", 256, TRUE);
-	OutputLine(NULL, "「まぁ、あそこに逃げ込めば、追っ手は大変なことになりますわね～！」",
-			NULL, "\"Well, if we were to flee through there, it certainly would give our pursuers a hard time~!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 4, "ps2/04/220400059", 540, TRUE);
+		OutputLine(NULL, "「まぁ、あそこに逃げ込めば、追っ手は大変なことになるでしょうね～！」",
+				NULL, "\"Well, if we were to flee through there, it certainly would give our pursuers a hard time~!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 4, "ps3/s14/04/vt4bc_satoko1024", 256, TRUE);
+		OutputLine(NULL, "「まぁ、あそこに逃げ込めば、追っ手は大変なことになりますわね～！」",
+				NULL, "\"Well, if we were to flee through there, it certainly would give our pursuers a hard time~!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //r…沙都子のニヤリ笑いが、この時ばかりは頼もしい。こいつぁ最高の見物だぜ！！　面白くなってきやがった！！
@@ -2421,12 +3595,25 @@ void main()
 	FadeOutBGM(2, 200, FALSE);
 	PlaySE(3, "suzu_1", 256, 64);
 	DrawScene("white", 1000 );
-	DrawScene("text/hanyu_03", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0015", 256, TRUE);
-	Wait( 7000 );
-	DrawScene("text/hanyu_04", 1000 );
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0016", 256, TRUE);
-	Wait( 6000 );
+	if (GetLocalFlag(LConsoleArc)==10) {
+		DrawScene("text/hanyu_03a_ps2", 1000 );
+		DrawScene("text/hanyu_03_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/221100080", 540, TRUE);
+		Wait( 2500 );
+		ModPlayVoiceLS(4, 12, "ps2/12/221100081", 540, TRUE);
+		Wait( 3000 );
+		DrawScene("text/hanyu_04a_ps2", 1000 );
+		DrawScene("text/hanyu_04_ps2", 1000 );
+		ModPlayVoiceLS(4, 12, "ps2/12/221100082", 540, TRUE);
+		Wait( 5500 );
+	} else {
+		DrawScene("text/hanyu_03", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0015", 256, TRUE);
+		Wait( 7000 );
+		DrawScene("text/hanyu_04", 1000 );
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vrh_rika_0016", 256, TRUE);
+		Wait( 6000 );
+	}
 	DrawScene("white", 1000 );
 	ModDrawCharacter(4, 6, "sprite/si1a_def_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/sinryou_sinsatu1", 1000 );
@@ -3126,113 +4313,157 @@ void main()
 
 	ModDrawCharacter(3, 14, "sprite/oko_odoroki_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//小此木rvS14/14/223400005.「ハイ。kvS14/14/223400006.午後６時１５分、興宮署の取調室で園崎詩音が、ほのめかす供述をはじめたそうです」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/223400005", 256, TRUE);
-	OutputLine(NULL, "「ハイ。",
-			NULL, "\"Yes.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/223400006", 256, TRUE);
-	OutputLine(NULL, "午後６時１５分、興宮署の取調室で園崎詩音が、ほのめかす供述をはじめたそうです」",
-			NULL, " It seems that at 6:15 PM, Shion Sonozaki started suggesting as much in the Okinomiya Station interrogation room.\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps2/14/223400005", 540, TRUE);
+		OutputLine(NULL, "「ハイ。",
+				NULL, "\"Yes.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400006", 540, TRUE);
+		OutputLine(NULL, "午後６時１５分、興宮署の取調室で園崎詩音が、Ｒの監禁をほのめかす供述をはじめたそうです」",
+				NULL, " It seems that at 6:15 PM, during interogation at Okinomiya Station, Shion Sonozaki began suggesting R was being held under confinement.\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+		ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
-//鷹野rvS14/09/220900006.「そんなわけないでしょう！kvS14/09/220900007.　Ｒの監視はどうしてたの？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/220900006", 256, TRUE);
-	OutputLine(NULL, "「そんなわけないでしょう！",
-			NULL, "\"Impossible!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/220900007", 256, TRUE);
-	OutputLine(NULL, "　Ｒの監視はどうしてたの？！」",
-			NULL, " What about all of R's surveillance?!\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps2/09/220900006", 540, TRUE);
+		OutputLine(NULL, "「そんなわけないでしょう！",
+				NULL, "\"Impossible!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps2/09/220900007", 540, TRUE);
+		OutputLine(NULL, "　Ｒの監視はどうしてたの？！",
+				NULL, " What about all of R's surveillance?!", Line_Normal);
+		ModPlayVoiceLS(4, 9, "ps2/09/220900008", 540, TRUE);
+		OutputLine(NULL, "　確か綿流しの晩は、入江診療所に宿泊しているって報告を受けていたはずよ！！」",
+				NULL, " I'm certain the reports said she was staying at the Irie Clinic on the night of Watanagashi!!\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(3, 14, "sprite/oko_kumon_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+		ModDrawCharacter(3, 14, "sprite/oko_kumon_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//小此木rvS14/14/VT4Bc_okono1004.「その、三佐。kvS14/14/VT4Bc_okono1005.…実は、不確定な情報だったため、三佐にまだお話していないことが」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1004", 256, TRUE);
-	OutputLine(NULL, "「その、三佐。",
-			NULL, "\"Well, Major...", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1005", 256, TRUE);
-	OutputLine(NULL, "…実は、不確定な情報だったため、三佐にまだお話していないことが」",
-			NULL, " actually, this is unverified information so we haven't told you yet, but...\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps2/14/223400007", 540, TRUE);
+		OutputLine(NULL, "「その、三佐。",
+				NULL, "\"Well, Major...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400008", 540, TRUE);
+		OutputLine(NULL, "…話に続きがありまして、…興宮署の諜報員によると、",
+				NULL, " there's more to the story. According to Okinomiya Station...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400009", 540, TRUE);
+		OutputLine(NULL, "……本日の午前７時ごろにＲは登誰校すると言って診療所を出たそうです。",
+				NULL, " R left the clinic around 7 AM today, allegedly heading to school.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400010", 540, TRUE);
+		OutputLine(NULL, "そこから行方がわからなくなっているとのことで……」",
+				NULL, " And she disappeared immediately after that...\"", Line_Normal);
+		ClearMessage();
 
-//小此木rvS14/14/VT4Bc_okono1006.「昨晩…富竹の落ちたあの沼に、山を散策していたＲが転落したそうなんです。kvS14/14/VT4Bc_okono1007.必死の形相で探し回っている村の少年の様子を、隊員たちが目撃しています…」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1006", 256, TRUE);
-	OutputLine(NULL, "「昨晩…富竹の落ちたあの沼に、山を散策していたＲが転落したそうなんです。",
-			NULL, "\"Last night... R was allegedly walking around in the mountains and fell into the same swamp as Tomitake.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1007", 256, TRUE);
-	OutputLine(NULL, "必死の形相で探し回っている村の少年の様子を、隊員たちが目撃しています…」",
-			NULL, " Several squad members spotted a young man desperately searching for her...\"", Line_Normal);
-	ClearMessage();
+		FadeAllBustshots( 200, TRUE );
+	} else {
+	//小此木rvS14/14/223400005.「ハイ。kvS14/14/223400006.午後６時１５分、興宮署の取調室で園崎詩音が、ほのめかす供述をはじめたそうです」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/223400005", 256, TRUE);
+		OutputLine(NULL, "「ハイ。",
+				NULL, "\"Yes.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/223400006", 256, TRUE);
+		OutputLine(NULL, "午後６時１５分、興宮署の取調室で園崎詩音が、ほのめかす供述をはじめたそうです」",
+				NULL, " It seems that at 6:15 PM, Shion Sonozaki started suggesting as much in the Okinomiya Station interrogation room.\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 9, "sprite/ta3_iradachi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-	PlaySE(3, "dageki", 256, 64);
-	ShakeScreen( 1, 15, 15, 2, 0, );
+		ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
-//鷹野rvS14/09/VT4Bc_takano1001.「なッ…なんで、そんな重要なことを私に報告しなかったのッッ！！kvS14/09/VT4Bc_takano1002.計画を起こす前に、Ｒにもしものことがあったら全て終わりなのよっ？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1001", 256, TRUE);
-	OutputLine(NULL, "「なッ…なんで、そんな重要なことを私に報告しなかったのッッ！！",
-			NULL, "\"Wh...why didn't you report something so important?!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1002", 256, TRUE);
-	OutputLine(NULL, "計画を起こす前に、Ｒにもしものことがあったら全て終わりなのよっ？！」",
-			NULL, " If anything happens to R before this plan is complete, it's all over!!\"", Line_Normal);
-	ClearMessage();
+	//鷹野rvS14/09/220900006.「そんなわけないでしょう！kvS14/09/220900007.　Ｒの監視はどうしてたの？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/220900006", 256, TRUE);
+		OutputLine(NULL, "「そんなわけないでしょう！",
+				NULL, "\"Impossible!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/220900007", 256, TRUE);
+		OutputLine(NULL, "　Ｒの監視はどうしてたの？！」",
+				NULL, " What about all of R's surveillance?!\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+		ModDrawCharacter(3, 14, "sprite/oko_kumon_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//鷹野rvS14/09/VT4Bc_takano1003.「確定情報か、それともデマかをあんたたちが判断する前に、まず私に報告を！kvS14/09/VT4Bc_takano1004.　…って、ちょっと待って」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1003", 256, TRUE);
-	OutputLine(NULL, "「確定情報か、それともデマかをあんたたちが判断する前に、まず私に報告を！",
-			NULL, "\"Even if it's unverified information, report it to me before declaring it a hoax!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1004", 256, TRUE);
-	OutputLine(NULL, "　…って、ちょっと待って」",
-			NULL, " ...And, hold on.\"", Line_Normal);
-	ClearMessage();
+	//小此木rvS14/14/VT4Bc_okono1004.「その、三佐。kvS14/14/VT4Bc_okono1005.…実は、不確定な情報だったため、三佐にまだお話していないことが」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1004", 256, TRUE);
+		OutputLine(NULL, "「その、三佐。",
+				NULL, "\"Well, Major...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1005", 256, TRUE);
+		OutputLine(NULL, "…実は、不確定な情報だったため、三佐にまだお話していないことが」",
+				NULL, " actually, this is unverified information so we haven't told you yet, but...\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 9, "sprite/ta3_iradachi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	//小此木rvS14/14/VT4Bc_okono1006.「昨晩…富竹の落ちたあの沼に、山を散策していたＲが転落したそうなんです。kvS14/14/VT4Bc_okono1007.必死の形相で探し回っている村の少年の様子を、隊員たちが目撃しています…」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1006", 256, TRUE);
+		OutputLine(NULL, "「昨晩…富竹の落ちたあの沼に、山を散策していたＲが転落したそうなんです。",
+				NULL, "\"Last night... R was allegedly walking around in the mountains and fell into the same swamp as Tomitake.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1007", 256, TRUE);
+		OutputLine(NULL, "必死の形相で探し回っている村の少年の様子を、隊員たちが目撃しています…」",
+				NULL, " Several squad members spotted a young man desperately searching for her...\"", Line_Normal);
+		ClearMessage();
 
-//鷹野rvS14/09/VT4Bc_takano1005.「じゃあ、…園崎詩音がＲを殺したっていうのは、いったいどういうことなのっ？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1005", 256, TRUE);
-	OutputLine(NULL, "「じゃあ、…園崎詩音がＲを殺したっていうのは、いったいどういうことなのっ？！」",
-			NULL, "\"Then... how on earth does that tie into Shion Sonozaki killing R?!\"", Line_Normal);
-	ClearMessage();
+		ModDrawCharacter(5, 9, "sprite/ta3_iradachi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+		PlaySE(3, "dageki", 256, 64);
+		ShakeScreen( 1, 15, 15, 2, 0, );
 
-	ModDrawCharacter(3, 14, "sprite/oko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	//鷹野rvS14/09/VT4Bc_takano1001.「なッ…なんで、そんな重要なことを私に報告しなかったのッッ！！kvS14/09/VT4Bc_takano1002.計画を起こす前に、Ｒにもしものことがあったら全て終わりなのよっ？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1001", 256, TRUE);
+		OutputLine(NULL, "「なッ…なんで、そんな重要なことを私に報告しなかったのッッ！！",
+				NULL, "\"Wh...why didn't you report something so important?!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1002", 256, TRUE);
+		OutputLine(NULL, "計画を起こす前に、Ｒにもしものことがあったら全て終わりなのよっ？！」",
+				NULL, " If anything happens to R before this plan is complete, it's all over!!\"", Line_Normal);
+		ClearMessage();
 
-//小此木rvS14/14/VT4Bc_okono1008.「いえ…目撃した連中も動揺のあまり、状況把握が不十分だったそうなので…これはあくまで推測、ですが。kvS14/14/VT4Bc_okono1009.Ｒを沼に誘いこんで突き落としたのが、…その園崎詩音本人という可能性もあります」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1008", 256, TRUE);
-	OutputLine(NULL, "「いえ…目撃した連中も動揺のあまり、状況把握が不十分だったそうなので…これはあくまで推測、ですが。",
-			NULL, "\"Well... the people who witnessed the situation were quite shaken and it seems their grasp of the situation was insufficient... So this is just a guess but,", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1009", 256, TRUE);
-	OutputLine(NULL, "Ｒを沼に誘いこんで突き落としたのが、…その園崎詩音本人という可能性もあります」",
-			NULL, " there's a possibility that Shion Sonozaki herself... invited R to the swamp intending to throw her in.\"", Line_Normal);
-	ClearMessage();
+		ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
-//小此木rvS14/14/VT4Bc_okono1010.「だからこそ、バックについた園崎家がＲの安否を秘匿して…村人たちに対しても、そのことをひた隠しにすることができる」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1010", 256, TRUE);
-	OutputLine(NULL, "「だからこそ、バックについた園崎家がＲの安否を秘匿して…村人たちに対しても、そのことをひた隠しにすることができる」",
-			NULL, "\"And so, the Sonozaki family may be working behind the scenes... to hide the truth about R's well-being from the village.\"", Line_Normal);
-	ClearMessage();
+	//鷹野rvS14/09/VT4Bc_takano1003.「確定情報か、それともデマかをあんたたちが判断する前に、まず私に報告を！kvS14/09/VT4Bc_takano1004.　…って、ちょっと待って」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1003", 256, TRUE);
+		OutputLine(NULL, "「確定情報か、それともデマかをあんたたちが判断する前に、まず私に報告を！",
+				NULL, "\"Even if it's unverified information, report it to me before declaring it a hoax!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1004", 256, TRUE);
+		OutputLine(NULL, "　…って、ちょっと待って」",
+				NULL, " ...And, hold on.\"", Line_Normal);
+		ClearMessage();
 
-//小此木rvS14/14/VT4Bc_okono1011.「だとしたら、…Ｒを殺害したって事実は、かなりの信憑性を持ってくるんじゃないでしょうか」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1011", 256, TRUE);
-	OutputLine(NULL, "「だとしたら、…Ｒを殺害したって事実は、かなりの信憑性を持ってくるんじゃないでしょうか」",
-			NULL, "\"And if that's the case... I think it gives a lot of credibility to the theory that R was killed.\"", Line_Normal);
-	ClearMessage();
+		ModDrawCharacter(5, 9, "sprite/ta3_iradachi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
-	DrawScene("black", 1000 );
+	//鷹野rvS14/09/VT4Bc_takano1005.「じゃあ、…園崎詩音がＲを殺したっていうのは、いったいどういうことなのっ？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1005", 256, TRUE);
+		OutputLine(NULL, "「じゃあ、…園崎詩音がＲを殺したっていうのは、いったいどういうことなのっ？！」",
+				NULL, "\"Then... how on earth does that tie into Shion Sonozaki killing R?!\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 14, "sprite/oko_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+	//小此木rvS14/14/VT4Bc_okono1008.「いえ…目撃した連中も動揺のあまり、状況把握が不十分だったそうなので…これはあくまで推測、ですが。kvS14/14/VT4Bc_okono1009.Ｒを沼に誘いこんで突き落としたのが、…その園崎詩音本人という可能性もあります」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1008", 256, TRUE);
+		OutputLine(NULL, "「いえ…目撃した連中も動揺のあまり、状況把握が不十分だったそうなので…これはあくまで推測、ですが。",
+				NULL, "\"Well... the people who witnessed the situation were quite shaken and it seems their grasp of the situation was insufficient... So this is just a guess but,", GetGlobalFlag(GLinemodeSp));
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1009", 256, TRUE);
+		OutputLine(NULL, "Ｒを沼に誘いこんで突き落としたのが、…その園崎詩音本人という可能性もあります」",
+				NULL, " there's a possibility that Shion Sonozaki herself... invited R to the swamp intending to throw her in.\"", Line_Normal);
+		ClearMessage();
+
+	//小此木rvS14/14/VT4Bc_okono1010.「だからこそ、バックについた園崎家がＲの安否を秘匿して…村人たちに対しても、そのことをひた隠しにすることができる」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1010", 256, TRUE);
+		OutputLine(NULL, "「だからこそ、バックについた園崎家がＲの安否を秘匿して…村人たちに対しても、そのことをひた隠しにすることができる」",
+				NULL, "\"And so, the Sonozaki family may be working behind the scenes... to hide the truth about R's well-being from the village.\"", Line_Normal);
+		ClearMessage();
+
+	//小此木rvS14/14/VT4Bc_okono1011.「だとしたら、…Ｒを殺害したって事実は、かなりの信憑性を持ってくるんじゃないでしょうか」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1011", 256, TRUE);
+		OutputLine(NULL, "「だとしたら、…Ｒを殺害したって事実は、かなりの信憑性を持ってくるんじゃないでしょうか」",
+				NULL, "\"And if that's the case... I think it gives a lot of credibility to the theory that R was killed.\"", Line_Normal);
+		ClearMessage();
+
+		DrawScene("black", 1000 );
+	}
 
 //r鷹野は、全身の血が凍りついたような感覚にとらわれた。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3252,73 +4483,131 @@ void main()
 			NULL, "The corpse was to be discovered at the Furude Shrine the day after tomorrow, and at that point they'd have to follow the emergency manual.", Line_Normal);
 	ClearMessage();
 
-//rしかし、それは全て梨花の殺害がスタートとなっている話だ。彼女が死んだという確定がない状態でおし進めても、計画が全くの無意味なものになってしまう。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "しかし、それは全て梨花の殺害がスタートとなっている話だ。彼女が死んだという確定がない状態でおし進めても、計画が全くの無意味なものになってしまう。",
-			NULL, "But that all began with killing Rika. Without proper confirmation of her death, proceeding with the plan would be completely meaningless.", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+	//rしかし、それは全て梨花の殺害がスタートとなっている話だ。彼女が死んだという確定がない状態でおし進めても、計画が全くの無意味なものになってしまう。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "しかし、それは全て梨花の殺害がスタートとなっている話だ。",
+				NULL, "But that all began with killing Rika.", Line_Normal);
+		ClearMessage();
 
-//rかといって、このままでは緊急マニュアルの発動はもちろん、東京の本部連中が望む『祭』の実行すら困難、…いや、不可能だ。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "かといって、このままでは緊急マニュアルの発動はもちろん、東京の本部連中が望む『祭』の実行すら困難、…いや、不可能だ。",
-			NULL, "Of course, that would make carrying out the emergency manual in the \"ritual\" Tokyo HQ wanted more difficult... maybe even impossible.", Line_Normal);
-	ClearMessage();
+	//rかといって、このままでは緊急マニュアルの発動はもちろん、東京の本部連中が望む『祭』の実行すら困難、…いや、不可能だ。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "このままでは緊急マニュアルの発動はもちろん、東京の本部連中が望む『祭』の実行すら困難、……いや不可能となってしまう。",
+				NULL, "Without that, carrying out the emergency manual in the \"ritual\" Tokyo HQ wanted would be more difficult... No, completely impossible.", Line_Normal);
+		ClearMessage();
 
-//rならば…その死体さえ、発見できれば……！！
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "ならば…その死体さえ、発見できれば……！！",
-			NULL, "And then... even if they could find the corpse...!!", Line_Normal);
-	ClearMessage();
+		ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+		DrawScene("background/torakku2", 250 );
+		PlaySE(3, "down", 256, 64);
+		ShakeScreen( 1, 15, 15, 2, 0, );
 
-	ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
-	DrawScene("background/torakku2", 250 );
-	PlaySE(3, "down", 256, 64);
-	ShakeScreen( 1, 15, 15, 2, 0, );
+	//鷹野rvS14/09/220900009.「すぐにＲの行方を捜しなさい！！kvS14/09/220900010.　園崎詩音の供述内容をこちらに逐一報告！！kvS14/09/220900011.　警察より先に我々で身元の確保をしろッ！！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps2/09/220900009", 540, TRUE);
+		OutputLine(NULL, "「すぐにＲの行方を捜しなさい！！",
+				NULL, "\"Begin searching for R, immediately!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps2/09/220900010", 540, TRUE);
+		OutputLine(NULL, "　園崎詩音の供述内容をこちらに逐一報告！！",
+				NULL, " Report to me every single detail of Shion Sonozaki's testimony!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps2/09/220900011", 540, TRUE);
+		OutputLine(NULL, "　警察より先に我々で身元の確保をしろッ！！",
+				NULL, " Gather all the necessary background information, before even the police can!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps2/09/220900012", 540, TRUE);
+		OutputLine(NULL, "　一番疑わしいのは園崎家だ！！",
+				NULL, " Focus your attention on the Sonozaki estate!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps2/09/220900013", 540, TRUE);
+		OutputLine(NULL, "　屋敷への調査部隊の編成を早急に行えッ！！」",
+				NULL, " Send a team to monitor the premises, ASAP!!\"", Line_Normal);
+		ClearMessage();
 
-//鷹野rvS14/09/220900009.「すぐにＲの行方を捜しなさい！！kvS14/09/220900010.　園崎詩音の供述内容をこちらに逐一報告！！kvS14/09/220900011.　警察より先に我々で身元の確保をしろッ！！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/220900009", 256, TRUE);
-	OutputLine(NULL, "「すぐにＲの行方を捜しなさい！！",
-			NULL, "\"Begin searching for R, immediately!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/220900010", 256, TRUE);
-	OutputLine(NULL, "　園崎詩音の供述内容をこちらに逐一報告！！",
-			NULL, " Report to me every single detail of Shion Sonozaki's testimony!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/220900011", 256, TRUE);
-	OutputLine(NULL, "　警察より先に我々で身元の確保をしろッ！！」",
-			NULL, " Gather all the necessary background information, before even the police can!!\"", Line_Normal);
-	ClearMessage();
+		ModDrawCharacter(3, 14, "sprite/oko_odoroki_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//鷹野rvS14/09/VT4Bc_takano1006.「とにかく、Ｒが落ちたという沼を徹底的に捜索！！kvS14/09/VT4Bc_takano1007.　富竹ジロウの調査部隊もそちらに回せッ！！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1006", 256, TRUE);
-	OutputLine(NULL, "「とにかく、Ｒが落ちたという沼を徹底的に捜索！！",
-			NULL, "\"And thoroughly search the swamp where R fell!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1007", 256, TRUE);
-	OutputLine(NULL, "　富竹ジロウの調査部隊もそちらに回せッ！！」",
-			NULL, " Redirect the Jirou Tomitake search team to that!!\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps2/14/223400011", 540, TRUE);
+		OutputLine(NULL, "「しかし、……諜報員によると、どうやら園崎魅音とは完全に対立状態でして、",
+				NULL, "\"However... according to our intel, it seems she has a strained relationship with Mion Sonozaki.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400012", 540, TRUE);
+		OutputLine(NULL, "……園崎本家への隠匿はほぼ確実にないそうです」",
+				NULL, " ...So it seems highly unlikely she'd be able to confine someone at the Sonozaki residence.\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(3, 14, "sprite/oko_odoroki_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps2/14/223400013", 540, TRUE);
+		OutputLine(NULL, "「実際、警察の職員の立ち入りを許して捜査に当たったそうですが……。",
+				NULL, "\"In fact, I hear the Sonozakis even allowed the police inside to investigate...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400014", 540, TRUE);
+		OutputLine(NULL, "例の秘密部屋も含めて、Ｒの所在は確認できなかったと」",
+				NULL, " and they were unable to locate R, or identify any sort of secret room.\"", Line_Normal);
+		ClearMessage();
+	} else {
+	//rしかし、それは全て梨花の殺害がスタートとなっている話だ。彼女が死んだという確定がない状態でおし進めても、計画が全くの無意味なものになってしまう。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "しかし、それは全て梨花の殺害がスタートとなっている話だ。彼女が死んだという確定がない状態でおし進めても、計画が全くの無意味なものになってしまう。",
+				NULL, "But that all began with killing Rika. Without proper confirmation of her death, proceeding with the plan would be completely meaningless.", Line_Normal);
+		ClearMessage();
 
-//小此木rvS14/14/VT4Bc_okono1012.「もちろん、現在でもダイバー装備を持ちこんで、沼の中まで捜索中ですが、kvS14/14/VT4Bc_okono1013.…なんせ濁りが激しくて深い沼、発見には相当の時間がかかると思われます」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1012", 256, TRUE);
-	OutputLine(NULL, "「もちろん、現在でもダイバー装備を持ちこんで、沼の中まで捜索中ですが、",
-			NULL, "\"Of course. We're searching the swamp at this very moment using diving equipment.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1013", 256, TRUE);
-	OutputLine(NULL, "…なんせ濁りが激しくて深い沼、発見には相当の時間がかかると思われます」",
-			NULL, " ...But the swamp is deep and murky, so it'll take a long time to turn anything up.\"", Line_Normal);
-	ClearMessage();
+	//rかといって、このままでは緊急マニュアルの発動はもちろん、東京の本部連中が望む『祭』の実行すら困難、…いや、不可能だ。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "かといって、このままでは緊急マニュアルの発動はもちろん、東京の本部連中が望む『祭』の実行すら困難、…いや、不可能だ。",
+				NULL, "Of course, that would make carrying out the emergency manual in the \"ritual\" Tokyo HQ wanted more difficult... maybe even impossible.", Line_Normal);
+		ClearMessage();
 
-//小此木rvS14/14/VT4Bc_okono1014.「遺留物らしきものも、沼から上がった痕跡もなし…。kvS14/14/VT4Bc_okono1015.村の人間も、Ｒが行方不明になったとは誰も聞いていないそうです」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1014", 256, TRUE);
-	OutputLine(NULL, "「遺留物らしきものも、沼から上がった痕跡もなし…。",
-			NULL, "\"We haven't found any personal belongings or other traces in the swamp...", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1015", 256, TRUE);
-	OutputLine(NULL, "村の人間も、Ｒが行方不明になったとは誰も聞いていないそうです」",
-			NULL, " And it seems nobody in the village has heard anything about R going missing.\"", Line_Normal);
-	ClearMessage();
+	//rならば…その死体さえ、発見できれば……！！
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "ならば…その死体さえ、発見できれば……！！",
+				NULL, "And then... even if they could find the corpse...!!", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+		DrawScene("background/torakku2", 250 );
+		PlaySE(3, "down", 256, 64);
+		ShakeScreen( 1, 15, 15, 2, 0, );
+
+	//鷹野rvS14/09/220900009.「すぐにＲの行方を捜しなさい！！kvS14/09/220900010.　園崎詩音の供述内容をこちらに逐一報告！！kvS14/09/220900011.　警察より先に我々で身元の確保をしろッ！！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/220900009", 256, TRUE);
+		OutputLine(NULL, "「すぐにＲの行方を捜しなさい！！",
+				NULL, "\"Begin searching for R, immediately!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/220900010", 256, TRUE);
+		OutputLine(NULL, "　園崎詩音の供述内容をこちらに逐一報告！！",
+				NULL, " Report to me every single detail of Shion Sonozaki's testimony!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/220900011", 256, TRUE);
+		OutputLine(NULL, "　警察より先に我々で身元の確保をしろッ！！」",
+				NULL, " Gather all the necessary background information, before even the police can!!\"", Line_Normal);
+		ClearMessage();
+
+	//鷹野rvS14/09/VT4Bc_takano1006.「とにかく、Ｒが落ちたという沼を徹底的に捜索！！kvS14/09/VT4Bc_takano1007.　富竹ジロウの調査部隊もそちらに回せッ！！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1006", 256, TRUE);
+		OutputLine(NULL, "「とにかく、Ｒが落ちたという沼を徹底的に捜索！！",
+				NULL, "\"And thoroughly search the swamp where R fell!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1007", 256, TRUE);
+		OutputLine(NULL, "　富竹ジロウの調査部隊もそちらに回せッ！！」",
+				NULL, " Redirect the Jirou Tomitake search team to that!!\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 14, "sprite/oko_odoroki_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+	//小此木rvS14/14/VT4Bc_okono1012.「もちろん、現在でもダイバー装備を持ちこんで、沼の中まで捜索中ですが、kvS14/14/VT4Bc_okono1013.…なんせ濁りが激しくて深い沼、発見には相当の時間がかかると思われます」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1012", 256, TRUE);
+		OutputLine(NULL, "「もちろん、現在でもダイバー装備を持ちこんで、沼の中まで捜索中ですが、",
+				NULL, "\"Of course. We're searching the swamp at this very moment using diving equipment.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1013", 256, TRUE);
+		OutputLine(NULL, "…なんせ濁りが激しくて深い沼、発見には相当の時間がかかると思われます」",
+				NULL, " ...But the swamp is deep and murky, so it'll take a long time to turn anything up.\"", Line_Normal);
+		ClearMessage();
+
+	//小此木rvS14/14/VT4Bc_okono1014.「遺留物らしきものも、沼から上がった痕跡もなし…。kvS14/14/VT4Bc_okono1015.村の人間も、Ｒが行方不明になったとは誰も聞いていないそうです」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1014", 256, TRUE);
+		OutputLine(NULL, "「遺留物らしきものも、沼から上がった痕跡もなし…。",
+				NULL, "\"We haven't found any personal belongings or other traces in the swamp...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1015", 256, TRUE);
+		OutputLine(NULL, "村の人間も、Ｒが行方不明になったとは誰も聞いていないそうです」",
+				NULL, " And it seems nobody in the village has heard anything about R going missing.\"", Line_Normal);
+		ClearMessage();
+	}
 
 	ModDrawCharacter(5, 9, "sprite/ta3_human_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
@@ -3357,136 +4646,171 @@ void main()
 
 	ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
-//鷹野rvS14/09/VT4Bc_takano1008.「じゃ、じゃあどうして、Ｒがいなくなったのに誰も大騒ぎしていないのよ？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1008", 256, TRUE);
-	OutputLine(NULL, "「じゃ、じゃあどうして、Ｒがいなくなったのに誰も大騒ぎしていないのよ？！」",
-			NULL, "\"Th-then why isn't anybody making a fuss that R is gone?!\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps2/09/220900015", 540, TRUE);
+		OutputLine(NULL, "「じゃ、じゃあＲはいったいどこに監禁されてるってのよ！！",
+				NULL, "\"Th-then where the hell is R being held?!\"", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps2/09/220900016", 540, TRUE);
+		OutputLine(NULL, "　園崎詩音がＲを隠匿できる場所はこの村でも限られてるはずでしょうが！！」",
+				NULL, " There can't be more than a handful of placed where Shion Sonozaki could hide her!!\"", Line_Normal);
+		ClearMessage();
 
-//鷹野rvS14/09/VT4Bc_takano1009.「ただの子供でもいなくなれば大変なのに、あれだけの村のシンボルが見当たらなくなったら、その知らせが村中に知れ渡っていてもおかしくないでしょう！！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1009", 256, TRUE);
-	OutputLine(NULL, "「ただの子供でもいなくなれば大変なのに、あれだけの村のシンボルが見当たらなくなったら、その知らせが村中に知れ渡っていてもおかしくないでしょう！！」",
-			NULL, "\"It would be no big deal if she were a mere child, but she's the greatest symbol of the village so it wouldn't be unreasonable for even the entire village to notice!!\"", Line_Normal);
-	ClearMessage();
+		ModDrawCharacter(3, 14, "sprite/oko_kumon_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-	ModDrawCharacter(3, 14, "sprite/oko_kumon_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps2/14/223400015", 540, TRUE);
+		OutputLine(NULL, "「三佐、…あるいは、という仮定をお許し願えるなら申し上げますが。",
+				NULL, "\"Major... forgive me for being presumptuous, but...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400016", 540, TRUE);
+		OutputLine(NULL, "……古手梨花は、すでに殺害されているのではないでしょうか？」",
+				NULL, " you realize there's also a chance that Rika Furude has already been killed?\"", Line_Normal);
+		ClearMessage();
 
-//小此木rvS14/14/VT4Bc_okono1016.「村の連中は、Ｒが自宅で寝込んでいると思いこんでいるようです」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1016", 256, TRUE);
-	OutputLine(NULL, "「村の連中は、Ｒが自宅で寝込んでいると思いこんでいるようです」",
-			NULL, "\"The villagers all think R is resting at home.\"", Line_Normal);
-	ClearMessage();
+		ModDrawCharacter(5, 9, "sprite/ta3_human_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
-//小此木rvS14/14/VT4Bc_okono1017.「実際、演舞が終わった直後に気分が悪いといって倒れて、入江所長が診察しているのを何人かが目撃しています。kvS14/14/VT4Bc_okono1018.その後、大人たちのひとりに背負われて自宅に帰り、そのまま眠ってしまったと」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1017", 256, TRUE);
-	OutputLine(NULL, "「実際、演舞が終わった直後に気分が悪いといって倒れて、入江所長が診察しているのを何人かが目撃しています。",
-			NULL, "\"In fact, some people reported that she passed out feeling ill immediately after her performance was over, and that she went to Director Irie for treatment.", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1018", 256, TRUE);
-	OutputLine(NULL, "その後、大人たちのひとりに背負われて自宅に帰り、そのまま眠ってしまったと」",
-			NULL, " Then she went home with one of the adults afterwards and fell asleep.\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps2/09/220900017", 540, TRUE);
+		OutputLine(NULL, "「殺害？",
+				NULL, "\"Killed?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps2/09/220900018", 540, TRUE);
+		OutputLine(NULL, "　死体も見つかっていないのに殺害だとっ？！」",
+				NULL, "We haven't even found a corpse and you're already declaring it murder?!\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 9, "sprite/ta3_iradachi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
-	PlaySE(3, "dageki", 256, 64);
-	ShakeScreen( 1, 15, 15, 2, 0, );
+		ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	} else {
+	//鷹野rvS14/09/VT4Bc_takano1008.「じゃ、じゃあどうして、Ｒがいなくなったのに誰も大騒ぎしていないのよ？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1008", 256, TRUE);
+		OutputLine(NULL, "「じゃ、じゃあどうして、Ｒがいなくなったのに誰も大騒ぎしていないのよ？！」",
+				NULL, "\"Th-then why isn't anybody making a fuss that R is gone?!\"", Line_Normal);
+		ClearMessage();
 
-//鷹野rvS14/09/VT4Bc_takano1010.「だ…だったら、自宅にＲはいるの？kvS14/09/VT4Bc_takano1011.　いないのっ？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1010", 256, TRUE);
-	OutputLine(NULL, "「だ…だったら、自宅にＲはいるの？",
-			NULL, "\"Th...then, R is at home?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1011", 256, TRUE);
-	OutputLine(NULL, "　いないのっ？！」",
-			NULL, " What's the meaning of this?!\"", Line_Normal);
-	ClearMessage();
+	//鷹野rvS14/09/VT4Bc_takano1009.「ただの子供でもいなくなれば大変なのに、あれだけの村のシンボルが見当たらなくなったら、その知らせが村中に知れ渡っていてもおかしくないでしょう！！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1009", 256, TRUE);
+		OutputLine(NULL, "「ただの子供でもいなくなれば大変なのに、あれだけの村のシンボルが見当たらなくなったら、その知らせが村中に知れ渡っていてもおかしくないでしょう！！」",
+				NULL, "\"It would be no big deal if she were a mere child, but she's the greatest symbol of the village so it wouldn't be unreasonable for even the entire village to notice!!\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(3, 14, "sprite/oko_odoroki_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+		ModDrawCharacter(3, 14, "sprite/oko_kumon_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//小此木rvS14/14/VT4Bc_okono1019.「いえ、すぐに隊員を差し向けましたが、kvS14/14/VT4Bc_okono1020.…どうやら、いないようです。kvS14/14/VT4Bc_okono1021.Ｒが自宅を抜け出して裏山に行ったということを、村の連中はおそらく知らないんじゃないでしょうか？」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1019", 256, TRUE);
-	OutputLine(NULL, "「いえ、すぐに隊員を差し向けましたが、",
-			NULL, "\"No, we sent someone to check there immediately.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1020", 256, TRUE);
-	OutputLine(NULL, "…どうやら、いないようです。",
-			NULL, " ...Apparently, she's not there.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1021", 256, TRUE);
-	OutputLine(NULL, "Ｒが自宅を抜け出して裏山に行ったということを、村の連中はおそらく知らないんじゃないでしょうか？」",
-			NULL, " I guess the villagers don't know that R left her home and headed into the mountains?\"", Line_Normal);
-	ClearMessage();
+	//小此木rvS14/14/VT4Bc_okono1016.「村の連中は、Ｒが自宅で寝込んでいると思いこんでいるようです」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1016", 256, TRUE);
+		OutputLine(NULL, "「村の連中は、Ｒが自宅で寝込んでいると思いこんでいるようです」",
+				NULL, "\"The villagers all think R is resting at home.\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	//小此木rvS14/14/VT4Bc_okono1017.「実際、演舞が終わった直後に気分が悪いといって倒れて、入江所長が診察しているのを何人かが目撃しています。kvS14/14/VT4Bc_okono1018.その後、大人たちのひとりに背負われて自宅に帰り、そのまま眠ってしまったと」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1017", 256, TRUE);
+		OutputLine(NULL, "「実際、演舞が終わった直後に気分が悪いといって倒れて、入江所長が診察しているのを何人かが目撃しています。",
+				NULL, "\"In fact, some people reported that she passed out feeling ill immediately after her performance was over, and that she went to Director Irie for treatment.", GetGlobalFlag(GLinemodeSp));
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1018", 256, TRUE);
+		OutputLine(NULL, "その後、大人たちのひとりに背負われて自宅に帰り、そのまま眠ってしまったと」",
+				NULL, " Then she went home with one of the adults afterwards and fell asleep.\"", Line_Normal);
+		ClearMessage();
 
-//鷹野rvS14/09/VT4Bc_takano1012.「なっ…なんのために、Ｒは裏山に行ったのよ？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1012", 256, TRUE);
-	OutputLine(NULL, "「なっ…なんのために、Ｒは裏山に行ったのよ？！」",
-			NULL, "\"Th...then why did R go into the mountains?!\"", Line_Normal);
-	ClearMessage();
+		ModDrawCharacter(5, 9, "sprite/ta3_iradachi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
+		PlaySE(3, "dageki", 256, 64);
+		ShakeScreen( 1, 15, 15, 2, 0, );
 
-//小此木rvS14/14/VT4Bc_okono1022.「そこまではわかりません。kvS14/14/VT4Bc_okono1023.…ただ」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1022", 256, TRUE);
-	OutputLine(NULL, "「そこまではわかりません。",
-			NULL, "\"That, I don't know.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1023", 256, TRUE);
-	OutputLine(NULL, "…ただ」",
-			NULL, " ...But,\"", Line_Normal);
-	ClearMessage();
+	//鷹野rvS14/09/VT4Bc_takano1010.「だ…だったら、自宅にＲはいるの？kvS14/09/VT4Bc_takano1011.　いないのっ？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1010", 256, TRUE);
+		OutputLine(NULL, "「だ…だったら、自宅にＲはいるの？",
+				NULL, "\"Th...then, R is at home?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1011", 256, TRUE);
+		OutputLine(NULL, "　いないのっ？！」",
+				NULL, " What's the meaning of this?!\"", Line_Normal);
+		ClearMessage();
 
-	PlaySE(3, "dageki", 256, 64);
-	ShakeScreen( 1, 15, 15, 2, 0, );
+		ModDrawCharacter(3, 14, "sprite/oko_odoroki_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//鷹野rvS14/09/VT4Bc_takano1013.「ただ…なにっ？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1013", 256, TRUE);
-	OutputLine(NULL, "「ただ…なにっ？！」",
-			NULL, "\"But... what?!\"", Line_Normal);
-	ClearMessage();
+	//小此木rvS14/14/VT4Bc_okono1019.「いえ、すぐに隊員を差し向けましたが、kvS14/14/VT4Bc_okono1020.…どうやら、いないようです。kvS14/14/VT4Bc_okono1021.Ｒが自宅を抜け出して裏山に行ったということを、村の連中はおそらく知らないんじゃないでしょうか？」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1019", 256, TRUE);
+		OutputLine(NULL, "「いえ、すぐに隊員を差し向けましたが、",
+				NULL, "\"No, we sent someone to check there immediately.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1020", 256, TRUE);
+		OutputLine(NULL, "…どうやら、いないようです。",
+				NULL, " ...Apparently, she's not there.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1021", 256, TRUE);
+		OutputLine(NULL, "Ｒが自宅を抜け出して裏山に行ったということを、村の連中はおそらく知らないんじゃないでしょうか？」",
+				NULL, " I guess the villagers don't know that R left her home and headed into the mountains?\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(3, 14, "sprite/oko_kumon_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+		ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
-//小此木rvS14/14/VT4Bc_okono1024.「三佐、…あるいは、という仮定をお許し願えるなら申し上げますが。kvS14/14/VT4Bc_okono1025.Ｒは、園崎詩音の手ですでに殺害されていると判断して…作戦を予定通りに進めてもよろしいのではないでしょうか？」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1024", 256, TRUE);
-	OutputLine(NULL, "「三佐、…あるいは、という仮定をお許し願えるなら申し上げますが。",
-			NULL, "\"Major... forgive me for being presumptuous, but...", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1025", 256, TRUE);
-	OutputLine(NULL, "Ｒは、園崎詩音の手ですでに殺害されていると判断して…作戦を予定通りに進めてもよろしいのではないでしょうか？」",
-			NULL, " if we make the determination that R has already been killed by Shion Sonozaki... is it okay to proceed as planned?\"", Line_Normal);
-	ClearMessage();
+	//鷹野rvS14/09/VT4Bc_takano1012.「なっ…なんのために、Ｒは裏山に行ったのよ？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1012", 256, TRUE);
+		OutputLine(NULL, "「なっ…なんのために、Ｒは裏山に行ったのよ？！」",
+				NULL, "\"Th...then why did R go into the mountains?!\"", Line_Normal);
+		ClearMessage();
 
-//小此木rvS14/14/VT4Bc_okono1026.「隊員たちの報告から判断しても、その扱いで進めて問題はないと私は考えますが」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1026", 256, TRUE);
-	OutputLine(NULL, "「隊員たちの報告から判断しても、その扱いで進めて問題はないと私は考えますが」",
-			NULL, "\"Even if the information we get from the team points to that, I don't think there's any problem with continuing the operation.\"", Line_Normal);
-	ClearMessage();
+	//小此木rvS14/14/VT4Bc_okono1022.「そこまではわかりません。kvS14/14/VT4Bc_okono1023.…ただ」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1022", 256, TRUE);
+		OutputLine(NULL, "「そこまではわかりません。",
+				NULL, "\"That, I don't know.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1023", 256, TRUE);
+		OutputLine(NULL, "…ただ」",
+				NULL, " ...But,\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 9, "sprite/ta3_human_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+		PlaySE(3, "dageki", 256, 64);
+		ShakeScreen( 1, 15, 15, 2, 0, );
 
-//鷹野rvS14/09/VT4Bc_takano1014.「もう死んでいる…だと？」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1014", 256, TRUE);
-	OutputLine(NULL, "「もう死んでいる…だと？」",
-			NULL, "\"If she's... already dead?\"", Line_Normal);
-	ClearMessage();
+	//鷹野rvS14/09/VT4Bc_takano1013.「ただ…なにっ？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1013", 256, TRUE);
+		OutputLine(NULL, "「ただ…なにっ？！」",
+				NULL, "\"But... what?!\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
-	PlaySE(3, "tatakiwaru", 256, 64);
-	ShakeScreen( 1, 15, 15, 2, 0, );
+		ModDrawCharacter(3, 14, "sprite/oko_kumon_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//鷹野rvS14/09/VT4Bc_takano1015.「死体も見つかっていないのに、状況証拠だけで殺害されたって決めつけるの、あんたたちはっ？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1015", 256, TRUE);
-	OutputLine(NULL, "「死体も見つかっていないのに、状況証拠だけで殺害されたって決めつけるの、あんたたちはっ？！」",
-			NULL, "\"You're all declaring that she's been killed based on circumstantial evidence, without even finding the corpse?!\"", Line_Normal);
-	ClearMessage();
+	//小此木rvS14/14/VT4Bc_okono1024.「三佐、…あるいは、という仮定をお許し願えるなら申し上げますが。kvS14/14/VT4Bc_okono1025.Ｒは、園崎詩音の手ですでに殺害されていると判断して…作戦を予定通りに進めてもよろしいのではないでしょうか？」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1024", 256, TRUE);
+		OutputLine(NULL, "「三佐、…あるいは、という仮定をお許し願えるなら申し上げますが。",
+				NULL, "\"Major... forgive me for being presumptuous, but...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1025", 256, TRUE);
+		OutputLine(NULL, "Ｒは、園崎詩音の手ですでに殺害されていると判断して…作戦を予定通りに進めてもよろしいのではないでしょうか？」",
+				NULL, " if we make the determination that R has already been killed by Shion Sonozaki... is it okay to proceed as planned?\"", Line_Normal);
+		ClearMessage();
+
+	//小此木rvS14/14/VT4Bc_okono1026.「隊員たちの報告から判断しても、その扱いで進めて問題はないと私は考えますが」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1026", 256, TRUE);
+		OutputLine(NULL, "「隊員たちの報告から判断しても、その扱いで進めて問題はないと私は考えますが」",
+				NULL, "\"Even if the information we get from the team points to that, I don't think there's any problem with continuing the operation.\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 9, "sprite/ta3_human_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+	//鷹野rvS14/09/VT4Bc_takano1014.「もう死んでいる…だと？」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1014", 256, TRUE);
+		OutputLine(NULL, "「もう死んでいる…だと？」",
+				NULL, "\"If she's... already dead?\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
+		PlaySE(3, "tatakiwaru", 256, 64);
+		ShakeScreen( 1, 15, 15, 2, 0, );
+
+	//鷹野rvS14/09/VT4Bc_takano1015.「死体も見つかっていないのに、状況証拠だけで殺害されたって決めつけるの、あんたたちはっ？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1015", 256, TRUE);
+		OutputLine(NULL, "「死体も見つかっていないのに、状況証拠だけで殺害されたって決めつけるの、あんたたちはっ？！」",
+				NULL, "\"You're all declaring that she's been killed based on circumstantial evidence, without even finding the corpse?!\"", Line_Normal);
+		ClearMessage();
+	}
 
 //鷹野rvS14/09/VT4Bc_takano1016.「冗談じゃない、そんな不確定な状態でこの緊急マニュアルが発動させられるわけがないでしょう？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
@@ -3635,66 +4959,68 @@ void main()
 	DrawScene("black", 1000 );
 	FadeOutBGM(2, 200, FALSE);
 
-//r…………。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "…………。",
-			NULL, "......", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc) < 10) {
+	//r…………。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…………。",
+				NULL, "......", Line_Normal);
+		ClearMessage();
 
-	PlayBGM( 1, "semi_r", 128, 0 );
-	ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	DrawScene("background/torakku2", 1000 );
+		PlayBGM( 1, "semi_r", 128, 0 );
+		ModDrawCharacter(5, 9, "sprite/ta3_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+		DrawScene("background/torakku2", 1000 );
 
-//鷹野rvS14/09/VT4Bc_takano1018.「……え…？kvS14/09/VT4Bc_takano1019.　ちょ…ちょっと、待ってくださいっ！　いまさら、そんなっ……？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1018", 256, TRUE);
-	OutputLine(NULL, "「……え…？",
-			NULL, "\"...Huh...?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1019", 256, TRUE);
-	OutputLine(NULL, "　ちょ…ちょっと、待ってくださいっ！　いまさら、そんなっ……？！」",
-			NULL, " H...hold on! No way, this far along...?!\"", Line_Normal);
-	ClearMessage();
+	//鷹野rvS14/09/VT4Bc_takano1018.「……え…？kvS14/09/VT4Bc_takano1019.　ちょ…ちょっと、待ってくださいっ！　いまさら、そんなっ……？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1018", 256, TRUE);
+		OutputLine(NULL, "「……え…？",
+				NULL, "\"...Huh...?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1019", 256, TRUE);
+		OutputLine(NULL, "　ちょ…ちょっと、待ってくださいっ！　いまさら、そんなっ……？！」",
+				NULL, " H...hold on! No way, this far along...?!\"", Line_Normal);
+		ClearMessage();
 
-//r…………。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "…………。",
-			NULL, "......", Line_Normal);
-	ClearMessage();
+	//r…………。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…………。",
+				NULL, "......", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 9, "sprite/ta3_iradachi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
-	PlaySE(3, "addse05", 256, 64);
-	ShakeScreen( 1, 15, 15, 2, 0, );
+		ModDrawCharacter(5, 9, "sprite/ta3_iradachi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
+		PlaySE(3, "addse05", 256, 64);
+		ShakeScreen( 1, 15, 15, 2, 0, );
 
-//鷹野rvS14/09/VT4Bc_takano1020.「ぐっ…！kvS14/09/VT4Bc_takano1021.　い、いえ…そういうわけでは…！kvS14/09/VT4Bc_takano1022.　と、ともかく以後の善処について…ええ、はい…あ、改めてご相談を…！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1020", 256, TRUE);
-	OutputLine(NULL, "「ぐっ…！",
-			NULL, "\"Gh...!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1021", 256, TRUE);
-	OutputLine(NULL, "　い、いえ…そういうわけでは…！",
-			NULL, " N-no... That's not the case...!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1022", 256, TRUE);
-	OutputLine(NULL, "　と、ともかく以後の善処について…ええ、はい…あ、改めてご相談を…！」",
-			NULL, " A-anyway, appropriate steps are being taken from here... Right, yes... Ah, we'll speak again later...!\"", Line_Normal);
-	ClearMessage();
+	//鷹野rvS14/09/VT4Bc_takano1020.「ぐっ…！kvS14/09/VT4Bc_takano1021.　い、いえ…そういうわけでは…！kvS14/09/VT4Bc_takano1022.　と、ともかく以後の善処について…ええ、はい…あ、改めてご相談を…！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1020", 256, TRUE);
+		OutputLine(NULL, "「ぐっ…！",
+				NULL, "\"Gh...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1021", 256, TRUE);
+		OutputLine(NULL, "　い、いえ…そういうわけでは…！",
+				NULL, " N-no... That's not the case...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1022", 256, TRUE);
+		OutputLine(NULL, "　と、ともかく以後の善処について…ええ、はい…あ、改めてご相談を…！」",
+				NULL, " A-anyway, appropriate steps are being taken from here... Right, yes... Ah, we'll speak again later...!\"", Line_Normal);
+		ClearMessage();
 
-//r…………。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "…………。",
-			NULL, "......", Line_Normal);
-	ClearMessage();
+	//r…………。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "…………。",
+				NULL, "......", Line_Normal);
+		ClearMessage();
 
-	DrawScene("white", 250 );
-	PlaySE(3, "dsse08", 256, 64);
-	DrawScene("black", 500 );
-	PlaySE(3, "dageki", 256, 64);
+		DrawScene("white", 250 );
+		PlaySE(3, "dsse08", 256, 64);
+		DrawScene("black", 500 );
+		PlaySE(3, "dageki", 256, 64);
 
-//鷹野rvS14/09/VT4Bc_takano1023.「……っ…！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1023", 256, TRUE);
-	OutputLine(NULL, "「……っ…！」",
-			NULL, "\"......!\"", Line_Normal);
-	ClearMessage();
+	//鷹野rvS14/09/VT4Bc_takano1023.「……っ…！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>Takano</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 9, "ps3/s14/09/vt4bc_takano1023", 256, TRUE);
+		OutputLine(NULL, "「……っ…！」",
+				NULL, "\"......!\"", Line_Normal);
+		ClearMessage();
+	}
 
 	Wait( 2000 );
 	FadeOutBGM(1, 200, TRUE);
@@ -3711,114 +5037,184 @@ void main()
 	ModSetLayerFilter(4, 256, "night");
 	ModDrawCharacter(4, 14, "sprite/oko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
-//小此木rvS14/14/223400020.「あぁ、わかった。kvS14/14/223400021.興宮署の方がわかり次第、俺と三佐に連絡しろ！kvS14/14/223400022.　それより！　Ｒがあの沼に落ちたのは間違いないんだな？！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/223400020", 256, TRUE);
-	OutputLine(NULL, "「あぁ、わかった。",
-			NULL, "\"Yes, I understand.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/223400021", 256, TRUE);
-	OutputLine(NULL, "興宮署の方がわかり次第、俺と三佐に連絡しろ！",
-			NULL, " Contact me and the Major as soon as anyone at Okinomiya Station learns anything!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/223400022", 256, TRUE);
-	OutputLine(NULL, "　それより！　Ｒがあの沼に落ちたのは間違いないんだな？！」",
-			NULL, " And more importantly! Are we sure that R fell into the swamp?!\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps2/14/223400020", 540, TRUE);
+		OutputLine(NULL, "「あぁ、わかった。",
+				NULL, "\"Yes, I understand.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400021", 540, TRUE);
+		OutputLine(NULL, "興宮署の方がわかり次第、俺と三佐に連絡しろ！",
+				NULL, " Contact me and the Major as soon as anyone at Okinomiya Station learns anything!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400022", 540, TRUE);
+		OutputLine(NULL, "　それより！　Ｒの監視体制だが、Ｒの確認をなぜ怠った！！」",
+				NULL, " And more importantly! How did R's surveillance team screw this up?!\"", Line_Normal);
+		ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-	ModDrawCharacter(5, 14, "sprite/oko_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
-	ModDrawCharacter(3, 49, "sprite/ama_kumonn_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鶯１</color>", NULL, "<color=#f5e6d3>Nightingale 1</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 0, "ps2/00/ugu0111001", 540, TRUE);
+		OutputLine(NULL, "「入江所長から診療所への宿泊を聞いておりましたので、",
+				NULL, "\"Director Irie reported she was staying at the clinic.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/ugu0111002", 540, TRUE);
+		OutputLine(NULL, "朝７時に診療所を出たと聞かされたときはそのまま学校に向かうものと考えて、昼過ぎの帰宅を待つ予定でした」",
+				NULL, " He said she left at 7 AM, so we assumed she was going straight to school and expected her to come back after lunch.\"", Line_Normal);
+		ClearMessage();
 
-//雲雀１３rvS14/49/VT4Bc_13hibari1008.「と…富竹ジロウが落ちた時のものとは違う、大きな水音を隊員の何人かが聞いているらしい」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１３</color>", NULL, "<color=#f5e6d3>Skylark 13</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1008", 256, TRUE);
-	OutputLine(NULL, "「と…富竹ジロウが落ちた時のものとは違う、大きな水音を隊員の何人かが聞いているらしい」",
-			NULL, "\"W...well, some of the team did hear a loud splashing sound that was distinct from when Jirou Tomitake fell in.\"", Line_Normal);
-	ClearMessage();
+		ModDrawCharacter(4, 14, "sprite/oko_kumon_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
-//雲雀１３rvS14/49/VT4Bc_13hibari1009.「沼に向かって名前を呼びかけている少年もＲの友人の一人と確認した。ほぼ間違いはない」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１３</color>", NULL, "<color=#f5e6d3>Skylark 13</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1009", 256, TRUE);
-	OutputLine(NULL, "「沼に向かって名前を呼びかけている少年もＲの友人の一人と確認した。ほぼ間違いはない」",
-			NULL, "\"And a boy that we confirmed as a friend of hers was shouting her name by the swamp. There's almost no doubt about it.\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps2/14/223400023", 540, TRUE);
+		OutputLine(NULL, "「……作戦前に、手ぇ抜きやがって。",
+				NULL, "\"...Slacking off right before the mission?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400024", 540, TRUE);
+		OutputLine(NULL, "………それで、園崎本家にはＲの所在は本当に確認されなかったんだな？！」",
+				NULL, " ...So, did you at least confirm if R is at the Sonozaki main house?!\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 14, "sprite/oko_kumon_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１</color>", NULL, "<color=#f5e6d3>Skylark 1</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 0, "ps2/00/hiba0111003", 540, TRUE);
+		OutputLine(NULL, "「はい！",
+				NULL, "\"Yes!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/hiba0111004", 540, TRUE);
+		OutputLine(NULL, "　それは間違いなく！」",
+				NULL, " We're positive of that!\"", Line_Normal);
+		ClearMessage();
 
-//小此木rvS14/14/VT4Bc_okono1027.「…だったらなんで、そのガキは村の連中に連絡しないんだ？kvS14/14/VT4Bc_okono1028.　そいつにたばかられたって可能性は本当にないのか？」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1027", 256, TRUE);
-	OutputLine(NULL, "「…だったらなんで、そのガキは村の連中に連絡しないんだ？",
-			NULL, "\"...Then, why didn't that brat tell the other villagers about it?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1028", 256, TRUE);
-	OutputLine(NULL, "　そいつにたばかられたって可能性は本当にないのか？」",
-			NULL, " Is there any possibility he knows something about our plans?\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>白鷺１</color>", NULL, "<color=#f5e6d3>Heron 1</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 0, "ps2/00/shira0111001", 540, TRUE);
+		OutputLine(NULL, "「…隊長。まだ疑うなら、今すぐ園崎本家に突入しては。",
+				NULL, "\"...Commander. If you have any doubts, why don't we raid the Sonozaki house immediately?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/shira0111002", 540, TRUE);
+		OutputLine(NULL, "　現状なら強攻策でも、後でいくらでも理由がつけられます」",
+				NULL, " Even if its an overly aggressive move, we can always come up with a justification later.\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(3, 49, "sprite/ama_sakebi_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+		ModDrawCharacter(4, 14, "sprite/oko_odoroki_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
-//雲雀１３rvS14/49/VT4Bc_13hibari1010.「それはない！kvS14/49/VT4Bc_13hibari1011.　隠ぺい行動は万全を期した、その少年が我々の存在に気づいた形跡は無いはずだ！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１３</color>", NULL, "<color=#f5e6d3>Skylark 13</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1010", 256, TRUE);
-	OutputLine(NULL, "「それはない！",
-			NULL, "\"Absolutely not!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1011", 256, TRUE);
-	OutputLine(NULL, "　隠ぺい行動は万全を期した、その少年が我々の存在に気づいた形跡は無いはずだ！」",
-			NULL, " Our cover was perfect. There should be no reason the boy would even suspect our presence!\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps2/14/223400025", 540, TRUE);
+		OutputLine(NULL, "「そいつは三佐の許可がなけりゃできん！",
+				NULL, "\"That would have to be authorized by the Major!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400026", 540, TRUE);
+		OutputLine(NULL, "三佐も、興宮署の件が判明するまで突入許可は出すまい。",
+				NULL, " And the Major won't sign off on that until we know what happened in Okinomiya Station.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400027", 540, TRUE);
+		OutputLine(NULL, "突入命令に備えて、園崎本家への監視を増員。",
+				NULL, " Increase surveillance on the Sonozaki estate. Be prepared for a raid.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps2/14/223400028", 540, TRUE);
+		OutputLine(NULL, "　それと、村の捜索に全力を傾けろ！！」",
+				NULL, " And do everything you can to search the village!!\"", Line_Normal);
+		ClearMessage();
+	} else {
+	//小此木rvS14/14/223400020.「あぁ、わかった。kvS14/14/223400021.興宮署の方がわかり次第、俺と三佐に連絡しろ！kvS14/14/223400022.　それより！　Ｒがあの沼に落ちたのは間違いないんだな？！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/223400020", 256, TRUE);
+		OutputLine(NULL, "「あぁ、わかった。",
+				NULL, "\"Yes, I understand.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/223400021", 256, TRUE);
+		OutputLine(NULL, "興宮署の方がわかり次第、俺と三佐に連絡しろ！",
+				NULL, " Contact me and the Major as soon as anyone at Okinomiya Station learns anything!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/223400022", 256, TRUE);
+		OutputLine(NULL, "　それより！　Ｒがあの沼に落ちたのは間違いないんだな？！」",
+				NULL, " And more importantly! Are we sure that R fell into the swamp?!\"", Line_Normal);
+		ClearMessage();
 
-//r確かに、そいつがたばかったのでは、と小此木自身も言ってみたものの…前原圭一という少年が園崎詩音の共犯となって、Ｒを殺害する動機がまるで思いつかない。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "確かに、そいつがたばかったのでは、と小此木自身も言ってみたものの…前原圭一という少年が園崎詩音の共犯となって、Ｒを殺害する動機がまるで思いつかない。",
-			NULL, "Indeed, Okonogi himself thought the idea was ridiculous... Even if the boy named Keiichi Maebara had become an accomplice of Shion Sonozaki, he had no motive for killing R.", Line_Normal);
-	ClearMessage();
+		FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+		ModDrawCharacter(5, 14, "sprite/oko_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+		ModDrawCharacter(3, 49, "sprite/ama_kumonn_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//rだが、…何かが、引っかかる。…あるいはもし、Ｒが自分たちの暗躍を察知して、こちらの情報をその少年に打ち明けていたとしたら？
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "だが、…何かが、引っかかる。…あるいはもし、Ｒが自分たちの暗躍を察知して、こちらの情報をその少年に打ち明けていたとしたら？",
-			NULL, "But... something stuck out. ...What if R had somehow sensed their secret maneuvers and shared information with the boy?", Line_Normal);
-	ClearMessage();
+	//雲雀１３rvS14/49/VT4Bc_13hibari1008.「と…富竹ジロウが落ちた時のものとは違う、大きな水音を隊員の何人かが聞いているらしい」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１３</color>", NULL, "<color=#f5e6d3>Skylark 13</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1008", 256, TRUE);
+		OutputLine(NULL, "「と…富竹ジロウが落ちた時のものとは違う、大きな水音を隊員の何人かが聞いているらしい」",
+				NULL, "\"W...well, some of the team did hear a loud splashing sound that was distinct from when Jirou Tomitake fell in.\"", Line_Normal);
+		ClearMessage();
 
-//r可能性としては低いが、それが事実ならば振り回されている自分たちこそ、いい面の皮ということになる…。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "可能性としては低いが、それが事実ならば振り回されている自分たちこそ、いい面の皮ということになる…。",
-			NULL, "It's unlikely, but if there's any truth to it then it put their men to shame.", Line_Normal);
-	ClearMessage();
+	//雲雀１３rvS14/49/VT4Bc_13hibari1009.「沼に向かって名前を呼びかけている少年もＲの友人の一人と確認した。ほぼ間違いはない」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１３</color>", NULL, "<color=#f5e6d3>Skylark 13</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1009", 256, TRUE);
+		OutputLine(NULL, "「沼に向かって名前を呼びかけている少年もＲの友人の一人と確認した。ほぼ間違いはない」",
+				NULL, "\"And a boy that we confirmed as a friend of hers was shouting her name by the swamp. There's almost no doubt about it.\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(3, 49, "sprite/ama_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+		ModDrawCharacter(5, 14, "sprite/oko_kumon_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
-//雲雀１３rvS14/49/VT4Bc_13hibari1012.「…隊長。まだ疑うなら、今すぐその少年を拘束するか？kvS14/49/VT4Bc_13hibari1013.　現状なら簡単に拉致出来ると思うが……」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１３</color>", NULL, "<color=#f5e6d3>Skylark 13</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1012", 256, TRUE);
-	OutputLine(NULL, "「…隊長。まだ疑うなら、今すぐその少年を拘束するか？",
-			NULL, "\"...Commander. If you have any doubts, why don't we capture the boy immediately?", Line_WaitForInput);
-	ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1013", 256, TRUE);
-	OutputLine(NULL, "　現状なら簡単に拉致出来ると思うが……」",
-			NULL, " I think it would be pretty easy to abduct him in the current circumstances...\"", Line_Normal);
-	ClearMessage();
+	//小此木rvS14/14/VT4Bc_okono1027.「…だったらなんで、そのガキは村の連中に連絡しないんだ？kvS14/14/VT4Bc_okono1028.　そいつにたばかられたって可能性は本当にないのか？」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1027", 256, TRUE);
+		OutputLine(NULL, "「…だったらなんで、そのガキは村の連中に連絡しないんだ？",
+				NULL, "\"...Then, why didn't that brat tell the other villagers about it?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1028", 256, TRUE);
+		OutputLine(NULL, "　そいつにたばかられたって可能性は本当にないのか？」",
+				NULL, " Is there any possibility he knows something about our plans?\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(5, 14, "sprite/oko_odoroki_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+		ModDrawCharacter(3, 49, "sprite/ama_sakebi_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
-//小此木rvS14/14/VT4Bc_okono1029.「そいつは三佐の許可がなけりゃできん！kvS14/14/VT4Bc_okono1030.　それに、拉致ともなれば警察がその犯人捜査に乗り出すことになって、色々厄介事が増えるだけだ」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1029", 256, TRUE);
-	OutputLine(NULL, "「そいつは三佐の許可がなけりゃできん！",
-			NULL, "\"That would have to be authorized by the Major!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1030", 256, TRUE);
-	OutputLine(NULL, "　それに、拉致ともなれば警察がその犯人捜査に乗り出すことになって、色々厄介事が増えるだけだ」",
-			NULL, " Plus, if he were to be kidnapped, the police would begin investigating the matter and that would only add to our troubles.\"", Line_Normal);
-	ClearMessage();
+	//雲雀１３rvS14/49/VT4Bc_13hibari1010.「それはない！kvS14/49/VT4Bc_13hibari1011.　隠ぺい行動は万全を期した、その少年が我々の存在に気づいた形跡は無いはずだ！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１３</color>", NULL, "<color=#f5e6d3>Skylark 13</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1010", 256, TRUE);
+		OutputLine(NULL, "「それはない！",
+				NULL, "\"Absolutely not!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1011", 256, TRUE);
+		OutputLine(NULL, "　隠ぺい行動は万全を期した、その少年が我々の存在に気づいた形跡は無いはずだ！」",
+				NULL, " Our cover was perfect. There should be no reason the boy would even suspect our presence!\"", Line_Normal);
+		ClearMessage();
 
-//小此木rvS14/14/VT4Bc_okono1031.「ともあれ、念のためだ。…そのガキの所在と動向を探れ！kvS14/14/VT4Bc_okono1032.　それと、村の捜索に全力を傾けろ！！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1031", 256, TRUE);
-	OutputLine(NULL, "「ともあれ、念のためだ。…そのガキの所在と動向を探れ！",
-			NULL, "\"Anyway, just in case... monitor this boy's whereabouts and activities!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1032", 256, TRUE);
-	OutputLine(NULL, "　それと、村の捜索に全力を傾けろ！！」",
-			NULL, " And do everything you can to search the village!!\"", Line_Normal);
-	ClearMessage();
+	//r確かに、そいつがたばかったのでは、と小此木自身も言ってみたものの…前原圭一という少年が園崎詩音の共犯となって、Ｒを殺害する動機がまるで思いつかない。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "確かに、そいつがたばかったのでは、と小此木自身も言ってみたものの…前原圭一という少年が園崎詩音の共犯となって、Ｒを殺害する動機がまるで思いつかない。",
+				NULL, "Indeed, Okonogi himself thought the idea was ridiculous... Even if the boy named Keiichi Maebara had become an accomplice of Shion Sonozaki, he had no motive for killing R.", Line_Normal);
+		ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
+	//rだが、…何かが、引っかかる。…あるいはもし、Ｒが自分たちの暗躍を察知して、こちらの情報をその少年に打ち明けていたとしたら？
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "だが、…何かが、引っかかる。…あるいはもし、Ｒが自分たちの暗躍を察知して、こちらの情報をその少年に打ち明けていたとしたら？",
+				NULL, "But... something stuck out. ...What if R had somehow sensed their secret maneuvers and shared information with the boy?", Line_Normal);
+		ClearMessage();
+
+	//r可能性としては低いが、それが事実ならば振り回されている自分たちこそ、いい面の皮ということになる…。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "可能性としては低いが、それが事実ならば振り回されている自分たちこそ、いい面の皮ということになる…。",
+				NULL, "It's unlikely, but if there's any truth to it then it put their men to shame.", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(3, 49, "sprite/ama_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+	//雲雀１３rvS14/49/VT4Bc_13hibari1012.「…隊長。まだ疑うなら、今すぐその少年を拘束するか？kvS14/49/VT4Bc_13hibari1013.　現状なら簡単に拉致出来ると思うが……」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１３</color>", NULL, "<color=#f5e6d3>Skylark 13</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1012", 256, TRUE);
+		OutputLine(NULL, "「…隊長。まだ疑うなら、今すぐその少年を拘束するか？",
+				NULL, "\"...Commander. If you have any doubts, why don't we capture the boy immediately?", Line_WaitForInput);
+		ModPlayVoiceLS(4, 49, "ps3/s14/49/vt4bc_13hibari1013", 256, TRUE);
+		OutputLine(NULL, "　現状なら簡単に拉致出来ると思うが……」",
+				NULL, " I think it would be pretty easy to abduct him in the current circumstances...\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(5, 14, "sprite/oko_odoroki_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+	//小此木rvS14/14/VT4Bc_okono1029.「そいつは三佐の許可がなけりゃできん！kvS14/14/VT4Bc_okono1030.　それに、拉致ともなれば警察がその犯人捜査に乗り出すことになって、色々厄介事が増えるだけだ」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1029", 256, TRUE);
+		OutputLine(NULL, "「そいつは三佐の許可がなけりゃできん！",
+				NULL, "\"That would have to be authorized by the Major!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1030", 256, TRUE);
+		OutputLine(NULL, "　それに、拉致ともなれば警察がその犯人捜査に乗り出すことになって、色々厄介事が増えるだけだ」",
+				NULL, " Plus, if he were to be kidnapped, the police would begin investigating the matter and that would only add to our troubles.\"", Line_Normal);
+		ClearMessage();
+
+	//小此木rvS14/14/VT4Bc_okono1031.「ともあれ、念のためだ。…そのガキの所在と動向を探れ！kvS14/14/VT4Bc_okono1032.　それと、村の捜索に全力を傾けろ！！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1031", 256, TRUE);
+		OutputLine(NULL, "「ともあれ、念のためだ。…そのガキの所在と動向を探れ！",
+				NULL, "\"Anyway, just in case... monitor this boy's whereabouts and activities!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 14, "ps3/s14/14/vt4bc_okono1032", 256, TRUE);
+		OutputLine(NULL, "　それと、村の捜索に全力を傾けろ！！」",
+				NULL, " And do everything you can to search the village!!\"", Line_Normal);
+		ClearMessage();
+
+		FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
+
+	}
 
 //雲雀１rvS14/00/hiba0111005.「隊長、…ひょっとして、Ｒを村の外に拉致した可能性はないでしょうか？kvS14/00/hiba0111006.　園崎家以外となると、それに適した場所が思い当たりません」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雲雀１</color>", NULL, "<color=#f5e6d3>Skylark 1</color>", NULL, Line_ContinueAfterTyping); }
@@ -3830,7 +5226,11 @@ void main()
 			NULL, " Aside from the Sonozaki household, I can't think of any other suitable location.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 14, "sprite/oko_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModDrawCharacter(4, 14, "sprite/oko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	} else {
+		ModDrawCharacter(5, 14, "sprite/oko_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	}
 
 //小此木rvS14/14/223400029.「…思考を硬直化させるな！kvS14/14/223400030.　もっとほかの可能性も探り出せ！！kvS14/14/223400031.　…そもそも、真昼間に小娘ひとりが誰にも見つからずに、村外にＲを連れ出せるわけがないだろう！！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
@@ -3845,7 +5245,11 @@ void main()
 			NULL, " ...Besides, how could someone take R out of the village in the middle of the day without anyone noticing?!\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 14, "sprite/oko_kumon_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModDrawCharacter(4, 14, "sprite/oko_kumon_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	} else {
+		ModDrawCharacter(5, 14, "sprite/oko_kumon_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	}
 
 //r小此木の、長く錆び付いていた野生の勘が警鐘を鳴らす。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3859,7 +5263,11 @@ void main()
 			NULL, "...What if Shion Sonozaki had other reasons for abducting Rika Furude? ...He was strangely troubled because they had planned to make the first move, yet they were now reacting to someone else's first move.", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 14, "sprite/oko_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModDrawCharacter(4, 14, "sprite/oko_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	} else {
+		ModDrawCharacter(5, 14, "sprite/oko_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	}
 
 //小此木rvS14/14/223400032.「……そういや、警視庁の公安がうろちょろしていたそうだな。kvS14/14/223400033.興宮の宿泊地に所在は確認しているか？」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
@@ -3881,7 +5289,11 @@ void main()
 			NULL, " I'll double check.\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 14, "sprite/oko_kumon_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModDrawCharacter(4, 14, "sprite/oko_kumon_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	} else {
+		ModDrawCharacter(5, 14, "sprite/oko_kumon_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	}
 
 //小此木rvS14/14/223400034.「あと、富竹二尉の所在はどうなってる？kvS14/14/223400035.　まだ行方は見つからないのか？！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>小此木</color>", NULL, "<color=#f5e6d3>Okonogi</color>", NULL, Line_ContinueAfterTyping); }
@@ -3904,7 +5316,11 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-	ModDrawCharacter(5, 14, "sprite/oko_odoroki_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModDrawCharacter(4, 14, "sprite/oko_odoroki_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	} else {
+		ModDrawCharacter(5, 14, "sprite/oko_odoroki_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	}
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
@@ -3938,7 +5354,11 @@ void main()
 			NULL, "\"...About MPD Public Security... coming here...\"", Line_Normal);
 	ClearMessage();
 
-	ModDrawCharacter(5, 14, "sprite/oko_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModDrawCharacter(4, 14, "sprite/oko_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	} else {
+		ModDrawCharacter(5, 14, "sprite/oko_sakebi_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	}
 	PlaySE(3, "dageki", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 
@@ -3959,7 +5379,11 @@ void main()
 
 //鑑識rvS14/00/223000025.「…さぁて、もう後戻りはできんぞい」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000025", 256, TRUE);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000025", 540, TRUE);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000025", 256, TRUE);
+	}
 	OutputLine(NULL, "「…さぁて、もう後戻りはできんぞい」",
 			NULL, "\"...Now then, no turning back at this point.\"", Line_Normal);
 	ClearMessage();
@@ -4051,15 +5475,27 @@ void main()
 
 //鑑識rvS14/00/223000026.「…後のわしの役目は、北条鉄平の司法解剖じゃな。kvS14/00/223000027.面子は全部ワシの子飼いで固めたから、ミクロンのごまかしも見逃さん！！kvS14/00/223000028.　熊谷、ここは頼むぞ！」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>Forensic Investigator</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000026", 256, TRUE);
-	OutputLine(NULL, "「…後のわしの役目は、北条鉄平の司法解剖じゃな。",
-			NULL, "\"...My role will be to take care of Teppei Houjou's official autopsy.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000027", 256, TRUE);
-	OutputLine(NULL, "面子は全部ワシの子飼いで固めたから、ミクロンのごまかしも見逃さん！！",
-			NULL, " My honor is on the line, so I won't allow even the tiniest bit of deception to slip by!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 0, "ps3/s14/00/223000028", 256, TRUE);
-	OutputLine(NULL, "　熊谷、ここは頼むぞ！」",
-			NULL, " Kumagai, I'm relying on you here!\"", Line_Normal);
+	if (GetLocalFlag(LConsoleArc)==10) {
+		ModPlayVoiceLS(4, 0, "ps2/00/223000026", 540, TRUE);
+		OutputLine(NULL, "「…後のわしの役目は、北条鉄平の司法解剖じゃな。",
+				NULL, "\"...My role will be to take care of Teppei Houjou's official autopsy.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000027", 540, TRUE);
+		OutputLine(NULL, "面子は全部ワシの子飼いで固めたから、ミクロンのごまかしも見逃さん！！",
+				NULL, " My honor is on the line, so I won't allow even the tiniest bit of deception to slip by!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps2/00/223000028", 540, TRUE);
+		OutputLine(NULL, "　熊谷、ここは頼むぞ！」",
+				NULL, " Kumagai, I'm relying on you here!\"", Line_Normal);
+	} else {
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000026", 256, TRUE);
+		OutputLine(NULL, "「…後のわしの役目は、北条鉄平の司法解剖じゃな。",
+				NULL, "\"...My role will be to take care of Teppei Houjou's official autopsy.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000027", 256, TRUE);
+		OutputLine(NULL, "面子は全部ワシの子飼いで固めたから、ミクロンのごまかしも見逃さん！！",
+				NULL, " My honor is on the line, so I won't allow even the tiniest bit of deception to slip by!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 0, "ps3/s14/00/223000028", 256, TRUE);
+		OutputLine(NULL, "　熊谷、ここは頼むぞ！」",
+				NULL, " Kumagai, I'm relying on you here!\"", Line_Normal);
+	}
 	ClearMessage();
 
 //熊谷rvS14/19/223100027.「任してくださいッ！！！」
@@ -4229,26 +5665,28 @@ void main()
 			NULL, "Now then, things are getting interesting. What will come next? Come on you demons, over here. Come a little closer!", Line_Normal);
 	ClearMessage();
 
-//大石rvS14/11/VT4Bc_oishi1039.「……ん…。kvS14/11/VT4Bc_oishi1040.とはいえ、大高のバカが来るとなると…一応、念には念を押しておきますかね。kvS14/11/VT4Bc_oishi1041.あぁもうこんな時間、まだ残ってくれているといいんだけど…」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1039", 256, TRUE);
-	OutputLine(NULL, "「……ん…。",
-			NULL, "\"...Mmm...", Line_WaitForInput);
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1040", 256, TRUE);
-	OutputLine(NULL, "とはいえ、大高のバカが来るとなると…一応、念には念を押しておきますかね。",
-			NULL, " Although, that fool Ootaka may come here eventually... keep that in mind, just in case.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1041", 256, TRUE);
-	OutputLine(NULL, "あぁもうこんな時間、まだ残ってくれているといいんだけど…」",
-			NULL, " Aah, I hope there's still time left...\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc) < 10) {
+	//大石rvS14/11/VT4Bc_oishi1039.「……ん…。kvS14/11/VT4Bc_oishi1040.とはいえ、大高のバカが来るとなると…一応、念には念を押しておきますかね。kvS14/11/VT4Bc_oishi1041.あぁもうこんな時間、まだ残ってくれているといいんだけど…」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1039", 256, TRUE);
+		OutputLine(NULL, "「……ん…。",
+				NULL, "\"...Mmm...", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1040", 256, TRUE);
+		OutputLine(NULL, "とはいえ、大高のバカが来るとなると…一応、念には念を押しておきますかね。",
+				NULL, " Although, that fool Ootaka may come here eventually... keep that in mind, just in case.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1041", 256, TRUE);
+		OutputLine(NULL, "あぁもうこんな時間、まだ残ってくれているといいんだけど…」",
+				NULL, " Aah, I hope there's still time left...\"", Line_Normal);
+		ClearMessage();
 
-	DrawScene("black", 1000 );
+		DrawScene("black", 1000 );
 
-//rそう呟きながら、壁時計の時間を確かめて受話器を取り上げようとした…その時。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "そう呟きながら、壁時計の時間を確かめて受話器を取り上げようとした…その時。",
-			NULL, "As he whispered that, he checked the clock and then tried to pick up the handset... but just then.", Line_Normal);
-	ClearMessage();
+	//rそう呟きながら、壁時計の時間を確かめて受話器を取り上げようとした…その時。
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "そう呟きながら、壁時計の時間を確かめて受話器を取り上げようとした…その時。",
+				NULL, "As he whispered that, he checked the clock and then tried to pick up the handset... but just then.", Line_Normal);
+		ClearMessage();
+	}
 
 	DrawScene("background/ke5", 1000 );
 
