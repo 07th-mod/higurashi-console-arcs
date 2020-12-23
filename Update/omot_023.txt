@@ -306,24 +306,47 @@ void main()
 			NULL, " I don't believe the staff on hand will be sufficient.\"", Line_Normal);
 	ClearMessage();
 
-//大石rvS14/11/220700443.「…まったく仰る通りです。kvS14/11/220700444.機動隊の出動を県警に要請しなければ、太刀打ちは難しいでしょう」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/220700443", 256, TRUE);
-	OutputLine(NULL, "「…まったく仰る通りです。",
-			NULL, "\"...It's just as you say.", Line_WaitForInput);
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/220700444", 256, TRUE);
-	OutputLine(NULL, "機動隊の出動を県警に要請しなければ、太刀打ちは難しいでしょう」",
-			NULL, " We'd have a very hard time putting up a fight unless we can convince the prefectural police department to dispatch riot police.\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700443", 540, TRUE);
+		OutputLine(NULL, "「…まったく仰る通りです。",
+				NULL, "\"...It's just as you say.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps2/11/220700444", 540, TRUE);
+		OutputLine(NULL, "まぁ、大高の大バカヤロ一に頭を下げてでも、機動隊の出動を県警に要請しなければ、太刀打ちは難しいでしょう」",
+				NULL, " Well, even if I bowed to that jackass Ootaka, we'd have a very hard time putting up a fight unless we can convince the prefectural police department to dispatch riot police.\"", Line_Normal);
+		ClearMessage();
 
-	ModDrawCharacter(4, 16, "sprite/aka_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+		ModDrawCharacter(4, 16, "sprite/aka_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
-//茜rvS14/16/222200124.「ああ、それは三郎さんに任せておくれ」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 16, "ps3/s14/16/222200124", 256, TRUE);
-	OutputLine(NULL, "「ああ、それは三郎さんに任せておくれ」",
-			NULL, "\"Aah, leave that to Saburou-san.\"", Line_Normal);
-	ClearMessage();
+	//茜rvS14/16/222200124.「ああ、それは三郎さんに任せておくれ」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps2/16/222200124", 540, TRUE);
+		OutputLine(NULL, "「ああ、それは三郎さんに任せておくれ。",
+				NULL, "\"Aah, leave that to Saburou-san.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 16, "ps2/16/222200125", 540, TRUE);
+		OutputLine(NULL, "あれだけのやり合いをした後だ、まさかいやだなんて言ったりしないだろうさ」",
+				NULL, " After all we've been through, how could he say no?\"", Line_Normal);
+		ClearMessage();
+	} else {
+	//大石rvS14/11/220700443.「…まったく仰る通りです。kvS14/11/220700444.機動隊の出動を県警に要請しなければ、太刀打ちは難しいでしょう」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/220700443", 256, TRUE);
+		OutputLine(NULL, "「…まったく仰る通りです。",
+				NULL, "\"...It's just as you say.", Line_WaitForInput);
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/220700444", 256, TRUE);
+		OutputLine(NULL, "機動隊の出動を県警に要請しなければ、太刀打ちは難しいでしょう」",
+				NULL, " We'd have a very hard time putting up a fight unless we can convince the prefectural police department to dispatch riot police.\"", Line_Normal);
+		ClearMessage();
+
+		ModDrawCharacter(4, 16, "sprite/aka_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+	//茜rvS14/16/222200124.「ああ、それは三郎さんに任せておくれ」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6bd09f>茜</color>", NULL, "<color=#6bd09f>Akane</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 16, "ps3/s14/16/222200124", 256, TRUE);
+		OutputLine(NULL, "「ああ、それは三郎さんに任せておくれ」",
+				NULL, "\"Aah, leave that to Saburou-san.\"", Line_Normal);
+		ClearMessage();
+	}
 
 //大石rvS14/11/220700445.「それは助かります。kvS14/11/220700446.できれば全員無事に、命だけは守りたいところですがね。kvS14/11/220700447.…正直、こればかりは出たとこ勝負になるでしょうな」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
@@ -429,19 +452,28 @@ void main()
 	ModSetLayerFilter(5, 256, "none");
 	ModDrawCharacter(5, 11, "sprite/oisi1_1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
-//大石rvS14/11/VT4Bc_oishi1074.「県警本部に引っ張られないよう、警察庁から手を回してもらったんですが…それが仇になっちまいましてね」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1074", 256, TRUE);
-	OutputLine(NULL, "「県警本部に引っ張られないよう、警察庁から手を回してもらったんですが…それが仇になっちまいましてね」",
-			NULL, "\"She was turned over to the National Police Agency to prevent her from being taken by prefectural police HQ... so that part of the plan has fallen apart.\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps2/11/220700448", 540, TRUE);
+		OutputLine(NULL, "「釈放した瞬間に、県警が別件の容疑で引っ張っていこうと手ぐすねひいていますからね。」",
+				NULL, "\"Prefectural police are ready and waiting to bring her in on other charges the moment we let her go.\"", Line_Normal);
+		ClearMessage();
 
-//大石rvS14/11/VT4Bc_oishi1075.「簡単に自由の身にしてあげられない上、もしうかつに釈放すれば、今度は県警本部が彼女を連れていこうとあらゆる手を打ってくるでしょう」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1075", 256, TRUE);
-	OutputLine(NULL, "「簡単に自由の身にしてあげられない上、もしうかつに釈放すれば、今度は県警本部が彼女を連れていこうとあらゆる手を打ってくるでしょう」",
-			NULL, "\"It won't be easy to set her free. And even if we do, prefectural HQ will make every effort to apprehend her.\"", Line_Normal);
-	ClearMessage();
+	} else {
+	//大石rvS14/11/VT4Bc_oishi1074.「県警本部に引っ張られないよう、警察庁から手を回してもらったんですが…それが仇になっちまいましてね」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1074", 256, TRUE);
+		OutputLine(NULL, "「県警本部に引っ張られないよう、警察庁から手を回してもらったんですが…それが仇になっちまいましてね」",
+				NULL, "\"She was turned over to the National Police Agency to prevent her from being taken by prefectural police HQ... so that part of the plan has fallen apart.\"", Line_Normal);
+		ClearMessage();
+
+	//大石rvS14/11/VT4Bc_oishi1075.「簡単に自由の身にしてあげられない上、もしうかつに釈放すれば、今度は県警本部が彼女を連れていこうとあらゆる手を打ってくるでしょう」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 11, "ps3/s14/11/vt4bc_oishi1075", 256, TRUE);
+		OutputLine(NULL, "「簡単に自由の身にしてあげられない上、もしうかつに釈放すれば、今度は県警本部が彼女を連れていこうとあらゆる手を打ってくるでしょう」",
+				NULL, "\"It won't be easy to set her free. And even if we do, prefectural HQ will make every effort to apprehend her.\"", Line_Normal);
+		ClearMessage();
+	}
 
 //大石rvS14/11/220700449.「相当暴れられて難儀しましたが、今は鎮静剤でおとなしくしてもらっています」
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
@@ -2514,35 +2546,64 @@ void main()
 			NULL, "\"Right, Rika-chan?!\"", Line_Normal);
 	ClearMessage();
 
-//梨花rvS14/05/VT4Bc_rika1190.「…そう、そうです…そうなのです…ッ！kvS14/05/VT4Bc_rika1191.　勝敗は時の常、なんて言葉は嘘っぱち！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1190", 256, TRUE);
-	OutputLine(NULL, "「…そう、そうです…そうなのです…ッ！",
-			NULL, "\"Y-yeah... That's right...!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1191", 256, TRUE);
-	OutputLine(NULL, "　勝敗は時の常、なんて言葉は嘘っぱち！」",
-			NULL, " Anyone saying the time to determine victory or defeat has already passed is telling an outright lie!\"", Line_Normal);
-	ClearMessage();
+	if (GetLocalFlag(LConsoleArc)==10) {
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 5, "ps2/05/220500269", 540, TRUE);
+		OutputLine(NULL, "「…そう、そうよ…そうなのよね…ッ",
+				NULL, "\"Y-yeah... That's right...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/220500270", 540, TRUE);
+		OutputLine(NULL, "　勝敗は時の常、なんて言葉は嘘っぱち！」",
+				NULL, " Anyone saying the time to determine victory or defeat has already passed is telling an outright lie!\"", Line_Normal);
+		ClearMessage();
 
-//梨花rvS14/05/VT4Bc_rika1192.「勝ちたいと思う気持ち…大事なものを守りたいと思う意思の強さと覚悟が、運命を切り開くっ！！kvS14/05/VT4Bc_rika1193.　だから絶対に、今度こそ勝ってみせるのです！！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1192", 256, TRUE);
-	OutputLine(NULL, "「勝ちたいと思う気持ち…大事なものを守りたいと思う意思の強さと覚悟が、運命を切り開くっ！！",
-			NULL, "\"Our desire to win... Our strength and determination to protect what we hold dear will allow us to carve through fate!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1193", 256, TRUE);
-	OutputLine(NULL, "　だから絶対に、今度こそ勝ってみせるのです！！」",
-			NULL, " So, I'm certain of it. We absolutely will win this!!\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 5, "ps2/05/220500271", 540, TRUE);
+		OutputLine(NULL, "「勝ちたいと思う気持ち…大事なものを守りたいと思う意思の強さと覚悟が、運命を切り開くんだッッ！！",
+				NULL, "\"Our desire to win... Our strength and determination to protect what we hold dear will allow us to carve through fate!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/220500274", 540, TRUE);
+		OutputLine(NULL, "　だから絶対に、今度こそ勝ってみせる！！」",
+				NULL, " So, I'm certain of it. We absolutely will win this!!\"", Line_Normal);
+		ClearMessage();
 
-//梨花rvS14/05/VT4Bc_rika1194.「どうせ最後だから、なんて捨て鉢になってはダメなのです！！kvS14/05/VT4Bc_rika1195.　僕たちの時間、そして幸せは、僕たち自身の力と意思で掴み取ってみせるのですよッ！！！」
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1194", 256, TRUE);
-	OutputLine(NULL, "「どうせ最後だから、なんて捨て鉢になってはダメなのです！！",
-			NULL, "\"This is our last chance, so there's no sense abandoning it out of despair!!", Line_WaitForInput);
-	ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1195", 256, TRUE);
-	OutputLine(NULL, "　僕たちの時間、そして幸せは、僕たち自身の力と意思で掴み取ってみせるのですよッ！！！」",
-			NULL, " We'll grab hold of our time and our happiness, using our own strength and will!!!\"", Line_Normal);
-	ClearMessage();
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 5, "ps2/05/220500275", 540, TRUE);
+		OutputLine(NULL, "「どうせ最後だから、なんて捨て鉢になってだまるかッッ！！",
+				NULL, "\"This is our last chance, so there's no sense abandoning it out of despair!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps2/05/220500276", 540, TRUE);
+		OutputLine(NULL, "　私の時間、そして幸せは、私の力と意思で掴み取ってみせるッッ！！！」",
+				NULL, " I'll grab hold of my time and my happiness, using my own strength and will!!!\"", Line_Normal);
+		ClearMessage();
+	} else {
+	//梨花rvS14/05/VT4Bc_rika1190.「…そう、そうです…そうなのです…ッ！kvS14/05/VT4Bc_rika1191.　勝敗は時の常、なんて言葉は嘘っぱち！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1190", 256, TRUE);
+		OutputLine(NULL, "「…そう、そうです…そうなのです…ッ！",
+				NULL, "\"Y-yeah... That's right...!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1191", 256, TRUE);
+		OutputLine(NULL, "　勝敗は時の常、なんて言葉は嘘っぱち！」",
+				NULL, " Anyone saying the time to determine victory or defeat has already passed is telling an outright lie!\"", Line_Normal);
+		ClearMessage();
+
+	//梨花rvS14/05/VT4Bc_rika1192.「勝ちたいと思う気持ち…大事なものを守りたいと思う意思の強さと覚悟が、運命を切り開くっ！！kvS14/05/VT4Bc_rika1193.　だから絶対に、今度こそ勝ってみせるのです！！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1192", 256, TRUE);
+		OutputLine(NULL, "「勝ちたいと思う気持ち…大事なものを守りたいと思う意思の強さと覚悟が、運命を切り開くっ！！",
+				NULL, "\"Our desire to win... Our strength and determination to protect what we hold dear will allow us to carve through fate!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1193", 256, TRUE);
+		OutputLine(NULL, "　だから絶対に、今度こそ勝ってみせるのです！！」",
+				NULL, " So, I'm certain of it. We absolutely will win this!!\"", Line_Normal);
+		ClearMessage();
+
+	//梨花rvS14/05/VT4Bc_rika1194.「どうせ最後だから、なんて捨て鉢になってはダメなのです！！kvS14/05/VT4Bc_rika1195.　僕たちの時間、そして幸せは、僕たち自身の力と意思で掴み取ってみせるのですよッ！！！」
+		if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>Rika</color>", NULL, Line_ContinueAfterTyping); }
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1194", 256, TRUE);
+		OutputLine(NULL, "「どうせ最後だから、なんて捨て鉢になってはダメなのです！！",
+				NULL, "\"This is our last chance, so there's no sense abandoning it out of despair!!", Line_WaitForInput);
+		ModPlayVoiceLS(4, 5, "ps3/s14/05/vt4bc_rika1195", 256, TRUE);
+		OutputLine(NULL, "　僕たちの時間、そして幸せは、僕たち自身の力と意思で掴み取ってみせるのですよッ！！！」",
+				NULL, " We'll grab hold of our time and our happiness, using our own strength and will!!!\"", Line_Normal);
+		ClearMessage();
+	}
 
 	DrawScene("background/ima3", 1000 );
 
