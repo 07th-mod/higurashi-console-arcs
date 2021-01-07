@@ -16,7 +16,7 @@ void main()
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
 
-	char Chapter[11];
+	char Chapter[12];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
@@ -30,9 +30,9 @@ void main()
 		Chapter[7] = "Connecting Fragments";
 		Chapter[8] = "Miotsukushi Omote";
 		Chapter[9] = "Miotsukushi Ura";
-		Chapter[10] = "Back";
+		Chapter[10] = "Miotsukushi PS2";
+		Chapter[11] = "Back";
 
-		//Chapter[11] = "Miotsukushi PS2 version";
 		//Chapter[12] = "Kotohogushi";
 		//Chapter[13] = "Hajisarashi";
 		//Chapter[14] = "Epilogue";
@@ -49,16 +49,16 @@ void main()
 		Chapter[7] = "カケラ紡ぎ";
 		Chapter[8] = "澪尽し編 表";
 		Chapter[9] = "澪尽し編 裏";
-		Chapter[10] = "戻る";
+		Chapter[10] = "澪尽し編 PS2版";	
+		Chapter[11] = "戻る";
 
-		//Chapter[11] = "澪尽し編 PS2版";	
 		//Chapter[12] = "言祝し編";
 		//Chapter[13] = "羞晒し編";
 		//Chapter[14] = "エピローグ";
 	}
 
 //	InitializeSelectedItem();
-	Select( 11, Chapter );
+	Select( 12, Chapter );
 	DisableWindow();
 	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
@@ -384,6 +384,39 @@ void main()
 
 			SetValidityOfSaving( TRUE );
 			CallSection("UraDay1");
+		}
+		else
+		{
+			StopBGM( 2 );
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 10)
+	{
+		DrawScene("scenario/miops2/background", 1200 );
+		DrawBustshot(5, "scenario/miops2/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
+		DrawBustshot(6, "scenario/miops2/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
+		DrawBustshot(7, "scenario/logo", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, TRUE );
+		DrawBustshot(8, "scenario/stripes", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, TRUE );
+		Wait( 100 );
+		FadeBustshotWithFiltering(5, "5", 1, FALSE, 0, 0, 1000, TRUE );
+		Wait( 200 );
+
+		DrawBustshotWithFiltering(9, "scenario/miops2/description", "5", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+		Wait( 200 );
+
+		SetValidityOfInput( TRUE );
+
+		ShowChapterPreview();
+
+		if (LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1) {
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetGlobalFlag(GArtStyle , 0);
+
+			SetValidityOfSaving( TRUE );
+			CallSection("MioPS2Day1");
 		}
 		else
 		{
@@ -1181,6 +1214,7 @@ void TokiDay12()
 
 void OmoteDay1()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<0)
 		ModSetHighestChapterFlag(6, 0);
 	CallScript( "omot_001" );
@@ -1190,6 +1224,7 @@ void OmoteDay1()
 
 void OmoteDay2()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<1)
 		ModSetHighestChapterFlag(6, 1);
 	CallScript( "omot_002" );
@@ -1221,6 +1256,7 @@ void OmoteDay2Choice2()
 
 void OmoteDay3()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<2)
 		ModSetHighestChapterFlag(6, 2);
 	CallScript( "omot_003" );
@@ -1230,6 +1266,7 @@ void OmoteDay3()
 
 void OmoteDay4()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<3)
 		ModSetHighestChapterFlag(6, 3);
 	CallScript( "omot_004" );
@@ -1239,6 +1276,7 @@ void OmoteDay4()
 
 void OmoteDay5()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<4)
 		ModSetHighestChapterFlag(6, 4);
 	CallScript( "omot_005" );
@@ -1296,11 +1334,11 @@ void OmoteDay5Choice4()
 
 void OmoteDay6()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<5)
 		ModSetHighestChapterFlag(6, 5);
 	CallScript( "omot_006" );
 
-	SetLocalFlag(LConsoleArc, 6);
 	StoreValueToLocalWork( ChapterNumber, 6 );
 	SavePoint("Ch.6 終わり", "End of Chapter 6");
 	CallSection( "SetDay" );
@@ -1311,6 +1349,7 @@ void OmoteDay6()
 
 void OmoteDay7()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<6)
 		ModSetHighestChapterFlag(6, 6);
 	CallScript( "omot_007" );
@@ -1320,6 +1359,7 @@ void OmoteDay7()
 
 void OmoteDay8()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<7)
 		ModSetHighestChapterFlag(6, 7);
 	CallScript( "omot_008" );
@@ -1350,6 +1390,7 @@ void OmoteDay8Choice2()
 
 void OmoteDay9()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<8)
 		ModSetHighestChapterFlag(6, 8);
 	CallScript( "omot_009" );
@@ -1470,6 +1511,7 @@ void OmoteDay9Choice6()
 
 void OmoteDay10()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<9)
 		ModSetHighestChapterFlag(6, 9);
 	CallScript( "omot_010" );
@@ -1586,6 +1628,7 @@ void OmoteDay10Choice6Right()
 
 void OmoteDay11()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<10)
 		ModSetHighestChapterFlag(6, 10);
 	CallScript( "omot_011" );
@@ -1595,6 +1638,7 @@ void OmoteDay11()
 
 void OmoteDay12()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<11)
 		ModSetHighestChapterFlag(6, 11);
 	CallScript( "omot_012" );
@@ -1604,6 +1648,7 @@ void OmoteDay12()
 
 void OmoteDay13()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<12)
 		ModSetHighestChapterFlag(6, 12);
 	CallScript( "omot_013" );
@@ -1613,6 +1658,7 @@ void OmoteDay13()
 
 void OmoteDay14()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<13)
 		ModSetHighestChapterFlag(6, 13);
 	CallScript( "omot_014" );
@@ -1622,6 +1668,7 @@ void OmoteDay14()
 
 void OmoteDay15()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<14)
 		ModSetHighestChapterFlag(6, 14);
 	CallScript( "omot_015" );
@@ -1631,11 +1678,11 @@ void OmoteDay15()
 
 void OmoteDay16()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<15)
 		ModSetHighestChapterFlag(6, 15);
 	CallScript( "omot_016" );
 
-	SetLocalFlag(LConsoleArc, 6);
 	StoreValueToLocalWork( ChapterNumber, 16 );
 	SavePoint("Ch.16 終わり", "End of Chapter 16");
 	CallSection( "SetDay" );
@@ -1646,6 +1693,7 @@ void OmoteDay16()
 
 void OmoteDay17()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<16)
 		ModSetHighestChapterFlag(6, 16);
 	CallScript( "omot_017" );
@@ -1655,6 +1703,7 @@ void OmoteDay17()
 
 void OmoteDay18()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<17)
 		ModSetHighestChapterFlag(6, 17);
 	CallScript( "omot_018" );
@@ -1664,11 +1713,11 @@ void OmoteDay18()
 
 void OmoteDay19()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<18)
 		ModSetHighestChapterFlag(6, 18);
 	CallScript( "omot_019" );
 
-	SetLocalFlag(LConsoleArc, 6);
 	StoreValueToLocalWork( ChapterNumber, 19 );
 	SavePoint("Ch.19 終わり", "End of Chapter 19");
 	CallSection( "SetDay" );
@@ -1679,6 +1728,7 @@ void OmoteDay19()
 
 void OmoteDay20()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<19)
 		ModSetHighestChapterFlag(6, 19);
 	CallScript( "omot_020" );
@@ -1688,6 +1738,7 @@ void OmoteDay20()
 
 void OmoteDay21()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<20)
 		ModSetHighestChapterFlag(6, 20);
 	CallScript( "omot_021" );
@@ -1697,6 +1748,7 @@ void OmoteDay21()
 
 void OmoteDay22()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<21)
 		ModSetHighestChapterFlag(6, 21);
 	CallScript( "omot_022" );
@@ -1706,6 +1758,7 @@ void OmoteDay22()
 
 void OmoteDay23()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<22)
 		ModSetHighestChapterFlag(6, 22);
 	CallScript( "omot_023" );
@@ -1715,6 +1768,7 @@ void OmoteDay23()
 
 void OmoteDay24()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<23)
 		ModSetHighestChapterFlag(6, 23);
 	CallScript( "omot_024" );
@@ -1724,6 +1778,7 @@ void OmoteDay24()
 
 void OmoteDay25()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<24)
 		ModSetHighestChapterFlag(6, 24);
 	CallScript( "omot_025" );
@@ -1733,6 +1788,7 @@ void OmoteDay25()
 
 void OmoteDay26()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<25)
 		ModSetHighestChapterFlag(6, 25);
 	CallScript( "omot_026" );
@@ -1742,15 +1798,10 @@ void OmoteDay26()
 
 void OmoteDay27()
 {
+	SetLocalFlag(LConsoleArc, 6);
 	if (ModGetHighestChapterFlag(6)<26)
 		ModSetHighestChapterFlag(6, 26);
 	CallScript( "omot_027" );
-
-	SetLocalFlag(LConsoleArc, 6);
-	StoreValueToLocalWork( ChapterNumber, 27 );
-	SavePoint("Ch.27 終わり", "End of Chapter 27");
-	CallSection( "SetDay" );
-	CallSection( "ViewTips" );
 
 	JumpScript( "flow" );
 }
@@ -1917,6 +1968,605 @@ void UraDay17()
 	if (ModGetHighestChapterFlag(7)<16)
 		ModSetHighestChapterFlag(7, 16);
 	CallScript( "ura_017" );
+
+	JumpScript( "flow" );
+}
+
+void MioPS2Day1()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<0)
+		ModSetHighestChapterFlag(10, 0);
+	CallScript( "omot_001" );
+
+	JumpSection("MioPS2Day2");
+}
+
+void MioPS2Day2()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<1)
+		ModSetHighestChapterFlag(10, 1);
+	CallScript( "omot_002" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day2Choice1");
+	}
+	else {
+		JumpSection("MioPS2Day2Choice2");
+	}
+}
+
+void MioPS2Day2Choice1()
+{
+	CallScript( "omot_002_choice1" );
+	CallScript( "omot_002_2" );
+
+	JumpSection("MioPS2Day3");
+}
+
+void MioPS2Day2Choice2()
+{
+	CallScript( "omot_002_choice2" );
+	CallScript( "omot_002_2" );
+
+	JumpSection("MioPS2Day3");
+}
+
+void MioPS2Day3()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<2)
+		ModSetHighestChapterFlag(10, 2);
+	CallScript( "omot_003" );
+
+	JumpSection("MioPS2Day4");
+}
+
+void MioPS2Day4()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<3)
+		ModSetHighestChapterFlag(10, 3);
+	CallScript( "omot_004" );
+
+	JumpSection("MioPS2Day5");
+}
+
+void MioPS2Day5()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<4)
+		ModSetHighestChapterFlag(10, 4);
+	CallScript( "omot_005" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day5Choice1");
+	}
+	else {
+		JumpSection("MioPS2Day5Choice2");
+	}
+}
+
+void MioPS2Day5Choice1()
+{
+	CallScript( "omot_005_choice1" );
+	CallScript( "omot_005_choice2" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day5Choice3");
+	}
+	else {
+		JumpSection("MioPS2Day5Choice4");
+	}
+}
+
+void MioPS2Day5Choice2()
+{
+	CallScript( "omot_005_choice2" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day5Choice3");
+	}
+	else {
+		JumpSection("MioPS2Day5Choice4");
+	}
+}
+
+void MioPS2Day5Choice3()
+{
+	CallScript( "omot_005_choice3" );
+	CallScript( "omot_005_choice4" );
+
+	JumpSection("MioPS2Day6");
+}
+
+void MioPS2Day5Choice4()
+{
+	CallScript( "omot_005_choice4" );
+
+	JumpSection("MioPS2Day6");
+}
+
+void MioPS2Day6()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<5)
+		ModSetHighestChapterFlag(10, 5);
+	CallScript( "omot_006" );
+
+	StoreValueToLocalWork( ChapterNumber, 6 );
+	SavePoint("Ch.6 終わり", "End of Chapter 6");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("MioPS2Day7");
+}
+
+void MioPS2Day7()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<6)
+		ModSetHighestChapterFlag(10, 6);
+	CallScript( "omot_007" );
+
+	JumpSection("MioPS2Day8");
+}
+
+void MioPS2Day8()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<7)
+		ModSetHighestChapterFlag(10, 7);
+	CallScript( "omot_008" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day8Choice1");
+	}
+	else {
+		JumpSection("MioPS2Day8Choice2");
+	}
+}
+
+void MioPS2Day8Choice1()
+{
+	CallScript( "omot_008_choice1" );
+	CallScript("omot_badend1");
+
+	JumpScript( "flow" );
+}
+
+void MioPS2Day8Choice2()
+{
+	CallScript( "omot_008_choice2" );
+
+	JumpSection("MioPS2Day9");
+}
+
+void MioPS2Day9()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<8)
+		ModSetHighestChapterFlag(10, 8);
+	CallScript( "omot_009" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day9Choice1");
+	}
+	else {
+		JumpSection("MioPS2Day9Choice2");
+	}
+}
+
+void MioPS2Day9Choice1()
+{
+	CallScript( "omot_009_choice1" );
+	CallScript( "omot_009_2" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day9Choice3");
+	}
+	else {
+		JumpSection("MioPS2Day9Choice4Right");
+	}
+}
+
+void MioPS2Day9Choice2()
+{
+	CallScript( "omot_009_choice2" );
+	CallScript( "omot_009_2" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day9Choice3");
+	}
+	else {
+		JumpSection("MioPS2Day9Choice4");
+	}
+}
+
+void MioPS2Day9Choice3()
+{
+	CallScript( "omot_009_choice3" );
+	CallScript( "omot_009_3" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day9Choice5");
+	}
+	else {
+		JumpSection("MioPS2Day9Choice6");
+	}
+}
+
+void MioPS2Day9Choice4Right()
+{
+	CallScript( "omot_009_choice4" );
+	CallScript( "omot_009_3" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day9Choice5");
+	}
+	else {
+		JumpSection("MioPS2Day9Choice6Right");
+	}
+}
+
+void MioPS2Day9Choice4()
+{
+	CallScript( "omot_009_choice4" );
+	CallScript( "omot_009_3" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day9Choice5");
+	}
+	else {
+		JumpSection("MioPS2Day9Choice6");
+	}
+}
+
+void MioPS2Day9Choice5()
+{
+	CallScript( "omot_009_choice5" );
+	CallScript( "omot_009_4" );
+	CallScript( "omot_009_tobadend" );
+	CallScript( "omot_badend2");
+
+	JumpScript( "flow" );
+}
+
+void MioPS2Day9Choice6Right()
+{
+	CallScript( "omot_009_choice6" );
+	CallScript( "omot_009_4" );
+	CallScript( "omot_009_togoodend" );
+
+	SetLocalFlag(LConsoleArc, 10);
+	StoreValueToLocalWork( ChapterNumber, 9 );
+	SavePoint("Ch.9 終わり", "End of Chapter 9");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("MioPS2Day10");
+}
+
+void MioPS2Day9Choice6()
+{
+	CallScript( "omot_009_choice6" );
+	CallScript( "omot_009_4" );
+	CallScript( "omot_009_tobadend" );
+	CallScript( "omot_badend2");
+
+	JumpScript( "flow" );
+}
+
+void MioPS2Day10()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<9)
+		ModSetHighestChapterFlag(10, 9);
+	CallScript( "omot_010" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day10Choice1");
+	}
+	else {
+		JumpSection("MioPS2Day10Choice2");
+	}
+}
+
+void MioPS2Day10Choice1()
+{
+	CallScript( "omot_010_choice1" );
+	CallScript("omot_010_2");
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day10Choice3");
+	}
+	else {
+		JumpSection("MioPS2Day10Choice4");
+	}
+}
+
+void MioPS2Day10Choice2()
+{
+	CallScript( "omot_010_choice2" );
+	CallScript( "omot_010_2" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day10Choice3");
+	}
+	else {
+		JumpSection("MioPS2Day10Choice4Right");
+	}
+}
+
+void MioPS2Day10Choice3()
+{
+	CallScript( "omot_010_choice3" );
+	CallScript("omot_010_3");
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day10Choice5");
+	}
+	else {
+		JumpSection("MioPS2Day10Choice6");
+	}
+}
+
+void MioPS2Day10Choice4()
+{
+	CallScript( "omot_010_choice4" );
+	CallScript( "omot_010_3" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day10Choice5");
+	}
+	else {
+		JumpSection("MioPS2Day10Choice6");
+	}
+}
+
+void MioPS2Day10Choice4Right()
+{
+	CallScript( "omot_010_choice4" );
+	CallScript( "omot_010_3" );
+
+	if (GetGlobalFlag(GConsoleChoice) == 0)
+	{
+		JumpSection("MioPS2Day10Choice5");
+	}
+	else {
+		JumpSection("MioPS2Day10Choice6Right");
+	}
+}
+
+void MioPS2Day10Choice5()
+{
+	CallScript( "omot_010_choice5" );
+	CallScript("omot_010_4");
+	CallScript( "omot_010_tobadend" );
+
+	CallScript("omot_badend3");
+
+	JumpScript( "flow" );
+}
+
+void MioPS2Day10Choice6()
+{
+	CallScript( "omot_010_choice6" );
+	CallScript( "omot_010_4" );
+	CallScript( "omot_010_tobadend" );
+
+	CallScript("omot_badend3");
+
+	JumpScript( "flow" );
+}
+
+void MioPS2Day10Choice6Right()
+{
+	CallScript( "omot_010_choice6" );
+	CallScript( "omot_010_4" );
+	CallScript( "omot_010_togoodend" );
+
+	JumpSection("MioPS2Day11");
+}
+
+void MioPS2Day11()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<10)
+		ModSetHighestChapterFlag(10, 10);
+	CallScript( "omot_011" );
+
+	JumpSection("MioPS2Day12");
+}
+
+void MioPS2Day12()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<11)
+		ModSetHighestChapterFlag(10, 11);
+	CallScript( "omot_012" );
+
+	JumpSection("MioPS2Day13");
+}
+
+void MioPS2Day13()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<12)
+		ModSetHighestChapterFlag(10, 12);
+	CallScript( "omot_013" );
+
+	JumpSection("MioPS2Day14");
+}
+
+void MioPS2Day14()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<13)
+		ModSetHighestChapterFlag(10, 13);
+	CallScript( "omot_014" );
+
+	JumpSection("MioPS2Day15");
+}
+
+void MioPS2Day15()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<14)
+		ModSetHighestChapterFlag(10, 14);
+	CallScript( "omot_015" );
+
+	JumpSection("MioPS2Day16");
+}
+
+void MioPS2Day16()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<15)
+		ModSetHighestChapterFlag(10, 15);
+	CallScript( "omot_016" );
+
+	StoreValueToLocalWork( ChapterNumber, 16 );
+	SavePoint("Ch.16 終わり", "End of Chapter 16");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("MioPS2Day17");
+}
+
+void MioPS2Day17()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<16)
+		ModSetHighestChapterFlag(10, 16);
+	CallScript( "omot_017" );
+
+	JumpSection("MioPS2Day18");
+}
+
+void MioPS2Day18()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<17)
+		ModSetHighestChapterFlag(10, 17);
+	CallScript( "omot_018" );
+
+	JumpSection("MioPS2Day19");
+}
+
+void MioPS2Day19()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<18)
+		ModSetHighestChapterFlag(10, 18);
+	CallScript( "omot_019" );
+
+	StoreValueToLocalWork( ChapterNumber, 19 );
+	SavePoint("Ch.19 終わり", "End of Chapter 19");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("MioPS2Day20");
+}
+
+void MioPS2Day20()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<19)
+		ModSetHighestChapterFlag(10, 19);
+	CallScript( "omot_020" );
+
+	JumpSection("MioPS2Day21");
+}
+
+void MioPS2Day21()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<20)
+		ModSetHighestChapterFlag(10, 20);
+	CallScript( "omot_021" );
+
+	JumpSection("MioPS2Day22");
+}
+
+void MioPS2Day22()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<21)
+		ModSetHighestChapterFlag(10, 21);
+	CallScript( "omot_022" );
+
+	JumpSection("MioPS2Day23");
+}
+
+void MioPS2Day23()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<22)
+		ModSetHighestChapterFlag(10, 22);
+	CallScript( "omot_023" );
+
+	JumpSection("MioPS2Day24");
+}
+
+void MioPS2Day24()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<23)
+		ModSetHighestChapterFlag(10, 23);
+	CallScript( "omot_024" );
+
+	JumpSection("MioPS2Day25");
+}
+
+void MioPS2Day25()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<24)
+		ModSetHighestChapterFlag(10, 24);
+	CallScript( "omot_025" );
+
+	JumpSection("MioPS2Day26");
+}
+
+void MioPS2Day26()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<25)
+		ModSetHighestChapterFlag(10, 25);
+	CallScript( "omot_026" );
+
+	JumpSection("MioPS2Day27");
+}
+
+void MioPS2Day27()
+{
+	SetLocalFlag(LConsoleArc, 10);
+	if (ModGetHighestChapterFlag(10)<26)
+		ModSetHighestChapterFlag(10, 26);
+	CallScript( "omot_027" );
+
+	StoreValueToLocalWork( ChapterNumber, 27 );
+	SavePoint("Ch.27 終わり", "End of Chapter 27");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
 
 	JumpScript( "flow" );
 }
