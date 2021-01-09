@@ -2943,6 +2943,11 @@ void main()
 	ClearMessage();
 
 	if (GetGlobalFlag(GChoiceMode) == 0) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "<color=#aaaaaa>『…断る』</color>",
+				NULL, "<color=#aaaaaa>[...I refuse]</color>", Line_Normal);
+		ClearMessage();
+
 		SetGlobalFlag(GConsoleChoice, 1);
 	}
 	else

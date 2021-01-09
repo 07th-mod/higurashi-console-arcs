@@ -521,6 +521,11 @@ void main()
 	ClearMessage();
 
 	if (GetGlobalFlag(GChoiceMode) == 0) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "<color=#aaaaaa>『左』</color>",
+				NULL, "<color=#aaaaaa>[Left.]</color>", Line_Normal);
+		ClearMessage();
+
 		SetGlobalFlag(GConsoleChoice, 0);
 	}
 	else

@@ -200,6 +200,11 @@ void main()
 	ClearMessage();
 
 	if (GetGlobalFlag(GChoiceMode) == 0) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "<color=#aaaaaa>『ボクが、圭一に相談したのです。』</color>",
+				NULL, "<color=#aaaaaa>[I'm the one who told Keiichi.]</color>", Line_Normal);
+		ClearMessage();
+
 		SetGlobalFlag(GConsoleChoice, 1);
 	}
 	else

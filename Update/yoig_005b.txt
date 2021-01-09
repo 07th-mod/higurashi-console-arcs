@@ -1058,6 +1058,11 @@ void main()
 	ClearMessage();
 
 	if (GetGlobalFlag(GChoiceMode) == 0) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "<color=#aaaaaa>『毛布でも出そうか？』</color>",
+				NULL, "<color=#aaaaaa>[Shall I get you a blanket?]</color>", Line_Normal);
+		ClearMessage();
+
 		SetGlobalFlag(GConsoleChoice, 0);
 	}
 	else

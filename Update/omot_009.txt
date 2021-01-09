@@ -1271,6 +1271,11 @@ void main()
 	ClearMessage();
 
 	if (GetGlobalFlag(GChoiceMode) == 0) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "<color=#aaaaaa>『リナって知ってるか？』</color>",
+				NULL, "<color=#aaaaaa>[Do you know someone named Rina?]</color>", Line_Normal);
+		ClearMessage();
+
 		SetGlobalFlag(GConsoleChoice, 0);
 	}
 	else

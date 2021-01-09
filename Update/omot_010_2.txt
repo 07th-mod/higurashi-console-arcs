@@ -57,6 +57,11 @@ void main()
 	ClearMessage();
 
 	if (GetGlobalFlag(GChoiceMode) == 0) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "<color=#aaaaaa>『レナはその人のこと、どう思っていますか？』</color>",
+				NULL, "<color=#aaaaaa>[Rena, what do you think of her?]</color>", Line_Normal);
+		ClearMessage();
+
 		SetGlobalFlag(GConsoleChoice, 1);
 	}
 	else

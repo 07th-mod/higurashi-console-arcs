@@ -596,6 +596,11 @@ void main()
 	ClearMessage();
 
 	if (GetGlobalFlag(GChoiceMode) == 0) {
+		if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+		OutputLine(NULL, "<color=#aaaaaa>『葛西さんに、リナの様子を聞く。』</color>",
+				NULL, "<color=#aaaaaa>[Ask Kasai-san about Rina's situation.]</color>", Line_Normal);
+		ClearMessage();
+
 		SetGlobalFlag(GConsoleChoice, 1);
 	}
 	else
