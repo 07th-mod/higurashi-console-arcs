@@ -216,9 +216,14 @@ void main()
 	ClearMessage();
 
 //rまたしても怒声を浴びて、私は思わずそばに立つもう一人の親友の背後に隠れる。私たちのやり取りを間近で呆れながら見ていた珠子ちゃんは、何やってんだかと深いため息とともに立ちはだかって言った。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "またしても怒声を浴びて、私は思わずそばに立つもう一人の親友の背後に隠れる。私たちのやり取りを間近で呆れながら見ていた珠子ちゃんは、何やってんだかと深いため息とともに立ちはだかって言った。",
-			NULL, "Faced with yet another shout, I hid behind my other best friend who was standing next to me. Tamako-chan, who'd been watching our interaction up close with exasperation, let out a deep sigh as she stood between Chisato-chan and me, then began to speak.", Line_Normal);
+	if (GetGlobalFlag(GADVMode)) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "またしても怒声を浴びて、私は思わずそばに立つもう一人の親友の背後に隠れる。私たちのやり取りを間近で呆れながら見ていた珠子ちゃんは、何やってんだかと深いため息とともに立ちはだかって言った。",
+				NULL, "<size=-3>Faced with yet another shout, I hid behind my other best friend who was standing next to me. Tamako-chan, who'd been watching our interaction up close with exasperation, let out a deep sigh as she stood between Chisato-chan and me, then began to speak.", Line_Normal);
+	} else {
+		OutputLine(NULL, "またしても怒声を浴びて、私は思わずそばに立つもう一人の親友の背後に隠れる。私たちのやり取りを間近で呆れながら見ていた珠子ちゃんは、何やってんだかと深いため息とともに立ちはだかって言った。",
+				NULL, "Faced with yet another shout, I hid behind my other best friend who was standing next to me. Tamako-chan, who'd been watching our interaction up close with exasperation, let out a deep sigh as she stood between Chisato-chan and me, then began to speak.", Line_Normal);
+	}
 	ClearMessage();
 
 	ModSetLayerFilter(4, 256, "none");
