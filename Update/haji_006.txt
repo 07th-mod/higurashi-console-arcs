@@ -13,10 +13,8 @@ void main()
 
 //#6 ここからが私たちのステージだっ！
 
+	DrawScene("white", 1000 );
 	PlayBGM( 1, "semi", 128, 0 );
-
-	DrawScene("black", 1000 );
-
 	DrawScene("background/sora", 1000 );
 
 //？？？rvS23/09/VTH_takano1001.「ジロウさんったら、男のくせに着替えが遅いわねぇ。ぷんぷん」
@@ -25,23 +23,18 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm03_14", 128, 0);
-
 	PlaySE(3, "se051", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/a/waku_w", 1000 );
-
-	DrawScene("background/a/imagebg", 1000 );
-
-	DrawScene("background/a/ta_swim", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/ta6_akuwarai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawScene("white", 500 );
+	DrawBustshot( 7, "waku_w", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 50, FALSE );
+	DrawScene("background/imagebg", 500 );
+	DrawSprite( 8, "sprite/normal/ta_swim", NULL, -380, -800, -100, 0, 0, 0, FALSE, FALSE, 0, 0, 20, 100, TRUE );
+	MoveSprite( 8, -380, -250, -100, 0, 0, 0, 0, 3000, TRUE );
+	Wait( 1000 );
+	ModSetLayerFilter(9, 196, "none");
+	DrawBustshotWithFiltering( 9, "sprite/normal/ta6_akuwarai_0", "down", 0, 240, 0, FALSE, 0, 0, 0, 0, 0, 19, 500, TRUE );
 
 //r悩ましげなボディをデッキチェアに晒しながら、通りすがる男たちを流し目で誘惑するのは雛見沢診療所の誘惑ナース、鷹野三四だった。
 	OutputLine(NULL, "悩ましげなボディをデッキチェアに晒しながら、通りすがる男たちを流し目で誘惑するのは雛見沢診療所の誘惑ナース、鷹野三四だった。",
@@ -57,7 +50,10 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	MoveSprite( 8, -380, -510, -100, 0, 0, 0, 0, 500, TRUE );
 	PlaySE(3, "boyoon", 256, 64);
+	MoveSprite( 8, -380, -500, -100, 0, 0, 0, 0, 50, TRUE );
+	Wait( 1000 );
 
 //魅音rvS23/03/VTH_mion1111.「あのけしからんボディは間違いない！kvS23/03/VTH_mion1112.　巨乳禁止法違反だね！kvS23/03/VTH_mion1113.　ちょうどいいところに！」
 	PlaySE(4, "ps3/s23/03/vth_mion1111", 256, 64);
@@ -71,11 +67,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	DrawBustshot( 4, "sprite/normal/ta6_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/oki_pool2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/ta6_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //鷹野rvS23/09/VTH_takano1002.「あらあら、魅音ちゃんたちじゃない。kvS23/09/VTH_takano1003.こんにちは。こんなところで奇遇ねぇ」
 	PlaySE(4, "ps3/s23/09/vth_takano1002", 256, 64);
@@ -86,7 +79,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa7_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/sa7_warai_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS23/04/VTH_satoko1043.「をっほっほっほ！kvS23/04/VTH_satoko1044.　実は鷹野さんに、耳寄りなお得情報がございますのよ？！」
 	PlaySE(4, "ps3/s23/04/vth_satoko1043", 256, 64);
@@ -97,22 +90,20 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	FadeSprite( 8, 100, TRUE );
+	DrawSprite( 8, "sprite/normal/sa7_warai_a1_0", NULL, -187, -240, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 16, 25, TRUE );
+	FadeBustshot( 3, FALSE, 0, 0, 0, 0, 25, TRUE );
+	MoveSprite( 8, -340, -240, 0, 0, 0, 0, 0, 400, TRUE );
+	Wait( 400 );
+	MoveSprite( 8, -190, -240, 0, 0, 0, 0, 0, 400, TRUE );
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "daidageki", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/oki_pool2", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/sa7_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 4, "portrait/normal/", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawScene("white", 1000 );
+	DrawBustshot( 3, "sprite/normal/sa7_warai_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, FALSE );
+	DrawBustshot( 4, "portrait/normal/ta6_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 100, FALSE );
+	DrawScene("background/oki_pool2", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlayBGM(2, "hm01_02", 128, 0);
 
 //鷹野rvS23/09/VTH_takano1004.「なな、何ですって？！kvS23/09/VTH_takano1005.　前原くんが履いている海パンは祭具殿の秘宝？！」
@@ -124,7 +115,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/ri7_warai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/ri7_warai_a1_0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //梨花rvS23/05/VTH_rika1049.「……しかも、取り返してくれたら、鷹野を祭具殿秘密見学ツアーにご招待してあげますのです」
 	PlaySE(4, "ps3/s23/05/vth_rika1049", 256, 64);
@@ -132,12 +123,13 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "portrait/normal/", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "portrait/normal/ta6_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 200, TRUE );
 
 //鷹野rvS23/09/VTH_takano1006.「くすくすくす、くっくっくっく！！k|yvS23/09/VTH_takano1007.　……それは捨て置けない話ねぇ…？kvS23/09/VTH_takano1008.　くすくすくす。それで、取り押さえるに当たって、武器の使用は無制限、なのね…？」
 	PlaySE(4, "ps3/s23/09/vth_takano1006", 256, 64);
 	OutputLine(NULL, "「くすくすくす、くっくっくっく！！",
 			NULL, "", Line_WaitForInput);
+	DrawBustshot( 4, "portrait/normal/ta6_akuwarai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 200, TRUE );
 	PlaySE(4, "ps3/s23/09/vth_takano1007", 256, 64);
 	OutputLine(NULL, "　……それは捨て置けない話ねぇ…？",
 			NULL, "", Line_WaitForInput);
@@ -146,33 +138,23 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "portrait/normal/", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlaySE(3, "addse18", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r鷹野はニヤリと笑い、すちゃっと、両手に何本もの注射器を構えて見せる！
 	OutputLine(NULL, "鷹野はニヤリと笑い、すちゃっと、両手に何本もの注射器を構えて見せる！",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 3, "sprite/normal/me6_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/oki_pool1", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/me6_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //魅音rvS23/03/VTH_mion1114.「え？　ええ、まぁ……。k|yvS23/03/VTH_mion1115.って、その注射器はどこから出したの？kvS23/03/VTH_mion1116.　しかも大量に？？」
 	PlaySE(4, "ps3/s23/03/vth_mion1114", 256, 64);
 	OutputLine(NULL, "「え？　ええ、まぁ……。",
 			NULL, "", Line_WaitForInput);
+	DrawBustshot( 3, "sprite/normal/me6_tohoho_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 	PlaySE(4, "ps3/s23/03/vth_mion1115", 256, 64);
 	OutputLine(NULL, "って、その注射器はどこから出したの？",
 			NULL, "", Line_WaitForInput);
@@ -180,8 +162,6 @@ void main()
 	OutputLine(NULL, "　しかも大量に？？」",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	DrawBustshot( 3, "sprite/normal/me6_tohoho_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //鷹野rvS23/09/VTH_takano1009.「医学を生業にする者のたしなみよ」
 	PlaySE(4, "ps3/s23/09/vth_takano1009", 256, 64);
@@ -197,12 +177,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "down", 0, 0, 1000 );
+	Wait( 1000 );
 	DrawScene("background/sora", 1000 );
 
 //？？？rvS23/22/VTH_chie1001.「今日～のカレ～はどんな味～♪kvS23/22/VTH_chie1002.　市民プールのカレーショップは実は隠れた三ツ星店なんです」
@@ -214,19 +190,16 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	PlaySE(3, "se051", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/a/waku_w", 1000 );
-
-	DrawScene("background/a/imagebg", 1000 );
-
-	DrawScene("background/a/ti_swim", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/tie2_1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawScene("white", 500 );
+	DrawBustshot( 7, "waku_w", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 50, FALSE );
+	DrawScene("background/imagebg", 500 );
+	DrawSprite( 8, "sprite/normal/ti_swim", NULL, -420, -800, -100, 0, 0, 0, FALSE, FALSE, 0, 0, 20, 100, TRUE );
+	MoveSprite( 8, -420, -250, -100, 0, 0, 0, 0, 3000, TRUE );
+	Wait( 1000 );
+	ModSetLayerFilter(9, 196, "none");
+	DrawBustshotWithFiltering( 9, "sprite/normal/tie2_1_0", "down", 0, 240, 0, FALSE, 0, 0, 0, 0, 0, 19, 500, TRUE );
 
 //rカレーが食べられるならどこまでも。例え同伴なしでもプールサイドまで行く教師、華麗なる知恵留美子先生だった。
 	OutputLine(NULL, "カレーが食べられるならどこまでも。例え同伴なしでもプールサイドまで行く教師、華麗なる知恵留美子先生だった。",
@@ -242,10 +215,13 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	MoveSprite( 8, -420, -550, -100, 0, 0, 0, 0, 500, TRUE );
+
 //魅音rvS23/03/VTH_mion1117.「泳ぎもせずにカレー三昧は間違いない！k|yvS23/03/VTH_mion1118.　豊満ボディと水着が泣いてるね！kvS23/03/VTH_mion1119.　ちょうどいいところに！」
 	PlaySE(4, "ps3/s23/03/vth_mion1117", 256, 64);
 	OutputLine(NULL, "「泳ぎもせずにカレー三昧は間違いない！",
 			NULL, "", Line_WaitForInput);
+	MoveSprite( 8, -420, -800, -100, 0, 0, 0, 0, 500, TRUE );
 	PlaySE(4, "ps3/s23/03/vth_mion1118", 256, 64);
 	OutputLine(NULL, "　豊満ボディと水着が泣いてるね！",
 			NULL, "", Line_WaitForInput);
@@ -254,11 +230,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	DrawBustshot( 4, "sprite/normal/tie2_1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/oki_pool2", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/tie2_1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //知恵rvS23/22/VTH_chie1003.「おやおや、園崎さんたちですか。kvS23/22/VTH_chie1004.こんにちは。皆さんもカレーですか？」
 	PlaySE(4, "ps3/s23/22/vth_chie1003", 256, 64);
@@ -269,32 +242,30 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa7_akireru_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/sa7_akireru_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS23/04/VTH_satoko1045.「あ、相変わらずのカレー漬けですわね。k|yvS23/04/VTH_satoko1046.そんな知恵先生に聞き逃せないお話がございますのよ？！」
 	PlaySE(4, "ps3/s23/04/vth_satoko1045", 256, 64);
 	OutputLine(NULL, "「あ、相変わらずのカレー漬けですわね。",
 			NULL, "", Line_WaitForInput);
+	DrawBustshot( 3, "sprite/normal/sa7_akuwarai_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 	PlaySE(4, "ps3/s23/04/vth_satoko1046", 256, 64);
 	OutputLine(NULL, "そんな知恵先生に聞き逃せないお話がございますのよ？！」",
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa7_akuwarai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawSprite( 8, "sprite/normal/sa7_akuwarai_a1_0", NULL, -187, -240, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 16, 25, TRUE );
+	FadeBustshot( 3, FALSE, 0, 0, 0, 0, 25, TRUE );
+	MoveSprite( 8, -340, -240, 0, 0, 0, 0, 0, 400, TRUE );
+	Wait( 400 );
+	MoveSprite( 8, -190, -240, 0, 0, 0, 0, 0, 400, TRUE );
 	PlaySE(3, "daidageki", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/oki_pool2", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/sa7_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 4, "sprite/normal/tie2_3_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	DrawBustshot( 3, "sprite/normal/sa7_warai_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, FALSE );
+	DrawBustshot( 4, "sprite/normal/tie2_3_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/oki_pool2", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //知恵rvS23/22/VTH_chie1005.「そ、それは本当ですかッ！！kvS23/22/VTH_chie1006.　前原くんが海パンの中にレトルトカレーのパックを入れている？！」
 	PlaySE(4, "ps3/s23/22/vth_chie1005", 256, 64);
@@ -305,7 +276,7 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/ri7_warai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/ri7_warai_a1_0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //梨花rvS23/05/VTH_rika1050.「……ひんやりして気持ちよくて、しかもカレーの匂いで消臭効果もばっちりとか言ってましたのです」
 	PlaySE(4, "ps3/s23/05/vth_rika1050", 256, 64);
@@ -313,9 +284,15 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/tie2_2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlaySE(3, "addse05", 256, 64);
+	FadeSprite( 8, 10, TRUE );
+	DrawSprite( 8, "sprite/normal/tie2_2_0", NULL, 0, 0, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 21, 25, TRUE );
+	FadeBustshot( 4, FALSE, 0, 0, 0, 0, 25, TRUE );
+	MoveSprite( 8, -10, 0, 0, 0, 0, 0, 0, 250, TRUE );
+	MoveSprite( 8, 10, 0, 0, 0, 0, 0, 0, 250, TRUE );
+	MoveSprite( 8, 0, 0, 0, 0, 0, 0, 0, 250, TRUE );
+	DrawBustshot( 4, "sprite/normal/tie2_2_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	FadeSprite( 8, 10, TRUE );
 
 //知恵rvS23/22/VTH_chie1007.「ゆゆ、許せませんッ！！kvS23/22/VTH_chie1008.　カレーに対する許されざる冒涜ですッ！！」
 	PlaySE(4, "ps3/s23/22/vth_chie1007", 256, 64);
@@ -326,13 +303,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/tie2_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/tie2_4_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawScene("bg_black", 1000 );
 
 //知恵rvS23/22/VTH_chie1009.「あぁ、父なる神よ、彼の愚行を許したまえ…！！」
 	PlaySE(4, "ps3/s23/22/vth_chie1009", 256, 64);
@@ -340,19 +312,17 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	PlaySE(3, "kyupirn", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawBustshot( 4, "portrait/normal/", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	DrawScene("background/a/otu_chie", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("black", 250 );
+	FadeSprite( 8, 10, FALSE );
+	FadeSprite( 4, 10, TRUE );
+	DrawSprite( 4, "portrait/normal/tie2_2_0", NULL, 100, -280, -260, 0, 0, 0, FALSE, FALSE, 0, 0, 20, 25, TRUE );
+	DrawSprite( 8, "eye/otu_chie", NULL, -1400, -240, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 19, 25, TRUE );
 	PlaySE(3, "vse_wrap", 256, 64);
+	MoveSprite( 4, -900, -280, -260, 0, 0, 0, 0, 1000, FALSE );
+	MoveSprite( 8, -200, -240, 0, 0, 0, 0, 0, 1000, TRUE );
 
 //知恵rvS23/22/VTH_chie1010.「でも神が許しても先生は許せませんッ！！！」
 	PlaySE(4, "ps3/s23/22/vth_chie1010", 256, 64);
@@ -386,8 +356,8 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "down", 0, 0, 1000 );
+	Wait( 1000 );
 	DrawScene("background/oki_pool1", 1000 );
 
 //？？？rvS23/06/VTH_shion1001.「原作ではさっぱり描かれてませんけどー。kvS23/06/VTH_shion1002.一応、私も興宮の学校に友人いるんですよねー」
@@ -399,25 +369,24 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	PlaySE(3, "se051", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/a/waku_w", 1000 );
-
-	DrawScene("background/a/imagebg", 1000 );
-
-	DrawScene("background/a/si_swim", 1000 );
-
-	DrawScene("black", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/si4_wink_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawScene("white", 500 );
+	DrawBustshot( 7, "waku_w", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 50, FALSE );
+	DrawScene("background/imagebg", 500 );
+	DrawSprite( 8, "sprite/normal/si_swim", NULL, -420, -800, -100, 0, 0, 0, FALSE, FALSE, 0, 0, 20, 100, TRUE );
+	MoveSprite( 8, -420, -250, -100, 0, 0, 0, 0, 3000, TRUE );
+	Wait( 1000 );
+	ModSetLayerFilter(9, 196, "none");
+	DrawBustshotWithFiltering( 9, "sprite/normal/si4_wink_a1_0", "down", 0, 240, 0, FALSE, 0, 0, 0, 0, 0, 19, 500, TRUE );
 
 //詩音rvS23/06/VTH_shion1003.「今日はそんな子たちとプールです」
 	PlaySE(4, "ps3/s23/06/vth_shion1003", 256, 64);
 	OutputLine(NULL, "「今日はそんな子たちとプールです」",
 			NULL, "", Line_Normal);
 	ClearMessage();
+
+	MoveSprite( 8, -420, -625, -100, 0, 0, 0, 0, 500, TRUE );
 
 //魅音rvS23/03/VTH_mion1123.「そんな隠し設定はどうでもいいからー！！kvS23/03/VTH_mion1124.　詩音、あんたも手伝ってー！！」
 	PlaySE(4, "ps3/s23/03/vth_mion1123", 256, 64);
@@ -428,13 +397,9 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	DrawBustshot( 5, "sprite/normal/me6_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/si4_akuwarai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/oki_pool1", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/me6_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/si4_akuwarai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //詩音rvS23/06/VTH_shion1004.「別に私は、圭ちゃんがアブないナルシさんになっちゃってもへっちゃらですしー。kvS23/06/VTH_shion1005.お姉だって、圭ちゃんに男友達呼ばわりされてたじゃないですかぁ。kvS23/06/VTH_shion1006.それが何か不都合でも？」
 	PlaySE(4, "ps3/s23/06/vth_shion1004", 256, 64);
@@ -490,6 +455,7 @@ void main()
 	PlaySE(4, "ps3/s23/06/vth_shion1009", 256, 64);
 	OutputLine(NULL, "「…やれやれ。形振り構わずってことですか？",
 			NULL, "", Line_WaitForInput);
+	DrawBustshot( 3, "sprite/normal/si4_wink_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 	PlaySE(4, "ps3/s23/06/vth_shion1010", 256, 64);
 	OutputLine(NULL, "　仕方ありませんね、姉妹愛に心を打たれて、今日は貸し１つで手を打ってあげましょう。",
 			NULL, "", Line_WaitForInput);
@@ -498,26 +464,15 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/si4_wink_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
 	PlaySE(3, "vse_spark", 256, 64);
-
 	PlayBGM( 1, "vse_stungun", 128, 0 );
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/oki_pool1", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/me6_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/si4_wink_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawScene("white", 250 );
+	DrawBustshot( 5, "sprite/normal/me6_odoroki_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+	DrawBustshot( 3, "sprite/normal/si4_wink_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, FALSE );
+	DrawScene("background/oki_pool1", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 1000 );
 	FadeOutBGM(1, 200, TRUE);
-
 	DrawBustshot( 5, "sprite/normal/me6_tohoho_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //魅音rvS23/03/VTH_mion1130.「ってあんた、何でプールにまでスタンガン、持ち込んでんのー？！？！」
@@ -534,37 +489,20 @@ void main()
 			NULL, "", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 100, FALSE);
+	FadeBustshot(5, FALSE, 0, 0, 0, 0, 100, TRUE);
 	PlaySE(3, "tatakiwaru", 256, 64);
-
-	DrawBustshot( 4, "portrait/normal/", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/me6_tohoho_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/si4_huteki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 4, "portrait/normal/ri7_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 100, FALSE );
+	DrawBustshot( 5, "sprite/normal/me6_tohoho_a1_0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, FALSE );
+	DrawBustshot( 3, "sprite/normal/si4_huteki_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 100, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //梨花rvS23/05/VTH_rika1051.「……前の町へ帰れ」
 	PlaySE(4, "ps3/s23/05/vth_rika1051", 256, 64);
 	OutputLine(NULL, "「……前の町へ帰れ」",
 			NULL, "", Line_Normal);
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

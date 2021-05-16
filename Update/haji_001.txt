@@ -15,52 +15,48 @@ void main()
 
 //#1 さぁ、ショータイムだ！
 
-	DrawScene("background/t/hazi_fre", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("black", 500 );
+	DrawSprite( 6, "text/hazi_fre", NULL, 0, 0, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 32, 1000, TRUE );
+	Wait( 7000 );
+	FadeSprite( 6, 2000, TRUE );
+	ModEnableNVLModeInADVMode();
 
 //魅音rvS23/03/VTH_mion1001.えー、この物語はフィクションです。krvS23/03/VTH_mion1002.間違いなくフィクションです。krvS23/03/VTH_mion1003.よって実在する場所、人物、団体名などとはr一切関係ありません。krvS23/03/VTH_mion1004.……よいこのみんな、真似しちゃダメだよ？
 	PlaySE(4, "ps3/s23/03/vth_mion1001", 256, 64);
-	OutputLine(NULL, "えー、この物語はフィクションです。",
-			NULL, "Uh, this story is a work of fiction.", Line_WaitForInput);
+	OutputLine(NULL, "えー、この物語はフィクションです。\n",
+			NULL, "Uh, this story is a work of fiction.\n", Line_WaitForInput);
 	PlaySE(4, "ps3/s23/03/vth_mion1002", 256, 64);
-	OutputLine(NULL, "間違いなくフィクションです。",
-			NULL, "Without a doubt, it's fiction.", Line_WaitForInput);
+	OutputLine(NULL, "間違いなくフィクションです。\n",
+			NULL, "Without a doubt, it's fiction.\n", Line_WaitForInput);
 	PlaySE(4, "ps3/s23/03/vth_mion1003", 256, 64);
-	OutputLine(NULL, "よって実在する場所、人物、団体名などとはr一切関係ありません。",
-			NULL, "Any resemblance to places, people, or corporations is purely coincidental.", Line_WaitForInput);
+	OutputLine(NULL, "よって実在する場所、人物、団体名などとは\n一切関係ありません。\n",
+			NULL, "Any resemblance to places, people, or corporations is\n purely coincidental.\n", Line_WaitForInput);
 	PlaySE(4, "ps3/s23/03/vth_mion1004", 256, 64);
 	OutputLine(NULL, "……よいこのみんな、真似しちゃダメだよ？",
 			NULL, "...Don't try this at home, okay kids?", Line_Normal);
 	ClearMessage();
 
+	ModDisableNVLModeInADVMode();
 	PlayBGM(2, "hm01_06", 128, 0);
-
+	DrawBustshot( 3, "sprite/normal/me2_wink_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawBustshot( 5, "sprite/normal/kei2_majime2_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawScene("background/hi4", 1000 );
-
-	DrawBustshot( 3, "sprite/normal/me2_wink_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/kei2_majime2_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //圭一rvS23/01/VTH_k11001.「いや、魅音がそれを言っても、説得力ないんじゃないか、k|yvS23/01/VTH_k11002.――ぐはっ？！」
 	PlaySE(4, "ps3/s23/01/vth_k11001", 256, 64);
 	OutputLine(NULL, "「いや、魅音がそれを言っても、説得力ないんじゃないか、",
 			NULL, "Mion being the one to say that just feels wrong.", Line_WaitForInput);
+	DrawBustshot( 3, "sprite/normal/me2_hig_maji_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawBustshot( 5, "sprite/normal/kei2_nayamu_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	PlaySE(3, "vse_punch3", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlaySE(4, "ps3/s23/01/vth_k11002", 256, 64);
 	OutputLine(NULL, "——ぐはっ？！」",
 			NULL, "Gah!", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/me2_hig_maji_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/kei2_nayamu_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	PlaySE(3, "vse_punch3", 256, 64);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	FadeAllBustshots( 200, TRUE );
 	DrawBustshot( 4, "sprite/normal/ri2_niko_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //梨花rvS23/05/VTH_rika1001.「なお特別編の関係上、本編とは微妙に話がかみ合っていなかったりもしますですが、kvS23/05/VTH_rika1002.こんな平和な日常もあったかもということで皆さん、あたたかく見守ってくださいなのです。ぺこり」
@@ -72,7 +68,7 @@ void main()
 			NULL, " but I hope you're able to warmly watch over this slice of life story.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa2a_akuwarai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/sa2a_akuwarai_a1_0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS23/04/VTH_satoko1001.「よーするに、とにかく楽しければなんでもありってことですわ」
 	PlaySE(4, "ps3/s23/04/vth_satoko1001", 256, 64);
@@ -80,32 +76,17 @@ void main()
 			NULL, "Really though, who cares as long as it's fun!", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/re2b_nande_b1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/re2b_nande_b1_0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //レナrvS23/02/VTH_rena1001.「み、身も蓋もないね沙都子ちゃん……。k|yvS23/02/VTH_rena1002.それでは『ひぐらしのなく頃に粋・bはじさら.<羞晒>し編』、はじまりぃ～」
 	PlaySE(4, "ps3/s23/02/vth_rena1001", 256, 64);
 	OutputLine(NULL, "「み、身も蓋もないね沙都子ちゃん……。",
 			NULL, "Th-that's one way to put it Satoko-chan...", Line_WaitForInput);
+	DrawBustshot( 5, "sprite/normal/re2b_warai_b1_0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 	PlaySE(4, "ps3/s23/02/vth_rena1002", 256, 64);
 	OutputLine(NULL, "それでは『ひぐらしのなく頃に粋・羞晒(はじさら)し編』、はじまりぃ～」",
 			NULL, "And without further ado, Higurashi When They Cry's Hajisarashi Arc will now begin~", Line_Normal);
 	ClearMessage();
-
-	DrawBustshot( 5, "sprite/normal/re2b_warai_b1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );

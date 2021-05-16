@@ -22,8 +22,9 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Miotsukushi Ura      | 100%     | 100%        | 100%    | 
 | Connecting Fragments | 100%     | 100%        | 100%    | 
 | Miotsukushi PS2      | 100%     | 100%        | 100%    | 
+| Hajisarashi          | 100%     |   0%        |   0%    | 
 
-PS2 Miotsukushi has been released! It looks like Hajisarashi is the next arc in the pipeline, and work on Kotohogushi is ongoing too. Haji is pretty short, so it shouldn't take long.
+Work on Hajisarashi has gotten back on track. Really sorry about the long delay. Translation is underway and this arc is pretty short, so I'm fairly confident it'll be done by the end of June!
 
 
 ## Screenshots

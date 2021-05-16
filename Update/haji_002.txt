@@ -13,25 +13,22 @@ void main()
 
 //#2 青春スイッチオンで水着回キターッ！
 
+	DrawScene("white", 1000 );
 	PlayBGM( 1, "semi", 128, 0 );
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/sora", 1000 );
+	DrawSceneWithMask( "background/sora", "m1", 0, 0, 1000 );
+	ModEnableNVLModeInADVMode();
 
 //羽入rvS23/12/VTH_hanyu1001.それは、７月に入ったばかりの、r真夏なみに暑かったある日の放課後のことでした。
 	PlaySE(4, "ps3/s23/12/vth_hanyu1001", 256, 64);
-	OutputLine(NULL, "それは、７月に入ったばかりの、r真夏なみに暑かったある日の放課後のことでした。",
-			NULL, "It was as hot as a midsummer day after school today, even though it was only the start of July.", Line_Normal);
+	OutputLine(NULL, "それは、７月に入ったばかりの、\n真夏なみに暑かったある日の放課後のことでした。",
+			NULL, "It was as hot as a midsummer day after school today,\n even though it was only the start of July.", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm10_68", 128, 0);
-
+	DrawBustshot( 5, "sprite/normal/ri1_def_a1_0", -100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
 	DrawScene("background/gk1", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/ri1_def_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	ModDisableNVLModeInADVMode();
 
 //梨花rvS23/05/VTH_rika1003.「……みー！　みんな、ちょっと聞いてほしいのです」
 	PlaySE(4, "ps3/s23/05/vth_rika1003", 256, 64);
@@ -39,9 +36,9 @@ void main()
 			NULL, "Meep! Everyone, I've got some news to share.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/me1a_majime_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/sa1a_yareyare_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 2, "sprite/normal/re1a_hau_a1_0", -300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 200, FALSE );
+	DrawBustshot( 4, "sprite/normal/me1a_majime_a1_0", 100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/sa1a_yareyare_a1_0", 300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //部活メンバーro60.vS23/01/VTH_k11003|S23/02/VTH_rena1003|S23/03/VTH_mion1005|S23/04/VTH_satoko1002.「「……？」」
 	PlaySE(4, "ps3/s23/01/vth_k11003", 256, 64);
@@ -58,7 +55,7 @@ void main()
 			NULL, "What is it, Rika-chan?", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/ri1_komaru_a2_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/ri1_komaru_a2_0", -100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //梨花rvS23/05/VTH_rika1004.「みー！　ボクはみんなとプールに行きたいのです」
 	PlaySE(4, "ps3/s23/05/vth_rika1004", 256, 64);
@@ -97,7 +94,7 @@ void main()
 			NULL, "It was only natural Rika-chan suggested going to the pool.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/me1b_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/me1b_def_a1_0", 100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS23/03/VTH_mion1006.「そういえば梨花ちゃん、ここのところプールに行きたい、ってずっと言ってたもんね。kvS23/03/VTH_mion1007.ふーむ、プールか……確かにこれだけ暑いと、プールが恋しくなるねぇ～」
 	PlaySE(4, "ps3/s23/03/vth_mion1006", 256, 64);
@@ -108,6 +105,8 @@ void main()
 			NULL, "Hm, the pool huh... When it's this hot outside I just wanna hop in~", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 2, "sprite/normal/re1b_warai_b1_0", -300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 200, TRUE );
+
 //レナrvS23/02/VTH_rena1004.「はぅ！　いいねいいね！kvS23/02/VTH_rena1005.　レナはもちろん異議なーし、だよっ♪」
 	PlaySE(4, "ps3/s23/02/vth_rena1004", 256, 64);
 	OutputLine(NULL, "「はぅ！　いいねいいね！",
@@ -117,7 +116,7 @@ void main()
 			NULL, "Rena has no objections here, nope♪", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa1a_hau_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/sa1a_hau_a1_0", 300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS23/04/VTH_satoko1003.「ですわねぇ。kvS23/04/VTH_satoko1004.たまには沢遊びじゃなくて、広いプールの中を思い切り泳ぎまわりたいでしてよ」
 	PlaySE(4, "ps3/s23/04/vth_satoko1003", 256, 64);
@@ -137,7 +136,7 @@ void main()
 			NULL, "How did you all learn how to swim?", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/me1b_wink_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/me1b_wink_a1_0", 100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS23/03/VTH_mion1008.「沢で水遊びしたり、興宮の市民プールにみんなで行ったりしてるよ。kvS23/03/VTH_mion1009.そこって去年、改築が終わってね。kvS23/03/VTH_mion1010.少しは遊べるプールになったんだよ」
 	PlaySE(4, "ps3/s23/03/vth_mion1008", 256, 64);
@@ -151,13 +150,15 @@ void main()
 			NULL, "It's more fun to play in it now.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/ri1_niko_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/ri1_niko_a1_0", -100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //梨花rvS23/05/VTH_rika1005.「……みー！　流れるプールやウォータースライダーが楽しみなのですよ」
 	PlaySE(4, "ps3/s23/05/vth_rika1005", 256, 64);
 	OutputLine(NULL, "「……みー！　流れるプールやウォータースライダーが楽しみなのですよ」",
 			NULL, "Meep! Lazy rivers and water slides are so fun.", Line_Normal);
 	ClearMessage();
+
+	DrawBustshot( 2, "sprite/normal/re1b_def_b1_0", -300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 200, TRUE );
 
 //レナrvS23/02/VTH_rena1006.「楽しみだよね！kvS23/02/VTH_rena1007.　ねぇねぇ魅ぃちゃん、今度の日曜日とか、みんなでプールに行くってのはどうかな、かな！」
 	PlaySE(4, "ps3/s23/02/vth_rena1006", 256, 64);
@@ -168,7 +169,7 @@ void main()
 			NULL, "Hey, hey, Mii-chan, we should head to the pool with everyone next Sunday. Sounds good, right? Right?", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/me1b_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/me1b_def_a1_0", 100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS23/03/VTH_mion1011.「おじさんもバイトとかは特にないしね。kvS23/03/VTH_mion1012.今度の日曜日、都合の悪い人、いる？」
 	PlaySE(4, "ps3/s23/03/vth_mion1011", 256, 64);
@@ -179,13 +180,15 @@ void main()
 			NULL, "Is there anyone that can't make it?", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 2, "sprite/normal/re1a_warai_a1_0", -300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 200, TRUE );
+
 //レナrvS23/02/VTH_rena1008.「レナは平気」
 	PlaySE(4, "ps3/s23/02/vth_rena1008", 256, 64);
 	OutputLine(NULL, "「レナは平気」",
 			NULL, "Rena is good to go.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa1a_def_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/sa1a_def_a1_0", 300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS23/04/VTH_satoko1005.「私も大丈夫ですわ」
 	PlaySE(4, "ps3/s23/04/vth_satoko1005", 256, 64);
@@ -193,7 +196,7 @@ void main()
 			NULL, "I'm fine as well.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/ri1_warai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/ri1_warai_a1_0", -100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //梨花rvS23/05/VTH_rika1006.「もちろんなのですよ、にぱ～☆」
 	PlaySE(4, "ps3/s23/05/vth_rika1006", 256, 64);
@@ -218,7 +221,7 @@ void main()
 			NULL, "Hehe, that sounds like fun.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa1a_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/sa1a_warai_a1_0", 300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS23/04/VTH_satoko1006.「をっほっほっほ！　楽しみですわねぇ！kvS23/04/VTH_satoko1007.　綺麗になった市民プール、今から本当に楽しみですわー！」
 	PlaySE(4, "ps3/s23/04/vth_satoko1006", 256, 64);
@@ -244,7 +247,7 @@ void main()
 			NULL, "...there's no way there won't be insane club activity at the pool, am I wrong?", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/me1b_tokui_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/me1b_tokui_a1_0", 100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS23/03/VTH_mion1013.「はっはっは、さぁてねぇ。kvS23/03/VTH_mion1014.これだけ暑いと、プールには一般のお客さんも多いだろうしね。kvS23/03/VTH_mion1015.あんまり人が多いようだったら自重しようかね。kvS23/03/VTH_mion1016.行ってから考えてもいいでしょ」
 	PlaySE(4, "ps3/s23/03/vth_mion1013", 256, 64);
@@ -261,6 +264,8 @@ void main()
 			NULL, "Let's cross that bridge when we get there.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 2, "sprite/normal/re1b_def_b1_0", -300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 200, TRUE );
+
 //レナrvS23/02/VTH_rena1009.「そうだね。kvS23/02/VTH_rena1010.レナは部活抜きで、のんびりプールに浸かるのでも十分楽しいかな、かな」
 	PlaySE(4, "ps3/s23/02/vth_rena1009", 256, 64);
 	OutputLine(NULL, "「そうだね。",
@@ -270,7 +275,7 @@ void main()
 			NULL, "Rena thinks a relaxing day at the pool is plenty fun, yeah. Yeah.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/ri1_niko_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 5, "sprite/normal/ri1_niko_a1_0", -100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //梨花rvS23/05/VTH_rika1008.「……みー。ボクもそれで十分楽しいのですよ」
 	PlaySE(4, "ps3/s23/05/vth_rika1008", 256, 64);
@@ -278,7 +283,7 @@ void main()
 			NULL, "Meep. I think it sounds fun too.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/me1b_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/me1b_def_a1_0", 100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS23/03/VTH_mion1017.「はは、たまにはそういうのもいいかもねぇ。kvS23/03/VTH_mion1018.ま、日々の激戦を忘れて、のんびり過ごすのもいいでしょ」
 	PlaySE(4, "ps3/s23/03/vth_mion1017", 256, 64);
@@ -313,7 +318,7 @@ void main()
 			NULL, "When Sunday rolls around, there's no way we won't go crazy.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa1b_hau_b1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/sa1b_hau_b1_0", 300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS23/04/VTH_satoko1008.「をっほっほっほっ！kvS23/04/VTH_satoko1009.　さすがにたくさんの人がいらっしゃるのですから、常識を持って行動するのが当然のことでございますわ～！」
 	PlaySE(4, "ps3/s23/04/vth_satoko1008", 256, 64);
@@ -333,7 +338,7 @@ void main()
 			NULL, "Is this a bad omen?", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa1a_odoroki_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawBustshot( 3, "sprite/normal/sa1a_odoroki_a1_0", 300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //沙都子rvS23/04/VTH_satoko1010.「な、なんですってぇ？！」
 	PlaySE(4, "ps3/s23/04/vth_satoko1010", 256, 64);
@@ -341,7 +346,7 @@ void main()
 			NULL, "Wha-what was that?", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/me1b_wink_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/me1b_wink_a1_0", 100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //魅音rvS23/03/VTH_mion1019.「はいはい。kvS23/03/VTH_mion1020.では部長、園崎魅音！　梨花ちゃんの申請を了承しよう！kvS23/03/VTH_mion1021.　今度の日曜日は市民プールに集合！kvS23/03/VTH_mion1022.　水着とタオル、お財布を忘れずにねー！」
 	PlaySE(4, "ps3/s23/03/vth_mion1019", 256, 64);
@@ -358,9 +363,9 @@ void main()
 			NULL, "Bring a swimsuit and a towel, but don't forget your wallet!", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/sa1a_warai_a1_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
-	DrawBustshot( 5, "sprite/normal/ri1_warai_a1_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+	DrawBustshot( 2, "sprite/normal/re1a_warai_a1_0", -300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/sa1a_warai_a1_0", 300, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
+	DrawBustshot( 5, "sprite/normal/ri1_warai_a1_0", -100, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //部活メンバーro60.vS23/01/VTH_k11017|S23/02/VTH_rena1011|S23/04/VTH_satoko1011|S23/05/VTH_rika1009.「「おおーーーっっ！！」」
 	PlaySE(4, "ps3/s23/01/vth_k11017", 256, 64);
@@ -370,12 +375,6 @@ void main()
 	OutputLine(NULL, "「「おおーーーっっ！！」」",
 			NULL, "Woaaaah!", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -399,9 +398,9 @@ void main()
 			NULL, "I excitedly counted down the days until Sunday on my fingers.", Line_Normal);
 	ClearMessage();
 
+	ModSetLayerFilter(4, 196, "none");
+	DrawBustshot( 4, "sprite/normal/ha1_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/gk3", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/ha1_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS23/12/VTH_hanyu1002.「あぅあぅ、楽しみなのですよ～♪」
 	PlaySE(4, "ps3/s23/12/vth_hanyu1002", 256, 64);
@@ -459,20 +458,6 @@ void main()
 	OutputLine(NULL, "「はいなのです。あぅっ☆」",
 			NULL, "Yes, I will. Auu☆", Line_Normal);
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );
