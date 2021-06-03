@@ -22,9 +22,9 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Miotsukushi Ura      | 100%     | 100%        | 100%    | 
 | Connecting Fragments | 100%     | 100%        | 100%    | 
 | Miotsukushi PS2      | 100%     | 100%        | 100%    | 
-| Hajisarashi          | 100%     |  87%        |   0%    | 
+| Hajisarashi          | 100%     | 100%        |   0%    | 
 
-Work on Hajisarashi has gotten back on track. Really sorry about the long delay. Translation is underway and this arc is pretty short, so I'm fairly confident it'll be done by the end of June!
+Hajisarashi translation is complete! There are still a bunch of little things that need to be done before release, but it should take a couple weeks at most.
 
 
 ## Screenshots
