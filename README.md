@@ -22,9 +22,9 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Miotsukushi Ura      | 100%     | 100%        | 100%    | 
 | Connecting Fragments | 100%     | 100%        | 100%    | 
 | Miotsukushi PS2      | 100%     | 100%        | 100%    | 
-| Hajisarashi          | 100%     | 100%        |  68%    | 
+| Hajisarashi          | 100%     | 100%        |  99%    | 
 
-Hajisarashi translation is complete! Making a lot of progress. Release is probably happening this weekend.
+Hajisarashi is basically done, just gotta take care of some little things and put the pieces together. Releasing this weekend for sure!
 
 
 ## Screenshots
