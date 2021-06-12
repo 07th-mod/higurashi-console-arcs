@@ -22,9 +22,10 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Miotsukushi Ura      | 100%     | 100%        | 100%    | 
 | Connecting Fragments | 100%     | 100%        | 100%    | 
 | Miotsukushi PS2      | 100%     | 100%        | 100%    | 
-| Hajisarashi          | 100%     | 100%        |  99%    | 
+| Hajisarashi          | 100%     | 100%        | 100%    | 
+| Kotohogushi          |   0%     |   1%        |   0%    | 
 
-Hajisarashi is basically done, just gotta take care of some little things and put the pieces together. Releasing this weekend for sure!
+Hajisarashi has been released! And work on Kotohogushi has begun, so expect that at some point in the future.
 
 
 ## Screenshots
@@ -37,8 +38,3 @@ Installation requires a copy of Ch 4 Himatsubushi, either the Steam version or t
 
 ## Installation Instructions
 Installation instructions can be found on the [wiki](http://07th-mod.com/wiki/Higurashi/Higurashi-Part-1---Voice-and-Graphics-Patch/).
-
-
-## Recruiting
-
-Looking for people interested in helping with the rest of the arcs!  I could use a more experienced translator or two to handle the other arcs, or fix any translation issues in the existing translation (This is the first time I've translated anything, so it's not the best). And it would be great to have an editor or two to fix any spelling/grammar errors.  Any help would be appreciated.
