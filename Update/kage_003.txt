@@ -75,9 +75,14 @@ void main()
 	DrawScene("background/mati2", 500 );
 
 //rしかし、残念ながら興宮は災害による混乱が依然として続いており、そのためまともな情報が得られるどころか、『こんな状況下で！』と猛烈な反発を受けただけだった。
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "しかし、残念ながら興宮は災害による混乱が依然として続いており、そのためまともな情報が得られるどころか、『こんな状況下で！』と猛烈な反発を受けただけだった。",
+	if (GetGlobalFlag(GADVMode)) {
+		OutputLineAll("", NULL, Line_ContinueAfterTyping);
+		OutputLine(NULL, "しかし、残念ながら興宮は災害による混乱が依然として続いており、そのためまともな情報が得られるどころか、『こんな状況下で！』と猛烈な反発を受けただけだった。",
+				NULL, "<size=-2>Unfortunately, Okinomiya was still in a state of disarray in the wake of the disaster, so it was impossible for us to obtain any accurate information, much less anything related to our investigation. Conversely, all we received was ardent opposition from those we questioned.", Line_Normal);
+	} else {
+		OutputLine(NULL, "しかし、残念ながら興宮は災害による混乱が依然として続いており、そのためまともな情報が得られるどころか、『こんな状況下で！』と猛烈な反発を受けただけだった。",
 			NULL, "Unfortunately, Okinomiya was still in a state of disarray in the wake of the disaster, so it was impossible for us to obtain any accurate information, much less anything related to our investigation. Conversely, all we received was ardent opposition from those we questioned.", Line_Normal);
+	}
 	ClearMessage();
 
 //rまた、災害救助に当たる各スタッフからも邪魔者扱いを受けて、活動は難航。
@@ -156,7 +161,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>Akasaka</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 13, "ps3/s08/13/321000303", 256, TRUE);
 	OutputLine(NULL, "「『祟り』に対する畏怖心が強いと、どうしても情報提供に二の足を踏んでしまいますからね」",
-			NULL, "\"People with a strong fear of the \"curse\" are far less likely to cooporate with our investigation.\"", Line_Normal);
+			NULL, "\"People with a strong fear of the \"curse\" are far less likely to cooperate with our investigation.\"", Line_Normal);
 	ClearMessage();
 
 	ModDrawCharacter(4, 28, "sprite/tomo1a_shian_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
@@ -4951,7 +4956,7 @@ void main()
 //rそんな化石のような風習が、どうして今になって掘り起こされてきたというのだろう。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そんな化石のような風習が、どうして今になって掘り起こされてきたというのだろう。",
-			NULL, "Why were those fossil-like customs were being dug up now?", Line_Normal);
+			NULL, "Why were those fossil-like customs being dug up now?", Line_Normal);
 	ClearMessage();
 
 	ModDrawCharacter(3, 11, "sprite/oisi1_5_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
