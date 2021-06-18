@@ -16,7 +16,7 @@ void main()
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
 
-	char Chapter[12];
+	char Chapter[13];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
@@ -31,10 +31,10 @@ void main()
 		Chapter[8] = "Miotsukushi Omote";
 		Chapter[9] = "Miotsukushi Ura";
 		Chapter[10] = "Miotsukushi PS2";
-		Chapter[11] = "Back";
+		Chapter[11] = "Hajisarashi";
+		Chapter[12] = "Back";
 
 		//Chapter[12] = "Kotohogushi";
-		//Chapter[13] = "Hajisarashi";
 		//Chapter[14] = "Epilogue";
 	}
 	else
@@ -50,15 +50,15 @@ void main()
 		Chapter[8] = "澪尽し編 表";
 		Chapter[9] = "澪尽し編 裏";
 		Chapter[10] = "澪尽し編 PS2版";	
-		Chapter[11] = "戻る";
+		Chapter[11] = "羞晒し編";
+		Chapter[12] = "戻る";
 
 		//Chapter[12] = "言祝し編";
-		//Chapter[13] = "羞晒し編";
 		//Chapter[14] = "エピローグ";
 	}
 
 //	InitializeSelectedItem();
-	Select( 12, Chapter );
+	Select( 13, Chapter );
 	DisableWindow();
 	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
@@ -417,6 +417,39 @@ void main()
 
 			SetValidityOfSaving( TRUE );
 			CallSection("MioPS2Day1");
+		}
+		else
+		{
+			StopBGM( 2 );
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 11)
+	{
+		DrawScene("scenario/hajisarashi/background", 1200 );
+		DrawBustshot(5, "scenario/hajisarashi/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
+		DrawBustshot(6, "scenario/hajisarashi/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
+		DrawBustshot(7, "scenario/logo", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, TRUE );
+		DrawBustshot(8, "scenario/stripes", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, TRUE );
+		Wait( 100 );
+		FadeBustshotWithFiltering(5, "5", 1, FALSE, 0, 0, 1000, TRUE );
+		Wait( 200 );
+
+		DrawBustshotWithFiltering(9, "scenario/hajisarashi/description", "5", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+		Wait( 200 );
+
+		SetValidityOfInput( TRUE );
+
+		ShowChapterPreview();
+
+		if (LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1) {
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetGlobalFlag(GArtStyle , 0);
+
+			SetValidityOfSaving( TRUE );
+			CallSection("HajiDay1");
 		}
 		else
 		{
@@ -2562,6 +2595,106 @@ void MioPS2Day27()
 	if (ModGetHighestChapterFlag(10)<26)
 		ModSetHighestChapterFlag(10, 26);
 	CallScript( "omot_027" );
+
+	JumpScript( "flow" );
+}
+
+void HajiDay1()
+{
+	SetLocalFlag(LConsoleArc, 11);
+	if (ModGetHighestChapterFlag(11)<0)
+		ModSetHighestChapterFlag(11, 0);
+	CallScript( "haji_001" );
+
+	JumpSection("HajiDay2");
+}
+
+void HajiDay2()
+{
+	SetLocalFlag(LConsoleArc, 8);
+	if (ModGetHighestChapterFlag(8)<1)
+		ModSetHighestChapterFlag(8, 1);
+	CallScript( "haji_002" );
+
+	JumpSection("HajiDay3");
+}
+
+void HajiDay3()
+{
+	SetLocalFlag(LConsoleArc, 8);
+	if (ModGetHighestChapterFlag(8)<2)
+		ModSetHighestChapterFlag(8, 2);
+	CallScript( "haji_003" );
+
+	JumpSection("HajiDay4");
+}
+
+void HajiDay4()
+{
+	SetLocalFlag(LConsoleArc, 8);
+	if (ModGetHighestChapterFlag(8)<3)
+		ModSetHighestChapterFlag(8, 3);
+	CallScript( "haji_004" );
+
+	JumpSection("HajiDay5");
+}
+
+void HajiDay5()
+{
+	SetLocalFlag(LConsoleArc, 8);
+	if (ModGetHighestChapterFlag(8)<4)
+		ModSetHighestChapterFlag(8, 4);
+	CallScript( "haji_005" );
+
+	JumpSection("HajiDay6");
+}
+
+void HajiDay6()
+{
+	SetLocalFlag(LConsoleArc, 8);
+	if (ModGetHighestChapterFlag(8)<5)
+		ModSetHighestChapterFlag(8, 5);
+	CallScript( "haji_006" );
+
+	JumpSection("HajiDay7");
+}
+
+void HajiDay7()
+{
+	SetLocalFlag(LConsoleArc, 8);
+	if (ModGetHighestChapterFlag(8)<6)
+		ModSetHighestChapterFlag(8, 6);
+	CallScript( "haji_007" );
+
+	JumpSection("HajiDay8");
+}
+
+void HajiDay8()
+{
+	SetLocalFlag(LConsoleArc, 8);
+	if (ModGetHighestChapterFlag(8)<7)
+		ModSetHighestChapterFlag(8, 7);
+	CallScript( "haji_008" );
+
+	JumpSection("HajiDay9");
+}
+
+void HajiDay9()
+{
+	SetLocalFlag(LConsoleArc, 8);
+	if (ModGetHighestChapterFlag(8)<8)
+		ModSetHighestChapterFlag(8, 8);
+	CallScript( "haji_009" );
+
+	JumpSection("HajiDay10");
+}
+
+void HajiDay10()
+{
+	SetLocalFlag(LConsoleArc, 8);
+	if (ModGetHighestChapterFlag(8)<9)
+		ModSetHighestChapterFlag(8, 9);
+	CallScript( "haji_010" );
 
 	JumpScript( "flow" );
 }
