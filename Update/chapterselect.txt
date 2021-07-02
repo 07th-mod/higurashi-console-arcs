@@ -16,7 +16,7 @@ void main()
 		   NULL, "", Line_ContinueAfterTyping);
 	ClearMessage();
 
-	char Chapter[13];
+	char Chapter[15];
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
@@ -31,11 +31,11 @@ void main()
 		Chapter[8] = "Miotsukushi Omote";
 		Chapter[9] = "Miotsukushi Ura";
 		Chapter[10] = "Miotsukushi PS2";
-		Chapter[11] = "Hajisarashi";
-		Chapter[12] = "Back";
+		Chapter[11] = "Kotohogushi";
+		Chapter[12] = "Hajisarashi";
+		Chapter[13] = "Epilogue";
+		Chapter[14] = "Back";
 
-		//Chapter[12] = "Kotohogushi";
-		//Chapter[14] = "Epilogue";
 	}
 	else
 	{
@@ -50,15 +50,15 @@ void main()
 		Chapter[8] = "澪尽し編 表";
 		Chapter[9] = "澪尽し編 裏";
 		Chapter[10] = "澪尽し編 PS2版";	
-		Chapter[11] = "羞晒し編";
-		Chapter[12] = "戻る";
+		Chapter[11] = "言祝し編";
+		Chapter[12] = "羞晒し編";
+		Chapter[13] = "エピローグ";
+		Chapter[14] = "戻る";
 
-		//Chapter[12] = "言祝し編";
-		//Chapter[14] = "エピローグ";
 	}
 
 //	InitializeSelectedItem();
-	Select( 13, Chapter );
+	Select( 15, Chapter );
 	DisableWindow();
 	if(LoadValueFromLocalWork( SelectResult ) == 0)
 	{
@@ -426,6 +426,39 @@ void main()
 	}
 	else if(LoadValueFromLocalWork( SelectResult ) == 11)
 	{
+		DrawScene("scenario/kotohogushi/background", 1200 );
+		DrawBustshot(5, "scenario/kotohogushi/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
+		DrawBustshot(6, "scenario/kotohogushi/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
+		DrawBustshot(7, "scenario/logo", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, TRUE );
+		DrawBustshot(8, "scenario/stripes", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, TRUE );
+		Wait( 100 );
+		FadeBustshotWithFiltering(5, "5", 1, FALSE, 0, 0, 1000, TRUE );
+		Wait( 200 );
+
+		DrawBustshotWithFiltering(9, "scenario/kotohogushi/description", "5", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+		Wait( 200 );
+
+		SetValidityOfInput( TRUE );
+
+		ShowChapterPreview();
+
+		if (LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1) {
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetGlobalFlag(GArtStyle , 0);
+
+			SetValidityOfSaving( TRUE );
+			CallSection("KotoDay1");
+		}
+		else
+		{
+			StopBGM( 2 );
+			JumpScript( "flow" );
+		}
+	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 12)
+	{
 		DrawScene("scenario/hajisarashi/background", 1200 );
 		DrawBustshot(5, "scenario/hajisarashi/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
 		DrawBustshot(6, "scenario/hajisarashi/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
@@ -457,6 +490,40 @@ void main()
 			JumpScript( "flow" );
 		}
 	}
+	else if(LoadValueFromLocalWork( SelectResult ) == 13)
+	{
+		DrawScene("scenario/epilogue/background", 1200 );
+		DrawBustshot(5, "scenario/epilogue/background", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 0, TRUE );
+		DrawBustshot(6, "scenario/epilogue/title", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 15, 0, TRUE );
+		DrawBustshot(7, "scenario/logo", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, TRUE );
+		DrawBustshot(8, "scenario/stripes", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, TRUE );
+		Wait( 100 );
+		FadeBustshotWithFiltering(5, "5", 1, FALSE, 0, 0, 1000, TRUE );
+		Wait( 200 );
+
+		DrawBustshotWithFiltering(9, "scenario/epilogue/description", "5", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 1000, TRUE );
+		Wait( 200 );
+
+		SetValidityOfInput( TRUE );
+
+		ShowChapterPreview();
+
+		if (LoadValueFromLocalWork( LOCALWORK_NO_RESULT ) == 1) {
+			StopBGM( 2 );
+			PlaySE( 1, "wa_037", 128, 64 );
+
+			SetGlobalFlag(GArtStyle , 0);
+
+			SetValidityOfSaving( TRUE );
+			CallSection("Epilogue");
+		}
+		else
+		{
+			StopBGM( 2 );
+			JumpScript( "flow" );
+		}
+	}
+
 	else
 	{
 		StopBGM( 2 );
@@ -2695,6 +2762,177 @@ void HajiDay10()
 	if (ModGetHighestChapterFlag(8)<9)
 		ModSetHighestChapterFlag(8, 9);
 	CallScript( "haji_010" );
+
+	JumpScript( "flow" );
+}
+
+void KotoDay1()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<1)
+		ModSetHighestChapterFlag(9, 1);
+	CallScript( "koto_001" );
+
+	JumpSection("KotoDay2");
+}
+
+void KotoDay2()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<2)
+		ModSetHighestChapterFlag(9, 2);
+	CallScript( "koto_002" );
+
+	JumpSection("KotoDay3");
+}
+
+void KotoDay3()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<3)
+		ModSetHighestChapterFlag(9, 3);
+	CallScript( "koto_003" );
+
+	JumpSection("KotoDay4");
+}
+
+void KotoDay4()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<4)
+		ModSetHighestChapterFlag(9, 4);
+	CallScript( "koto_004" );
+
+	StoreValueToLocalWork( ChapterNumber, 4 );
+	SavePoint("Ch.4 終わり", "End of Chapter 4");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KotoDay5");
+}
+
+void KotoDay5()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<5)
+		ModSetHighestChapterFlag(9, 5);
+	CallScript( "koto_005" );
+
+	JumpSection("KotoDay6");
+}
+
+void KotoDay6()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<6)
+		ModSetHighestChapterFlag(9, 6);
+	CallScript( "koto_006" );
+
+	StoreValueToLocalWork( ChapterNumber, 6 );
+	SavePoint("Ch.6 終わり", "End of Chapter 6");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KotoDay7");
+}
+
+void KotoDay7()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<7)
+		ModSetHighestChapterFlag(9, 7);
+	CallScript( "koto_007" );
+
+	JumpSection("KotoDay8");
+}
+
+void KotoDay8()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<8)
+		ModSetHighestChapterFlag(9, 8);
+	CallScript( "koto_008" );
+
+	JumpSection("KotoDay9");
+}
+
+void KotoDay9()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<9)
+		ModSetHighestChapterFlag(9, 9);
+	CallScript( "koto_009" );
+
+	JumpSection("KotoDay10");
+}
+
+void KotoDay10()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<10)
+		ModSetHighestChapterFlag(9, 10);
+	CallScript( "koto_010" );
+
+	JumpSection("KotoDay11");
+}
+
+void KotoDay11()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<11)
+		ModSetHighestChapterFlag(9, 11);
+	CallScript( "koto_011" );
+
+	StoreValueToLocalWork( ChapterNumber, 11 );
+	SavePoint("Ch.11 終わり", "End of Chapter 11");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KotoDay12");
+}
+
+void KotoDay12()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<12)
+		ModSetHighestChapterFlag(9, 12);
+	CallScript( "koto_012" );
+
+	StoreValueToLocalWork( ChapterNumber, 12 );
+	SavePoint("Ch.12 終わり", "End of Chapter 12");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
+
+	JumpSection("KotoDay13");
+}
+
+void KotoDay13()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<13)
+		ModSetHighestChapterFlag(9, 13);
+	CallScript( "koto_013" );
+
+	JumpSection("KotoDay14");
+}
+
+void KotoDay14()
+{
+	SetLocalFlag(LConsoleArc, 9);
+	if (ModGetHighestChapterFlag(9)<14)
+		ModSetHighestChapterFlag(9, 14);
+	CallScript( "koto_014" );
+
+	JumpScript( "flow" );
+}
+
+void Epilogue()
+{
+	SetLocalFlag(LConsoleArc, 13);
+	StoreValueToLocalWork( ChapterNumber, 1 );
+	SavePoint("エピローグ", "Epilogue");
+	CallSection( "SetDay" );
+	CallSection( "ViewTips" );
 
 	JumpScript( "flow" );
 }
