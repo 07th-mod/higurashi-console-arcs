@@ -23,7 +23,7 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Connecting Fragments | 100%     | 100%        | 100%    | 
 | Miotsukushi PS2      | 100%     | 100%        | 100%    | 
 | Hajisarashi          | 100%     | 100%        | 100%    | 
-| Kotohogushi          |  20%     |  53%        |   0%    | 
+| Kotohogushi          |  30%     |  53%        |   0%    | 
 
 Hajisarashi has been released! And work on Kotohogushi has begun, so expect that at some point in the future.
 
