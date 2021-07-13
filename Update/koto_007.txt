@@ -14,10 +14,8 @@ void main()
 
 //#7 幸せと、禁忌と
 
+	DrawScene("white", 1000 );
 	PlayBGM( 1, "semi", 128, 0 );
-
-	DrawScene("black", 1000 );
-
 	DrawScene("background/sora", 1000 );
 
 //r蝉の鳴き声が降り注ぐように、庭一面に響き渡っている。
@@ -41,13 +39,11 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/hu_engawa_03", 1000 );
-
+	DrawScene("background/hu_engawa_03", 250 );
 	PlaySE(3, "down", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlayBGM(2, "hm01_01", 128, 0);
 
 //羽入rvS16/45/DS43070957.「ふぅ…よいしょ、っと」
@@ -101,7 +97,6 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	DrawScene("background/hu_ima", 1000 );
 
 //志乃rvS16/00/DS43030021.「…んー。やっぱり、この神社の井戸水は冷たくていいわね。kvS16/00/DS43030022.なんでこの夏の暑さでも、氷みたいに涼やかなのかしら」
@@ -151,11 +146,8 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	DrawScene("black", 1000 );
 
 //r…志乃を陸から紹介されて知己を結んでから、およそ３ヶ月が経とうとしている。
@@ -189,7 +181,7 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm01_06", 128, 0);
-
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
 	DrawScene("background/hu_ima", 1000 );
 
 //羽入rvS16/45/DS43070963.「あの…陸？kvS16/45/DS43070964.　私の家事の才能はいかがなものでしょうか」
@@ -212,9 +204,10 @@ void main()
 			NULL, " To be honest, I can't say for sure that I can say that they are not good.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/riku_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43070965.「どっちですか？！」
 	PlaySE(4, "ps3/s16/45/ds43070965", 256, 64);
@@ -242,8 +235,6 @@ void main()
 			NULL, "\"...\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r確かに、以前私の作った残りものを近くの野良犬に分けてやった時は、…泡を吹いて気絶したような。
@@ -256,9 +247,8 @@ void main()
 			NULL, "Though I used the same ingredients as Riku, everything I cooked seemed to be deadly poisonous... Why?", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/riku_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43070967.「でも、だったらなんで陸は平気なのですか？」
 	PlaySE(4, "ps3/s16/45/ds43070967", 256, 64);
@@ -267,14 +257,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "kyupirn", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/hu_ima", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020571.「それはもちろん、あなたを愛しているからです」
 	PlaySE(4, "ps3/s16/46/ds43020571", 256, 64);
@@ -291,17 +278,16 @@ void main()
 			NULL, " In other words, without love, it cannot be eaten...?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/riku_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020572.「うっ…」
 	PlaySE(4, "ps3/s16/46/ds43020572", 256, 64);
 	OutputLine(NULL, "「うっ…」",
 			NULL, "\"Uugh...\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -365,17 +351,16 @@ void main()
 			NULL, "\"It's a pleasure to meet you. I'm Shino Kimiyoshi.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "pou", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43070972.「あ、えっと…こ、こんにちは、です」
 	PlaySE(4, "ps3/s16/45/ds43070972", 256, 64);
 	OutputLine(NULL, "「あ、えっと…こ、こんにちは、です」",
 			NULL, "\"Oh, umm... p-pleased to... meet you.\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -449,9 +434,7 @@ void main()
 	ClearMessage();
 
 	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawBustshot( 3, "sprite/normal/riku_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
-
+	DrawBustshot( 3, "sprite/normal/riku_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawBustshot( 5, "sprite/normal/oha2_akire_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
 
 //羽入rvS16/45/DS43070973.「あの…それで、私に何か…？」
@@ -520,10 +503,6 @@ void main()
 			NULL, " A-all right..\".", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rぎこちなく頷くと、志乃はにこやかな笑顔で緊張を和らげるように、私の手を取る。
@@ -551,11 +530,9 @@ void main()
 			NULL, "Not that it was entirely inaccurate... but I felt a little guilty when it came to my age. After all, I was much older than Shino, to say the least of the village elders.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 5, "sprite/normal/oha2_akire_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/riku_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ji1", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/oha2_akire_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/riku_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //陸rvS16/46/DS43020576.「志乃さんは、女性ですからね。kvS16/46/DS43020577.私では気付かないことでもきっと、あなたの力になってくれると思いますよ」
 	PlaySE(4, "ps3/s16/46/ds43020576", 256, 64);
@@ -578,9 +555,10 @@ void main()
 			NULL, " Not only that, he never listens to others, either...\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 5, "sprite/normal/oha2_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
+	DrawBustshot( 5, "sprite/normal/oha2_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 100, TRUE );
 	PlaySE(3, "pou", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43070978.「あ、…確かに、そうです」
 	PlaySE(4, "ps3/s16/45/ds43070978", 256, 64);
@@ -599,10 +577,6 @@ void main()
 	OutputLine(NULL, "どうか遠慮しないで、なんでも相談してくださいね」",
 			NULL, " So please don't hesitate to ask me about anything that comes to mind.\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -642,11 +616,9 @@ void main()
 			NULL, "I understood that was out of consideration for me... and was a bit relieved.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 5, "sprite/normal/oha2_warai_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/riku_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ji1", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/oha2_warai_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/riku_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 
 //羽入rvS16/45/DS43070980.「よろしくお願いします、志乃さん」
 	PlaySE(4, "ps3/s16/45/ds43070980", 256, 64);
@@ -669,15 +641,9 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
+	FadeFilm( 500, TRUE );
 	DrawScene("background/hu_ima", 1000 );
-
 	PlayBGM(2, "hm01_03", 128, 0);
 
 //r最初はとにかく悲惨で、何度も志乃を呆れさせたり、時には厳しく注意されたりもした。
@@ -788,12 +754,8 @@ void main()
 			NULL, "Truth be told, there's a reason why we became fast friends in such a short time... A little while ago, Shino accidentally discovered my horns.", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
 
 //r家事を教わるようになって、１ヶ月ほど経った頃…。
@@ -811,21 +773,16 @@ void main()
 			NULL, "At that moment... she accidentally touched my head, knocking the hood covering my horns off.", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/hu_engawa_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
 	PlaySE(3, "down2", 256, 64);
-
+	DrawBustshot( 4, "sprite/normal/oha2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/hu_engawa_03", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 	PlaySE(3, "furu", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "down", 0, 0, 250 );
+	DrawBustshot( 4, "sprite/normal/oha1_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_engawa_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha1_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //志乃rvS16/00/DS43030059.「あ…」
 	PlaySE(4, "ps3/s16/00/ds43030059", 256, 64);
@@ -842,9 +799,6 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm05_20", 128, 0);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r志乃の見開いた目が、私の頭に向けられている。
@@ -884,9 +838,8 @@ void main()
 			NULL, "\"Huh...?\"", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/oha1_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_engawa_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha1_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //志乃rvS16/00/DS43030061.「ありがとうね、羽入。kvS16/00/DS43030062.私ってそそっかしいから…はい、これ」
 	PlaySE(4, "ps3/s16/00/ds43030061", 256, 64);
@@ -898,15 +851,12 @@ void main()
 	ClearMessage();
 
 	DrawBustshot( 4, "sprite/normal/oha2_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	DrawBustshot( 4, "sprite/normal/oha2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //rそう言って志乃は、ごく自然に落ちた頭巾を拾って、私の頭にかぶせてくれた。
 	OutputLine(NULL, "そう言って志乃は、ごく自然に落ちた頭巾を拾って、私の頭にかぶせてくれた。",
 			NULL, "Shino said that, picked my hood off the ground as if it were completely natural, and put it on my head.", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -956,11 +906,10 @@ void main()
 			NULL, "From that point on, I treasured Shino as a friend and trusted her from the bottom of my heart...", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
+	FadeFilm( 500, TRUE );
+	DrawBustshot( 4, "sprite/normal/oha2_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43070990.「…ありがとう、志乃」
 	PlaySE(4, "ps3/s16/45/ds43070990", 256, 64);
@@ -1045,10 +994,7 @@ void main()
 			NULL, " You like these... right?\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(2, 200, FALSE);
 
 //r志乃は重箱のふたをあけ、中を私に見せる。
@@ -1062,14 +1008,10 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "se051", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	PlayBGM(2, "hm01_01", 128, 0);
-
+	DrawBustshot( 4, "sprite/normal/oha2_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43070994.「うわぁぁ…っ！」
 	PlaySE(4, "ps3/s16/45/ds43070994", 256, 64);
@@ -1104,9 +1046,10 @@ void main()
 			NULL, " Hanyuu?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43070995.「……えっ？」
 	PlaySE(4, "ps3/s16/45/ds43070995", 256, 64);
@@ -1138,9 +1081,10 @@ void main()
 			NULL, "\"No, you were just spacing out, that's all...\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43070997.「い、いえ私は、別に！kvS16/45/DS43070998.　…ああ、陸の話でしたね！kvS16/45/DS43070999.　今日は、私用で町のほうへ行くとのことでしたので…。kvS16/45/DS43071000.せっかくですから、いただきましょうかっ！」
 	PlaySE(4, "ps3/s16/45/ds43070997", 256, 64);
@@ -1163,17 +1107,16 @@ void main()
 			NULL, "\"...How about you wipe that drool from your mouth first?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071001.「あぅっっ？！」
 	PlaySE(4, "ps3/s16/45/ds43071001", 256, 64);
 	OutputLine(NULL, "「あぅっっ？！」",
 			NULL, "\"Auuuuuu?!\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1217,9 +1160,8 @@ void main()
 			NULL, "Oh no no no... It seemed my weaknesses were polluting my brain.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/oha2_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //志乃rvS16/00/DS43030078.「そういえば、陸は町に何の用なの？」
 	PlaySE(4, "ps3/s16/00/ds43030078", 256, 64);
@@ -1315,8 +1257,6 @@ void main()
 			NULL, "\"...Ah!\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rひょっとしてその記念に、何かを買ってきてくれたのだろうか…？
@@ -1354,11 +1294,11 @@ void main()
 			NULL, " You're blushing.\"", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/hu_ima", 1000 );
-
+	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/hu_ima", 250 );
 	PlaySE(3, "pou", 256, 64);
-
-	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071010.「な、そ、そんなことは、ありません！」
 	PlaySE(4, "ps3/s16/45/ds43071010", 256, 64);
@@ -1398,8 +1338,6 @@ void main()
 			NULL, " I'll need to get one more teacu...\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //rそうして、私が立ち上がろうとした瞬間、…がららっ！　と勢いよく障子が開け放たれる音が響く。
@@ -1413,14 +1351,10 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "door", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawSceneWithMask( "white", "left", 0, 0, 250 );
+	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawSceneWithMask( "background/hu_ima", "right", 0, 0, 250 );
 
 //羽入rvS16/45/DS43071013.「っ――？！」
 	PlaySE(4, "ps3/s16/45/ds43071013", 256, 64);
@@ -1429,21 +1363,9 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	Negative( 1000, TRUE );
+	Wait( 500 );
+	FadeFilm( 1000, TRUE );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //rその瞬間、…首筋に悪寒が走る。
@@ -1514,8 +1436,6 @@ void main()
 			NULL, "\"...\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r時間が止まる。
@@ -1533,9 +1453,8 @@ void main()
 			NULL, "Only Riku and his rapid panting were carving time into this still world.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/riku_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43071016.「り、陸…？kvS16/45/DS43071017.　もう一度言ってくれませんか。kvS16/45/DS43071018.何が、出来たの、ですか？」
 	PlaySE(4, "ps3/s16/45/ds43071016", 256, 64);
@@ -1549,9 +1468,10 @@ void main()
 			NULL, " What... exactly... is done?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020583.「はいっ、何度でも言いましょう。kvS16/46/DS43020584.素晴らしい出来栄えの巫女服ができたのです！kvS16/46/DS43020585.　今度こそ羽入に気に入ってもらえる、最高の代物を用意しましたっ！」
 	PlaySE(4, "ps3/s16/46/ds43020583", 256, 64);
@@ -1564,8 +1484,6 @@ void main()
 	OutputLine(NULL, "　今度こそ羽入に気に入ってもらえる、最高の代物を用意しましたっ！」",
 			NULL, " I had the best one in the world made! I just know you'll love this one!\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1595,11 +1513,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
+	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlayBGM(2, "hm01_02", 128, 0);
 
 //陸rvS16/46/DS43020586.「今回の巫女服は、今の私に考えうる限り最高のものを作ったつもりです。kvS16/46/DS43020587.今羽入が着ている巫女服を元にしながら、袖口を分離させるという構造を発展させまして、今回は下の方も切り離してみました！」
@@ -1612,6 +1527,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "daidageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071019.「は…はいぃぃっっ？！」
 	PlaySE(4, "ps3/s16/45/ds43071019", 256, 64);
@@ -1634,9 +1551,10 @@ void main()
 			NULL, "It had been warped beyond recognition from its original form... This was clearly something else altogether, wasn't it, you bastard?!!", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020588.「今までの私は甘かった。kvS16/46/DS43020589.巫女の素晴らしさを表現するために女人の美を追求すると言いながら、未だどこかで巫女服として越えてはならない一線があるような気がしていました」
 	PlaySE(4, "ps3/s16/46/ds43020588", 256, 64);
@@ -1648,8 +1566,9 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
-
-	DrawBustshot( 4, "sprite/normal/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020590.「しかし、それこそが巫女服の進化を阻害する悪習。kvS16/46/DS43020591.物事は変革していくことで新たなる世界を切り開くものであり、巫女服もまたそうであると言えましょう」
 	PlaySE(4, "ps3/s16/46/ds43020590", 256, 64);
@@ -1661,14 +1580,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "kyupirn", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/hu_ima", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020592.「なればこそ、今の私に作り得る最高の巫女服というのならば――kvS16/46/DS43020593.今までにない斬新かつ洗練された発想が必要だったのですっ！」
 	PlaySE(4, "ps3/s16/46/ds43020592", 256, 64);
@@ -1680,22 +1596,17 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "finish", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/hu_ima", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入r-vS16/45/DS43071020.（こ、こいつは…！！）
 	PlaySE(4, "ps3/s16/45/ds43071020", 256, 64);
 	OutputLine(NULL, "（こ、こいつは…！！）",
 			NULL, "(Th-this son of a...!!)", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1734,9 +1645,8 @@ void main()
 			NULL, "He made this rare shopping trip... to get <i>that</i< of all thiiiings?!", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS16/46/DS43020594.「実は、この巫女服は今までの女性服では考えられない挑戦をしています」
 	PlaySE(4, "ps3/s16/46/ds43020594", 256, 64);
@@ -1745,8 +1655,9 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
-
-	DrawBustshot( 4, "sprite/normal/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020595.「それはお腹！」
 	PlaySE(4, "ps3/s16/46/ds43020595", 256, 64);
@@ -1755,15 +1666,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "finish", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawScene("white", 250 );
+	DrawBustshot( 4, "sprite/normal/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/hu_ima", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
 	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS16/46/DS43020596.「白衣を胸下までとし、緋袴は通常の胸下で留めるのではなく男性と同じく腰留めにする！kvS16/46/DS43020597.　こうすることで本来、日常生活では決して見ることのないお腹という部位を露わにすることができるのです！」
@@ -1775,9 +1682,10 @@ void main()
 			NULL, " By doing so, the stomach, never seen in day to day life, can be bared for the world to see!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020598.「なおかつ白衣の下半分をなくしたため、緋袴の内側には何もなく、左右に開かれた切れ目からは……kvS16/46/DS43020599.ああっ、ああっ、そこに広がるのは桃源郷……っ？！」
 	PlaySE(4, "ps3/s16/46/ds43020598", 256, 64);
@@ -1789,14 +1697,14 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "pou", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071021.「……おい、こら」
 	PlaySE(4, "ps3/s16/45/ds43071021", 256, 64);
 	OutputLine(NULL, "「……おい、こら」",
 			NULL, "\"...Hold it right there, you bastard.\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -1835,9 +1743,8 @@ void main()
 			NULL, "But was just another goddamn miko outfit from the very staaaart?!", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS16/46/DS43020600.「今回は私が手ずから作り上げたわけではありませんが、私と志を同じくする兄弟が丹精込めて作り上げてくれました！kvS16/46/DS43020601.　この間知り合ったばかりですが、とても腕のいい呉服屋さんですよ」
 	PlaySE(4, "ps3/s16/46/ds43020600", 256, 64);
@@ -1862,20 +1769,16 @@ void main()
 			NULL, "\"Of course I have a probleeeeeeeeeeem!!\"", Line_Normal);
 	ClearMessage();
 
+	DisableWindow();
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "k1-swing", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "up", 0, 0, 250 );
+	Wait( 250 );
 	PlaySE(3, "finish", 256, 64);
-
-	DrawScene("background/furiker_a", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("background/furiker_a", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 250 );
+	DrawScene("white", 1000 );
 	DrawScene("black", 1000 );
 
 //陸rvS16/46/DS43020603.「ほんがらぶっはぁぁっっ？！」
@@ -1900,22 +1803,15 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
+	DrawSceneWithMask( "white", "down", 0, 0, 500 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
 	PlaySE(3, "bb", 256, 64);
-
+	DrawScene("white", 250 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	Wait( 1000 );
 	PlayBGM(2, "hm01_06", 128, 0);
-
-	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/oha2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawSceneWithMask( "background/hu_ima", "up", 0, 0, 1000 );
 
 //羽入rvS16/45/DS43071023.「…まったく！kvS16/45/DS43071024.　いったい何を考えているのですか、陸はっ！」
 	PlaySE(4, "ps3/s16/45/ds43071023", 256, 64);
@@ -1956,9 +1852,10 @@ void main()
 			NULL, "\"But what kind of wife are you to not bring him home?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha2_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/oha2_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071025.「何を言っているのですか！kvS16/45/DS43071026.　ここまで連れてきてもらえただけ、有り難いというものです！」
 	PlaySE(4, "ps3/s16/45/ds43071025", 256, 64);
@@ -2017,6 +1914,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "pou", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //志乃rvS16/00/DS43030092.「……前言撤回、こいつ川に捨ててこようか？」
 	PlaySE(4, "ps3/s16/00/ds43030092", 256, 64);
@@ -2050,9 +1949,10 @@ void main()
 			NULL, " He just refuses to listen no matter how many times I say no!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha2_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/oha2_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "tataku", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071033.「何ですか、宝物庫に呪いの巫女服が封印されていて、それに触ってしまったばかりに憧れの巫女服を着られないまま死んだ女の霊にでも憑かれていたりするんですかっ？！」
 	PlaySE(4, "ps3/s16/45/ds43071033", 256, 64);
@@ -2066,9 +1966,10 @@ void main()
 			NULL, "\"If he were cursed, then maybe we could at least exorcise or purify him...\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/oha2_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071034.「まったくです！kvS16/45/DS43071035.　幽霊や怨霊の類であるならば、遊離体と構造的にはほぼ同じはず！kvS16/45/DS43071036.　リューンの技術で無理やり分子結合させるなり、何かしらに同化させるなりして、たたっ斬ってやるというのに！」
 	PlaySE(4, "ps3/s16/45/ds43071034", 256, 64);
@@ -2091,8 +1992,6 @@ void main()
 			NULL, " Yuuri... Ryuun?\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r治まらない怒りに声を荒げ、誰にともなく文句を放つ。
@@ -2110,9 +2009,8 @@ void main()
 			NULL, "I continued venting like that for a while until Shiho, who'd been halfheartedly playing along with me, suddenly chuckled.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/oha2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43071037.「……なんですか、志乃？」
 	PlaySE(4, "ps3/s16/45/ds43071037", 256, 64);
@@ -2129,9 +2027,10 @@ void main()
 			NULL, " Did you want a present that badly?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/normal/oha2_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "pou", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071038.「っ、ベ、別に…」
 	PlaySE(4, "ps3/s16/45/ds43071038", 256, 64);
@@ -2208,7 +2107,7 @@ void main()
 	ClearMessage();
 
 	DrawBustshot( 4, "sprite/normal/oha2_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	Wait( 1000 );
 	DrawBustshot( 4, "sprite/normal/oha2_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43071043.「…………？」
@@ -2218,11 +2117,7 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
-
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //rあれ、なんかいつもと違う。
@@ -2246,13 +2141,11 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
-	DrawScene("background/hu_ima", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
 	PlaySE(3, "down2", 256, 64);
-
+	DrawBustshot( 4, "sprite/normal/oha2_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/hu_ima", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlayBGM(2, "hm06_25", 128, 0);
 
 //羽入rvS16/45/DS43071044.「ぅ、っぷ――！」
@@ -2270,8 +2163,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dsse10", 256, 64);
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "black", "left", 0, 0, 500 );
 
 //r口を押さえながら庭先に出て、草むらの陰にうずくまる。
 	OutputLine(NULL, "口を押さえながら庭先に出て、草むらの陰にうずくまる。",
@@ -2288,9 +2180,10 @@ void main()
 			NULL, "Unable to fight it back, I threw up the contents of my stomach before I even knew what was happening.", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/hu_engawa_03", 1000 );
-
+	DrawScene("background/hu_engawa_03", 250 );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071045.「ぅ……あ、うぇ、……うぇえぇ……っ！」
 	PlaySE(4, "ps3/s16/45/ds43071045", 256, 64);
@@ -2308,8 +2201,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //r志乃が背中を撫でてくれる。
 	OutputLine(NULL, "志乃が背中を撫でてくれる。",
@@ -2347,8 +2243,6 @@ void main()
 	OutputLine(NULL, "い、一体、なにが…？」",
 			NULL, " Wh-what in the world was that...?\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -2395,10 +2289,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("background/hu_engawa_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/normal/oha2_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	DrawSceneWithMask( "background/hu_engawa_03", "up", 0, 0, 1000 );
 
 //rその時、真剣な声で。
 	OutputLine(NULL, "その時、真剣な声で。",
@@ -2454,11 +2346,7 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm10_75", 128, 0);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 2000 );
 	DrawScene("black", 1000 );
 
 //r志乃が私の両手を掴んで、勢いよく上下に振る。
@@ -2501,9 +2389,8 @@ void main()
 			NULL, "Me and Riku's child was growing in me...?!", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/oha2_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_engawa_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43071052.「ほ、本当…に？」
 	PlaySE(4, "ps3/s16/45/ds43071052", 256, 64);
@@ -2530,8 +2417,6 @@ void main()
 	OutputLine(NULL, "「私が、…母親……？」",
 			NULL, "\"I'm going to be... a mother...?\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -2604,16 +2489,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "sizuku_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 	PlaySE(3, "sizuku_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r嬉し涙が…止まらない。
 	OutputLine(NULL, "嬉し涙が…止まらない。",
@@ -2674,10 +2554,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "iwakannnohatuga", 128, 0 );
-
-	DrawScene("background/sora", 1000 );
+	Negative( 1000, TRUE );
 
 //rはた、と。
 	OutputLine(NULL, "はた、と。",
@@ -2720,6 +2598,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071061.「――っ！！」
 	PlaySE(4, "ps3/s16/45/ds43071061", 256, 64);
@@ -2728,6 +2608,7 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 1000, TRUE );
 
 //rこの角のために…幾度にもわたって悩まされてきた、私自身の苦しみ。
 	OutputLine(NULL, "この角のために…幾度にもわたって悩まされてきた、私自身の苦しみ。",
@@ -2754,12 +2635,9 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm10_62", 128, 0);
-
+	DrawBustshot( 4, "sprite/normal/oha2_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_engawa_03", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha2_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //r突如立ち上がった私に、志乃はぽかんとした目を向けてくる。
 	OutputLine(NULL, "突如立ち上がった私に、志乃はぽかんとした目を向けてくる。",
@@ -2801,8 +2679,6 @@ void main()
 	OutputLine(NULL, "「…………」",
 			NULL, "\"...\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -2849,16 +2725,12 @@ void main()
 			NULL, "What in the world do I do...?!", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "black", "down", 0, 0, 2000 );
+	Wait( 2000 );
 	FadeOutBGM(2, 200, FALSE);
-
 	PlayBGM( 1, "ame", 128, 0 );
-
 	PlaySE(3, "a6", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
 	DrawScene("black", 1000 );
 
 //r…夕方は、やはり激しい雷雨となった。
@@ -2872,9 +2744,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "a6", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
 	DrawScene("background/jsa7_01", 1000 );
 
 //羽入rvS16/45/DS43071065.「…………」
@@ -2943,12 +2813,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "se068", 256, 64);
-
 	DrawScene("background/saiguden_01", 1000 );
 
 //r思わず顔をあげると、暗がりに包まれた正面奥に『オヤシロさま』の像が見える。
 	OutputLine(NULL, "思わず顔をあげると、暗がりに包まれた正面奥に『オヤシロさま』の像が見える。",
-			NULL, "I unconsciously looked up and noticed the statue of \"Oyashiro-sama" ahead of me, blanketed in darkness.", Line_Normal);
+			NULL, "I unconsciously looked up and noticed the statue of \"Oyashiro-sama\" ahead of me, blanketed in darkness.", Line_Normal);
 	ClearMessage();
 
 //rそれは陸の父が、城下町に住まう領主御用達の仏師に頼んでつくらせたものだ。
@@ -3004,6 +2873,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //r冗談じゃない…！
 	OutputLine(NULL, "冗談じゃない…！",
@@ -3094,9 +2965,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "a6", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 250 );
 	DrawScene("background/saiguden_01", 1000 );
 
 //羽入rvS16/45/DS43071074.「……っ！！」
@@ -3149,11 +3018,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "sinzouappaku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawScene("red", 1000 );
+	DrawScene("white", 1000 );
 	DrawScene("black", 1000 );
 
 //r…自分の白い手が赤く染まっているような気がして、思わず怖気が走った。
@@ -3162,10 +3028,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "sizuku_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r――ぴちゃん。
 	OutputLine(NULL, "——ぴちゃん。",
@@ -3218,7 +3082,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm08_38", 128, 0);
 
 //r…何を恐れる？
@@ -3226,9 +3089,8 @@ void main()
 			NULL, "...What're you afraid of?", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
-	DrawScene("background/oyashirosama", 1000 );
+	DrawScene("white", 2000 );
+	DrawSceneWithMask( "background/oyashirosama", "c", 0, 0, 2000 );
 
 //羽入rvS16/45/DS43071076.「――っ？！」
 	PlaySE(4, "ps3/s16/45/ds43071076", 256, 64);
@@ -3237,6 +3099,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //r何がそんなに怖いのだ？
 	OutputLine(NULL, "何がそんなに怖いのだ？",
@@ -3254,6 +3118,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071077.「な…っ？！」
 	PlaySE(4, "ps3/s16/45/ds43071077", 256, 64);
@@ -3307,9 +3173,7 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "up", 0, 0, 500 );
 	DrawScene("black", 1000 );
 
 //羽入rvS16/45/DS43071078.「…うるさい」
@@ -3391,10 +3255,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "tatakiwaru", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //羽入rvS16/45/DS43071079.「黙れッ！！」
 	PlaySE(4, "ps3/s16/45/ds43071079", 256, 64);
@@ -3448,16 +3310,11 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "right", 0, 0, 250 );
+	DrawScene("black", 500 );
 	PlaySE(3, "furu", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "left", 0, 0, 250 );
+	DrawScene("black", 500 );
 
 //羽入rvS16/45/DS43071080.「黙れと言っているんだッ！！！」
 	PlaySE(4, "ps3/s16/45/ds43071080", 256, 64);
@@ -3473,6 +3330,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //r殺せよ。
 	OutputLine(NULL, "殺せよ。",
@@ -3480,6 +3339,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //r殺れ！
 	OutputLine(NULL, "殺れ！",
@@ -3487,6 +3348,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //r殺してしまえッ！
 	OutputLine(NULL, "殺してしまえッ！",
@@ -3494,17 +3357,19 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "thisikuki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //rコロセッ！
 	OutputLine(NULL, "コロセッ！",
 			NULL, "KILL!", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/saiguden_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/oha2_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/night/oha2_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/saiguden_01", 250 );
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071081.「うわあぁぁぁあぁぁッッッ！！」
 	PlaySE(4, "ps3/s16/45/ds43071081", 256, 64);
@@ -3513,16 +3378,15 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down3", 256, 64);
-
-	DrawBustshot( 4, "sprite/night/oha2_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	DrawBustshot( 4, "sprite/night/oha2_kanashimi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071082.「……うっ…ぐ…？！」
 	PlaySE(4, "ps3/s16/45/ds43071082", 256, 64);
 	OutputLine(NULL, "「……うっ…ぐ…？！」",
 			NULL, "\"Uuu... ghh...?!\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -3567,9 +3431,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
+	Wait( 2000 );
 	PlayBGM( 1, "ame", 128, 0 );
-
 	PlaySE(3, "dsse15", 256, 64);
 
 //r…どれくらい、時間が経ったことだろう。
@@ -3701,10 +3564,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "sizuku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //羽入rvS16/45/DS43071089.「ハィ＝リューン・イェアソムール・ジェダ。kvS16/45/DS43071090.『bピュトゥス.<純血>』より同朋たちの査察の任を受けこの地に下された、ジェダの家名を継ぎし者。kvS16/45/DS43071091.『bライノス.<管理門>』リューン＝オークとの交信を求める」
 	PlaySE(4, "ps3/s16/45/ds43071089", 256, 64);
@@ -3740,10 +3601,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "sizuku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r訝しく思いながらも手順を何度となく繰り返すが、…結果は、同じ。
 	OutputLine(NULL, "訝しく思いながらも手順を何度となく繰り返すが、…結果は、同じ。",
@@ -3777,7 +3636,6 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm05_20", 128, 0);
-
 	DrawScene("background/y_oni1_01", 1000 );
 
 //r今、リューン＝オークはなんて言った…？
@@ -3918,6 +3776,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071107.「なにっ…？！」
 	PlaySE(4, "ps3/s16/45/ds43071107", 256, 64);
@@ -3974,8 +3834,9 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071111.「き、貴様…っ？！」
 	PlaySE(4, "ps3/s16/45/ds43071111", 256, 64);
@@ -4007,7 +3868,6 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm09_41", 128, 0);
-
 	DrawScene("background/y_oni1_01", 1000 );
 
 //柳桜rvS16/00/DS43050248.『羽入、冷静になってください。kvS16/00/DS43050249.あなたは、自らを不幸に追いこんでも、それで平気なのですか？kvS16/00/DS43050250.　自分のため…自分の大切な人のために生きることこそ、最良の選択ではないのですか？』
@@ -4153,6 +4013,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071120.「…やめろっ！！kvS16/45/DS43071120_1.　やめろやめろやめろ、やめろぉぉぉっっっ！！！」
 	PlaySE(4, "ps3/s16/45/ds43071120", 256, 64);
@@ -4295,6 +4157,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071134.「冗談じゃないっ！！kvS16/45/DS43071135.　私にそこまで外道になれというのか？！」
 	PlaySE(4, "ps3/s16/45/ds43071134", 256, 64);
@@ -4539,10 +4403,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "sizuku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //羽入rvS16/45/DS43071145.「……ハィ＝リューン・イェアソムール・ジェダ。kvS16/45/DS43071146.ジェダの家名を継ぎし者として、bライノス.<管理門>リューン＝オークとの交信を求める」
 	PlaySE(4, "ps3/s16/45/ds43071145", 256, 64);
@@ -4560,12 +4422,11 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "sword", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/y_oni1_01", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("background/y_oni1_01", 250 );
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071147.「さっさと開けろ！！kvS16/45/DS43071148.　これはジェダとしての命令だっ！！」
 	PlaySE(4, "ps3/s16/45/ds43071147", 256, 64);
@@ -4578,7 +4439,7 @@ void main()
 
 //柳桜rvS16/00/DS43050275.『――――』
 	OutputLine(NULL, "『————』",
-			NULL, "\"..."", Line_Normal);
+			NULL, "\"...\"", Line_Normal);
 	ClearMessage();
 
 	DrawScene("black", 1000 );
@@ -4604,10 +4465,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "sizuku", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r…………。
 	OutputLine(NULL, "…………。",
@@ -4690,9 +4549,8 @@ void main()
 			NULL, "I looked behind me... and saw Riku was indeed there.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/night/riku_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ymo3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/riku_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43071152.「陸…」
 	PlaySE(4, "ps3/s16/45/ds43071152", 256, 64);
@@ -4700,9 +4558,10 @@ void main()
 			NULL, "\"Riku...\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dsse143", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020605.「…っ！！」
 	PlaySE(4, "ps3/s16/46/ds43020605", 256, 64);
@@ -4711,12 +4570,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "dsse136", 256, 64);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawScene("white", 250 );
+	DrawScene("black", 500 );
 
 //r降りしきる雨の中、陸が慌てた様子で沼へと足を踏み入れてくる。
 	OutputLine(NULL, "降りしきる雨の中、陸が慌てた様子で沼へと足を踏み入れてくる。",
@@ -4734,14 +4589,12 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
 	PlayBGM(2, "hm10_53", 128, 0);
-
-	DrawScene("background/ymo3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/night/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/ymo3_01", 250 );
 	PlaySE(3, "addse13", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //陸rvS16/46/DS43020606.「やめてください！kvS16/46/DS43020607.　何をしているのですか、あなたはっ！」
 	PlaySE(4, "ps3/s16/46/ds43020606", 256, 64);
@@ -4825,8 +4678,6 @@ void main()
 	OutputLine(NULL, "「そ、それは…！」",
 			NULL, "\"Th-that's...!\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -4925,11 +4776,11 @@ void main()
 			NULL, " Do you really hate the idea of having my child so much?\"", Line_Normal);
 	ClearMessage();
 
-	DrawScene("background/ymo3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
-
+	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	DrawScene("background/ymo3_01", 250 );
 	PlaySE(3, "furu", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071164.「っ、そ、そんなわけがないっ！！」
 	PlaySE(4, "ps3/s16/45/ds43071164", 256, 64);
@@ -5045,8 +4896,6 @@ void main()
 			NULL, " So with that...\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r…生まれ出る前に、『殺す』ことができる……。
@@ -5109,9 +4958,8 @@ void main()
 			NULL, "If I truly cared about the child and Riku... then I couldn't back down on this.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/night/riku_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ymo3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/riku_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43071174.「この子は、生まれてきてもきっと幸せにはなれない。kvS16/45/DS43071175.…そして、あなたもせずに済むはずの苦労を背負うことなく、悲しみに苛まれることもなくなる。kvS16/45/DS43071176.だから、私が、」
 	PlaySE(4, "ps3/s16/45/ds43071174", 256, 64);
@@ -5157,10 +5005,7 @@ void main()
 			NULL, "\"...!!\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("black", 1000 );
 
 //r脳裏に、２２年前の光景が浮かぶ。
@@ -5170,7 +5015,7 @@ void main()
 
 //r『鬼化』した『bグリフィス.<混血>』たち。襲われる村と、bあびきょうかん.<阿鼻叫喚>の渦と、…炎。
 	OutputLine(NULL, "『鬼化』した『混血(グリフィス)』たち。襲われる村と、阿鼻叫喚(あびきょうかん)の渦と、…炎。",
-			NULL, "The "\demonified\" Grifys. The attacked village, the maelstrom of pandemonium... and fire.", Line_Normal);
+			NULL, "The \"demonified\" Grifys. The attacked village, the maelstrom of pandemonium... and fire.", Line_Normal);
 	ClearMessage();
 
 //rそんな中で私は剣を振るい、鬼を誅して立ちまわる。
@@ -5193,9 +5038,9 @@ void main()
 			NULL, "What did I feel when I found that small baby in the wreckage of that house about to collapse...?", Line_Normal);
 	ClearMessage();
 
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, TRUE );
+	DrawBustshot( 4, "sprite/normal/oha3_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/honoo", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/oha3_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43071179.『……この先、死ぬよりも重い辛苦が待っているだけだろう。kvS16/45/DS43071180.それならば、いっそのこと――』
 	PlaySE(4, "ps3/s16/45/ds43071179", 256, 64);
@@ -5206,10 +5051,8 @@ void main()
 			NULL, " In that case, before it comes to that, I should...\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
+	FadeFilm( 500, TRUE );
 	DrawScene("black", 1000 );
 
 //rそして。
@@ -5227,9 +5070,8 @@ void main()
 			NULL, "That answer...", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ymo3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43071181.「……っ」
 	PlaySE(4, "ps3/s16/45/ds43071181", 256, 64);
@@ -5289,6 +5131,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071184.「っ、そ、そんなことは！」
 	PlaySE(4, "ps3/s16/45/ds43071184", 256, 64);
@@ -5313,8 +5157,6 @@ void main()
 			NULL, "\"...!!\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
 	DrawScene("black", 1000 );
 
 //r一度は固めた決意がぼろぼろと崩れて、…冷たく閉ざしたはずの心が、ゆっくりと氷解してゆく。
@@ -5332,9 +5174,8 @@ void main()
 			NULL, "If he tells me that... I feel like I'm going to take him up on that kindness.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ymo3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS16/46/DS43020632.「私が、出生の秘密を聞かされたのは…１０の頃でした。kvS16/46/DS43020633.その時は私も、あなたと同じようなことを言いました。kvS16/46/DS43020634.自分は古手の人間ではない、と」
 	PlaySE(4, "ps3/s16/46/ds43020632", 256, 64);
@@ -5374,10 +5215,7 @@ void main()
 			NULL, " So I want to save you this time.\"", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("black", 1000 );
 
 //rそう言って、ふわり、と。
@@ -5481,9 +5319,8 @@ void main()
 			NULL, "Deep down, no matter what anyone told me, I loved the child, and I wanted to have it...", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ymo3_01", 1000 );
-
-	DrawBustshot( 4, "sprite/night/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS16/46/DS43020644.「私があなたたちを、守ります。kvS16/46/DS43020645.どんなことをしても、どんな思いに耐え抜いてでも、愛するあなたたちの隣に居ます。kvS16/46/DS43020646.だから……その子を、産んでくれませんか？」
 	PlaySE(4, "ps3/s16/46/ds43020644", 256, 64);
@@ -5502,8 +5339,6 @@ void main()
 	OutputLine(NULL, "「……う、ぁあ、……うぁあぁあぁぁぁあぁっっ！！」",
 			NULL, "\"...Uuu, aaah... uwaaaaaaaaaaaah!!\"", Line_Normal);
 	ClearMessage();
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
 
 	DrawScene("black", 1000 );
 
@@ -5531,20 +5366,6 @@ void main()
 	OutputLine(NULL, "私を抱きとめてくれる胸の温かさを感じながら…。",
 			NULL, "And the warmth of those arms embracing me...", Line_Normal);
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );
