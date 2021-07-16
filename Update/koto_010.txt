@@ -14,14 +14,11 @@ void main()
 
 //#10 再会
 
+	DrawScene("white", 1000 );
 	PlayBGM( 1, "suzume_lp", 128, 0 );
-
-	DrawScene("black", 1000 );
-
 	DrawScene("background/sora", 1000 );
-
+	Wait( 2000 );
 	DrawScene("black", 1000 );
-
 	DrawScene("background/js1_04", 1000 );
 
 //r……春。
@@ -75,7 +72,6 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	FadeOutBGM(1, 200, TRUE);
 
 //r――あれから、１０年の歳月が過ぎた。
@@ -83,8 +79,7 @@ void main()
 			NULL, "...It had been ten years since that day.", Line_Normal);
 	ClearMessage();
 
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
 	DrawScene("black", 1000 );
 
 //r悪夢のような夜が明け、翌朝村人たちは武器を持ち徒党を組んで、鬼ヶ淵の沼を訪れた。
@@ -98,12 +93,12 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm10_69", 128, 0);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("background/mo4_05", 1000 );
-
+	DrawFilm( 2, 255, 225, 195, 255, 0, 250, FALSE );
+	DrawScene("white", 250 );
+	DrawScene("background/mo4_05", 250 );
 	PlaySE(3, "dageki", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //村人rvS16/00/VT4D_villiMa1002.「なっ…？！」
 	PlaySE(4, "ps3/s16/00/vt4d_villima1002", 256, 64);
@@ -200,6 +195,7 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
+	FadeFilm( 250, TRUE );
 
 //rそれを見て、…自分たちの無用の疑いが二人を殺したようなものだと彼らは悟り、それぞれの過ちを深く悔いたのだった。
 	OutputLine(NULL, "それを見て、…自分たちの無用の疑いが二人を殺したようなものだと彼らは悟り、それぞれの過ちを深く悔いたのだった。",
@@ -252,11 +248,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
 	PlayBGM( 1, "suzume_lp", 128, 0 );
-
 	DrawScene("background/ji6_02", 1000 );
 
 //羽入r-vS16/45/DS43071472.（…なんだ、私も罪滅ぼしか）
@@ -289,11 +282,8 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
 	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
-
 	PlayBGM(2, "hm10_56", 128, 0);
 
 //r昔の記憶が、蘇ってくる。二人で話した道真の歌だ。
@@ -301,114 +291,121 @@ void main()
 			NULL, "I recalled when Riku and I discussed Michizane's poem.", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 5, "sprite/normal/riku_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/oha2_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/js1_04", 1000 );
 
-	DrawBustshot( 5, "sprite/normal/riku_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+//陸rvS16/46/DS43020471.「すっかり、春ですね」
+	PlaySE(4, "ps3/s16/46/ds43020471", 256, 64);
+	OutputLine(NULL, "「すっかり、春ですね」",
+			NULL, "\"It truly is spring now, huh?\"", Line_Normal);
+	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/oha2_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+//羽入rvS16/45/DS43070823.「…ええ」
+	PlaySE(4, "ps3/s16/45/ds43070823", 256, 64);
+	OutputLine(NULL, "「…ええ」",
+			NULL, "\"...Yes.\"", Line_Normal);
+	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/js1_04", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/riku_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/oha2_warai_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 1000, TRUE );
 
 //r……ねぇ、陸。
 	OutputLine(NULL, "……ねぇ、陸。",
 			NULL, "...Hey, Riku.", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	FadeFilm( 1000, FALSE );
+	DrawScene("white", 1000 );
+	DrawBustshot( 5, "sprite/normal/riku_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/oha2_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/js1_04", 1000 );
 
-	DrawBustshot( 5, "sprite/normal/riku_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+//陸rvS16/46/DS43020490.…ひょっとして私の中にも、あなた方の同朋のbこんぱく.<魂魄>が眠っているのでしょうか？」
+	PlaySE(4, "ps3/s16/46/ds43020490", 256, 64);
+	OutputLine(NULL, "「…ひょっとして私の中にも、あなた方の同朋の魂魄(こんぱく)が眠っているのでしょうか？」",
+			NULL, "\"Could I possibly have the spirits of one of your bretheren dwelling within me?\"\"", Line_Normal);
+	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/oha2_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+//羽入rvS16/45/DS43070844.「大丈夫ですよ、陸。kvS16/45/DS43070845.今のあなたは、あなた本来のbこんぱく.<魂魄>によるものです。」
+	PlaySE(4, "ps3/s16/45/ds43070844", 256, 64);
+	OutputLine(NULL, "「大丈夫ですよ、陸。",
+			NULL, "\"It's all right, Riku.", Line_WaitForInput);
+	PlaySE(4, "ps3/s16/45/ds43070845", 256, 64);
+	OutputLine(NULL, "今のあなたは、あなた本来の魂魄(こんぱく)によるものです。」",
+			NULL, " Your soul is yours and yours alone, and always has been.\"", Line_Normal);
+	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/js1_04", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/riku_shinken_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/oha2_def_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 1000, TRUE );
 
 //r天国というところが、本当にあるのだとしたら。
 	OutputLine(NULL, "天国というところが、本当にあるのだとしたら。",
 			NULL, "If there really is a Heaven...", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	FadeFilm( 1000, FALSE );
+	DrawScene("white", 1000 );
+	DrawBustshot( 5, "sprite/normal/riku_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/oha1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/js1_04", 1000 );
 
-	DrawBustshot( 5, "sprite/normal/riku_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+//陸rvS16/46/DS43020519.「私は、あなたが好きです」
+	PlaySE(4, "ps3/s16/46/ds43020519", 256, 64);
+	OutputLine(NULL, "「私は、あなたが好きです」",
+			NULL, "\"I love you.\"", Line_Normal);
+	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/oha1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+//羽入rvS16/45/DS43070910.　私も、きっとあなたのこと、好きなんだと思います！kvS16/45/DS43070911.　――だから！kvS16/45/DS43070912.　今の冗談が許せない！」
+	PlaySE(4, "ps3/s16/45/ds43070910", 256, 64);
+	OutputLine(NULL, "「私も、きっとあなたのこと、好きなんだと思います！",
+			NULL, "\"I'm sure I love you too!", Line_WaitForInput);
+	PlaySE(4, "ps3/s16/45/ds43070911", 256, 64);
+	OutputLine(NULL, "　——だから！",
+			NULL, " That's exactly why...", Line_WaitForInput);
+	PlaySE(4, "ps3/s16/45/ds43070912", 256, 64);
+	OutputLine(NULL, "　今の冗談が許せない！」",
+			NULL, " I can't forgive this joke!\"", Line_Normal);
+	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/js1_04", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/riku_sakebi_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/oha1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 1000, TRUE );
 
 //rきっとこの桜たちは、そこにいるあなたに元気だよと伝えるために、毎年咲き続けているのかもしれませんよ。
 	OutputLine(NULL, "きっとこの桜たちは、そこにいるあなたに元気だよと伝えるために、毎年咲き続けているのかもしれませんよ。",
 			NULL, "Then perhaps these trees keep blossoming every year to let me know you're doing well.", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	FadeFilm( 1000, FALSE );
+	DrawScene("white", 1000 );
+	DrawBustshot( 5, "sprite/normal/riku_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	DrawBustshot( 3, "sprite/normal/oha1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
 	DrawScene("background/ji1", 1000 );
 
-	DrawBustshot( 5, "sprite/normal/riku_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+//陸rvS16/46/DS43020564.「…これからは、もう少し改めます。kvS16/46/DS43020565.だから、…返事を、もらえますか？」
+	PlaySE(4, "ps3/s16/46/ds43020564", 256, 64);
+	OutputLine(NULL, "「…これからは、もう少し改めます。",
+			NULL, "\"...I'll alter it a little more.", Line_WaitForInput);
+	PlaySE(4, "ps3/s16/46/ds43020565", 256, 64);
+	OutputLine(NULL, "だから、…返事を、もらえますか？」",
+			NULL, " So... Could you give your answer?\"", Line_Normal);
+	ClearMessage();
 
-	DrawBustshot( 3, "sprite/normal/oha1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+//羽入rvS16/45/DS43070954.　後悔するのに…kvS16/45/DS43070956.　なんで、…なんで私はこんな人を、…愛してっ…！」
+	PlaySE(4, "ps3/s16/45/ds43070954", 256, 64);
+	OutputLine(NULL, "「後悔するのに…",
+			NULL, "\"You're going to regret this...", Line_WaitForInput);
+	PlaySE(4, "ps3/s16/45/ds43070956", 256, 64);
+	OutputLine(NULL, "　なんで、…なんで私はこんな人を、…愛してっ…！」",
+			NULL, " So why... why do I love... someone like this...?!\"", Line_Normal);
+	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("background/ji1", 1000 );
-
-	DrawBustshot( 5, "sprite/normal/riku_def_0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
-
-	DrawBustshot( 3, "sprite/normal/oha1_kanashimi_0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	DrawFilm( 2, 255, 225, 195, 255, 0, 1000, TRUE );
 
 //r私が、あなたへの想いと、記憶とともに生き続けているように――。
 	OutputLine(NULL, "私が、あなたへの想いと、記憶とともに生き続けているように——。",
 			NULL, "Just like I keep living on with my feelings and memories of you...", Line_Normal);
 	ClearMessage();
 
-	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	FadeBustshot(5, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawSceneWithMask( "white", "c", 0, 0, 2000 );
+	FadeFilm( 500, TRUE );
 	DrawScene("background/ji6_02", 1000 );
 
 //羽入rvS16/45/DS43071475.「……。kvS16/45/DS43071476.陸、ちょっとだけ、泣きますね…？」
@@ -421,12 +418,9 @@ void main()
 	ClearMessage();
 
 	DrawScene("black", 1000 );
-
 	PlaySE(3, "sizuku_1", 256, 64);
-
-	DrawScene("black", 1000 );
-
-	DrawScene("black", 1000 );
+	DrawSceneWithMask( "white", "c", 0, 0, 1000 );
+	DrawSceneWithMask( "black", "c", 0, 0, 1000 );
 
 //r…不思議なものだ。
 	OutputLine(NULL, "…不思議なものだ。",
@@ -510,7 +504,6 @@ void main()
 	ClearMessage();
 
 	FadeOutBGM(2, 200, FALSE);
-
 	PlaySE(3, "dsse104", 256, 64);
 
 //rがさっ……。
@@ -555,9 +548,8 @@ void main()
 			NULL, "However...", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/ri5_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ji6_02", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/ri5_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //？？？rvS16/47/DS43010002.「…どなた、なのですか？」
 	PlaySE(4, "ps3/s16/47/ds43010002", 256, 64);
@@ -566,6 +558,8 @@ void main()
 	ClearMessage();
 
 	PlaySE(3, "down2", 256, 64);
+	ShakeScreen( 1, 15, 15, 2, 0, );
+	Wait( 150 );
 
 //羽入rvS16/45/DS43071479.「え――？」
 	PlaySE(4, "ps3/s16/45/ds43071479", 256, 64);
@@ -574,11 +568,7 @@ void main()
 	ClearMessage();
 
 	PlayBGM(2, "hm10_75", 128, 0);
-
-	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
-
-	DrawScene("black", 1000 );
-
+	DrawScene("white", 1000 );
 	DrawScene("black", 1000 );
 
 //r振り返った先に、立っていた童女はくりくりっとした目を開いて。
@@ -611,9 +601,8 @@ void main()
 			NULL, "There was no way I could ever forget...", Line_Normal);
 	ClearMessage();
 
+	DrawBustshot( 4, "sprite/normal/ri5_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/ji6_02", 1000 );
-
-	DrawBustshot( 4, "sprite/normal/ri5_def_a1_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //羽入rvS16/45/DS43071480.「見える…のですか？kvS16/45/DS43071481.　私を…？」
 	PlaySE(4, "ps3/s16/45/ds43071480", 256, 64);
@@ -689,20 +678,6 @@ void main()
 	OutputLine(NULL, "…止まっていた私の時間が、またゆっくりと動き出していった。",
 			NULL, "...And thus my frozen time began to slowly move again.", Line_Normal);
 	ClearMessage();
-
-	DrawScene("background/a/cinema", 1000 );
-
-	DrawScene("background/a/c_logo", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	DrawScene("background/a/bg_black", 1000 );
-
-	FadeOutBGM(2, 200, FALSE);
 
 	DisableWindow();
 	SetValidityOfInput( FALSE );
