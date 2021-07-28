@@ -14,35 +14,40 @@ void main()
 
 //巫女服講座
 
-	DrawBustshot( 4, "sprite/normal/oha3_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(4, 45, "sprite/oha3_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
 	PlayBGM( 1, "suzume_lp", 128, 0 );
 
 //羽入rvS20/45/VTT_hanyu3001.「ちなみに陸、ひとつ確かめておきたいことがあるのですが」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3001", 256, 64);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3001", 256, TRUE);
 	OutputLine(NULL, "「ちなみに陸、ひとつ確かめておきたいことがあるのですが」",
 			NULL, "\"Incidentally, there's something I would like to confirm with you, Riku.\"", Line_Normal);
 	ClearMessage();
 
 //陸rvS20/46/VTT_riku3001.「な…なんへひょ…はりゅ～」
-	PlaySE(4, "ps3/s20/46/vtt_riku3001", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3001", 256, TRUE);
 	OutputLine(NULL, "「な…なんへひょ…はりゅ～」",
 			NULL, "\"W-whad iz ed... Haryuu~\"", Line_Normal);
 	ClearMessage();
 
 	PlaySE(3, "dageki", 256, 64);
-	DrawBustshot( 4, "sprite/normal/oha3_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	ModDrawCharacter(4, 45, "sprite/oha3_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
 
 //羽入rvS20/45/VTT_hanyu3002.「大げさに苦しんだふりをしないでください！kvS20/45/VTT_hanyu3003.　怪我などしていないくせに、なんですかその包帯は？kvS20/45/VTT_hanyu3004.　私に対するあてつけですかっ？！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3002", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3002", 256, TRUE);
 	OutputLine(NULL, "「大げさに苦しんだふりをしないでください！",
 			NULL, "\"Please stop acting like you got mauled by a boar!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3003", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3003", 256, TRUE);
 	OutputLine(NULL, "　怪我などしていないくせに、なんですかその包帯は？",
 			NULL, " What is with those bandages? You didn't even get a scratch.", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3004", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3004", 256, TRUE);
 	OutputLine(NULL, "　私に対するあてつけですかっ？！」",
 			NULL, " Are you insinuating something about me?!\"", Line_Normal);
 	ClearMessage();
@@ -50,32 +55,35 @@ void main()
 	DrawScene("black", 1000 );
 
 //rそう言って私は、陸の全身に巻き付けられた包帯を剥ぎ取るように乱暴に引っぺがす。…やはりその下には、傷らしきものは何も残っていなかった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "そう言って私は、陸の全身に巻き付けられた包帯を剥ぎ取るように乱暴に引っぺがす。…やはりその下には、傷らしきものは何も残っていなかった。",
 			NULL, "I violently ripped off the bandages covering Riku's whole body after saying that... Just as I suspected, he didn't even have a single scrape on him.", Line_Normal);
 	ClearMessage();
 
 	FadeOutBGM(1, 200, TRUE);
 	PlayBGM(2, "hm01_05", 128, 0);
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	ModDrawCharacter(4, 46, "sprite/riku_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
 	DrawScene("background/hu_ima", 250 );
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
 
 //陸rvS20/46/VTT_riku3002.「いや～、さすがにばれましたか。kvS20/46/VTT_riku3003.重傷っぽく見せていれば、ちょっとは心配してくれるかなとおもったのですが」
-	PlaySE(4, "ps3/s20/46/vtt_riku3002", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3002", 256, TRUE);
 	OutputLine(NULL, "「いや～、さすがにばれましたか。",
 			NULL, "\"Oops~, guess the secret's out, huh?", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3003", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3003", 256, TRUE);
 	OutputLine(NULL, "重傷っぽく見せていれば、ちょっとは心配してくれるかなとおもったのですが」",
 			NULL, " I thought that you would get a little worried about me if I appeared so gravely injured.\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3005.「見くびらないでください！kvS20/45/VTT_hanyu3006.　いくら『ほんの少しだけ』激情に駆られたとはいえ、加減くらいちゃんと考慮に入れています！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3005", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3005", 256, TRUE);
 	OutputLine(NULL, "「見くびらないでください！",
 			NULL, "\"Do not belittle me, please!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3006", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3006", 256, TRUE);
 	OutputLine(NULL, "　いくら『ほんの少しだけ』激情に駆られたとはいえ、加減くらいちゃんと考慮に入れています！」",
 			NULL, " I know I was driven by <i>just a little</i> fury, but I made sure to hold back all the same!\"", Line_Normal);
 	ClearMessage();
@@ -83,56 +91,64 @@ void main()
 	DrawScene("black", 1000 );
 
 //r…ただ、さすがにやりすぎて彼の骨組織にまで損傷を与えてしまったため、内緒でリューン=オークから薬を取り寄せてあてがったのだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…ただ、さすがにやりすぎて彼の骨組織にまで損傷を与えてしまったため、内緒でリューン=オークから薬を取り寄せてあてがったのだ。",
 			NULL, "...However, I went too far and ended up damaging his bone tissue in spite of that, so I ordered some medicine from Ryuun-Ohc in secret.", Line_Normal);
 	ClearMessage();
 
 //rおかげで、いつもと違って『彼女』に頼むのが非常に気まずかったというか…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "おかげで、いつもと違って『彼女』に頼むのが非常に気まずかったというか…。",
 			NULL, "As a result, it was extremely awkward when I asked her for it, unlike usual.", Line_Normal);
 	ClearMessage();
 
 //r薬を供与する時、『彼女』の言動に妙な白々しさを感じたのは、…私の勘ぐりすぎだと思う。…思いたい。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "薬を供与する時、『彼女』の言動に妙な白々しさを感じたのは、…私の勘ぐりすぎだと思う。…思いたい。",
 			NULL, "Her speech and conduct felt unusually barefaced when she gave me the medicine... but I think it only felt that way because of how overly suspicious I was... That's what I want to think, anyway.", Line_Normal);
 	ClearMessage();
 
 //rとりあえず、そのことは一応頭の隅に棚上げしておいてから、私はこほん、と咳払いして陸に向き直った。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "とりあえず、そのことは一応頭の隅に棚上げしておいてから、私はこほん、と咳払いして陸に向き直った。",
 			NULL, "I shelved all of that into a corner of my mind for now, loudly cleared me through, and turned to Riku.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 46, "sprite/riku_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
 
 //陸rvS20/46/VTT_riku3004.「それで、お聞きしたいことはなんでしょう？」
-	PlaySE(4, "ps3/s20/46/vtt_riku3004", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3004", 256, TRUE);
 	OutputLine(NULL, "「それで、お聞きしたいことはなんでしょう？」",
 			NULL, "\"So, what did you want to ask?\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3009.「え、ええ…。kvS20/45/VTT_hanyu3010.そもそも、あなたがどうしてあんなにも巫女服にこだわるのか、その理由を聞いておりませんでしたので。kvS20/45/VTT_hanyu3011.それをお教え願えればと、ふと思った次第です」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3009", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3009", 256, TRUE);
 	OutputLine(NULL, "「え、ええ…。",
 			NULL, "\"R-right...", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3010", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3010", 256, TRUE);
 	OutputLine(NULL, "そもそも、あなたがどうしてあんなにも巫女服にこだわるのか、その理由を聞いておりませんでしたので。",
 			NULL, " In the first place, I haven't heard the reason why you are so fixated on miko outfits.", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3011", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3011", 256, TRUE);
 	OutputLine(NULL, "それをお教え願えればと、ふと思った次第です」",
 			NULL, " So I was hoping I could ask you about it.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 46, "sprite/riku_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS20/46/VTT_riku3005.「話せば、巫女服を着ていただけますか？」
-	PlaySE(4, "ps3/s20/46/vtt_riku3005", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3005", 256, TRUE);
 	OutputLine(NULL, "「話せば、巫女服を着ていただけますか？」",
 			NULL, "\"Will you wear a miko outfit if I tell you?\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3012.「……内容によります」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3012", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3012", 256, TRUE);
 	OutputLine(NULL, "「……内容によります」",
 			NULL, "\"...That depends on what I hear.\"", Line_Normal);
 	ClearMessage();
@@ -140,72 +156,82 @@ void main()
 	DrawScene("black", 1000 );
 
 //rこめかみに浮かび上がった血管のひくつきをわざと無視しながら、私は努めて笑顔で陸に向き直る。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "こめかみに浮かび上がった血管のひくつきをわざと無視しながら、私は努めて笑顔で陸に向き直る。",
 			NULL, "I deliberately ignored the twitching vein in my temple as I turned to Riku with a forced smile.", Line_Normal);
 	ClearMessage();
 
 //r確かに、あんな衣服（と、呼んでいいものかどうかは疑問だが）を勧められたからとはいえ、人間相手に怒り心頭でブチ切れてしまった軽率は反省すべきだろう。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "確かに、あんな衣服（と、呼んでいいものかどうかは疑問だが）を勧められたからとはいえ、人間相手に怒り心頭でブチ切れてしまった軽率は反省すべきだろう。",
 			NULL, "It's true that while he did recommend those clothes (if you can even call them that) to me, I regret flipping out with rage so carelessly on a human.", Line_Normal);
 	ClearMessage();
 
 //rそれに…あれだけ強い執着を持っているというのであればひょっとしたら、陸にとっては母御か、憧れの女人の面影隠しのつもりであったのかもしれない。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "それに…あれだけ強い執着を持っているというのであればひょっとしたら、陸にとっては母御か、憧れの女人の面影隠しのつもりであったのかもしれない。",
 			NULL, "Besides... if he's so attached to them, perhaps they remind him of his mother or some woman he looks up to.", Line_Normal);
 	ClearMessage();
 
 //r私はこれまでの関わり合いから、陸は一見ぽややんとしているような風体だが、実は結構思慮深くて真面目な性格だと思っている。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "私はこれまでの関わり合いから、陸は一見ぽややんとしているような風体だが、実は結構思慮深くて真面目な性格だと思っている。",
 			NULL, "Based on all my interactions with him so far, I believe Riku actually is quite considerate and serious, despite his seemingly carefree exterior.", Line_Normal);
 	ClearMessage();
 
 //rゆえに、ただの趣味であんな暴走全開の改造巫女服を勧めたのではない…と考え直したのだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ゆえに、ただの趣味であんな暴走全開の改造巫女服を勧めたのではない…と考え直したのだ。",
 			NULL, "So I'm starting to think... there may be more to him recommending those scandalous customized miko outfits than a simple hobby.", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 46, "sprite/riku_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
 
 //羽入rvS20/45/VTT_hanyu3013.「誰かの面影でも、その巫女服とやらに重ねているのですか？kvS20/45/VTT_hanyu3014.　あなたの母親か、あるいは…」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3013", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3013", 256, TRUE);
 	OutputLine(NULL, "「誰かの面影でも、その巫女服とやらに重ねているのですか？",
 			NULL, "\"Do those miko outfits remind you of someone?", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3014", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3014", 256, TRUE);
 	OutputLine(NULL, "　あなたの母親か、あるいは…」",
 			NULL, " Like your mother, or...\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 46, "sprite/riku_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS20/46/VTT_riku3006.「いえいえ、全然そんなことは。kvS20/46/VTT_riku3007.そもそも私に、母の記憶はありません」
-	PlaySE(4, "ps3/s20/46/vtt_riku3006", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3006", 256, TRUE);
 	OutputLine(NULL, "「いえいえ、全然そんなことは。",
 			NULL, "\"Oh no, not at all.", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3007", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3007", 256, TRUE);
 	OutputLine(NULL, "そもそも私に、母の記憶はありません」",
 			NULL, " I don't even remember my mother to begin with.\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 46, "sprite/riku_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS20/46/VTT_riku3008.「以前、あなたに申し上げたかどうか定かではないのですが、実の両親は私が幼い頃すでに亡くなっていて…今の父は血のつながっていない、つまり養父なのです」
-	PlaySE(4, "ps3/s20/46/vtt_riku3008", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3008", 256, TRUE);
 	OutputLine(NULL, "「以前、あなたに申し上げたかどうか定かではないのですが、実の両親は私が幼い頃すでに亡くなっていて…今の父は血のつながっていない、つまり養父なのです」",
 			NULL, "\"I am not sure if I already told you think, but my real parents both died when I was little... In other words, my current father is my adoptive father with no relation to me.\"", Line_Normal);
 	ClearMessage();
 
 //陸rvS20/46/VTT_riku3009.「そして、父も私を引き取った頃には奥方と死別していたそうなので…私は母というものを、知らずに育ちました」
-	PlaySE(4, "ps3/s20/46/vtt_riku3009", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3009", 256, TRUE);
 	OutputLine(NULL, "「そして、父も私を引き取った頃には奥方と死別していたそうなので…私は母というものを、知らずに育ちました」",
 			NULL, "\"And his wife had already passed away by the time he took me in... so I grew up without a mother.\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3015.「…そうなのですか？kvS20/45/VTT_hanyu3016.　すみません、知らぬとはいえつまらないことを」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3015", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3015", 256, TRUE);
 	OutputLine(NULL, "「…そうなのですか？",
 			NULL, "\"...Is that right?", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3016", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3016", 256, TRUE);
 	OutputLine(NULL, "　すみません、知らぬとはいえつまらないことを」",
 			NULL, " I'm sorry for carelessly digging up old wounds.\"", Line_Normal);
 	ClearMessage();
@@ -213,56 +239,64 @@ void main()
 	DrawScene("black", 1000 );
 
 //rさすがに、家庭の込み入った事情を訊くことは無礼で気遣いに欠ける行為だと理解しているので、私は素直に謝罪する。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "さすがに、家庭の込み入った事情を訊くことは無礼で気遣いに欠ける行為だと理解しているので、私は素直に謝罪する。",
 			NULL, "Even I know that inquiring into his family affairs was a rude and inconsiderate act, so I honestly apologize.", Line_Normal);
 	ClearMessage();
 
 //r…………。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…………。",
 			NULL, "...", Line_Normal);
 	ClearMessage();
 
 //rなんだろう。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "なんだろう。",
 			NULL, "What is this feeling?", Line_Normal);
 	ClearMessage();
 
 //r胸の隅で、妙に引っかかるものを感じるのだが…どうしてだろうか？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "胸の隅で、妙に引っかかるものを感じるのだが…どうしてだろうか？",
 			NULL, "It's like something's tugging at a corner of my heart... but why?", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 46, "sprite/riku_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
 
 //陸rvS20/46/VTT_riku3010.「…羽入？」
-	PlaySE(4, "ps3/s20/46/vtt_riku3010", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3010", 256, TRUE);
 	OutputLine(NULL, "「…羽入？」",
 			NULL, "\"...Hanyuu?\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3017.「え？　あぁ、すみません…。kvS20/45/VTT_hanyu3018.だったらあなたが巫女服にこだわるのは、いったいどうしてですか…？」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3017", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3017", 256, TRUE);
 	OutputLine(NULL, "「え？　あぁ、すみません…。",
 			NULL, "\"Huh? Oh, I'm sorry...", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3018", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3018", 256, TRUE);
 	OutputLine(NULL, "だったらあなたが巫女服にこだわるのは、いったいどうしてですか…？」",
 			NULL, " In that case, just why is it you are so fixated on miko outfits...?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 46, "sprite/riku_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS20/46/VTT_riku3011.「そうですね…理由としては、確かに大小含めて色々ありますが。kvS20/46/VTT_riku3012.やっぱり、一番の理由は…」
-	PlaySE(4, "ps3/s20/46/vtt_riku3011", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3011", 256, TRUE);
 	OutputLine(NULL, "「そうですね…理由としては、確かに大小含めて色々ありますが。",
 			NULL, "\"Well... there are indeed a variety of reasons.", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3012", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3012", 256, TRUE);
 	OutputLine(NULL, "やっぱり、一番の理由は…」",
 			NULL, " But if I had to say, the biggest one is...\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3019.「理由は？」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3019", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3019", 256, TRUE);
 	OutputLine(NULL, "「理由は？」",
 			NULL, "\"Is what?\"", Line_Normal);
 	ClearMessage();
@@ -270,19 +304,21 @@ void main()
 	FadeOutBGM(2, 200, FALSE);
 	PlaySE(3, "finish", 256, 64);
 	DrawScene("white", 250 );
-	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	ModDrawCharacter(4, 46, "sprite/riku_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
 	DrawScene("background/hu_ima", 250 );
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
 
 //陸rvS20/46/VTT_riku3013.「巫女服が好きだからです」
-	PlaySE(4, "ps3/s20/46/vtt_riku3013", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3013", 256, TRUE);
 	OutputLine(NULL, "「巫女服が好きだからです」",
 			NULL, "\"Because I love miko outfits.\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3020.「…………」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3020", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3020", 256, TRUE);
 	OutputLine(NULL, "「…………」",
 			NULL, "\"...\"", Line_Normal);
 	ClearMessage();
@@ -292,106 +328,115 @@ void main()
 	DrawScene("black", 250 );
 
 //rぷっちん。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "ぷっちん。",
 			NULL, "What. WHAT.", Line_Normal);
 	ClearMessage();
 
 	PlayBGM(2, "hm01_02", 128, 0);
-	DrawBustshot( 4, "sprite/normal/riku_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 46, "sprite/riku_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
 
 //羽入rvS20/45/VTT_hanyu3021.「…………なるほど。kvS20/45/VTT_hanyu3022.ときに陸。kvS20/45/VTT_hanyu3023.重ねてあなたに質問が。kvS20/45/VTT_hanyu3024.あなたは、火責め、水責め、土責め、拳責めのいずれがお好きですか…っ？」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3021", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3021", 256, TRUE);
 	OutputLine(NULL, "「…………なるほど。",
 			NULL, "\"...I see.", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3022", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3022", 256, TRUE);
 	OutputLine(NULL, "ときに陸。",
 			NULL, " By the way, Riku.", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3023", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3023", 256, TRUE);
 	OutputLine(NULL, "重ねてあなたに質問が。",
 			NULL, " I have another question for you.", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3024", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3024", 256, TRUE);
 	OutputLine(NULL, "あなたは、火責め、水責め、土責め、拳責めのいずれがお好きですか…っ？」",
 			NULL, " Do you prefer torture by fire, water, earth, or fists...?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	ModDrawCharacter(4, 46, "sprite/riku_bikkuri_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "pou", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
 
 //陸rvS20/46/VTT_riku3014.「ちょ、ちょっと待ってください！kvS20/46/VTT_riku3015.　あ、あなたが理由を訊きたいとおっしゃったので私は、正直に申し上げただけですがっ？！」
-	PlaySE(4, "ps3/s20/46/vtt_riku3014", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3014", 256, TRUE);
 	OutputLine(NULL, "「ちょ、ちょっと待ってください！",
 			NULL, "\"P-please wait a minute!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3015", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3015", 256, TRUE);
 	OutputLine(NULL, "　あ、あなたが理由を訊きたいとおっしゃったので私は、正直に申し上げただけですがっ？！」",
 			NULL, " A-all I did was answer your question honestly, didn't I?!\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3025.「くすくす…陸？kvS20/45/VTT_hanyu3026.　私はどうやら、あなたを見誤っていたようです…」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3025", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3025", 256, TRUE);
 	OutputLine(NULL, "「くすくす…陸？",
 			NULL, "\"Heheh... Riku?", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3026", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3026", 256, TRUE);
 	OutputLine(NULL, "　私はどうやら、あなたを見誤っていたようです…」",
 			NULL, " It would seem I misjudged you.\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3027.「もう少し、理性的で、納得できる、…傾聴に値するだけの根拠があって、この私に…この、ワ・タ・シにあれだけの恥辱を味わわせているのだと思っておりました…」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3027", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3027", 256, TRUE);
 	OutputLine(NULL, "「もう少し、理性的で、納得できる、…傾聴に値するだけの根拠があって、この私に…この、ワ・タ・シにあれだけの恥辱を味わわせているのだと思っておりました…」",
 			NULL, "\"I thought you were a little more rational, reasonable... and were worthy of listening to, which is why allowed you to put me, of all people... <i>me, of all people</i>, through that total humiliation...\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3028.「ふふふふふ、うふふふふふふふふふふふふふふっ…！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3028", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3028", 256, TRUE);
 	OutputLine(NULL, "「ふふふふふ、うふふふふふふふふふふふふふふっ…！」",
 			NULL, "\"Heheheheheh, uheheheheheheheheheheheheheheh...!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 46, "sprite/riku_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS20/46/VTT_riku3016.「は、ははは…は、羽入っ…？！kvS20/46/VTT_riku3017.　あの、笑顔がちょっと…いや結構、いやいやものすんっごく怖いんですけど…っ？！」
-	PlaySE(4, "ps3/s20/46/vtt_riku3016", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3016", 256, TRUE);
 	OutputLine(NULL, "「は、ははは…は、羽入っ…？！",
 			NULL, "\"Ha, hahaha... H-Hanyuu...?!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3017", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3017", 256, TRUE);
 	OutputLine(NULL, "　あの、笑顔がちょっと…いや結構、いやいやものすんっごく怖いんですけど…っ？！」",
 			NULL, " Umm, your smile is a little... no, very... no, extremely scary...!\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3029.「お庭に出なさい…陸？kvS20/45/VTT_hanyu3030.　久々に、kvS20/45/VTT_hanyu3031.ほんのちょっと、私、kvS20/45/VTT_hanyu3032.キレてしまったかも…っ♪」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3029", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3029", 256, TRUE);
 	OutputLine(NULL, "「お庭に出なさい…陸？",
 			NULL, "\"Come on out to the garden... Riku.", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3030", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3030", 256, TRUE);
 	OutputLine(NULL, "　久々に、",
 			NULL, " For the first time...", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3031", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3031", 256, TRUE);
 	OutputLine(NULL, "ほんのちょっと、私、",
 			NULL, " in a really long while...", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3032", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3032", 256, TRUE);
 	OutputLine(NULL, "キレてしまったかも…っ♪」",
 			NULL, " I may have snapped just a little...♪\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	ModDrawCharacter(4, 46, "sprite/riku_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
 
 //陸rvS20/46/VTT_riku3018.「いっ、…いいいいいいやいやいや、羽入っっ？！kvS20/46/VTT_riku3019.　あなたは、誤解しています！kvS20/46/VTT_riku3020.　別に私は、あなたをからかおうなんて気は全くありませんでした！kvS20/46/VTT_riku3021.　ええっ！　神に誓ってそんなつもりは、毛頭っ！！」
-	PlaySE(4, "ps3/s20/46/vtt_riku3018", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3018", 256, TRUE);
 	OutputLine(NULL, "「いっ、…いいいいいいやいやいや、羽入っっ？！",
 			NULL, "\"N-n-n-n-n-n-n-n-n-no, no, no, Hanyuu?!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3019", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3019", 256, TRUE);
 	OutputLine(NULL, "　あなたは、誤解しています！",
 			NULL, " You've got the wrong idea!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3020", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3020", 256, TRUE);
 	OutputLine(NULL, "　別に私は、あなたをからかおうなんて気は全くありませんでした！",
 			NULL, " I wasn't trying to insult you, by no means!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3021", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3021", 256, TRUE);
 	OutputLine(NULL, "　ええっ！　神に誓ってそんなつもりは、毛頭っ！！」",
 			NULL, " That's right! I swear to God that was not my intention at all!\"", Line_Normal);
 	ClearMessage();
@@ -401,24 +446,26 @@ void main()
 	Wait( 150 );
 
 //羽入rvS20/45/VTT_hanyu3033.「ほ…ほおぉぉっっ…？kvS20/45/VTT_hanyu3034.　だったら、なんで巫女服をあんな得体のしれない、破廉恥な造形に仕立て上げたというのですか…っ？！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3033", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3033", 256, TRUE);
 	OutputLine(NULL, "「ほ…ほおぉぉっっ…？",
 			NULL, "\"Oh... oh really nooooow...?", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3034", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3034", 256, TRUE);
 	OutputLine(NULL, "　だったら、なんで巫女服をあんな得体のしれない、破廉恥な造形に仕立て上げたというのですか…っ？！」",
 			NULL, " Then why did you have those miko outfits made as such incomprehensible and shameless perversions...?!\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+	ModDrawCharacter(4, 46, "sprite/riku_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
 
 //陸rvS20/46/VTT_riku3022.「い…いやぁ…。kvS20/46/VTT_riku3023.仕立てる際に、以前沢でお見かけしたあの美しい姿を、もう一度見たいな～、なんて考えてしまいまして。kvS20/46/VTT_riku3024.それで、つい…」
-	PlaySE(4, "ps3/s20/46/vtt_riku3022", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3022", 256, TRUE);
 	OutputLine(NULL, "「い…いやぁ…。",
 			NULL, "\"W-well...", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3023", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3023", 256, TRUE);
 	OutputLine(NULL, "仕立てる際に、以前沢でお見かけしたあの美しい姿を、もう一度見たいな～、なんて考えてしまいまして。",
 			NULL, " When I had them made, I was thinking about how I wanted to see that work of beauty I once glimpsed at the swamp one more time.", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3024", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3024", 256, TRUE);
 	OutputLine(NULL, "それで、つい…」",
 			NULL, " And so I got carried away...\"", Line_Normal);
 	ClearMessage();
@@ -426,18 +473,19 @@ void main()
 	FadeOutBGM(2, 200, FALSE);
 	PlaySE(3, "kyupirn", 256, 64);
 	DrawScene("white", 250 );
-	DrawBustshot( 4, "sprite/normal/riku_warai_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	ModDrawCharacter(4, 46, "sprite/riku_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
 	DrawScene("background/hu_ima", 250 );
 	PlayBGM( 1, "semi_r", 128, 0 );
 
 //羽入rvS20/45/VTT_hanyu3035.「つい…？kvS20/45/VTT_hanyu3036.　それはそれは、なおいっそうたちが悪いな…！kvS20/45/VTT_hanyu3037.　仮にもこの村の神である私を、自分の下品で下卑た趣味と嗜好の対象としようなど…言語道断、問答無用！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3035", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3035", 256, TRUE);
 	OutputLine(NULL, "「つい…？",
 			NULL, "\"You got <i>carried away</i>...?", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3036", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3036", 256, TRUE);
 	OutputLine(NULL, "　それはそれは、なおいっそうたちが悪いな…！",
 			NULL, " That's even worse...!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3037", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3037", 256, TRUE);
 	OutputLine(NULL, "　仮にもこの村の神である私を、自分の下品で下卑た趣味と嗜好の対象としようなど…言語道断、問答無用！」",
 			NULL, " You're trying to make me, the god of this village, into the subject of you perverse and indecent hobby...? Unforgivable! Inexcusable!\"", Line_Normal);
 	ClearMessage();
@@ -447,7 +495,8 @@ void main()
 	Wait( 150 );
 
 //羽入rvS20/45/VTT_hanyu3038.「守り神を自らの愛人に仕立て上げようとしたかつての大陸の王と同様に、地獄に行くがよいわぁぁぁッッ！！！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3038", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3038", 256, TRUE);
 	OutputLine(NULL, "「守り神を自らの愛人に仕立て上げようとしたかつての大陸の王と同様に、地獄に行くがよいわぁぁぁッッ！！！」",
 			NULL, "\"You'll be going to Hell just like that old king from the mainland who tried to set his guardian deity up as his mistressssssssss!!!\"", Line_Normal);
 	ClearMessage();
@@ -475,77 +524,84 @@ void main()
 	DrawScene("black", 500 );
 
 //r…………。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…………。",
 			NULL, "......", Line_Normal);
 	ClearMessage();
 
 //r……。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "……。",
 			NULL, "...", Line_Normal);
 	ClearMessage();
 
 	PlayBGM(2, "hm01_06", 128, 0);
-	DrawBustshot( 4, "sprite/normal/oha3_sakebi_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
+	ModDrawCharacter(4, 45, "sprite/oha3_sakebi_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, FALSE );
 	DrawScene("background/hu_ima", 250 );
 	PlaySE(3, "dageki", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
 
 //羽入rvS20/45/VTT_hanyu3039.「いいか、覚えておけ陸！！kvS20/45/VTT_hanyu3040.　貴様がそのようなbよこしま.<邪>な雑念を捨てぬ限り、私は断固として、お前の改造した巫女服の着用はお断りだからな！kvS20/45/VTT_hanyu3041.　いい加減目を覚ませッッ！！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3039", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3039", 256, TRUE);
 	OutputLine(NULL, "「いいか、覚えておけ陸！！",
 			NULL, "\"Now get this through your head, Riku!!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3040", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3040", 256, TRUE);
 	OutputLine(NULL, "　貴様がそのような邪(よこしま)な雑念を捨てぬ限り、私は断固として、お前の改造した巫女服の着用はお断りだからな！",
 			NULL, " So long as you refuse to abandon such wicked thoughts, I will never, ever wear one of your customized miko outfits!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3041", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3041", 256, TRUE);
 	OutputLine(NULL, "　いい加減目を覚ませッッ！！」",
 			NULL, " Just wake up already!!\"", Line_Normal);
 	ClearMessage();
 
 //陸rvS20/46/VTT_riku3025.「さ…覚めるどころか、意識が遠のきかけているんですが…。k|yvS20/46/VTT_riku3026.ぐはっ…！」
-	PlaySE(4, "ps3/s20/46/vtt_riku3025", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3025", 256, TRUE);
 	OutputLine(NULL, "「さ…覚めるどころか、意識が遠のきかけているんですが…。",
 			NULL, "\"I-I think I'm going to pass out, not wake up at this rate...", Line_WaitForInput);
 	PlaySE(3, "down2", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
-	PlaySE(4, "ps3/s20/46/vtt_riku3026", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3026", 256, TRUE);
 	OutputLine(NULL, "ぐはっ…！」",
 			NULL, " Ghah...!\"", Line_Normal);
 	ClearMessage();
 
 //羽入rvS20/45/VTT_hanyu3042.「と…とにかくっ！kvS20/45/VTT_hanyu3043.　巫女服の着用をそこまで願うのでしたら、せめて礼儀として、一般常識に照らし合わせた通常の造形をしたものを仕立てて持ってきてください！kvS20/45/VTT_hanyu3044.　いいですかっ？！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3042", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3042", 256, TRUE);
 	OutputLine(NULL, "「と…とにかくっ！",
 			NULL, "\"A-anyway!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3043", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3043", 256, TRUE);
 	OutputLine(NULL, "　巫女服の着用をそこまで願うのでしたら、せめて礼儀として、一般常識に照らし合わせた通常の造形をしたものを仕立てて持ってきてください！",
 			NULL, " If you're so desperate to have me wear a miko outfit, please at least bring me one that is proper and adheres to common sense, one with no adjustments whatsoever!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3044", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3044", 256, TRUE);
 	OutputLine(NULL, "　いいですかっ？！」",
 			NULL, " Is that clear?!\"", Line_Normal);
 	ClearMessage();
 
 //陸rvS20/46/VTT_riku3027.「ぁ、ぁててっ…！kvS20/46/VTT_riku3028.　で、では通常の仕立てであれば、着てくれるのですか…？」
-	PlaySE(4, "ps3/s20/46/vtt_riku3027", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3027", 256, TRUE);
 	OutputLine(NULL, "「ぁ、ぁててっ…！",
 			NULL, "\"Agh, ow, ow...!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3028", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3028", 256, TRUE);
 	OutputLine(NULL, "　で、では通常の仕立てであれば、着てくれるのですか…？」",
 			NULL, " Th-then you'll wear one if I make you a normal one...?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha3_akire_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	ModDrawCharacter(4, 45, "sprite/oha3_akire_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "dageki", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
 
 //羽入rvS20/45/VTT_hanyu3045.「か…考えてあげるだけです！kvS20/45/VTT_hanyu3046.　もっとも、それを着ようなどと心が迷う可能性は、私があなたの嫁になるくらいに限りなく絶無の低確率ですがっ！！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3045", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3045", 256, TRUE);
 	OutputLine(NULL, "「か…考えてあげるだけです！",
 			NULL, "\"I... I'll only consider it!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3046", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3046", 256, TRUE);
 	OutputLine(NULL, "　もっとも、それを着ようなどと心が迷う可能性は、私があなたの嫁になるくらいに限りなく絶無の低確率ですがっ！！」",
 			NULL, " Though the possibility of me having a change of heart in this matter is as infiniteseminally low as the odds I would marry you!\"", Line_Normal);
 	ClearMessage();
@@ -553,18 +609,20 @@ void main()
 	FadeOutBGM(2, 200, FALSE);
 
 //陸rvS20/46/VTT_riku3029.「えっ…？」
-	PlaySE(4, "ps3/s20/46/vtt_riku3029", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3029", 256, TRUE);
 	OutputLine(NULL, "「えっ…？」",
 			NULL, "\"Huh...?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha3_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	ModDrawCharacter(4, 45, "sprite/oha3_bikkuri_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "pou", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
 
 //羽入rvS20/45/VTT_hanyu3047.「あっ…？！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3047", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3047", 256, TRUE);
 	OutputLine(NULL, "「あっ…？！」",
 			NULL, "\"Ah...?!\"", Line_Normal);
 	ClearMessage();
@@ -573,37 +631,41 @@ void main()
 	PlayBGM( 1, "kaze_lp", 128, 0 );
 
 //r絶対にあり得ないものを例に挙げてみせたとはいえ、…思わず口に出したその言葉の意味を理解して、陸はおろか私までも絶句する。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "絶対にあり得ないものを例に挙げてみせたとはいえ、…思わず口に出したその言葉の意味を理解して、陸はおろか私までも絶句する。",
 			NULL, "Though I was only giving an example of an absolute impossibility... when I realized what I'd unintentionally blurted out, I grew just as speechless as Riku.", Line_Normal);
 	ClearMessage();
 
 //rな…何を言うに事欠いて口走ったんだ、私はっ？！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "な…何を言うに事欠いて口走ったんだ、私はっ？！",
 			NULL, "Wh-what the hell kind of nonsense am I blurting?!", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha3_bikkuri_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 45, "sprite/oha3_bikkuri_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
 
 //陸rvS20/46/VTT_riku3030.「え…えっと、羽入？」
-	PlaySE(4, "ps3/s20/46/vtt_riku3030", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3030", 256, TRUE);
 	OutputLine(NULL, "「え…えっと、羽入？」",
 			NULL, "\"U-umm, Hanyuu?\"", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/oha3_shinken_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
+	ModDrawCharacter(4, 45, "sprite/oha3_shinken_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 100, TRUE );
 	PlaySE(3, "pou", 256, 64);
 	ShakeScreen( 1, 15, 15, 2, 0, );
 	Wait( 150 );
 
 //羽入rvS20/45/VTT_hanyu3048.「っ？！kvS20/45/VTT_hanyu3049.　は、話はそれで終わりです！kvS20/45/VTT_hanyu3050.　私は庭の掃除をしてきますから、陸はさっさと昼食の準備をッ！！」
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3048", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8676cf>羽入</color>", NULL, "<color=#8676cf>Hanyuu</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3048", 256, TRUE);
 	OutputLine(NULL, "「っ？！",
 			NULL, "\"?!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3049", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3049", 256, TRUE);
 	OutputLine(NULL, "　は、話はそれで終わりです！",
 			NULL, " W-we're done talking!", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/45/vtt_hanyu3050", 256, 64);
+	ModPlayVoiceLS(4, 45, "ps3/s20/45/vtt_hanyu3050", 256, TRUE);
 	OutputLine(NULL, "　私は庭の掃除をしてきますから、陸はさっさと昼食の準備をッ！！」",
 			NULL, " I'll go and clean the garden, so you get to work on making lunch right away!!\"", Line_Normal);
 	ClearMessage();
@@ -614,6 +676,7 @@ void main()
 	DrawScene("black", 500 );
 
 //r茹ったように火照った顔をそむけて隠しながら、私は早足で居間を出ていった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "茹ったように火照った顔をそむけて隠しながら、私は早足で居間を出ていった。",
 			NULL, "I looked away to hide my flushed face and quickly left the living room.", Line_Normal);
 	ClearMessage();
@@ -622,11 +685,13 @@ void main()
 	DrawScene("background/hu_engawa", 1000 );
 
 //r…心臓の鼓動がはじけそうなほど、激しく高鳴っている。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…心臓の鼓動がはじけそうなほど、激しく高鳴っている。",
 			NULL, "...My heart was pounding so fiercely that it nearly broke out of my chest.", Line_Normal);
 	ClearMessage();
 
 //rとにかく、外の風に当たってこの上気した肌と頭の中を冷やそう。…そう思って私は、境内奥の高台に向かって一目散に駆け出した。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "とにかく、外の風に当たってこの上気した肌と頭の中を冷やそう。…そう思って私は、境内奥の高台に向かって一目散に駆け出した。",
 			NULL, "Anyway, I'll go outside and get some fresh air to cool my head and face off... It was with that thought that I made a break for the highest point on the grounds at top speed.", Line_Normal);
 	ClearMessage();
@@ -634,18 +699,20 @@ void main()
 	DrawScene("black", 1000 );
 
 //r…………。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "…………。",
 			NULL, "...", Line_Normal);
 	ClearMessage();
 
-	DrawBustshot( 4, "sprite/normal/riku_def_0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
+	ModDrawCharacter(4, 46, "sprite/riku_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
 	DrawScene("background/hu_ima", 1000 );
 
 //陸rvS20/46/VTT_riku3031.「……。kvS20/46/VTT_riku3032.羽入……」
-	PlaySE(4, "ps3/s20/46/vtt_riku3031", 256, 64);
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>陸</color>", NULL, "<color=#f5e6d3>Riku</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3031", 256, TRUE);
 	OutputLine(NULL, "「……。",
 			NULL, "\"...", Line_WaitForInput);
-	PlaySE(4, "ps3/s20/46/vtt_riku3032", 256, 64);
+	ModPlayVoiceLS(4, 46, "ps3/s20/46/vtt_riku3032", 256, TRUE);
 	OutputLine(NULL, "羽入……」",
 			NULL, " Hanyuu...\"", Line_Normal);
 	ClearMessage();
