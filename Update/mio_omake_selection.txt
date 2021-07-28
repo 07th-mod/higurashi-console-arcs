@@ -2,8 +2,13 @@ void main()
 {
 	ModEnableNVLModeInADVMode();
 	DrawScene("black", 1000 );
-	OutputLine(NULL, "このお疲れさま会は、2つの異なるバージョンがあります。\n\nPS3版は、本編とコンソールアークを全て読み終えたプレイヤーに向けです。\nスイッチ版は、それらと「ひぐらしのなく頃に奉」の全てのシナリオを読み終えたプレイヤーに向けです。\n\nどちらを読みたいですか？",
-		   NULL, "There are two slightly different versions of this cast party.\n\nThe PS3 version is for people who have finished the main series and all the console arcs.\nThe switch version is for people who have read all that plus the arcs from Higurashi Hou.\n\nWhich would you like to read?", Line_Normal);
+
+	OutputLine(NULL, "このお疲れさま会は、2つの異なるバージョンがあります。",
+			NULL, "There are two slightly different versions of this cast party.", Line_WaitForInput);
+	OutputLine(NULL, "\n\nPS3版は、本編とコンソールアークを全て読み終えたプレイヤーに向けです。",
+			NULL, "\n\nThe PS3 version is for people who have finished the main series and all the console arcs.", Line_WaitForInput);
+	OutputLine(NULL, "\nスイッチ版は、それらと「ひぐらしのなく頃に奉」の全てのシナリオを読み終えたプレイヤーに向けです。\n\nどちらを読みたいですか？",
+			NULL, "\nThe switch version is for people who have read all that plus the arcs from Higurashi Hou.\n\nWhich would you like to read?", Line_Normal);
 
 	DrawBustshotWithFiltering( 6, "2choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
 
