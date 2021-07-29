@@ -3,10 +3,13 @@ void main()
 	ModEnableNVLModeInADVMode();
 	DrawScene("black", 1000 );
 
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "このお疲れさま会は、2つの異なるバージョンがあります。",
 			NULL, "There are two slightly different versions of this cast party.", Line_WaitForInput);
 	OutputLine(NULL, "\n\nPS3版は、本編とコンソールアークを全て読み終えたプレイヤーに向けです。",
-			NULL, "\n\nThe PS3 version is for people who have finished the main series and all the console arcs.", Line_WaitForInput);
+			NULL, "\n\nThe PS3 version is for people who have finished the main series and all the console arcs. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "\nスイッチ版は、それらと「ひぐらしのなく頃に奉」の全てのシナリオを読み終えたプレイヤーに向けです。\n\nどちらを読みたいですか？",
 			NULL, "\nThe switch version is for people who have read all that plus the arcs from Higurashi Hou.\n\nWhich would you like to read?", Line_Normal);
 
