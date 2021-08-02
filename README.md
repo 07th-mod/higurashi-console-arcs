@@ -23,9 +23,9 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Connecting Fragments | 100%     | 100%        | 100%    | 
 | Miotsukushi PS2      | 100%     | 100%        | 100%    | 
 | Hajisarashi          | 100%     | 100%        | 100%    | 
-| Kotohogushi          | 100%     | 100%        |  93%    | 
+| Kotohogushi          | 100%     | 100%        | 100%    | 
 
-Kotohogushi is fully implemented and translated. Doing a full editing pass, then it'll be ready for release. Still targeting late July/early August.
+Kotohogushi release is coming today! I just need to package everything and put together the release.
 
 ## Screenshots
 
