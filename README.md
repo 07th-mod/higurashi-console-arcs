@@ -1,6 +1,6 @@
-# Higurashi PS3-exclusive Arcs Patch for PC version
+# Higurashi Console Arcs
 
-This patch aims to eventually port all the arcs from the PS3 version of Higurashi to Mangagamer's Steam release of Higurashi.  This is a large task and it will take a long time to port them all, so each arc will be rolled out one at a time.
+This patch ports all 10 original arcs added in the various console versions of Higurashi (PS2/DS/PS3/Switch) to Mangagamer's Steam release of Higurashi, complete with English translation.
 
 Here's a [flowchart](http://07th-mod.com/wiki/Higurashi/img/flow.png) that explains where all these arcs fit in with the main series and the recommended reading order.
 
@@ -25,7 +25,7 @@ And here's a [walkthrough](http://07th-mod.com/wiki/Higurashi/img/walk-omot.jpg)
 | Hajisarashi          | 100%     | 100%        | 100%    | 
 | Kotohogushi          | 100%     | 100%        | 100%    | 
 
-Kotohogushi release is coming today! I just need to package everything and put together the release.
+Kotohogushi has been released, and the project is officially complete! Thanks again to everyone involved.
 
 ## Screenshots
 
