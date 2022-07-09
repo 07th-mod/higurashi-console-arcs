@@ -78,7 +78,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) {
 		OutputLineAll("", NULL, Line_ContinueAfterTyping);
 		OutputLine(NULL, "しかし、残念ながら興宮は災害による混乱が依然として続いており、そのためまともな情報が得られるどころか、『こんな状況下で！』と猛烈な反発を受けただけだった。",
-				NULL, "<size=-2>Unfortunately, Okinomiya was still in a state of disarray in the wake of the disaster, so it was impossible for us to obtain any accurate information, much less anything related to our investigation. Conversely, all we received was ardent opposition from those we questioned.", Line_Normal);
+				NULL, "<size=-3>Unfortunately, Okinomiya was still in a state of disarray in the wake of the disaster, so it was impossible for us to obtain any accurate information, much less anything related to our investigation. Conversely, all we received was ardent opposition from those we questioned.", Line_Normal);
 	} else {
 		OutputLine(NULL, "しかし、残念ながら興宮は災害による混乱が依然として続いており、そのためまともな情報が得られるどころか、『こんな状況下で！』と猛烈な反発を受けただけだった。",
 			NULL, "Unfortunately, Okinomiya was still in a state of disarray in the wake of the disaster, so it was impossible for us to obtain any accurate information, much less anything related to our investigation. Conversely, all we received was ardent opposition from those we questioned.", Line_Normal);
@@ -444,6 +444,7 @@ void main()
 
 //r逆に新興の市街によくある、隣人に無関心な雰囲気も警察にとっては厄介な場合が多い。
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
 	OutputLine(NULL, "逆に新興の市街によくある、隣人に無関心な雰囲気も警察にとっては厄介な場合が多い。",
 			NULL, "But on the other hand, the atmosphere in newly founded communities also has its own issues. When people feel completely indifferent toward their neighbors, they might not pay enough attention to even know any meaningful information in the first place.", Line_Normal);
 	ClearMessage();
@@ -5398,7 +5399,8 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 11, "ps3/s08/11/321100344", 256, TRUE);
 	OutputLine(NULL, "「しかもその翌日の突入で、裏口から逃げ出した主犯格の一人をぶん投げて確保しちまって。",
-			NULL, "\"And then during the rush the next day, he single-handedly beat up and apprehended one of the main criminals during an attempted escape through the back door.", Line_WaitForInput);
+			NULL, "\"And then during the rush the next day, he single-handedly beat up and apprehended one of the main criminals during an attempted escape through the back door.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>Ooishi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 11, "ps3/s08/11/321100345", 256, TRUE);
 	OutputLine(NULL, "…警視庁にも凄いやつがいるもんだと、感心したもんです」",
 			NULL, " ...I was impressed the MPD had such an amazing guy working for them.\"", Line_Normal);

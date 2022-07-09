@@ -1702,7 +1702,8 @@ void main()
 			NULL, "\"I'll do my best to avoid poking around, but please contact me if things are heading in a good direction.", Line_WaitForInput);
 	ModPlayVoiceLS(4, 0, "ps3/s08/00/vt2b_kanou1078", 256, TRUE);
 	OutputLine(NULL, "それ以外は、何か気になることがあった時に報告してくれるだけでいい。",
-			NULL, " Aside from that, just report in when you find something important.", Line_WaitForInput);
+			NULL, " Aside from that, just report in when you find something important.", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>嘉納</color>", NULL, "<color=#f5e6d3>Kanou</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 0, "ps3/s08/00/vt2b_kanou1079", 256, TRUE);
 	OutputLine(NULL, "留守中の代理は、誰かいる？」",
 			NULL, " Do you have someone who can fill in for you in your absence?\"", Line_Normal);
