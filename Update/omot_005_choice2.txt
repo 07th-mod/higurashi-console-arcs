@@ -254,14 +254,14 @@ void main()
 	if (GetLocalFlag(LConsoleArc)==10) {
 		FadeBustshot( 4, FALSE, 0, 0, 0, 0, 200, TRUE );
 		ModDrawCharacter(4, 1, "sprite/kei1_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, FALSE );
-		ModDrawCharacter(5, 3, "sprite/me1a_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
-		ModDrawCharacter(3, 2, "sprite/re1a_def_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+		ModDrawCharacter(5, 3, "sprite/me1a_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE ); //ERROR_EXISTING: Priority 19 on layer 5 used here. Conflict is 6 lines away (line 263)
+		ModDrawCharacter(3, 2, "sprite/re1a_def_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE ); //ERROR_EXISTING: Priority 18 on layer 3 used here. Conflict is 6 lines away (line 264)
 		ModDrawCharacter(6, 4, "sprite/sa1a_def_a1_", "0", -320, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 17, 200, FALSE );
 		ModDrawCharacter(2, 6, "sprite/si3_def_a1_", "0", 320, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 16, 200, TRUE );
 	} else {
 		FadeBustshot( 4, FALSE, 0, 0, 0, 0, 200, TRUE );
-		ModDrawCharacter(4, 1, "sprite/kei1_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, FALSE );
-		ModDrawCharacter(5, 3, "sprite/me1a_def_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+		ModDrawCharacter(4, 1, "sprite/kei1_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 21, 200, FALSE ); //ERROR: Priority 19 already in use 6 lines ago (line 257). Existing Layer: 5 Conflicting Layer: 4 Suggested Priority: 21
+		ModDrawCharacter(5, 3, "sprite/me1a_def_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 22, 200, FALSE ); //ERROR: Priority 18 already in use 6 lines ago (line 258). Existing Layer: 3 Conflicting Layer: 5 Suggested Priority: 22
 		ModDrawCharacter(3, 2, "sprite/re1a_def_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
 	}
 
