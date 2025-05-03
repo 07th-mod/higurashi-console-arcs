@@ -7,7 +7,7 @@ on:
 jobs:
   dll_build:
     name: Build DLL
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
@@ -24,7 +24,7 @@ jobs:
           git show --pretty="format:Commit: %H %d%nDate: %cs%n%n%B" --no-patch > ./bin/Release/Assembly-CSharp.version.txt
 
       - name: Upload DLL as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: higurashi-dll
           path: |
